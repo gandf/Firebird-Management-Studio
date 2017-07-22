@@ -1,98 +1,103 @@
 inherited frmAddTools: TfrmAddTools
   Left = 58
+  Height = 154
   Top = 302
+  Width = 566
   ActiveControl = edtTitle
   Caption = 'Tool Properties'
-  ClientHeight = 151
-  ClientWidth = 552
-  PixelsPerInch = 96
-  object Label1: TLabel
+  ClientHeight = 154
+  ClientWidth = 566
+  object Label1: TLabel[0]
     Left = 20
+    Height = 13
     Top = 27
     Width = 23
-    Height = 13
     Caption = '&Title:'
     FocusControl = edtTitle
+    ParentColor = False
   end
-  object Label2: TLabel
+  object Label2: TLabel[1]
     Left = 20
+    Height = 13
     Top = 57
     Width = 39
-    Height = 13
     Caption = '&Program'
     FocusControl = edtProgram
+    ParentColor = False
   end
-  object Label3: TLabel
+  object Label3: TLabel[2]
     Left = 21
+    Height = 13
     Top = 87
     Width = 59
-    Height = 13
     Caption = '&Working Dir:'
     FocusControl = edtWorkingDir
+    ParentColor = False
   end
-  object Label4: TLabel
+  object Label4: TLabel[3]
     Left = 21
+    Height = 13
     Top = 118
     Width = 56
-    Height = 13
     Caption = 'P&arameters:'
     FocusControl = edtParams
+    ParentColor = False
   end
-  object edtTitle: TEdit
+  object edtTitle: TEdit[4]
     Left = 98
+    Height = 21
     Top = 17
     Width = 355
-    Height = 21
     TabOrder = 0
   end
-  object edtProgram: TEdit
+  object edtProgram: TEdit[5]
     Left = 98
+    Height = 21
     Top = 47
     Width = 355
-    Height = 21
     TabOrder = 1
   end
-  object edtWorkingDir: TEdit
+  object edtWorkingDir: TEdit[6]
     Left = 98
+    Height = 21
     Top = 78
     Width = 355
-    Height = 21
     TabOrder = 2
   end
-  object edtParams: TEdit
+  object edtParams: TEdit[7]
     Left = 98
+    Height = 21
     Top = 108
     Width = 355
-    Height = 21
     TabOrder = 3
   end
-  object btnOK: TButton
+  object btnOK: TButton[8]
     Left = 467
+    Height = 25
     Top = 21
     Width = 75
-    Height = 25
     Caption = '&OK'
     Default = True
     ModalResult = 1
     TabOrder = 4
   end
-  object btnCancel: TButton
+  object btnCancel: TButton[9]
     Left = 467
+    Height = 25
     Top = 58
     Width = 75
-    Height = 25
     Cancel = True
     Caption = '&Cancel'
     ModalResult = 2
     TabOrder = 5
   end
-  object btnBrowse: TButton
+  object btnBrowse: TButton[10]
     Left = 467
+    Height = 25
     Top = 97
     Width = 75
-    Height = 25
     Caption = '&Browse'
-    TabOrder = 6
     OnClick = btnBrowseClick
+    TabOrder = 6
   end
 end

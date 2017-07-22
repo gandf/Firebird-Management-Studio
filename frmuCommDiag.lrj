@@ -1,0 +1,23 @@
+{"version":1,"strings":[
+{"hash":48020579,"name":"tfrmcommdiag.caption","sourcebytes":[67,111,109,109,117,110,105,99,97,116,105,111,110,32,68,105,97,103,110,111,115,116,105,99,115],"value":"Communication Diagnostics"},
+{"hash":217975374,"name":"tfrmcommdiag.tabdbconnection.caption","sourcebytes":[68,66,32,67,111,110,110,101,99,116,105,111,110],"value":"DB Connection"},
+{"hash":212603114,"name":"tfrmcommdiag.lbldbresults.caption","sourcebytes":[38,82,101,115,117,108,116,115,58],"value":"&Results:"},
+{"hash":147934990,"name":"tfrmcommdiag.gbdatabaseinfo.caption","sourcebytes":[32,68,97,116,97,98,97,115,101,32,73,110,102,111,114,109,97,116,105,111,110],"value":" Database Information"},
+{"hash":175776522,"name":"tfrmcommdiag.lbldatabase.caption","sourcebytes":[38,68,97,116,97,98,97,115,101,58],"value":"&Database:"},
+{"hash":75483722,"name":"tfrmcommdiag.lblusername.caption","sourcebytes":[38,85,115,101,114,32,78,97,109,101,58],"value":"&User Name:"},
+{"hash":179363578,"name":"tfrmcommdiag.lblpassword.caption","sourcebytes":[38,80,97,115,115,119,111,114,100,58],"value":"&Password:"},
+{"hash":169719797,"name":"tfrmcommdiag.btnseldb.hint","sourcebytes":[83,101,108,101,99,116,32,100,97,116,97,98,97,115,101],"value":"Select database"},
+{"hash":12558,"name":"tfrmcommdiag.btnseldb.caption","sourcebytes":[46,46,46],"value":"..."},
+{"hash":183271390,"name":"tfrmcommdiag.gbdbserverinfo.caption","sourcebytes":[32,83,101,114,118,101,114,32,73,110,102,111,114,109,97,116,105,111,110],"value":" Server Information"},
+{"hash":266927978,"name":"tfrmcommdiag.lblservername.caption","sourcebytes":[38,83,101,114,118,101,114,32,78,97,109,101,58],"value":"&Server Name:"},
+{"hash":44833162,"name":"tfrmcommdiag.lblprotocol.caption","sourcebytes":[38,78,101,116,119,111,114,107,32,80,114,111,116,111,99,111,108,58],"value":"&Network Protocol:"},
+{"hash":245959426,"name":"tfrmcommdiag.rblocalserver.caption","sourcebytes":[38,76,111,99,97,108,32,83,101,114,118,101,114],"value":"&Local Server"},
+{"hash":156824562,"name":"tfrmcommdiag.rbremoteserver.caption","sourcebytes":[82,38,101,109,111,116,101,32,83,101,114,118,101,114],"value":"R&emote Server"},
+{"hash":92812256,"name":"tfrmcommdiag.tabtcpip.caption","sourcebytes":[84,67,80,47,73,80],"value":"TCP\/IP"},
+{"hash":212603114,"name":"tfrmcommdiag.lblwinsockresults.caption","sourcebytes":[38,82,101,115,117,108,116,115,58],"value":"&Results:"},
+{"hash":183271390,"name":"tfrmcommdiag.gbtcpipserverinfo.caption","sourcebytes":[32,83,101,114,118,101,114,32,73,110,102,111,114,109,97,116,105,111,110],"value":" Server Information"},
+{"hash":45050490,"name":"tfrmcommdiag.lblwinsockserver.caption","sourcebytes":[38,72,111,115,116,58],"value":"&Host:"},
+{"hash":211603994,"name":"tfrmcommdiag.lblservice.caption","sourcebytes":[38,83,101,114,118,105,99,101,58],"value":"&Service:"},
+{"hash":2862244,"name":"tfrmcommdiag.btntest.caption","sourcebytes":[38,84,101,115,116],"value":"&Test"},
+{"hash":177752476,"name":"tfrmcommdiag.btncancel.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"}
+]}

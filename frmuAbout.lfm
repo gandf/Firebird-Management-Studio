@@ -12,7 +12,6 @@ inherited frmAbout: TfrmAbout
   Font.CharSet = ANSI_CHARSET
   Font.Color = clBlack
   Font.Height = -14
-  OnHelp = nil
   OnShow = FormShow
   Position = poScreenCenter
   object Panel1: TPanel[0]
@@ -229,7 +228,7 @@ inherited frmAbout: TfrmAbout
     Height = 17
     Top = 152
     Width = 248
-    Caption = 'Copyright © 2017 gandf'
+    Caption = 'Copyright'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11

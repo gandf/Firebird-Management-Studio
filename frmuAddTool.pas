@@ -24,8 +24,8 @@ unit frmuAddTool;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  frmuDlgClass, StdCtrls;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  frmuDlgClass, StdCtrls, resstring;
 
 type
   TfrmAddTools = class(TDialog)
@@ -41,6 +41,7 @@ type
     btnCancel: TButton;
     btnBrowse: TButton;
     procedure btnBrowseClick(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -64,7 +65,7 @@ begin
   begin
     DefaultExt := '.EXE';
     Options := Options + [ofPathMustExist, ofFileMustExist];
-    Filter := 'Program Files | *.EXE; *.BAT; *.COM;';
+    Filter := LZTFilterProgramFiles + ' | *.EXE; *.BAT; *.COM;';
     if Execute then
     begin
       edtProgram.Text := FileName;
@@ -74,5 +75,17 @@ begin
     Free;
   end;
 end;
+
+Procedure TfrmAddTools.TranslateVisual;
+Begin
+  Label1.Caption := LZTToolPropertiesTitleLbl;
+  Label2.Caption := LZTToolPropertiesProgramLbl;
+  Label3.Caption := LZTToolPropertiesWorkingDirLbl;
+  Label4.Caption := LZTToolPropertiesParameterLbl;
+  btnOK.Caption := LZTToolPropertiesButtonOkFiles;
+  btnCancel.Caption := LZTToolPropertiesButtonCancelFiles;
+  btnBrowse.Caption := LZTToolPropertiesButtonBrowseFiles;
+  Self.Caption := LZTToolPropertiesFormTitle;
+End;
 
 end.

@@ -10,6 +10,492 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
 
+#: resstring.lztaboutbuttonokfiles
+msgctxt "resstring.lztaboutbuttonokfiles"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztaboutfbmstudiover
+msgid "Version: "
+msgstr ""
+
+#: resstring.lztaboutfirebirdver
+msgid "Firebird Version: "
+msgstr ""
+
+#: resstring.lztaboutformtitle
+msgctxt "resstring.lztaboutformtitle"
+msgid "About"
+msgstr ""
+
+#: resstring.lztaboutinterbase
+msgid "Interbase Version: "
+msgstr ""
+
+#: resstring.lztcommdiagapproxroundtriptimes
+msgid "Approximate round trip times in milli-seconds:"
+msgstr ""
+
+#: resstring.lztcommdiagatport
+msgid "at port"
+msgstr ""
+
+#: resstring.lztcommdiagattaching
+msgid "attaching."
+msgstr ""
+
+#: resstring.lztcommdiagattachpassed
+msgid "Attaching    ... Passed!"
+msgstr ""
+
+#: resstring.lztcommdiagattempingconnection
+msgid "Attempting connection to"
+msgstr ""
+
+#: resstring.lztcommdiagattemptconnect
+msgid "Attempting to connect to:"
+msgstr ""
+
+#: resstring.lztcommdiagavg
+msgid "Average"
+msgstr ""
+
+#: resstring.lztcommdiagbtncancelcaption
+msgctxt "resstring.lztcommdiagbtncancelcaption"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztcommdiagbtntestcaption
+msgctxt "resstring.lztcommdiagbtntestcaption"
+msgid "&Test"
+msgstr ""
+
+#: resstring.lztcommdiagbytes
+msgid "bytes"
+msgstr ""
+
+#: resstring.lztcommdiagbytesofdata
+msgid "bytes of data:"
+msgstr ""
+
+#: resstring.lztcommdiagcommtest
+msgid "Firebird Communication Test"
+msgstr ""
+
+#: resstring.lztcommdiagconnectestablishedtohost
+msgid "Connection established to host"
+msgstr ""
+
+#: resstring.lztcommdiagcouldnotresolveservice
+msgid "Could not resolve service"
+msgstr ""
+
+#: resstring.lztcommdiagdetaching
+msgid "detaching"
+msgstr ""
+
+#: resstring.lztcommdiagdetachpassed
+msgid "Detaching    ... Passed!"
+msgstr ""
+
+#: resstring.lztcommdiagerror
+msgid "Error - "
+msgstr ""
+
+#: resstring.lztcommdiagerrormessage
+msgid "Error Message:"
+msgstr ""
+
+#: resstring.lztcommdiagerroroccured
+msgid "An Firebird error has occurred while"
+msgstr ""
+
+#: resstring.lztcommdiagfailed
+msgid "Failed!"
+msgstr ""
+
+#: resstring.lztcommdiagfailedconnecthost
+msgid "Failed to connect to host"
+msgstr ""
+
+#: resstring.lztcommdiagformtitle
+msgctxt "resstring.lztcommdiagformtitle"
+msgid "Communication Diagnostics"
+msgstr ""
+
+#: resstring.lztcommdiagfoundservice
+msgid "Found service"
+msgstr ""
+
+#: resstring.lztcommdiaggbdatabaseinfocaption
+msgctxt "resstring.lztcommdiaggbdatabaseinfocaption"
+msgid " Database Information"
+msgstr ""
+
+#: resstring.lztcommdiaggbtcpipserverinfocaption
+msgid "Server Information"
+msgstr ""
+
+#: resstring.lztcommdiaglbldatabasecaption
+msgctxt "resstring.lztcommdiaglbldatabasecaption"
+msgid "&Database:"
+msgstr ""
+
+#: resstring.lztcommdiaglblpasswordcaption
+msgctxt "resstring.lztcommdiaglblpasswordcaption"
+msgid "&Password:"
+msgstr ""
+
+#: resstring.lztcommdiaglblprotocolcaption
+msgctxt "resstring.lztcommdiaglblprotocolcaption"
+msgid "&Network Protocol:"
+msgstr ""
+
+#: resstring.lztcommdiaglblservernamecaption
+msgctxt "resstring.lztcommdiaglblservernamecaption"
+msgid "&Server Name:"
+msgstr ""
+
+#: resstring.lztcommdiaglblservicecaption
+msgctxt "resstring.lztcommdiaglblservicecaption"
+msgid "&Service:"
+msgstr ""
+
+#: resstring.lztcommdiaglblusernamecaption
+msgctxt "resstring.lztcommdiaglblusernamecaption"
+msgid "&User Name:"
+msgstr ""
+
+#: resstring.lztcommdiaglblwinsockresultscaption
+msgctxt "resstring.lztcommdiaglblwinsockresultscaption"
+msgid "&Results:"
+msgstr ""
+
+#: resstring.lztcommdiaglblwinsockservercaption
+msgctxt "resstring.lztcommdiaglblwinsockservercaption"
+msgid "&Host:"
+msgstr ""
+
+#: resstring.lztcommdiaglost
+msgid "Lost"
+msgstr ""
+
+#: resstring.lztcommdiagmax
+msgid "Maximum"
+msgstr ""
+
+#: resstring.lztcommdiagmin
+msgid "Minimum"
+msgstr ""
+
+#: resstring.lztcommdiagonport
+msgid "on port"
+msgstr ""
+
+#: resstring.lztcommdiagopendialogdefaultext
+msgid "fdb"
+msgstr ""
+
+#: resstring.lztcommdiagopendialogfilter
+msgid "Database File (*.fdb)|*.FDB|All files (*.*)|*.*"
+msgstr ""
+
+#: resstring.lztcommdiagpacketsreceived
+msgid "Received"
+msgstr ""
+
+#: resstring.lztcommdiagpacketssend
+msgid "Packets: Send"
+msgstr ""
+
+#: resstring.lztcommdiagpassed
+msgid "Passed!"
+msgstr ""
+
+#: resstring.lztcommdiagpinging
+msgid "Pinging"
+msgstr ""
+
+#: resstring.lztcommdiagpingstat
+msgid "Ping statistics for"
+msgstr ""
+
+#: resstring.lztcommdiagrblocalservercaption
+msgctxt "resstring.lztcommdiagrblocalservercaption"
+msgid "&Local Server"
+msgstr ""
+
+#: resstring.lztcommdiagrbremoteservercaption
+msgctxt "resstring.lztcommdiagrbremoteservercaption"
+msgid "R&emote Server"
+msgstr ""
+
+#: resstring.lztcommdiagreplyfrom
+msgid "Reply from"
+msgstr ""
+
+#: resstring.lztcommdiagsocketconnectionobtained
+msgid "Socket for connection obtained."
+msgstr ""
+
+#: resstring.lztcommdiagtabdbconnectioncaption
+msgctxt "resstring.lztcommdiagtabdbconnectioncaption"
+msgid "DB Connection"
+msgstr ""
+
+#: resstring.lztcommdiagtabtcpipcaption
+msgctxt "resstring.lztcommdiagtabtcpipcaption"
+msgid "TCP/IP"
+msgstr ""
+
+#: resstring.lztcommdiagtcpipcommtest
+msgid "TCP/IP Communication Test"
+msgstr ""
+
+#: resstring.lztcommdiagtime
+msgid "time"
+msgstr ""
+
+#: resstring.lztcommdiagunknow
+msgid "Unknown host"
+msgstr ""
+
+#: resstring.lztcommdiagversion
+msgid "Version :"
+msgstr ""
+
+#: resstring.lztcommdiagwith
+msgid "with"
+msgstr ""
+
+#: resstring.lztfilterprogramfiles
+msgid "Program Files "
+msgstr ""
+
+#: resstring.lzttoolpropertiesbuttonbrowsefiles
+msgctxt "resstring.lzttoolpropertiesbuttonbrowsefiles"
+msgid "&Browse"
+msgstr ""
+
+#: resstring.lzttoolpropertiesbuttoncancelfiles
+msgctxt "resstring.lzttoolpropertiesbuttoncancelfiles"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lzttoolpropertiesbuttonokfiles
+msgctxt "resstring.lzttoolpropertiesbuttonokfiles"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lzttoolpropertiesformtitle
+msgctxt "resstring.lzttoolpropertiesformtitle"
+msgid "Tool Properties"
+msgstr ""
+
+#: resstring.lzttoolpropertiesparameterlbl
+msgctxt "resstring.lzttoolpropertiesparameterlbl"
+msgid "P&arameters:"
+msgstr ""
+
+#: resstring.lzttoolpropertiesprogramlbl
+msgctxt "resstring.lzttoolpropertiesprogramlbl"
+msgid "&Program"
+msgstr ""
+
+#: resstring.lzttoolpropertiestitlelbl
+msgctxt "resstring.lzttoolpropertiestitlelbl"
+msgid "&Title:"
+msgstr ""
+
+#: resstring.lzttoolpropertiesworkingdirlbl
+msgctxt "resstring.lzttoolpropertiesworkingdirlbl"
+msgid "&Working Dir:"
+msgstr ""
+
+#: tdialog.caption
+msgid "Dialog"
+msgstr ""
+
+#: tfrmabout.button1.caption
+msgid "OK"
+msgstr ""
+
+#: tfrmabout.caption
+msgctxt "tfrmabout.caption"
+msgid "About"
+msgstr ""
+
+#: tfrmabout.stxcopyright.caption
+msgid "Copyright"
+msgstr ""
+
+#: tfrmabout.stxfbmstudiover.caption
+msgid "stxFbMStudioVer"
+msgstr ""
+
+#: tfrmabout.stxfirebirdver.caption
+msgid "stxFirebirdVer"
+msgstr ""
+
+#: tfrmabout.stxhttplink.caption
+msgid "http://www.flyonsoft.com"
+msgstr ""
+
+#: tfrmabout.stxhttplink1.caption
+msgid "https://github.com/gandf/Firebird-Management-Studio"
+msgstr ""
+
+#: tfrmabout.stxinterbase.caption
+msgid "http://www.firebirdsql.org"
+msgstr ""
+
+#: tfrmabout.stxwindowsversion.caption
+msgid "Windows Version"
+msgstr ""
+
+#: tfrmaddtools.btnbrowse.caption
+msgctxt "tfrmaddtools.btnbrowse.caption"
+msgid "&Browse"
+msgstr ""
+
+#: tfrmaddtools.btncancel.caption
+msgctxt "tfrmaddtools.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmaddtools.btnok.caption
+msgctxt "tfrmaddtools.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmaddtools.caption
+msgctxt "tfrmaddtools.caption"
+msgid "Tool Properties"
+msgstr ""
+
+#: tfrmaddtools.label1.caption
+msgctxt "tfrmaddtools.label1.caption"
+msgid "&Title:"
+msgstr ""
+
+#: tfrmaddtools.label2.caption
+msgctxt "tfrmaddtools.label2.caption"
+msgid "&Program"
+msgstr ""
+
+#: tfrmaddtools.label3.caption
+msgctxt "tfrmaddtools.label3.caption"
+msgid "&Working Dir:"
+msgstr ""
+
+#: tfrmaddtools.label4.caption
+msgctxt "tfrmaddtools.label4.caption"
+msgid "P&arameters:"
+msgstr ""
+
+#: tfrmcommdiag.btncancel.caption
+msgctxt "tfrmcommdiag.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmcommdiag.btnseldb.caption
+msgid "..."
+msgstr ""
+
+#: tfrmcommdiag.btnseldb.hint
+msgid "Select database"
+msgstr ""
+
+#: tfrmcommdiag.btntest.caption
+msgctxt "tfrmcommdiag.btntest.caption"
+msgid "&Test"
+msgstr ""
+
+#: tfrmcommdiag.caption
+msgctxt "tfrmcommdiag.caption"
+msgid "Communication Diagnostics"
+msgstr ""
+
+#: tfrmcommdiag.gbdatabaseinfo.caption
+msgctxt "tfrmcommdiag.gbdatabaseinfo.caption"
+msgid " Database Information"
+msgstr ""
+
+#: tfrmcommdiag.gbdbserverinfo.caption
+msgctxt "tfrmcommdiag.gbdbserverinfo.caption"
+msgid " Server Information"
+msgstr ""
+
+#: tfrmcommdiag.gbtcpipserverinfo.caption
+msgctxt "tfrmcommdiag.gbtcpipserverinfo.caption"
+msgid " Server Information"
+msgstr ""
+
+#: tfrmcommdiag.lbldatabase.caption
+msgctxt "tfrmcommdiag.lbldatabase.caption"
+msgid "&Database:"
+msgstr ""
+
+#: tfrmcommdiag.lbldbresults.caption
+msgctxt "tfrmcommdiag.lbldbresults.caption"
+msgid "&Results:"
+msgstr ""
+
+#: tfrmcommdiag.lblpassword.caption
+msgctxt "tfrmcommdiag.lblpassword.caption"
+msgid "&Password:"
+msgstr ""
+
+#: tfrmcommdiag.lblprotocol.caption
+msgctxt "tfrmcommdiag.lblprotocol.caption"
+msgid "&Network Protocol:"
+msgstr ""
+
+#: tfrmcommdiag.lblservername.caption
+msgctxt "tfrmcommdiag.lblservername.caption"
+msgid "&Server Name:"
+msgstr ""
+
+#: tfrmcommdiag.lblservice.caption
+msgctxt "tfrmcommdiag.lblservice.caption"
+msgid "&Service:"
+msgstr ""
+
+#: tfrmcommdiag.lblusername.caption
+msgctxt "tfrmcommdiag.lblusername.caption"
+msgid "&User Name:"
+msgstr ""
+
+#: tfrmcommdiag.lblwinsockresults.caption
+msgctxt "tfrmcommdiag.lblwinsockresults.caption"
+msgid "&Results:"
+msgstr ""
+
+#: tfrmcommdiag.lblwinsockserver.caption
+msgctxt "tfrmcommdiag.lblwinsockserver.caption"
+msgid "&Host:"
+msgstr ""
+
+#: tfrmcommdiag.rblocalserver.caption
+msgctxt "tfrmcommdiag.rblocalserver.caption"
+msgid "&Local Server"
+msgstr ""
+
+#: tfrmcommdiag.rbremoteserver.caption
+msgctxt "tfrmcommdiag.rbremoteserver.caption"
+msgid "R&emote Server"
+msgstr ""
+
+#: tfrmcommdiag.tabdbconnection.caption
+msgctxt "tfrmcommdiag.tabdbconnection.caption"
+msgid "DB Connection"
+msgstr ""
+
+#: tfrmcommdiag.tabtcpip.caption
+msgctxt "tfrmcommdiag.tabtcpip.caption"
+msgid "TCP/IP"
+msgstr ""
+
 #: tfrmmain.backuprestore1.caption
 msgctxt "tfrmmain.backuprestore1.caption"
 msgid "Backup / Restore"
@@ -96,8 +582,7 @@ msgstr "Connecter c&omme ..."
 
 #: tfrmmain.databaseconnectas.hint
 msgid "Connect to the selected database specifying a user"
-msgstr ""
-"Connecter à la base de données sélectionnées avec l'utilisateur spécifié"
+msgstr "Connecter à la base de données sélectionnées avec l'utilisateur spécifié"
 
 #: tfrmmain.databasecreate.caption
 msgid "C&reate Database ..."
@@ -125,21 +610,21 @@ msgstr "Supprimer la base de données actuelle"
 
 #: tfrmmain.databasemetadata.caption
 msgid "View &Metadata ..."
-msgstr ""
+msgstr "Voir &Métadonnées"
 
 #: tfrmmain.databasemetadata.hint
 msgid "View Database Metadata"
-msgstr ""
+msgstr "Voir métadonnées base de données"
 
 #: tfrmmain.databaseproperties.caption
 msgctxt "TFRMMAIN.DATABASEPROPERTIES.CAPTION"
 msgid "&Properties ..."
-msgstr ""
+msgstr "&Propriétés"
 
 #: tfrmmain.databaseproperties.hint
 msgctxt "tfrmmain.databaseproperties.hint"
 msgid "Show database properties"
-msgstr ""
+msgstr "Afficher propriétés base de données"
 
 #: tfrmmain.databaserecovertrans.caption
 msgid "&Transaction Recovery ..."
@@ -156,7 +641,7 @@ msgstr ""
 
 #: tfrmmain.databaseregister.hint
 msgid "Register a new database"
-msgstr ""
+msgstr "Enregistrer une nouvelle base de données"
 
 #: tfrmmain.databaserestart.caption
 msgid "Database &Restart"
@@ -217,7 +702,7 @@ msgstr ""
 
 #: tfrmmain.databasevalidate.caption
 msgid "&Validation ..."
-msgstr ""
+msgstr "&Validation ..."
 
 #: tfrmmain.databasevalidate.hint
 msgid "Validate the database structure"
@@ -242,35 +727,35 @@ msgstr ""
 
 #: tfrmmain.editcopy.caption
 msgid "&Copy"
-msgstr ""
+msgstr "&Copier"
 
 #: tfrmmain.editcopy.hint
 msgid "Copy"
-msgstr ""
+msgstr "Copier"
 
 #: tfrmmain.editcut.caption
 msgid "Cu&t"
-msgstr ""
+msgstr "C&ouper"
 
 #: tfrmmain.editcut.hint
 msgid "Cut"
-msgstr ""
+msgstr "Couper"
 
 #: tfrmmain.editfont.caption
 msgid "&Font ..."
-msgstr ""
+msgstr "&Police ..."
 
 #: tfrmmain.editfont.hint
 msgid "Change the font"
-msgstr ""
+msgstr "Changer la police"
 
 #: tfrmmain.editpaste.caption
 msgid "&Paste"
-msgstr ""
+msgstr "Co&ller"
 
 #: tfrmmain.editpaste.hint
 msgid "Paste"
-msgstr ""
+msgstr "Coller"
 
 #: tfrmmain.editselectall.caption
 msgid "Select &All"
@@ -282,7 +767,7 @@ msgstr ""
 
 #: tfrmmain.exttooldropdown.caption
 msgid "&Tools"
-msgstr ""
+msgstr "Ou&tils"
 
 #: tfrmmain.exttoolsconfigure.caption
 msgid "&Configure Tools ..."
@@ -293,17 +778,14 @@ msgid "Interactive S&QL ..."
 msgstr ""
 
 #: tfrmmain.exttoolslaunchisql.hint
+#, fuzzy
 msgctxt "TFRMMAIN.EXTTOOLSLAUNCHISQL.HINT"
 msgid "Interactive SQL"
-msgstr ""
-
-#: tfrmmain.help1.caption
-msgid "&Help"
-msgstr ""
+msgstr "SQL intéractif"
 
 #: tfrmmain.helpabout.caption
 msgid "&About ..."
-msgstr ""
+msgstr "A &propos ..."
 
 #: tfrmmain.helpcontents.caption
 msgid "&Contents"
@@ -378,11 +860,6 @@ msgstr ""
 
 #: tfrmmain.n17.caption
 msgctxt "TFRMMAIN.N17.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n18.caption
-msgctxt "TFRMMAIN.N18.CAPTION"
 msgid "-"
 msgstr ""
 
@@ -478,7 +955,7 @@ msgstr ""
 
 #: tfrmmain.objectcreate.caption
 msgid "&Create ..."
-msgstr ""
+msgstr "&Créer ..."
 
 #: tfrmmain.objectcreate.hint
 msgid "Create a new object of the selected type"
@@ -490,11 +967,11 @@ msgstr ""
 
 #: tfrmmain.objectdelete.hint
 msgid "Delete the current object"
-msgstr ""
+msgstr "Supprimer l'objet courant"
 
 #: tfrmmain.objectdescription.caption
 msgid "Edit &Description ..."
-msgstr ""
+msgstr "Editer &Description"
 
 #: tfrmmain.objectdescription.hint
 msgid "Change the decription for an object"
@@ -502,7 +979,7 @@ msgstr ""
 
 #: tfrmmain.objectextract.caption
 msgid "E&xtract ..."
-msgstr ""
+msgstr "E&xtraire ..."
 
 #: tfrmmain.objectextract.hint
 msgid "Extract metada for the current object"
@@ -510,29 +987,30 @@ msgstr ""
 
 #: tfrmmain.objectmodify.caption
 msgid "&Modify ..."
-msgstr ""
+msgstr "&Modifier ..."
 
 #: tfrmmain.objectmodify.hint
 msgid "Modify the current object"
 msgstr ""
 
 #: tfrmmain.objectproperties.caption
+#, fuzzy
 msgctxt "TFRMMAIN.OBJECTPROPERTIES.CAPTION"
 msgid "&Properties ..."
-msgstr ""
+msgstr "&Propriétés"
 
 #: tfrmmain.objectrefresh.caption
 msgid "&Refresh"
-msgstr ""
+msgstr "&Rafraîchir"
 
 #: tfrmmain.server1.caption
 msgid "&Server"
-msgstr ""
+msgstr "&Serveur"
 
 #: tfrmmain.serveractionprops.caption
 msgctxt "TFRMMAIN.SERVERACTIONPROPS.CAPTION"
 msgid "&Properties ..."
-msgstr ""
+msgstr "&Propriétées ..."
 
 #: tfrmmain.serveractionprops.hint
 msgctxt "TFRMMAIN.SERVERACTIONPROPS.HINT"
@@ -564,9 +1042,10 @@ msgid "Logout from the current server"
 msgstr ""
 
 #: tfrmmain.serverproperties.caption
+#, fuzzy
 msgctxt "TFRMMAIN.SERVERPROPERTIES.CAPTION"
 msgid "&Properties ..."
-msgstr ""
+msgstr "&Propriétées ..."
 
 #: tfrmmain.serverproperties.hint
 msgctxt "tfrmmain.serverproperties.hint"
@@ -659,20 +1138,21 @@ msgstr ""
 
 #: tfrmmain.view1.caption
 msgid "&View"
-msgstr ""
+msgstr "&Voir"
 
 #: tfrmmain.viewicon.caption
 msgid "Lar&ge"
-msgstr ""
+msgstr "Lar&ge"
 
 #: tfrmmain.viewlist.caption
 msgid "&List"
-msgstr ""
+msgstr "&Liste"
 
 #: tfrmmain.viewproperties.caption
+#, fuzzy
 msgctxt "tfrmmain.viewproperties.caption"
 msgid "&Properties ..."
-msgstr ""
+msgstr "&Propriétées ..."
 
 #: tfrmmain.viewproperties.hint
 msgid "View Object Properties"
@@ -680,7 +1160,7 @@ msgstr ""
 
 #: tfrmmain.viewreport.caption
 msgid "&Details"
-msgstr ""
+msgstr "&Détails"
 
 #: tfrmmain.viewserverlog.caption
 msgid "&View Logfile ..."
@@ -692,16 +1172,17 @@ msgstr ""
 
 #: tfrmmain.viewsmallicon.caption
 msgid "S&mall"
-msgstr ""
+msgstr "&Petit"
 
 #: tfrmmain.viewsystem.caption
 msgid "S&ystem Data"
-msgstr ""
+msgstr "Données s&ystème"
 
 #: tfrmmain.window2.caption
 msgid "&Windows"
-msgstr ""
+msgstr "&Fenêtres"
 
 #: tfrmmain.windowlist.caption
 msgid "Windows"
-msgstr ""
+msgstr "Fenêtres"
+

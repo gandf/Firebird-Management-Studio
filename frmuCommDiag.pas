@@ -43,7 +43,7 @@ interface
 uses
   LCLIntf, LCLType, LMessages, SysUtils,Forms, ExtCtrls, StdCtrls, Classes, Controls, ComCtrls, Dialogs,
   Graphics, zluibcClasses, Winsock, IB,
-  IBDatabase, IBDatabaseInfo, Messages, frmuDlgClass, zluCommDiag; //, ScktComp;
+  IBDatabase, IBDatabaseInfo, Messages, frmuDlgClass, zluCommDiag, resstring; //, ScktComp;
 
 type
   TfrmCommDiag = class(TDialog)
@@ -87,6 +87,7 @@ type
     procedure rbLocalServerClick(Sender: TObject);
     procedure rbRemoteServerClick(Sender: TObject);
     procedure edtDatabaseChange(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     FProtocols: TStringList;
@@ -281,8 +282,8 @@ begin
     // create and show open file dialog box
     lOpenDialog := TOpenDialog.Create(self);
     // specify defaul extension and filters
-    lOpenDialog.DefaultExt := 'gdb';
-    lOpenDialog.Filter := 'Database File (*.gdb)|*.GDB|All files (*.*)|*.*';
+    lOpenDialog.DefaultExt := LZTCommDiagOpenDialogDefaultExt;
+    lOpenDialog.Filter := LZTCommDiagOpenDialogFilter;
     // if OK is pressed then extract selected filename
     if lOpenDialog.Execute then
     begin
@@ -563,14 +564,14 @@ begin
       // if the specified host is already an IP address
       if Ping.HostName = ping.HostIP then
       begin
-        memTCPIPResults.Lines.Add('Pinging ' + Ping.HostIP + ' with ' +
-          IntToStr(Ping.Size) + ' bytes of data:');
+        memTCPIPResults.Lines.Add(LZTCommDiagPinging + ' ' + Ping.HostIP + ' ' + LZTCommDiagWith + ' ' +
+          IntToStr(Ping.Size) + ' ' + LZTCommDiagBytesOfData);
       end
       else
       begin
         // if name is resolved then show hostname and IP address
-        memTCPIPResults.Lines.Add('Pinging ' + Ping.HostName + ' [' +
-          Ping.HostIP + '] ' + ' with ' + IntToStr(Ping.Size) + ' bytes of data:');
+        memTCPIPResults.Lines.Add(LZTCommDiagPinging + ' ' + Ping.HostName + ' [' +
+          Ping.HostIP + '] ' + ' ' + LZTCommDiagWith + ' ' + IntToStr(Ping.Size) + ' ' + LZTCommDiagBytesOfData);
       end;
       memTCPIPResults.Lines.Add('');
 
@@ -597,8 +598,8 @@ begin
             // if no error then show reply
             if Ping.LastError = 0 then
             begin
-              Add('Reply from ' + Ping.HostIP + ': ' + 'bytes=' +
-                IntToStr(Ping.Size) + ' time=' + IntToStr(Ping.RTTReply) +
+              Add(LZTCommDiagReplyFrom + ' ' + Ping.HostIP + ': ' + LZTCommDiagBytes + '=' +
+                IntToStr(Ping.Size) + ' ' + LZTCommDiagTime + '=' + IntToStr(Ping.RTTReply) +
                 'ms ' + 'TTL=' + IntToStr(Ping.TTLReply));
             end;
           end
@@ -621,17 +622,17 @@ begin
       with memTCPIPResults.Lines do
       begin
         Add('');
-        Add('Ping statistics for ' + Ping.HostIP + ':');
-        Add('    Packets: Send = ' + IntToStr(iPackets) + ', Received = ' +
-          IntToStr(iSuccesses) + ', Lost = ' + IntToStr(iPackets-iSuccesses) +
+        Add(LZTCommDiagPingStat + ' ' + Ping.HostIP + ':');
+        Add('    ' + LZTCommDiagPacketsSend + ' = ' + IntToStr(iPackets) + ', ' + LZTCommDiagPacketsReceived + ' = ' +
+          IntToStr(iSuccesses) + ', ' + LZTCommDiagLost + ' = ' + IntToStr(iPackets-iSuccesses) +
           ' (' + FloatToStr(fPacketLoss) + '%),');
-        Add('Approximate round trip times in milli-seconds:');
-        Add('    Minimum = ' + IntToStr(iMinRTT) + 'ms, Maximum = ' +
-          IntToStr(iMaxRTT) + 'ms, ' + 'Average = ' + IntToStr(iAvgRTT) + 'ms');
+        Add(LZTCommDiagApproxRoundTripTimes);
+        Add('    ' + LZTCommDiagMin + ' = ' + IntToStr(iMinRTT) + 'ms, ' + LZTCommDiagMax + ' = ' +
+          IntToStr(iMaxRTT) + 'ms, ' + LZTCommDiagAvg + ' = ' + IntToStr(iAvgRTT) + 'ms');
       end;
     end
     else                               // if host can't be resolved shot error message
-      memTCPIPResults.Lines.add('Unknown host ' + cbTCPIPServer.Text + '.');
+      memTCPIPResults.Lines.add(LZTCommDiagUnknow + ' ' + cbTCPIPServer.Text + '.');
   finally
     // deallocate memory
     Ping.Free;
@@ -710,27 +711,27 @@ begin
 
       // show database name
       lDBInfo.Database := lDatabase;
-      memDBResults.Lines.Add('Attempting to connect to:');
+      memDBResults.Lines.Add(LZTCommDiagAttemptConnect);
       memDBResults.Lines.Add(lDatabase.DatabaseName);
-      memDBResults.Lines.Add(Format('Version : %s', [lDBInfo.Version]));
+      memDBResults.Lines.Add(Format(LZTCommDiagVersion + ' %s', [lDBInfo.Version]));
       memDBResults.Lines.Add('');
 
       // test attach - if connected then attach was successful
       if lDatabase.TestConnected then
-        memDBResults.Lines.Add('Attaching    ... Passed!');
+        memDBResults.Lines.Add(LZTCommDiagAttachPassed);
 
       try
         // test detach - detach from database
         lDatabase.Connected:=False;
         // if not connected then detach was successful
         if not lDatabase.Connected then
-          memDBResults.Lines.Add('Detaching    ... Passed!');
+          memDBResults.Lines.Add(LZTCommDiagDetachPassed);
       except
         on E : EIBError do
         begin
           // if an error occurs while detaching then show message
-          memDBResults.Lines.Add('An InterBase error has occurred while detaching.');
-          memDBResults.Lines.Add('Error - ' + E.Message);
+          memDBResults.Lines.Add(LZTCommDiagErrorOccured + ' ' + LZTCommDiagDetaching + '.');
+          memDBResults.Lines.Add(LZTCommDiagError + E.Message);
           memDBResults.Lines.Add('');
           iSuccess:=False;             // set success flag to false
         end;
@@ -739,8 +740,8 @@ begin
       on E : EIBError do
       begin
         // if an error occurs while attaching then show message
-        memDBResults.Lines.Add('An InterBase error has occurred while attaching.');
-        memDBResults.Lines.Add('Error - ' + E.Message);
+        memDBResults.Lines.Add(LZTCommDiagErrorOccured + ' ' + LZTCommDiagAttaching + '.');
+        memDBResults.Lines.Add(LZTCommDiagError + E.Message);
         iSuccess:=False;               // set success flag to false
       end;
     end;
@@ -750,10 +751,10 @@ begin
       if iSuccess then                 // show appropriate message
       begin                            // depending on Success flag
         Add('');
-        Add('InterBase Communication Test Passed!');
+        Add(LZTCommDiagCommTest + ' ' + LZTCommDiagPassed);
       end
       else
-        Add('InterBase Communication Test Failed!');
+        Add(LZTCommDiagCommTest + ' ' + LZTCommDiagFailed);
     end;
     // deallocate memory
     lDatabase.Free;
@@ -814,8 +815,8 @@ begin
 
     with memTCPIPResults.Lines do
     begin
-      Add('Attempting connection to ' + cbTCPIPServer.Text + '.');
-      Add('Socket for connection obtained.');
+      Add(LZTCommDiagAttempingConnection + ' ' + cbTCPIPServer.Text + '.');
+      Add(LZTCommDiagSocketConnectionObtained);
       Add('');
 
       // if port was resolved to a number then
@@ -825,10 +826,10 @@ begin
         lService:=Sock.PortName;       // get the port name
 
         if lService <> '' then
-          Add('Found service ''' + lService + ''' at port ''' + Port + '''')
+          Add(LZTCommDiagFoundService + ' ''' + lService + ''' ' + LZTCommDiagAtPort + ' ''' + Port + '''')
         else
-          Add('Could not resolve service ''' + lService +
-              ''' at port ''' + Port + '''');
+          Add(LZTCommDiagCouldNotResolveService + ' ''' + lService +
+              ''' ' + LZTCommDiagAtPort + ' ''' + Port + '''');
       end
       // otherwise manually resolve port name to a number
       // and set the port number
@@ -847,8 +848,8 @@ begin
         on E : Exception  do
         begin
           // otherwise some other error occured
-          Add('Failed to connect to host ''' + cbTCPIPServer.Text + ''',');
-          Add('on port ' + Port + '. Error Message: ' + E.Message + '.');
+          Add(LZTCommDiagFailedConnectHost + ' ''' + cbTCPIPServer.Text + ''',');
+          Add(LZTCommDiagOnPort + ' ' + Port + '. ' + LZTCommDiagErrorMessage + ' ' + E.Message + '.');
           iSuccess:=False;
         end;
       end;
@@ -856,8 +857,8 @@ begin
       // if the connectin is successful
       if Sock.Connected then
       begin
-        Add('Connection established to host ''' + cbTCPIPServer.Text + ''',');
-        Add('on port ' + Port + '.');
+        Add(LZTCommDiagConnectEstablishedToHost + ' ''' + cbTCPIPServer.Text + ''',');
+        Add(LZTCommDiagOnPort + ' ' + Port + '.');
         Sock.Disconnect;
       end;
     end;
@@ -866,9 +867,9 @@ begin
     begin
       Add('');
       if iSuccess then
-        Add('TCP/IP Communication Test Passed!')
+        Add(LZTCommDiagTCPIPCommTest + ' ' + LZTCommDiagPassed)
       else
-        Add('TCP/IP Communication Test Failed!');
+        Add(LZTCommDiagTCPIPCommTest + ' ' + LZTCommDiagFailed);
     end;
     // deallocate memory
     Sock.Free;
@@ -979,5 +980,29 @@ begin
   end else
    inherited;
 end;
+
+Procedure TfrmCommDiag.TranslateVisual;
+Begin
+  Self.Caption := LZTCommDiagFormTitle;
+  tabDBConnection.Caption := LZTCommDiagtabDBConnectionCaption;
+  btnTest.Caption:=LZTCommDiagbtnTestCaption;
+  btnCancel.Caption:=LZTCommDiagbtnCancelCaption;
+  tabTCPIP.Caption:=LZTCommDiagtabTCPIPCaption;
+  gbTCPIPServerInfo.Caption:=LZTCommDiaggbTCPIPServerInfoCaption;
+  lblWinsockServer.Caption:=LZTCommDiaglblWinsockServerCaption;
+  lblService.Caption:=LZTCommDiaglblServiceCaption;
+  lblWinSockResults.Caption:=LZTCommDiaglblWinSockResultsCaption;
+  lblDBResults.Caption:=LZTCommDiaglblWinSockResultsCaption;
+  gbDBServerInfo.Caption:=LZTCommDiaggbTCPIPServerInfoCaption;
+  rbLocalServer.Caption:=LZTCommDiagrbLocalServerCaption;
+  rbRemoteServer.Caption:=LZTCommDiagrbRemoteServerCaption;
+  lblServerName.Caption:=LZTCommDiaglblServerNameCaption;
+  lblProtocol.Caption:=LZTCommDiaglblProtocolCaption;
+  gbDatabaseInfo.Caption:=LZTCommDiaggbDatabaseInfoCaption;
+  lblDatabase.Caption:=LZTCommDiaglblDatabaseCaption;
+  lblUsername.Caption:=LZTCommDiaglblUsernameCaption;
+  lblPassword.Caption:=LZTCommDiaglblPasswordCaption;
+
+End;
 
 end.

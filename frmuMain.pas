@@ -2774,7 +2774,7 @@ end;
 
 procedure TfrmMain.HelpAboutExecute(Sender: TObject);
 begin
-  frmuAbout.ShowAboutDialog('Firebird Management Studio', APP_VERSION);
+  frmuAbout.ShowAboutDialog();
 end;
 
 procedure TfrmMain.BackupRestoreModifyAliasExecute(Sender: TObject);

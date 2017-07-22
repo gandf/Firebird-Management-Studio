@@ -36,10 +36,10 @@ unit frmuAbout;
 
 interface
 
-uses LCLIntf, LCLType, LMessages, Classes, Forms, Controls, StdCtrls, Buttons,
+uses LCLIntf, LCLType, Classes, Forms, Controls, StdCtrls, Buttons,
   Windows,
   ExtCtrls, Graphics, frmuDlgClass, FileUtil, SynEdit,
-  SYSUtils, fileinfo, winpeimagereader, elfreader, machoreader;
+  SYSUtils, fileinfo, winpeimagereader, elfreader, machoreader, resstring;
 
 type
 
@@ -60,14 +60,15 @@ type
     procedure btnOKClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure stxhttpLinkClick(Sender: TObject);
-    procedure GetFileVersion(const Filename: String; out CompanyName, FileDescription, FileVersion,
-      InternalName, LegalCopyright, OriginalFilename, ProductName, ProductVersion: String);
+    procedure GetFileVersion(const Filename: String; out CompanyName, FileVersion,
+      LegalCopyright,  ProductName, ProductVersion: String);
+    Procedure TranslateVisual;override;
     { Private declarations }
   public
     { Public declarations }
   end;
 
-procedure ShowAboutDialog(ProductName, ProductVersion: string);
+procedure ShowAboutDialog();
 
 implementation
 
@@ -99,18 +100,67 @@ const
 * Revisions:
 *
 *****************************************************************}
-procedure ShowAboutDialog(ProductName, ProductVersion: string);
+procedure ShowAboutDialog();
 var
   frmAbout: TfrmAbout;
+  Build: String;
+  CompanyName,
+  FileVersion,
+  LegalCopyright,
+  ProductName,
+  ProductVersion: String;
+  tmpBuffer,
+  FPath: string;
+  VersionInfo: TOSVersionInfo;
 begin
   frmAbout := TfrmAbout.Create(Application.MainForm);
   with frmAbout do
   begin
-    // show name and version
-    if (ProductName <> '') and (ProductVersion <> '') then
+    { Get OS Version Information }
+    VersionInfo.dwOSVersionInfoSize := SizeOf(VersionInfo);
+    GetVersionEx(VersionInfo);
+
+    with VersionInfo do
     begin
-      Caption := Caption + ' ' + ProductName;
+    if dwPlatformID = VER_PLATFORM_WIN32_NT then
+      begin
+        build := Format (BUILDSTR, [LoWord(dwBuildNumber), szCSDVersion]);
+        stxWindowsVersion.Caption := Format('%s %d.%d (%s)', [PLATFORM_NT, dwMajorVersion, dwMinorVersion, Build]);
+      end
+      else
+        stxWindowsVersion.Caption := Format('%s', [PLATFORM_W9X]);
     end;
+
+    { Get the version information for Firebird Management Studio }
+    FPath := Application.ExeName;
+    GetFileVersion(FPath, CompanyName, FileVersion, LegalCopyright, ProductName, ProductVersion);
+    Caption := LZTAboutFormTitle + ' ' + ProductName + ' ' + ProductVersion;
+    stxFbMStudioVer.Caption := LZTAboutFbMStudioVer + ' ' + ProductVersion;
+    stxCopyright.Caption := LegalCopyright;
+
+    //Get file version information for fbclient.dll or GDS32.DLL
+    // Get the gds32.dll path
+    SetLength(tmpBuffer, MAX_PATH);
+    GetSystemDirectory(PChar(tmpBuffer), MAX_PATH);
+    tmpBuffer := tmpBuffer.Remove(tmpBuffer.IndexOf(Char(0)));
+    FPath := tmpBuffer + '\fbclient.dll';
+
+    // Check to see if it exists
+    if FileExists(FPath) then
+    begin
+      GetFileVersion(FPath, CompanyName, FileVersion, LegalCopyright, ProductName, ProductVersion);
+      stxFirebirdVer.Caption := LZTAboutFirebirdVer + ' ' + ProductVersion;
+    end
+    else
+    begin
+      FPath := tmpBuffer + '\gds32.dll';
+      if FileExists(FPath) then
+      begin
+        GetFileVersion(FPath, CompanyName, FileVersion, LegalCopyright, ProductName, ProductVersion);
+        stxFirebirdVer.Caption := LZTAboutInterbase + ' ' + ProductVersion;
+      end;
+    end;
+
     ShowModal;
     Free;
   end;
@@ -122,71 +172,12 @@ begin
 end;
 
 procedure TfrmAbout.FormShow(Sender: TObject);
-var
-//  VersionInfo : TOsVersionInfo;
-  Build: String;
-  CompanyName,
-  FileDescription,
-  FileVersion,
-  InternalName,
-  LegalCopyright,
-  OriginalFilename,
-  ProductName,
-  ProductVersion: String;
-  tmpBuffer,
-  FPath: string;
-  VersionInfo: TOSVersionInfo;
 begin
   inherited;
-  { Get OS Version Information }
-  VersionInfo.dwOSVersionInfoSize := SizeOf(VersionInfo);
-  GetVersionEx(VersionInfo);
-
-  with VersionInfo do
-  begin
-  if dwPlatformID = VER_PLATFORM_WIN32_NT then
-    begin
-      build := Format (BUILDSTR, [LoWord(dwBuildNumber), szCSDVersion]);
-      stxWindowsVersion.Caption := Format('%s %d.%d (%s)', [PLATFORM_NT, dwMajorVersion, dwMinorVersion, Build]);
-    end
-    else
-      stxWindowsVersion.Caption := Format('%s', [PLATFORM_W9X]);
-  end;
-
-  { Get the version information for Firebird Management Studio }
-  FPath := Application.ExeName;
-  GetFileVersion(FPath, CompanyName, FileDescription, FileVersion, InternalName,
-    LegalCopyright, OriginalFilename, ProductName, ProductVersion);
-  stxFbMStudioVer.Caption := 'Version: ' + ProductVersion;
-
-  //Get file version information for fbclient.dll or GDS32.DLL
-  // Get the gds32.dll path
-  SetLength(tmpBuffer, MAX_PATH);
-  GetSystemDirectory(PChar(tmpBuffer), MAX_PATH);
-  tmpBuffer := tmpBuffer.Remove(tmpBuffer.IndexOf(Char(0)));
-  FPath := tmpBuffer + '\fbclient.dll';
-
-  // Check to see if it exists
-  if FileExists(FPath) then
-  begin
-    GetFileVersion(FPath, CompanyName, FileDescription, FileVersion, InternalName,
-      LegalCopyright, OriginalFilename, ProductName, ProductVersion);
-    stxFirebirdVer.Caption := 'Firebird Version: ' + ProductVersion;
-  end
-  else
-  begin
-    FPath := tmpBuffer + '\gds32.dll';
-    if FileExists(FPath) then
-    begin
-      GetFileVersion(FPath, CompanyName, FileDescription, FileVersion, InternalName,
-        LegalCopyright, OriginalFilename, ProductName, ProductVersion);
-      stxFirebirdVer.Caption := 'Interbase Version: ' + ProductVersion;
-    end;
-  end;
 end;
 
-procedure TfrmAbout.GetFileVersion(const Filename: String; out CompanyName, FileDescription,
-  FileVersion, InternalName, LegalCopyright, OriginalFilename, ProductName, ProductVersion: String);
+procedure TfrmAbout.GetFileVersion(const Filename: String; out CompanyName,
+  FileVersion, LegalCopyright, ProductName, ProductVersion: String);
   { Helper function to get the actual file version information }
 var
   FileVerInfo: TFileVersionInfo;
@@ -196,11 +187,8 @@ begin
   try
     FileVerInfo.ReadFileInfo;
     CompanyName := FileVerInfo.VersionStrings.Values['CompanyName'];
-    FileDescription := FileVerInfo.VersionStrings.Values['FileDescription'];
     FileVersion := FileVerInfo.VersionStrings.Values['FileVersion'];
-    InternalName := FileVerInfo.VersionStrings.Values['InternalName'];
     LegalCopyright := FileVerInfo.VersionStrings.Values['LegalCopyright'];
-    OriginalFilename := FileVerInfo.VersionStrings.Values['OriginalFilename'];
     ProductName := FileVerInfo.VersionStrings.Values['ProductName'];
     ProductVersion := FileVerInfo.VersionStrings.Values['ProductVersion'];
   finally
@@ -213,6 +201,12 @@ begin
   inherited;
    OpenDocument(PChar((Sender as TStaticText).Caption));
 end;
+
+Procedure TfrmAbout.TranslateVisual;
+Begin
+  Button1.Caption := LZTAboutButtonOkFiles;
+  Self.Caption := LZTToolPropertiesFormTitle;
+End;
 
 end.
 

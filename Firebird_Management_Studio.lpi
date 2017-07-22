@@ -24,9 +24,8 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <BuildNr Value="1"/>
-      <Language Value="040C"/>
       <Attributes pvaDebug="True" pvaPreRelease="True"/>
-      <StringTable CompanyName="flyonsoft" InternalName="Firebird Management Studio" OriginalFilename="Firebird_Management_Studio.exe" ProductName="Firebird Management Studio"/>
+      <StringTable CompanyName="flyonsoft" InternalName="Firebird Management Studio" LegalCopyright="Copyright © 2017 gandf" OriginalFilename="Firebird_Management_Studio.exe" ProductName="Firebird Management Studio"/>
     </VersionInfo>
     <MacroValues Count="1">
       <Macro1 Name="LCLWidgetType" Value="win32"/>
@@ -59,7 +58,7 @@
         <PackageName Value="lnetvisual"/>
       </Item4>
     </RequiredPackages>
-    <Units Count="45">
+    <Units Count="46">
       <Unit0>
         <Filename Value="Firebird_Management_Studio.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -345,6 +344,10 @@
         <Filename Value="zluUtility.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit44>
+      <Unit45>
+        <Filename Value="resstring.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit45>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

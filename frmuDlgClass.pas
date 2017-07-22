@@ -24,10 +24,11 @@ unit frmuDlgClass;
 interface
 
 uses
-  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, gettext, Translations;
 
 type
   TDialog = class(TForm)
+    Procedure TranslateVisual;virtual;
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure FormCreate(Sender: TObject);
@@ -47,6 +48,11 @@ implementation
 type
   TFontClass = class (TControl);  { needed to get at font property to scale }
 
+Procedure TDialog.TranslateVisual;
+Begin
+
+End;
+
 procedure TDialog.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -55,8 +61,14 @@ begin
 end;
 
 procedure TDialog.FormCreate(Sender: TObject);
+Var
+  lg, language : String;
 begin
   FErrorState := false;
+  GetLanguageIDs(lg,language);
+  Translations.TranslateUnitResourceStrings('resstring', '.\Lang\'+ChangeFileExt(ExtractFileName(Application.ExeName),
+  '')+'.%s.po', lg, language);
+  TranslateVisual;
 end;
 
 function TDialog.GetErrorState: boolean;
