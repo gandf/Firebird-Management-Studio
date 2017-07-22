@@ -1,35 +1,36 @@
 inherited frmAbout: TfrmAbout
   Left = 322
-  Height = 183
+  Height = 202
   Top = 244
-  Width = 417
+  Width = 405
   ActiveControl = Button1
   BorderIcons = []
   BorderStyle = bsSingle
-  Caption = 'About Firebird Management Studio'
-  ClientHeight = 183
-  ClientWidth = 417
+  Caption = 'About'
+  ClientHeight = 202
+  ClientWidth = 405
   Font.CharSet = ANSI_CHARSET
   Font.Color = clBlack
   Font.Height = -14
   OnShow = FormShow
   Position = poScreenCenter
   object Panel1: TPanel[0]
-    Left = 9
-    Height = 95
-    Top = 2
-    Width = 400
-    BevelInner = bvLowered
-    BevelOuter = bvLowered
-    ClientHeight = 95
-    ClientWidth = 400
+    Left = 0
+    Height = 90
+    Top = 0
+    Width = 405
+    Align = alTop
+    AutoSize = True
+    BevelOuter = bvNone
+    ClientHeight = 90
+    ClientWidth = 405
     TabOrder = 0
     object Image1: TImage
-      Left = 2
-      Height = 91
-      Top = 2
-      Width = 396
-      Align = alClient
+      Left = 0
+      Height = 90
+      Top = 0
+      Width = 405
+      Align = alTop
       AutoSize = True
       Picture.Data = {
         1754506F727461626C654E6574776F726B477261706869636015000089504E47
@@ -212,7 +213,7 @@ inherited frmAbout: TfrmAbout
   object stxAppVersion: TStaticText[1]
     Left = 26
     Height = 4
-    Top = 145
+    Top = 161
     Width = 4
     Font.CharSet = ANSI_CHARSET
     Font.Color = clRed
@@ -223,11 +224,11 @@ inherited frmAbout: TfrmAbout
     TabOrder = 1
   end
   object stxCopyright: TStaticText[2]
-    Left = 18
+    Left = 8
     Height = 17
-    Top = 128
-    Width = 178
-    Caption = 'Copyright © 2015 Gandf'
+    Top = 152
+    Width = 248
+    Caption = 'Copyright © 2017 gandf'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -237,9 +238,9 @@ inherited frmAbout: TfrmAbout
   end
   object stxhttpLink: TStaticText[3]
     Cursor = crHandPoint
-    Left = 274
+    Left = 264
     Height = 17
-    Top = 131
+    Top = 139
     Width = 120
     Caption = 'http://www.flyonsoft.com'
     Font.CharSet = ANSI_CHARSET
@@ -252,10 +253,10 @@ inherited frmAbout: TfrmAbout
     TabOrder = 3
   end
   object stxWindowsVersion: TStaticText[4]
-    Left = 18
+    Left = 8
     Height = 21
-    Top = 145
-    Width = 227
+    Top = 169
+    Width = 248
     Caption = 'Windows Version'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWindowText
@@ -265,9 +266,9 @@ inherited frmAbout: TfrmAbout
     TabOrder = 4
   end
   object Button1: TButton[5]
-    Left = 299
+    Left = 288
     Height = 25
-    Top = 150
+    Top = 168
     Width = 75
     Caption = 'OK'
     Default = True
@@ -279,12 +280,12 @@ inherited frmAbout: TfrmAbout
     ParentFont = False
     TabOrder = 5
   end
-  object stxIBConsoleVer: TStaticText[6]
-    Left = 18
+  object stxFbMStudioVer: TStaticText[6]
+    Left = 8
     Height = 17
-    Top = 112
-    Width = 225
-    Caption = 'stxIBConsoleVer'
+    Top = 120
+    Width = 248
+    Caption = 'stxFbMStudioVer'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -294,9 +295,9 @@ inherited frmAbout: TfrmAbout
   end
   object stxInterBase: TStaticText[7]
     Cursor = crHandPoint
-    Left = 274
+    Left = 264
     Height = 17
-    Top = 112
+    Top = 120
     Width = 128
     Caption = 'http://www.firebirdsql.org'
     Font.CharSet = ANSI_CHARSET
@@ -307,5 +308,35 @@ inherited frmAbout: TfrmAbout
     OnClick = stxhttpLinkClick
     ParentFont = False
     TabOrder = 7
+  end
+  object stxhttpLink1: TStaticText[8]
+    Cursor = crHandPoint
+    Left = 8
+    Height = 17
+    Top = 96
+    Width = 386
+    Alignment = taCenter
+    Caption = 'https://github.com/gandf/Firebird-Management-Studio'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsUnderline]
+    OnClick = stxhttpLinkClick
+    ParentFont = False
+    TabOrder = 8
+  end
+  object stxFirebirdVer: TStaticText[9]
+    Left = 8
+    Height = 17
+    Top = 136
+    Width = 248
+    Caption = 'stxFirebirdVer'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    ParentFont = False
+    TabOrder = 9
   end
 end

@@ -132,9 +132,9 @@ begin
       begin
         DisplayMsg(ERR_SERVER_LOGIN, E.Message);
         result := FAILURE;
-        if (E.IBErrorCode = isc_lost_db_connection) or
-           (E.IBErrorCode = isc_unavailable) or
-           (E.IBErrorCode = isc_network_error) then
+        if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+           (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+           (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
           frmMain.SetErrorState;
         Exit;
       end;
@@ -168,17 +168,14 @@ begin
           if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'Data Pages' then
             Include(lDBStatisticsOptions, DataPages)
           else
-            if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'Database Log' then
-              Include(lDBStatisticsOptions, DbLog)
+            if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'Header Page' then
+              Include(lDBStatisticsOptions, HeaderPages)
             else
-              if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'Header Page' then
-                Include(lDBStatisticsOptions, HeaderPages)
+              if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'Index Pages' then
+                Include(lDBStatisticsOptions, IndexPages)
               else
-                if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'Index Pages' then
-                  Include(lDBStatisticsOptions, IndexPages)
-                else
-                  if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'System Relations' then
-                    Include(lDBStatisticsOptions, SystemRelations);
+                if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'System Relations' then
+                  Include(lDBStatisticsOptions, SystemRelations);
 
           // assign validation options
           lDBStatistics.Options := lDBStatisticsOptions;
@@ -191,10 +188,10 @@ begin
           except
             on E: EIBError do
             begin
-              DisplayMsg(E.IBErrorCode, E.Message);
-              if (E.IBErrorCode = isc_lost_db_connection) or
-                 (E.IBErrorCode = isc_unavailable) or
-                 (E.IBErrorCode = isc_network_error) then
+              DisplayMsg(EIBInterBaseError(E).IBErrorCode, E.Message);
+              if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+                 (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+                 (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
                 frmMain.SetErrorState;
             end;
           end;

@@ -90,7 +90,7 @@ begin
     on E : EIBError do                 // if an exception occurs then trap it
     begin                              // and show error message
       Screen.Cursor := crDefault;      // change cursor to default
-      case E.IBErrorCode of
+      case EIBInterBaseError(E).IBErrorCode of
         isc_svcnotdef:
           raise Exception.Create ('Firebird Management Studio can not be used to administer pre-InterBase 6.0 servers');
         else

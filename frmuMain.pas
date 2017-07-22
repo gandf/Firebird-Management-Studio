@@ -26,7 +26,7 @@ interface
 uses LCLIntf, LCLType, LMessages, Classes, Graphics, Interfaces, Forms, Controls, Menus, Dialogs, StdCtrls,
   Buttons, ExtCtrls, ComCtrls, ImgList, ToolWin, Grids, DBGrids, DBCtrls,
   Registry, zluibcClasses, IBServices, IB, Messages, SysUtils,
-  RichBox, DB, IBHeader, sqldb,
+  SynEdit, DB, IBHeader, sqldb,
   IBDatabaseInfo, frmuDlgClass, ActnList, StdActns, wisql, frmuObjectWindow,
   IBExtract, zluPersistent,IBQuery,IBDatabase,IBCustomDataSet, IBSQL, Windows;
 
@@ -253,12 +253,6 @@ type
     procedure tvMainDblClick(Sender: TObject);
     procedure tvMainDeletion(Sender: TObject; Node: TTreeNode);
     procedure tvMainExpanding(Sender: TObject; Node: TTreeNode; var AllowExpansion: Boolean);
-    procedure mmiHeContentsClick(Sender: TObject);
-    procedure mmiHeOverviewClick(Sender: TObject);
-    procedure mmiHeUsingHelpClick(Sender: TObject);
-    procedure mmiHeInterBaseHelpClick(Sender: TObject);
-    function FormHelp(Command: Word; Data: Integer;
-      var CallHelp: Boolean): Boolean;
     procedure tvMainKeyPress(Sender: TObject; var Key: Char);
     procedure tvMainMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
@@ -1356,9 +1350,9 @@ begin
         on E:EIBError do
         begin
           DisplayMsg(ERR_GET_USERS, E.Message);
-          if (E.IBErrorCode = isc_lost_db_connection) or
-             (E.IBErrorCode = isc_unavailable) or
-             (E.IBErrorCode = isc_network_error) then
+          if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+             (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+             (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
             SetErrorState;
           exit;
         end;
@@ -2107,32 +2101,6 @@ begin
   tvMain.Refresh;
 end;
 
-procedure TfrmMain.mmiHeContentsClick(Sender: TObject);
-begin
-
-end;
-
-procedure TfrmMain.mmiHeOverviewClick(Sender: TObject);
-begin
-
-end;
-
-procedure TfrmMain.mmiHeUsingHelpClick(Sender: TObject);
-begin
-
-end;
-
-procedure TfrmMain.mmiHeInterBaseHelpClick(Sender: TObject);
-begin
-
-end;
-
-function TfrmMain.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-
-end;
-
 procedure TfrmMain.tvMainKeyPress(Sender: TObject; var Key: Char);
 begin
   case Ord(Key) of
@@ -2515,9 +2483,9 @@ begin
         on E:EIBError do               // trap it and show error message
         begin
           DisplayMsg(ERR_SERVER_LOGIN, E.Message);
-          if (E.IBErrorCode = isc_lost_db_connection) or
-             (E.IBErrorCode = isc_unavailable) or
-             (E.IBErrorCode = isc_network_error) then
+          if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+             (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+             (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
             SetErrorState;
           Exit;
         end;
@@ -2553,10 +2521,10 @@ begin
         except
           on E: EIBError do
           begin
-            DisplayMsg(E.IBErrorCode, E.Message);
-            if (E.IBErrorCode = isc_lost_db_connection) or
-               (E.IBErrorCode = isc_unavailable) or
-               (E.IBErrorCode = isc_network_error) then
+            DisplayMsg(EIBInterBaseError(E).IBErrorCode, E.Message);
+            if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+               (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+               (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
               SetErrorState;
         end;
       end;
@@ -2581,7 +2549,6 @@ begin
     if CheckTransactionStatus (true) then begin
       if Assigned(FCurrSelDatabase) and
          Assigned(FCurrSelDatabase.Database) and
-         Assigned(FCurrSelDatabase.Database.Handle) and
          (FCurrSelDatabase.Database.Connected) then begin
         Connect1Click(Sender);
       end else
@@ -2626,10 +2593,10 @@ begin
     except
       on E: EIBError do
       begin
-        DisplayMsg(E.IBErrorCode, E.Message);
-        if (E.IBErrorCode = isc_lost_db_connection) or
-           (E.IBErrorCode = isc_unavailable) or
-           (E.IBErrorCode = isc_network_error) then
+        DisplayMsg(EIBInterBaseError(E).IBErrorCode, E.Message);
+        if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+           (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+           (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
           SetErrorState;
     end;
     end;
@@ -2658,9 +2625,9 @@ begin
       on E:EIBError do                 // trap it and show
       begin                            // error message
         DisplayMsg(ERR_SERVER_LOGIN, E.Message);
-        if (E.IBErrorCode = isc_lost_db_connection) or
-           (E.IBErrorCode = isc_unavailable) or
-           (E.IBErrorCode = isc_network_error) then
+        if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+           (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+           (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
           SetErrorState;
         Exit;
       end;
@@ -3010,8 +2977,8 @@ end;
 
 procedure TfrmMain.EditFontExecute(Sender: TObject);
 begin
-//  if ActiveControl is TlzRichEdit then
-//    TlzRichEdit(ActiveControl).ChangeFont;
+//  if ActiveControl is TSynEdit then
+//    TSynEdit(ActiveControl).ChangeFont;
 end;
 
 procedure TfrmMain.DatabaseBackupExecute(Sender: TObject);
@@ -3168,9 +3135,7 @@ end;
 
 procedure TfrmMain.DatabaseConnectedActionsUpdate(Sender: TObject);
 begin
-  if Assigned(FCurrSelDatabase) and
-     Assigned (FCurrSelDatabase.Database) and  
-     Assigned (FCurrSelDatabase.Database.Handle) then
+  if Assigned(FCurrSelDatabase) then
     (Sender as TAction).Enabled := FCurrSelDatabase.Database.Connected
   else
     (Sender as TAction).Enabled := false;
@@ -3201,8 +3166,7 @@ end;
 procedure TfrmMain.DatabaseRegisterUpdate(Sender: TObject);
 begin
   if Assigned(FCurrSelDatabase) and
-     Assigned (FCurrSelDatabase.Database) and
-     Assigned (FCurrSelDatabase.Database.Handle) then
+     Assigned (FCurrSelDatabase.Database) then
     (Sender as TAction).Enabled := not FCurrSelDatabase.Database.Connected
   else
     (Sender as TAction).Enabled := false;
@@ -3238,6 +3202,7 @@ var
   role,
   CharacterSet:  String;
   lCnt: integer;
+  DPB: IDPB;
 begin
   if Assigned(FCurrSelServer) and (FCurrSelServer.Server.Active) then
   begin
@@ -3253,9 +3218,13 @@ begin
       Alias := Format('%s_%d',[Alias, lCnt]);
     end;
 
-    username := Database.DBParamByDPB[isc_dpb_user_name];
-    password := Database.DBParamByDPB[isc_dpb_password];
-    role := Database.DBParamByDPB[isc_dpb_sql_role_name];
+    DPB := GenerateDPB(Database.Params);
+    //username := Database.DBParamByDPB[isc_dpb_user_name];
+    //password := Database.DBParamByDPB[isc_dpb_password];
+    //role := Database.DBParamByDPB[isc_dpb_sql_role_name];
+    username := DPB.Find(isc_dpb_user_name).AsString;
+    password := DPB.Find(isc_dpb_password).AsString;
+    role := DPB.Find(isc_dpb_sql_role_name).AsString;
 
     if FCurrSelServer.Server.Protocol = Local then
       if ExtractFilePath(Database.DatabaseName) = '' then
@@ -3459,8 +3428,7 @@ end;
 procedure TfrmMain.BackupRestoreUpdate(Sender: TObject);
 begin
   if Assigned (FCurrSelDatabase) and
-     Assigned (FCurrSelDatabase.Database) and
-     Assigned (FCurrSelDatabase.Database.Handle) then
+     Assigned (FCurrSelDatabase.Database) then
     (Sender as TAction).Enabled := FcurrSelDatabase.Database.Connected
   else
     (Sender as TAction).Enabled := false;
@@ -3513,7 +3481,7 @@ end;
 
 procedure TfrmMain.EditFontUpdate(Sender: TObject);
 begin
-  (Sender as TAction).Enabled := (ActiveControl is TlzRichEdit);
+  (Sender as TAction).Enabled := (ActiveControl is TSynEdit);
 end;
 
 
@@ -3568,8 +3536,7 @@ end;
 procedure TfrmMain.DatabaseValidateUpdate(Sender: TObject);
 begin
   if Assigned (FCurrSelDatabase) and
-     Assigned (FCurrSelDatabase.Database) and
-     not Assigned (FCurrSelDatabase.Database.Handle) then
+     Assigned (FCurrSelDatabase.Database) then
     (Sender as TAction).Enabled := not FCurrSeldatabase.Database.connected
   else
     (Sender as TAction).Enabled := false;
@@ -3987,10 +3954,10 @@ begin
       except
         on E: EIBError do
         begin
-            DisplayMsg(E.IBErrorCode, E.Message);
-          if (E.IBErrorCode = isc_lost_db_connection) or
-             (E.IBErrorCode = isc_unavailable) or
-             (E.IBErrorCode = isc_network_error) then
+            DisplayMsg(EIBInterBaseError(E).IBErrorCode, E.Message);
+          if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+             (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+             (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
             SetErrorState;
           exit;
       end;
@@ -4021,8 +3988,7 @@ end;
 procedure TfrmMain.DatabaseShutdownUpdate(Sender: TObject);
 begin
   if Assigned(FCurrSelDatabase) and
-     Assigned (FCurrSelDatabase.Database) and
-     Assigned (FCurrSelDatabase.Database.Handle) then
+     Assigned (FCurrSelDatabase.Database) then
     if UpperCase(FCurrSelServer.UserName) = 'SYSDBA' then
       (Sender as TAction).Enabled := FCurrSelDatabase.Database.Connected
     else
@@ -4048,7 +4014,6 @@ begin
     if CheckTransactionStatus (true) then begin
       if Assigned(FCurrSelDatabase) and
          Assigned(FCurrSelDatabase.Database) and
-         Assigned(FCurrSelDatabase.Database.Handle) and
          (FCurrSelDatabase.Database.Connected) then begin
          Newconnection1Click(Sender);
       end else

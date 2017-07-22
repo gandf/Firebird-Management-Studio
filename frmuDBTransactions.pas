@@ -193,10 +193,10 @@ begin
   except
     on E: EIBError do
     begin
-      DisplayMsg(E.IBErrorCode, E.Message);
-      if (E.IBErrorCode = isc_lost_db_connection) or
-         (E.IBErrorCode = isc_unavailable) or
-         (E.IBErrorCode = isc_network_error) then
+      DisplayMsg(EIBInterBaseError(E).IBErrorCode, E.Message);
+      if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+         (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+         (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
         frmMain.SetErrorState;
       SetErrorState;
       Exit;
@@ -394,10 +394,10 @@ begin
   except
     on E:EIBError do
     begin
-      DisplayMsg(E.IBErrorCode, E.Message);
-      if (E.IBErrorCode = isc_lost_db_connection) or
-         (E.IBErrorCode = isc_unavailable) or
-         (E.IBErrorCode = isc_network_error) then
+      DisplayMsg(EIBInterBaseError(E).IBErrorCode, E.Message);
+      if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+         (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+         (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
       begin
         frmMain.SetErrorState;
         SetErrorState;

@@ -27,7 +27,7 @@ uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Interfaces, Forms, Dialogs,
   StdCtrls, ToolWin, ComCtrls, ImgList, Buttons, Grids, DBGrids,
   ActnList, Db, ExtCtrls, IBDatabase, IBCustomDataSet, dbctrls,
-  IBTable, RichBox, CommCtrl;
+  IBTable, SynEdit, CommCtrl;
 
 type
   TTblData = class
@@ -80,7 +80,7 @@ type
     objControl: TPageControl;
     tabDomains: TTabSheet;
     Label5: TLabel;
-    reConstraint: TlzRichEdit;
+    reConstraint: TSynEdit;
     tabTables: TTabSheet;
     ToolBar2: TToolBar;
     tbCols: TToolButton;
@@ -97,13 +97,13 @@ type
     ShowReferentialConstraints: TAction;
     tbRef: TToolButton;
     lvTableObjects: TListView;
-    reTriggerSource: TlzRichEdit;
+    reTriggerSource: TSynEdit;
     tabProcedures: TTabSheet;
     tabFunctions: TTabSheet;
     tabExceptions: TTabSheet;
     tabGenerators: TTabSheet;
     Splitter2: TSplitter;
-    reProcSource: TlzRichEdit;
+    reProcSource: TSynEdit;
     lvParams: TListView;
     lvFuncView: TListView;
     tabFilters: TTabSheet;
@@ -130,7 +130,7 @@ type
     edReturnVal: TEdit;
     edEntrypoint: TEdit;
     edModName: TEdit;
-    reMetadata: TlzRichEdit;
+    reMetadata: TSynEdit;
     lvDomains: TListView;
     lblFileName: TLabel;
     SplitterWnd: TSplitter;

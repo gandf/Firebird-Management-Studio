@@ -25,7 +25,7 @@ interface
 
 uses
   Classes, LCLIntf, LCLType, LMessages, SysUtils, Dialogs, Forms, Messages, Controls,
-  IBDatabase, IBCustomDataSet, IBDatabaseInfo;
+  IBDatabase, IBCustomDataSet, IBDatabaseInfo, IB;
 
 type
   TISQLExceptionCode = (eeInitialization, eeInvDialect, eeFOpen, eeParse,
@@ -768,7 +768,7 @@ begin
       (* If the database was already assigned and attached to,
        * then create the components for the database
        *)
-      if Assigned(Database.Handle) then
+      if Database.Connected then
       begin
   //      QryTransaction := Database.Transactions[FDefaultTransIDX];
         DDLTransaction := Database.Transactions[FDDLTransIDX];
@@ -1138,7 +1138,7 @@ begin
           TmpTransaction.Commit;
         end;
 
-        case TmpQuery.SQLType of
+        case TmpQuery.SQLStatementType of
           SQLCommit:
           begin
             try

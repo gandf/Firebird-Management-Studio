@@ -318,13 +318,14 @@ end;
 
 destructor TibcDatabaseNode.Destroy();
 begin
-  if Assigned (FDatabase) and Assigned(FDatabase.Handle) then
+  if Assigned (FDatabase) then
   begin
-    try
-      FDatabase.Connected := false;
-    except on E: Exception do
-      FDatabase.Free;
-    end;
+    if (FDatabase.Connected = true) then
+      try
+        FDatabase.Connected := false;
+      except on E: Exception do
+        FDatabase.Free;
+      end;
   end;
   FSQLBuffer.Free;
   FDatabaseFiles.Free;

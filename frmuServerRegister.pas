@@ -41,7 +41,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, IBServices, frmuDlgClass;
+  StdCtrls, ExtCtrls, IBServices, frmuDlgClass, IB;
 
 type
   TfrmServerRegister = class(TDialog)

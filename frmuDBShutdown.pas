@@ -161,9 +161,9 @@ begin
         begin                          // error message
           DisplayMsg(ERR_SERVER_LOGIN, E.Message);
           result := FAILURE;           // set result as false
-          if (E.IBErrorCode = isc_lost_db_connection) or
-             (E.IBErrorCode = isc_unavailable) or
-             (E.IBErrorCode = isc_network_error) then
+          if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+             (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+             (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
             frmMain.SetErrorState;
           Exit;
         end;
@@ -236,9 +236,9 @@ begin
           begin
             DisplayMsg(ERR_DB_SHUTDOWN, E.Message);
             Result := Failure;
-            if (E.IBErrorCode = isc_lost_db_connection) or
-               (E.IBErrorCode = isc_unavailable) or
-               (E.IBErrorCode = isc_network_error) then
+            if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+               (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+               (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
               frmMain.SetErrorState;
             Exit;
           end

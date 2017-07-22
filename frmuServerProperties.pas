@@ -455,14 +455,14 @@ begin
         FAssignedServer.Server.FetchVersionInfo;
       except
         on E:EIBError do
-          if E.IBErrorCode = isc_insufficient_svc_privileges then
+          if EIBInterBaseError(E).IBErrorCode = isc_insufficient_svc_privileges then
             FAssignedServer.Server.Active := true
           else
           begin
             DisplayMsg(ERR_SERVER_SERVICE,E.Message);
-            if (E.IBErrorCode = isc_lost_db_connection) or
-               (E.IBErrorCode = isc_unavailable) or
-               (E.IBErrorCode = isc_network_error) then
+            if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+               (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+               (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
               frmMain.SetErrorState;
             SetErrorState;
             exit;
@@ -475,9 +475,9 @@ begin
     on E:EIBError do
     begin
       DisplayMsg(ERR_SERVER_SERVICE,E.Message);
-      if (E.IBErrorCode = isc_lost_db_connection) or
-         (E.IBErrorCode = isc_unavailable) or
-         (E.IBErrorCode = isc_network_error) then
+      if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+         (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+         (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
         frmMain.SetErrorState;
       SetErrorState;
       exit;

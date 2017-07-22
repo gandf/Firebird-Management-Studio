@@ -19,7 +19,6 @@ object frmMain: TfrmMain
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  OnHelp = FormHelp
   OnResize = FormResize
   OnShow = FormShow
   Position = poDefault

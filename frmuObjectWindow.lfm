@@ -109,7 +109,7 @@ object frmObjectView: TfrmObjectView
             ParentColor = False
             Visible = False
           end
-          object reConstraint: TlzRichEdit
+          object reConstraint: TSynEdit
             Left = 0
             Height = 244
             Top = 127
@@ -219,7 +219,7 @@ object frmObjectView: TfrmObjectView
             TabOrder = 1
             ViewStyle = vsReport
           end
-          object reTriggerSource: TlzRichEdit
+          object reTriggerSource: TSynEdit
             Left = 0
             Height = 102
             Top = 246
@@ -253,7 +253,7 @@ object frmObjectView: TfrmObjectView
             Align = alTop
             ResizeAnchor = akTop
           end
-          object reProcSource: TlzRichEdit
+          object reProcSource: TSynEdit
             Left = 0
             Height = 201
             Top = 147
@@ -537,7 +537,7 @@ object frmObjectView: TfrmObjectView
       ClientHeight = 0
       ClientWidth = 0
       ImageIndex = 1
-      object reMetadata: TlzRichEdit
+      object reMetadata: TSynEdit
         Left = 0
         Height = 352
         Top = 0

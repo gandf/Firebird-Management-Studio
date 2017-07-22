@@ -78,7 +78,7 @@ object frmTextViewer: TfrmTextViewer
       Action = EditCopy1
     end
   end
-  object reEditor: TlzRichEdit
+  object reEditor: TSynEdit
     Left = 0
     Top = 31
     Width = 632

@@ -14,8 +14,7 @@ uses
 
   frmuSplash, dmuMain, frmuMain,
 
-  Windows, win32int, RichBox, WSRichBoxFactory, WSRichBox,
-  Win32WSRichBox, Win32WSRichBoxFactory,
+  Windows, win32int,
 
   frmuAbout in 'frmuAbout.pas' {frmAbout},
   zluGlobal in 'zluGlobal.pas',
@@ -60,6 +59,7 @@ uses
 {$R *.res}
 
 begin
+  Application.Title:='Firebird Management Studio';
     { Create a mutex to make sure only 1 instance is running }
   CreateMutex (nil, false, 'fb_man_studio_mtx');
   if GetLastError() = ERROR_ALREADY_EXISTS then

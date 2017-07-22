@@ -36,24 +36,32 @@ unit frmuAbout;
 
 interface
 
-uses LCLIntf, LCLType, LMessages, Classes, Forms, Controls, StdCtrls,
-  Buttons, ExtCtrls, Graphics, frmuDlgClass, FileUtil, SYSUtils;
+uses LCLIntf, LCLType, LMessages, Classes, Forms, Controls, StdCtrls, Buttons,
+  Windows,
+  ExtCtrls, Graphics, frmuDlgClass, FileUtil, SynEdit,
+  SYSUtils, fileinfo, winpeimagereader, elfreader, machoreader;
 
 type
+
+  { TfrmAbout }
+
   TfrmAbout = class(TDialog)
     Panel1: TPanel;
     Image1: TImage;
     stxAppVersion: TStaticText;
     stxCopyright: TStaticText;
+    stxFirebirdVer: TStaticText;
     stxhttpLink: TStaticText;
+    stxhttpLink1: TStaticText;
     stxWindowsVersion: TStaticText;
     Button1: TButton;
-    stxIBConsoleVer: TStaticText;
+    stxFbMStudioVer: TStaticText;
     stxInterBase: TStaticText;
     procedure btnOKClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure stxhttpLinkClick(Sender: TObject);
-    procedure GetFileVersion (const Filename: String; out Major1, Major2, Minor1, Minor2: integer);
+    procedure GetFileVersion(const Filename: String; out CompanyName, FileDescription, FileVersion,
+      InternalName, LegalCopyright, OriginalFilename, ProductName, ProductVersion: String);
     { Private declarations }
   public
     { Public declarations }
@@ -63,7 +71,7 @@ procedure ShowAboutDialog(ProductName, ProductVersion: string);
 
 implementation
 
-uses zluGlobal; //, URLMon;
+uses zluGlobal;
 
 {$R *.lfm}
 
@@ -71,8 +79,6 @@ const
   BUILDSTR = 'Build %d %s';
   PLATFORM_W9x = 'Windows 9x';
   PLATFORM_NT  = 'Windows NT';
-  MEM_IN_USE = 'Memory in use %d%%';
-  IBCONSOLE = 'Firebird_Management_Studio.exe';
 
 {****************************************************************
 *
@@ -119,13 +125,21 @@ procedure TfrmAbout.FormShow(Sender: TObject);
 var
 //  VersionInfo : TOsVersionInfo;
   Build: String;
-  V1, V2, V3, V4: Integer;
+  CompanyName,
+  FileDescription,
+  FileVersion,
+  InternalName,
+  LegalCopyright,
+  OriginalFilename,
+  ProductName,
+  ProductVersion: String;
   tmpBuffer,
-  Path: string;
+  FPath: string;
+  VersionInfo: TOSVersionInfo;
 begin
   inherited;
   { Get OS Version Information }
-{  VersionInfo.dwOSVersionInfoSize := SizeOf(VersionInfo);
+  VersionInfo.dwOSVersionInfoSize := SizeOf(VersionInfo);
   GetVersionEx(VersionInfo);
 
   with VersionInfo do
@@ -137,65 +151,67 @@ begin
     end
     else
       stxWindowsVersion.Caption := Format('%s', [PLATFORM_W9X]);
-  end; }
+  end;
 
-  { Get the version information for IBConsole }
-  Path := Application.ExeName;
-  GetFileVersion(Path, V1, V2, V3, V4);
-  stxIBConsoleVer.Caption := Format('Version: %d.%d.%d.%d', [V1, V2, V3, V4]);
+  { Get the version information for Firebird Management Studio }
+  FPath := Application.ExeName;
+  GetFileVersion(FPath, CompanyName, FileDescription, FileVersion, InternalName,
+    LegalCopyright, OriginalFilename, ProductName, ProductVersion);
+  stxFbMStudioVer.Caption := 'Version: ' + ProductVersion;
 
-  { Get file version information for GDS32.DLL and IBSERVER.EXE
+  //Get file version information for fbclient.dll or GDS32.DLL
   // Get the gds32.dll path
   SetLength(tmpBuffer, MAX_PATH);
   GetSystemDirectory(PChar(tmpBuffer), MAX_PATH);
-  Path := tmpBuffer + '\gds32.dll';}
+  tmpBuffer := tmpBuffer.Remove(tmpBuffer.IndexOf(Char(0)));
+  FPath := tmpBuffer + '\fbclient.dll';
 
   // Check to see if it exists
-  if FileExistsUTF8(Path) { *Converted from FileExists* } then
+  if FileExists(FPath) then
   begin
-    GetFileVersion(Path, V1, V2, V3, V4);
-//    stxIBVer.Caption := Format('Version: %d.%d.%d.%d', [V1, V2, V3, V4]);
+    GetFileVersion(FPath, CompanyName, FileDescription, FileVersion, InternalName,
+      LegalCopyright, OriginalFilename, ProductName, ProductVersion);
+    stxFirebirdVer.Caption := 'Firebird Version: ' + ProductVersion;
+  end
+  else
+  begin
+    FPath := tmpBuffer + '\gds32.dll';
+    if FileExists(FPath) then
+    begin
+      GetFileVersion(FPath, CompanyName, FileDescription, FileVersion, InternalName,
+        LegalCopyright, OriginalFilename, ProductName, ProductVersion);
+      stxFirebirdVer.Caption := 'Interbase Version: ' + ProductVersion;
+    end;
   end;
 end;
 
-procedure TfrmAbout.GetFileVersion(const Filename: String; out Major1,
-  Major2, Minor1, Minor2: integer);
+procedure TfrmAbout.GetFileVersion(const Filename: String; out CompanyName, FileDescription,
+  FileVersion, InternalName, LegalCopyright, OriginalFilename, ProductName, ProductVersion: String);
   { Helper function to get the actual file version information }
 var
-  Info: Pointer;
-  InfoSize: DWORD;
-//  FileInfo: PVSFixedFileInfo;
-  FileInfoSize: DWORD;
-  Tmp: DWORD;
+  FileVerInfo: TFileVersionInfo;
 begin
-  // Get the size of the FileVersionInformatioin
-{InfoSize := GetFileVersionInfoSize(PChar(FileName), Tmp);
-  // If InfoSize = 0, then the file may not exist, or
-  // it may not have file version information in it.
-  if InfoSize = 0 then
-    raise Exception.Create('Can''t get file version information for '
-      + FileName);
-  // Allocate memory for the file version information
-  GetMem(Info, InfoSize);
+  FileVerInfo:=TFileVersionInfo.Create(nil);
+  FileVerInfo.FileName := Filename;
   try
-    // Get the information
-    GetFileVersionInfo(PChar(FileName), 0, InfoSize, Info);
-    // Query the information for the version
-    VerQueryValue(Info, '\', Pointer(FileInfo), FileInfoSize);
-    // Now fill in the version information
-    Major1 := FileInfo.dwFileVersionMS shr 16;
-    Major2 := FileInfo.dwFileVersionMS and $FFFF;
-    Minor1 := FileInfo.dwFileVersionLS shr 16;
-    Minor2 := FileInfo.dwFileVersionLS and $FFFF;
+    FileVerInfo.ReadFileInfo;
+    CompanyName := FileVerInfo.VersionStrings.Values['CompanyName'];
+    FileDescription := FileVerInfo.VersionStrings.Values['FileDescription'];
+    FileVersion := FileVerInfo.VersionStrings.Values['FileVersion'];
+    InternalName := FileVerInfo.VersionStrings.Values['InternalName'];
+    LegalCopyright := FileVerInfo.VersionStrings.Values['LegalCopyright'];
+    OriginalFilename := FileVerInfo.VersionStrings.Values['OriginalFilename'];
+    ProductName := FileVerInfo.VersionStrings.Values['ProductName'];
+    ProductVersion := FileVerInfo.VersionStrings.Values['ProductVersion'];
   finally
-    FreeMem(Info, FileInfoSize);
-  end;}
+    FileVerInfo.Free;
+  end;
 end;
 
 procedure TfrmAbout.stxhttpLinkClick(Sender: TObject);
 begin
   inherited;
-   OpenDocument(PChar((Sender as TStaticText).Caption)); { *Converted from ShellExecute* }
+   OpenDocument(PChar((Sender as TStaticText).Caption));
 end;
 
 end.

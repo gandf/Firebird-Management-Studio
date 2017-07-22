@@ -219,11 +219,11 @@ begin
       except
         on E:EIBError do
         begin
-          DisplayMsg(E.IBErrorCode, E.Message);
+          DisplayMsg(EIBInterBaseError(E).IBErrorCode, E.Message);
           Screen.Cursor := crDefault;
-          if (E.IBErrorCode = isc_lost_db_connection) or
-             (E.IBErrorCode = isc_unavailable) or
-             (E.IBErrorCode = isc_network_error) then
+          if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+             (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+             (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
             frmMain.SetErrorState;
           SetErrorState;
           Exit;
@@ -321,10 +321,10 @@ begin
         except
           on E: EIBError do
           begin
-            DisplayMsg(E.IBErrorCode, E.Message);
-            if (E.IBErrorCode = isc_lost_db_connection) or
-               (E.IBErrorCode = isc_unavailable) or
-               (E.IBErrorCode = isc_network_error) then
+            DisplayMsg(EIBInterBaseError(E).IBErrorCode, E.Message);
+            if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+               (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+               (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
               frmMain.SetErrorState;
             SetErrorState;
           end;
@@ -375,7 +375,7 @@ begin
       lSaveDialog.Options := [ofHideReadOnly,ofEnableSizing];
       if lSaveDialog.Execute then
       begin
-        if FileExistsUTF8(lSaveDialog.FileName) { *Converted from FileExists* } then
+        if FileExists(lSaveDialog.FileName) { *Converted from FileExists* } then
         begin
           if MessageDlg(Format('OK to overwrite %s', [lSaveDialog.FileName]),
               mtConfirmation, mbYesNoCancel, 0) <> idYes then

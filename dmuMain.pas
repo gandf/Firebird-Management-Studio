@@ -24,7 +24,7 @@ uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, IBCustomDataSet, IBQuery, IBDatabase, Db, IB, zluibcClasses,
   sqldb, IBTable, StdCtrls, IBHeader, IBServices, Grids, DBGrids, IBSQL,
-  IBDatabaseInfo, RichBox;
+  IBDatabaseInfo, SynEdit;
 
 type
   TdmMain = class(TDataModule)

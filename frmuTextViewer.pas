@@ -22,7 +22,7 @@ interface
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Interfaces, Dialogs,
   ComCtrls, ToolWin, StdCtrls, Menus, ImgList, Printers, IBServices, frmuDlgClass,
-  RichBox, StdActns, ActnList, FileUtil;
+  SynEdit, StdActns, ActnList, FileUtil;
 
 type
   TfrmTextViewer = class(TForm)
@@ -42,7 +42,7 @@ type
     sbSaveAs: TToolButton;
     stbStatusBar: TStatusBar;
     tlbStandard: TToolBar;
-    reEditor: TlzRichEdit;
+    reEditor: TSynEdit;
     TextViewActions: TActionList;
     EditCopy1: TEditCopy;
     EditCut1: TEditCut;
@@ -202,16 +202,16 @@ begin
     begin
       // if the specified file already exists the show overwrite message
       // if the user does not wish to overwrite the file then exit
-      if FileExistsUTF8(loSaveDialog.FileName) { *Converted from FileExists* } then
+      if FileExists(loSaveDialog.FileName) { *Converted from FileExists* } then
         if MessageDlg(Format('OK to overwrite %s', [loSaveDialog.FileName]),
           mtConfirmation, mbYesNoCancel, 0) <> idYes then Exit;
 
       // if the file doesn't exist of the user wishes to overwrite it then
       // save the contents of the richedit component to the specified file
-      reEditor.PlainText := true;
+      //reEditor.PlainText := true;
       reEditor.Lines.SaveToFile(loSaveDialog.FileName);
       SetFileName(loSaveDialog.FileName);
-      reEditor.PlainText := false;      
+      //reEditor.PlainText := false;      
       reEditor.Modified := False;      // set modified flag to false
     end;
   end
@@ -245,6 +245,7 @@ end;
 
 procedure TfrmTextViewer.EditFontExecute(Sender: TObject);
 begin
+  {
   FontDialog1.Font.Assign(reEditor.SelAttributes);
   if FontDialog1.Execute then
     if reEditor.SelLength > 0 then
@@ -253,11 +254,12 @@ begin
       reEditor.Font.Assign(FontDialog1.Font);
   reEditorEnter(Self);
   reEditor.SetFocus;
+  }
 end;
 
 procedure TfrmTextViewer.EditCut1Update(Sender: TObject);
 begin
-  (Sender as TAction).Enabled := (not reEditor.ReadOnly) and (reEditor.SelLength > 0);
+//  (Sender as TAction).Enabled := (not reEditor.ReadOnly) and (reEditor.SelLength > 0);
 end;
 
 procedure TfrmTextViewer.mnuFiPrintClick(Sender: TObject);
@@ -268,7 +270,7 @@ var
 begin
   {
   lPrintDialog := nil;
-  if ActiveControl is TlzRichEdit then
+  if ActiveControl is TSynEdit then
   begin
     try
       lPrintDialog := TCustomPrintDialog.Create(Self);
@@ -277,9 +279,9 @@ begin
         begin
           AssignPrn(lPrintText);
           Rewrite(lPrintText);
-          Printer.Canvas.Font := TlzRichEdit(ActiveControl).Font;
-          for lLine := 0 to TlzRichEdit(ActiveControl).Lines.Count - 1 do
-            Writeln(lPrintText, TlzRichEdit(ActiveControl).Lines[lLine]);
+          Printer.Canvas.Font := TSynEdit(ActiveControl).Font;
+          for lLine := 0 to TSynEdit(ActiveControl).Lines.Count - 1 do
+            Writeln(lPrintText, TSynEdit(ActiveControl).Lines[lLine]);
           CloseFile(lPrintText);
         end
         else
@@ -332,15 +334,16 @@ var
   FoundAt: LongInt;
   StartPos, ToEnd: Integer;
 begin
-  with ActiveControl as TlzRichEdit do
+  {
+  with ActiveControl as TSynEdit do
   begin
     if SelLength <> 0 then
       StartPos := SelStart + SelLength
     else
       StartPos := 0;
-
+       }
     { ToEnd is the length from StartPos to the end of the text in the rich edit control }
-
+   {
     ToEnd := Length(Text) - StartPos;
 
     FoundAt := FindText(FindDialog1.FindText, StartPos, ToEnd, [stMatchCase], false);
@@ -351,6 +354,7 @@ begin
       SelLength := Length(FindDialog1.FindText);
     end;
   end;
+  }
 end;
 
 end.

@@ -109,7 +109,8 @@ type
 implementation
 
 uses
-  IB, frmuMessage, zluGlobal, zluContextHelp, zluUtility, frmuMain, IBErrorCodes;
+  IB, frmuMessage, zluGlobal, zluContextHelp, zluUtility, frmuMain, IBErrorCodes,
+  FBMessages, FBParamBlock;
 
 {$R *.lfm}
 
@@ -162,9 +163,9 @@ begin
       begin                            // and show error message
         DisplayMsg(ERR_SERVER_LOGIN, E.Message);
         result := false;
-        if (E.IBErrorCode = isc_lost_db_connection) or
-           (E.IBErrorCode = isc_unavailable) or
-           (E.IBErrorCode = isc_network_error) then
+        if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+           (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+           (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
           frmMain.SetErrorState;
         Exit;
       end;
@@ -283,9 +284,9 @@ begin
             on E:EIBError do           // and show error message
             begin
               DisplayMsg(ERR_ADD_USER, E.Message);
-              if (E.IBErrorCode = isc_lost_db_connection) or
-                 (E.IBErrorCode = isc_unavailable) or
-                 (E.IBErrorCode = isc_network_error) then
+              if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+                 (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+                 (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
                 frmMain.SetErrorState;
               SetErrorState;
               Screen.Cursor := crDefault;    // change cursor back to default              
@@ -353,9 +354,9 @@ begin
             on E:EIBError do           // and show error message
             begin
               DisplayMsg(ERR_MODIFY_USER, E.Message);
-              if (E.IBErrorCode = isc_lost_db_connection) or
-                 (E.IBErrorCode = isc_unavailable) or
-                 (E.IBErrorCode = isc_network_error) then
+              if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+                 (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+                 (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
                 frmMain.SetErrorState;
               Screen.Cursor := crDefault;    // change cursor back to default
               SetErrorState;
@@ -476,9 +477,9 @@ begin
         on E:EIBError do               // and display an error message
         begin
           DisplayMsg(ERR_DELETE_USER, E.Message);
-          if (E.IBErrorCode = isc_lost_db_connection) or
-             (E.IBErrorCode = isc_unavailable) or
-             (E.IBErrorCode = isc_network_error) then
+          if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+             (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+             (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
             frmMain.SetErrorState;
           SetErrorState;
           Screen.Cursor := crDefault;    // change cursor back to default          
@@ -711,9 +712,9 @@ begin
       begin
         DisplayMsg(ERR_GET_USERS, E.Message);
         result := false;
-        if (E.IBErrorCode = isc_lost_db_connection) or
-           (E.IBErrorCode = isc_unavailable) or
-           (E.IBErrorCode = isc_network_error) then
+        if (EIBInterBaseError(E).IBErrorCode = isc_lost_db_connection) or
+           (EIBInterBaseError(E).IBErrorCode = isc_unavailable) or
+           (EIBInterBaseError(E).IBErrorCode = isc_network_error) then
           frmMain.SetErrorState;
         SetErrorState;
       end;

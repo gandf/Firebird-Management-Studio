@@ -41,7 +41,7 @@ interface
 
 uses
   SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls, Dialogs,
-  LCLIntf, LCLType, LMessages, zluibcClasses, Messages, frmuDlgClass;
+  LCLIntf, LCLType, LMessages, zluibcClasses, Messages, frmuDlgClass, IB;
 
 type
   TfrmDBRegister = class(TDialog)
@@ -140,7 +140,7 @@ begin
     frmDBRegister.stxServerName.Caption := SelServer.NodeName;
     frmDBRegister.FCurrSelServer := SelServer;
     // disable browse button if remote server
-    if SelServer.Server.Protocol <> Local then
+    if SelServer.Server.Protocol <> TProtocol(Local) then
       frmDBRegister.btnSelDBFile.Enabled := false;
     frmDBRegister.ShowModal;
     if frmDBRegister.ModalResult = mrOK then
@@ -149,7 +149,7 @@ begin
       DBAlias := frmDBRegister.edtDBAlias.Text;
 
       { Force a path for all databases if the current protocol is local }
-      if SelServer.Server.Protocol = Local then
+      if SelServer.Server.Protocol = TProtocol(Local) then
       begin
         if ExtractFilePath(frmDBRegister.edtDBFile.Text) = '' then
           frmDBRegister.edtDBFile.Text := ExtractFilePath(Application.ExeName)+

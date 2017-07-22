@@ -27,7 +27,7 @@ uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Interfaces, Forms, Dialogs,
   Menus, ComCtrls, ToolWin, ExtCtrls, StdCtrls, Grids, DBGrids,
   Db, ImgList, StdActns, ActnList, zluibcClasses, IB, IBDatabase, IBCustomDataSet,
-  zluSQL, MemoLists, FileUtil,RichBox;
+  zluSQL, MemoLists, FileUtil, SynEdit;
 
 type
 
@@ -44,7 +44,7 @@ type
     TabData: TTabSheet;
     dbgSQLResults: TDBGrid;
     TabResults: TTabSheet;
-    reSqlOutput: TlzRichEdit;
+    reSqlOutput: TSynEdit;
     splISQLHorizontal: TSplitter;
     GridSource: TDataSource;
     pmClientDialect: TPopupMenu;
@@ -72,7 +72,7 @@ type
     N5: TMenuItem;
     Connect1: TMenuItem;
     pnlEnterSQL: TPanel;
-    reSqlInput: TlzRichEdit;
+    reSqlInput: TSynEdit;
     stbISQL: TStatusBar;
     Print1: TMenuItem;
     Close1: TMenuItem;
@@ -257,7 +257,7 @@ implementation
 
 uses frmuMessage, zluGlobal, frmuSQLOptions, frmuDisplayBlob,
      frmuDispMemo, zluContextHelp, Printers, fileCtrl, zluUtility,
-     frmuMain, IBSQL, RichEdit, Math;
+     frmuMain, IBSQL, Math;
 
 const
   OBJECTNAME = '\ISQL';
@@ -320,13 +320,13 @@ begin
     lSaveDialog.Filter := 'SQL Files (*.sql)|*.SQL|Text files (*.txt)|*.TXT|All files (*.*)|*.*';
     if lSaveDialog.Execute then
     begin
-      if FileExistsUTF8(lSaveDialog.FileName) { *Converted from FileExists* } then
+      if FileExists(lSaveDialog.FileName) { *Converted from FileExists* } then
         if MessageDlg(Format('OK to overwrite %s', [lSaveDialog.FileName]),
           mtConfirmation, mbYesNoCancel, 0) <> idYes then Exit;
-      reSQLInput.PlainText := true;
+      //reSQLInput.PlainText := true;
       reSQLInput.Lines.SaveToFile(lSaveDialog.FileName);
       reSQLInput.Modified := false;
-      reSQLInput.PlainText := false;
+      //reSQLInput.PlainText := false;
     end;
   end
   finally
@@ -748,7 +748,7 @@ procedure TdlgWisql.cbServersChange(Sender: TObject);
 begin
   Disconnect1Click(Sender);
 
-  if not Assigned(FDatabase.Handle) then
+  if not FDatabase.Connected then
     if Assigned (OnServerConnect) then
       OnServerConnect ((Sender as TComboBox).Text);
 end;
@@ -779,7 +779,7 @@ end;
 
 procedure TdlgWisql.EditFindUpdate(Sender: TObject);
 begin
-  (Sender as TAction).Enabled := (ActiveControl is TlzRichEdit);
+  (Sender as TAction).Enabled := (ActiveControl is TSynEdit);
 end;
 
 procedure TdlgWisql.QueryUpdate(Sender: TObject);
@@ -898,7 +898,7 @@ end;
 
 procedure TdlgWisql.EditFontExecute(Sender: TObject);
 begin
-  FontDialog1.Font.Assign(reSqlInput.SelAttributes);
+{  FontDialog1.Font.Assign(reSqlInput.SelAttributes);
   if FontDialog1.Execute then
     if reSqlInput.SelLength > 0 then
       reSqlInput.SelAttributes.Assign(FontDialog1.Font)
@@ -906,6 +906,7 @@ begin
       reSqlInput.Font.Assign(FontDialog1.Font);
   UpdateCursor(Self);
   reSqlInput.SetFocus;
+  }
 end;
 
 procedure TdlgWisql.SetAutoDDL(const Value: boolean);
@@ -971,7 +972,7 @@ var
 begin
   {
   lPrintDialog := nil;
-  if ActiveControl is TlzRichEdit then
+  if ActiveControl is TSynEdit then
   begin
     try
       lPrintDialog := TCustomPrintDialog.Create(Self);
@@ -981,9 +982,9 @@ begin
           lTexte.LoadFromFile(lPrintText);
           PrintTStrings(lTexte);
           Rewrite(lPrintText);
-          Printer.Canvas.Font := (ActiveControl as TlzRichEdit).Font;
-          for lLine := 0 to (ActiveControl as TlzRichEdit).Lines.Count - 1 do
-            Writeln(lPrintText, (ActiveControl as TlzRichEdit).Lines[lLine]);
+          Printer.Canvas.Font := (ActiveControl as TSynEdit).Font;
+          for lLine := 0 to (ActiveControl as TSynEdit).Lines.Count - 1 do
+            Writeln(lPrintText, (ActiveControl as TSynEdit).Lines[lLine]);
           CloseFile(lPrintText);
         end;
       except on E: Exception do
@@ -1007,7 +1008,7 @@ begin
         FDatabase.DropDatabase;
     end;
 
-    if not Assigned(FDatabase.Handle) then
+    if not FDatabase.Connected then
     begin
       frmMain.UpdateWindowList(Caption, TObject(Self), true);
       UpdateConnectStatus(false);
@@ -1034,7 +1035,7 @@ begin
     if frmMain.ConnectAsDatabase(Self) then
     begin
       frmMain.UpdateWindowList(Caption, TObject(Self), true);
-      UpdateConnectStatus(Assigned(FDatabase.Handle));
+      UpdateConnectStatus(FDatabase.Connected);
       frmMain.UpdateWindowList(Caption, TObject(Self));
       FConnected := false;
     end;
@@ -1392,15 +1393,16 @@ var
   FoundAt: LongInt;
   StartPos, ToEnd: Integer;
 begin
-  with ActiveControl as TlzRichEdit do
+  {
+  with ActiveControl as TSynEdit do
   begin
     if SelLength <> 0 then
       StartPos := SelStart + SelLength
     else
       StartPos := 0;
-
+}
     { ToEnd is the length from StartPos to the end of the text in the rich edit control }
-
+{
     ToEnd := Length(Text) - StartPos;
 
     FoundAt := FindText(FindDialog1.FindText, StartPos, ToEnd, [stMatchCase], false);
@@ -1410,7 +1412,7 @@ begin
       SelStart := FoundAt;
       SelLength := Length(FindDialog1.FindText);
     end;
-  end;
+  end; }
 end;
 
 procedure TdlgWisql.mnuPrevPopup(Sender: TObject);
@@ -1538,7 +1540,7 @@ begin
     new_connection:=true;
     if ConnectAsDatabase(Self) then begin
       frmMain.UpdateWindowList(Caption, TObject(Self), true);
-      UpdateConnectStatus(Assigned(FDatabase.Handle));
+      UpdateConnectStatus(FDatabase.Connected);
       frmMain.UpdateWindowList(Caption, TObject(Self));
       FConnected := false;
     end;

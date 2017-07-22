@@ -26,7 +26,10 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, IBDatabase, IBDatabaseInfo,
-  IBSQL, IBUtils, IBHeader, IB, IBIntf;
+  IBSQL, IBUtils, IBHeader, IB, fbintf, FBClientAPI, FBMessages;
+
+const
+  IBLocalBufferLength = 512;
 
 type
   TExtractObjectTypes =
@@ -1265,10 +1268,10 @@ var
     _DatabaseInfoCommand: Char;
   begin
     _DatabaseInfoCommand := Char(DatabaseInfoCommand);
-    FDatabaseInfo.Call(isc_database_info(StatusVector, @FDatabase.Handle, 1, @_DatabaseInfoCommand,
+    {FDatabaseInfo.Call(isc_database_info(StatusVector, @FDatabase.Handle, 1, @_DatabaseInfoCommand,
                            IBLocalBufferLength, local_buffer), True);
     length := isc_vax_integer(@local_buffer[1], 2);
-    result := isc_vax_integer(@local_buffer[3], length);
+    result := isc_vax_integer(@local_buffer[3], length);}
   end;
 
 begin

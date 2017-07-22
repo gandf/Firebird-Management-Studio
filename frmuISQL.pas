@@ -59,7 +59,7 @@ type
     CoolBar1: TCoolBar;
     imgToolBarsDisabled: TImageList;
     imgToolBarsEnabled: TImageList;
-    reSQLInput: TlzRichEdit;
+    reSQLInput: TSynEdit;
     Splitter1: TSplitter;
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
@@ -95,8 +95,8 @@ type
   private
     { Private declarations }
     procedure SetModified(IsModified: Boolean; IsReadOnly: boolean; StatusBar: TStatusBar);
-    procedure UpdateCursorPos(Editor: TlzRichEdit; StatusBar: TStatusBar);
-    procedure OpenFile(var Editor: TlzRichEdit; const sFileName: string);
+    procedure UpdateCursorPos(Editor: TSynEdit; StatusBar: TStatusBar);
+    procedure OpenFile(var Editor: TSynEdit; const sFileName: string);
   public
     { Public declarations }
   end;
@@ -109,7 +109,7 @@ implementation
 {$R *.DFM}
 
 uses
-  zluSQL, RichEdit, frmuDBCreate;
+  zluSQL, SynEdit, frmuDBCreate;
 
 procedure TfrmISQL.Open1Click(Sender: TObject);
 var
@@ -182,7 +182,7 @@ begin
   end;
 end;
 
-procedure TfrmISQL.UpdateCursorPos(Editor: TlzRichEdit; StatusBar: TStatusBar);
+procedure TfrmISQL.UpdateCursorPos(Editor: TSynEdit; StatusBar: TStatusBar);
 var
   CharPos: TPoint;
 begin
@@ -205,7 +205,7 @@ begin
     StatusBar.Panels[1].Text := 'Read Only';
 end;
 
-procedure TfrmISQL.OpenFile(var Editor: TlzRichEdit;
+procedure TfrmISQL.OpenFile(var Editor: TSynEdit;
   const sFileName: string);
 begin
   try
