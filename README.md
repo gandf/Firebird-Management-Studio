@@ -6,3 +6,7 @@ I hope to migrate on open source solution help deployment of generic firebird to
 For now, project compile but fully work. Some code has been disabled to compile.
 
 Win32 EXE file are provided to test without compile for all people. Source and software are provided without any warranty.
+
+Components to install in Lazarus :
+ibx : https://www.mwasoftware.co.uk/ibx
+lnet : https://svn.freepascal.org/svn/fpcprojects/lnet/trunk/
