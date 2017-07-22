@@ -1,0 +1,150 @@
+object frmBackupAliasProperties: TfrmBackupAliasProperties
+  Left = 93
+  Top = 207
+  HelpContext = 1
+  BorderIcons = [biSystemMenu, biHelp]
+  BorderStyle = bsSingle
+  Caption = 'Backup Alias Properties'
+  ClientHeight = 404
+  ClientWidth = 405
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  HelpFile = '1'
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnHelp = FormHelp
+  OnShow = FormShow
+  PixelsPerInch = 96
+  object lblServerName: TLabel
+    Left = 15
+    Top = 15
+    Width = 53
+    Height = 16
+    AutoSize = False
+    Caption = 'Server:'
+  end
+  object lblAliasName: TLabel
+    Left = 15
+    Top = 59
+    Width = 97
+    Height = 23
+    AutoSize = False
+    Caption = '&Alias Name:'
+    FocusControl = edtAliasName
+  end
+  object bvlLine1: TBevel
+    Left = 15
+    Top = 42
+    Width = 378
+    Height = 8
+    Shape = bsTopLine
+  end
+  object lblDBServer: TLabel
+    Left = 15
+    Top = 258
+    Width = 193
+    Height = 24
+    AutoSize = False
+    Caption = 'Target Database &Server:'
+    FocusControl = cbDBServer
+  end
+  object lblDBAlias: TLabel
+    Left = 15
+    Top = 310
+    Width = 200
+    Height = 24
+    AutoSize = False
+    Caption = 'Target &Database Alias:'
+    FocusControl = cbDBAlias
+  end
+  object stxServerName: TStaticText
+    Left = 74
+    Top = 15
+    Width = 326
+    Height = 21
+    AutoSize = False
+    TabOrder = 0
+  end
+  object edtAliasName: TEdit
+    Left = 15
+    Top = 81
+    Width = 378
+    Height = 21
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    OnChange = edtAliasNameChange
+  end
+  object sgBackupFiles: TStringGrid
+    Left = 15
+    Top = 118
+    Width = 378
+    Height = 127
+    ColCount = 1
+    DefaultRowHeight = 18
+    FixedCols = 0
+    RowCount = 8
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goRowSizing, goColSizing, goEditing]
+    TabOrder = 2
+    OnKeyDown = sgBackupFilesKeyDown
+    OnSetEditText = sgBackupFilesSetEditText
+    ColWidths = (
+      356)
+  end
+  object cbDBServer: TComboBox
+    Left = 15
+    Top = 281
+    Width = 378
+    Height = 21
+    Style = csDropDownList
+    ItemHeight = 13
+    TabOrder = 3
+    OnChange = cbDBServerChange
+  end
+  object cbDBAlias: TComboBox
+    Left = 15
+    Top = 332
+    Width = 378
+    Height = 21
+    Style = csDropDownList
+    ItemHeight = 13
+    TabOrder = 4
+    OnChange = edtAliasNameChange
+  end
+  object btnApply: TButton
+    Left = 319
+    Top = 369
+    Width = 75
+    Height = 25
+    Caption = '&Apply'
+    Enabled = False
+    TabOrder = 5
+    OnClick = btnApplyClick
+  end
+  object btnOK: TButton
+    Left = 151
+    Top = 369
+    Width = 75
+    Height = 25
+    Caption = '&OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 6
+    OnClick = btnOKClick
+  end
+  object Button1: TButton
+    Left = 233
+    Top = 369
+    Width = 75
+    Height = 25
+    Cancel = True
+    Caption = '&Cancel'
+    ModalResult = 2
+    TabOrder = 7
+    OnClick = Button1Click
+  end
+end

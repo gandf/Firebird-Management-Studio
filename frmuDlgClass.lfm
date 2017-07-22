@@ -1,0 +1,21 @@
+object Dialog: TDialog
+  Left = 271
+  Top = 198
+  BorderIcons = [biSystemMenu, biHelp]
+  BorderStyle = bsDialog
+  Caption = 'Dialog'
+  ClientHeight = 90
+  ClientWidth = 104
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  KeyPreview = True
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  OnHelp = FormHelp
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+end

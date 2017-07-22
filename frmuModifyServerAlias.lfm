@@ -1,0 +1,150 @@
+inherited frmModifyServerAlias: TfrmModifyServerAlias
+  Left = 220
+  Height = 299
+  Top = 172
+  Width = 379
+  BorderIcons = [biSystemMenu]
+  Caption = 'Error Reading Alias'
+  ClientHeight = 299
+  ClientWidth = 379
+  Position = poScreenCenter
+  object Label1: TLabel[0]
+    Left = 10
+    Height = 13
+    Top = 89
+    Width = 56
+    Caption = '&Alias Name:'
+    FocusControl = edtAliasName
+    ParentColor = False
+  end
+  object Label2: TLabel[1]
+    Left = 10
+    Height = 13
+    Top = 128
+    Width = 65
+    Caption = '&Server Name:'
+    FocusControl = edtServerName
+    ParentColor = False
+  end
+  object Label3: TLabel[2]
+    Left = 10
+    Height = 13
+    Top = 167
+    Width = 51
+    Caption = '&Username:'
+    FocusControl = edtUsername
+    ParentColor = False
+  end
+  object Label4: TLabel[3]
+    Left = 10
+    Height = 13
+    Top = 207
+    Width = 42
+    Caption = '&Protocol:'
+    FocusControl = cbProtocol
+    ParentColor = False
+  end
+  object imgError: TImage[4]
+    Left = 0
+    Height = 36
+    Top = 0
+    Width = 36
+    AutoSize = True
+    Picture.Data = {
+      07544269746D617046030000424D460300000000000076000000280000002400
+      0000240000000100040000000000D00200000000000000000000100000001000
+      000000000000000080000080000000808000800000008000800080800000C0C0
+      C000808080000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+      FF00777777777777777777777777777777777777777777777777777777788888
+      8887777777777777777777777777777788888888888888777777777777777777
+      7777777881111111188888877777777777777777777778111999999991118888
+      8777777777777777777781999999999999991888887777777777777777711999
+      9999999999999118888777777777777777199999999999999999999188877777
+      7777777771999999999999999999999918887777777777777199999999999999
+      9999999918888777777777771999999F9999999999F999999188877777777771
+      999999FFF99999999FFF9999991887777777777199999FFFFF999999FFFFF999
+      9918887777777771999999FFFFF9999FFFFF999999188877777777199999999F
+      FFFF99FFFFF99999999188777777771999999999FFFFFFFFFF99999999918877
+      77777719999999999FFFFFFFF999999999918877777777199999999999FFFFFF
+      9999999999918877777777199999999999FFFFFF999999999991887777777719
+      999999999FFFFFFFF9999999999188777777771999999999FFFFFFFFFF999999
+      99918777777777199999999FFFFF99FFFFF999999991877777777771999999FF
+      FFF9999FFFFF9999991887777777777199999FFFFF999999FFFFF99999187777
+      77777771999999FFF99999999FFF999999177777777777771999999F99999999
+      99F9999991877777777777777199999999999999999999991877777777777777
+      7199999999999999999999991777777777777777771999999999999999999991
+      7777777777777777777119999999999999999117777777777777777777777199
+      9999999999991777777777777777777777777711199999999111777777777777
+      7777777777777777711111111777777777777777777777777777777777777777
+      7777777777777777777777777777777777777777777777777777777777777777
+      777777777777777777777777777777777777
+    }
+  end
+  object edtAliasName: TEdit[5]
+    Left = 98
+    Height = 21
+    Top = 79
+    Width = 218
+    Color = clInactiveCaptionText
+    Enabled = False
+    ReadOnly = True
+    TabStop = False
+    TabOrder = 0
+  end
+  object edtServerName: TEdit[6]
+    Left = 98
+    Height = 21
+    Top = 118
+    Width = 218
+    TabOrder = 1
+  end
+  object edtUsername: TEdit[7]
+    Left = 98
+    Height = 21
+    Top = 158
+    Width = 218
+    TabOrder = 2
+  end
+  object cbProtocol: TComboBox[8]
+    Left = 98
+    Height = 21
+    Top = 197
+    Width = 218
+    ItemHeight = 13
+    Items.Strings = (
+      'TCP/IP'
+      'NetBEUI'
+      'SPX'
+      'Local Server'
+    )
+    TabOrder = 3
+  end
+  object Button1: TButton[9]
+    Left = 63
+    Height = 25
+    Top = 246
+    Width = 75
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 4
+  end
+  object Button2: TButton[10]
+    Left = 181
+    Height = 25
+    Top = 246
+    Width = 75
+    Cancel = True
+    Caption = '&Delete'
+    ModalResult = 2
+    TabOrder = 5
+  end
+  object stMessage: TStaticText[11]
+    Left = 59
+    Height = 50
+    Top = 10
+    Width = 257
+    Caption = 'stMessage'
+    TabOrder = 6
+  end
+end

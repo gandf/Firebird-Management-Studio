@@ -1,0 +1,301 @@
+inherited frmCommDiag: TfrmCommDiag
+  Left = 218
+  Height = 463
+  Top = 124
+  Width = 350
+  BorderStyle = bsSingle
+  Caption = 'Communication Diagnostics'
+  ClientHeight = 463
+  ClientWidth = 350
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  Position = poScreenCenter
+  object pgcDiagnostics: TPageControl[0]
+    Left = 0
+    Height = 426
+    Top = 0
+    Width = 350
+    ActivePage = tabDBConnection
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object tabDBConnection: TTabSheet
+      Caption = 'DB Connection'
+      ClientHeight = 400
+      ClientWidth = 342
+      object lblDBResults: TLabel
+        Left = 6
+        Height = 13
+        Top = 240
+        Width = 38
+        Caption = '&Results:'
+        FocusControl = memDBResults
+        ParentColor = False
+      end
+      object memDBResults: TMemo
+        Left = 6
+        Height = 127
+        Top = 258
+        Width = 324
+        ReadOnly = True
+        ScrollBars = ssBoth
+        TabOrder = 2
+        WordWrap = False
+      end
+      object gbDatabaseInfo: TGroupBox
+        Left = 6
+        Height = 115
+        Top = 114
+        Width = 324
+        Caption = ' Database Information'
+        ClientHeight = 97
+        ClientWidth = 320
+        TabOrder = 1
+        object lblDatabase: TLabel
+          Left = 10
+          Height = 13
+          Top = 10
+          Width = 49
+          Caption = '&Database:'
+          FocusControl = edtDatabase
+          ParentColor = False
+        end
+        object lblUsername: TLabel
+          Left = 10
+          Height = 13
+          Top = 40
+          Width = 56
+          Caption = '&User Name:'
+          FocusControl = edtUsername
+          ParentColor = False
+        end
+        object lblPassword: TLabel
+          Left = 10
+          Height = 13
+          Top = 70
+          Width = 49
+          Caption = '&Password:'
+          FocusControl = edtPassword
+          ParentColor = False
+        end
+        object btnSelDB: TButton
+          Left = 269
+          Height = 21
+          Hint = 'Select database'
+          Top = 10
+          Width = 21
+          Caption = '...'
+          OnClick = btnSelDBClick
+          TabOrder = 1
+        end
+        object edtUsername: TEdit
+          Left = 89
+          Height = 21
+          Top = 40
+          Width = 199
+          MaxLength = 128
+          TabOrder = 2
+        end
+        object edtPassword: TEdit
+          Left = 89
+          Height = 21
+          Top = 70
+          Width = 199
+          EchoMode = emPassword
+          MaxLength = 32
+          PasswordChar = '*'
+          TabOrder = 3
+        end
+        object edtDatabase: TEdit
+          Left = 89
+          Height = 21
+          Top = 10
+          Width = 181
+          OnChange = edtDatabaseChange
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+        end
+      end
+      object gbDBServerInfo: TGroupBox
+        Left = 6
+        Height = 103
+        Top = 6
+        Width = 322
+        Caption = ' Server Information'
+        ClientHeight = 85
+        ClientWidth = 318
+        TabOrder = 0
+        object lblServerName: TLabel
+          Left = 10
+          Height = 13
+          Top = 34
+          Width = 65
+          Caption = '&Server Name:'
+          FocusControl = cbDBServer
+          ParentColor = False
+        end
+        object lblProtocol: TLabel
+          Left = 172
+          Height = 13
+          Top = 34
+          Width = 85
+          Caption = '&Network Protocol:'
+          FocusControl = cbProtocol
+          ParentColor = False
+        end
+        object cbProtocol: TComboBox
+          Left = 172
+          Height = 21
+          Top = 52
+          Width = 103
+          ItemHeight = 13
+          Items.Strings = (
+            'TCP/IP'
+            'NetBEUI'
+            'SPX'
+            'Local Server'
+          )
+          Style = csDropDownList
+          TabOrder = 3
+        end
+        object rbLocalServer: TRadioButton
+          Left = 34
+          Height = 19
+          Top = 10
+          Width = 80
+          Caption = '&Local Server'
+          OnClick = rbLocalServerClick
+          TabOrder = 0
+        end
+        object rbRemoteServer: TRadioButton
+          Left = 164
+          Height = 19
+          Top = 10
+          Width = 91
+          Caption = 'R&emote Server'
+          OnClick = rbRemoteServerClick
+          TabOrder = 1
+        end
+        object cbDBServer: TComboBox
+          Left = 11
+          Height = 21
+          Top = 52
+          Width = 145
+          ItemHeight = 13
+          OnClick = cbDBServerClick
+          TabOrder = 2
+        end
+      end
+    end
+    object tabTCPIP: TTabSheet
+      Caption = 'TCP/IP'
+      ClientHeight = 400
+      ClientWidth = 342
+      object lblWinSockResults: TLabel
+        Left = 6
+        Height = 13
+        Top = 90
+        Width = 61
+        AutoSize = False
+        Caption = '&Results:'
+        FocusControl = memTCPIPResults
+        ParentColor = False
+      end
+      object memTCPIPResults: TMemo
+        Left = 6
+        Height = 277
+        Top = 108
+        Width = 322
+        ReadOnly = True
+        ScrollBars = ssBoth
+        TabOrder = 1
+        WordWrap = False
+      end
+      object gbTCPIPServerInfo: TGroupBox
+        Left = 6
+        Height = 73
+        Top = 6
+        Width = 317
+        Caption = ' Server Information'
+        ClientHeight = 55
+        ClientWidth = 313
+        TabOrder = 0
+        object lblWinsockServer: TLabel
+          Left = 10
+          Height = 13
+          Top = 4
+          Width = 43
+          AutoSize = False
+          Caption = '&Host:'
+          FocusControl = cbTCPIPServer
+          ParentColor = False
+        end
+        object lblService: TLabel
+          Left = 218
+          Height = 13
+          Top = 4
+          Width = 67
+          AutoSize = False
+          Caption = '&Service:'
+          FocusControl = cbService
+          ParentColor = False
+        end
+        object cbService: TComboBox
+          Left = 218
+          Height = 21
+          Top = 22
+          Width = 79
+          ItemHeight = 13
+          Items.Strings = (
+            '21'
+            'ftp'
+            '3050'
+            'gds_db'
+            'ping'
+          )
+          Style = csDropDownList
+          TabOrder = 1
+        end
+        object cbTCPIPServer: TComboBox
+          Left = 10
+          Height = 21
+          Top = 23
+          Width = 175
+          ItemHeight = 13
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object pnlButtonBar: TPanel[1]
+    Left = 0
+    Height = 37
+    Top = 426
+    Width = 350
+    Align = alBottom
+    ClientHeight = 37
+    ClientWidth = 350
+    TabOrder = 1
+    object btnTest: TButton
+      Left = 181
+      Height = 25
+      Top = 4
+      Width = 75
+      Caption = '&Test'
+      Default = True
+      OnClick = btnTestClick
+      TabOrder = 0
+    end
+    object btnCancel: TButton
+      Left = 259
+      Height = 25
+      Top = 4
+      Width = 75
+      Caption = '&Cancel'
+      OnClick = btnCancelClick
+      TabOrder = 1
+    end
+  end
+end

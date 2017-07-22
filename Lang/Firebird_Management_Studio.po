@@ -1,0 +1,698 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tfrmmain.backuprestore1.caption
+msgctxt "tfrmmain.backuprestore1.caption"
+msgid "Backup / Restore"
+msgstr ""
+
+#: tfrmmain.backuprestore2.caption
+msgctxt "TFRMMAIN.BACKUPRESTORE2.CAPTION"
+msgid "Backup / Restore"
+msgstr ""
+
+#: tfrmmain.backuprestoremodifyalias.caption
+msgid "&Modify Backup Alias ..."
+msgstr ""
+
+#: tfrmmain.backuprestoremodifyalias.hint
+msgid "Modify an existing backup alias"
+msgstr ""
+
+#: tfrmmain.backuprestoreremovealias.caption
+msgid "&Delete Alias"
+msgstr ""
+
+#: tfrmmain.backuprestoreremovealias.hint
+msgid "Delete the current backup alias"
+msgstr ""
+
+#: tfrmmain.caption
+msgid "IBConsole"
+msgstr ""
+
+#: tfrmmain.connectas3.caption
+msgid "New connection..."
+msgstr ""
+
+#: tfrmmain.connectas3.hint
+msgctxt "tfrmmain.connectas3.hint"
+msgid "Interactive SQL"
+msgstr ""
+
+#: tfrmmain.console1.caption
+msgid "&Console"
+msgstr ""
+
+#: tfrmmain.consoleexit.caption
+msgid "E&xit"
+msgstr ""
+
+#: tfrmmain.consoleexit.hint
+msgid "Exit IBConsole"
+msgstr ""
+
+#: tfrmmain.database1.caption
+msgid "&Database"
+msgstr ""
+
+#: tfrmmain.databaseactionsproperties.caption
+msgid "Properties ..."
+msgstr ""
+
+#: tfrmmain.databaseactionsproperties.hint
+msgctxt "TFRMMAIN.DATABASEACTIONSPROPERTIES.HINT"
+msgid "Show database properties"
+msgstr ""
+
+#: tfrmmain.databasebackup.caption
+msgid "&Backup ..."
+msgstr ""
+
+#: tfrmmain.databasebackup.hint
+msgid "Back up an InterBase database"
+msgstr ""
+
+#: tfrmmain.databaseconnect.caption
+msgid "&Connect"
+msgstr ""
+
+#: tfrmmain.databaseconnect.hint
+msgid "Connect to the selected database"
+msgstr ""
+
+#: tfrmmain.databaseconnectas.caption
+msgid "Connect &As ..."
+msgstr ""
+
+#: tfrmmain.databaseconnectas.hint
+msgid "Connect to the selected database specifying a user"
+msgstr ""
+
+#: tfrmmain.databasecreate.caption
+msgid "C&reate Database ..."
+msgstr ""
+
+#: tfrmmain.databasecreate.hint
+msgid "Create a new database"
+msgstr ""
+
+#: tfrmmain.databasedisconnect.caption
+msgid "&Disconnect"
+msgstr ""
+
+#: tfrmmain.databasedisconnect.hint
+msgid "Disconnect from the current database"
+msgstr ""
+
+#: tfrmmain.databasedrop.caption
+msgid "Drop Database"
+msgstr ""
+
+#: tfrmmain.databasedrop.hint
+msgid "Drop the current database"
+msgstr ""
+
+#: tfrmmain.databasemetadata.caption
+msgid "View &Metadata ..."
+msgstr ""
+
+#: tfrmmain.databasemetadata.hint
+msgid "View Database Metadata"
+msgstr ""
+
+#: tfrmmain.databaseproperties.caption
+msgctxt "TFRMMAIN.DATABASEPROPERTIES.CAPTION"
+msgid "&Properties ..."
+msgstr ""
+
+#: tfrmmain.databaseproperties.hint
+msgctxt "tfrmmain.databaseproperties.hint"
+msgid "Show database properties"
+msgstr ""
+
+#: tfrmmain.databaserecovertrans.caption
+msgid "&Transaction Recovery ..."
+msgstr ""
+
+#: tfrmmain.databaserecovertrans.hint
+msgid "Recover limbo transactions"
+msgstr ""
+
+#: tfrmmain.databaseregister.caption
+msgctxt "TFRMMAIN.DATABASEREGISTER.CAPTION"
+msgid "&Register ..."
+msgstr ""
+
+#: tfrmmain.databaseregister.hint
+msgid "Register a new database"
+msgstr ""
+
+#: tfrmmain.databaserestart.caption
+msgid "Database &Restart"
+msgstr ""
+
+#: tfrmmain.databaserestart.hint
+msgid "Restart a database"
+msgstr ""
+
+#: tfrmmain.databaserestore.caption
+msgid "&Restore ..."
+msgstr ""
+
+#: tfrmmain.databaserestore.hint
+msgctxt "TFRMMAIN.DATABASERESTORE.HINT"
+msgid "Restore an InterBase database"
+msgstr ""
+
+#: tfrmmain.databaseshutdown.caption
+msgid "&Shutdown ..."
+msgstr ""
+
+#: tfrmmain.databaseshutdown.hint
+msgid "Shutdown the database"
+msgstr ""
+
+#: tfrmmain.databasestatistics.caption
+msgid "&Database Statistics ..."
+msgstr ""
+
+#: tfrmmain.databasestatistics.hint
+msgid "Display database statistics"
+msgstr ""
+
+#: tfrmmain.databasesweep.caption
+msgid "&Sweep"
+msgstr ""
+
+#: tfrmmain.databasesweep.hint
+msgid "Perform a database sweep"
+msgstr ""
+
+#: tfrmmain.databaseunregister.caption
+msgid "&Unregister"
+msgstr ""
+
+#: tfrmmain.databaseunregister.hint
+msgid "Unregister the current database"
+msgstr ""
+
+#: tfrmmain.databaseusers.caption
+msgid "Connected &Users ..."
+msgstr ""
+
+#: tfrmmain.databaseusers.hint
+msgid "View a list of users currently connected to the server"
+msgstr ""
+
+#: tfrmmain.databasevalidate.caption
+msgid "&Validation ..."
+msgstr ""
+
+#: tfrmmain.databasevalidate.hint
+msgid "Validate the database structure"
+msgstr ""
+
+#: tfrmmain.dbcbackup.caption
+msgid "Database Backup"
+msgstr ""
+
+#: tfrmmain.dbcbackup.hint
+msgid "Backup an InterBase database"
+msgstr ""
+
+#: tfrmmain.dbcrestore.caption
+msgid "Restore Database"
+msgstr ""
+
+#: tfrmmain.dbcrestore.hint
+msgctxt "tfrmmain.dbcrestore.hint"
+msgid "Restore an InterBase database"
+msgstr ""
+
+#: tfrmmain.editcopy.caption
+msgid "&Copy"
+msgstr ""
+
+#: tfrmmain.editcopy.hint
+msgid "Copy"
+msgstr ""
+
+#: tfrmmain.editcut.caption
+msgid "Cu&t"
+msgstr ""
+
+#: tfrmmain.editcut.hint
+msgid "Cut"
+msgstr ""
+
+#: tfrmmain.editfont.caption
+msgid "&Font ..."
+msgstr ""
+
+#: tfrmmain.editfont.hint
+msgid "Change the font"
+msgstr ""
+
+#: tfrmmain.editpaste.caption
+msgid "&Paste"
+msgstr ""
+
+#: tfrmmain.editpaste.hint
+msgid "Paste"
+msgstr ""
+
+#: tfrmmain.editselectall.caption
+msgid "Select &All"
+msgstr ""
+
+#: tfrmmain.editundo.caption
+msgid "&Undo"
+msgstr ""
+
+#: tfrmmain.exttooldropdown.caption
+msgid "&Tools"
+msgstr ""
+
+#: tfrmmain.exttoolsconfigure.caption
+msgid "&Configure Tools ..."
+msgstr ""
+
+#: tfrmmain.exttoolslaunchisql.caption
+msgid "Interactive S&QL ..."
+msgstr ""
+
+#: tfrmmain.exttoolslaunchisql.hint
+msgctxt "TFRMMAIN.EXTTOOLSLAUNCHISQL.HINT"
+msgid "Interactive SQL"
+msgstr ""
+
+#: tfrmmain.help1.caption
+msgid "&Help"
+msgstr ""
+
+#: tfrmmain.helpabout.caption
+msgid "&About ..."
+msgstr ""
+
+#: tfrmmain.helpcontents.caption
+msgid "&Contents"
+msgstr ""
+
+#: tfrmmain.helpinterbase.caption
+msgid "&InterBase Help"
+msgstr ""
+
+#: tfrmmain.helponhelp.caption
+msgid "&Help on Help"
+msgstr ""
+
+#: tfrmmain.helptopicsearch.caption
+msgid "&Topic Search"
+msgstr ""
+
+#: tfrmmain.maintenance1.caption
+msgctxt "TFRMMAIN.MAINTENANCE1.CAPTION"
+msgid "&Maintenance"
+msgstr ""
+
+#: tfrmmain.maintenance2.caption
+msgctxt "tfrmmain.maintenance2.caption"
+msgid "&Maintenance"
+msgstr ""
+
+#: tfrmmain.n01.caption
+msgctxt "TFRMMAIN.N01.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n1.caption
+msgctxt "TFRMMAIN.N1.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n10.caption
+msgctxt "TFRMMAIN.N10.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n11.caption
+msgctxt "TFRMMAIN.N11.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n12.caption
+msgctxt "TFRMMAIN.N12.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n13.caption
+msgctxt "TFRMMAIN.N13.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n14.caption
+msgctxt "TFRMMAIN.N14.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n15.caption
+msgctxt "TFRMMAIN.N15.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n16.caption
+msgctxt "TFRMMAIN.N16.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n17.caption
+msgctxt "TFRMMAIN.N17.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n18.caption
+msgctxt "TFRMMAIN.N18.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n19.caption
+msgctxt "TFRMMAIN.N19.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n2.caption
+msgctxt "TFRMMAIN.N2.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n20.caption
+msgctxt "TFRMMAIN.N20.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n21.caption
+msgctxt "TFRMMAIN.N21.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n22.caption
+msgctxt "TFRMMAIN.N22.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n23.caption
+msgctxt "TFRMMAIN.N23.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n24.caption
+msgctxt "TFRMMAIN.N24.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n25.caption
+msgctxt "tfrmmain.n25.caption"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n26.caption
+msgctxt "TFRMMAIN.N26.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n27.caption
+msgctxt "TFRMMAIN.N27.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n28.caption
+msgctxt "TFRMMAIN.N28.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n3.caption
+msgctxt "TFRMMAIN.N3.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n4.caption
+msgctxt "TFRMMAIN.N4.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n5.caption
+msgctxt "TFRMMAIN.N5.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n6.caption
+msgctxt "TFRMMAIN.N6.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n7.caption
+msgctxt "TFRMMAIN.N7.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n8.caption
+msgctxt "TFRMMAIN.N8.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.n9.caption
+msgctxt "TFRMMAIN.N9.CAPTION"
+msgid "-"
+msgstr ""
+
+#: tfrmmain.objectcreate.caption
+msgid "&Create ..."
+msgstr ""
+
+#: tfrmmain.objectcreate.hint
+msgid "Create a new object of the selected type"
+msgstr ""
+
+#: tfrmmain.objectdelete.caption
+msgid "&Drop ..."
+msgstr ""
+
+#: tfrmmain.objectdelete.hint
+msgid "Delete the current object"
+msgstr ""
+
+#: tfrmmain.objectdescription.caption
+msgid "Edit &Description ..."
+msgstr ""
+
+#: tfrmmain.objectdescription.hint
+msgid "Change the decription for an object"
+msgstr ""
+
+#: tfrmmain.objectextract.caption
+msgid "E&xtract ..."
+msgstr ""
+
+#: tfrmmain.objectextract.hint
+msgid "Extract metada for the current object"
+msgstr ""
+
+#: tfrmmain.objectmodify.caption
+msgid "&Modify ..."
+msgstr ""
+
+#: tfrmmain.objectmodify.hint
+msgid "Modify the current object"
+msgstr ""
+
+#: tfrmmain.objectproperties.caption
+msgctxt "TFRMMAIN.OBJECTPROPERTIES.CAPTION"
+msgid "&Properties ..."
+msgstr ""
+
+#: tfrmmain.objectrefresh.caption
+msgid "&Refresh"
+msgstr ""
+
+#: tfrmmain.server1.caption
+msgid "&Server"
+msgstr ""
+
+#: tfrmmain.serveractionprops.caption
+msgctxt "TFRMMAIN.SERVERACTIONPROPS.CAPTION"
+msgid "&Properties ..."
+msgstr ""
+
+#: tfrmmain.serveractionprops.hint
+msgctxt "TFRMMAIN.SERVERACTIONPROPS.HINT"
+msgid "View Server properties"
+msgstr ""
+
+#: tfrmmain.serverconnection.caption
+msgid "&Diagnose Connection ..."
+msgstr ""
+
+#: tfrmmain.serverconnection.hint
+msgid "Diagnose a connection to a server"
+msgstr ""
+
+#: tfrmmain.serverlogin.caption
+msgid "&Login ..."
+msgstr ""
+
+#: tfrmmain.serverlogin.hint
+msgid "Login to the selected server"
+msgstr ""
+
+#: tfrmmain.serverlogout.caption
+msgid "Log&out"
+msgstr ""
+
+#: tfrmmain.serverlogout.hint
+msgid "Logout from the current server"
+msgstr ""
+
+#: tfrmmain.serverproperties.caption
+msgctxt "TFRMMAIN.SERVERPROPERTIES.CAPTION"
+msgid "&Properties ..."
+msgstr ""
+
+#: tfrmmain.serverproperties.hint
+msgctxt "tfrmmain.serverproperties.hint"
+msgid "View Server properties"
+msgstr ""
+
+#: tfrmmain.serverregister.caption
+msgctxt "TFRMMAIN.SERVERREGISTER.CAPTION"
+msgid "&Register ..."
+msgstr ""
+
+#: tfrmmain.serverregister.hint
+msgctxt "TFRMMAIN.SERVERREGISTER.HINT"
+msgid "Register a new InterBase Server"
+msgstr ""
+
+#: tfrmmain.serversecurity.caption
+msgid "User &Security ..."
+msgstr ""
+
+#: tfrmmain.serversecurity.hint
+msgid "Manage InterBase Users"
+msgstr ""
+
+#: tfrmmain.serverunregister.caption
+msgctxt "TFRMMAIN.SERVERUNREGISTER.CAPTION"
+msgid "&Un-Register"
+msgstr ""
+
+#: tfrmmain.serverunregister.hint
+msgctxt "TFRMMAIN.SERVERUNREGISTER.HINT"
+msgid "Unregister an InterBase Server"
+msgstr ""
+
+#: tfrmmain.toolbar2.caption
+msgid "ToolBar2"
+msgstr ""
+
+#: tfrmmain.toolbutton1.caption
+msgctxt "tfrmmain.toolbutton1.caption"
+msgid "&Register ..."
+msgstr ""
+
+#: tfrmmain.toolbutton1.hint
+msgctxt "tfrmmain.toolbutton1.hint"
+msgid "Register a new InterBase Server"
+msgstr ""
+
+#: tfrmmain.toolbutton5.caption
+msgctxt "tfrmmain.toolbutton5.caption"
+msgid "&Un-Register"
+msgstr ""
+
+#: tfrmmain.toolbutton5.hint
+msgctxt "tfrmmain.toolbutton5.hint"
+msgid "Unregister an InterBase Server"
+msgstr ""
+
+#: tfrmmain.toolbutton6.caption
+msgid "ToolButton6"
+msgstr ""
+
+#: tfrmmain.toolbutton8.caption
+msgid "ToolButton8"
+msgstr ""
+
+#: tfrmmain.useradd.caption
+msgid "&Add User ..."
+msgstr ""
+
+#: tfrmmain.useradd.hint
+msgid "Add a new user entry"
+msgstr ""
+
+#: tfrmmain.userdelete.caption
+msgid "&Delete User"
+msgstr ""
+
+#: tfrmmain.userdelete.hint
+msgid "Delete a user entry"
+msgstr ""
+
+#: tfrmmain.usermodify.caption
+msgid "&Modify User ..."
+msgstr ""
+
+#: tfrmmain.usermodify.hint
+msgid "Modify a user entry"
+msgstr ""
+
+#: tfrmmain.view1.caption
+msgid "&View"
+msgstr ""
+
+#: tfrmmain.viewicon.caption
+msgid "Lar&ge"
+msgstr ""
+
+#: tfrmmain.viewlist.caption
+msgid "&List"
+msgstr ""
+
+#: tfrmmain.viewproperties.caption
+msgctxt "tfrmmain.viewproperties.caption"
+msgid "&Properties ..."
+msgstr ""
+
+#: tfrmmain.viewproperties.hint
+msgid "View Object Properties"
+msgstr ""
+
+#: tfrmmain.viewreport.caption
+msgid "&Details"
+msgstr ""
+
+#: tfrmmain.viewserverlog.caption
+msgid "&View Logfile ..."
+msgstr ""
+
+#: tfrmmain.viewserverlog.hint
+msgid "View the INTERBASE.LOG file for the current server"
+msgstr ""
+
+#: tfrmmain.viewsmallicon.caption
+msgid "S&mall"
+msgstr ""
+
+#: tfrmmain.viewsystem.caption
+msgid "S&ystem Data"
+msgstr ""
+
+#: tfrmmain.window2.caption
+msgid "&Windows"
+msgstr ""
+
+#: tfrmmain.windowlist.caption
+msgid "Windows"
+msgstr ""
+

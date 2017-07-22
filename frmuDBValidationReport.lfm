@@ -1,0 +1,121 @@
+object frmDBValidationReport: TfrmDBValidationReport
+  Left = 179
+  Top = 150
+  BorderIcons = [biSystemMenu, biHelp]
+  BorderStyle = bsSingle
+  Caption = 'Validation Report'
+  ClientHeight = 443
+  ClientWidth = 535
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  object lblDatabaseName: TLabel
+    Left = 15
+    Top = 15
+    Width = 67
+    Height = 16
+    AutoSize = False
+    Caption = 'Database:'
+  end
+  object bvlLine1: TBevel
+    Left = 14
+    Top = 42
+    Width = 504
+    Height = 8
+    Shape = bsTopLine
+  end
+  object lblOptions: TLabel
+    Left = 15
+    Top = 306
+    Width = 75
+    Height = 19
+    AutoSize = False
+    Caption = 'O&ptions:'
+    FocusControl = sgOptions
+  end
+  object stxDatabaseName: TStaticText
+    Left = 81
+    Top = 15
+    Width = 326
+    Height = 21
+    AutoSize = False
+    TabOrder = 0
+  end
+  object memReport: TMemo
+    Left = 14
+    Top = 57
+    Width = 504
+    Height = 240
+    ReadOnly = True
+    ScrollBars = ssBoth
+    TabOrder = 1
+  end
+  object pnlOptionName: TPanel
+    Left = 16
+    Top = 330
+    Width = 223
+    Height = 26
+    Alignment = taLeftJustify
+    BevelInner = bvLowered
+    BevelOuter = bvLowered
+    TabOrder = 2
+  end
+  object sgOptions: TStringGrid
+    Left = 15
+    Top = 327
+    Width = 503
+    Height = 61
+    Color = clSilver
+    ColCount = 2
+    DefaultColWidth = 90
+    DefaultRowHeight = 21
+    FixedCols = 0
+    RowCount = 2
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing]
+    ScrollBars = ssNone
+    TabOrder = 3
+    OnDrawCell = sgOptionsDrawCell
+    OnSelectCell = sgOptionsSelectCell
+    ColWidths = (
+      274
+      222)
+  end
+  object cbOptions: TComboBox
+    Left = 292
+    Top = 329
+    Width = 223
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 4
+    OnChange = cbOptionsChange
+    OnDblClick = cbOptionsDblClick
+    OnExit = cbOptionsExit
+    OnKeyDown = cbOptionsKeyDown
+  end
+  object btnRepair: TButton
+    Left = 331
+    Top = 400
+    Width = 75
+    Height = 25
+    Caption = '&Repair'
+    TabOrder = 5
+    OnClick = btnRepairClick
+  end
+  object btnCancel: TButton
+    Left = 431
+    Top = 400
+    Width = 75
+    Height = 25
+    Caption = '&Cancel'
+    TabOrder = 6
+    OnClick = btnCancelClick
+  end
+end

@@ -1,0 +1,257 @@
+inherited frmServerProperties: TfrmServerProperties
+  Left = 155
+  Height = 453
+  Top = 148
+  Width = 524
+  HelpContext = 1
+  BorderStyle = bsSingle
+  Caption = 'Server Properties'
+  ClientHeight = 453
+  ClientWidth = 524
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnHelp = FormHelp
+  OnShow = FormShow
+  Position = poScreenCenter
+  object pgcMain: TPageControl[0]
+    Left = 0
+    Height = 390
+    Top = 0
+    Width = 497
+    ActivePage = TabGeneral
+    TabIndex = 1
+    TabOrder = 0
+    OnChange = pgcMainChange
+    object TabAlias: TTabSheet
+      Caption = 'Alias'
+      ClientHeight = 364
+      ClientWidth = 489
+      object lblAliasName: TLabel
+        Left = 15
+        Height = 16
+        Top = 15
+        Width = 119
+        AutoSize = False
+        Caption = 'A&lias Name:'
+        FocusControl = edtAliasName
+        ParentColor = False
+      end
+      object lblHostName: TLabel
+        Left = 15
+        Height = 16
+        Top = 74
+        Width = 104
+        AutoSize = False
+        Caption = '&Host Name:'
+        FocusControl = edtHostName
+        ParentColor = False
+      end
+      object lblProtocol: TLabel
+        Left = 354
+        Height = 16
+        Top = 74
+        Width = 122
+        AutoSize = False
+        Caption = '&Network Protocol:'
+        FocusControl = cboProtocol
+        ParentColor = False
+      end
+      object Label1: TLabel
+        Left = 15
+        Height = 13
+        Top = 132
+        Width = 56
+        Caption = '&Description:'
+        FocusControl = edtDescription
+        ParentColor = False
+      end
+      object edtHostName: TEdit
+        Left = 15
+        Height = 21
+        Top = 96
+        Width = 304
+        Enabled = False
+        OnChange = edtAliasNameChange
+        TabOrder = 1
+      end
+      object cboProtocol: TComboBox
+        Left = 354
+        Height = 21
+        Top = 96
+        Width = 125
+        Enabled = False
+        ItemHeight = 13
+        Items.Strings = (
+          'TCP/IP'
+          'NetBEUI'
+          'SPX'
+          'Local Server'
+        )
+        OnChange = cboProtocolChange
+        OnDblClick = cboProtocolDblClick
+        Style = csDropDownList
+        TabOrder = 2
+      end
+      object edtAliasName: TEdit
+        Left = 15
+        Height = 21
+        Top = 37
+        Width = 459
+        OnChange = edtAliasNameChange
+        TabOrder = 0
+      end
+      object edtDescription: TEdit
+        Left = 15
+        Height = 21
+        Top = 154
+        Width = 459
+        OnChange = edtAliasNameChange
+        TabOrder = 3
+      end
+    end
+    object TabGeneral: TTabSheet
+      Caption = 'General'
+      ClientHeight = 364
+      ClientWidth = 489
+      ImageIndex = 1
+      object lblVersion: TLabel
+        Left = 15
+        Height = 16
+        Top = 15
+        Width = 67
+        AutoSize = False
+        Caption = 'Version:'
+        ParentColor = False
+      end
+      object lblCapabilities: TLabel
+        Left = 15
+        Height = 13
+        Top = 52
+        Width = 56
+        Caption = 'Capabilities:'
+        ParentColor = False
+      end
+      object bvlLine1: TBevel
+        Left = 15
+        Height = 9
+        Top = 155
+        Width = 464
+        Shape = bsTopLine
+      end
+      object lblAttachmentNo: TLabel
+        Left = 15
+        Height = 16
+        Top = 336
+        Width = 142
+        AutoSize = False
+        Caption = 'Number of attachments:'
+        ParentColor = False
+      end
+      object lblDatabaseNo: TLabel
+        Left = 15
+        Height = 16
+        Top = 318
+        Width = 134
+        AutoSize = False
+        Caption = 'Number of databases:'
+        ParentColor = False
+      end
+      object memCapabilities: TMemo
+        Left = 102
+        Height = 90
+        Top = 52
+        Width = 377
+        BorderStyle = bsNone
+        ParentColor = True
+        ParentShowHint = False
+        ReadOnly = True
+        ScrollBars = ssVertical
+        ShowHint = True
+        TabOrder = 0
+        TabStop = False
+      end
+      object stxVersion: TStaticText
+        Left = 89
+        Height = 21
+        Top = 15
+        Width = 245
+        Caption = 'Unknown'
+        TabOrder = 1
+      end
+      object stxAttachmentNo: TStaticText
+        Left = 154
+        Height = 20
+        Top = 336
+        Width = 47
+        Caption = '?'
+        TabOrder = 2
+      end
+      object stxDatabaseNo: TStaticText
+        Left = 155
+        Height = 20
+        Top = 318
+        Width = 46
+        Caption = '?'
+        TabOrder = 3
+      end
+      object lvDatabases: TListView
+        Left = 15
+        Height = 135
+        Top = 167
+        Width = 465
+        Columns = <        
+          item
+            AutoSize = True
+            Caption = 'Attached Databases'
+            Width = 461
+          end>
+        ColumnClick = False
+        ReadOnly = True
+        RowSelect = True
+        TabOrder = 4
+        ViewStyle = vsReport
+        OnDblClick = lvDatabasesDblClick
+      end
+      object btnRefresh: TButton
+        Left = 373
+        Height = 25
+        Top = 329
+        Width = 75
+        Caption = '&Refresh'
+        OnClick = btnRefreshClick
+        TabOrder = 5
+      end
+    end
+  end
+  object btnApply: TButton[1]
+    Left = 416
+    Height = 25
+    Top = 403
+    Width = 75
+    Caption = '&Apply'
+    Enabled = False
+    OnClick = btnApplyClick
+    TabOrder = 1
+  end
+  object btnCancel: TButton[2]
+    Left = 254
+    Height = 25
+    Top = 403
+    Width = 75
+    Caption = '&OK'
+    Default = True
+    ModalResult = 1
+    OnClick = btnCancelClick
+    TabOrder = 2
+  end
+  object Button1: TButton[3]
+    Left = 335
+    Height = 25
+    Top = 403
+    Width = 75
+    Caption = '&Cancel'
+    ModalResult = 2
+    OnClick = Button1Click
+    TabOrder = 3
+  end
+end
