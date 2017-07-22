@@ -24,14 +24,12 @@ unit frmuDlgClass;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs;
 
 type
   TDialog = class(TForm)
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-    function FormHelp(Command: Word; Data: Integer;
-      var CallHelp: Boolean): Boolean;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -42,34 +40,18 @@ type
     procedure SetErrorState;
   end;
 
-var
-  Dialog: TDialog;
-
 implementation
 
 {$R *.lfm}
-uses
-  zluContextHelp;
 
 type
   TFontClass = class (TControl);  { needed to get at font property to scale }
 
-const
-  ScreenWidth: LongInt = 1600;
-  ScreenHeight: LongInt = 1200;
-    
 procedure TDialog.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if Key = VK_ESCAPE then
     ModalResult := mrCancel;
-end;
-
-function TDialog.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
- // Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,GENERAL_PREFERENCES);
 end;
 
 procedure TDialog.FormCreate(Sender: TObject);

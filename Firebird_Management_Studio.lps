@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="56">
+    <Units Count="57">
       <Unit0>
         <Filename Value="Firebird_Management_Studio.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -43,8 +43,8 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="186"/>
-        <CursorPos Y="194"/>
+        <TopLine Value="145"/>
+        <CursorPos X="52" Y="154"/>
         <UsageCount Value="1315"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -228,6 +228,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
+        <CursorPos Y="46"/>
         <UsageCount Value="1315"/>
       </Unit22>
       <Unit23>
@@ -443,65 +444,66 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1372"/>
         <CursorPos Y="1387"/>
-        <UsageCount Value="633"/>
+        <UsageCount Value="632"/>
       </Unit45>
       <Unit46>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1437"/>
         <CursorPos Y="1453"/>
-        <UsageCount Value="607"/>
+        <UsageCount Value="606"/>
       </Unit46>
       <Unit47>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4328"/>
         <CursorPos Y="4342"/>
-        <UsageCount Value="607"/>
+        <UsageCount Value="606"/>
       </Unit47>
       <Unit48>
         <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-registry\src\registry.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="75"/>
         <CursorPos X="25" Y="102"/>
-        <UsageCount Value="592"/>
+        <UsageCount Value="591"/>
       </Unit48>
       <Unit49>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2829"/>
         <CursorPos Y="2848"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit49>
       <Unit50>
         <Filename Value="zlulang.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="51" Y="9"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="18"/>
       </Unit50>
       <Unit51>
         <Filename Value=""/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="None"/>
       </Unit51>
       <Unit52>
         <Filename Value="..\ibx\fbintf.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="11"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit52>
       <Unit53>
         <Filename Value="..\ibx\fbintf\client\FBClientAPI.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="444"/>
         <CursorPos X="42" Y="462"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit53>
       <Unit54>
         <Filename Value="..\ibx\runtime\IBServices.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="302"/>
         <CursorPos X="53" Y="314"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit54>
       <Unit55>
         <Filename Value="C:\lazarus2\fpc\3.0.2\source\packages\fcl-base\src\fileinfo.pp"/>
@@ -510,108 +512,99 @@
         <CursorPos X="40" Y="260"/>
         <UsageCount Value="10"/>
       </Unit55>
+      <Unit56>
+        <Filename Value="C:\lazarus2\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3863"/>
+        <CursorPos X="38" Y="3879"/>
+        <UsageCount Value="10"/>
+      </Unit56>
     </Units>
-    <JumpHistory Count="25" HistoryIndex="24">
+    <JumpHistory Count="21" HistoryIndex="20">
       <Position1>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="168" TopLine="160"/>
+        <Caret Line="202" TopLine="186"/>
       </Position1>
       <Position2>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="169" TopLine="160"/>
+        <Caret Line="203" TopLine="186"/>
       </Position2>
       <Position3>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="172" TopLine="160"/>
+        <Caret Line="204" TopLine="186"/>
       </Position3>
       <Position4>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="174" TopLine="160"/>
+        <Caret Line="205" TopLine="186"/>
       </Position4>
       <Position5>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="201" TopLine="186"/>
+        <Caret Line="206" TopLine="186"/>
       </Position5>
       <Position6>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="202" TopLine="186"/>
+        <Caret Line="207" TopLine="186"/>
       </Position6>
       <Position7>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="203" TopLine="186"/>
+        <Caret Line="208" TopLine="186"/>
       </Position7>
       <Position8>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="204" TopLine="186"/>
+        <Caret Line="209" TopLine="186"/>
       </Position8>
       <Position9>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="205" TopLine="186"/>
+        <Caret Line="210" TopLine="186"/>
       </Position9>
       <Position10>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="206" TopLine="186"/>
+        <Caret Line="211" TopLine="187"/>
       </Position10>
       <Position11>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="207" TopLine="186"/>
+        <Caret Line="212" TopLine="188"/>
       </Position11>
       <Position12>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="208" TopLine="186"/>
+        <Caret Line="202" Column="37" TopLine="190"/>
       </Position12>
       <Position13>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="209" TopLine="186"/>
+        <Caret Line="204" Column="25" TopLine="190"/>
       </Position13>
       <Position14>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="210" TopLine="186"/>
+        <Caret Line="203" Column="27" TopLine="190"/>
       </Position14>
       <Position15>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="211" TopLine="187"/>
+        <Caret Line="166" TopLine="153"/>
       </Position15>
       <Position16>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="212" TopLine="188"/>
+        <Caret Line="167" TopLine="153"/>
       </Position16>
       <Position17>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="202" Column="37" TopLine="190"/>
+        <Caret Line="168" TopLine="153"/>
       </Position17>
       <Position18>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="204" Column="25" TopLine="190"/>
+        <Caret Line="169" TopLine="153"/>
       </Position18>
       <Position19>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="203" Column="27" TopLine="190"/>
+        <Caret Line="172" TopLine="153"/>
       </Position19>
       <Position20>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="166" TopLine="153"/>
+        <Caret Line="166" Column="25" TopLine="138"/>
       </Position20>
       <Position21>
         <Filename Value="frmuAbout.pas"/>
-        <Caret Line="167" TopLine="153"/>
+        <Caret Line="154" Column="52" TopLine="145"/>
       </Position21>
-      <Position22>
-        <Filename Value="frmuAbout.pas"/>
-        <Caret Line="168" TopLine="153"/>
-      </Position22>
-      <Position23>
-        <Filename Value="frmuAbout.pas"/>
-        <Caret Line="169" TopLine="153"/>
-      </Position23>
-      <Position24>
-        <Filename Value="frmuAbout.pas"/>
-        <Caret Line="172" TopLine="153"/>
-      </Position24>
-      <Position25>
-        <Filename Value="frmuAbout.pas"/>
-        <Caret Line="166" Column="25" TopLine="138"/>
-      </Position25>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
@@ -624,13 +617,5 @@
         <Line Value="13"/>
       </Item1>
     </BreakPoints>
-    <Watches Count="2">
-      <Item1>
-        <Expression Value="tmpBuffer"/>
-      </Item1>
-      <Item2>
-        <Expression Value="FPath"/>
-      </Item2>
-    </Watches>
   </Debugging>
 </CONFIG>

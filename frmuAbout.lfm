@@ -12,6 +12,7 @@ inherited frmAbout: TfrmAbout
   Font.CharSet = ANSI_CHARSET
   Font.Color = clBlack
   Font.Height = -14
+  OnHelp = nil
   OnShow = FormShow
   Position = poScreenCenter
   object Panel1: TPanel[0]
