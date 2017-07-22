@@ -39,8 +39,7 @@ unit frmuSplash;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ExtCtrls;
+  LCLIntf, LCLType, Classes, Graphics, Forms, ExtCtrls;
 
 type
   TfrmSplash = class(TForm)
