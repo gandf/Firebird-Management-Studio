@@ -1,0 +1,5 @@
+{"version":1,"strings":[
+{"hash":63608709,"name":"tfrmmessage.caption","sourcebytes":[77,101,115,115,97,103,101],"value":"Message"},
+{"hash":114741882,"name":"tfrmmessage.lbldetailmsg.caption","sourcebytes":[68,101,116,97,105,108,32,77,101,115,115,97,103,101,58],"value":"Detail Message:"},
+{"hash":11067,"name":"tfrmmessage.btnok.caption","sourcebytes":[38,79,75],"value":"&OK"}
+]}

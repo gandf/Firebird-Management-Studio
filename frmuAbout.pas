@@ -16,20 +16,7 @@
  * 
  * Contributor(s): ______________________________________.
 }
-{****************************************************************
-*
-*  f r m u A b o u t
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit displays the application's About box
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+
 unit frmuAbout;
 
 {$MODE Delphi}
@@ -81,25 +68,6 @@ const
   PLATFORM_W9x = 'Windows 9x';
   PLATFORM_NT  = 'Windows NT';
 
-{****************************************************************
-*
-*  S h o w A b o u t D i a l o g ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ProductName - The short name of the application
-*          ProductVersion - The version of the application
-*
-*  Return: None
-*
-*  Description:  Displays the application About dialog
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure ShowAboutDialog();
 var
   frmAbout: TfrmAbout;

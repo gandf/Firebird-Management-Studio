@@ -1,7 +1,7 @@
 inherited frmCommDiag: TfrmCommDiag
-  Left = 218
+  Left = 269
   Height = 463
-  Top = 124
+  Top = 119
   Width = 350
   BorderStyle = bsSingle
   Caption = 'Communication Diagnostics'

@@ -1,24 +1,18 @@
-object frmMessage: TfrmMessage
+inherited frmMessage: TfrmMessage
   Left = 117
+  Height = 246
   Top = 165
+  Width = 341
   BorderIcons = [biSystemMenu]
-  BorderStyle = bsDialog
   Caption = 'Message'
-  ClientHeight = 238
-  ClientWidth = 328
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
+  ClientHeight = 246
+  ClientWidth = 341
   Position = poScreenCenter
-  PixelsPerInch = 96
-  object imgWarning: TImage
+  object imgWarning: TImage[0]
     Left = 12
+    Height = 36
     Top = 12
     Width = 36
-    Height = 36
     AutoSize = True
     Picture.Data = {
       07544269746D617046030000424D460300000000000076000000280000002400
@@ -47,13 +41,14 @@ object frmMessage: TfrmMessage
       73BBBBB08877777777777777777777777777777773BBBB708777777777777777
       7777777777777777773BB7077777777777777777777777777777777777733377
       7777777777777777777777777777777777777777777777777777777777777777
-      777777777777777777777777777777777777}
+      777777777777777777777777777777777777
+    }
   end
-  object imgInformation: TImage
+  object imgInformation: TImage[1]
     Left = 12
+    Height = 36
     Top = 12
     Width = 36
-    Height = 36
     AutoSize = True
     Picture.Data = {
       07544269746D617046030000424D460300000000000076000000280000002400
@@ -82,13 +77,14 @@ object frmMessage: TfrmMessage
       FFFFFFFFFFF7887777777777777777777777778887FFFFFF7888777777777777
       7777777777777777788888888777777777777777777777777777777777777777
       7777777777777777777777777777777777777777777777777777777777777777
-      777777777777777777777777777777777777}
+      777777777777777777777777777777777777
+    }
   end
-  object imgError: TImage
+  object imgError: TImage[2]
     Left = 12
+    Height = 36
     Top = 12
     Width = 36
-    Height = 36
     AutoSize = True
     Picture.Data = {
       07544269746D617046030000424D460300000000000076000000280000002400
@@ -117,41 +113,41 @@ object frmMessage: TfrmMessage
       9999999999991777777777777777777777777711199999999111777777777777
       7777777777777777711111111777777777777777777777777777777777777777
       7777777777777777777777777777777777777777777777777777777777777777
-      777777777777777777777777777777777777}
+      777777777777777777777777777777777777
+    }
   end
-  object lblDetailMsg: TLabel
+  object lblDetailMsg: TLabel[3]
     Left = 8
+    Height = 13
     Top = 126
     Width = 97
-    Height = 13
     AutoSize = False
     Caption = 'Detail Message:'
-    Transparent = True
+    ParentColor = False
   end
-  object stxSummaryMsg: TStaticText
+  object stxSummaryMsg: TStaticText[4]
     Left = 60
+    Height = 61
     Top = 18
     Width = 265
-    Height = 61
-    AutoSize = False
     TabOrder = 0
   end
-  object btnOK: TButton
+  object btnOK: TButton[5]
     Left = 247
+    Height = 25
     Top = 90
     Width = 75
-    Height = 25
     Caption = '&OK'
     Default = True
     ModalResult = 2
-    TabOrder = 1
     OnClick = btnOKClick
+    TabOrder = 1
   end
-  object memDetailMsg: TMemo
+  object memDetailMsg: TMemo[6]
     Left = 8
+    Height = 89
     Top = 144
     Width = 313
-    Height = 89
     Color = clSilver
     ReadOnly = True
     ScrollBars = ssVertical

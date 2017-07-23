@@ -17,22 +17,12 @@
  * Contributor(s): Krzysztof Golko.
 }
 
-{****************************************************************
-*
-*  f r m u C o m m D i a g
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides all the necessary functions
-*                and interface to perform network communication
-*                diagnostics.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  f r m u C o m m D i a g
+  Description:  This unit provides all the necessary functions
+                and interface to perform network communication
+                diagnostics.
+}
 
 unit frmuCommDiag;
 
@@ -43,7 +33,7 @@ interface
 uses
   LCLIntf, LCLType, LMessages, SysUtils,Forms, ExtCtrls, StdCtrls, Classes, Controls, ComCtrls, Dialogs,
   Graphics, zluibcClasses, Winsock, IB,
-  IBDatabase, IBDatabaseInfo, Messages, frmuDlgClass, zluCommDiag, resstring; //, ScktComp;
+  IBDatabase, IBDatabaseInfo, Messages, frmuDlgClass, zluCommDiag, resstring;
 
 type
   TfrmCommDiag = class(TDialog)
@@ -121,24 +111,11 @@ uses
 
 {$R *.lfm}
 
-{****************************************************************
-*
-*  D o D i a g n o t i c s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TibcServerNode - Specifies the currenly selected server
-*
-*  Return: Integer - Determines success or failure.
-*
-*  Description:  Responsible for creating the form.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  Input:  TibcServerNode - Specifies the currenly selected server
+  Return: Integer - Determines success or failure.
+  Description:  Responsible for creating the form.
+}
 
 function DoDiagnostics(const CurrSelServer: TibcServerNode): integer;
 var
@@ -160,9 +137,9 @@ begin
         // and check the remote radio button
         frmCommDiag.cbDBServer.Text := CurrSelServer.Servername;
         case CurrSelServer.Server.Protocol of
-          TCP: frmCommDiag.cbProtocol.ItemIndex := frmCommDiag.cbProtocol.Items.IndexOf('TCP/IP');
-          NamedPipe: frmCommDiag.cbProtocol.ItemIndex := frmCommDiag.cbProtocol.Items.IndexOf('NetBEUI');
-          SPX: frmCommDiag.cbProtocol.ItemIndex := frmCommDiag.cbProtocol.Items.IndexOf('SPX');
+          TCP: frmCommDiag.cbProtocol.ItemIndex := frmCommDiag.cbProtocol.Items.IndexOf(LZTCommDiagcbProtocolItem1);
+          NamedPipe: frmCommDiag.cbProtocol.ItemIndex := frmCommDiag.cbProtocol.Items.IndexOf(LZTCommDiagcbProtocolItem2);
+          SPX: frmCommDiag.cbProtocol.ItemIndex := frmCommDiag.cbProtocol.Items.IndexOf(LZTCommDiagcbProtocolItem3);
         end;
         frmCommDiag.rbRemoteServer.Checked := true;
       end;
@@ -182,24 +159,11 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  D o D i a g n o t i c s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TibcServerNode - Specifies the currenly selected server
-*
-*  Return: Integer - Determines success or failure.
-*
-*  Description:  Responsible for creating the form.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  Input:  TibcServerNode - Specifies the currenly selected server
+  Return: Integer - Determines success or failure.
+  Description:  Responsible for creating the form.
+}
 
 function ServiceRunning(const CurrSelServer: TibcServerNode) : Boolean;
 var
@@ -252,25 +216,10 @@ begin
   ModalResult := mrCancel;
 end;
 
-{****************************************************************
-*
-*  b t n S e l D B C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Tobject
-*
-*  Return: None
-*
-*  Description:  Shows an open file dialog box that allows
-*                a user to browse for a local database file.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+Description:  Shows an open file dialog box that allows
+               a user to browse for a local database file.
+}
 
 procedure TfrmCommDiag.btnSelDBClick(Sender: TObject);
 var
@@ -354,31 +303,6 @@ begin
   end
 end;
 
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - Indicates whether all the necessary
-*                    data has been entered in order to
-*                    perform the specified task
-*
-*  Description:  Verifies whther all the necessary data has been
-*                enetered in order to performt he specified
-*                task.  If not an error message will be displayed
-*                and the control responsible for the violation
-*                will be given focus.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 function TfrmCommDiag.VerifyInputData(): boolean;
 begin
   result := true;
@@ -458,25 +382,10 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  b t n T e s t C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject
-*
-*  Return: None
-*
-*  Description:  Determines which tab is active and performs
-*                the appropriate network disgnostic.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+Description:  Determines which tab is active and performs
+               the appropriate network disgnostic.
+}
 
 procedure TfrmCommDiag.btnTestClick(Sender: TObject);
 begin
@@ -495,36 +404,21 @@ begin
     begin
       memTCPIPResults.Lines.Clear;     // then clear the TCP/IP results
       case cbService.ItemIndex of     // determine which service is selected
-        Port21     : TestPort('21');   // and perform the TCP/IP test
-        PortFTP    : TestPort('ftp');
-        Port3050   : TestPort('3050');
-        Portgds_db : TestPort('gds_db');
+        Port21     : TestPort(LZTCommDiagcbServiceItem1);   // and perform the TCP/IP test
+        PortFTP    : TestPort(LZTCommDiagcbServiceItem2);
+        Port3050   : TestPort(LZTCommDiagcbServiceItem3);
+        Portgds_db : TestPort(LZTCommDiagcbServiceItem4);
         Ping       : PingServer;
       end;
     end;
   end;
 end;
 
-{****************************************************************
-*
-*  P i n g S e r v e r
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: None
-*
-*  Description:  Creates a Ping object and performs a
-*                TCP/IP ping returning round trip times and
-*                packet loss statistics.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+Description:  Creates a Ping object and performs a
+               TCP/IP ping returning round trip times and
+               packet loss statistics.
+}
 
 procedure TfrmCommDiag.PingServer;
 var
@@ -539,9 +433,9 @@ var
 begin
   Ping := Nil;                         // initialize variables
   iMaxRTT:=0;
-//  iMinRTT:=0;
+  iMinRTT:=0;
   iAvgRTT:=0;
-//  fPacketLoss:=0;
+  fPacketLoss:=0;
   iSuccesses:=0;
   iPackets:=4;
 
@@ -640,25 +534,10 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  T e s t D B C o n n e c t
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: None
-*
-*  Description:  Creates a Database object and performs a
-*                database connect test using a specified protocol.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+Description:  Creates a Database object and performs a
+                database connect test using a specified protocol.
+}
 
 procedure TfrmCommDiag.TestDBConnect;
 var
@@ -763,26 +642,10 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  T e s t P o r t
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  String - name or number of port service
-*
-*  Return: None
-*
-*  Description:  Creates a socket object and performs a
-*                port/service test using TCP/IP.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
+{
+Description:  Creates a socket object and performs a
+               port/service test using TCP/IP.
+}
 procedure TfrmCommDiag.TestPort(Port : String);
 var
   Sock     : TibcSocket;               // socket
@@ -792,7 +655,7 @@ var
   iSuccess : Boolean;                  // test successful
 begin
   Sock := Nil;                         // initialize variables
-//  iResolve := False;
+  iResolve := False;
   iSuccess := True;
   iPort := 3050;
   Screen.Cursor := crHourGlass;
@@ -810,7 +673,7 @@ begin
   try
     Sock:=TibcSocket.Create(Self);     // create socket
     Sock.Host := cbTCPIPServer.Text;  // set hostname
-//    Sock.ReportLevel := 1;             // set report level
+    //Sock.ReportLevel := 1;             // set report level
     Sock.Timeout := 5000;              // set timeout
 
     with memTCPIPResults.Lines do
@@ -828,16 +691,15 @@ begin
         if lService <> '' then
           Add(LZTCommDiagFoundService + ' ''' + lService + ''' ' + LZTCommDiagAtPort + ' ''' + Port + '''')
         else
-          Add(LZTCommDiagCouldNotResolveService + ' ''' + lService +
-              ''' ' + LZTCommDiagAtPort + ' ''' + Port + '''');
+          Add(LZTCommDiagCouldNotResolveService + ' ''' + lService + ''' ' + LZTCommDiagAtPort + ' ''' + Port + '''');
       end
       // otherwise manually resolve port name to a number
       // and set the port number
       else
       begin
-        if Port = 'ftp' then
+        if Port = LZTCommDiagcbServiceItem2 then
           Sock.Port:=21
-        else if Port = 'gds_db' then
+        else if Port = LZTCommDiagcbServiceItem4 then
           Sock.Port:=3050;
       end;
 
@@ -887,26 +749,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  F o r m C r e a t e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Tobject
-*
-*  Return: None
-*
-*  Description: Loads registered remote servers into the
-*               combo boxes (also stores their protocols).
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 procedure TfrmCommDiag.FormCreate(Sender: TObject);
 var
   lCount : Integer ;
@@ -932,7 +774,7 @@ begin
       begin
         PersistentInfo.GetSerVerProps(lServerAliases[lCount], sProps);
           // Only add remote servers (and their protocol) to stringlists
-        if sProps.ServerName <> 'Local Server' then
+        if sProps.ServerName <> LZTCommDiagsPropsServerNameLocalServer then
       begin
           FServers.Add(sProps.ServerName);
           FProtocols.Add(IntToStr(integer(sProps.Protocol)));
@@ -956,8 +798,10 @@ end;
 // assigns appropriate protocol for a selected server in the DB connection tab
 procedure TfrmCommDiag.cbDBServerClick(Sender: TObject);
 begin
-  cbProtocol.ItemIndex :=
-    StrToInt(FProtocols[FServers.IndexOf(cbDBServer.Text)]);
+  if (FServers.IndexOf(cbDBServer.Text) = -1) then
+    cbProtocol.ItemIndex := -1
+  else
+    cbProtocol.ItemIndex := StrToInt(FProtocols[FServers.IndexOf(cbDBServer.Text)]);
 end;
 
 procedure TfrmCommDiag.edtDatabaseChange(Sender: TObject);
@@ -974,14 +818,14 @@ begin
   ScreenPt.Y := Message.YPos;
   ClientPt := ScreenToClient( ScreenPt );
   if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,FEATURES_DIAGNOSTICS);
-    Message.Result := 0;
-  end else
+    Message.Result := 0
+  else
    inherited;
 end;
 
 Procedure TfrmCommDiag.TranslateVisual;
+var
+  SaveItemIndex: Integer;
 Begin
   Self.Caption := LZTCommDiagFormTitle;
   tabDBConnection.Caption := LZTCommDiagtabDBConnectionCaption;
@@ -1002,6 +846,22 @@ Begin
   lblDatabase.Caption:=LZTCommDiaglblDatabaseCaption;
   lblUsername.Caption:=LZTCommDiaglblUsernameCaption;
   lblPassword.Caption:=LZTCommDiaglblPasswordCaption;
+  btnSelDB.Hint:=LZTCommDiagbtnSelDBHint;
+  SaveItemIndex := cbProtocol.ItemIndex;
+  cbProtocol.Items.Clear;
+  cbProtocol.Items.Add(LZTCommDiagcbProtocolItem1);
+  cbProtocol.Items.Add(LZTCommDiagcbProtocolItem2);
+  cbProtocol.Items.Add(LZTCommDiagcbProtocolItem3);
+  cbProtocol.Items.Add(LZTCommDiagcbProtocolItem4);
+  cbProtocol.ItemIndex := SaveItemIndex;
+  SaveItemIndex := cbService.ItemIndex;
+  cbService.Items.Clear;
+  cbService.Items.Add(LZTCommDiagcbServiceItem1);
+  cbService.Items.Add(LZTCommDiagcbServiceItem2);
+  cbService.Items.Add(LZTCommDiagcbServiceItem3);
+  cbService.Items.Add(LZTCommDiagcbServiceItem4);
+  cbService.Items.Add(LZTCommDiagcbServiceItem5);
+  cbService.ItemIndex := SaveItemIndex;
 
 End;
 

@@ -1,18 +1,8 @@
-{****************************************************************
-*
-*  f r m u M e s s a g e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides a default message display
-*                window used throughout the application
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  f r m u M e s s a g e
+  Description:  This unit provides a default message display
+                window used throughout the application
+}
 
 unit frmuMessage;
 
@@ -21,8 +11,8 @@ unit frmuMessage;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, frmuDlgClass;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ExtCtrls, frmuDlgClass, resstring;
 
 type
   TfrmMessage = class(TDialog)
@@ -34,6 +24,7 @@ type
     btnOK: TButton;
     memDetailMsg: TMemo;
     procedure btnOKClick(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -137,26 +128,14 @@ uses zluUtility, IBErrorCodes;
 
 {$R *.lfm}
 
-{****************************************************************
-*
-*  D i s p l a y M s g ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  MsgNo   - Message No
-*          MsgText - The actual error message text
-*
-*  Return: None
-*
-*  Description:  Prepare and show message dialog depending on
-*                the MsgNo and MsgText
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  D i s p l a y M s g ()
+  Input:  MsgNo   - Message No
+          MsgText - The actual error message text
+  Description:  Prepare and show message dialog depending on
+                the MsgNo and MsgText
+}
+
 function DisplayMsg(const MsgNo: integer; MsgText: string): boolean;
 var
   frmMessage: TfrmMessage;
@@ -168,7 +147,7 @@ begin
     case MsgNo of
       1..2999:
       begin
-        frmMessage.Caption := 'Error';
+        frmMessage.Caption := LZTMessageErrorCaption;
         frmMessage.imgError.Visible := true;
         frmMessage.imgWarning.Visible := false;
         frmMessage.imgInformation.Visible := false;
@@ -176,7 +155,7 @@ begin
       end;
       3000..5999:
       begin
-        frmMessage.Caption := 'Warning';
+        frmMessage.Caption := LZTMessageWarningCaption;
         frmMessage.imgError.Visible := false;
         frmMessage.imgWarning.Visible := true;
         frmMessage.imgInformation.Visible := false;
@@ -184,7 +163,7 @@ begin
       end;
       6000..9999:
       begin
-        frmMessage.Caption := 'Information';
+        frmMessage.Caption := LZTMessageInformationCaption;
         frmMessage.imgError.Visible := false;
         frmMessage.imgWarning.Visible := false;
         frmMessage.imgInformation.Visible := true;
@@ -192,7 +171,7 @@ begin
       end;
       335544321..336920607:
       begin
-        frmMessage.Caption := 'Error';
+        frmMessage.Caption := LZTMessageErrorCaption;
         frmMessage.imgError.Visible := true;
         frmMessage.imgWarning.Visible := false;
         frmMessage.imgInformation.Visible := false;
@@ -203,221 +182,226 @@ begin
     case MsgNo of
       //****** Errors ******
       ERR_SYSTEM_INIT:
-        frmMessage.stxSummaryMsg.Caption := 'Initialization failure.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage1Caption;
       ERR_USERNAME:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid username. Please enter a valid username.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage2Caption;
       ERR_PASSWORD:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid password. Please enter a valid password.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage3Caption;
       ERR_PASSWORD_MISSMATCH:
-        frmMessage.stxSummaryMsg.Caption := 'The password does not match the confirmation password.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage4Caption;
       ERR_ADD_USER:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to add user.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage5Caption;
       ERR_MODIFY_USER:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to modify user account.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage6Caption;
       ERR_DELETE_USER:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to delete user.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage7Caption;
       ERR_GET_USERS:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve user list.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage8Caption;
       ERR_GET_USER_INFO:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve user information.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage9Caption;
       ERR_SOURCE_DB:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid source database name. Please enter a valid database name.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage10Caption;
       ERR_DESTINATION_DB:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid destination database name. Please enter a valid database name.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage11Caption;
       ERR_SAME_SOURCE_DESTINATION:
-        frmMessage.stxSummaryMsg.Caption := 'The source and destination must be different.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage12Caption;
       ERR_DB_FILE:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid database file or the file does not exist.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage13Caption;
       ERR_SERVER_NAME:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid server name. Please enter a valid server name.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage14Caption;
       ERR_PROTOCOL:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid network protocol. Please select a network protocol from the list.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage15Caption;
       ERR_BACKUP_DB:
-        frmMessage.stxSummaryMsg.Caption := 'Database backup failed.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage16Caption;
       ERR_RESTORE_DB:
-        frmMessage.stxSummaryMsg.Caption := 'Database restore failed.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage17Caption;
       ERR_GET_TABLES:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of tables.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage18Caption;
       ERR_GET_VIEWS:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of views.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage19Caption;
       ERR_SERVICE:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid service. Please select a service from the list.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage20Caption;
       ERR_NUMERIC_VALUE:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid numeric value. Please enter a valid numeric value.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage21Caption;
       ERR_GET_TABLE_DATA:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve data.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage22Caption;
       ERR_DB_ALIAS:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid database alias. Please enter a valid database name.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage23Caption;
       ERR_GET_ROLES:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of roles.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage24Caption;
       ERR_SERVER_LOGIN:
-        frmMessage.stxSummaryMsg.Caption := 'Error logging into the requested server.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage25Caption;
       ERR_DB_CONNECT:
-        frmMessage.stxSummaryMsg.Caption := 'Error connecting to the requested database.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage26Caption;
       ERR_DB_DISCONNECT:
-        frmMessage.stxSummaryMsg.Caption := 'Error disconnecting from database.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage27Caption;
       ERR_GET_PROCEDURES:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of procedures.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage28Caption;
       ERR_GET_FUNCTIONS:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of functions.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage29Caption;
       ERR_GET_GENERATORS:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of generators.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage30Caption;
       ERR_GET_EXCEPTIONS:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of exceptions.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage31Caption;
       ERR_GET_BLOB_FILTERS:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of blob filters.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage32Caption;
       ERR_GET_COLUMNS:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of columns.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage33Caption;
       ERR_GET_INDICES:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of indices.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage34Caption;
       ERR_GET_REFERENTIAL_CONST:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of referential constraints.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage35Caption;
       ERR_GET_UNIQUE_CONST:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of unique constraints.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage36Caption;
       ERR_GET_CHECK_CONST:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of check constraints.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage37Caption;
       ERR_GET_TRIGGERS:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of triggers.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage38Caption;
       ERR_GET_DDL:
-        frmMessage.stxSummaryMsg.Caption := 'An error occured while attempting to extract metadata information.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage39Caption;
       ERR_INVALID_PROPERTY_VALUE:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid Property Value.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage40Caption;
       ERR_GET_DEPENDENCIES:
-        frmMessage.stxSummaryMsg.Caption := 'An error occured while attempting to extract dependency information.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage41Caption;
       ERR_GET_DB_PROPERTIES:
-        frmMessage.stxSummaryMsg.Caption := 'An error occured while attempting to retrieve database properties.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage42Caption;
       ERR_DB_SIZE:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid database file size.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage43Caption;
       ERR_ISQL_ERROR:
-        frmMessage.stxSummaryMsg.Caption := 'SQL Error';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage44Caption;
       ERR_SERVER_SERVICE:
-        frmMessage.stxSummaryMsg.Caption := 'Service Error';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage45Caption;
       ERR_EXTERNAL_EDITOR:
-        frmMessage.stxSummaryMsg.Caption := 'External Editor Error';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage46Caption;
       ERR_SERVER_ALIAS:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid server alias. Please enter a valid server alias.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage47Caption;
       ERR_BACKUP_ALIAS:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid backup alias. Please enter a valid backup alias.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage48Caption;
       ERR_DB_SHUTDOWN:
-        frmMessage.stxSummaryMsg.Caption := 'Database shutdown unsuccessful.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage49Caption;
       ERR_MODIFY_DB_PROPERTIES:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to modify database properties.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage50Caption;
       ERR_DROP_DATABASE:
-        frmMessage.stxSummaryMsg.Caption := 'An error occured while attempting to drop the database.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage51Caption;
       ERR_FILE_OPEN:
-        frmMessage.stxSummaryMsg.Caption := 'An error occured while attempting to open file.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage52Caption;
       ERR_INV_EDITOR:
-        frmMessage.stxSummaryMsg.Caption := 'The editor specified is invalid.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage53Caption;
       ERR_EDITOR_MISSING:
-        frmMessage.stxSummaryMsg.Caption := 'The external editor is not specified.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage54Caption;
       ERR_BAD_FORMAT:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to display blob.  The format is not graphical.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage55Caption;
       ERR_INV_DIALECT:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to change the client dialect.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage56Caption;
       ERR_FOPEN:
-        frmMessage.stxSummaryMsg.Caption := 'Error occured opening file.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage57Caption;
       ERR_TEXT_NOT_FOUND:
-        frmMessage.stxSummaryMsg.Caption := 'Search string not found.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage58Caption;
       ERR_PRINT:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to print.  Make sure your printer is installed and working.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage59Caption;
       ERR_NO_PATH:
-        frmMessage.stxSummaryMsg.Caption := 'No path was specified for the backup file or database.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage60Caption;
       ERR_NO_FILES:
-        frmMessage.stxSummaryMsg.Caption := 'No files were specified for backup or restore.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage61Caption;
       ERR_GET_DOMAINS:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve a list of domains.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage62Caption;
       ERR_EXT_TOOL_ERROR:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to launch external tool';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage63Caption;
       ERR_PROPERTIES:
-        frmMessage.stxSummaryMsg.Caption := 'Unable to retrieve properties for the object';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage64Caption;
       ERR_ALIAS_EXISTS:
-        frmMessage.stxSummaryMsg.Caption := 'Invalid alias.  This alias already exists.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage65Caption;
 
       //****** Warnings ******
       WAR_NO_PERMISSION:
-        frmMessage.stxSummaryMsg.Caption := 'Insufficient rights for this operation.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage66Caption;
       WAR_SERVER_REGISTERED:
-        frmMessage.stxSummaryMsg.Caption := 'The server is already registered.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage67Caption;
       WAR_DUPLICATE_DB_ALIAS:
-        frmMessage.stxSummaryMsg.Caption := 'This database alias already exists.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage68Caption;
       WAR_BACKUP_FILE_REGISTERED:
-        frmMessage.stxSummaryMsg.Caption := 'The backup file is already registered.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage69Caption;
       WAR_DIALECT_MISMATCH:
-        frmMessage.stxSummaryMsg.Caption := 'The client dialect does not match the database dialect.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage70Caption;
       WAR_REMOTE_FILENAME:
-        frmMessage.stxSummaryMsg.Caption := 'The file name specified may contain a server name.'+#13#10+
-         'Some operations may not work correctly.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage71Caption;
 
       {****** Information ******}
       INF_ADD_USER_SUCCESS:
-        frmMessage.stxSummaryMsg.Caption := 'The user was added successfully.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage72Caption;
       INF_BACKUP_DB_SUCCESS:
-        frmMessage.stxSummaryMsg.Caption := 'Database backup completed.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage73Caption;
       INF_RESTORE_DB_SUCCESS:
-        frmMessage.stxSummaryMsg.Caption := 'Database restore completed.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage74Caption;
       INF_NO_PENDING_TRANSACTIONS:
-        frmMessage.stxSummaryMsg.Caption := 'No pending transactions were found.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage75Caption;
       INF_RESTART_SERVER:
-        frmMessage.stxSummaryMsg.Caption := 'You must restart the server in order for the changes to go into effect.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage76Caption;
       INF_DATABASE_SHUTDOWN:
-        frmMessage.stxSummaryMsg.Caption := 'Database shutdown completed successfully.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage77Caption;
       INF_DATABASE_RESTARTED:
-        frmMessage.stxSummaryMsg.Caption := 'Database restart completed successfully.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage78Caption;
       INF_SQL_SCRIPT:
-        frmMessage.stxSummaryMsg.Caption := 'SQL script done.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage79Caption;
       INF_DATABASE_SWEEP:
-        frmMessage.stxSummaryMsg.Caption := 'Database sweep completed.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage80Caption;
 
       {****** InterBase Errors ******}        
       isc_gbak_db_exists:
-         frmMessage.stxSummaryMsg.Caption := 'To overwrite an existing database, set the Overwrite option to TRUE';
+         frmMessage.stxSummaryMsg.Caption := LZTMessage81Caption;
       isc_gfix_invalid_sw:
-         frmMessage.stxSummaryMsg.Caption := 'An invalid option was specified for the operation.';
+         frmMessage.stxSummaryMsg.Caption := LZTMessage82Caption;
       isc_gfix_incmp_sw:
-         frmMessage.stxSummaryMsg.Caption := 'The parameters for this operation are conflicting.';
+         frmMessage.stxSummaryMsg.Caption := LZTMessage83Caption;
       isc_gfix_retry:
-         frmMessage.stxSummaryMsg.Caption := 'An operation was not specified.';
+         frmMessage.stxSummaryMsg.Caption := LZTMessage84Caption;
       isc_gfix_retry_db:
-         frmMessage.stxSummaryMsg.Caption := 'A database was not specified for the operation';
+         frmMessage.stxSummaryMsg.Caption := LZTMessage85Caption;
       isc_gbak_page_size_missing:
-         frmMessage.stxSummaryMsg.Caption := 'The page size must be specified.';
+         frmMessage.stxSummaryMsg.Caption := LZTMessage86Caption;
       isc_gsec_cant_open_db:
-         frmMessage.stxSummaryMsg.Caption := 'The security database could not be opened.';
+         frmMessage.stxSummaryMsg.Caption := LZTMessage87Caption;
       isc_gsec_no_usr_name:
-         frmMessage.stxSummaryMsg.Caption := 'User name missing.  A user name must be specified for all operations.';
+         frmMessage.stxSummaryMsg.Caption := LZTMessage88Caption;
       isc_gsec_err_add:
-         frmMessage.stxSummaryMsg.Caption := 'An unknown error was encountered while attempting to add the user record.';
+         frmMessage.stxSummaryMsg.Caption := LZTMessage89Caption;
       isc_gsec_err_modify:
-        frmMessage.stxSummaryMsg.Caption := 'An unknown error was encountered while attempting to modify the user record.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage90Caption;
       isc_gsec_err_find_mod:
-        frmMessage.stxSummaryMsg.Caption := 'An unknown error was encountered while attempting to find/modify the user record.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage91Caption;
       isc_gsec_err_rec_not_found:
-        frmMessage.stxSummaryMsg.Caption := 'The information for the user was not found.';      
+        frmMessage.stxSummaryMsg.Caption := LZTMessage92Caption;
       isc_gsec_err_delete:
-        frmMessage.stxSummaryMsg.Caption := 'An unknown error was encountered while attempting to delete the user record.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage93Caption;
       isc_gsec_err_find_del:
-        frmMessage.stxSummaryMsg.Caption := 'An unknown error was encountered while attempting to find/delete the user record.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage94Caption;
       isc_gsec_err_find_disp:
-        frmMessage.stxSummaryMsg.Caption := 'An unknown error was encountered while attempting to find/display the user record.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage95Caption;
       isc_sys_request:
-        frmMessage.stxSummaryMsg.Caption := 'An unknown error attempting to open a file on the server.';
+        frmMessage.stxSummaryMsg.Caption := LZTMessage96Caption;
       else
         if MsgText <> '' then
           frmMessage.stxSummaryMsg.Caption := MsgText
         else
-          frmMessage.stxSummaryMsg.Caption := 'An Unknown Error Occured';
+          frmMessage.stxSummaryMsg.Caption := LZTMessage97Caption;
     end;
 
+
+    frmMessage.Width := frmMessage.btnOK.Left + frmMessage.btnOK.Width + 21;
     if (MsgText = '') or
        (frmMessage.stxSummaryMsg.Caption = MsgText) then
     begin
-      frmMessage.Height := frmMessage.btnOK.Top + frmMessage.btnOK.Height + 35;
+      frmMessage.Height := frmMessage.btnOK.Top + frmMessage.btnOK.Height + 21;
+      frmMessage.lblDetailMsg.Visible:=false;
+      frmMessage.memDetailMsg.Visible:=false;
       frmMessage.Update;
       Application.ProcessMessages;
     end
     else
     begin
-      frmMessage.Height := frmMessage.memDetailMsg.Top + frmMessage.memDetailMsg.Height + 40;
+      frmMessage.Height := frmMessage.memDetailMsg.Top + frmMessage.memDetailMsg.Height + 21;
+      frmMessage.lblDetailMsg.Visible:=true;
+      frmMessage.memDetailMsg.Visible:=true;
       frmMessage.Update;
       Application.ProcessMessages;
     end;
@@ -435,5 +419,12 @@ procedure TfrmMessage.btnOKClick(Sender: TObject);
 begin
   ModalResult := mrCancel;
 end;
+
+Procedure TfrmMessage.TranslateVisual;
+Begin
+  Self.Caption := LZTMessageFormTitle;
+  btnOK.Caption := LZTMessagebtnOKCaption;
+  lblDetailMsg.Caption := LZTMessagelblDetailMsgCaption;
+End;
 
 end.
