@@ -17,7 +17,6 @@
  * Contributor(s): Krzysztof Golko.
 }
 
-
 unit zluUtility;
 
 {$MODE Delphi}
@@ -25,8 +24,8 @@ unit zluUtility;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Controls, Forms, Dialogs, StdCtrls,
-  FileCtrl, FileUtil, Registry, IBDatabase, IBSQL;
+  LCLIntf, LCLType, SysUtils, Classes, Controls, Forms, Dialogs, StdCtrls,
+  FileCtrl, FileUtil, Registry, IBDatabase, IBSQL, resstring, windows, Process;
 
 function CheckDirectory(Directory: string): boolean;
 function GetNewFileName(Directory: string; FileExtension: string): string;
@@ -50,18 +49,15 @@ implementation
 uses
   zluGlobal, zluPersistent, frmuMessage, IBHeader, frmuMain;
 
-
 function CheckDirectory(Directory: string): boolean;
 begin
-  if (Directory <> '') and not (DirectoryExists(Directory) { *Converted from DirectoryExists* }) then
+  if (Directory <> '') and not (DirectoryExists(Directory)) then
   begin
-    if MessageDlg(Format('The directory %s does not exist. Do you wish to create it?',[Directory]),
-      mtConfirmation, [mbYes,mbNo], 0) = mrYes then
+    if MessageDlg(Format(LZTUtilityDirectotyNotExistCreateIt,[Directory]), mtConfirmation, [mbYes,mbNo], 0) = mrYes then
     begin
-      if not CreateDir(Directory) { *Converted from CreateDir* } then
+      if not CreateDir(Directory) then
       begin
-        MessageDlg(Format('An error occurred while attemting to create directory %s. Operation cancelled.',[Directory]),
-          mtInformation, [mbOk], 0);
+        MessageDlg(Format(LZTUtilityErrorAttemtingCreateDirectCancel,[Directory]), mtInformation, [mbOk], 0);
         result := false;
       end
       else
@@ -80,33 +76,22 @@ var
 begin
   Randomize;
   lFileName := Format('%s%s%s',[Directory,Format('%-8.8d',[Random(99999999)]),FileExtension]);
-  while FileExists(lFileName) { *Converted from FileExists* } do
+  while FileExists(lFileName) do
   begin
     lFileName := Format('%s%s%s',[Directory,Format('%-8.8d',[Random(99999999)]),FileExtension]);
   end;
   result := lFileName;
 end;
 
-{****************************************************************
-*
-*  G e t N e x t F i e l d ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  InputStr - The string to process
-*          FieldDelimiter - The field delimiter to use
-*
-*  Return: string - The extracted string
-*
-*  Description:  Receives a delimited string and extracts the
-*                first field in the string based on the given delimiter
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  G e t N e x t F i e l d ()
+  Input:  InputStr - The string to process
+          FieldDelimiter - The field delimiter to use
+  Return: string - The extracted string
+  Description:  Receives a delimited string and extracts the
+                first field in the string based on the given delimiter
+}
+
 function GetNextField(var InputStr: string; const FieldDelimiter: string): string;
 var
   lFieldDelPos: integer;
@@ -120,7 +105,7 @@ begin
     lRetVal := Copy(InputStr, 1, lFieldDelPos - 1);
 
     // delete field from our incoming string
-    Delete(InputStr, 1, lFieldDelPos + Length(FieldDelimiter)-1);
+    Delete(InputStr, 1, lFieldDelPos + Length(FieldDelimiter) - 1);
   end
   else
   begin
@@ -133,41 +118,30 @@ end;
 
 function IsIBRunning(): boolean;
 begin
-//  if GetWindow(GetDesktopWindow,GW_HWNDNEXT)= FindWindow('IB_Server', 'InterBase Server') then
-//    result := false
-//  else
+  if GetWindow(GetDesktopWindow,GW_HWNDNEXT)= FindWindow('firebird', 'Firebird SQL Server') then
+    result := false
+  else
     result := true;
 end;
 
 function OSVersionInfo(): DWORD;
-//var
-  //lVersion: Windows.OSVERSIONINFO;
+var
+  lVersion: Windows.OSVERSIONINFO;
 begin
-  //ZeroMemory(@lVersion, SizeOf(lVersion));
-  //lVersion.dwOSVersionInfoSize := sizeof(lVersion);
-  //GetVersionEx(lVersion);
-//  result := lVersion.dwPlatformId
+  ZeroMemory(@lVersion, SizeOf(lVersion));
+  lVersion.dwOSVersionInfoSize := sizeof(lVersion);
+  GetVersionEx(lVersion);
+  result := lVersion.dwPlatformId
 end;
 
-{****************************************************************
-*
-*  R e m o v e C o n t r o l C h a r s ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  InputStr - The string to process
-*
-*  Return: string - The processed string
-*
-*  Description:  Receives a string and removes any control
-*                characters from it
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  R e m o v e C o n t r o l C h a r s ()
+  Input:  InputStr - The string to process
+  Return: string - The processed string
+  Description:  Receives a string and removes any control
+                characters from it
+}
+
 function RemoveControlChars(const InputStr: string): string;
 var
   i: integer;
@@ -197,6 +171,7 @@ var
   lRegistry: TRegistry;
   lEXEName: string;
   lArray: array[0..255] of char;
+  AProcess: TProcess;
 begin
   result := false;
   lRegistry := TRegistry.Create;
@@ -204,12 +179,17 @@ begin
     Screen.Cursor := crHourglass;
     lRegistry.RootKey := HKEY_LOCAL_MACHINE;
     if not lRegistry.OpenKey('Software\Borland\InterBase\CurrentVersion',False) then
-      ShowMessage('InterBase server is not installed on your computer.')
+      ShowMessage(LZTUtilityInterbaseNotInstalled)
     else
       lEXEName := Format('%s%s ',[lRegistry.ReadString('ServerDirectory'),'ibguard.exe']);
   finally
-//    if WinExec(StrPCopy(lArray,lEXEName),1) > 31 then
+    AProcess := TProcess.Create(nil);
+    AProcess.Executable:= lEXEName;
+    AProcess.Options := AProcess.Options + [poNewProcessGroup];
+    AProcess.Execute;
+    if AProcess.Running then
       result := true;
+    AProcess.Free;
     lRegistry.Free;
     Screen.Cursor := crDefault;
   end;
@@ -357,20 +337,20 @@ function ConvertStr(lStr : String) : String;
 function ObjTypeToStr(const objType: integer): string;
 begin
   case objType of
-    0: result := 'Table';
-    1: result := 'View';
-    2: result := 'Trigger';
-    3: result := 'Computed Field';
-    4: result := 'Validation';
-    5: result := 'Procedure';
-    6: result := 'Expression Index';
-    7: result := 'Exception';
-    8: result := 'User';
-    9: result := 'Field';
-    10: result := 'Index';
-    13: result := 'Role';
+    0: result := LZTUtilityTable;
+    1: result := LZTUtilityView;
+    2: result := LZTUtilityTrigger;
+    3: result := LZTUtilityComputedField;
+    4: result := LZTUtilityValidation;
+    5: result := LZTUtilityProcedure;
+    6: result := LZTUtilityExpressionIndex;
+    7: result := LZTUtilityException;
+    8: result := LZTUtilityUser;
+    9: result := LZTUtilityField;
+    10: result := LZTUtilityIndex;
+    13: result := LZTUtilityRole;
     else
-      result := 'Unknown';
+      result := LZTUtilityUnknown;
   end;
 end;
 

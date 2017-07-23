@@ -192,6 +192,23 @@ Resourcestring
   LZTMessage95Caption = 'An unknown error was encountered while attempting to find/display the user record.';
   LZTMessage96Caption = 'An unknown error attempting to open a file on the server.';
   LZTMessage97Caption = 'An Unknown Error Occured';
+  LZTUtilityTable = 'Table';
+  LZTUtilityView = 'View';
+  LZTUtilityTrigger = 'Trigger';
+  LZTUtilityComputedField = 'Computed Field';
+  LZTUtilityValidation = 'Validation';
+  LZTUtilityProcedure = 'Procedure';
+  LZTUtilityExpressionIndex = 'Expression Index';
+  LZTUtilityException = 'Exception';
+  LZTUtilityUser = 'User';
+  LZTUtilityField = 'Field';
+  LZTUtilityIndex = 'Index';
+  LZTUtilityRole = 'Role';
+  LZTUtilityUnknown = 'Unknown';
+  LZTUtilityInterbaseNotInstalled = 'InterBase server is not installed on your computer.';
+  LZTUtilityErrorAttemtingCreateDirectCancel = 'An error occurred while attemting to create directory %s. Operation cancelled.';
+  LZTUtilityDirectotyNotExistCreateIt = 'The directory %s does not exist. Do you wish to create it?';
+
 
 implementation
 

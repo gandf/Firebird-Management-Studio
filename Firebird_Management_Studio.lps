@@ -42,8 +42,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="7"/>
-        <CursorPos Y="19"/>
+        <TopLine Value="100"/>
+        <CursorPos X="56" Y="55"/>
         <UsageCount Value="1315"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -74,12 +74,10 @@
         <ComponentName Value="frmCommDiag"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="13"/>
-        <CursorPos Y="25"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="7"/>
+        <CursorPos X="7" Y="16"/>
         <UsageCount Value="1315"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="frmuDBBackup.pas"/>
@@ -254,13 +252,10 @@
         <ComponentName Value="frmMessage"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="381"/>
         <CursorPos X="59" Y="398"/>
         <UsageCount Value="1315"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit24>
       <Unit25>
         <Filename Value="frmuModifyServerAlias.pas"/>
@@ -433,17 +428,19 @@
       <Unit43>
         <Filename Value="zluUtility.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="42"/>
-        <CursorPos X="23" Y="61"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="192"/>
+        <CursorPos X="119" Y="204"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit43>
       <Unit44>
         <Filename Value="resstring.pas"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="90"/>
-        <CursorPos X="50" Y="96"/>
-        <UsageCount Value="50"/>
+        <TopLine Value="188"/>
+        <CursorPos Y="211"/>
+        <UsageCount Value="55"/>
         <Loaded Value="True"/>
       </Unit44>
       <Unit45>
@@ -451,210 +448,120 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="64" Y="29"/>
-        <UsageCount Value="1315"/>
+        <UsageCount Value="1314"/>
       </Unit45>
       <Unit46>
         <Filename Value="C:\lazarus\lcl\include\application.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1372"/>
         <CursorPos Y="1387"/>
-        <UsageCount Value="629"/>
+        <UsageCount Value="628"/>
       </Unit46>
       <Unit47>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1437"/>
         <CursorPos Y="1453"/>
-        <UsageCount Value="603"/>
+        <UsageCount Value="602"/>
       </Unit47>
       <Unit48>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4328"/>
         <CursorPos Y="4342"/>
-        <UsageCount Value="603"/>
+        <UsageCount Value="602"/>
       </Unit48>
       <Unit49>
         <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-registry\src\registry.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="75"/>
         <CursorPos X="25" Y="102"/>
-        <UsageCount Value="588"/>
+        <UsageCount Value="587"/>
       </Unit49>
       <Unit50>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2829"/>
         <CursorPos Y="2848"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="4"/>
       </Unit50>
       <Unit51>
         <Filename Value="zlulang.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="51" Y="9"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="14"/>
       </Unit51>
       <Unit52>
         <Filename Value="..\ibx\fbintf.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="11"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit52>
       <Unit53>
         <Filename Value="..\ibx\fbintf\client\FBClientAPI.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="444"/>
         <CursorPos X="42" Y="462"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit53>
       <Unit54>
         <Filename Value="..\ibx\runtime\IBServices.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="302"/>
         <CursorPos X="53" Y="314"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit54>
       <Unit55>
         <Filename Value="C:\lazarus2\fpc\3.0.2\source\packages\fcl-base\src\fileinfo.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="251"/>
         <CursorPos X="40" Y="260"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit55>
       <Unit56>
         <Filename Value="C:\lazarus2\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3485"/>
         <CursorPos Y="3498"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit56>
       <Unit57>
         <Filename Value="C:\lazarus2\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="8215"/>
         <CursorPos Y="8233"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit57>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="7" HistoryIndex="6">
       <Position1>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="810" Column="74" TopLine="798"/>
-      </Position1>
-      <Position2>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="816" Column="24" TopLine="798"/>
-      </Position2>
-      <Position3>
-        <Filename Value="frmuCommDiag.pas"/>
-      </Position3>
-      <Position4>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="93" Column="15" TopLine="70"/>
-      </Position4>
-      <Position5>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="770" Column="13" TopLine="746"/>
-      </Position5>
-      <Position6>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="775" Column="15" TopLine="751"/>
-      </Position6>
-      <Position7>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="790" Column="21" TopLine="767"/>
-      </Position7>
-      <Position8>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="805" Column="13" TopLine="781"/>
-      </Position8>
-      <Position9>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="817" Column="60" TopLine="760"/>
-      </Position9>
-      <Position10>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="46" Column="29" TopLine="32"/>
-      </Position10>
-      <Position11>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="403" Column="11" TopLine="400"/>
-      </Position11>
-      <Position12>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="408" Column="89" TopLine="398"/>
-      </Position12>
-      <Position13>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="425" TopLine="402"/>
-      </Position13>
-      <Position14>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="403" TopLine="397"/>
-      </Position14>
-      <Position15>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="317" TopLine="303"/>
-      </Position15>
-      <Position16>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="318" TopLine="303"/>
-      </Position16>
-      <Position17>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="321" TopLine="303"/>
-      </Position17>
-      <Position18>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="324" TopLine="303"/>
-      </Position18>
-      <Position19>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="345" TopLine="332"/>
-      </Position19>
-      <Position20>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="347" TopLine="332"/>
-      </Position20>
-      <Position21>
-        <Filename Value="frmuMessage.pas"/>
-        <Caret Line="163" TopLine="148"/>
-      </Position21>
-      <Position22>
         <Filename Value="frmuAbout.pas"/>
         <Caret Line="60" Column="40" TopLine="50"/>
-      </Position22>
-      <Position23>
-        <Filename Value="frmuMessage.pas"/>
-        <Caret Line="38" Column="31" TopLine="22"/>
-      </Position23>
-      <Position24>
+      </Position1>
+      <Position2>
         <Filename Value="resstring.pas"/>
         <Caret Line="96" Column="50" TopLine="90"/>
-      </Position24>
-      <Position25>
-        <Filename Value="frmuMessage.pas"/>
-        <Caret Line="439" Column="22" TopLine="418"/>
-      </Position25>
-      <Position26>
-        <Filename Value="frmuMessage.pas"/>
-        <Caret Line="428" Column="34" TopLine="418"/>
-      </Position26>
-      <Position27>
-        <Filename Value="frmuMessage.pas"/>
-        <Caret Line="389" Column="31" TopLine="375"/>
-      </Position27>
-      <Position28>
-        <Filename Value="frmuMessage.pas"/>
-        <Caret Line="385" Column="66" TopLine="375"/>
-      </Position28>
-      <Position29>
-        <Filename Value="frmuMessage.pas"/>
-      </Position29>
-      <Position30>
-        <Filename Value="frmuMessage.pas"/>
-        <Caret Line="23" Column="17"/>
-      </Position30>
+      </Position2>
+      <Position3>
+        <Filename Value="zluUtility.pas"/>
+        <Caret Line="347" Column="35" TopLine="332"/>
+      </Position3>
+      <Position4>
+        <Filename Value="zluUtility.pas"/>
+        <Caret Line="129" Column="3" TopLine="109"/>
+      </Position4>
+      <Position5>
+        <Filename Value="zluUtility.pas"/>
+        <Caret Line="134" TopLine="115"/>
+      </Position5>
+      <Position6>
+        <Filename Value="frmuAbout.pas"/>
+        <Caret Line="55" Column="56" TopLine="100"/>
+      </Position6>
+      <Position7>
+        <Filename Value="zluUtility.pas"/>
+        <Caret Line="28" Column="72" TopLine="18"/>
+      </Position7>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
