@@ -76,7 +76,7 @@ function DoDBStatistics(const SourceServerNode: TibcServerNode;
 implementation
 
 uses
-  zluGlobal, zluUtility, zluContextHelp, frmuMessage, fileCtrl, IBErrorCodes,
+  zluGlobal, zluUtility, frmuMessage, fileCtrl, IBErrorCodes,
   frmuMain;
 
 {$R *.lfm}

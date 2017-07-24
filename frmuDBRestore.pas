@@ -103,7 +103,7 @@ function DoDBRestore(const SourceServerNode: TibcServerNode;
 implementation
 
 uses zluGlobal, zluPersistent, frmuServerRegister,IBServices,frmuMessage,
-  frmuMain, zluUtility, dmuMain, zluContextHelp, IBErrorCodes;
+  frmuMain, zluUtility, dmuMain, IBErrorCodes;
 
 {$R *.lfm}
 

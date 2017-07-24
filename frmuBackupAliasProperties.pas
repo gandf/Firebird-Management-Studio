@@ -17,21 +17,11 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u B a c k u p A l i a s P r o p e r t i e s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for editing
-*                backup alias properties
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  f r m u B a c k u p A l i a s P r o p e r t i e s
+Description:  This unit provides an interface for editing
+              backup alias properties
+}
 
 unit frmuBackupAliasProperties;
 
@@ -41,7 +31,7 @@ interface
 
 uses
   Forms, ExtCtrls, StdCtrls, Classes, Controls, zluibcClasses, ComCtrls,
-  SysUtils, Grids, Dialogs, Registry, LCLIntf, LCLType, LMessages, Messages, frmuDlgClass;
+  SysUtils, Grids, Dialogs, Registry, LCLIntf, LCLType, LMessages, Messages, frmuDlgClass, resstring;
 
 type
   TfrmBackupAliasProperties = class(TDialog)
@@ -58,7 +48,6 @@ type
     btnApply: TButton;
     btnOK: TButton;
     Button1: TButton;
-    function FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure FormCreate(Sender: TObject);
     procedure btnApplyClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
@@ -69,6 +58,7 @@ type
       ARow: Integer; const Value: String);
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     FApplyChanges: boolean;
@@ -88,32 +78,20 @@ function EditBackupAliasProperties(const SourceServerNode: TibcServerNode;
 implementation
 
 uses
-  zluGlobal, zluUtility, frmuMain, frmuMessage, zluContextHelp;
+  zluGlobal, zluUtility, frmuMain, frmuMessage;
 
 {$R *.lfm}
 
-{****************************************************************
-*
-*  E d i t B a c k u p A l i a s P r o p e r t i e s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:   SourceServerNode - currently selected server
-*           BackupAliasNode  - currently selected backup alias
-*
-*  Return:  Integer - specifies whether or not backup alias
-*                     properties where modified
-*
-*  Description: Displays backup alias properties as well as
-*               capturing new properties.  This function will
-*               apply the new changes, if any.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  E d i t B a c k u p A l i a s P r o p e r t i e s ( )
+Input:   SourceServerNode - currently selected server
+         BackupAliasNode  - currently selected backup alias
+Return:  Integer - specifies whether or not backup alias
+                   properties where modified
+Description: Displays backup alias properties as well as
+             capturing new properties.  This function will
+             apply the new changes, if any.
+}
 function EditBackupAliasProperties(const SourceServerNode: TibcServerNode;
   var BackupAliasNode: TibcBackupAliasNode): integer;
 var
@@ -179,13 +157,6 @@ begin
     // deallocate memory
     frmBackupAliasProperties.Free;
   end;
-end;
-
-function TfrmBackupAliasProperties.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  //Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,BACKUP_CONFIGURATION_PROPERTIES);
 end;
 
 procedure TfrmBackupAliasProperties.FormCreate(Sender: TObject);
@@ -333,7 +304,6 @@ begin
   ClientPt := ScreenToClient( ScreenPt );
   if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
    begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,BACKUP_CONFIGURATION_PROPERTIES);
     Message.Result := 0;
   end else
    inherited;
@@ -364,5 +334,17 @@ begin
   inherited;
   ModalResult := mrCancel;
 end;
+
+Procedure TfrmBackupAliasProperties.TranslateVisual;
+Begin
+  lblServerName.Caption := LZTBackupAliasProplblServerNameCaption;
+  lblAliasName.Caption := LZTBackupAliasProplblAliasNameCaption;
+  lblDBServer.Caption := LZTBackupAliasProplblDBServerCaption;
+  lblDBAlias.Caption := LZTBackupAliasProplblDBAliasCaption;
+  btnOK.Caption := LZTBackupAliasPropbtnOKCaption;
+  Button1.Caption := LZTBackupAliasPropButton1Caption;
+  btnApply.Caption := LZTBackupAliasPropbtnApplyCaption;
+  Self.Caption := LZTBackupAliasPropFormTitle;
+End;
 
 end.

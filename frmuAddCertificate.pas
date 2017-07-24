@@ -64,7 +64,7 @@ function AddCertificate(var CertificateID,CertificateKey: string): boolean;
 
 implementation
 
-uses frmuMessage, zluContextHelp;
+uses frmuMessage;
 
 {$R *.DFM}
 

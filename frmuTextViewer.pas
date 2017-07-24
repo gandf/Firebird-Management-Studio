@@ -87,7 +87,7 @@ type
 implementation
 
 uses
-  zluGlobal, zluContextHelp, frmuMain, frmuMessage, IB, IBErrorCodes;
+  zluGlobal, frmuMain, frmuMessage, IB, IBErrorCodes;
 
 {$R *.lfm}
 

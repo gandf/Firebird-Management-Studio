@@ -56,7 +56,7 @@ function ServerLogin(var CurrSelServer: TibcServerNode; const SilentLogin: boole
 
 implementation
 
-uses zluGlobal, frmuMessage, zluContextHelp, IBErrorCodes;
+uses zluGlobal, frmuMessage, IBErrorCodes;
 
 {$R *.lfm}
 

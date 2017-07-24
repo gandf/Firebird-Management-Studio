@@ -76,7 +76,7 @@ function DoDBShutdown(const CurrSelServer : TibcServerNode; const CurrSelDatabas
 implementation
 
 uses
-  zluGlobal, zluUtility, frmuMessage, zluContextHelp, fileCtrl, IBErrorCodes,
+  zluGlobal, zluUtility, frmuMessage, fileCtrl, IBErrorCodes,
   frmuMain;
 
 {$R *.lfm}

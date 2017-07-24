@@ -107,7 +107,7 @@ var
 implementation
 
 uses
-   zluGlobal, zluPersistent, zluContextHelp, IBServices, frmuMessage;
+   zluGlobal, zluPersistent, IBServices, frmuMessage;
 
 {$R *.lfm}
 

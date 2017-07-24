@@ -28,7 +28,7 @@ uses LCLIntf, LCLType, LMessages, Classes, Graphics, Interfaces, Forms, Controls
   Registry, zluibcClasses, IBServices, IB, Messages, SysUtils,
   SynEdit, DB, IBHeader, sqldb,
   IBDatabaseInfo, frmuDlgClass, ActnList, StdActns, wisql, frmuObjectWindow,
-  IBExtract, zluPersistent,IBQuery,IBDatabase,IBCustomDataSet, IBSQL, Windows;
+  IBExtract, zluPersistent,IBQuery,IBDatabase,IBCustomDataSet, IBSQL, Windows, gettext, Translations, resstring;
 
 type
   TfrmMain = class(TForm)
@@ -173,11 +173,7 @@ type
     ViewSmallIcon: TAction;
     ViewProperties: TAction;
     ViewSystem: TAction;
-    HelpContents: THelpContents;
-    HelpOnHelp: THelpOnHelp;
-    HelpTopicSearch: THelpTopicSearch;
     HelpAbout: TAction;
-    HelpInterBase: TAction;
     EditCopy: TEditCopy;
     EditCut: TEditCut;
     EditPaste: TEditPaste;
@@ -244,6 +240,7 @@ type
     ObjectRefresh: TAction;
     Refresh1: TMenuItem;
     ConnectAs3: TMenuItem;
+    Procedure TranslateVisual;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -424,7 +421,7 @@ uses frmuAbout,zluGlobal,frmuUser,frmuDBRegister,frmuServerRegister,dmuMain,
   frmuDBRestore,frmuDBBackup,
   frmuServerProperties,frmuDBProperties,frmuBackupAliasProperties,
   frmuDBCreate,frmuDBConnections,frmuDBValidation,frmuDBShutdown,
-  frmuCommDiag, zluContextHelp, frmuDBTransactions,
+  frmuCommDiag, frmuDBTransactions,
   frmuDBStatistics, frmuDispMemo, frmuModifyServerAlias, zluSQL, frmuDisplayBlob,
   frmuTools, frmuDescription, frmuWindowList, CommCtrl, IBErrorCodes;
 
@@ -459,27 +456,6 @@ begin
                            ParamL);
 end;
 
-
-{****************************************************************
-*
-*  F o r m C l o s e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*          Action - Determines if the form actually closes
-*
-*  Return: None
-*
-*  Description: This procedure performs a number of cleanup tasks
-*               when the Main form is closed
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   gApplShutdown := true;
@@ -489,28 +465,10 @@ begin
   FWindowList.Free;
 end;
 
-{****************************************************************
-*
-*  F o r m C r e a t e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure performs initialization tasks
-*               when the Main form is created.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmMain.FormCreate(Sender: TObject);
 var
-  lCnt: integer;
+  lCnt: Integer;
+  lg, language : String;
 begin
   {First, setup a handler for detecting multiple instances }
   IBConsole_msg := RegisterWindowMessage('fb_man_studio_mtx');
@@ -531,6 +489,12 @@ begin
   FCurrSelDatabase := nil;
   FCurrSelTreeNode := nil;
   FPrevSelTreeNode := nil;
+
+  GetLanguageIDs(lg,language);
+  Translations.TranslateUnitResourceStrings('resstring', '.\Lang\'+ChangeFileExt(ExtractFileName(Application.ExeName),
+  '')+'.%s.po', lg, language);
+  TranslateVisual;
+
   try
     SetLength (gWinTempPath, MAX_PATH);
     GetTempPath(MAX_PATH,PChar(gWinTempPath));
@@ -612,27 +576,14 @@ begin
     gExternalApps.Free;
 end;
 
-{****************************************************************
-*
-*  l v O b j e c t L i s t C h a n g e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*          Item - The list item that just changed
-*          Change - The type of change that just occurred
-*
-*  Return: None
-*
-*  Description: This procedure enables/disables controls based on the
-*               the selected treenode
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  l v O b j e c t L i s t C h a n g e ( )
+Input:  Sender - The object that initiated the event
+        Item - The list item that just changed
+        Change - The type of change that just occurred
+Description: This procedure enables/disables controls based on the
+             the selected treenode
+}
 procedure TfrmMain.lvObjectsChange(Sender: TObject; Item: TListItem; Change: TItemChange);
 var
   lTreeNode: TTreeNode;
@@ -673,26 +624,12 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  l v O b j e c t L i s t D b l C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure determines what action takes place
-*               during a double click depending on the type of the
-*               selected treenode
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  l v O b j e c t L i s t D b l C l i c k ( )
+Description: This procedure determines what action takes place
+             during a double click depending on the type of the
+             selected treenode
+}
 procedure TfrmMain.lvObjectsDblClick(Sender: TObject);
 var
   Icon: TIcon;
@@ -750,25 +687,11 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  t v M a i n C h a n g e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure controls what actions can take place when
-*               the user selectes a treenode
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  t v M a i n C h a n g e ( )
+Description: This procedure controls what actions can take place when
+             the user selectes a treenode
+}
 procedure TfrmMain.tvMainChange(Sender: TObject; Node: TTreeNode);
 begin
   stbMain.Panels[0].Text := '';
@@ -918,25 +841,11 @@ end;
 
 end;
 
-{****************************************************************
-*
-*  t v M a i n D b l C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure performs an action depending on
-*               which treenode received the double-click.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  t v M a i n D b l C l i c k ( )
+Description: This procedure performs an action depending on
+             which treenode received the double-click.
+}
 procedure TfrmMain.tvMainDblClick(Sender: TObject);
 begin
   if not Assigned (FCurrSelTreeNode) then
@@ -986,29 +895,16 @@ begin
   end
 end;
 
-{****************************************************************
-*
-*  D o D B C o n n e c t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input: SelServerNode - The selected server
-*         SelDatabaseNode - The selected database
-*         SilentLogin - Indicates whether or not to perform
-*                       a silent login
-*
-*  Return: None
-*
-*  Description: This procedure makes a call to the DBConnect function.
-*               If a connection is established it also creates/initializes
-*               the treenodes under the database node
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  D o D B C o n n e c t ( )
+Input: SelServerNode - The selected server
+       SelDatabaseNode - The selected database
+       SilentLogin - Indicates whether or not to perform
+                     a silent login
+Description: This procedure makes a call to the DBConnect function.
+             If a connection is established it also creates/initializes
+             the treenodes under the database node
+}
 function TfrmMain.DoDBConnect(const SelServerNode: TibcServerNode;
   SelDatabaseNode: TibcDatabaseNode;
   const SilentLogin: boolean; refresh:boolean): boolean;
@@ -1057,24 +953,11 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  D o D B D i s c o n n e c t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  SelDatabaseNode - The selected database
-*
-*  Return: None
-*
-*  Description: This procedure disconnects the specified database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  D o D B D i s c o n n e c t ( )
+Input:  SelDatabaseNode - The selected database
+Description: This procedure disconnects the specified database
+}
 function TfrmMain.DoDBDisconnect(var SelDatabaseNode: TibcDatabaseNode): boolean;
 begin
   if not Assigned(SelDatabaseNode) then
@@ -1104,26 +987,13 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t B a c k u p F i l e s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input: SelServerNode - The selected server
-*         SelTreeNode - The selected tree node
-*
-*  Return: integer - Indicates the success/failure of the operation
-*
-*  Description: This precedure retrieves a list of Backup aliases for the
-*               selected server from the treeview structure
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  G e t B a c k u p F i l e s ( )
+Input: SelServerNode - The selected server
+       SelTreeNode - The selected tree node
+Description: This precedure retrieves a list of Backup aliases for the
+             selected server from the treeview structure
+}
 function TfrmMain.GetBackupFiles(const SelServerNode: TibcServerNode): integer;
 var
   lObjectList: TStringList;
@@ -1148,26 +1018,12 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L S c r i p t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input: None
-*
-*  Return: integer - Indicates the success/failure of the operation
-*
-*  Description: This procedure determines the type of the selected
-*               treenode and calls the appropriate function in order to
-*               retrieve the DDL script for the object(s).
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  G e t D D L S c r i p t ( )
+Description: This procedure determines the type of the selected
+             treenode and calls the appropriate function in order to
+             retrieve the DDL script for the object(s).
+}
 function TfrmMain.GetDDLScript: integer;
 var
   lSQLScript: TStringList;
@@ -1198,25 +1054,12 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D a t a b a s e s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input: SelServerNode - The selected server
-*
-*  Return: integer - Indicates the success/failure of the operation
-*
-*  Description: This procedure retrieves a list of databases for the
-*               specified server from the treeview structure
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  G e t D a t a b a s e s ( )
+Input: SelServerNode - The selected server
+Description: This procedure retrieves a list of databases for the
+             specified server from the treeview structure
+}
 function TfrmMain.GetDatabases(const SelServerNode: TibcServerNode): integer;
 var
   lObjectList: TStringList;
@@ -1243,25 +1086,10 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t S e r v e r s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input: None
-*
-*  Return: Returns a status code indicating the success/failure of
-*          the operation.
-*
-*  Description: Get's a list of registered servers
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+{
+  G e t S e r v e r s ( )
+Description: Get's a list of registered servers
+}
 function TfrmMain.GetServers: integer;
 var
   lObjectList: TStringList;
@@ -1298,24 +1126,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t U s e r s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return: None
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmMain.GetUsers(const SelServerNode: TibcServerNode; const SelTreeNode: TibcTreeNode): integer;
 var
   lObjectList: TStringList;
@@ -1382,24 +1192,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  R e g i s t e r B a c k u p F i l e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return: None
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmMain.RegisterBackupFile(const SelServerNode: TibcServerNode; const SourceDBAlias,
   BackupAlias: string; BackupFiles: TStringList): boolean;
 var
@@ -1441,25 +1233,6 @@ begin
     result := true;
   end;
 end;
-
-{****************************************************************
-*
-*  R e g i s t e r D a t a b a s e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return: None
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 function TfrmMain.RegisterDatabase(const SelServerNode: TibcServerNode;
   const DBAlias,UserName,Password,Role,CharacterSet: string; DatabaseFiles: TStringList;
@@ -1513,24 +1286,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  R e g i s t e r S e r v e r ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return: None
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmMain.RegisterServer(const ServerName,ServerAlias,UserName,
                                  Password, Description: string;
                                  Protocol: TProtocol; SaveAlias: boolean;
@@ -1576,24 +1331,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  D e l e t e N o d e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return: None
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmMain.DeleteNode(const Node: TTreeNode; const ChildNodesOnly: boolean);
 begin
   if Assigned (Node) then
@@ -1608,27 +1345,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  D o S e r v e r L o g i n ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input: SilentLogin - Indicates wheather or not to prompt the
-*         user for login information.
-*
-*  Return: None
-*
-*  Description: This procedure makes a call to the server login function
-*               and refreshes the treeview depending on the success/failure
-*               of the login
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmMain.DoServerLogin(const SilentLogin: boolean): boolean;
 var
   lServerNode,lCurrNode: TTreeNode;
@@ -1765,24 +1481,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  F i l l O b j e c t L i s t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return: None
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmMain.FillObjectList(const CurrSelNode: TibcTreeNode);
 var
   loListItem: TListItem;
@@ -1912,24 +1610,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  I n i t T r e e V i e w ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return: None
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmMain.InitTreeView;
 var
   lCurrNode: TTreeNode;
@@ -1940,25 +1620,6 @@ begin
   lCurrNode.SelectedIndex := 0;
 end;
 
-{****************************************************************
-*
-*  R e a d R e g i s t r y ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input: None
-*
-*  Return: None
-*
-*  Description: This procedure reads application settings from
-*               the registry.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmMain.ReadRegistry;
 var
   lServerName,lCharacterSet,lServerAlias,lServerUserName, lDescription: string;
@@ -4036,5 +3697,135 @@ begin
     end;
   end;
 end;
+
+Procedure TfrmMain.TranslateVisual;
+Begin
+  ToolBar2.Caption := LZTMainToolBar2;
+  ToolButton8.Caption := LZTMainToolButton8;
+  ToolButton6.Caption := LZTMainToolButton6;
+  Console1.Caption := LZTMainConsole;
+  View1.Caption := LZTMainView;
+  Server1.Caption := LZTMainServer;
+  Database1.Caption := LZTMainDatabase;
+  Maintenance2.Caption := LZTMainMaintenance;
+  Maintenance1.Caption := LZTMainMaintenance;
+  BackupRestore1.Caption := LZTMainBackupRestore;
+  BackupRestore2.Caption := LZTMainBackupRestore;
+  ConnectAs3.Caption := LZTMainNewconnection;
+  Window2.Caption := LZTMainWindowsws;
+  ConsoleExit.Caption := LZTMainExit;
+  ViewList.Caption := LZTMainList;
+  ViewReport.Caption := LZTMainDetails;
+  ViewIcon.Caption := LZTMainLarge;
+  ViewSmallIcon.Caption := LZTMainSmall;
+  ViewSystem.Caption := LZTMainystemData;
+  HelpAbout.Caption := LZTMainAbout;
+  EditCopy.Caption := LZTMainCopy;
+  EditCut.Caption := LZTMainCut;
+  EditPaste.Caption := LZTMainPaste;
+  EditSelectAll.Caption := LZTMainSelectAll;
+  EditUndo.Caption := LZTMainUndo;
+  EditFont.Caption := LZTMainFont;
+  WindowList.Caption := LZTMainWindows;
+  UserAdd.Caption := LZTMainAddUser;
+  UserModify.Caption := LZTMainModifyUser;
+  UserDelete.Caption := LZTMainDeleteUser;
+  ServerLogout.Caption := LZTMainLogout;
+  ServerSecurity.Caption := LZTMainUserSecurity;
+  ViewProperties.Caption := LZTMainProperties;
+  ServerProperties.Caption := LZTMainProperties;
+  DatabaseProperties.Caption := LZTMainProperties;
+  ServerActionProps.Caption := LZTMainProperties;
+  DatabaseActionsProperties.Caption := LZTMainProperties;
+  ObjectProperties.Caption := LZTMainProperties;
+  DatabaseDisconnect.Caption := LZTMainDisconnect;
+  DatabaseStatistics.Caption := LZTMainDatabaseStatistics;
+  DatabaseShutdown.Caption := LZTMainShutdown;
+  DatabaseSweep.Caption := LZTMainSweep;
+  DatabaseRecoverTrans.Caption := LZTMainTransactionRecovery;
+  DatabaseMetadata.Caption := LZTMainViewMetadata;
+  DatabaseRestart.Caption := LZTMainDatabaseRestart;
+  DatabaseDrop.Caption := LZTMainDropDatabase;
+  DBCBackup.Caption := LZTMainDatabaseBackup;
+  DatabaseUsers.Caption := LZTMainConnectedUsers;
+  DBCRestore.Caption := LZTMainRestoreDatabase;
+  ServerLogin.Caption := LZTMainLogin;
+  ServerRegister.Caption := LZTMainRegister;
+  ToolButton1.Caption := LZTMainRegister;
+  DatabaseRegister.Caption := LZTMainRegister;
+  ServerUnregister.Caption := LZTMainUnRegister;
+  ToolButton5.Caption := LZTMainUnRegister;
+  DatabaseUnregister.Caption := LZTMainUnRegister;
+  ServerConnection.Caption := LZTMainDiagnoseConnection;
+  DatabaseConnect.Caption := LZTMainConnect;
+  DatabaseConnectAs.Caption := LZTMainConnectAs;
+  DatabaseCreate.Caption := LZTMainCreateDatabase;
+  DatabaseValidate.Caption := LZTMainValidation;
+  ExtToolsLaunchISQL.Caption := LZTMainInteractiveSQL;
+  ExtToolsConfigure.Caption := LZTMainConfigureTools;
+  ExtToolDropDown.Caption := LZTMainTools;
+  DatabaseBackup.Caption := LZTMainBackup;
+  DatabaseRestore.Caption := LZTMainRestore;
+  BackupRestoreModifyAlias.Caption := LZTMainModifyBackupAlias;
+  BackupRestoreRemoveAlias.Caption := LZTMainDeleteAlias;
+  ViewServerLog.Caption := LZTMainViewLog;
+  ObjectDescription.Caption := LZTMainEdit;
+  ObjectCreate.Caption := LZTMainCreate;
+  ObjectModify.Caption := LZTMainModify;
+  ObjectDelete.Caption := LZTMainDrop;
+  ObjectExtract.Caption := LZTMainExtract;
+  ObjectRefresh.Caption := LZTMainRefresh;
+  ToolButton1.Hint := LZTMainHintToolButton1;
+  ToolButton5.Hint := LZTMainHintToolButton5;
+  ConnectAs3.Hint := LZTMainHintConnectAs3;
+  ConsoleExit.Hint := LZTMainHintConsoleExit;
+  ViewProperties.Hint := LZTMainHintViewProperties;
+  EditCopy.Hint := LZTMainHintEditCopy;
+  EditCut.Hint := LZTMainHintEditCut;
+  EditPaste.Hint := LZTMainHintEditPaste;
+  EditFont.Hint := LZTMainHintEditFont;
+  UserAdd.Hint := LZTMainHintUserAdd;
+  UserModify.Hint := LZTMainHintUserModify;
+  UserDelete.Hint := LZTMainHintUserDelete;
+  ServerLogout.Hint := LZTMainHintServerLogout;
+  ServerSecurity.Hint := LZTMainHintServerSecurity;
+  ServerProperties.Hint := LZTMainHintServerProperties;
+  DatabaseDisconnect.Hint := LZTMainHintDatabaseDisconnect;
+  DatabaseProperties.Hint := LZTMainHintDatabaseProperties;
+  DatabaseStatistics.Hint := LZTMainHintDatabaseStatistics;
+  DatabaseShutdown.Hint := LZTMainHintDatabaseShutdown;
+  DatabaseSweep.Hint := LZTMainHintDatabaseSweep;
+  DatabaseRecoverTrans.Hint := LZTMainHintDatabaseRecoverTrans;
+  DatabaseMetadata.Hint := LZTMainHintDatabaseMetadata;
+  DatabaseRestart.Hint := LZTMainHintDatabaseRestart;
+  DatabaseDrop.Hint := LZTMainHintDatabaseDrop;
+  DBCBackup.Hint := LZTMainHintDBCBackup;
+  DatabaseUsers.Hint := LZTMainHintDatabaseUsers;
+  DBCRestore.Hint := LZTMainHintDBCRestore;
+  ServerLogin.Hint := LZTMainHintServerLogin;
+  ServerRegister.Hint := LZTMainHintServerRegister;
+  ServerUnregister.Hint := LZTMainHintServerUnregister;
+  ServerConnection.Hint := LZTMainHintServerConnection;
+  ServerActionProps.Hint := LZTMainHintServerActionProps;
+  DatabaseRegister.Hint := LZTMainHintDatabaseRegister;
+  DatabaseUnregister.Hint := LZTMainHintDatabaseUnregister;
+  DatabaseConnect.Hint := LZTMainHintDatabaseConnect;
+  DatabaseConnectAs.Hint := LZTMainHintDatabaseConnectAs;
+  DatabaseCreate.Hint := LZTMainHintDatabaseCreate;
+  DatabaseValidate.Hint := LZTMainHintDatabaseValidate;
+  DatabaseActionsProperties.Hint := LZTMainHintDatabaseActionsProperties;
+  ExtToolsLaunchISQL.Hint := LZTMainHintExtToolsLaunchISQL;
+  DatabaseBackup.Hint := LZTMainHintDatabaseBackup;
+  DatabaseRestore.Hint := LZTMainHintDatabaseRestore;
+  BackupRestoreModifyAlias.Hint := LZTMainHintBackupRestoreModifyAlias;
+  BackupRestoreRemoveAlias.Hint := LZTMainHintBackupRestoreRemoveAlias;
+  ViewServerLog.Hint := LZTMainHintViewServerLog;
+  ObjectDescription.Hint := LZTMainHintObjectDescription;
+  ObjectCreate.Hint := LZTMainHintObjectCreate;
+  ObjectModify.Hint := LZTMainHintObjectModify;
+  ObjectDelete.Hint := LZTMainHintObjectDelete;
+  ObjectExtract.Hint := LZTMainHintObjectExtract;
+
+End;
 
 end.

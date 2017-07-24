@@ -109,7 +109,7 @@ type
 implementation
 
 uses
-  IB, frmuMessage, zluGlobal, zluContextHelp, zluUtility, frmuMain, IBErrorCodes,
+  IB, frmuMessage, zluGlobal, zluUtility, frmuMain, IBErrorCodes,
   FBMessages, FBParamBlock;
 
 {$R *.lfm}

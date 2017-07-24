@@ -256,7 +256,7 @@ type
 implementation
 
 uses frmuMessage, zluGlobal, frmuSQLOptions, frmuDisplayBlob,
-     frmuDispMemo, zluContextHelp, Printers, fileCtrl, zluUtility,
+     frmuDispMemo, Printers, fileCtrl, zluUtility,
      frmuMain, IBSQL, Math;
 
 const
@@ -919,12 +919,8 @@ begin
 end;
 
 procedure TdlgWisql.SQLReference1Click(Sender: TObject);
-var
-  hlpPath: String;
 begin
   inherited;
-  hlpPath := Format('%s%s',[ExtractFilePath(Application.ExeName), SQL_REFERENCE]);
-  //WinHelp(WindowHandle, PChar(hlpPath),HELP_FINDER,0);
 end;
 
 procedure TdlgWisql.FormClose(Sender: TObject; var Action: TCloseAction);

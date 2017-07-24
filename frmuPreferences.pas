@@ -80,7 +80,7 @@ function EditPreferences(): integer;
 implementation
 
 uses
-  zluGlobal,frmuMessage, zluContextHelp, zluUtility;
+  zluGlobal,frmuMessage, zluUtility;
 
 {$R *.DFM}
 

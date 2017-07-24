@@ -40,7 +40,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Forms, ExtCtrls, StdCtrls, Classes, Controls, zluibcClasses, ComCtrls,
-  SysUtils, Dialogs, Grids, Graphics, Registry, IBDatabaseInfo, zluContextHelp,
+  SysUtils, Dialogs, Grids, Graphics, Registry, IBDatabaseInfo,
   IBEvents, IBServices, frmuMessage, IB, IBDatabase, Db, IBCustomDataSet,
   IBQuery, Messages, frmuDlgClass;
 

@@ -88,7 +88,7 @@ function CreateDB(var DBAlias: string; var DatabaseFiles: TStringList; const Sel
 
 implementation
 
-uses zluGlobal,frmuMessage, zluContextHelp, zluUtility, zluPersistent;
+uses zluGlobal,frmuMessage, zluUtility, zluPersistent;
 
 {$R *.lfm}
 

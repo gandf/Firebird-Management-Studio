@@ -77,7 +77,7 @@ function ShowReport(const str : String; const SourceServerNode: TibcServerNode;
 
 implementation
 
-uses zluGlobal, zluUtility, zluContextHelp, frmuMessage, frmuMain, IBErrorCodes;
+uses zluGlobal, zluUtility, frmuMessage, frmuMain, IBErrorCodes;
 
 {$R *.lfm}
 

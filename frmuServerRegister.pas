@@ -83,7 +83,7 @@ function RegisterServer(var ServerName,ServerAlias,UserName,Password, Descriptio
 implementation
 
 uses
-  frmuMessage, zluGlobal, zluContextHelp, zluUtility;
+  frmuMessage, zluGlobal, zluUtility;
 
 {$R *.lfm}
 

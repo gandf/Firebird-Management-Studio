@@ -82,7 +82,7 @@ function DoDBTransactions(const SourceServerNode: TibcServerNode; const CurrSelD
 implementation
 
 uses
-  zluGlobal, zluUtility, zluContextHelp, frmuMessage, frmuMain, IBErrorCodes;
+  zluGlobal, zluUtility, frmuMessage, frmuMain, IBErrorCodes;
 
 {$R *.lfm}
 

@@ -31,7 +31,6 @@ uses
   frmuDBProperties in 'frmuDBProperties.pas' {frmDBProperties},
   frmuBackupAliasProperties in 'frmuBackupAliasProperties.pas' {frmBackupAliasProperties},
   frmuDBCreate in 'frmuDBCreate.pas' {frmDBCreate},
-  zluContextHelp in 'zluContextHelp.pas',
   zluCommDiag in 'zluCommDiag.pas',
   frmuCommDiag in 'frmuCommDiag.pas' {frmCommDiag},
   frmuDBConnections in 'frmuDBConnections.pas' {frmDBConnections},

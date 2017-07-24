@@ -25,7 +25,7 @@ interface
 uses
   Forms, ExtCtrls, StdCtrls, Classes, Controls, SysUtils, zluibcClasses,
   ComCtrls, Graphics, IBServices, frmuMessage, IB, LCLIntf, LCLType, LMessages,
-  Messages, zluContextHelp, frmuDlgClass;
+  Messages, frmuDlgClass;
 
 type
   TfrmServerProperties = class(TDialog)
