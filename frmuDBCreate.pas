@@ -17,23 +17,6 @@
  * Contributor(s): Krzysztof Golko.
 }
 
-{****************************************************************
-*
-*  f r m u D B C r e a t e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface to create a
-*                database consisting of a single or multiple
-*                files.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 unit frmuDBCreate;
 
 {$MODE Delphi}
@@ -43,7 +26,7 @@ interface
 uses
   SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls, Dialogs,
   zluibcClasses, Grids, LCLIntf, LCLType, LMessages, Graphics, IB, IBDatabase, IBServices, Messages,
-  frmuDlgClass;
+  frmuDlgClass, resstring;
 
 type
   TfrmDBCreate = class(TDialog)
@@ -59,7 +42,6 @@ type
     btnCancel: TButton;
     cbOptions: TComboBox;
     pnlOptionName: TPanel;
-    function FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure FormCreate(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
@@ -75,6 +57,7 @@ type
     procedure edtDBAliasChange(Sender: TObject);
     procedure cbOptionsKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     function VerifyInputData(): boolean;
@@ -100,28 +83,6 @@ const
   SQL_DIALECT_ROW = 2;
   MIN_PRIMARY_FILE_SIZE = 230;    // min page size for primary file
   MIN_SECONDARY_FILE_SIZE = 2;    // min page size for secondary files
-
-{****************************************************************
-*
-*  C r e a t e D B ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TibcServerNode - specifies the currently selected
-*                           server
-*
-*  Return: Integer - indicates a success or failure during the
-*                    create database task
-*
-*  Description: This procedure performs the task of creating
-*               the database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 function CreateDB(var DBAlias: string; var DatabaseFiles: TStringList; const SelServerNode: TibcServerNode): integer;
 var
@@ -151,16 +112,16 @@ begin
       DatabaseFiles.Add(frmDBCreate.sgDatabaseFiles.Cells[0,1]);
 
       // supply login info for the current server
-      lDatabase.Params.Add(Format('user ''%s''',[SelServerNode.UserName]));
-      lDatabase.Params.Add(Format('password ''%s''',[SelServerNode.Password]));
+      lDatabase.Params.Add(Format(LZTDBCreateUser,[SelServerNode.UserName]));
+      lDatabase.Params.Add(Format(LZTDBCreatePassword,[SelServerNode.Password]));
 
       // set page size
       if frmDBCreate.sgOptions.Cells[1,0] <> '' then
-        lDatabase.Params.Add(Format('page_size %s',[frmDBCreate.sgOptions.Cells[1,0]]));
+        lDatabase.Params.Add(Format(LZTDBCreatePageSize,[frmDBCreate.sgOptions.Cells[1,0]]));
 
       // set default character set
-      if frmDBCreate.sgOptions.Cells[1,DEFAULT_CHARSET_ROW] <> 'None' then
-        lDatabase.Params.Add(Format('default character set %s',[frmDBCreate.sgOptions.Cells[1,1]]));
+      if frmDBCreate.sgOptions.Cells[1,DEFAULT_CHARSET_ROW] <> LZTDBCreateNone then
+        lDatabase.Params.Add(Format(LZTDBCreateDefaultCharacterSet,[frmDBCreate.sgOptions.Cells[1,1]]));
 
       // if more than 1 filename has been supplied then this is a
       // multifile database
@@ -168,23 +129,23 @@ begin
       begin
         // set length of first database file (in pages)
         if frmDBCreate.sgDatabaseFiles.Cells[1,1] <> '' then
-          lDatabase.Params.Add(Format('length %s', [frmDBCreate.sgDatabaseFiles.Cells[1,1]]));
+          lDatabase.Params.Add(Format(LZTDBCreateLength, [frmDBCreate.sgDatabaseFiles.Cells[1,1]]));
 
         iRow:=2;                       // begin looping through rows starting from third row
         while (iRow < frmDBCreate.sgDatabaseFiles.RowCount) and
           (frmDBCreate.sgDatabaseFiles.Cells[0,iRow] <> '') do
         begin
           // set secondary filename
-          lDatabase.Params.Add(Format('file ''%s''', [frmDBCreate.sgDatabaseFIles.Cells[0,iRow]]));
+          lDatabase.Params.Add(Format(LZTDBCreateFile, [frmDBCreate.sgDatabaseFIles.Cells[0,iRow]]));
           DatabaseFiles.Add(frmDBCreate.sgDatabaseFiles.Cells[0,iRow]);
 
           // set length of file (in pages)
           if frmDBCreate.sgDatabaseFIles.Cells[1,iRow] <> '' then
-            lDatabase.Params.Add(Format('length %s', [frmDBCreate.sgDatabaseFiles.Cells[1,iRow]]));
+            lDatabase.Params.Add(Format(LZTDBCreateLength, [frmDBCreate.sgDatabaseFiles.Cells[1,iRow]]));
 
           // set starting page (length of last file + 1)
           lStr:=IntToStr(StrToInt(frmDBCreate.sgDatabaseFiles.Cells[1,iRow - 1]) + 1);
-          lDatabase.Params.Add(Format('starting %s', [lStr]));
+          lDatabase.Params.Add(Format(LZTDBCreateStarting, [lStr]));
 
           Inc(iRow);                   // increment row count
         end;  // of loop through rows
@@ -211,29 +172,6 @@ begin
   ModalResult := mrCancel;
 end;
 
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - inidicates whether or not all data is valid
-*
-*
-*  Description: This function performs the task of validating
-*               the data entered in the database files string
-*               grid and show the appropriate error message
-*               when needed.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 function TfrmDBCreate.VerifyInputData(): boolean;
 var
   x, y      : Integer;                 // row and column counters
@@ -254,7 +192,7 @@ begin
 
   if PersistentInfo.DatabaseAliasExists(FCurrSelServer.NodeName, edtDBAlias.Text) then
   begin                                // show error message
-    DisplayMsg(ERR_DB_ALIAS,'This database alias already exists.');
+    DisplayMsg(ERR_DB_ALIAS,LZTDBCreateDatabaseAlreadyExist);
     edtDBAlias.SetFocus;               // give focus to control
     result := false;
     Exit;
@@ -267,7 +205,7 @@ begin
     (sgDatabaseFiles.Cells[1,iMax] <> '') do
   begin
     if not (IsValidDBName(sgDatabaseFiles.Cells[0,iMax])) then
-       DisplayMsg(WAR_REMOTE_FILENAME, Format('File: %s', [sgDatabaseFiles.Cells[0,iMax]]));
+       DisplayMsg(WAR_REMOTE_FILENAME, Format(LZTDBCreateFile2, [sgDatabaseFiles.Cells[0,iMax]]));
     Inc(iMax);
   end;
 
@@ -319,7 +257,7 @@ begin
           // check file size of primary file
           if (y = 1) and (iPageSize < MIN_PRIMARY_FILE_SIZE) then
           begin
-            DisplayMsg(ERR_DB_SIZE,'Minimum page size for primary file is 230 pages.');
+            DisplayMsg(ERR_DB_SIZE,LZTDBCreateMinPageSize230);
             sgDatabaseFiles.SetFocus;  // give focus to string grid and select the erring field
             sgDatabaseFiles.Selection:=lGridRect;
             result := false;           // set result to false
@@ -329,7 +267,7 @@ begin
           // check file size of secondary files
           if (y <> 1) and (iPageSize < MIN_SECONDARY_FILE_SIZE) then
           begin
-            DisplayMsg(ERR_DB_SIZE,'Minimum page size for secondary files is 2 pages.');
+            DisplayMsg(ERR_DB_SIZE,LZTDBCreateMinPageSizeSecond2);
             sgDatabaseFiles.SetFocus;  // give focus to string grid and select the erring field
             sgDatabaseFiles.Selection:=lGridRect;
             result := false;           // set result to false
@@ -355,28 +293,6 @@ begin
     ModalResult := mrOK;
 end;
 
-{****************************************************************
-*
-*  F o r m C r e a t e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*
-*  Return: None
-*
-*
-*  Description: This procedure is triggered when the form is
-*               created.  It is responsible for populating the
-*               string grids with default values.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 procedure TfrmDBCreate.FormCreate(Sender: TObject);
 begin
   inherited;
@@ -384,19 +300,19 @@ begin
   cbOptions.Visible := True;
   pnlOptionName.Visible := True;
 
-  sgDatabaseFiles.Cells[0,0] := 'Filename(s)';
-  sgDatabaseFiles.Cells[1,0] := 'Size (Pages)';
+  sgDatabaseFiles.Cells[0,0] := LZTDBCreateFilename;
+  sgDatabaseFiles.Cells[1,0] := LZTDBCreateSizePages;
 
-  sgOptions.Cells[OPTION_NAME_COL,PAGE_SIZE_ROW] := 'Page Size';
+  sgOptions.Cells[OPTION_NAME_COL,PAGE_SIZE_ROW] := LZTDBCreatePageSize2;
   sgOptions.Cells[OPTION_VALUE_COL,PAGE_SIZE_ROW] := '4096';
 
-  sgOptions.Cells[OPTION_NAME_COL,DEFAULT_CHARSET_ROW] := 'Default Character Set';
+  sgOptions.Cells[OPTION_NAME_COL,DEFAULT_CHARSET_ROW] := LZTDBCreateDefaultCharracterSet;
   sgOptions.Cells[OPTION_VALUE_COL,DEFAULT_CHARSET_ROW] := gAppSettings[CHARACTER_SET].Setting;
 
-  sgOptions.Cells[OPTION_NAME_COL,SQL_DIALECT_ROW] := 'SQL Dialect';
+  sgOptions.Cells[OPTION_NAME_COL,SQL_DIALECT_ROW] := LZTDBCreateSQLDialect;
   sgOptions.Cells[OPTION_VALUE_COL,SQL_DIALECT_ROW] := gAppSettings[DEFAULT_DIALECT].Setting;
 
-  pnlOptionName.Caption := 'Page Size';
+  pnlOptionName.Caption := LZTDBCreatePageSize2;
   cbOptions.Items.Add('1024');
   cbOptions.Items.Add('2048');
   cbOptions.Items.Add('4096');
@@ -431,7 +347,7 @@ begin
 
   if (iIndex = -1) then
   begin
-    MessageDlg('Invalid option value', mtError, [mbOK], 0);
+    MessageDlg(LZTDBCreateInvalidOptionValue, mtError, [mbOK], 0);
 
     cbOptions.ItemIndex := 0;
     // Size and position the combo box to fit the cell
@@ -456,34 +372,6 @@ begin
     sgOptions.Cells[OPTION_VALUE_COL,sgOptions.Row] := cbOptions.Items[iIndex];
   end;
 end;
-
-{****************************************************************
-*
-*  s g O p t i o n s S e l e c t C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          Boolean - inidicates whether or not the grid may
-8                    selected
-*
-*  Return: None
-*
-*
-*  Description: This procedure determines whether or not the
-*               currently selected cell may be selected in the
-*               Options string grid.  it then shows the combo
-*               box and populates it
-*               with the appropriate values.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 procedure TfrmDBCreate.sgOptionsSelectCell(Sender: TObject; ACol,
   ARow: Integer; var CanSelect: Boolean);
@@ -579,27 +467,6 @@ begin
   cbOptions.SetFocus;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s D b l C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*
-*  Return: None
-*
-*
-*  Description: This procedure rotates through a list of values
-*               when the option name or value is double-clicked.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 procedure TfrmDBCreate.sgOptionsDblClick(Sender: TObject);
 begin
   {
@@ -635,31 +502,6 @@ begin
   }
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s D r a w C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          TRect   - coordinates
-*          TGridDrawState - drawing state of grid
-*
-*  Return: None
-*
-*
-*  Description: This procedure draws contents to a specified cell in
-*               the options string grid.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 procedure TfrmDBCreate.sgOptionsDrawCell(Sender: TObject; ACol,
   ARow: Integer; Rect: TRect; State: TGridDrawState);
 const
@@ -681,34 +523,6 @@ begin
     end;
   end;
 end;
-
-{****************************************************************
-*
-*  s g D a t a b a s e F i l e s S e l e c t C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          Boolean - inidicates whether or not the grid may
-8                    selected
-*
-*  Return: None
-*
-*
-*  Description: This procedure determines whether or not the
-*               currently selected cell may be selected in the
-*               database string grid.  it then shows the combo
-*               box and populates it
-*               with the appropriate values.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 procedure TfrmDBCreate.sgDatabaseFilesSelectCell(Sender: TObject; ACol,
   ARow: Integer; var CanSelect: Boolean);
@@ -738,31 +552,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g D a t a b a s e F i l e s D r a w C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          TRect   - coordinates
-*          TGridDrawState - drawing state of grid
-*
-*  Return: None
-*
-*
-*  Description: This procedure draws contents to a specified cell in
-*               the database files string grid.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 procedure TfrmDBCreate.sgDatabaseFilesDrawCell(Sender: TObject; ACol,
   ARow: Integer; Rect: TRect; State: TGridDrawState);
 const
@@ -784,31 +573,6 @@ begin
     end;
   end;
 end;
-
-{****************************************************************
-*
-*  s g D a t a b a s e F i l e s K e y D o w n
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*          Word    - key(s) being pressed
-*          TShiftState - state of alt, ctrl, shift, mouse btns
-*
-*  Return: None
-*
-*
-*  Description: This procedure enables users to navigate through
-*               the database files string grid using CTRL + TAB
-*               to advance through the grid.  If at end, a new
-*               row is created.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 procedure TfrmDBCreate.sgDatabaseFilesKeyDown(Sender: TObject;
   var Key: Word; Shift: TShiftState);
@@ -837,13 +601,6 @@ begin
     sgDatabaseFilesKeyDown(Self, lKey, [ssCtrl]);
   end;
 
-end;
-
-function TfrmDBCreate.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  //Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_CREATE);
 end;
 
 procedure TfrmDBCreate.cbOptionsDblClick(Sender: TObject);
@@ -878,7 +635,6 @@ begin
   ClientPt := ScreenToClient( ScreenPt );
   if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
    begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_CREATE);
     Message.Result := 0;
   end else
    inherited;
@@ -890,5 +646,16 @@ begin
   if (Key = VK_DOWN) then
     cbOptions.DroppedDown := True;
 end;
+
+Procedure TfrmDBCreate.TranslateVisual;
+Begin
+  lblServer.Caption := LZTDBCreateServerCaption;
+  lblDBAlias.Caption := LZTDBCreateAliasCaption;
+  lblDatabaseFiles.Caption := LZTDBCreateFileCaption;
+  lblOptions.Caption := LZTDBCreateOptionsCaption;
+  btnOK.Caption := LZTDBCreateOKCaption;
+  btnCancel.Caption := LZTDBCreateCancelCaption;
+  Self.Caption := LZTDBCreateFormTitle;
+End;
 
 end.

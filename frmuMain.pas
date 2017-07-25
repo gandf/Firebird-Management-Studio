@@ -711,7 +711,7 @@ try
     case FCurrSelTreeNode.NodeType of
       NODE_LOGS:
       begin
-        FillActionList('Log');
+        FillActionList(LZTMainLog);
       end;
 
       NODE_SERVERS:
@@ -726,9 +726,9 @@ try
         FCurrSelServer := TibcServerNode(tvMain.Selected.Data);
         tvMain.PopupMenu := pmServer;
         if FCurrSelServer.Server.Active then
-          FillActionList('Server Connected')
+          FillActionList(LZTMainServerConnected)
         else
-          FillActionList('Server');
+          FillActionList(LZTMainServer2);
       end;
 
       NODE_DATABASES:
@@ -775,7 +775,7 @@ try
           if FPersistentInfo.Registry.KeyExists ('Accessed') then
             TibcBackupAliasNode(FCurrSelTreeNode).Created := FPersistentInfo.Registry.ReadDateTime('Accessed');
         end;
-        FillActionList ('Backup');
+        FillActionList (LZTMainBackup2);
         tvMain.popupMenu := pmBackupRestore;
       end;
 
@@ -783,7 +783,7 @@ try
       begin
         FCurrSelServer := TibcServerNode(tvMain.Selected.Parent.Parent.Data);
         FCurrSelDatabase := TibcDatabaseNode(tvMain.Selected.Data);
-        stbMain.Panels[1].Text := Format('Database: %s',[FCurrSelDatabase.NodeName]);
+        stbMain.Panels[1].Text := Format(LZTMainDatabase3,[FCurrSelDatabase.NodeName]);
 
         { Force refresh for the object viewer }
         FRefetch := true;
@@ -791,12 +791,12 @@ try
         if (Assigned(FCurrSelDatabase.Database)) and
            (FCurrSelDatabase.Database.Connected) then
         begin
-          FillActionList ('Database Connected');
+          FillActionList (LZTMainDatabaseConnected);
           tvMain.PopupMenu := pmDatabaseConnectedActions;
         end
         else
         begin
-          FillACtionList ('Database');
+          FillACtionList (LZTMainDatabase2);
           tvMain.PopupMenu := pmDatabaseActions;
         end;
      end;
@@ -813,7 +813,7 @@ try
      begin
         FCurrSelServer := TibcServerNode(tvMain.Selected.Parent.Parent.Parent.Data);
         FCurrSelDatabase := TibcDatabaseNode(tvMain.Selected.Parent.Data);
-        stbMain.Panels[1].Text := Format('Database: %s',[FCurrSelDatabase.NodeName]);
+        stbMain.Panels[1].Text := Format(LZTMainDatabase3,[FCurrSelDatabase.NodeName]);
         if (FCurrSelTreeNode.ObjectList.Count = 0) or
            (FCurrSelTreeNode.ShowSystem <> FViewSystemData) then
         begin
@@ -830,9 +830,9 @@ try
 finally
   if Assigned(FCurrSelServer) and (FCurrSelTreeNode.NodeType <> NODE_SERVERS) then
   begin
-    stbMain.Panels[0].Text := Format('Server: %s',[FCurrSelServer.NodeName]);
+    stbMain.Panels[0].Text := Format(LZTMainServer3,[FCurrSelServer.NodeName]);
     if FCurrSelServer.Server.Active then
-      stbMain.Panels[2].Text := Format('User: %s',[FCurrSelServer.Username]);
+      stbMain.Panels[2].Text := Format(LZTMainUser,[FCurrSelServer.Username]);
   end;
   if Assigned(FCurrSelTreeNode) then
     FPrevSelTreeNode := FCurrSelTreeNode;
@@ -1002,7 +1002,7 @@ begin
   lObjectList := TStringList.Create;
   try
     Screen.Cursor := crHourGlass;
-    lObjectList.AddObject('Name',nil);
+    lObjectList.AddObject(LZTMainName,nil);
     lCurrParentNode := tvMain.Items[SelServerNode.BackupFilesID];
     lCurrChildNode := lCurrParentNode.GetFirstChild;
     while lCurrChildNode <> nil do
@@ -1048,7 +1048,7 @@ begin
       Free;
     end;
   finally
-    FCurrSelServer.ShowText(lSQLScript, 'Database Metadata');
+    FCurrSelServer.ShowText(lSQLScript, LZTMainDatabaseMetadata);
     Screen.Cursor := crDefault;
     lSQLScript.Free;
   end;
@@ -1069,7 +1069,7 @@ begin
   lObjectList := TStringList.Create;
   try
     Screen.Cursor := crHourGlass;
-    lObjectList.AddObject(Format('Name%sPath',[DEL,DEL,DEL]),nil);
+    lObjectList.AddObject(Format(LZTMainFormatName,[DEL,DEL,DEL]),nil);
     lCurrParentNode := tvMain.Items[SelServerNode.DatabasesID];
     lCurrChildNode := lCurrParentNode.GetFirstChild;
     while lCurrChildNode <> nil do
@@ -1102,7 +1102,7 @@ begin
   lObjectList := TStringList.Create;
   try
     Screen.Cursor := crHourGlass;
-    lObjectList.AddObject(Format('Name%sDescription%sLast Accessed%sConnections',[DEL,DEL, DEL]),nil);
+    lObjectList.AddObject(Format(LZTMainFormatConnection,[DEL,DEL, DEL]),nil);
     lCurrChildNode := tvMain.Items[0].GetFirstChild;
     while lCurrChildNode <> nil do
     begin
@@ -1169,7 +1169,7 @@ begin
       end;
 
       lUserInfo := UserInfo[lUserCount];
-      lObjectList.Add(Format('User Name%sFirst Name%sMiddle Name%sLast Name',[DEL,DEL,DEL]));
+      lObjectList.Add(Format(LZTMainFormatUserName,[DEL,DEL,DEL]));
       while Assigned(lUserInfo) and (lUserInfo.UserName <> '') and
            (lUserInfo.UserName <> lPrevUsername) do
       begin
@@ -1367,8 +1367,7 @@ begin
       begin
         if not IsIBRunning then
         begin
-          if MessageDlg('The server has not been started. Would you like to start it now?',
-            mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+          if MessageDlg(LZTMainStartServer, mtConfirmation, [mbYes, mbNo], 0) = mrYes then
           begin
             if not StartServer then
               Exit;
@@ -1393,9 +1392,7 @@ begin
 
           if FCurrSelServer.Version < 6 then
           begin
-            DisplayMsg(ERR_SERVER_LOGIN,
-              Format('An error occured while trying to connect to ''%s''.  This server may be an earlier version.  As a result many features will be not work properly.',
-              [FCurrSelServer.NodeName]));
+            DisplayMsg(ERR_SERVER_LOGIN, Format(LZTMainErrorConnect, [FCurrSelServer.NodeName]));
           end;
 
           if not lServerNode.HasChildren then
@@ -1606,7 +1603,7 @@ begin
 
     Application.ProcessMessages;
     Screen.Cursor := crDefault;
-    stbMain.Panels[3].Text := Format('%d objects listed',[lvObjects.Items.Count]);
+    stbMain.Panels[3].Text := Format(LZTMainObjectListed, [lvObjects.Items.Count]);
   end;
 end;
 
@@ -1650,7 +1647,7 @@ begin
       gExternalApps := TStringList.Create;
       if OpenKey (gRegToolsKey, false) and ValueExists('Count') then
       begin
-        i := ReadInteger ('Count');
+        i := ReadInteger('Count');
         for j := 0 to i - 1 do
           gExternalApps.Add (ReadString (Format('Title%d', [j])));
       end;
@@ -1684,12 +1681,12 @@ begin
               begin
                 { Attempt to read the other settings }
                 lServerUserName := ReadString('UserName');
-                raise Exception.Create('Failed to get data for ''ServerName''.');
+                raise Exception.Create(LZTMainFailedGetDataServerName);
               end;
               lCharacterSet := ReadString('CharacterSet');
               lServerUserName := ReadString('UserName');
               if lServerUserName = '' then
-                raise Exception.Create('Failed to get data for ''UserName''.');
+                raise Exception.Create(LZTMainFailedGetDataUserName);
 
               try
                 lDescription := ReadString('Description');
@@ -1861,9 +1858,7 @@ begin
     FPersistentInfo.Registry.CloseKey;
   end;
   if result then
-    if MessageDlg(Format('This database is already registered with the following alias: %s.%s'+
-      'Are you sure you want to register this database again?',
-      [ExistingDBAlias, #13#10]), mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+    if MessageDlg(Format(LZTMainRegisterDatabaseAgain, [ExistingDBAlias, #13#10]), mtConfirmation, [mbYes, mbNo], 0) = mrYes then
       result := false
     else
       result := true;
@@ -1871,8 +1866,7 @@ end;
 
 function TfrmMain.UnRegisterServer(const Node: String): boolean;
 begin
-  if MessageDlg(Format('Are you sure that you want to un-register %s?', [Node]),
-      mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  if MessageDlg(Format(LZTMainUnRegister2, [Node]), mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
     FPersistentInfo.Registry.DeleteKey(Format('%s%s\Databases',[gRegServersKey,Node]));
     FPersistentInfo.Registry.DeleteKey(Format('%s%s',[gRegServersKey, Node]));
@@ -2056,15 +2050,14 @@ end;
 
 procedure TfrmMain.DatabaseUnregisterExecute(Sender: TObject);
 begin
-  if MessageDlg('Are you sure that you want to un-register the selected database?',
-      mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  if MessageDlg(LZTMainUnRegisterSelectedDatabase, mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
     if (Assigned(FCurrSelServer)) and (Assigned(FCurrSelDatabase)) then
     begin
       if FCurrSelDatabase.Database.Connected then
         if not DoDBDisConnect(FCurrSelDatabase) then
         begin
-          DisplayMsg (ERR_DB_DISCONNECT, 'Database registration not removed.');
+          DisplayMsg (ERR_DB_DISCONNECT, LZTMainDatabaseRegistrationRemoved);
           exit;
         end;
         FPersistentInfo.Registry.OpenKey(Format('%s%s\Databases',[gRegServersKey,FCurrSelServer.Nodename]),true);
@@ -2100,8 +2093,7 @@ var
 begin
   if not Assigned(FCurrSelDatabase) then
     exit;
-  if MessageDlg('Are you sure that you want to close the connection to the selected database?',
-      mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  if MessageDlg(LZTMainCloseConnectionSelectedDatabase, mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
     if DoDBDisconnect(FCurrSelDatabase) then
     begin
@@ -2126,9 +2118,7 @@ var
   lOptions: TValidateOptions;         // validation options
 begin
   // show message and verify action
-  if MessageDlg('Sweeping a large database may take a while and can impact server ' +
-   'performance during that time. Do you wish to perform a sweep?',
-      mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  if MessageDlg(LZTMainSweepLargeDatabase, mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
     // if user presses the OK button and they wish to proceed
     lValidation := Nil;                // initialize
@@ -2248,7 +2238,7 @@ begin
     try
       ibcLogSvc.Attach;
       ibcLogSvc.ServiceStart;
-      FCurrSelServer.OpenTextViewer (ibcLogSvc, 'Server Log', false);
+      FCurrSelServer.OpenTextViewer(ibcLogSvc, LZTMainServerLog, false);
       ibcLogSvc.Detach;
       Screen.Cursor := crDefault;
     except
@@ -2462,8 +2452,7 @@ var
   lDatabaseNode : TibcDatabaseNode;
   i             : integer;
 begin
-  if FErrorState or (MessageDlg('Are you sure that you want to close the connection to the selected server?',
-      mtConfirmation, [mbYes, mbNo], 0) = mrYes) then
+  if FErrorState or (MessageDlg(LZTMainCloseConnectionSelectedServer, mtConfirmation, [mbYes, mbNo], 0) = mrYes) then
   begin
     if Assigned (FCurrSelDatabase) then
     begin
@@ -2503,7 +2492,7 @@ begin
         tvMain.Refresh;
         tvMainChange(nil,nil);
       except
-        DisplayMsg(ERR_SERVER_SERVICE, 'This server may be shutdown or disconnected.');
+        DisplayMsg(ERR_SERVER_SERVICE, LZTMainServerShutdown);
 
         if not FCurrSelServer.Server.Active then
         begin
@@ -2748,10 +2737,10 @@ begin
     lvObjects.Columns.Clear;
 
     lColumn := lvObjects.Columns.Add;
-    lColumn.Caption := 'Action';
+    lColumn.Caption := LZTMainlColumnCaptionAction;
 
     lColumn := lvObjects.Columns.Add;
-    lColumn.Caption := 'Description';
+    lColumn.Caption := LZTMainlColumnCaptionDescription;
 
     lvObjects.Columns.EndUpdate;
 { TODO: Do not show icons since not all objects have them }
@@ -3075,7 +3064,7 @@ begin
       begin
         FormatMessage (FORMAT_MESSAGE_FROM_SYSTEM, nil, GetLastError,
                 LOCALE_USER_DEFAULT, Buf, sizeof(Buf), nil);
-        raise Exception.Create (Buf+#13#10+'Command: '+cmdLine);
+        raise Exception.Create (Buf+#13#10+ LZTMainCommand +cmdLine);
       end;
     except
       on E: Exception do
@@ -3169,8 +3158,7 @@ procedure TfrmMain.BackupRestoreRemoveAliasExecute(Sender: TObject);
 begin
   if (Assigned(FCurrSelServer)) and (FCurrSelTreeNode is TibcBackupAliasNode) then
   begin
-    if MessageDlg(Format('Are you sure that you want to remove "%s" from the alias list?',
-      [AnsiUppercase(FCurrSelTreeNode.NodeName)]), mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+    if MessageDlg(Format(LZTMainRemoveAliasList, [AnsiUppercase(FCurrSelTreeNode.NodeName)]), mtConfirmation, [mbYes, mbNo], 0) = mrYes then
     begin
       FPersistentInfo.Registry.OpenKey(Format('%s%s\Backup Files',[gRegServersKey,FCurrSelServer.Nodename]),true);
       FPersistentInfo.Registry.DeleteKey(FCurrSelTreeNode.NodeName);
@@ -3346,7 +3334,7 @@ begin
             ObjectType := eoDatabase;
         end;
         ExtractObject(ObjectType, ObjectName, ExtractTypes);
-        FCurrSelServer.ShowText(TStringList(Items), Format('Metadata for %s',[ObjectName]));
+        FCurrSelServer.ShowText(TStringList(Items), Format(LZTMainMetadata,[ObjectName]));
       end;
     finally
       Screen.Cursor := crDefault;
@@ -3396,9 +3384,7 @@ begin
     lQry := TIBSql.Create (self);
     lTrans := TIBTransaction.Create (self);
 
-    if MessageDlg (Format('Once %s is dropped it can no longer be accessed.'+
-                          #13#10'Do you wish to continue?',[lvObjects.Selected.Caption]),
-                          mtWarning, [mbYes, mbNo], 0) = mrYes then
+    if MessageDlg (Format(LZTMainDroppedAccessed+ #13#10 + LZTMainContinue,[lvObjects.Selected.Caption]), mtWarning, [mbYes, mbNo], 0) = mrYes then
     begin
       try
         lTrans.DefaultDatabase := FCurrSelDatabase.Database;
@@ -3442,7 +3428,7 @@ begin
       OnCreateObject := EventObjectRefresh;
       OnDropObject := EventObjectRefresh;
       OnDropDatabase := EventDatabaseDrop;
-      Caption := 'Interactive SQL - ' + ExtractFileName(Database.DatabaseName);
+      Caption := LZTMainInteractiveSQL2 + ExtractFileName(Database.DatabaseName);
     end;
   except
     result := false;
@@ -3462,7 +3448,7 @@ begin
         OnCreateObject := EventObjectRefresh;
         OnDropObject := EventObjectRefresh;
         OnDropDatabase := EventDatabaseDrop;
-        Caption := 'Interactive SQL - ' + ExtractFileName(Database.DatabaseName);
+        Caption := LZTMainInteractiveSQL2 + ExtractFileName(Database.DatabaseName);
       end;
     end
     else
@@ -3592,8 +3578,7 @@ var
 begin
   if Assigned (lvObjects.Selected) then
   begin
-    if MessageDlg(Format('Are you sure that you want to delete user: %s?',
-       [lvObjects.Selected.Caption]),mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+    if MessageDlg(Format(LZTMainDeleteUser2, [lvObjects.Selected.Caption]),mtConfirmation, [mbYes, mbNo], 0) = mrYes then
     begin
       try
         SecurityService := TIBSecurityService.Create(self);

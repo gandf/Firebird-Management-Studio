@@ -23,6 +23,46 @@ msgstr ""
 msgid "Interbase Version: "
 msgstr ""
 
+#: resstring.lztbackupaliaspropbtnapplycaption
+msgctxt "resstring.lztbackupaliaspropbtnapplycaption"
+msgid "&Apply"
+msgstr ""
+
+#: resstring.lztbackupaliaspropbtnokcaption
+msgctxt "resstring.lztbackupaliaspropbtnokcaption"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztbackupaliaspropbutton1caption
+msgctxt "resstring.lztbackupaliaspropbutton1caption"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztbackupaliaspropformtitle
+msgctxt "resstring.lztbackupaliaspropformtitle"
+msgid "Backup Alias Properties"
+msgstr ""
+
+#: resstring.lztbackupaliasproplblaliasnamecaption
+msgctxt "resstring.lztbackupaliasproplblaliasnamecaption"
+msgid "&Alias Name:"
+msgstr ""
+
+#: resstring.lztbackupaliasproplbldbaliascaption
+msgctxt "resstring.lztbackupaliasproplbldbaliascaption"
+msgid "Target &Database Alias:"
+msgstr ""
+
+#: resstring.lztbackupaliasproplbldbservercaption
+msgctxt "resstring.lztbackupaliasproplbldbservercaption"
+msgid "Target Database &Server:"
+msgstr ""
+
+#: resstring.lztbackupaliasproplblservernamecaption
+msgctxt "resstring.lztbackupaliasproplblservernamecaption"
+msgid "Server:"
+msgstr ""
+
 #: resstring.lztcommdiagapproxroundtriptimes
 msgid "Approximate round trip times in milli-seconds:"
 msgstr ""
@@ -56,6 +96,11 @@ msgctxt "resstring.lztcommdiagbtncancelcaption"
 msgid "&Cancel"
 msgstr ""
 
+#: resstring.lztcommdiagbtnseldbhint
+msgctxt "resstring.lztcommdiagbtnseldbhint"
+msgid "Select database"
+msgstr ""
+
 #: resstring.lztcommdiagbtntestcaption
 msgctxt "resstring.lztcommdiagbtntestcaption"
 msgid "&Test"
@@ -67,6 +112,44 @@ msgstr ""
 
 #: resstring.lztcommdiagbytesofdata
 msgid "bytes of data:"
+msgstr ""
+
+#: resstring.lztcommdiagcbprotocolitem1
+msgctxt "resstring.lztcommdiagcbprotocolitem1"
+msgid "TCP/IP"
+msgstr ""
+
+#: resstring.lztcommdiagcbprotocolitem2
+msgid "NetBEUI"
+msgstr ""
+
+#: resstring.lztcommdiagcbprotocolitem3
+msgid "SPX"
+msgstr ""
+
+#: resstring.lztcommdiagcbprotocolitem4
+msgctxt "resstring.lztcommdiagcbprotocolitem4"
+msgid "Local Server"
+msgstr ""
+
+#: resstring.lztcommdiagcbserviceitem1
+msgid "21"
+msgstr ""
+
+#: resstring.lztcommdiagcbserviceitem2
+msgid "ftp"
+msgstr ""
+
+#: resstring.lztcommdiagcbserviceitem3
+msgid "3050"
+msgstr ""
+
+#: resstring.lztcommdiagcbserviceitem4
+msgid "gds_db"
+msgstr ""
+
+#: resstring.lztcommdiagcbserviceitem5
+msgid "ping"
 msgstr ""
 
 #: resstring.lztcommdiagcommtest
@@ -229,6 +312,11 @@ msgstr ""
 msgid "Socket for connection obtained."
 msgstr ""
 
+#: resstring.lztcommdiagspropsservernamelocalserver
+msgctxt "resstring.lztcommdiagspropsservernamelocalserver"
+msgid "Local Server"
+msgstr ""
+
 #: resstring.lztcommdiagtabdbconnectioncaption
 msgctxt "resstring.lztcommdiagtabdbconnectioncaption"
 msgid "DB Connection"
@@ -261,6 +349,1212 @@ msgstr ""
 
 #: resstring.lztfilterprogramfiles
 msgid "Program Files "
+msgstr ""
+
+#: resstring.lztmainabout
+msgctxt "resstring.lztmainabout"
+msgid "&About ..."
+msgstr ""
+
+#: resstring.lztmainadduser
+msgctxt "resstring.lztmainadduser"
+msgid "&Add User ..."
+msgstr ""
+
+#: resstring.lztmainbackup
+msgctxt "resstring.lztmainbackup"
+msgid "&Backup ..."
+msgstr ""
+
+#: resstring.lztmainbackup2
+msgid "Backup"
+msgstr ""
+
+#: resstring.lztmainbackuprestore
+msgctxt "resstring.lztmainbackuprestore"
+msgid "Backup / Restore"
+msgstr ""
+
+#: resstring.lztmaincloseconnectionselecteddatabase
+msgid "Are you sure that you want to close the connection to the selected database?"
+msgstr ""
+
+#: resstring.lztmaincloseconnectionselectedserver
+msgid "Are you sure that you want to close the connection to the selected server?"
+msgstr ""
+
+#: resstring.lztmaincommand
+msgid "Command: "
+msgstr ""
+
+#: resstring.lztmainconfiguretools
+msgctxt "resstring.lztmainconfiguretools"
+msgid "&Configure Tools ..."
+msgstr ""
+
+#: resstring.lztmainconnect
+msgctxt "resstring.lztmainconnect"
+msgid "&Connect"
+msgstr ""
+
+#: resstring.lztmainconnectas
+msgctxt "resstring.lztmainconnectas"
+msgid "Connect &As ..."
+msgstr ""
+
+#: resstring.lztmainconnectedusers
+msgctxt "resstring.lztmainconnectedusers"
+msgid "Connected &Users ..."
+msgstr ""
+
+#: resstring.lztmainconsole
+msgctxt "resstring.lztmainconsole"
+msgid "&Console"
+msgstr ""
+
+#: resstring.lztmaincontinue
+msgid "Do you wish to continue?"
+msgstr ""
+
+#: resstring.lztmaincopy
+msgctxt "resstring.lztmaincopy"
+msgid "&Copy"
+msgstr ""
+
+#: resstring.lztmaincreate
+msgctxt "resstring.lztmaincreate"
+msgid "&Create ..."
+msgstr ""
+
+#: resstring.lztmaincreatedatabase
+msgctxt "resstring.lztmaincreatedatabase"
+msgid "C&reate Database ..."
+msgstr ""
+
+#: resstring.lztmaincut
+msgctxt "resstring.lztmaincut"
+msgid "Cu&t"
+msgstr ""
+
+#: resstring.lztmaindatabase
+msgctxt "resstring.lztmaindatabase"
+msgid "&Database"
+msgstr ""
+
+#: resstring.lztmaindatabase2
+msgid "Database"
+msgstr ""
+
+#: resstring.lztmaindatabase3
+msgid "Database: %s"
+msgstr ""
+
+#: resstring.lztmaindatabasebackup
+msgctxt "resstring.lztmaindatabasebackup"
+msgid "Database Backup"
+msgstr ""
+
+#: resstring.lztmaindatabaseconnected
+msgid "Database Connected"
+msgstr ""
+
+#: resstring.lztmaindatabasemetadata
+msgid "Database Metadata"
+msgstr ""
+
+#: resstring.lztmaindatabaseregistrationremoved
+msgid "Database registration not removed."
+msgstr ""
+
+#: resstring.lztmaindatabaserestart
+msgctxt "resstring.lztmaindatabaserestart"
+msgid "Database &Restart"
+msgstr ""
+
+#: resstring.lztmaindatabasestatistics
+msgctxt "resstring.lztmaindatabasestatistics"
+msgid "&Database Statistics ..."
+msgstr ""
+
+#: resstring.lztmaindeletealias
+msgctxt "resstring.lztmaindeletealias"
+msgid "&Delete Alias"
+msgstr ""
+
+#: resstring.lztmaindeleteuser
+msgctxt "resstring.lztmaindeleteuser"
+msgid "&Delete User"
+msgstr ""
+
+#: resstring.lztmaindeleteuser2
+msgid "Are you sure that you want to delete user: %s?"
+msgstr ""
+
+#: resstring.lztmaindetails
+msgctxt "resstring.lztmaindetails"
+msgid "&Details"
+msgstr ""
+
+#: resstring.lztmaindiagnoseconnection
+msgctxt "resstring.lztmaindiagnoseconnection"
+msgid "&Diagnose Connection ..."
+msgstr ""
+
+#: resstring.lztmaindisconnect
+msgctxt "resstring.lztmaindisconnect"
+msgid "&Disconnect"
+msgstr ""
+
+#: resstring.lztmaindrop
+msgctxt "resstring.lztmaindrop"
+msgid "&Drop ..."
+msgstr ""
+
+#: resstring.lztmaindropdatabase
+msgctxt "resstring.lztmaindropdatabase"
+msgid "Drop Database"
+msgstr ""
+
+#: resstring.lztmaindroppedaccessed
+msgid "Once %s is dropped it can no longer be accessed."
+msgstr ""
+
+#: resstring.lztmainedit
+msgctxt "resstring.lztmainedit"
+msgid "Edit &Description ..."
+msgstr ""
+
+#: resstring.lztmainerrorconnect
+msgid "An error occured while trying to connect to '%s'.  This server may be an earlier version.  As a result many features will be not work properly."
+msgstr ""
+
+#: resstring.lztmainexit
+msgctxt "resstring.lztmainexit"
+msgid "E&xit"
+msgstr ""
+
+#: resstring.lztmainextract
+msgctxt "resstring.lztmainextract"
+msgid "E&xtract ..."
+msgstr ""
+
+#: resstring.lztmainfailedgetdataservername
+msgid "Failed to get data for 'ServerName'."
+msgstr ""
+
+#: resstring.lztmainfailedgetdatausername
+msgid "Failed to get data for 'UserName'."
+msgstr ""
+
+#: resstring.lztmainfont
+msgctxt "resstring.lztmainfont"
+msgid "&Font ..."
+msgstr ""
+
+#: resstring.lztmainformatconnection
+msgid "Name%sDescription%sLast Accessed%sConnections"
+msgstr ""
+
+#: resstring.lztmainformatname
+msgid "Name%sPath"
+msgstr ""
+
+#: resstring.lztmainformatusername
+msgid "User Name%sFirst Name%sMiddle Name%sLast Name"
+msgstr ""
+
+#: resstring.lztmainhintbackuprestoremodifyalias
+msgctxt "resstring.lztmainhintbackuprestoremodifyalias"
+msgid "Modify an existing backup alias"
+msgstr ""
+
+#: resstring.lztmainhintbackuprestoreremovealias
+msgctxt "resstring.lztmainhintbackuprestoreremovealias"
+msgid "Delete the current backup alias"
+msgstr ""
+
+#: resstring.lztmainhintconnectas3
+msgctxt "resstring.lztmainhintconnectas3"
+msgid "Interactive SQL"
+msgstr ""
+
+#: resstring.lztmainhintconsoleexit
+msgid "Exit Firebird Management Studio"
+msgstr ""
+
+#: resstring.lztmainhintdatabaseactionsproperties
+msgctxt "resstring.lztmainhintdatabaseactionsproperties"
+msgid "Show database properties"
+msgstr ""
+
+#: resstring.lztmainhintdatabasebackup
+msgctxt "resstring.lztmainhintdatabasebackup"
+msgid "Back up an InterBase database"
+msgstr ""
+
+#: resstring.lztmainhintdatabaseconnect
+msgctxt "resstring.lztmainhintdatabaseconnect"
+msgid "Connect to the selected database"
+msgstr ""
+
+#: resstring.lztmainhintdatabaseconnectas
+msgctxt "resstring.lztmainhintdatabaseconnectas"
+msgid "Connect to the selected database specifying a user"
+msgstr ""
+
+#: resstring.lztmainhintdatabasecreate
+msgctxt "resstring.lztmainhintdatabasecreate"
+msgid "Create a new database"
+msgstr ""
+
+#: resstring.lztmainhintdatabasedisconnect
+msgctxt "resstring.lztmainhintdatabasedisconnect"
+msgid "Disconnect from the current database"
+msgstr ""
+
+#: resstring.lztmainhintdatabasedrop
+msgctxt "resstring.lztmainhintdatabasedrop"
+msgid "Drop the current database"
+msgstr ""
+
+#: resstring.lztmainhintdatabasemetadata
+msgctxt "resstring.lztmainhintdatabasemetadata"
+msgid "View Database Metadata"
+msgstr ""
+
+#: resstring.lztmainhintdatabaseproperties
+msgctxt "resstring.lztmainhintdatabaseproperties"
+msgid "Show database properties"
+msgstr ""
+
+#: resstring.lztmainhintdatabaserecovertrans
+msgctxt "resstring.lztmainhintdatabaserecovertrans"
+msgid "Recover limbo transactions"
+msgstr ""
+
+#: resstring.lztmainhintdatabaseregister
+msgctxt "resstring.lztmainhintdatabaseregister"
+msgid "Register a new database"
+msgstr ""
+
+#: resstring.lztmainhintdatabaserestart
+msgctxt "resstring.lztmainhintdatabaserestart"
+msgid "Restart a database"
+msgstr ""
+
+#: resstring.lztmainhintdatabaserestore
+msgctxt "resstring.lztmainhintdatabaserestore"
+msgid "Restore an InterBase database"
+msgstr ""
+
+#: resstring.lztmainhintdatabaseshutdown
+msgctxt "resstring.lztmainhintdatabaseshutdown"
+msgid "Shutdown the database"
+msgstr ""
+
+#: resstring.lztmainhintdatabasestatistics
+msgctxt "resstring.lztmainhintdatabasestatistics"
+msgid "Display database statistics"
+msgstr ""
+
+#: resstring.lztmainhintdatabasesweep
+msgctxt "resstring.lztmainhintdatabasesweep"
+msgid "Perform a database sweep"
+msgstr ""
+
+#: resstring.lztmainhintdatabaseunregister
+msgctxt "resstring.lztmainhintdatabaseunregister"
+msgid "Unregister the current database"
+msgstr ""
+
+#: resstring.lztmainhintdatabaseusers
+msgctxt "resstring.lztmainhintdatabaseusers"
+msgid "View a list of users currently connected to the server"
+msgstr ""
+
+#: resstring.lztmainhintdatabasevalidate
+msgctxt "resstring.lztmainhintdatabasevalidate"
+msgid "Validate the database structure"
+msgstr ""
+
+#: resstring.lztmainhintdbcbackup
+msgctxt "resstring.lztmainhintdbcbackup"
+msgid "Backup an InterBase database"
+msgstr ""
+
+#: resstring.lztmainhintdbcrestore
+msgctxt "resstring.lztmainhintdbcrestore"
+msgid "Restore an InterBase database"
+msgstr ""
+
+#: resstring.lztmainhinteditcopy
+msgctxt "resstring.lztmainhinteditcopy"
+msgid "Copy"
+msgstr ""
+
+#: resstring.lztmainhinteditcut
+msgctxt "resstring.lztmainhinteditcut"
+msgid "Cut"
+msgstr ""
+
+#: resstring.lztmainhinteditfont
+msgctxt "resstring.lztmainhinteditfont"
+msgid "Change the font"
+msgstr ""
+
+#: resstring.lztmainhinteditpaste
+msgctxt "resstring.lztmainhinteditpaste"
+msgid "Paste"
+msgstr ""
+
+#: resstring.lztmainhintexttoolslaunchisql
+msgctxt "resstring.lztmainhintexttoolslaunchisql"
+msgid "Interactive SQL"
+msgstr ""
+
+#: resstring.lztmainhintobjectcreate
+msgctxt "resstring.lztmainhintobjectcreate"
+msgid "Create a new object of the selected type"
+msgstr ""
+
+#: resstring.lztmainhintobjectdelete
+msgctxt "resstring.lztmainhintobjectdelete"
+msgid "Delete the current object"
+msgstr ""
+
+#: resstring.lztmainhintobjectdescription
+msgctxt "resstring.lztmainhintobjectdescription"
+msgid "Change the decription for an object"
+msgstr ""
+
+#: resstring.lztmainhintobjectextract
+msgctxt "resstring.lztmainhintobjectextract"
+msgid "Extract metada for the current object"
+msgstr ""
+
+#: resstring.lztmainhintobjectmodify
+msgctxt "resstring.lztmainhintobjectmodify"
+msgid "Modify the current object"
+msgstr ""
+
+#: resstring.lztmainhintserveractionprops
+msgctxt "resstring.lztmainhintserveractionprops"
+msgid "View Server properties"
+msgstr ""
+
+#: resstring.lztmainhintserverconnection
+msgctxt "resstring.lztmainhintserverconnection"
+msgid "Diagnose a connection to a server"
+msgstr ""
+
+#: resstring.lztmainhintserverlogin
+msgctxt "resstring.lztmainhintserverlogin"
+msgid "Login to the selected server"
+msgstr ""
+
+#: resstring.lztmainhintserverlogout
+msgctxt "resstring.lztmainhintserverlogout"
+msgid "Logout from the current server"
+msgstr ""
+
+#: resstring.lztmainhintserverproperties
+msgctxt "resstring.lztmainhintserverproperties"
+msgid "View Server properties"
+msgstr ""
+
+#: resstring.lztmainhintserverregister
+msgctxt "resstring.lztmainhintserverregister"
+msgid "Register a new InterBase Server"
+msgstr ""
+
+#: resstring.lztmainhintserversecurity
+msgctxt "resstring.lztmainhintserversecurity"
+msgid "Manage InterBase Users"
+msgstr ""
+
+#: resstring.lztmainhintserverunregister
+msgctxt "resstring.lztmainhintserverunregister"
+msgid "Unregister an InterBase Server"
+msgstr ""
+
+#: resstring.lztmainhinttoolbutton1
+msgctxt "resstring.lztmainhinttoolbutton1"
+msgid "Register a new InterBase Server"
+msgstr ""
+
+#: resstring.lztmainhinttoolbutton5
+msgctxt "resstring.lztmainhinttoolbutton5"
+msgid "Unregister an InterBase Server"
+msgstr ""
+
+#: resstring.lztmainhintuseradd
+msgctxt "resstring.lztmainhintuseradd"
+msgid "Add a new user entry"
+msgstr ""
+
+#: resstring.lztmainhintuserdelete
+msgctxt "resstring.lztmainhintuserdelete"
+msgid "Delete a user entry"
+msgstr ""
+
+#: resstring.lztmainhintusermodify
+msgctxt "resstring.lztmainhintusermodify"
+msgid "Modify a user entry"
+msgstr ""
+
+#: resstring.lztmainhintviewproperties
+msgctxt "resstring.lztmainhintviewproperties"
+msgid "View Object Properties"
+msgstr ""
+
+#: resstring.lztmainhintviewserverlog
+msgctxt "resstring.lztmainhintviewserverlog"
+msgid "View the INTERBASE.LOG file for the current server"
+msgstr ""
+
+#: resstring.lztmaininteractivesql
+msgctxt "resstring.lztmaininteractivesql"
+msgid "Interactive S&QL ..."
+msgstr ""
+
+#: resstring.lztmaininteractivesql2
+msgid "Interactive SQL - "
+msgstr ""
+
+#: resstring.lztmainlarge
+msgctxt "resstring.lztmainlarge"
+msgid "Lar&ge"
+msgstr ""
+
+#: resstring.lztmainlcolumncaptionaction
+msgid "Action"
+msgstr ""
+
+#: resstring.lztmainlcolumncaptiondescription
+msgid "Description"
+msgstr ""
+
+#: resstring.lztmainlist
+msgctxt "resstring.lztmainlist"
+msgid "&List"
+msgstr ""
+
+#: resstring.lztmainlog
+msgid "Log"
+msgstr ""
+
+#: resstring.lztmainlogin
+msgctxt "resstring.lztmainlogin"
+msgid "&Login ..."
+msgstr ""
+
+#: resstring.lztmainlogout
+msgctxt "resstring.lztmainlogout"
+msgid "Log&out"
+msgstr ""
+
+#: resstring.lztmainmaintenance
+msgctxt "resstring.lztmainmaintenance"
+msgid "&Maintenance"
+msgstr ""
+
+#: resstring.lztmainmetadata
+msgid "Metadata for %s"
+msgstr ""
+
+#: resstring.lztmainmodify
+msgctxt "resstring.lztmainmodify"
+msgid "&Modify ..."
+msgstr ""
+
+#: resstring.lztmainmodifybackupalias
+msgctxt "resstring.lztmainmodifybackupalias"
+msgid "&Modify Backup Alias ..."
+msgstr ""
+
+#: resstring.lztmainmodifyuser
+msgctxt "resstring.lztmainmodifyuser"
+msgid "&Modify User ..."
+msgstr ""
+
+#: resstring.lztmainname
+msgid "Name"
+msgstr ""
+
+#: resstring.lztmainnewconnection
+msgctxt "resstring.lztmainnewconnection"
+msgid "New connection..."
+msgstr ""
+
+#: resstring.lztmainobjectlisted
+msgid "%d objects listed"
+msgstr ""
+
+#: resstring.lztmainpaste
+msgctxt "resstring.lztmainpaste"
+msgid "&Paste"
+msgstr ""
+
+#: resstring.lztmainproperties
+msgctxt "resstring.lztmainproperties"
+msgid "&Properties ..."
+msgstr ""
+
+#: resstring.lztmainrefresh
+msgctxt "resstring.lztmainrefresh"
+msgid "&Refresh"
+msgstr ""
+
+#: resstring.lztmainregister
+msgctxt "resstring.lztmainregister"
+msgid "&Register ..."
+msgstr ""
+
+#: resstring.lztmainregisterdatabaseagain
+msgid "This database is already registered with the following alias: %s.%sAre you sure you want to register this database again?"
+msgstr ""
+
+#: resstring.lztmainremovealiaslist
+msgid "Are you sure that you want to remove \"%s\" from the alias list?"
+msgstr ""
+
+#: resstring.lztmainrestore
+msgctxt "resstring.lztmainrestore"
+msgid "&Restore ..."
+msgstr ""
+
+#: resstring.lztmainrestoredatabase
+msgctxt "resstring.lztmainrestoredatabase"
+msgid "Restore Database"
+msgstr ""
+
+#: resstring.lztmainselectall
+msgctxt "resstring.lztmainselectall"
+msgid "Select &All"
+msgstr ""
+
+#: resstring.lztmainserver
+msgctxt "resstring.lztmainserver"
+msgid "&Server"
+msgstr ""
+
+#: resstring.lztmainserver2
+msgid "Server"
+msgstr ""
+
+#: resstring.lztmainserver3
+msgid "Server: %s"
+msgstr ""
+
+#: resstring.lztmainserverconnected
+msgid "Server Connected"
+msgstr ""
+
+#: resstring.lztmainserverlog
+msgid "Server Log"
+msgstr ""
+
+#: resstring.lztmainservershutdown
+msgid "This server may be shutdown or disconnected."
+msgstr ""
+
+#: resstring.lztmainshutdown
+msgctxt "resstring.lztmainshutdown"
+msgid "&Shutdown ..."
+msgstr ""
+
+#: resstring.lztmainsmall
+msgctxt "resstring.lztmainsmall"
+msgid "S&mall"
+msgstr ""
+
+#: resstring.lztmainstartserver
+msgid "The server has not been started. Would you like to start it now?"
+msgstr ""
+
+#: resstring.lztmainsweep
+msgctxt "resstring.lztmainsweep"
+msgid "&Sweep"
+msgstr ""
+
+#: resstring.lztmainsweeplargedatabase
+msgid "Sweeping a large database may take a while and can impact server performance during that time. Do you wish to perform a sweep?"
+msgstr ""
+
+#: resstring.lztmaintoolbar2
+msgctxt "resstring.lztmaintoolbar2"
+msgid "ToolBar2"
+msgstr ""
+
+#: resstring.lztmaintoolbutton6
+msgctxt "resstring.lztmaintoolbutton6"
+msgid "ToolButton6"
+msgstr ""
+
+#: resstring.lztmaintoolbutton8
+msgctxt "resstring.lztmaintoolbutton8"
+msgid "ToolButton8"
+msgstr ""
+
+#: resstring.lztmaintools
+msgctxt "resstring.lztmaintools"
+msgid "&Tools"
+msgstr ""
+
+#: resstring.lztmaintransactionrecovery
+msgctxt "resstring.lztmaintransactionrecovery"
+msgid "&Transaction Recovery ..."
+msgstr ""
+
+#: resstring.lztmainundo
+msgctxt "resstring.lztmainundo"
+msgid "&Undo"
+msgstr ""
+
+#: resstring.lztmainunregister
+msgctxt "resstring.lztmainunregister"
+msgid "&Un-Register"
+msgstr ""
+
+#: resstring.lztmainunregister2
+msgid "Are you sure that you want to un-register %s?"
+msgstr ""
+
+#: resstring.lztmainunregisterselecteddatabase
+msgid "Are you sure that you want to un-register the selected database?"
+msgstr ""
+
+#: resstring.lztmainuser
+msgid "User: %s"
+msgstr ""
+
+#: resstring.lztmainusersecurity
+msgctxt "resstring.lztmainusersecurity"
+msgid "User &Security ..."
+msgstr ""
+
+#: resstring.lztmainvalidation
+msgctxt "resstring.lztmainvalidation"
+msgid "&Validation ..."
+msgstr ""
+
+#: resstring.lztmainview
+msgctxt "resstring.lztmainview"
+msgid "&View"
+msgstr ""
+
+#: resstring.lztmainviewlog
+msgctxt "resstring.lztmainviewlog"
+msgid "&View Logfile ..."
+msgstr ""
+
+#: resstring.lztmainviewmetadata
+msgctxt "resstring.lztmainviewmetadata"
+msgid "View &Metadata ..."
+msgstr ""
+
+#: resstring.lztmainwindows
+msgctxt "resstring.lztmainwindows"
+msgid "Windows"
+msgstr ""
+
+#: resstring.lztmainwindowsws
+msgctxt "resstring.lztmainwindowsws"
+msgid "&Windows"
+msgstr ""
+
+#: resstring.lztmainystemdata
+msgctxt "resstring.lztmainystemdata"
+msgid "S&ystem Data"
+msgstr ""
+
+#: resstring.lztmessage10caption
+msgid "Invalid source database name. Please enter a valid database name."
+msgstr ""
+
+#: resstring.lztmessage11caption
+msgid "Invalid destination database name. Please enter a valid database name."
+msgstr ""
+
+#: resstring.lztmessage12caption
+msgid "The source and destination must be different."
+msgstr ""
+
+#: resstring.lztmessage13caption
+msgid "Invalid database file or the file does not exist."
+msgstr ""
+
+#: resstring.lztmessage14caption
+msgid "Invalid server name. Please enter a valid server name."
+msgstr ""
+
+#: resstring.lztmessage15caption
+msgid "Invalid network protocol. Please select a network protocol from the list."
+msgstr ""
+
+#: resstring.lztmessage16caption
+msgid "Database backup failed."
+msgstr ""
+
+#: resstring.lztmessage17caption
+msgid "Database restore failed."
+msgstr ""
+
+#: resstring.lztmessage18caption
+msgid "Unable to retrieve a list of tables."
+msgstr ""
+
+#: resstring.lztmessage19caption
+msgid "Unable to retrieve a list of views."
+msgstr ""
+
+#: resstring.lztmessage1caption
+msgid "Initialization failure."
+msgstr ""
+
+#: resstring.lztmessage20caption
+msgid "Invalid service. Please select a service from the list."
+msgstr ""
+
+#: resstring.lztmessage21caption
+msgid "Invalid numeric value. Please enter a valid numeric value."
+msgstr ""
+
+#: resstring.lztmessage22caption
+msgid "Unable to retrieve data."
+msgstr ""
+
+#: resstring.lztmessage23caption
+msgid "Invalid database alias. Please enter a valid database name."
+msgstr ""
+
+#: resstring.lztmessage24caption
+msgid "Unable to retrieve a list of roles."
+msgstr ""
+
+#: resstring.lztmessage25caption
+msgid "Error logging into the requested server."
+msgstr ""
+
+#: resstring.lztmessage26caption
+msgid "Error connecting to the requested database."
+msgstr ""
+
+#: resstring.lztmessage27caption
+msgid "Error disconnecting from database."
+msgstr ""
+
+#: resstring.lztmessage28caption
+msgid "Unable to retrieve a list of procedures."
+msgstr ""
+
+#: resstring.lztmessage29caption
+msgid "Unable to retrieve a list of functions."
+msgstr ""
+
+#: resstring.lztmessage2caption
+msgid "Invalid username. Please enter a valid username."
+msgstr ""
+
+#: resstring.lztmessage30caption
+msgid "Unable to retrieve a list of generators."
+msgstr ""
+
+#: resstring.lztmessage31caption
+msgid "Unable to retrieve a list of exceptions."
+msgstr ""
+
+#: resstring.lztmessage32caption
+msgid "Unable to retrieve a list of blob filters."
+msgstr ""
+
+#: resstring.lztmessage33caption
+msgid "Unable to retrieve a list of columns."
+msgstr ""
+
+#: resstring.lztmessage34caption
+msgid "Unable to retrieve a list of indices."
+msgstr ""
+
+#: resstring.lztmessage35caption
+msgid "Unable to retrieve a list of referential constraints."
+msgstr ""
+
+#: resstring.lztmessage36caption
+msgid "Unable to retrieve a list of unique constraints."
+msgstr ""
+
+#: resstring.lztmessage37caption
+msgid "Unable to retrieve a list of check constraints."
+msgstr ""
+
+#: resstring.lztmessage38caption
+msgid "Unable to retrieve a list of triggers."
+msgstr ""
+
+#: resstring.lztmessage39caption
+msgid "An error occured while attempting to extract metadata information."
+msgstr ""
+
+#: resstring.lztmessage3caption
+msgid "Invalid password. Please enter a valid password."
+msgstr ""
+
+#: resstring.lztmessage40caption
+msgid "Invalid Property Value."
+msgstr ""
+
+#: resstring.lztmessage41caption
+msgid "An error occured while attempting to extract dependency information."
+msgstr ""
+
+#: resstring.lztmessage42caption
+msgid "An error occured while attempting to retrieve database properties."
+msgstr ""
+
+#: resstring.lztmessage43caption
+msgid "Invalid database file size."
+msgstr ""
+
+#: resstring.lztmessage44caption
+msgid "SQL Error"
+msgstr ""
+
+#: resstring.lztmessage45caption
+msgid "Service Error"
+msgstr ""
+
+#: resstring.lztmessage46caption
+msgid "External Editor Error"
+msgstr ""
+
+#: resstring.lztmessage47caption
+msgid "Invalid server alias. Please enter a valid server alias."
+msgstr ""
+
+#: resstring.lztmessage48caption
+msgid "Invalid backup alias. Please enter a valid backup alias."
+msgstr ""
+
+#: resstring.lztmessage49caption
+msgid "Database shutdown unsuccessful."
+msgstr ""
+
+#: resstring.lztmessage4caption
+msgid "The password does not match the confirmation password."
+msgstr ""
+
+#: resstring.lztmessage50caption
+msgid "Unable to modify database properties."
+msgstr ""
+
+#: resstring.lztmessage51caption
+msgid "An error occured while attempting to drop the database."
+msgstr ""
+
+#: resstring.lztmessage52caption
+msgid "An error occured while attempting to open file."
+msgstr ""
+
+#: resstring.lztmessage53caption
+msgid "The editor specified is invalid."
+msgstr ""
+
+#: resstring.lztmessage54caption
+msgid "The external editor is not specified."
+msgstr ""
+
+#: resstring.lztmessage55caption
+msgid "Unable to display blob.  The format is not graphical."
+msgstr ""
+
+#: resstring.lztmessage56caption
+msgid "Unable to change the client dialect."
+msgstr ""
+
+#: resstring.lztmessage57caption
+msgid "Error occured opening file."
+msgstr ""
+
+#: resstring.lztmessage58caption
+msgid "Search string not found."
+msgstr ""
+
+#: resstring.lztmessage59caption
+msgid "Unable to print.  Make sure your printer is installed and working."
+msgstr ""
+
+#: resstring.lztmessage5caption
+msgid "Unable to add user."
+msgstr ""
+
+#: resstring.lztmessage60caption
+msgid "No path was specified for the backup file or database."
+msgstr ""
+
+#: resstring.lztmessage61caption
+msgid "No files were specified for backup or restore."
+msgstr ""
+
+#: resstring.lztmessage62caption
+msgid "Unable to retrieve a list of domains."
+msgstr ""
+
+#: resstring.lztmessage63caption
+msgid "Unable to launch external tool"
+msgstr ""
+
+#: resstring.lztmessage64caption
+msgid "Unable to retrieve properties for the object"
+msgstr ""
+
+#: resstring.lztmessage65caption
+msgid "Invalid alias.  This alias already exists."
+msgstr ""
+
+#: resstring.lztmessage66caption
+msgid "Insufficient rights for this operation."
+msgstr ""
+
+#: resstring.lztmessage67caption
+msgid "The server is already registered."
+msgstr ""
+
+#: resstring.lztmessage68caption
+msgid "This database alias already exists."
+msgstr ""
+
+#: resstring.lztmessage69caption
+msgid "The backup file is already registered."
+msgstr ""
+
+#: resstring.lztmessage6caption
+msgid "Unable to modify user account."
+msgstr ""
+
+#: resstring.lztmessage70caption
+msgid "The client dialect does not match the database dialect."
+msgstr ""
+
+#: resstring.lztmessage71caption
+msgid ""
+"The file name specified may contain a server name.\n"
+"Some operations may not work correctly.\n"
+msgstr ""
+
+#: resstring.lztmessage72caption
+msgid "The user was added successfully."
+msgstr ""
+
+#: resstring.lztmessage73caption
+msgid "Database backup completed."
+msgstr ""
+
+#: resstring.lztmessage74caption
+msgid "Database restore completed."
+msgstr ""
+
+#: resstring.lztmessage75caption
+msgid "No pending transactions were found."
+msgstr ""
+
+#: resstring.lztmessage76caption
+msgid "You must restart the server in order for the changes to go into effect."
+msgstr ""
+
+#: resstring.lztmessage77caption
+msgid "Database shutdown completed successfully."
+msgstr ""
+
+#: resstring.lztmessage78caption
+msgid "Database restart completed successfully."
+msgstr ""
+
+#: resstring.lztmessage79caption
+msgid "SQL script done."
+msgstr ""
+
+#: resstring.lztmessage7caption
+msgid "Unable to delete user."
+msgstr ""
+
+#: resstring.lztmessage80caption
+msgid "Database sweep completed."
+msgstr ""
+
+#: resstring.lztmessage81caption
+msgid "To overwrite an existing database, set the Overwrite option to TRUE"
+msgstr ""
+
+#: resstring.lztmessage82caption
+msgid "An invalid option was specified for the operation."
+msgstr ""
+
+#: resstring.lztmessage83caption
+msgid "The parameters for this operation are conflicting."
+msgstr ""
+
+#: resstring.lztmessage84caption
+msgid "An operation was not specified."
+msgstr ""
+
+#: resstring.lztmessage85caption
+msgid "A database was not specified for the operation"
+msgstr ""
+
+#: resstring.lztmessage86caption
+msgid "The page size must be specified."
+msgstr ""
+
+#: resstring.lztmessage87caption
+msgid "The security database could not be opened."
+msgstr ""
+
+#: resstring.lztmessage88caption
+msgid "User name missing.  A user name must be specified for all operations."
+msgstr ""
+
+#: resstring.lztmessage89caption
+msgid "An unknown error was encountered while attempting to add the user record."
+msgstr ""
+
+#: resstring.lztmessage8caption
+msgid "Unable to retrieve user list."
+msgstr ""
+
+#: resstring.lztmessage90caption
+msgid "An unknown error was encountered while attempting to modify the user record."
+msgstr ""
+
+#: resstring.lztmessage91caption
+msgid "An unknown error was encountered while attempting to find/modify the user record."
+msgstr ""
+
+#: resstring.lztmessage92caption
+msgid "The information for the user was not found."
+msgstr ""
+
+#: resstring.lztmessage93caption
+msgid "An unknown error was encountered while attempting to delete the user record."
+msgstr ""
+
+#: resstring.lztmessage94caption
+msgid "An unknown error was encountered while attempting to find/delete the user record."
+msgstr ""
+
+#: resstring.lztmessage95caption
+msgid "An unknown error was encountered while attempting to find/display the user record."
+msgstr ""
+
+#: resstring.lztmessage96caption
+msgid "An unknown error attempting to open a file on the server."
+msgstr ""
+
+#: resstring.lztmessage97caption
+msgid "An Unknown Error Occured"
+msgstr ""
+
+#: resstring.lztmessage9caption
+msgid "Unable to retrieve user information."
+msgstr ""
+
+#: resstring.lztmessagebtnokcaption
+msgctxt "resstring.lztmessagebtnokcaption"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztmessageerrorcaption
+msgid "Error"
+msgstr ""
+
+#: resstring.lztmessageformtitle
+msgctxt "resstring.lztmessageformtitle"
+msgid "Message"
+msgstr ""
+
+#: resstring.lztmessageinformationcaption
+msgid "Information"
+msgstr ""
+
+#: resstring.lztmessagelbldetailmsgcaption
+msgctxt "resstring.lztmessagelbldetailmsgcaption"
+msgid "Detail Message:"
+msgstr ""
+
+#: resstring.lztmessagewarningcaption
+msgid "Warning"
+msgstr ""
+
+#: resstring.lztsqlcommitorrollback
+msgid "Commit or Rollback the current transaction"
+msgstr ""
+
+#: resstring.lztsqlcurrentmemory
+msgid "Current Memory%s%d"
+msgstr ""
+
+#: resstring.lztsqldeltamemory
+msgid "Delta Memory%s%d"
+msgstr ""
+
+#: resstring.lztsqlerrorparsingconnect
+msgid "An error occured parsing CONNECT statement."
+msgstr ""
+
+#: resstring.lztsqlerrorparsingcreate
+msgid "An error occured parsing CREATE statement."
+msgstr ""
+
+#: resstring.lztsqlexecutiontime
+msgid "Execution Time (hh:mm:ss.ssss)%s%.2d:%.2d:%.2d.%.4d"
+msgstr ""
+
+#: resstring.lztsqlnoactiveconnection
+msgid "No active connection"
+msgstr ""
+
+#: resstring.lztsqlnotavailable
+msgid "Not Available"
+msgstr ""
+
+#: resstring.lztsqlnumberbuffer
+msgid "Number of Buffers%s%d"
+msgstr ""
+
+#: resstring.lztsqlplan
+msgid "Plan%s%s"
+msgstr ""
+
+#: resstring.lztsqlplannotretreived
+msgid "Plan could not be retreived"
+msgstr ""
+
+#: resstring.lztsqlpreparetime
+msgid "Prepare Time (hh:mm:ss.ssss)%s%.2d:%.2d:%.2d:%.4d"
+msgstr ""
+
+#: resstring.lztsqlreads
+msgid "Reads%s%d"
+msgstr ""
+
+#: resstring.lztsqlrecordfetched
+msgid "Records Fetched%s%d"
+msgstr ""
+
+#: resstring.lztsqlstartingmemory
+msgid "Starting Memory%s%d"
+msgstr ""
+
+#: resstring.lztsqlstatement
+msgid "Statement: %s"
+msgstr ""
+
+#: resstring.lztsqlunableparsescript
+msgid "Unable to parse script"
+msgstr ""
+
+#: resstring.lztsqlwrite
+msgid "Writes%s%d"
 msgstr ""
 
 #: resstring.lzttoolpropertiesbuttonbrowsefiles
@@ -301,6 +1595,70 @@ msgstr ""
 #: resstring.lzttoolpropertiesworkingdirlbl
 msgctxt "resstring.lzttoolpropertiesworkingdirlbl"
 msgid "&Working Dir:"
+msgstr ""
+
+#: resstring.lztutilitycomputedfield
+msgid "Computed Field"
+msgstr ""
+
+#: resstring.lztutilitydirectotynotexistcreateit
+msgid "The directory %s does not exist. Do you wish to create it?"
+msgstr ""
+
+#: resstring.lztutilityerrorattemtingcreatedirectcancel
+msgid "An error occurred while attemting to create directory %s. Operation cancelled."
+msgstr ""
+
+#: resstring.lztutilityexception
+msgid "Exception"
+msgstr ""
+
+#: resstring.lztutilityexpressionindex
+msgid "Expression Index"
+msgstr ""
+
+#: resstring.lztutilityfield
+msgid "Field"
+msgstr ""
+
+#: resstring.lztutilityindex
+msgid "Index"
+msgstr ""
+
+#: resstring.lztutilityinterbasenotinstalled
+msgid "InterBase server is not installed on your computer."
+msgstr ""
+
+#: resstring.lztutilityprocedure
+msgid "Procedure"
+msgstr ""
+
+#: resstring.lztutilityrole
+msgid "Role"
+msgstr ""
+
+#: resstring.lztutilitytable
+msgid "Table"
+msgstr ""
+
+#: resstring.lztutilitytrigger
+msgid "Trigger"
+msgstr ""
+
+#: resstring.lztutilityunknown
+msgid "Unknown"
+msgstr ""
+
+#: resstring.lztutilityuser
+msgid "User"
+msgstr ""
+
+#: resstring.lztutilityvalidation
+msgid "Validation"
+msgstr ""
+
+#: resstring.lztutilityview
+msgid "View"
 msgstr ""
 
 #: tdialog.caption
@@ -384,6 +1742,46 @@ msgctxt "tfrmaddtools.label4.caption"
 msgid "P&arameters:"
 msgstr ""
 
+#: tfrmbackupaliasproperties.btnapply.caption
+msgctxt "tfrmbackupaliasproperties.btnapply.caption"
+msgid "&Apply"
+msgstr ""
+
+#: tfrmbackupaliasproperties.btnok.caption
+msgctxt "tfrmbackupaliasproperties.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmbackupaliasproperties.button1.caption
+msgctxt "tfrmbackupaliasproperties.button1.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmbackupaliasproperties.caption
+msgctxt "tfrmbackupaliasproperties.caption"
+msgid "Backup Alias Properties"
+msgstr ""
+
+#: tfrmbackupaliasproperties.lblaliasname.caption
+msgctxt "tfrmbackupaliasproperties.lblaliasname.caption"
+msgid "&Alias Name:"
+msgstr ""
+
+#: tfrmbackupaliasproperties.lbldbalias.caption
+msgctxt "tfrmbackupaliasproperties.lbldbalias.caption"
+msgid "Target &Database Alias:"
+msgstr ""
+
+#: tfrmbackupaliasproperties.lbldbserver.caption
+msgctxt "tfrmbackupaliasproperties.lbldbserver.caption"
+msgid "Target Database &Server:"
+msgstr ""
+
+#: tfrmbackupaliasproperties.lblservername.caption
+msgctxt "tfrmbackupaliasproperties.lblservername.caption"
+msgid "Server:"
+msgstr ""
+
 #: tfrmcommdiag.btncancel.caption
 msgctxt "tfrmcommdiag.btncancel.caption"
 msgid "&Cancel"
@@ -394,6 +1792,7 @@ msgid "..."
 msgstr ""
 
 #: tfrmcommdiag.btnseldb.hint
+msgctxt "tfrmcommdiag.btnseldb.hint"
 msgid "Select database"
 msgstr ""
 
@@ -498,26 +1897,31 @@ msgid "Backup / Restore"
 msgstr ""
 
 #: tfrmmain.backuprestoremodifyalias.caption
+msgctxt "tfrmmain.backuprestoremodifyalias.caption"
 msgid "&Modify Backup Alias ..."
 msgstr ""
 
 #: tfrmmain.backuprestoremodifyalias.hint
+msgctxt "tfrmmain.backuprestoremodifyalias.hint"
 msgid "Modify an existing backup alias"
 msgstr ""
 
 #: tfrmmain.backuprestoreremovealias.caption
+msgctxt "tfrmmain.backuprestoreremovealias.caption"
 msgid "&Delete Alias"
 msgstr ""
 
 #: tfrmmain.backuprestoreremovealias.hint
+msgctxt "tfrmmain.backuprestoreremovealias.hint"
 msgid "Delete the current backup alias"
 msgstr ""
 
 #: tfrmmain.caption
-msgid "IBConsole"
+msgid "Firebird Management Studio"
 msgstr ""
 
 #: tfrmmain.connectas3.caption
+msgctxt "tfrmmain.connectas3.caption"
 msgid "New connection..."
 msgstr ""
 
@@ -527,10 +1931,12 @@ msgid "Interactive SQL"
 msgstr ""
 
 #: tfrmmain.console1.caption
+msgctxt "tfrmmain.console1.caption"
 msgid "&Console"
 msgstr ""
 
 #: tfrmmain.consoleexit.caption
+msgctxt "tfrmmain.consoleexit.caption"
 msgid "E&xit"
 msgstr ""
 
@@ -539,6 +1945,7 @@ msgid "Exit IBConsole"
 msgstr ""
 
 #: tfrmmain.database1.caption
+msgctxt "tfrmmain.database1.caption"
 msgid "&Database"
 msgstr ""
 
@@ -552,58 +1959,72 @@ msgid "Show database properties"
 msgstr ""
 
 #: tfrmmain.databasebackup.caption
+msgctxt "tfrmmain.databasebackup.caption"
 msgid "&Backup ..."
 msgstr ""
 
 #: tfrmmain.databasebackup.hint
+msgctxt "tfrmmain.databasebackup.hint"
 msgid "Back up an InterBase database"
 msgstr ""
 
 #: tfrmmain.databaseconnect.caption
+msgctxt "tfrmmain.databaseconnect.caption"
 msgid "&Connect"
 msgstr ""
 
 #: tfrmmain.databaseconnect.hint
+msgctxt "tfrmmain.databaseconnect.hint"
 msgid "Connect to the selected database"
 msgstr ""
 
 #: tfrmmain.databaseconnectas.caption
+msgctxt "tfrmmain.databaseconnectas.caption"
 msgid "Connect &As ..."
 msgstr ""
 
 #: tfrmmain.databaseconnectas.hint
+msgctxt "tfrmmain.databaseconnectas.hint"
 msgid "Connect to the selected database specifying a user"
 msgstr ""
 
 #: tfrmmain.databasecreate.caption
+msgctxt "tfrmmain.databasecreate.caption"
 msgid "C&reate Database ..."
 msgstr ""
 
 #: tfrmmain.databasecreate.hint
+msgctxt "tfrmmain.databasecreate.hint"
 msgid "Create a new database"
 msgstr ""
 
 #: tfrmmain.databasedisconnect.caption
+msgctxt "tfrmmain.databasedisconnect.caption"
 msgid "&Disconnect"
 msgstr ""
 
 #: tfrmmain.databasedisconnect.hint
+msgctxt "tfrmmain.databasedisconnect.hint"
 msgid "Disconnect from the current database"
 msgstr ""
 
 #: tfrmmain.databasedrop.caption
+msgctxt "tfrmmain.databasedrop.caption"
 msgid "Drop Database"
 msgstr ""
 
 #: tfrmmain.databasedrop.hint
+msgctxt "tfrmmain.databasedrop.hint"
 msgid "Drop the current database"
 msgstr ""
 
 #: tfrmmain.databasemetadata.caption
+msgctxt "tfrmmain.databasemetadata.caption"
 msgid "View &Metadata ..."
 msgstr ""
 
 #: tfrmmain.databasemetadata.hint
+msgctxt "tfrmmain.databasemetadata.hint"
 msgid "View Database Metadata"
 msgstr ""
 
@@ -618,10 +2039,12 @@ msgid "Show database properties"
 msgstr ""
 
 #: tfrmmain.databaserecovertrans.caption
+msgctxt "tfrmmain.databaserecovertrans.caption"
 msgid "&Transaction Recovery ..."
 msgstr ""
 
 #: tfrmmain.databaserecovertrans.hint
+msgctxt "tfrmmain.databaserecovertrans.hint"
 msgid "Recover limbo transactions"
 msgstr ""
 
@@ -631,18 +2054,22 @@ msgid "&Register ..."
 msgstr ""
 
 #: tfrmmain.databaseregister.hint
+msgctxt "tfrmmain.databaseregister.hint"
 msgid "Register a new database"
 msgstr ""
 
 #: tfrmmain.databaserestart.caption
+msgctxt "tfrmmain.databaserestart.caption"
 msgid "Database &Restart"
 msgstr ""
 
 #: tfrmmain.databaserestart.hint
+msgctxt "tfrmmain.databaserestart.hint"
 msgid "Restart a database"
 msgstr ""
 
 #: tfrmmain.databaserestore.caption
+msgctxt "tfrmmain.databaserestore.caption"
 msgid "&Restore ..."
 msgstr ""
 
@@ -652,26 +2079,32 @@ msgid "Restore an InterBase database"
 msgstr ""
 
 #: tfrmmain.databaseshutdown.caption
+msgctxt "tfrmmain.databaseshutdown.caption"
 msgid "&Shutdown ..."
 msgstr ""
 
 #: tfrmmain.databaseshutdown.hint
+msgctxt "tfrmmain.databaseshutdown.hint"
 msgid "Shutdown the database"
 msgstr ""
 
 #: tfrmmain.databasestatistics.caption
+msgctxt "tfrmmain.databasestatistics.caption"
 msgid "&Database Statistics ..."
 msgstr ""
 
 #: tfrmmain.databasestatistics.hint
+msgctxt "tfrmmain.databasestatistics.hint"
 msgid "Display database statistics"
 msgstr ""
 
 #: tfrmmain.databasesweep.caption
+msgctxt "tfrmmain.databasesweep.caption"
 msgid "&Sweep"
 msgstr ""
 
 #: tfrmmain.databasesweep.hint
+msgctxt "tfrmmain.databasesweep.hint"
 msgid "Perform a database sweep"
 msgstr ""
 
@@ -680,34 +2113,42 @@ msgid "&Unregister"
 msgstr ""
 
 #: tfrmmain.databaseunregister.hint
+msgctxt "tfrmmain.databaseunregister.hint"
 msgid "Unregister the current database"
 msgstr ""
 
 #: tfrmmain.databaseusers.caption
+msgctxt "tfrmmain.databaseusers.caption"
 msgid "Connected &Users ..."
 msgstr ""
 
 #: tfrmmain.databaseusers.hint
+msgctxt "tfrmmain.databaseusers.hint"
 msgid "View a list of users currently connected to the server"
 msgstr ""
 
 #: tfrmmain.databasevalidate.caption
+msgctxt "tfrmmain.databasevalidate.caption"
 msgid "&Validation ..."
 msgstr ""
 
 #: tfrmmain.databasevalidate.hint
+msgctxt "tfrmmain.databasevalidate.hint"
 msgid "Validate the database structure"
 msgstr ""
 
 #: tfrmmain.dbcbackup.caption
+msgctxt "tfrmmain.dbcbackup.caption"
 msgid "Database Backup"
 msgstr ""
 
 #: tfrmmain.dbcbackup.hint
+msgctxt "tfrmmain.dbcbackup.hint"
 msgid "Backup an InterBase database"
 msgstr ""
 
 #: tfrmmain.dbcrestore.caption
+msgctxt "tfrmmain.dbcrestore.caption"
 msgid "Restore Database"
 msgstr ""
 
@@ -717,54 +2158,67 @@ msgid "Restore an InterBase database"
 msgstr ""
 
 #: tfrmmain.editcopy.caption
+msgctxt "tfrmmain.editcopy.caption"
 msgid "&Copy"
 msgstr ""
 
 #: tfrmmain.editcopy.hint
+msgctxt "tfrmmain.editcopy.hint"
 msgid "Copy"
 msgstr ""
 
 #: tfrmmain.editcut.caption
+msgctxt "tfrmmain.editcut.caption"
 msgid "Cu&t"
 msgstr ""
 
 #: tfrmmain.editcut.hint
+msgctxt "tfrmmain.editcut.hint"
 msgid "Cut"
 msgstr ""
 
 #: tfrmmain.editfont.caption
+msgctxt "tfrmmain.editfont.caption"
 msgid "&Font ..."
 msgstr ""
 
 #: tfrmmain.editfont.hint
+msgctxt "tfrmmain.editfont.hint"
 msgid "Change the font"
 msgstr ""
 
 #: tfrmmain.editpaste.caption
+msgctxt "tfrmmain.editpaste.caption"
 msgid "&Paste"
 msgstr ""
 
 #: tfrmmain.editpaste.hint
+msgctxt "tfrmmain.editpaste.hint"
 msgid "Paste"
 msgstr ""
 
 #: tfrmmain.editselectall.caption
+msgctxt "tfrmmain.editselectall.caption"
 msgid "Select &All"
 msgstr ""
 
 #: tfrmmain.editundo.caption
+msgctxt "tfrmmain.editundo.caption"
 msgid "&Undo"
 msgstr ""
 
 #: tfrmmain.exttooldropdown.caption
+msgctxt "tfrmmain.exttooldropdown.caption"
 msgid "&Tools"
 msgstr ""
 
 #: tfrmmain.exttoolsconfigure.caption
+msgctxt "tfrmmain.exttoolsconfigure.caption"
 msgid "&Configure Tools ..."
 msgstr ""
 
 #: tfrmmain.exttoolslaunchisql.caption
+msgctxt "tfrmmain.exttoolslaunchisql.caption"
 msgid "Interactive S&QL ..."
 msgstr ""
 
@@ -774,23 +2228,8 @@ msgid "Interactive SQL"
 msgstr ""
 
 #: tfrmmain.helpabout.caption
+msgctxt "tfrmmain.helpabout.caption"
 msgid "&About ..."
-msgstr ""
-
-#: tfrmmain.helpcontents.caption
-msgid "&Contents"
-msgstr ""
-
-#: tfrmmain.helpinterbase.caption
-msgid "&InterBase Help"
-msgstr ""
-
-#: tfrmmain.helponhelp.caption
-msgid "&Help on Help"
-msgstr ""
-
-#: tfrmmain.helptopicsearch.caption
-msgid "&Topic Search"
 msgstr ""
 
 #: tfrmmain.maintenance1.caption
@@ -803,183 +2242,53 @@ msgctxt "tfrmmain.maintenance2.caption"
 msgid "&Maintenance"
 msgstr ""
 
-#: tfrmmain.n01.caption
-msgctxt "TFRMMAIN.N01.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n1.caption
-msgctxt "TFRMMAIN.N1.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n10.caption
-msgctxt "TFRMMAIN.N10.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n11.caption
-msgctxt "TFRMMAIN.N11.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n12.caption
-msgctxt "TFRMMAIN.N12.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n13.caption
-msgctxt "TFRMMAIN.N13.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n14.caption
-msgctxt "TFRMMAIN.N14.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n15.caption
-msgctxt "TFRMMAIN.N15.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n16.caption
-msgctxt "TFRMMAIN.N16.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n17.caption
-msgctxt "TFRMMAIN.N17.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n19.caption
-msgctxt "TFRMMAIN.N19.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n2.caption
-msgctxt "TFRMMAIN.N2.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n20.caption
-msgctxt "TFRMMAIN.N20.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n21.caption
-msgctxt "TFRMMAIN.N21.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n22.caption
-msgctxt "TFRMMAIN.N22.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n23.caption
-msgctxt "TFRMMAIN.N23.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n24.caption
-msgctxt "TFRMMAIN.N24.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n25.caption
-msgctxt "tfrmmain.n25.caption"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n26.caption
-msgctxt "TFRMMAIN.N26.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n27.caption
-msgctxt "TFRMMAIN.N27.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n28.caption
-msgctxt "TFRMMAIN.N28.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n3.caption
-msgctxt "TFRMMAIN.N3.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n4.caption
-msgctxt "TFRMMAIN.N4.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n5.caption
-msgctxt "TFRMMAIN.N5.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n6.caption
-msgctxt "TFRMMAIN.N6.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n7.caption
-msgctxt "TFRMMAIN.N7.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n8.caption
-msgctxt "TFRMMAIN.N8.CAPTION"
-msgid "-"
-msgstr ""
-
-#: tfrmmain.n9.caption
-msgctxt "TFRMMAIN.N9.CAPTION"
-msgid "-"
-msgstr ""
-
 #: tfrmmain.objectcreate.caption
+msgctxt "tfrmmain.objectcreate.caption"
 msgid "&Create ..."
 msgstr ""
 
 #: tfrmmain.objectcreate.hint
+msgctxt "tfrmmain.objectcreate.hint"
 msgid "Create a new object of the selected type"
 msgstr ""
 
 #: tfrmmain.objectdelete.caption
+msgctxt "tfrmmain.objectdelete.caption"
 msgid "&Drop ..."
 msgstr ""
 
 #: tfrmmain.objectdelete.hint
+msgctxt "tfrmmain.objectdelete.hint"
 msgid "Delete the current object"
 msgstr ""
 
 #: tfrmmain.objectdescription.caption
+msgctxt "tfrmmain.objectdescription.caption"
 msgid "Edit &Description ..."
 msgstr ""
 
 #: tfrmmain.objectdescription.hint
+msgctxt "tfrmmain.objectdescription.hint"
 msgid "Change the decription for an object"
 msgstr ""
 
 #: tfrmmain.objectextract.caption
+msgctxt "tfrmmain.objectextract.caption"
 msgid "E&xtract ..."
 msgstr ""
 
 #: tfrmmain.objectextract.hint
+msgctxt "tfrmmain.objectextract.hint"
 msgid "Extract metada for the current object"
 msgstr ""
 
 #: tfrmmain.objectmodify.caption
+msgctxt "tfrmmain.objectmodify.caption"
 msgid "&Modify ..."
 msgstr ""
 
 #: tfrmmain.objectmodify.hint
+msgctxt "tfrmmain.objectmodify.hint"
 msgid "Modify the current object"
 msgstr ""
 
@@ -989,10 +2298,12 @@ msgid "&Properties ..."
 msgstr ""
 
 #: tfrmmain.objectrefresh.caption
+msgctxt "tfrmmain.objectrefresh.caption"
 msgid "&Refresh"
 msgstr ""
 
 #: tfrmmain.server1.caption
+msgctxt "tfrmmain.server1.caption"
 msgid "&Server"
 msgstr ""
 
@@ -1007,26 +2318,32 @@ msgid "View Server properties"
 msgstr ""
 
 #: tfrmmain.serverconnection.caption
+msgctxt "tfrmmain.serverconnection.caption"
 msgid "&Diagnose Connection ..."
 msgstr ""
 
 #: tfrmmain.serverconnection.hint
+msgctxt "tfrmmain.serverconnection.hint"
 msgid "Diagnose a connection to a server"
 msgstr ""
 
 #: tfrmmain.serverlogin.caption
+msgctxt "tfrmmain.serverlogin.caption"
 msgid "&Login ..."
 msgstr ""
 
 #: tfrmmain.serverlogin.hint
+msgctxt "tfrmmain.serverlogin.hint"
 msgid "Login to the selected server"
 msgstr ""
 
 #: tfrmmain.serverlogout.caption
+msgctxt "tfrmmain.serverlogout.caption"
 msgid "Log&out"
 msgstr ""
 
 #: tfrmmain.serverlogout.hint
+msgctxt "tfrmmain.serverlogout.hint"
 msgid "Logout from the current server"
 msgstr ""
 
@@ -1051,10 +2368,12 @@ msgid "Register a new InterBase Server"
 msgstr ""
 
 #: tfrmmain.serversecurity.caption
+msgctxt "tfrmmain.serversecurity.caption"
 msgid "User &Security ..."
 msgstr ""
 
 #: tfrmmain.serversecurity.hint
+msgctxt "tfrmmain.serversecurity.hint"
 msgid "Manage InterBase Users"
 msgstr ""
 
@@ -1069,6 +2388,7 @@ msgid "Unregister an InterBase Server"
 msgstr ""
 
 #: tfrmmain.toolbar2.caption
+msgctxt "tfrmmain.toolbar2.caption"
 msgid "ToolBar2"
 msgstr ""
 
@@ -1093,46 +2413,57 @@ msgid "Unregister an InterBase Server"
 msgstr ""
 
 #: tfrmmain.toolbutton6.caption
+msgctxt "tfrmmain.toolbutton6.caption"
 msgid "ToolButton6"
 msgstr ""
 
 #: tfrmmain.toolbutton8.caption
+msgctxt "tfrmmain.toolbutton8.caption"
 msgid "ToolButton8"
 msgstr ""
 
 #: tfrmmain.useradd.caption
+msgctxt "tfrmmain.useradd.caption"
 msgid "&Add User ..."
 msgstr ""
 
 #: tfrmmain.useradd.hint
+msgctxt "tfrmmain.useradd.hint"
 msgid "Add a new user entry"
 msgstr ""
 
 #: tfrmmain.userdelete.caption
+msgctxt "tfrmmain.userdelete.caption"
 msgid "&Delete User"
 msgstr ""
 
 #: tfrmmain.userdelete.hint
+msgctxt "tfrmmain.userdelete.hint"
 msgid "Delete a user entry"
 msgstr ""
 
 #: tfrmmain.usermodify.caption
+msgctxt "tfrmmain.usermodify.caption"
 msgid "&Modify User ..."
 msgstr ""
 
 #: tfrmmain.usermodify.hint
+msgctxt "tfrmmain.usermodify.hint"
 msgid "Modify a user entry"
 msgstr ""
 
 #: tfrmmain.view1.caption
+msgctxt "tfrmmain.view1.caption"
 msgid "&View"
 msgstr ""
 
 #: tfrmmain.viewicon.caption
+msgctxt "tfrmmain.viewicon.caption"
 msgid "Lar&ge"
 msgstr ""
 
 #: tfrmmain.viewlist.caption
+msgctxt "tfrmmain.viewlist.caption"
 msgid "&List"
 msgstr ""
 
@@ -1142,34 +2473,57 @@ msgid "&Properties ..."
 msgstr ""
 
 #: tfrmmain.viewproperties.hint
+msgctxt "tfrmmain.viewproperties.hint"
 msgid "View Object Properties"
 msgstr ""
 
 #: tfrmmain.viewreport.caption
+msgctxt "tfrmmain.viewreport.caption"
 msgid "&Details"
 msgstr ""
 
 #: tfrmmain.viewserverlog.caption
+msgctxt "tfrmmain.viewserverlog.caption"
 msgid "&View Logfile ..."
 msgstr ""
 
 #: tfrmmain.viewserverlog.hint
+msgctxt "tfrmmain.viewserverlog.hint"
 msgid "View the INTERBASE.LOG file for the current server"
 msgstr ""
 
 #: tfrmmain.viewsmallicon.caption
+msgctxt "tfrmmain.viewsmallicon.caption"
 msgid "S&mall"
 msgstr ""
 
 #: tfrmmain.viewsystem.caption
+msgctxt "tfrmmain.viewsystem.caption"
 msgid "S&ystem Data"
 msgstr ""
 
 #: tfrmmain.window2.caption
+msgctxt "tfrmmain.window2.caption"
 msgid "&Windows"
 msgstr ""
 
 #: tfrmmain.windowlist.caption
+msgctxt "tfrmmain.windowlist.caption"
 msgid "Windows"
+msgstr ""
+
+#: tfrmmessage.btnok.caption
+msgctxt "tfrmmessage.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmmessage.caption
+msgctxt "tfrmmessage.caption"
+msgid "Message"
+msgstr ""
+
+#: tfrmmessage.lbldetailmsg.caption
+msgctxt "tfrmmessage.lbldetailmsg.caption"
+msgid "Detail Message:"
 msgstr ""
 

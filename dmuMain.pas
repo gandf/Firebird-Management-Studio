@@ -21,9 +21,9 @@ unit dmuMain;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, IBCustomDataSet, IBQuery, IBDatabase, Db, IB, zluibcClasses,
-  sqldb, IBTable, StdCtrls, IBHeader, IBServices, Grids, DBGrids, IBSQL,
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms,
+  Dialogs, IBCustomDataSet, IBDatabase, Db, IB, zluibcClasses,
+  sqldb, StdCtrls, IBServices, DBGrids, IBSQL,
   IBDatabaseInfo, SynEdit;
 
 type
@@ -68,7 +68,7 @@ var
 implementation
 
 uses
-  zluGlobal, frmuMessage, zluUtility, frmuDBConnect, IBExtract;
+  zluGlobal, frmuMessage, IBExtract;
 
 {$R *.lfm}
 

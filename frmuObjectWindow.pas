@@ -24,9 +24,9 @@ unit frmuObjectWindow;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Interfaces, Forms, Dialogs,
-  StdCtrls, ToolWin, ComCtrls, ImgList, Buttons, Grids, DBGrids,
-  ActnList, Db, ExtCtrls, IBDatabase, IBCustomDataSet, dbctrls,
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Interfaces, Forms, Dialogs,
+  StdCtrls, ComCtrls, Buttons, Grids, DBGrids,
+  ActnList, Db, ExtCtrls, Messages, IBDatabase, IBCustomDataSet, dbctrls,
   IBTable, SynEdit, CommCtrl;
 
 type
@@ -234,7 +234,7 @@ var
 implementation
 
 uses
-  frmuMessage, frmuDisplayBlob, frmuDispMemo, dmuMain,
+  frmuDisplayBlob, frmuDispMemo, dmuMain,
   zluUtility, zluGlobal, IBSQL, IBExtract, frmuMain, filectrl, zluPersistent;
 
 {$R *.lfm}

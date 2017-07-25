@@ -1,153 +1,155 @@
-object frmDBCreate: TfrmDBCreate
+inherited frmDBCreate: TfrmDBCreate
   Left = 293
+  Height = 421
   Top = 114
-  HelpContext = 1
-  BorderIcons = [biSystemMenu, biHelp]
+  Width = 398
   BorderStyle = bsSingle
   Caption = 'Create Database'
-  ClientHeight = 412
-  ClientWidth = 391
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  HelpFile = '1'
-  Position = poScreenCenter
+  ClientHeight = 421
+  ClientWidth = 398
   OnCreate = FormCreate
-  OnHelp = FormHelp
-  PixelsPerInch = 96
-  object lblServer: TLabel
+  Position = poScreenCenter
+  object lblServer: TLabel[0]
     Left = 15
+    Height = 16
     Top = 15
     Width = 45
-    Height = 16
     AutoSize = False
     Caption = 'Server:'
     FocusControl = stxServer
+    ParentColor = False
   end
-  object lblDBAlias: TLabel
+  object lblDBAlias: TLabel[1]
     Left = 15
+    Height = 24
     Top = 44
     Width = 45
-    Height = 24
     AutoSize = False
     Caption = '&Alias:'
     FocusControl = edtDBAlias
+    ParentColor = False
   end
-  object lblDatabaseFiles: TLabel
+  object lblDatabaseFiles: TLabel[2]
     Left = 15
+    Height = 24
     Top = 81
     Width = 134
-    Height = 24
     AutoSize = False
     Caption = '&File(s):'
     FocusControl = sgDatabaseFiles
+    ParentColor = False
   end
-  object lblOptions: TLabel
+  object lblOptions: TLabel[3]
     Left = 15
+    Height = 16
     Top = 244
     Width = 75
-    Height = 16
     AutoSize = False
     Caption = 'O&ptions:'
     FocusControl = sgOptions
+    ParentColor = False
   end
-  object stxServer: TStaticText
+  object stxServer: TStaticText[4]
     Left = 66
+    Height = 21
     Top = 15
     Width = 282
-    Height = 21
-    AutoSize = False
     TabOrder = 0
   end
-  object edtDBAlias: TEdit
+  object edtDBAlias: TEdit[5]
     Left = 66
+    Height = 21
     Top = 44
     Width = 312
-    Height = 21
+    OnChange = edtDBAliasChange
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
-    OnChange = edtDBAliasChange
   end
-  object sgDatabaseFiles: TStringGrid
+  object sgDatabaseFiles: TStringGrid[6]
     Left = 15
+    Height = 127
     Top = 103
     Width = 363
-    Height = 127
     ColCount = 2
     DefaultRowHeight = 18
     FixedCols = 0
-    RowCount = 6
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing, goEditing]
+    RowCount = 6
     TabOrder = 2
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
     OnDrawCell = sgDatabaseFilesDrawCell
     OnKeyDown = sgDatabaseFilesKeyDown
     OnSelectCell = sgDatabaseFilesSelectCell
     ColWidths = (
       252
-      104)
+      104
+    )
   end
-  object sgOptions: TStringGrid
+  object sgOptions: TStringGrid[7]
     Left = 14
+    Height = 87
     Top = 263
     Width = 363
-    Height = 87
     Color = clSilver
     ColCount = 2
     DefaultColWidth = 143
     DefaultRowHeight = 21
     FixedCols = 0
-    RowCount = 3
     FixedRows = 0
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing]
+    RowCount = 3
     ScrollBars = ssNone
     TabOrder = 3
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
     OnDblClick = sgOptionsDblClick
     OnDrawCell = sgOptionsDrawCell
     OnSelectCell = sgOptionsSelectCell
     ColWidths = (
       213
-      143)
+      143
+    )
   end
-  object btnOK: TButton
+  object btnOK: TButton[8]
     Left = 199
+    Height = 25
     Top = 375
     Width = 75
-    Height = 25
     Caption = '&OK'
     Default = True
-    TabOrder = 4
     OnClick = btnOKClick
+    TabOrder = 4
   end
-  object btnCancel: TButton
+  object btnCancel: TButton[9]
     Left = 295
+    Height = 25
     Top = 375
     Width = 75
-    Height = 25
     Caption = '&Cancel'
-    TabOrder = 5
     OnClick = btnCancelClick
+    TabOrder = 5
   end
-  object cbOptions: TComboBox
+  object cbOptions: TComboBox[10]
     Left = 228
+    Height = 21
     Top = 267
     Width = 146
-    Height = 21
     ItemHeight = 13
-    TabOrder = 6
     OnChange = cbOptionsChange
     OnDblClick = cbOptionsDblClick
     OnExit = cbOptionsExit
     OnKeyDown = cbOptionsKeyDown
+    TabOrder = 6
   end
-  object pnlOptionName: TPanel
+  object pnlOptionName: TPanel[11]
     Left = 15
+    Height = 22
     Top = 267
     Width = 214
-    Height = 22
     Alignment = taLeftJustify
     BevelInner = bvLowered
     BevelOuter = bvLowered

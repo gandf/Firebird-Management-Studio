@@ -25,7 +25,7 @@ interface
 
 uses
   Classes, LCLIntf, LCLType, LMessages, SysUtils, Dialogs, Forms, Messages, Controls,
-  IBDatabase, IBCustomDataSet, IBDatabaseInfo, IB;
+  IBDatabase, IBCustomDataSet, IBDatabaseInfo, IB, gettext, Translations, resstring;
 
 type
   TISQLExceptionCode = (eeInitialization, eeInvDialect, eeFOpen, eeParse,
@@ -760,7 +760,7 @@ begin
 
     Source.AddStrings(FQuery);
     if not ParseSQL (Source, Data, gAppSettings[ISQL_TERMINATOR].Setting) then
-      raise EISQLException.Create (ERR_ISQL_ERROR, '', eeParse, 'Unable to parse script');
+      raise EISQLException.Create (ERR_ISQL_ERROR, '', eeParse, LZTSqlUnableParseScript);
 
     FStatements := Data.Count - 1;
 
@@ -954,7 +954,7 @@ begin
          (Pos ('CREATE SCHEMA', AnsiUpperCase(Data.Strings[lCnt])) = 1) then
       begin
         if not ParseDBCreate (Data.Strings[lCnt], DBName, Params) then
-          raise EISQLException.Create (ERR_ISQL_ERROR, '', eeParse, 'An error occured parsing CREATE statement.')
+          raise EISQLException.Create (ERR_ISQL_ERROR, '', eeParse, LZTSqlErrorParsingCreate)
         else
         begin
           try
@@ -965,7 +965,7 @@ begin
               begin
                 if FDatabase.Transactions[FDefaultTransIDX].InTransaction then
                   raise EISQLException.Create (ERR_ISQL_ERROR, DBName, eeConnect,
-                    E.Message+#13#10'Commit or Rollback the current transaction')
+                    E.Message+#13#10 + LZTSqlCommitOrRollback)
                 else
                   FDatabase.Close;
               end;
@@ -1031,7 +1031,7 @@ begin
       begin
         ParamList := TStringList.Create;
         if not ParseDBConnect (Data.Strings[lCnt], DBName, ParamList) then
-          raise EISQLException.Create (ERR_ISQL_ERROR, '', eeParse, 'An error occured parsing CONNECT statement.')
+          raise EISQLException.Create (ERR_ISQL_ERROR, '', eeParse, LZTSqlErrorParsingConnect)
         else
         begin
           try
@@ -1042,7 +1042,7 @@ begin
               begin
                 if FDatabase.Transactions[FDefaultTransIDX].InTransaction then
                   raise EISQLException.Create (ERR_ISQL_ERROR, DBName, eeConnect,
-                    E.Message+#13#10'Commit or Rollback the current transaction')
+                    E.Message+#13#10 + LZTSqlCommitOrRollback)
                 else
                   FDatabase.Close;
               end;
@@ -1110,7 +1110,7 @@ begin
 
       (* If it isn't any of the above, then execute the statement *)
       if not Assigned (IBQuery) then
-        raise EISQLException.Create (ERR_ISQL_ERROR, Data.Strings[lCnt], eeStatement, 'No active connection');
+        raise EISQLException.Create (ERR_ISQL_ERROR, Data.Strings[lCnt], eeStatement, LZTSqlNoActiveConnection);
 
       with IBQuery do
       begin
@@ -1243,7 +1243,7 @@ begin
               try
                 FQueryStats.Plan := Plan;
               except
-                FQueryStats.Plan := 'Plan could not be retreived';
+                FQueryStats.Plan := LZTSqlPlanNotRetreived;
               end;
               FQueryStats.Rows := IBQuery.RowsAffected;
 
@@ -1306,7 +1306,7 @@ begin
                 try
                   FQueryStats.Plan := Dataset.QSelect.Plan;
                 except
-                  FQueryStats.Plan := 'Plan could not be retreived';
+                  FQueryStats.Plan := LZTSqlPlanNotRetreived;
                 end;
 
                 FQueryStats.Rows := Dataset.RecordCount;
@@ -1347,20 +1347,20 @@ begin
       with FQueryStats do
       begin
         DecodeTime(TimeExecute, Hour, Min, Sec, MSec);
-        FStatistics.Add(Format('Execution Time (hh:mm:ss.ssss)%s%.2d:%.2d:%.2d.%.4d',[DEL, Hour, Min, Sec, MSec]));
+        FStatistics.Add(Format(LZTSqlExecutionTime,[DEL, Hour, Min, Sec, MSec]));
         DecodeTime(TimePrepare, Hour, Min, Sec, MSec);
-        FStatistics.Add(Format('Prepare Time (hh:mm:ss.ssss)%s%.2d:%.2d:%.2d:%.4d',[DEL,Hour, Min, Sec, MSec]));
-        FStatistics.Add(Format('Starting Memory%s%d',[DEL,StartMem]));
-        FStatistics.Add(Format('Current Memory%s%d',[DEL,EndMem]));
-        FStatistics.Add(Format('Delta Memory%s%d',[DEL,EndMem-StartMem]));
-        FStatistics.Add(Format('Number of Buffers%s%d',[DEL, Buffers]));
-        FStatistics.Add(Format('Reads%s%d',[DEL,Reads]));
-        FStatistics.Add(Format('Writes%s%d',[DEL,Writes]));
+        FStatistics.Add(Format(LZTSqlPrepareTime,[DEL,Hour, Min, Sec, MSec]));
+        FStatistics.Add(Format(LZTSqlStartingMemory,[DEL,StartMem]));
+        FStatistics.Add(Format(LZTSqlCurrentMemory,[DEL,EndMem]));
+        FStatistics.Add(Format(LZTSqlDeltaMemory,[DEL,EndMem-StartMem]));
+        FStatistics.Add(Format(LZTSqlNumberBuffer,[DEL, Buffers]));
+        FStatistics.Add(Format(LZTSqlReads,[DEL,Reads]));
+        FStatistics.Add(Format(LZTSqlWrite,[DEL,Writes]));
         if Length(Plan) > 0 then
-          FStatistics.Add(Format('Plan%s%s',[DEL, Plan]))
+          FStatistics.Add(Format(LZTSqlPlan,[DEL, Plan]))
         else
-          FStatistics.Add(Format('Plan%s%s',[DEL, 'Not Available']));
-        FStatistics.Add(Format('Records Fetched%s%d',[DEL, Rows]));
+          FStatistics.Add(Format(LZTSqlPlan,[DEL, LZTSqlNotAvailable]));
+        FStatistics.Add(Format(LZTSqlRecordFetched,[DEL, Rows]));
       end;
       FDatabase.RemoveTransaction (FDatabase.FindTransaction(TmpTransaction));
     except
@@ -1412,7 +1412,7 @@ begin
 
   (* Defaults *)
   if not ParseSQL (Source, Data,  gAppSettings[ISQL_TERMINATOR].Setting) then
-    raise EISQLException.Create (ERR_ISQL_ERROR, '', eeParse, 'Unable to parse script');
+    raise EISQLException.Create (ERR_ISQL_ERROR, '', eeParse, LZTSqlUnableParseScript);
   Source.Free;
 
   { Prepare each line and post results }
@@ -1441,11 +1441,11 @@ begin
 
         if Assigned (OnDataOutput) then
         begin
-          OnDataOutput (Format('Statement: %s',[Data.Strings[lCnt]]));
+          OnDataOutput (Format(LZTSqlStatement,[Data.Strings[lCnt]]));
           if Length(Plan) > 0 then
             OnDataOutput (Format('%s', [Plan]))
           else
-            OnDataOutput ('Not Available')
+            OnDataOutput (LZTSqlNotAvailable)
         end;
 
         Transaction.Commit;

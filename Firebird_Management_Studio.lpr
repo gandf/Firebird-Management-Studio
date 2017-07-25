@@ -58,6 +58,7 @@ uses
 {$R *.res}
 
 begin
+  Application.Scaled:=True;
   Application.Title:='Firebird Management Studio';
     { Create a mutex to make sure only 1 instance is running }
   CreateMutex (nil, false, 'fb_man_studio_mtx');

@@ -25,7 +25,7 @@ interface
 
 uses
   LCLIntf, LCLType, SysUtils, Classes, Controls, Forms, Dialogs, StdCtrls,
-  FileCtrl, FileUtil, Registry, IBDatabase, IBSQL, resstring, windows, Process;
+  FileUtil, Registry, IBDatabase, resstring, windows, Process;
 
 function CheckDirectory(Directory: string): boolean;
 function GetNewFileName(Directory: string; FileExtension: string): string;
@@ -47,7 +47,7 @@ function IsValidDBName(const DBName: String): boolean;
 implementation
 
 uses
-  zluGlobal, zluPersistent, frmuMessage, IBHeader, frmuMain;
+  zluGlobal, zluPersistent, frmuMain;
 
 function CheckDirectory(Directory: string): boolean;
 begin

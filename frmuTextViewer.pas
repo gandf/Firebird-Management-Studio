@@ -20,8 +20,8 @@ unit frmuTextViewer;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Interfaces, Dialogs,
-  ComCtrls, ToolWin, StdCtrls, Menus, ImgList, Printers, IBServices, frmuDlgClass,
+  LCLIntf, LCLType, SysUtils, Messages, Classes, Graphics, Controls, Forms, Interfaces, Dialogs,
+  ComCtrls, StdCtrls, Menus, Printers, IBServices,
   SynEdit, StdActns, ActnList, FileUtil;
 
 type
@@ -87,7 +87,7 @@ type
 implementation
 
 uses
-  zluGlobal, frmuMain, frmuMessage, IB, IBErrorCodes;
+  zluGlobal, frmuMain, IB;
 
 {$R *.lfm}
 

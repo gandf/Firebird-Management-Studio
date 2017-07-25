@@ -1,0 +1,9 @@
+{"version":1,"strings":[
+{"hash":53327541,"name":"tfrmdbcreate.caption","sourcebytes":[67,114,101,97,116,101,32,68,97,116,97,98,97,115,101],"value":"Create Database"},
+{"hash":164219914,"name":"tfrmdbcreate.lblserver.caption","sourcebytes":[83,101,114,118,101,114,58],"value":"Server:"},
+{"hash":176355402,"name":"tfrmdbcreate.lbldbalias.caption","sourcebytes":[38,65,108,105,97,115,58],"value":"&Alias:"},
+{"hash":2613018,"name":"tfrmdbcreate.lbldatabasefiles.caption","sourcebytes":[38,70,105,108,101,40,115,41,58],"value":"&File(s):"},
+{"hash":128980154,"name":"tfrmdbcreate.lbloptions.caption","sourcebytes":[79,38,112,116,105,111,110,115,58],"value":"O&ptions:"},
+{"hash":11067,"name":"tfrmdbcreate.btnok.caption","sourcebytes":[38,79,75],"value":"&OK"},
+{"hash":177752476,"name":"tfrmdbcreate.btncancel.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"}
+]}
