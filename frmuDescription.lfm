@@ -1,35 +1,37 @@
 inherited frmDescription: TfrmDescription
-  Left = 684
-  Top = 370
+  Left = 221
+  Height = 271
+  Top = 339
+  Width = 465
   Caption = 'Edit Description'
-  ClientHeight = 273
-  ClientWidth = 310
-  PixelsPerInch = 96
-  object reDescription: TMemo
+  ClientHeight = 271
+  ClientWidth = 465
+  object reDescription: TMemo[0]
     Left = 0
-    Top = 0
-    Width = 310
     Height = 231
+    Top = 0
+    Width = 465
     Align = alTop
     Lines.Strings = (
-      'reDescription')
+      'reDescription'
+    )
     TabOrder = 0
   end
-  object Button1: TButton
+  object Button1: TButton[1]
     Left = 145
+    Height = 25
     Top = 241
     Width = 75
-    Height = 25
     Caption = '&OK'
     Default = True
     ModalResult = 1
     TabOrder = 1
   end
-  object Button2: TButton
+  object Button2: TButton[2]
     Left = 231
+    Height = 25
     Top = 241
     Width = 75
-    Height = 25
     Cancel = True
     Caption = '&Cancel'
     ModalResult = 2

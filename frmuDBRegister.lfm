@@ -1,198 +1,200 @@
-object frmDBRegister: TfrmDBRegister
+inherited frmDBRegister: TfrmDBRegister
   Left = 272
+  Height = 468
   Top = 96
+  Width = 399
   HelpContext = 1
-  BorderIcons = [biSystemMenu, biHelp]
   BorderStyle = bsSingle
   Caption = 'Register Database and Connect'
-  ClientHeight = 458
-  ClientWidth = 384
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
+  ClientHeight = 468
+  ClientWidth = 399
   HelpFile = '1'
   Position = poScreenCenter
-  OnHelp = FormHelp
-  PixelsPerInch = 96
-  object lblServerName: TLabel
+  object lblServerName: TLabel[0]
     Left = 15
+    Height = 16
     Top = 15
     Width = 53
-    Height = 16
     AutoSize = False
     Caption = 'Server:'
+    ParentColor = False
   end
-  object bvlLine1: TBevel
+  object bvlLine1: TBevel[1]
     Left = 15
+    Height = 8
     Top = 42
     Width = 355
-    Height = 8
     Shape = bsTopLine
   end
-  object stxServerName: TStaticText
+  object stxServerName: TStaticText[2]
     Left = 74
+    Height = 21
     Top = 15
     Width = 296
-    Height = 21
-    AutoSize = False
     TabOrder = 0
   end
-  object gbDatabase: TGroupBox
+  object gbDatabase: TGroupBox[3]
     Left = 15
+    Height = 169
     Top = 52
     Width = 355
-    Height = 169
     Caption = ' Database '
+    ClientHeight = 151
+    ClientWidth = 351
     TabOrder = 1
     object lblDBAlias: TLabel
       Left = 13
+      Height = 23
       Top = 75
       Width = 97
-      Height = 23
       AutoSize = False
       Caption = '&Alias Name:'
       FocusControl = edtDBAlias
+      ParentColor = False
     end
     object lblDBFile: TLabel
       Left = 13
+      Height = 23
       Top = 16
       Width = 127
-      Height = 23
       AutoSize = False
       Caption = '&File:'
       FocusControl = edtDBFile
+      ParentColor = False
     end
     object btnSelDBFile: TButton
       Left = 323
-      Top = 38
-      Width = 21
       Height = 26
       Hint = 'Select database'
+      Top = 38
+      Width = 21
       Caption = '...'
-      TabOrder = 1
       OnClick = btnSelDBFileClick
+      TabOrder = 1
     end
     object edtDBFile: TEdit
       Left = 12
+      Height = 21
       Top = 38
       Width = 304
-      Height = 21
+      OnChange = edtDBFileChange
+      OnExit = edtDBFileExit
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
-      OnChange = edtDBFileChange
-      OnExit = edtDBFileExit
     end
     object edtDBAlias: TEdit
       Left = 13
+      Height = 21
       Top = 97
       Width = 326
-      Height = 21
+      OnChange = edtDBFileChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
-      OnChange = edtDBFileChange
     end
     object chkSaveAlias: TCheckBox
       Left = 13
+      Height = 19
       Top = 127
-      Width = 215
-      Height = 21
+      Width = 125
       Caption = '&Save Alias Information'
       Checked = True
       State = cbChecked
       TabOrder = 3
     end
   end
-  object gbLoginInfo: TGroupBox
+  object gbLoginInfo: TGroupBox[4]
     Left = 15
+    Height = 188
     Top = 229
     Width = 355
-    Height = 188
     Caption = ' Login Information '
+    ClientHeight = 170
+    ClientWidth = 351
     TabOrder = 2
     object lblUsername: TLabel
       Left = 13
+      Height = 16
       Top = 20
       Width = 75
-      Height = 16
       AutoSize = False
       Caption = '&User Name:'
       FocusControl = edtUsername
+      ParentColor = False
     end
     object lblPassword: TLabel
       Left = 13
+      Height = 16
       Top = 56
       Width = 75
-      Height = 16
       AutoSize = False
       Caption = '&Password:'
       FocusControl = edtPassword
+      ParentColor = False
     end
     object lblRole: TLabel
       Left = 13
+      Height = 16
       Top = 93
       Width = 75
-      Height = 16
       AutoSize = False
       Caption = '&Role:'
       FocusControl = edtRole
+      ParentColor = False
     end
     object Label2: TLabel
       Left = 12
+      Height = 13
       Top = 149
       Width = 105
-      Height = 13
       Caption = 'Default Character  &Set'
       FocusControl = cbCharacterSet
+      ParentColor = False
     end
     object edtUsername: TEdit
       Left = 126
+      Height = 21
       Top = 16
       Width = 213
-      Height = 21
-      CharCase = ecUpperCase
+      CharCase = ecUppercase
       MaxLength = 31
       TabOrder = 0
     end
     object edtPassword: TEdit
       Left = 126
+      Height = 21
       Top = 52
       Width = 213
-      Height = 21
+      EchoMode = emPassword
       MaxLength = 32
       PasswordChar = '*'
       TabOrder = 1
     end
     object edtRole: TEdit
       Left = 126
+      Height = 21
       Top = 89
       Width = 213
-      Height = 21
       MaxLength = 31
-      TabOrder = 2
       OnChange = edtRoleChange
+      TabOrder = 2
     end
     object cbCaseSensitive: TCheckBox
       Left = 97
+      Height = 19
       Top = 121
-      Width = 181
-      Height = 17
+      Width = 137
       Caption = '&Case sensitive role name'
       Enabled = False
       TabOrder = 3
     end
     object cbCharacterSet: TComboBox
       Left = 126
+      Height = 21
       Top = 142
       Width = 212
-      Height = 21
-      Style = csDropDownList
       ItemHeight = 13
-      TabOrder = 4
       Items.Strings = (
         'None'
         'ASCII'
@@ -218,26 +220,29 @@ object frmDBRegister: TfrmDBRegister
         'WIN1251'
         'WIN1252'
         'WIN1253'
-        'WIN1254')
+        'WIN1254'
+      )
+      Style = csDropDownList
+      TabOrder = 4
     end
   end
-  object btnOK: TButton
+  object btnOK: TButton[5]
     Left = 221
+    Height = 25
     Top = 426
     Width = 75
-    Height = 25
     Caption = '&OK'
     Default = True
-    TabOrder = 3
     OnClick = btnOKClick
+    TabOrder = 3
   end
-  object btnCancel: TButton
+  object btnCancel: TButton[6]
     Left = 302
+    Height = 25
     Top = 426
     Width = 75
-    Height = 25
     Caption = '&Cancel'
-    TabOrder = 4
     OnClick = btnCancelClick
+    TabOrder = 4
   end
 end

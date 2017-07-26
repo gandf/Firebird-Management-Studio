@@ -17,21 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u D B P r o p e r t i e s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Description:  This unit provides an interface for viewing
-*                and changing database properties
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 unit frmuDBProperties;
 
 {$MODE Delphi}
@@ -41,7 +26,7 @@ interface
 uses
   LCLIntf, LCLType, LMessages, Forms, ExtCtrls, StdCtrls, Classes, Controls, zluibcClasses, ComCtrls,
   SysUtils, Dialogs, Grids, Graphics, Registry, IBDatabaseInfo,
-  IBEvents, IBServices, frmuMessage, IB, IBDatabase, Db, IBCustomDataSet,
+  IBEvents, IBServices, frmuMessage, IB, IBDatabase, Db, IBCustomDataSet, resstring,
   IBQuery, Messages, frmuDlgClass;
 
 type
@@ -71,7 +56,6 @@ type
     btnApply: TButton;
     btnCancel: TButton;
     Button1: TButton;
-    function  FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnApplyClick(Sender: TObject);
@@ -88,6 +72,7 @@ type
     procedure SetDefaults (const readOnly, sweep, synch, dialect: String);
     procedure edtFilenameExit(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     FApplyChanges: boolean;
     FOriginalAlias: string;
@@ -124,35 +109,12 @@ const
   SWEEP_INTERVAL_ROW = 1;
   READ_ONLY_ROW = 3;
   SQL_DIALECT_ROW = 2;
-  FORCED_WRITES_TRUE = 'Enabled';
-  FORCED_WRITES_FALSE = 'Disabled';
-  READ_ONLY_TRUE = 'True';
-  READ_ONLY_FALSE = 'False';
   SWEEP_INTERVAL_MIN = 0;
   SWEEP_INTERVAL_MAX = 200000;
   SQL_DIALECT1 = '1';
   SQL_DIALECT2 = '2';
   SQL_DIALECT3 = '3';
 
-{****************************************************************
-*
-*  F o r m C r e a t e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description:  This procedure creates an instance of the TfrmDBProperties
-*                class and fills in some properties
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.FormCreate(Sender: TObject);
 begin
   inherited;
@@ -160,96 +122,29 @@ begin
   FAliasChanged := false;
   sgOptions.DefaultRowHeight := cbOptions.Height;
   sgOptions.RowCount := 4;
-  sgOptions.Cells[OPTION_NAME_COL,FORCED_WRITES_ROW] := 'Forced Writes';
-  sgOptions.Cells[OPTION_NAME_COL,SWEEP_INTERVAL_ROW] := 'Sweep Interval';
-  sgOptions.Cells[OPTION_NAME_COL,SQL_DIALECT_ROW] := 'Database Dialect';
-  sgOptions.Cells[OPTION_NAME_COL,READ_ONLY_ROW] := 'Read Only';
+  sgOptions.Cells[OPTION_NAME_COL,FORCED_WRITES_ROW] := LZTDBPropForcedWrites;
+  sgOptions.Cells[OPTION_NAME_COL,SWEEP_INTERVAL_ROW] := LZTDBPropSweepInterval;
+  sgOptions.Cells[OPTION_NAME_COL,SQL_DIALECT_ROW] := LZTDBPropDatabaseDialect;
+  sgOptions.Cells[OPTION_NAME_COL,READ_ONLY_ROW] := LZTDBPropReadOnly;
 
   cbOptions.Visible := True;
   pnlOptionName.Visible := True;
   btnApply.Enabled := false;
 end;
 
-{****************************************************************
-*
-*  F o r m H e l p
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Return: result of WinHelp call, True if successful
-*
-*  Description:  Captures the Help event and instead displays
-*                a particular topic in a new window.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-function TfrmDBProperties.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  //Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_PROPERTIES);
-end;
-
-{****************************************************************
-*
-*  F o r m S h o w
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description:  Assigns initial values of editable form items
-*                for use in determining if changes are made and
-*                if the user enters valid combinations of input.
-*                Sets up the combobox to prevent blank string grid
-*                cells from occurring.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.FormShow(Sender: TObject);
 begin
   FOriginalAlias := edtAliasName.Text;
-  pnlOptionName.Caption := 'Forced Writes';
+  pnlOptionName.Caption := LZTDBProppnlOptionNameCaption;
   cbOptions.Style := csDropDown;
-  cbOptions.Items.Add(FORCED_WRITES_TRUE);
-  cbOptions.Items.Add(FORCED_WRITES_FALSE);
+  cbOptions.Items.Add(LZTDBPropFORCED_WRITES_TRUE);
+  cbOptions.Items.Add(LZTDBPropFORCED_WRITES_FALSE);
   cbOptions.ItemIndex := cbOptions.Items.IndexOf(FOriginalSynchMode);
   cbOptions.Tag := FORCED_WRITES_ROW;
   btnApply.Enabled := false;
   FAliasChanged := false;
 end;
 
-{****************************************************************
-*
-*  b t n A p p l y C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description:  This procedure verifies user entries and closes the
-*                form when the user clicks on the Apply button
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.btnApplyClick(Sender: TObject);
 var
   lRegistry: TRegistry;
@@ -312,7 +207,7 @@ begin
         try
           // Toggle Read-Only first if changing from Read_Only
           if ((sgOptions.Cells[OPTION_VALUE_COL,READ_ONLY_ROW] <> sOriginalReadOnly) and
-           (sOriginalReadOnly = READ_ONLY_TRUE))   then
+           (sOriginalReadOnly = LZTDBPropREAD_ONLY_TRUE))   then
           begin
             CurrSelDatabase.Database.Connected := False;  // need to disconnect from database
             if not lConfigService.Active then
@@ -358,14 +253,14 @@ begin
           // Set forced writes if changed
           if sgOptions.Cells[OPTION_VALUE_COL,FORCED_WRITES_ROW] <> sOriginalForcedWrites then
           begin
-            lConfigService.SetAsyncMode(sOriginalForcedWrites = FORCED_WRITES_TRUE);  // toggle original value
+            lConfigService.SetAsyncMode(sOriginalForcedWrites = LZTDBPropFORCED_WRITES_TRUE);  // toggle original value
             while (lConfigService.IsServiceRunning) and (not gApplShutdown) do
               Application.ProcessMessages;
           end;
 
           // Toggle read only if changed
           if ((sgOptions.Cells[OPTION_VALUE_COL,READ_ONLY_ROW] <> sOriginalReadOnly) and
-           (sOriginalReadOnly = READ_ONLY_FALSE)) then
+           (sOriginalReadOnly = LZTDBPropREAD_ONLY_FALSE)) then
           begin
             CurrSelDatabase.Database.Connected := False;  // need to disconnect from database
             try
@@ -430,25 +325,6 @@ begin
   end;  // end if VerifyData
 end;
 
-{****************************************************************
-*
-*  b t n C a n c e l C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description:  This procedure returns a ModalResult of mrCancel
-*                whent the user presses the Cancel button, btnCancel
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.btnCancelClick(Sender: TObject);
 begin
   Cursor := crHourGlass;
@@ -457,53 +333,12 @@ begin
   ModalResult := mrOK;
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s C h a n g e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description:  This procedure handles changes to the text of the
-*                options combo box.  It calls the function NoteChanges
-*                to look for and prepare the form to accept changes
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.cbOptionsChange(Sender: TObject);
 begin
   FApplyChanges := True;
   btnApply.Enabled := True;
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s D b l C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description:  Flips through the items in the combo box,
-*                assigning the next value or the first one when the
-*                last item is reached.  Notifies the form that changes
-*                may have been made via NoteChanges.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.cbOptionsDblClick(Sender: TObject);
 begin
   if (sgOptions.Col = OPTION_VALUE_COL) or (sgOptions.Col = OPTION_NAME_COL) then
@@ -520,26 +355,6 @@ begin
   btnApply.Enabled := True;
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s E x i t
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description:  This procedure adjusts the appearance of the form
-*                when the user selects another object on the form
-*                while cbOptions has focus.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.cbOptionsExit(Sender: TObject);
 var
   lR     : Trect;
@@ -549,7 +364,7 @@ begin
 
   if (iIndex = -1) and (sgOptions.Row <> SWEEP_INTERVAL_ROW) then
   begin
-    MessageDlg('Invalid option value', mtError, [mbOK], 0);
+    MessageDlg(LZTDBPropInvalidOptionValue, mtError, [mbOK], 0);
 
     cbOptions.ItemIndex := 0;
     //Size and position the combo box to fit the cell
@@ -579,25 +394,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s K e y D o w n
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description: Enables the user to use the keyboard to select
-*               items from the combo box.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.cbOptionsKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -605,24 +401,6 @@ begin
     cbOptions.DroppedDown := true;
 end;
 
-{****************************************************************
-*
-*  e d t A l i a s N a m e C h a n g e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description:  Notifies the form that changes may have been made.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.edtAliasNameChange(Sender: TObject);
 begin
   FAliasChanged := true;
@@ -631,24 +409,6 @@ begin
   edtAliasName.Hint := edtAliasName.Text;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s D r a w C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.sgOptionsDrawCell(Sender: TObject; ACol,
   ARow: Integer; Rect: TRect; State: TGridDrawState);
 const
@@ -671,25 +431,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s S e l e c t C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return:
-*
-*  Description:  This procedure prepares the combobox cbOptions
-*                and inserts it into the selected cell.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBProperties.sgOptionsSelectCell(Sender: TObject; ACol,
   ARow: Integer; var CanSelect: Boolean);
 var
@@ -702,8 +443,8 @@ begin
     FORCED_WRITES_ROW:
     begin
       cbOptions.Style := csDropDown;
-      cbOptions.Items.Add(FORCED_WRITES_TRUE);
-      cbOptions.Items.Add(FORCED_WRITES_FALSE);
+      cbOptions.Items.Add(LZTDBPropFORCED_WRITES_TRUE);
+      cbOptions.Items.Add(LZTDBPropFORCED_WRITES_FALSE);
       cbOptions.Tag := FORCED_WRITES_ROW;
     end;
     SWEEP_INTERVAL_ROW:
@@ -715,8 +456,8 @@ begin
     READ_ONLY_ROW:
     begin
       cbOptions.Style := csDropDown;
-      cbOptions.Items.Add(READ_ONLY_TRUE);
-      cbOptions.Items.Add(READ_ONLY_FALSE);
+      cbOptions.Items.Add(LZTDBPropREAD_ONLY_TRUE);
+      cbOptions.Items.Add(LZTDBPropREAD_ONLY_FALSE);
       cbOptions.Tag := READ_ONLY_ROW;
     end;
     SQL_DIALECT_ROW:
@@ -776,28 +517,6 @@ begin
   cbOptions.SetFocus;
 end;
 
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: none
-*
-*  Return:  Returns TRUE if all data is valid.  Returns FALSE if
-*           any data (Sweep Interval particularly) is invalid,
-*           or if an invalid combination of values has been provided.
-*
-*  Description:  This function verifies that valid values have been
-*                provided by the user.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 function TfrmDBProperties.VerifyInputData(): boolean;
 begin
   result := true;  // only if no exceptions raised
@@ -814,18 +533,18 @@ begin
   try
     if (StrToInt(sgOptions.Cells[OPTION_VALUE_COL,SWEEP_INTERVAL_ROW]) < SWEEP_INTERVAL_MIN) or
        (StrToInt(sgOptions.Cells[OPTION_VALUE_COL,SWEEP_INTERVAL_ROW]) > SWEEP_INTERVAL_MAX) then
-      raise ERangeError.Create('The Sweep Interval must be a value from ' + IntToStr(SWEEP_INTERVAL_MIN) +
-                 ' to ' + IntToStr(SWEEP_INTERVAL_MAX) + '.  Please enter a valid sweep interval value.');
-    if ((FOriginalReadOnly = READ_ONLY_TRUE) and
-       (sgOptions.Cells[OPTION_VALUE_COL,READ_ONLY_ROW] = READ_ONLY_TRUE) and
+      raise ERangeError.Create(LZTDBPropSweepIntervalValue + IntToStr(SWEEP_INTERVAL_MIN) +
+                 ' to ' + IntToStr(SWEEP_INTERVAL_MAX) + '. ' + LZTDBPropPleaseEnterValidSweep);
+    if ((FOriginalReadOnly = LZTDBPropREAD_ONLY_TRUE) and
+       (sgOptions.Cells[OPTION_VALUE_COL,READ_ONLY_ROW] = LZTDBPropREAD_ONLY_TRUE) and
        ((sgOptions.Cells[OPTION_VALUE_COL,SWEEP_INTERVAL_ROW] <> FOriginalSweepInterval) or
        (sgOptions.Cells[OPTION_VALUE_COL,READ_ONLY_ROW] = FOriginalReadOnly))) then
-      raise EPropReadOnly.Create('Database Properties cannot be changed while the database is read-only.');
+      raise EPropReadOnly.Create(LZTDBPropDatabasePropCannotBeChanged);
     Exit;
   except
     on E:EConvertError do
     begin
-      DisplayMsg(ERR_INVALID_PROPERTY_VALUE, 'Sweep Interval: ' + E.Message );
+      DisplayMsg(ERR_INVALID_PROPERTY_VALUE, LZTDBPropSweepInterval2 + E.Message );
       result := false;
     end;
     on E:ERangeError do
@@ -841,31 +560,6 @@ begin
   end;
 end;
 
-{*******************************************************************
-*
-* E d i t D B P r o p e r t i e s ( )
-*
-********************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input:  CurrSelServer : TibcServerNode, the current server node
-           CurrSelDatabase : TibcDatabaseNode, the current database
-*
-*  Return: integer - a status code indicating the success/failure
-*                    of the operation.
-*
-*  Description: This procedure creates and displays the database
-*               properties form.  The user can then view and make
-*               changes to the properties.  When the user closes
-*               the form, the function then tests for any changes and
-*               applies them to the database.  Finally, the
-*               form and all supporting IB objects are destroyed.
-*
-********************************************************************
-* Revisions:
-*
-********************************************************************}
 function EditDBProperties(const CurrSelServer: TibcServerNode; var CurrSelDatabase: TibcDatabaseNode): integer;
 var
   frmDBProperties: TfrmDBProperties;
@@ -909,16 +603,16 @@ begin
       frmDBProperties.sgOptions.Cells[OPTION_VALUE_COL,SWEEP_INTERVAL_ROW] := sOriginalSweepInterval;
 
       if lIBDBInfo.ForcedWrites <> 0 then    // True
-        sOriginalForcedWrites := FORCED_WRITES_TRUE
+        sOriginalForcedWrites := LZTDBPropFORCED_WRITES_TRUE
       else                                   // False
-        sOriginalForcedWrites := FORCED_WRITES_FALSE;
+        sOriginalForcedWrites := LZTDBPropFORCED_WRITES_FALSE;
 
       frmDBProperties.sgOptions.Cells[OPTION_VALUE_COL,FORCED_WRITES_ROW] := sOriginalForcedWrites;
 
       if lIBDBInfo.ReadOnly <> 0 then        // True
-        sOriginalReadOnly := READ_ONLY_TRUE
+        sOriginalReadOnly := LZTDBPropREAD_ONLY_TRUE
       else                                   // False
-        sOriginalReadOnly := READ_ONLY_FALSE;
+        sOriginalReadOnly := LZTDBPropREAD_ONLY_FALSE;
 
       frmDBProperties.sgOptions.Cells[OPTION_VALUE_COL,READ_ONLY_ROW] := sOriginalReadOnly;
 
@@ -953,9 +647,9 @@ begin
           on e:EIBError do
           begin
             lListItem := frmDBProperties.lvSecondaryFiles.Items.Add;
-            lListItem.Caption := 'Not Available';
-            lListItem.SubItems.Add('Not Available');
-            DisplayMsg(ERR_GET_TABLE_DATA,E.Message + ' Secondary files unavailable.');
+            lListItem.Caption := LZTDBPropNotAvailable;
+            lListItem.SubItems.Add(LZTDBPropNotAvailable);
+            DisplayMsg(ERR_GET_TABLE_DATA,E.Message + LZTDBPropSecondaryFilesUnavailable);
           end;
         end;
         Close;
@@ -972,8 +666,8 @@ begin
         except
           on E:EIBError do
           begin
-            frmDBProperties.stxDBOwner.Caption := 'Not Available';
-            DisplayMsg(ERR_GET_TABLE_DATA,E.Message + ' Database owner unavailable.');
+            frmDBProperties.stxDBOwner.Caption := LZTDBPropNotAvailable;
+            DisplayMsg(ERR_GET_TABLE_DATA,E.Message + LZTDBPropDatabaseOwnerUnavailable);
           end;
         end;
         Close;
@@ -1011,9 +705,9 @@ begin
   begin
     lOpenDialog := TOpenDialog.Create(self);
     // setup Open Dialog title, extension, filters and options
-    lOpenDialog.Title := 'Select Database';
-    lOpenDialog.DefaultExt := 'gdb';
-    lOpenDialog.Filter := 'Database File (*.gdb)|*.GDB|All files (*.*)|*.*';
+    lOpenDialog.Title := LZTDBPropSelectDatabase;
+    lOpenDialog.DefaultExt := 'fdb';
+    lOpenDialog.Filter := LZTDBPropDatabaseFile;
     lOpenDialog.Options := [ofHideReadOnly,ofNoNetworkButton, ofEnableSizing];
     if lOpenDialog.Execute then
     begin
@@ -1052,7 +746,6 @@ begin
   ClientPt := ScreenToClient( ScreenPt );
   if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
    begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_PROPERTIES);
     Message.Result := 0;
   end else
    inherited;
@@ -1073,7 +766,7 @@ procedure TfrmDBProperties.edtFilenameExit(Sender: TObject);
 begin
   inherited;
   if not (IsValidDBName(edtFilename.text)) then
-     DisplayMsg(WAR_REMOTE_FILENAME, Format('File: %s', [edtFileName.text]));
+     DisplayMsg(WAR_REMOTE_FILENAME, Format(LZTDBPropFile, [edtFileName.text]));
 end;
 
 procedure TfrmDBProperties.Button1Click(Sender: TObject);
@@ -1081,5 +774,26 @@ begin
   inherited;
   ModalResult := mrCancel;
 end;
+
+Procedure TfrmDBProperties.TranslateVisual;
+Begin
+  btnSelFilename.Hint := LZTDBPropbtnSelFilenameHint;
+  lblServerName.Caption := LZTDBProplblServerName;
+  TabAlias.Caption := LZTDBPropTabAlias;
+  TabGeneral.Caption := LZTDBPropTabGeneral;
+  lblAliasName.Caption := LZTDBProplblAliasName;
+  lblFilename.Caption := LZTDBProplblFilename;
+  btnCancel.Caption := LZTDBPropbtnCancel;
+  Button1.Caption := LZTDBPropButton1;
+  btnApply.Caption := LZTDBPropbtnApply;
+  gbSummaryInfo.Caption := LZTDBPropgbSummaryInfo;
+  lblDBOwner.Caption := LZTDBProplblDBOwner;
+  lblOptions.Caption := LZTDBProplblOptions;
+  lblDBPages.Caption := LZTDBProplblDBPages;
+  lblPageSize.Caption := LZTDBProplblPageSize;
+  lvSecondaryFiles.Columns[0].Caption := LZTDBProplvSecondaryFilesCol0;
+  lvSecondaryFiles.Columns[1].Caption := LZTDBProplvSecondaryFilesCol1;
+  Self.Caption := LZTDBPropFormTitle;
+End;
 
 end.

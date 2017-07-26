@@ -1,0 +1,21 @@
+{"version":1,"strings":[
+{"hash":181738851,"name":"tfrmserverproperties.caption","sourcebytes":[83,101,114,118,101,114,32,80,114,111,112,101,114,116,105,101,115],"value":"Server Properties"},
+{"hash":4730755,"name":"tfrmserverproperties.tabalias.caption","sourcebytes":[65,108,105,97,115],"value":"Alias"},
+{"hash":25783306,"name":"tfrmserverproperties.lblaliasname.caption","sourcebytes":[65,38,108,105,97,115,32,78,97,109,101,58],"value":"A&lias Name:"},
+{"hash":108959018,"name":"tfrmserverproperties.lblhostname.caption","sourcebytes":[38,72,111,115,116,32,78,97,109,101,58],"value":"&Host Name:"},
+{"hash":44833162,"name":"tfrmserverproperties.lblprotocol.caption","sourcebytes":[38,78,101,116,119,111,114,107,32,80,114,111,116,111,99,111,108,58],"value":"&Network Protocol:"},
+{"hash":181829802,"name":"tfrmserverproperties.label1.caption","sourcebytes":[38,68,101,115,99,114,105,112,116,105,111,110,58],"value":"&Description:"},
+{"hash":231000124,"name":"tfrmserverproperties.tabgeneral.caption","sourcebytes":[71,101,110,101,114,97,108],"value":"General"},
+{"hash":211419610,"name":"tfrmserverproperties.lblversion.caption","sourcebytes":[86,101,114,115,105,111,110,58],"value":"Version:"},
+{"hash":210535594,"name":"tfrmserverproperties.lblcapabilities.caption","sourcebytes":[67,97,112,97,98,105,108,105,116,105,101,115,58],"value":"Capabilities:"},
+{"hash":24294730,"name":"tfrmserverproperties.lblattachmentno.caption","sourcebytes":[78,117,109,98,101,114,32,111,102,32,97,116,116,97,99,104,109,101,110,116,115,58],"value":"Number of attachments:"},
+{"hash":238482826,"name":"tfrmserverproperties.lbldatabaseno.caption","sourcebytes":[78,117,109,98,101,114,32,111,102,32,100,97,116,97,98,97,115,101,115,58],"value":"Number of databases:"},
+{"hash":206722702,"name":"tfrmserverproperties.stxversion.caption","sourcebytes":[85,110,107,110,111,119,110],"value":"Unknown"},
+{"hash":63,"name":"tfrmserverproperties.stxattachmentno.caption","sourcebytes":[63],"value":"?"},
+{"hash":63,"name":"tfrmserverproperties.stxdatabaseno.caption","sourcebytes":[63],"value":"?"},
+{"hash":4547795,"name":"tfrmserverproperties.lvdatabases.columns[0].caption","sourcebytes":[65,116,116,97,99,104,101,100,32,68,97,116,97,98,97,115,101,115],"value":"Attached Databases"},
+{"hash":146640424,"name":"tfrmserverproperties.btnrefresh.caption","sourcebytes":[38,82,101,102,114,101,115,104],"value":"&Refresh"},
+{"hash":44595001,"name":"tfrmserverproperties.btnapply.caption","sourcebytes":[38,65,112,112,108,121],"value":"&Apply"},
+{"hash":11067,"name":"tfrmserverproperties.btncancel.caption","sourcebytes":[38,79,75],"value":"&OK"},
+{"hash":177752476,"name":"tfrmserverproperties.button1.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"}
+]}

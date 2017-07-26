@@ -120,10 +120,12 @@ msgid "TCP/IP"
 msgstr ""
 
 #: resstring.lztcommdiagcbprotocolitem2
+msgctxt "resstring.lztcommdiagcbprotocolitem2"
 msgid "NetBEUI"
 msgstr ""
 
 #: resstring.lztcommdiagcbprotocolitem3
+msgctxt "resstring.lztcommdiagcbprotocolitem3"
 msgid "SPX"
 msgstr ""
 
@@ -271,6 +273,7 @@ msgid "fdb"
 msgstr ""
 
 #: resstring.lztcommdiagopendialogfilter
+msgctxt "resstring.lztcommdiagopendialogfilter"
 msgid "Database File (*.fdb)|*.FDB|All files (*.*)|*.*"
 msgstr ""
 
@@ -345,6 +348,398 @@ msgstr ""
 
 #: resstring.lztcommdiagwith
 msgid "with"
+msgstr ""
+
+#: resstring.lztdbcreatealiascaption
+msgctxt "resstring.lztdbcreatealiascaption"
+msgid "&Alias:"
+msgstr ""
+
+#: resstring.lztdbcreatecancelcaption
+msgctxt "resstring.lztdbcreatecancelcaption"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdbcreatedatabasealreadyexist
+msgctxt "resstring.lztdbcreatedatabasealreadyexist"
+msgid "This database alias already exists."
+msgstr ""
+
+#: resstring.lztdbcreatedefaultcharacterset
+msgid "default character set %s"
+msgstr ""
+
+#: resstring.lztdbcreatedefaultcharracterset
+msgid "Default Character Set"
+msgstr ""
+
+#: resstring.lztdbcreatefile
+msgid "file '%s'"
+msgstr ""
+
+#: resstring.lztdbcreatefile2
+msgctxt "resstring.lztdbcreatefile2"
+msgid "File: %s"
+msgstr ""
+
+#: resstring.lztdbcreatefilecaption
+msgctxt "resstring.lztdbcreatefilecaption"
+msgid "&File(s):"
+msgstr ""
+
+#: resstring.lztdbcreatefilename
+msgid "Filename(s)"
+msgstr ""
+
+#: resstring.lztdbcreateformtitle
+msgctxt "resstring.lztdbcreateformtitle"
+msgid "Create Database"
+msgstr ""
+
+#: resstring.lztdbcreateinvalidoptionvalue
+msgctxt "resstring.lztdbcreateinvalidoptionvalue"
+msgid "Invalid option value"
+msgstr ""
+
+#: resstring.lztdbcreatelength
+msgid "length %s"
+msgstr ""
+
+#: resstring.lztdbcreateminpagesize230
+msgid "Minimum page size for primary file is 230 pages."
+msgstr ""
+
+#: resstring.lztdbcreateminpagesizesecond2
+msgid "Minimum page size for secondary files is 2 pages."
+msgstr ""
+
+#: resstring.lztdbcreatenone
+msgid "None"
+msgstr ""
+
+#: resstring.lztdbcreateokcaption
+msgctxt "resstring.lztdbcreateokcaption"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztdbcreateoptionscaption
+msgctxt "resstring.lztdbcreateoptionscaption"
+msgid "O&ptions:"
+msgstr ""
+
+#: resstring.lztdbcreatepagesize
+msgid "page_size %s"
+msgstr ""
+
+#: resstring.lztdbcreatepagesize2
+msgid "Page Size"
+msgstr ""
+
+#: resstring.lztdbcreatepassword
+msgid "password '%s'"
+msgstr ""
+
+#: resstring.lztdbcreateservercaption
+msgctxt "resstring.lztdbcreateservercaption"
+msgid "Server:"
+msgstr ""
+
+#: resstring.lztdbcreatesizepages
+msgid "Size (Pages)"
+msgstr ""
+
+#: resstring.lztdbcreatesqldialect
+msgid "SQL Dialect"
+msgstr ""
+
+#: resstring.lztdbcreatestarting
+msgid "starting %s"
+msgstr ""
+
+#: resstring.lztdbcreateuser
+msgid "user '%s'"
+msgstr ""
+
+#: resstring.lztdbpropbtnapply
+msgctxt "resstring.lztdbpropbtnapply"
+msgid "&Apply"
+msgstr ""
+
+#: resstring.lztdbpropbtncancel
+msgctxt "resstring.lztdbpropbtncancel"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztdbpropbtnselfilenamehint
+msgctxt "resstring.lztdbpropbtnselfilenamehint"
+msgid "Select database"
+msgstr ""
+
+#: resstring.lztdbpropbutton1
+msgctxt "resstring.lztdbpropbutton1"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdbpropdatabasedialect
+msgid "Database Dialect"
+msgstr ""
+
+#: resstring.lztdbpropdatabasefile
+msgctxt "resstring.lztdbpropdatabasefile"
+msgid "Database File (*.fdb)|*.FDB|All files (*.*)|*.*"
+msgstr ""
+
+#: resstring.lztdbpropdatabaseownerunavailable
+msgid " Database owner unavailable."
+msgstr ""
+
+#: resstring.lztdbpropdatabasepropcannotbechanged
+msgid "Database Properties cannot be changed while the database is read-only."
+msgstr ""
+
+#: resstring.lztdbpropfile
+msgctxt "resstring.lztdbpropfile"
+msgid "File: %s"
+msgstr ""
+
+#: resstring.lztdbpropforcedwrites
+msgctxt "resstring.lztdbpropforcedwrites"
+msgid "Forced Writes"
+msgstr ""
+
+#: resstring.lztdbpropforced_writes_false
+msgid "Disabled"
+msgstr ""
+
+#: resstring.lztdbpropforced_writes_true
+msgid "Enabled"
+msgstr ""
+
+#: resstring.lztdbpropformtitle
+msgctxt "resstring.lztdbpropformtitle"
+msgid "Database Properties"
+msgstr ""
+
+#: resstring.lztdbpropgbsummaryinfo
+msgctxt "resstring.lztdbpropgbsummaryinfo"
+msgid " Summary Information "
+msgstr ""
+
+#: resstring.lztdbpropinvalidoptionvalue
+msgctxt "resstring.lztdbpropinvalidoptionvalue"
+msgid "Invalid option value"
+msgstr ""
+
+#: resstring.lztdbproplblaliasname
+msgctxt "resstring.lztdbproplblaliasname"
+msgid "A&lias Name:"
+msgstr ""
+
+#: resstring.lztdbproplbldbowner
+msgctxt "resstring.lztdbproplbldbowner"
+msgid "Owner:"
+msgstr ""
+
+#: resstring.lztdbproplbldbpages
+msgctxt "resstring.lztdbproplbldbpages"
+msgid "Allocated DB Pages:"
+msgstr ""
+
+#: resstring.lztdbproplblfilename
+msgctxt "resstring.lztdbproplblfilename"
+msgid "&File:"
+msgstr ""
+
+#: resstring.lztdbproplbloptions
+msgctxt "resstring.lztdbproplbloptions"
+msgid "O&ptions:"
+msgstr ""
+
+#: resstring.lztdbproplblpagesize
+msgctxt "resstring.lztdbproplblpagesize"
+msgid "Page Size:"
+msgstr ""
+
+#: resstring.lztdbproplblservername
+msgctxt "resstring.lztdbproplblservername"
+msgid "Server:"
+msgstr ""
+
+#: resstring.lztdbproplvsecondaryfilescol0
+msgctxt "resstring.lztdbproplvsecondaryfilescol0"
+msgid "Secondary Files"
+msgstr ""
+
+#: resstring.lztdbproplvsecondaryfilescol1
+msgctxt "resstring.lztdbproplvsecondaryfilescol1"
+msgid "Start Page"
+msgstr ""
+
+#: resstring.lztdbpropnotavailable
+msgctxt "resstring.lztdbpropnotavailable"
+msgid "Not Available"
+msgstr ""
+
+#: resstring.lztdbproppleaseentervalidsweep
+msgid "Please enter a valid sweep interval value."
+msgstr ""
+
+#: resstring.lztdbproppnloptionnamecaption
+msgctxt "resstring.lztdbproppnloptionnamecaption"
+msgid "Forced Writes"
+msgstr ""
+
+#: resstring.lztdbpropreadonly
+msgid "Read Only"
+msgstr ""
+
+#: resstring.lztdbpropread_only_false
+msgid "False"
+msgstr ""
+
+#: resstring.lztdbpropread_only_true
+msgid "True"
+msgstr ""
+
+#: resstring.lztdbpropsecondaryfilesunavailable
+msgid " Secondary files unavailable."
+msgstr ""
+
+#: resstring.lztdbpropselectdatabase
+msgctxt "resstring.lztdbpropselectdatabase"
+msgid "Select Database"
+msgstr ""
+
+#: resstring.lztdbpropsweepinterval
+msgid "Sweep Interval"
+msgstr ""
+
+#: resstring.lztdbpropsweepinterval2
+msgid "Sweep Interval: "
+msgstr ""
+
+#: resstring.lztdbpropsweepintervalvalue
+msgid "The Sweep Interval must be a value from "
+msgstr ""
+
+#: resstring.lztdbproptabalias
+msgctxt "resstring.lztdbproptabalias"
+msgid "Alias"
+msgstr ""
+
+#: resstring.lztdbproptabgeneral
+msgctxt "resstring.lztdbproptabgeneral"
+msgid "General"
+msgstr ""
+
+#: resstring.lztdbregisterbtnseldbfilehint
+msgctxt "resstring.lztdbregisterbtnseldbfilehint"
+msgid "Select database"
+msgstr ""
+
+#: resstring.lztdbregistercbcasesensitive
+msgctxt "resstring.lztdbregistercbcasesensitive"
+msgid "&Case sensitive role name"
+msgstr ""
+
+#: resstring.lztdbregisterchksavealias
+msgctxt "resstring.lztdbregisterchksavealias"
+msgid "&Save Alias Information"
+msgstr ""
+
+#: resstring.lztdbregisterdatabasealreadyexist
+msgctxt "resstring.lztdbregisterdatabasealreadyexist"
+msgid "This database alias already exists."
+msgstr ""
+
+#: resstring.lztdbregisterdatabasefile
+msgctxt "resstring.lztdbregisterdatabasefile"
+msgid "Database File (*.fdb)|*.FDB|All files (*.*)|*.*"
+msgstr ""
+
+#: resstring.lztdbregisterfile
+msgctxt "resstring.lztdbregisterfile"
+msgid "File: %s"
+msgstr ""
+
+#: resstring.lztdbregisterformtitle
+msgctxt "resstring.lztdbregisterformtitle"
+msgid "Register Database and Connect"
+msgstr ""
+
+#: resstring.lztdbregistergbdatabase
+msgctxt "resstring.lztdbregistergbdatabase"
+msgid " Database "
+msgstr ""
+
+#: resstring.lztdbregistergblogininfo
+msgctxt "resstring.lztdbregistergblogininfo"
+msgid " Login Information "
+msgstr ""
+
+#: resstring.lztdbregisterlabel2
+msgctxt "resstring.lztdbregisterlabel2"
+msgid "Default Character  &Set"
+msgstr ""
+
+#: resstring.lztdbregisterlbldbalias
+msgctxt "resstring.lztdbregisterlbldbalias"
+msgid "&Alias Name:"
+msgstr ""
+
+#: resstring.lztdbregisterlbldbfile
+msgctxt "resstring.lztdbregisterlbldbfile"
+msgid "&File:"
+msgstr ""
+
+#: resstring.lztdbregisterlblpassword
+msgctxt "resstring.lztdbregisterlblpassword"
+msgid "&Password:"
+msgstr ""
+
+#: resstring.lztdbregisterlblrole
+msgctxt "resstring.lztdbregisterlblrole"
+msgid "&Role:"
+msgstr ""
+
+#: resstring.lztdbregisterlblservername
+msgctxt "resstring.lztdbregisterlblservername"
+msgid "Server:"
+msgstr ""
+
+#: resstring.lztdbregisterlblusername
+msgctxt "resstring.lztdbregisterlblusername"
+msgid "&User Name:"
+msgstr ""
+
+#: resstring.lztdbregisterlopendialogtitle
+msgctxt "resstring.lztdbregisterlopendialogtitle"
+msgid "Select Database"
+msgstr ""
+
+#: resstring.lztdescriptioncancel
+msgctxt "resstring.lztdescriptioncancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdescriptionok
+msgctxt "resstring.lztdescriptionok"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztdescriptiontitle
+msgctxt "resstring.lztdescriptiontitle"
+msgid "Edit Description"
+msgstr ""
+
+#: resstring.lztdisplayblobtitle
+msgctxt "resstring.lztdisplayblobtitle"
+msgid "frmDisplayBlob"
+msgstr ""
+
+#: resstring.lztdispmemoformtitle
+msgctxt "resstring.lztdispmemoformtitle"
+msgid "frmDispMemo"
 msgstr ""
 
 #: resstring.lztfilterprogramfiles
@@ -1321,6 +1716,7 @@ msgid "The server is already registered."
 msgstr ""
 
 #: resstring.lztmessage68caption
+msgctxt "resstring.lztmessage68caption"
 msgid "This database alias already exists."
 msgstr ""
 
@@ -1485,6 +1881,280 @@ msgstr ""
 msgid "Warning"
 msgstr ""
 
+#: resstring.lztmodifyserveraliasbutton1
+msgctxt "resstring.lztmodifyserveraliasbutton1"
+msgid "OK"
+msgstr ""
+
+#: resstring.lztmodifyserveraliasbutton2
+msgctxt "resstring.lztmodifyserveraliasbutton2"
+msgid "&Delete"
+msgstr ""
+
+#: resstring.lztmodifyserveraliasformtitle
+msgctxt "resstring.lztmodifyserveraliasformtitle"
+msgid "Error Reading Alias"
+msgstr ""
+
+#: resstring.lztmodifyserveraliaslabel1
+msgctxt "resstring.lztmodifyserveraliaslabel1"
+msgid "&Alias Name:"
+msgstr ""
+
+#: resstring.lztmodifyserveraliaslabel2
+msgctxt "resstring.lztmodifyserveraliaslabel2"
+msgid "&Server Name:"
+msgstr ""
+
+#: resstring.lztmodifyserveraliaslabel3
+msgctxt "resstring.lztmodifyserveraliaslabel3"
+msgid "&Username:"
+msgstr ""
+
+#: resstring.lztmodifyserveraliaslabel4
+msgctxt "resstring.lztmodifyserveraliaslabel4"
+msgid "&Protocol:"
+msgstr ""
+
+#: resstring.lztpersistentdatareaderrordatabasealias
+msgid "Persistent data read error. Database alias not found: "
+msgstr ""
+
+#: resstring.lztpersistentdatareaderrorserveralias
+msgid "Persistent data read error. Server alias not found: "
+msgstr ""
+
+#: resstring.lztpersistentdatawriteerrordatabasealias
+msgid "Persistent data write error. Cannot access database alias: "
+msgstr ""
+
+#: resstring.lztpersistentdatawriteerrorserveralias
+msgid "Persistent data write error. Cannot access server alias: "
+msgstr ""
+
+#: resstring.lztpersistenttitle
+msgid "Title%d"
+msgstr ""
+
+#: resstring.lztserverlogincancel
+msgctxt "resstring.lztserverlogincancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztserverloginformtitle
+msgctxt "resstring.lztserverloginformtitle"
+msgid "Server Login"
+msgstr ""
+
+#: resstring.lztserverloginlogin
+msgctxt "resstring.lztserverloginlogin"
+msgid "&Login"
+msgstr ""
+
+#: resstring.lztserverloginpassword
+msgctxt "resstring.lztserverloginpassword"
+msgid "&Password:"
+msgstr ""
+
+#: resstring.lztserverloginpreinterbase6
+msgid "Firebird Management Studio can not be used to administer pre-InterBase 6.0 servers"
+msgstr ""
+
+#: resstring.lztserverloginserver
+msgctxt "resstring.lztserverloginserver"
+msgid "Server:"
+msgstr ""
+
+#: resstring.lztserverloginusername
+msgctxt "resstring.lztserverloginusername"
+msgid "&User Name:"
+msgstr ""
+
+#: resstring.lztserverpropallusersdisconnteddatabase
+msgid "All users have disconnected from database "
+msgstr ""
+
+#: resstring.lztserverpropbtnapply
+msgctxt "resstring.lztserverpropbtnapply"
+msgid "&Apply"
+msgstr ""
+
+#: resstring.lztserverpropbtncancel
+msgctxt "resstring.lztserverpropbtncancel"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztserverpropbtnrefresh
+msgctxt "resstring.lztserverpropbtnrefresh"
+msgid "&Refresh"
+msgstr ""
+
+#: resstring.lztserverpropbutton1
+msgctxt "resstring.lztserverpropbutton1"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztserverpropformtitle
+msgctxt "resstring.lztserverpropformtitle"
+msgid "Server Properties"
+msgstr ""
+
+#: resstring.lztserverproplabel1
+msgctxt "resstring.lztserverproplabel1"
+msgid "&Description:"
+msgstr ""
+
+#: resstring.lztserverproplblaliasname
+msgctxt "resstring.lztserverproplblaliasname"
+msgid "A&lias Name:"
+msgstr ""
+
+#: resstring.lztserverproplblattachmentno
+msgctxt "resstring.lztserverproplblattachmentno"
+msgid "Number of attachments:"
+msgstr ""
+
+#: resstring.lztserverproplblcapabilities
+msgctxt "resstring.lztserverproplblcapabilities"
+msgid "Capabilities:"
+msgstr ""
+
+#: resstring.lztserverproplbldatabaseno
+msgctxt "resstring.lztserverproplbldatabaseno"
+msgid "Number of databases:"
+msgstr ""
+
+#: resstring.lztserverproplblhostname
+msgctxt "resstring.lztserverproplblhostname"
+msgid "&Host Name:"
+msgstr ""
+
+#: resstring.lztserverproplblprotocol
+msgctxt "resstring.lztserverproplblprotocol"
+msgid "&Network Protocol:"
+msgstr ""
+
+#: resstring.lztserverproplblversion
+msgctxt "resstring.lztserverproplblversion"
+msgid "Version:"
+msgstr ""
+
+#: resstring.lztserverproplic_2_text
+msgid "COBOL language preprocessing is supported"
+msgstr ""
+
+#: resstring.lztserverproplic_3_text
+msgid "C++ language preprocessing is supported"
+msgstr ""
+
+#: resstring.lztserverproplic_a_text
+msgid "Ada language preprocessing is supported"
+msgstr ""
+
+#: resstring.lztserverproplic_b_text
+msgid "Basic language preprocessing is supported"
+msgstr ""
+
+#: resstring.lztserverproplic_c_text
+msgid "C language preprocessing is supported"
+msgstr ""
+
+#: resstring.lztserverproplic_d_text
+msgid "Server can modify the metadata of databases"
+msgstr ""
+
+#: resstring.lztserverproplic_e_text
+msgid "Server can access tables which are external to a database"
+msgstr ""
+
+#: resstring.lztserverproplic_f_text
+msgid "Fortran language preprocessing is supported"
+msgstr ""
+
+#: resstring.lztserverproplic_i_text
+msgid "Server can access tables which are internal to a database"
+msgstr ""
+
+#: resstring.lztserverproplic_l_text
+msgid "All language preprocessing is supported except C++ and Ada"
+msgstr ""
+
+#: resstring.lztserverproplic_p_text
+msgid "Pascal language preprocessing is supported"
+msgstr ""
+
+#: resstring.lztserverproplic_q_text
+msgid "Client can use query tools"
+msgstr ""
+
+#: resstring.lztserverproplic_r_text
+msgid "Client can access remote servers"
+msgstr ""
+
+#: resstring.lztserverproplic_s_text
+msgid "Server can process requests from remote clients"
+msgstr ""
+
+#: resstring.lztserverproplic_w_text
+msgid "Server is not limited  as to the number of users it can process"
+msgstr ""
+
+#: resstring.lztserverproplimitedto
+msgid "Server is limited to "
+msgstr ""
+
+#: resstring.lztserverproplocalserver
+msgctxt "resstring.lztserverproplocalserver"
+msgid "Local Server"
+msgstr ""
+
+#: resstring.lztserverproplvdatabasescol
+msgctxt "resstring.lztserverproplvdatabasescol"
+msgid "Attached Databases"
+msgstr ""
+
+#: resstring.lztserverpropnetbeui
+msgctxt "resstring.lztserverpropnetbeui"
+msgid "NetBEUI"
+msgstr ""
+
+#: resstring.lztserverpropnolongerattachedtoserver
+msgid "It is no longer attached to the server."
+msgstr ""
+
+#: resstring.lztserverpropspx
+msgctxt "resstring.lztserverpropspx"
+msgid "SPX"
+msgstr ""
+
+#: resstring.lztserverpropstxversion
+msgctxt "resstring.lztserverpropstxversion"
+msgid "Unknown"
+msgstr ""
+
+#: resstring.lztserverproptabalias
+msgctxt "resstring.lztserverproptabalias"
+msgid "Alias"
+msgstr ""
+
+#: resstring.lztserverproptabgeneral
+msgctxt "resstring.lztserverproptabgeneral"
+msgid "General"
+msgstr ""
+
+#: resstring.lztserverproptcpip
+msgctxt "resstring.lztserverproptcpip"
+msgid "TCP/IP"
+msgstr ""
+
+#: resstring.lztserverpropunlimitedusers
+msgid "Unlimited Users"
+msgstr ""
+
+#: resstring.lztserverpropusers
+msgid " users"
+msgstr ""
+
 #: resstring.lztsqlcommitorrollback
 msgid "Commit or Rollback the current transaction"
 msgstr ""
@@ -1514,6 +2184,7 @@ msgid "No active connection"
 msgstr ""
 
 #: resstring.lztsqlnotavailable
+msgctxt "resstring.lztsqlnotavailable"
 msgid "Not Available"
 msgstr ""
 
@@ -1646,6 +2317,7 @@ msgid "Trigger"
 msgstr ""
 
 #: resstring.lztutilityunknown
+msgctxt "resstring.lztutilityunknown"
 msgid "Unknown"
 msgstr ""
 
@@ -1666,6 +2338,7 @@ msgid "Dialog"
 msgstr ""
 
 #: tfrmabout.button1.caption
+msgctxt "tfrmabout.button1.caption"
 msgid "OK"
 msgstr ""
 
@@ -1788,6 +2461,7 @@ msgid "&Cancel"
 msgstr ""
 
 #: tfrmcommdiag.btnseldb.caption
+msgctxt "tfrmcommdiag.btnseldb.caption"
 msgid "..."
 msgstr ""
 
@@ -1884,6 +2558,236 @@ msgstr ""
 #: tfrmcommdiag.tabtcpip.caption
 msgctxt "tfrmcommdiag.tabtcpip.caption"
 msgid "TCP/IP"
+msgstr ""
+
+#: tfrmdbcreate.btncancel.caption
+msgctxt "tfrmdbcreate.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbcreate.btnok.caption
+msgctxt "tfrmdbcreate.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdbcreate.caption
+msgctxt "tfrmdbcreate.caption"
+msgid "Create Database"
+msgstr ""
+
+#: tfrmdbcreate.lbldatabasefiles.caption
+msgctxt "tfrmdbcreate.lbldatabasefiles.caption"
+msgid "&File(s):"
+msgstr ""
+
+#: tfrmdbcreate.lbldbalias.caption
+msgctxt "tfrmdbcreate.lbldbalias.caption"
+msgid "&Alias:"
+msgstr ""
+
+#: tfrmdbcreate.lbloptions.caption
+msgctxt "tfrmdbcreate.lbloptions.caption"
+msgid "O&ptions:"
+msgstr ""
+
+#: tfrmdbcreate.lblserver.caption
+msgctxt "tfrmdbcreate.lblserver.caption"
+msgid "Server:"
+msgstr ""
+
+#: tfrmdbproperties.btnapply.caption
+msgctxt "tfrmdbproperties.btnapply.caption"
+msgid "&Apply"
+msgstr ""
+
+#: tfrmdbproperties.btncancel.caption
+msgctxt "tfrmdbproperties.btncancel.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdbproperties.btnselfilename.caption
+msgctxt "tfrmdbproperties.btnselfilename.caption"
+msgid "..."
+msgstr ""
+
+#: tfrmdbproperties.btnselfilename.hint
+msgctxt "tfrmdbproperties.btnselfilename.hint"
+msgid "Select database"
+msgstr ""
+
+#: tfrmdbproperties.button1.caption
+msgctxt "tfrmdbproperties.button1.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbproperties.caption
+msgctxt "tfrmdbproperties.caption"
+msgid "Database Properties"
+msgstr ""
+
+#: tfrmdbproperties.gbsummaryinfo.caption
+msgctxt "tfrmdbproperties.gbsummaryinfo.caption"
+msgid " Summary Information "
+msgstr ""
+
+#: tfrmdbproperties.lblaliasname.caption
+msgctxt "tfrmdbproperties.lblaliasname.caption"
+msgid "A&lias Name:"
+msgstr ""
+
+#: tfrmdbproperties.lbldbowner.caption
+msgctxt "tfrmdbproperties.lbldbowner.caption"
+msgid "Owner:"
+msgstr ""
+
+#: tfrmdbproperties.lbldbpages.caption
+msgctxt "tfrmdbproperties.lbldbpages.caption"
+msgid "Allocated DB Pages:"
+msgstr ""
+
+#: tfrmdbproperties.lblfilename.caption
+msgctxt "tfrmdbproperties.lblfilename.caption"
+msgid "&File:"
+msgstr ""
+
+#: tfrmdbproperties.lbloptions.caption
+msgctxt "tfrmdbproperties.lbloptions.caption"
+msgid "O&ptions:"
+msgstr ""
+
+#: tfrmdbproperties.lblpagesize.caption
+msgctxt "tfrmdbproperties.lblpagesize.caption"
+msgid "Page Size:"
+msgstr ""
+
+#: tfrmdbproperties.lblservername.caption
+msgctxt "tfrmdbproperties.lblservername.caption"
+msgid "Server:"
+msgstr ""
+
+#: tfrmdbproperties.lvsecondaryfiles.columns[0].caption
+msgctxt "tfrmdbproperties.lvsecondaryfiles.columns[0].caption"
+msgid "Secondary Files"
+msgstr ""
+
+#: tfrmdbproperties.lvsecondaryfiles.columns[1].caption
+msgctxt "tfrmdbproperties.lvsecondaryfiles.columns[1].caption"
+msgid "Start Page"
+msgstr ""
+
+#: tfrmdbproperties.tabalias.caption
+msgctxt "tfrmdbproperties.tabalias.caption"
+msgid "Alias"
+msgstr ""
+
+#: tfrmdbproperties.tabgeneral.caption
+msgctxt "tfrmdbproperties.tabgeneral.caption"
+msgid "General"
+msgstr ""
+
+#: tfrmdbregister.btncancel.caption
+msgctxt "tfrmdbregister.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbregister.btnok.caption
+msgctxt "tfrmdbregister.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdbregister.btnseldbfile.caption
+msgctxt "tfrmdbregister.btnseldbfile.caption"
+msgid "..."
+msgstr ""
+
+#: tfrmdbregister.btnseldbfile.hint
+msgctxt "tfrmdbregister.btnseldbfile.hint"
+msgid "Select database"
+msgstr ""
+
+#: tfrmdbregister.caption
+msgctxt "tfrmdbregister.caption"
+msgid "Register Database and Connect"
+msgstr ""
+
+#: tfrmdbregister.cbcasesensitive.caption
+msgctxt "tfrmdbregister.cbcasesensitive.caption"
+msgid "&Case sensitive role name"
+msgstr ""
+
+#: tfrmdbregister.chksavealias.caption
+msgctxt "tfrmdbregister.chksavealias.caption"
+msgid "&Save Alias Information"
+msgstr ""
+
+#: tfrmdbregister.gbdatabase.caption
+msgctxt "tfrmdbregister.gbdatabase.caption"
+msgid " Database "
+msgstr ""
+
+#: tfrmdbregister.gblogininfo.caption
+msgctxt "tfrmdbregister.gblogininfo.caption"
+msgid " Login Information "
+msgstr ""
+
+#: tfrmdbregister.label2.caption
+msgctxt "tfrmdbregister.label2.caption"
+msgid "Default Character  &Set"
+msgstr ""
+
+#: tfrmdbregister.lbldbalias.caption
+msgctxt "tfrmdbregister.lbldbalias.caption"
+msgid "&Alias Name:"
+msgstr ""
+
+#: tfrmdbregister.lbldbfile.caption
+msgctxt "tfrmdbregister.lbldbfile.caption"
+msgid "&File:"
+msgstr ""
+
+#: tfrmdbregister.lblpassword.caption
+msgctxt "tfrmdbregister.lblpassword.caption"
+msgid "&Password:"
+msgstr ""
+
+#: tfrmdbregister.lblrole.caption
+msgctxt "tfrmdbregister.lblrole.caption"
+msgid "&Role:"
+msgstr ""
+
+#: tfrmdbregister.lblservername.caption
+msgctxt "tfrmdbregister.lblservername.caption"
+msgid "Server:"
+msgstr ""
+
+#: tfrmdbregister.lblusername.caption
+msgctxt "tfrmdbregister.lblusername.caption"
+msgid "&User Name:"
+msgstr ""
+
+#: tfrmdescription.button1.caption
+msgctxt "tfrmdescription.button1.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdescription.button2.caption
+msgctxt "tfrmdescription.button2.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdescription.caption
+msgctxt "tfrmdescription.caption"
+msgid "Edit Description"
+msgstr ""
+
+#: tfrmdisplayblob.caption
+msgctxt "tfrmdisplayblob.caption"
+msgid "frmDisplayBlob"
+msgstr ""
+
+#: tfrmdispmemo.caption
+msgctxt "tfrmdispmemo.caption"
+msgid "frmDispMemo"
 msgstr ""
 
 #: tfrmmain.backuprestore1.caption
@@ -2525,5 +3429,169 @@ msgstr ""
 #: tfrmmessage.lbldetailmsg.caption
 msgctxt "tfrmmessage.lbldetailmsg.caption"
 msgid "Detail Message:"
+msgstr ""
+
+#: tfrmmodifyserveralias.button1.caption
+msgctxt "tfrmmodifyserveralias.button1.caption"
+msgid "OK"
+msgstr ""
+
+#: tfrmmodifyserveralias.button2.caption
+msgctxt "tfrmmodifyserveralias.button2.caption"
+msgid "&Delete"
+msgstr ""
+
+#: tfrmmodifyserveralias.caption
+msgctxt "tfrmmodifyserveralias.caption"
+msgid "Error Reading Alias"
+msgstr ""
+
+#: tfrmmodifyserveralias.label1.caption
+msgctxt "tfrmmodifyserveralias.label1.caption"
+msgid "&Alias Name:"
+msgstr ""
+
+#: tfrmmodifyserveralias.label2.caption
+msgctxt "tfrmmodifyserveralias.label2.caption"
+msgid "&Server Name:"
+msgstr ""
+
+#: tfrmmodifyserveralias.label3.caption
+msgctxt "tfrmmodifyserveralias.label3.caption"
+msgid "&Username:"
+msgstr ""
+
+#: tfrmmodifyserveralias.label4.caption
+msgctxt "tfrmmodifyserveralias.label4.caption"
+msgid "&Protocol:"
+msgstr ""
+
+#: tfrmmodifyserveralias.stmessage.caption
+msgid "stMessage"
+msgstr ""
+
+#: tfrmserverlogin.btncancel.caption
+msgctxt "tfrmserverlogin.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmserverlogin.btnlogin.caption
+msgctxt "tfrmserverlogin.btnlogin.caption"
+msgid "&Login"
+msgstr ""
+
+#: tfrmserverlogin.caption
+msgctxt "tfrmserverlogin.caption"
+msgid "Server Login"
+msgstr ""
+
+#: tfrmserverlogin.lblpassword.caption
+msgctxt "tfrmserverlogin.lblpassword.caption"
+msgid "&Password:"
+msgstr ""
+
+#: tfrmserverlogin.lblservername.caption
+msgctxt "tfrmserverlogin.lblservername.caption"
+msgid "Server:"
+msgstr ""
+
+#: tfrmserverlogin.lblusername.caption
+msgctxt "tfrmserverlogin.lblusername.caption"
+msgid "&User Name:"
+msgstr ""
+
+#: tfrmserverproperties.btnapply.caption
+msgctxt "tfrmserverproperties.btnapply.caption"
+msgid "&Apply"
+msgstr ""
+
+#: tfrmserverproperties.btncancel.caption
+msgctxt "tfrmserverproperties.btncancel.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmserverproperties.btnrefresh.caption
+msgctxt "tfrmserverproperties.btnrefresh.caption"
+msgid "&Refresh"
+msgstr ""
+
+#: tfrmserverproperties.button1.caption
+msgctxt "tfrmserverproperties.button1.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmserverproperties.caption
+msgctxt "tfrmserverproperties.caption"
+msgid "Server Properties"
+msgstr ""
+
+#: tfrmserverproperties.label1.caption
+msgctxt "tfrmserverproperties.label1.caption"
+msgid "&Description:"
+msgstr ""
+
+#: tfrmserverproperties.lblaliasname.caption
+msgctxt "tfrmserverproperties.lblaliasname.caption"
+msgid "A&lias Name:"
+msgstr ""
+
+#: tfrmserverproperties.lblattachmentno.caption
+msgctxt "tfrmserverproperties.lblattachmentno.caption"
+msgid "Number of attachments:"
+msgstr ""
+
+#: tfrmserverproperties.lblcapabilities.caption
+msgctxt "tfrmserverproperties.lblcapabilities.caption"
+msgid "Capabilities:"
+msgstr ""
+
+#: tfrmserverproperties.lbldatabaseno.caption
+msgctxt "tfrmserverproperties.lbldatabaseno.caption"
+msgid "Number of databases:"
+msgstr ""
+
+#: tfrmserverproperties.lblhostname.caption
+msgctxt "tfrmserverproperties.lblhostname.caption"
+msgid "&Host Name:"
+msgstr ""
+
+#: tfrmserverproperties.lblprotocol.caption
+msgctxt "tfrmserverproperties.lblprotocol.caption"
+msgid "&Network Protocol:"
+msgstr ""
+
+#: tfrmserverproperties.lblversion.caption
+msgctxt "tfrmserverproperties.lblversion.caption"
+msgid "Version:"
+msgstr ""
+
+#: tfrmserverproperties.lvdatabases.columns[0].caption
+msgctxt "tfrmserverproperties.lvdatabases.columns[0].caption"
+msgid "Attached Databases"
+msgstr ""
+
+#: tfrmserverproperties.stxattachmentno.caption
+msgctxt "tfrmserverproperties.stxattachmentno.caption"
+msgid "?"
+msgstr ""
+
+#: tfrmserverproperties.stxdatabaseno.caption
+msgctxt "tfrmserverproperties.stxdatabaseno.caption"
+msgid "?"
+msgstr ""
+
+#: tfrmserverproperties.stxversion.caption
+msgctxt "tfrmserverproperties.stxversion.caption"
+msgid "Unknown"
+msgstr ""
+
+#: tfrmserverproperties.tabalias.caption
+msgctxt "tfrmserverproperties.tabalias.caption"
+msgid "Alias"
+msgstr ""
+
+#: tfrmserverproperties.tabgeneral.caption
+msgctxt "tfrmserverproperties.tabgeneral.caption"
+msgid "General"
 msgstr ""
 

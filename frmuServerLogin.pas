@@ -25,7 +25,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls,
-  Messages, zluibcClasses, IB, frmuDlgClass;
+  Messages, zluibcClasses, IB, frmuDlgClass, resstring;
 
 type
   TfrmServerLogin = class(TDialog)
@@ -38,11 +38,11 @@ type
     btnLogin: TButton;
     btnCancel: TButton;
     bvlLine1: TBevel;
-    function FormHelp(Command: Word; Data: Integer;var CallHelp: Boolean): Boolean;
     procedure FormShow(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnLoginClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     function VerifyInputData(): boolean;
@@ -59,13 +59,6 @@ implementation
 uses zluGlobal, frmuMessage, IBErrorCodes;
 
 {$R *.lfm}
-
-function TfrmServerLogin.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-//  Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,SERVER_LOGIN);
-end;
 
 class function TfrmServerLogin.DoLogin(var CurrSelServer: TibcServerNode): boolean;
 begin
@@ -92,7 +85,7 @@ begin
       Screen.Cursor := crDefault;      // change cursor to default
       case EIBInterBaseError(E).IBErrorCode of
         isc_svcnotdef:
-          raise Exception.Create ('Firebird Management Studio can not be used to administer pre-InterBase 6.0 servers');
+          raise Exception.Create (LZTServerLoginPreInterbase6);
         else
           DisplayMsg (ERR_SERVER_LOGIN, E.Message);
       end;
@@ -191,7 +184,6 @@ begin
   ClientPt := ScreenToClient( ScreenPt );
   if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
    begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,SERVER_LOGIN);
     Message.Result := 0;
   end else
    inherited;
@@ -202,5 +194,15 @@ begin
   inherited;
   edtPassword.Clear;
 end;
+
+Procedure TfrmServerLogin.TranslateVisual;
+Begin
+  lblServerName.Caption := LZTServerLoginServer;
+  lblUsername.Caption := LZTServerLoginUsername;
+  lblPassword.Caption := LZTServerLoginPassword;
+  btnLogin.Caption := LZTServerLoginLogin;
+  btnCancel.Caption := LZTServerLoginCancel;
+  Self.Caption := LZTServerLoginFormTitle;
+End;
 
 end.

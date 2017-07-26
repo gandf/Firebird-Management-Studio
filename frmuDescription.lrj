@@ -1,0 +1,5 @@
+{"version":1,"strings":[
+{"hash":256499454,"name":"tfrmdescription.caption","sourcebytes":[69,100,105,116,32,68,101,115,99,114,105,112,116,105,111,110],"value":"Edit Description"},
+{"hash":11067,"name":"tfrmdescription.button1.caption","sourcebytes":[38,79,75],"value":"&OK"},
+{"hash":177752476,"name":"tfrmdescription.button2.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"}
+]}

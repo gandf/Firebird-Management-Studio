@@ -1,0 +1,18 @@
+{"version":1,"strings":[
+{"hash":225607636,"name":"tfrmdbregister.caption","sourcebytes":[82,101,103,105,115,116,101,114,32,68,97,116,97,98,97,115,101,32,97,110,100,32,67,111,110,110,101,99,116],"value":"Register Database and Connect"},
+{"hash":164219914,"name":"tfrmdbregister.lblservername.caption","sourcebytes":[83,101,114,118,101,114,58],"value":"Server:"},
+{"hash":175817712,"name":"tfrmdbregister.gbdatabase.caption","sourcebytes":[32,68,97,116,97,98,97,115,101,32],"value":" Database "},
+{"hash":133983242,"name":"tfrmdbregister.lbldbalias.caption","sourcebytes":[38,65,108,105,97,115,32,78,97,109,101,58],"value":"&Alias Name:"},
+{"hash":44892810,"name":"tfrmdbregister.lbldbfile.caption","sourcebytes":[38,70,105,108,101,58],"value":"&File:"},
+{"hash":169719797,"name":"tfrmdbregister.btnseldbfile.hint","sourcebytes":[83,101,108,101,99,116,32,100,97,116,97,98,97,115,101],"value":"Select database"},
+{"hash":12558,"name":"tfrmdbregister.btnseldbfile.caption","sourcebytes":[46,46,46],"value":"..."},
+{"hash":186340478,"name":"tfrmdbregister.chksavealias.caption","sourcebytes":[38,83,97,118,101,32,65,108,105,97,115,32,73,110,102,111,114,109,97,116,105,111,110],"value":"&Save Alias Information"},
+{"hash":39572656,"name":"tfrmdbregister.gblogininfo.caption","sourcebytes":[32,76,111,103,105,110,32,73,110,102,111,114,109,97,116,105,111,110,32],"value":" Login Information "},
+{"hash":75483722,"name":"tfrmdbregister.lblusername.caption","sourcebytes":[38,85,115,101,114,32,78,97,109,101,58],"value":"&User Name:"},
+{"hash":179363578,"name":"tfrmdbregister.lblpassword.caption","sourcebytes":[38,80,97,115,115,119,111,114,100,58],"value":"&Password:"},
+{"hash":45703818,"name":"tfrmdbregister.lblrole.caption","sourcebytes":[38,82,111,108,101,58],"value":"&Role:"},
+{"hash":14280292,"name":"tfrmdbregister.label2.caption","sourcebytes":[68,101,102,97,117,108,116,32,67,104,97,114,97,99,116,101,114,32,32,38,83,101,116],"value":"Default Character  &Set"},
+{"hash":26027861,"name":"tfrmdbregister.cbcasesensitive.caption","sourcebytes":[38,67,97,115,101,32,115,101,110,115,105,116,105,118,101,32,114,111,108,101,32,110,97,109,101],"value":"&Case sensitive role name"},
+{"hash":11067,"name":"tfrmdbregister.btnok.caption","sourcebytes":[38,79,75],"value":"&OK"},
+{"hash":177752476,"name":"tfrmdbregister.btncancel.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"}
+]}

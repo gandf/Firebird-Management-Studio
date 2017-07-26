@@ -25,7 +25,7 @@ interface
 uses
   Forms, ExtCtrls, StdCtrls, Classes, Controls, SysUtils, zluibcClasses,
   ComCtrls, Graphics, IBServices, frmuMessage, IB, LCLIntf, LCLType, LMessages,
-  Messages, frmuDlgClass;
+  Messages, frmuDlgClass, resstring;
 
 type
   TfrmServerProperties = class(TDialog)
@@ -54,7 +54,6 @@ type
     Button1: TButton;
     Label1: TLabel;
     edtDescription: TEdit;
-    function FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnApplyClick(Sender: TObject);
@@ -67,6 +66,7 @@ type
     procedure pgcMainChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     FAssignedServer : TibcServerNode;
@@ -111,48 +111,6 @@ const
   LIC_2_BIT=27;
   LIC_3_BIT=28;
 
-  LIC_A_TEXT = 'Ada language preprocessing is supported';
-  LIC_B_TEXT = 'Basic language preprocessing is supported';
-  LIC_C_TEXT = 'C language preprocessing is supported';
-  LIC_D_TEXT = 'Server can modify the metadata of databases';
-  LIC_E_TEXT = 'Server can access tables which are external to a database';
-  LIC_F_TEXT = 'Fortran language preprocessing is supported';
-  LIC_I_TEXT = 'Server can access tables which are internal to a database';
-  LIC_L_TEXT = 'All language preprocessing is supported except C++ and Ada';
-  LIC_P_TEXT = 'Pascal language preprocessing is supported';
-  LIC_Q_TEXT = 'Client can use query tools';
-  LIC_R_TEXT = 'Client can access remote servers';
-  LIC_S_TEXT = 'Server can process requests from remote clients';
-  LIC_W_TEXT = 'Server is not limited  as to the number of users it can process';
-  LIC_2_TEXT = 'COBOL language preprocessing is supported';
-  LIC_3_TEXT = 'C++ language preprocessing is supported';
-
-{****************************************************************
-*
-*  F o r m H e l p
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Return: result of WinHelp call, True if successful
-*
-*  Description:  Captures the Help event and instead displays
-*                a particular topic in a new window.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-function TfrmServerProperties.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  //Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,SERVER_PROPERTIES);
-end;
-
 procedure TfrmServerProperties.btnApplyClick(Sender: TObject);
 var
   ServerActive: boolean;
@@ -187,90 +145,22 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  b t n C a n c e l C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Description: Sets the modal result of the form to mrCancel.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.btnCancelClick(Sender: TObject);
 begin
   btnApply.Click;
   ModalResult := mrOK;
 end;
 
-{****************************************************************
-*
-*  b t n R e f r e s h C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Description: Retrieves server properties and displays them on
-*               the form.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.btnRefreshClick(Sender: TObject);
 begin
   Refresh();
 end;
 
-{****************************************************************
-*
-*  c b o P r o t o c o l C h a n g e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Description: Prepares the form when changes are made.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.cboProtocolChange(Sender: TObject);
 begin
   NoteChanges;
 end;
 
-{****************************************************************
-*
-*  c b o P r o t o c o l D b l C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Description: When the user doucle clicks the comco box,
-*               the next protocol in the combo box is selected and
-*               the form is prepared after the change.  Selects the
-*               first protocol when the end of the list is reached.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.cboProtocolDblClick(Sender: TObject);
 begin
   if not cboProtocol.DroppedDown then
@@ -283,44 +173,11 @@ begin
   NoteChanges;
 end;
 
-{****************************************************************
-*
-*  e d t A l i a s N a m e C h a n g e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Description: Prepares the form when changes are made.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.edtAliasNameChange(Sender: TObject);
 begin
   NoteChanges;
 end;
 
-{****************************************************************
-*
-*  l v D a t a b a s e s D b l C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Description: Displays additional information when the user double clicks
-*               an item in the list view.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.lvDatabasesDblClick(Sender: TObject);
 var
   sCurrSelDB:string;
@@ -346,31 +203,14 @@ begin
       end;  // end loop through attached databases
 
       if i = 0 then  // no items or original item not found
-        DisplayMsg(ERR_GET_USERS,'All users have disconnected from database ' +
-          sCurrSelDB + '.  It is no longer attached to the server.');
+        DisplayMsg(ERR_GET_USERS, LZTServerPropAllUsersDisconntedDatabase +
+          sCurrSelDB + '. ' + LZTServerPropNoLongerAttachedToServer);
 
     end;  // end if double clicked on item
     Refresh();                           // refresh unselects item
   end;
 end;
 
-{****************************************************************
-*
-*  p g c M a i n C h a n g e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Description: Prepares the form when the user switches between
-*               tabbed pages.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.pgcMainChange(Sender: TObject);
 begin
   if pgcMain.ActivePage = tabAlias then
@@ -379,22 +219,6 @@ begin
     btnRefresh.Enabled := true;
 end;
 
-{****************************************************************
-*
-*  N o t e C h a n g e s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: none
-*
-*  Description: Prepares the form when the user makes changes.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.NoteChanges();
 begin
   btnApply.Enabled := False;  // assume no changes made, then start checking
@@ -418,23 +242,6 @@ begin
     btnApply.Enabled := true;
 end;
 
-{****************************************************************
-*
-*  R e f r e s h
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: none
-*
-*  Description: Retrieves server properties and displays them on
-*               the form.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.Refresh();
 var
   i:integer;
@@ -469,7 +276,7 @@ begin
           end;
       end;
       DecodeMask(FAssignedServer);
-      memCapabilities.Lines.Add('Unlimited Users');
+      memCapabilities.Lines.Add(LZTServerPropUnlimitedUsers);
     end;
   except
     on E:EIBError do
@@ -495,25 +302,6 @@ begin
   end;
 end;
 
-
-{****************************************************************
-*
-*  S h o w A c t i v i t y
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: none
-*
-*  Description: Creates a temporary TIBDatabase object and uses it
-*               to view the users connected to the currently highlighted
-*               database in the Database list, via the DBConnections form.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.ShowActivity();
 var
   lDatabase : TIBDatabase;
@@ -532,25 +320,6 @@ begin
   end;
 end;
 
-
-{****************************************************************
-*
-*  A s s i g n S e r v e r N o d e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: A TibcServerNode object for which properties are to be retrieved
-*
-*  Description: assigns a server node to the form and prepares features
-*               that do not change and inserts initial values for
-*               data.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.AssignServerNode(const ServerNode: TibcServerNode);
 begin
   FAssignedServer := ServerNode;
@@ -589,27 +358,6 @@ begin
   end;
 end;
 
-
-{****************************************************************
-*
-*  E d i t S e r v e r P r o p e r t i e s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: Server node for which properties are requested.
-*
-*  Returns: Modal Result of Server Properties form.
-*
-*  Description: Displays the Server Properties form and saves
-*               changes to server alias and/or protocol in the
-*               registry.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function EditServerProperties(const CurrSelServer: TibcServerNode): integer;
 var
   frmServerProperties : TfrmServerProperties;
@@ -647,75 +395,57 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  D e c o d e M a s k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   May 5, 1999
-*
-*  Input:  none
-*
-*  Description: Decodes the masks previously fetched and sets up
-*               the output TStrings.
-*
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerProperties.DecodeMask(AssignedServer: TibcServerNode);
 var
   lLicenseMask: integer;
 begin
   lLicenseMask := AssignedServer.Server.LicenseMaskInfo.LicenseMask;
   if ((lLicenseMask shr LIC_A_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_A_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_A_TEXT);
 
   if ((lLicenseMask shr LIC_B_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_B_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_B_TEXT);
 
   if ((lLicenseMask shr LIC_C_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_C_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_C_TEXT);
 
   if ((lLicenseMask shr LIC_D_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_D_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_D_TEXT);
 
   if ((lLicenseMask shr LIC_E_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_E_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_E_TEXT);
 
   if ((lLicenseMask shr LIC_F_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_F_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_F_TEXT);
 
   if ((lLicenseMask shr LIC_I_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_I_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_I_TEXT);
 
   if ((lLicenseMask shr LIC_L_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_L_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_L_TEXT);
 
   if ((lLicenseMask shr LIC_P_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_P_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_P_TEXT);
 
   if ((lLicenseMask shr LIC_Q_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_Q_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_Q_TEXT);
 
   if ((lLicenseMask shr LIC_R_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_R_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_R_TEXT);
 
   if ((lLicenseMask shr LIC_S_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_S_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_S_TEXT);
 
   if ((lLicenseMask shr LIC_W_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_W_TEXT)
+    FLicenseDesc.Add(LZTServerPropLIC_W_TEXT)
   else
-    FLicenseDesc.Add('Server is limited to ' + IntToStr(FAssignedServer.Server.LicenseInfo.LicensedUsers) + ' users');
+    FLicenseDesc.Add(LZTServerPropLimitedTo + IntToStr(FAssignedServer.Server.LicenseInfo.LicensedUsers) + LZTServerPropUsers);
 
   if ((lLicenseMask shr LIC_2_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_2_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_2_TEXT);
 
   if ((lLicenseMask shr LIC_3_BIT) and 1) = 1 then
-    FLicenseDesc.Add(LIC_3_TEXT);
+    FLicenseDesc.Add(LZTServerPropLIC_3_TEXT);
 end;
 
 procedure TfrmServerProperties.FormCreate(Sender: TObject);
@@ -739,7 +469,6 @@ begin
   ClientPt := ScreenToClient( ScreenPt );
   if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
    begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,SERVER_PROPERTIES);
     Message.Result := 0;
   end else
    inherited;
@@ -762,6 +491,32 @@ begin
   inherited;
   ModalResult := mrCancel;
 end;
+
+Procedure TfrmServerProperties.TranslateVisual;
+Begin
+  lblVersion.Caption := LZTServerProplblVersion;
+  stxVersion.Caption := LZTServerPropstxVersion;
+  lblCapabilities.Caption := LZTServerProplblCapabilities;
+  lblDatabaseNo.Caption := LZTServerProplblDatabaseNo;
+  lblAttachmentNo.Caption := LZTServerProplblAttachmentNo;
+  btnApply.Caption := LZTServerPropbtnApply;
+  Button1.Caption := LZTServerPropButton1;
+  btnCancel.Caption := LZTServerPropbtnCancel;
+  btnRefresh.Caption := LZTServerPropbtnRefresh;
+  lvDatabases.Columns[0].Caption := LZTServerProplvDatabasesCol;
+  TabAlias.Caption := LZTServerPropTabAlias;
+  TabGeneral.Caption := LZTServerPropTabGeneral;
+  lblAliasName.Caption := LZTServerProplblAliasName;
+  lblHostName.Caption := LZTServerProplblHostName;
+  Label1.Caption := LZTServerPropLabel1;
+  lblProtocol.Caption := LZTServerProplblProtocol;
+  cboProtocol.Items.Clear;
+  cboProtocol.Items.Add(LZTServerPropTCPIP);
+  cboProtocol.Items.Add(LZTServerPropNetBEUI);
+  cboProtocol.Items.Add(LZTServerPropSPX);
+  cboProtocol.Items.Add(LZTServerPropLocalServer);
+  Self.Caption := LZTServerPropFormTitle;
+End;
 
 end.
 

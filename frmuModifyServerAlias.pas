@@ -25,7 +25,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ExtCtrls, StdCtrls, frmuDlgClass;
+  ExtCtrls, StdCtrls, frmuDlgClass, resstring;
 
 type
   TfrmModifyServerAlias = class(TDialog)
@@ -41,6 +41,7 @@ type
     Button2: TButton;
     stMessage: TStaticText;
     imgError: TImage;
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -56,12 +57,9 @@ implementation
 {$R *.lfm}
 
 function DisplayModifyAlias (const aliasName: String; var server, username: String;
-                             var protocol: integer;
-                             ErrMsg: String): integer;
-
+                             var protocol: integer; ErrMsg: String): integer;
 var
   frmModifyAlias: TfrmModifyServerAlias;
-
 begin
   frmModifyAlias := TfrmModifyServerAlias.Create (Application.MainForm);
   with frmModifyAlias do begin
@@ -82,5 +80,15 @@ begin
   frmModifyAlias.Free;
 end;
 
+Procedure TfrmModifyServerAlias.TranslateVisual;
+Begin
+  Label1.Caption := LZTModifyServerAliasLabel1;
+  Label2.Caption := LZTModifyServerAliasLabel2;
+  Label3.Caption := LZTModifyServerAliasLabel3;
+  Label4.Caption := LZTModifyServerAliasLabel4;
+  Button1.Caption := LZTModifyServerAliasButton1;
+  Button2.Caption := LZTModifyServerAliasButton2;
+  Self.Caption := LZTModifyServerAliasFormTitle;
+End;
 
 end.

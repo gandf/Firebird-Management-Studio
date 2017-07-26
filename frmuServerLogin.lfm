@@ -1,98 +1,94 @@
-object frmServerLogin: TfrmServerLogin
-  Left = 395
-  Top = 222
+inherited frmServerLogin: TfrmServerLogin
+  Left = 234
+  Height = 183
+  Top = 205
+  Width = 345
   HelpContext = 1
-  BorderIcons = [biSystemMenu, biHelp]
   BorderStyle = bsSingle
   Caption = 'Server Login'
-  ClientHeight = 181
-  ClientWidth = 329
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  Position = poScreenCenter
-  OnHelp = FormHelp
+  ClientHeight = 183
+  ClientWidth = 345
   OnShow = FormShow
-  PixelsPerInch = 96
-  object lblServerName: TLabel
+  Position = poScreenCenter
+  object lblServerName: TLabel[0]
     Left = 15
+    Height = 16
     Top = 15
     Width = 53
-    Height = 16
     AutoSize = False
     Caption = 'Server:'
+    ParentColor = False
   end
-  object lblUsername: TLabel
+  object lblUsername: TLabel[1]
     Left = 15
+    Height = 16
     Top = 66
     Width = 75
-    Height = 16
     AutoSize = False
     Caption = '&User Name:'
     FocusControl = edtUsername
+    ParentColor = False
   end
-  object lblPassword: TLabel
+  object lblPassword: TLabel[2]
     Left = 15
+    Height = 16
     Top = 103
     Width = 75
-    Height = 16
     AutoSize = False
     Caption = '&Password:'
     FocusControl = edtPassword
+    ParentColor = False
   end
-  object bvlLine1: TBevel
+  object bvlLine1: TBevel[3]
     Left = 15
+    Height = 8
     Top = 42
     Width = 296
-    Height = 8
     Shape = bsTopLine
   end
-  object stxServerName: TStaticText
+  object stxServerName: TStaticText[4]
     Left = 74
+    Height = 21
     Top = 15
     Width = 245
-    Height = 21
-    AutoSize = False
     TabOrder = 0
   end
-  object edtUsername: TEdit
+  object edtUsername: TEdit[5]
     Left = 96
+    Height = 21
     Top = 66
     Width = 215
-    Height = 21
-    CharCase = ecUpperCase
+    CharCase = ecUppercase
     MaxLength = 31
     TabOrder = 1
   end
-  object edtPassword: TEdit
+  object edtPassword: TEdit[6]
     Left = 96
+    Height = 21
     Top = 103
     Width = 215
-    Height = 21
+    EchoMode = emPassword
     MaxLength = 32
     PasswordChar = '*'
     TabOrder = 2
   end
-  object btnLogin: TButton
+  object btnLogin: TButton[7]
     Left = 126
+    Height = 25
     Top = 140
     Width = 75
-    Height = 25
     Caption = '&Login'
     Default = True
-    TabOrder = 3
     OnClick = btnLoginClick
+    TabOrder = 3
   end
-  object btnCancel: TButton
+  object btnCancel: TButton[8]
     Left = 222
+    Height = 25
     Top = 140
     Width = 75
-    Height = 25
     Caption = '&Cancel'
-    TabOrder = 4
     OnClick = btnCancelClick
+    TabOrder = 4
   end
 end

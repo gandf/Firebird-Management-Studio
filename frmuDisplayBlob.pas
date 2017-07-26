@@ -25,13 +25,14 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ExtCtrls, sqldb, IBCustomDataSet, DB, frmuDlgClass;
+  ExtCtrls, sqldb, IBCustomDataSet, DB, frmuDlgClass, resstring;
 
 type
   TfrmDisplayBlob = class(TDialog)
     Bevel1: TBevel;
     Image: TImage;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -80,5 +81,10 @@ begin
   frmDispBlob.Free;
   frmDispBlob := nil;
 end;
+
+ Procedure TfrmDisplayBlob.TranslateVisual;
+ Begin
+   Self.Caption := LZTDisplayBlobTitle;
+ End;
 
 end.

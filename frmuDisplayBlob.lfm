@@ -1,33 +1,28 @@
-object frmDisplayBlob: TfrmDisplayBlob
+inherited frmDisplayBlob: TfrmDisplayBlob
   Left = 300
+  Height = 315
   Top = 112
-  Width = 374
-  Height = 338
+  Width = 343
   HorzScrollBar.Smooth = True
   HorzScrollBar.Tracking = True
   BorderStyle = bsSizeToolWin
   Caption = 'frmDisplayBlob'
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  ClientHeight = 315
+  ClientWidth = 343
   Font.Height = -14
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  Position = poMainFormCenter
   OnClose = FormClose
-  PixelsPerInch = 96
-  object Bevel1: TBevel
+  object Bevel1: TBevel[0]
     Left = 0
+    Height = 315
     Top = 0
-    Width = 366
-    Height = 311
+    Width = 343
     Align = alClient
   end
-  object Image: TImage
+  object Image: TImage[1]
     Left = 0
+    Height = 315
     Top = 0
-    Width = 366
-    Height = 311
+    Width = 343
     Align = alClient
     AutoSize = True
     Center = True

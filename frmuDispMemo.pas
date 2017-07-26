@@ -25,12 +25,13 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ComCtrls, DBCtrls, DB, IBCustomDataSet, frmuDlgClass;
+  StdCtrls, ComCtrls, DBCtrls, DB, IBCustomDataSet, frmuDlgClass, resstring;
 
 type
   TfrmDispMemo = class(TDialog)
     Memo: TMemo;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -67,5 +68,10 @@ begin
   frmDispMemo.Free;
   frmDispMemo := nil;
 end;
+
+Procedure TfrmDispMemo.TranslateVisual;
+Begin
+  Self.Caption := LZTDispMemoFormTitle;
+End;
 
 end.

@@ -1,0 +1,20 @@
+{"version":1,"strings":[
+{"hash":87469667,"name":"tfrmdbproperties.caption","sourcebytes":[68,97,116,97,98,97,115,101,32,80,114,111,112,101,114,116,105,101,115],"value":"Database Properties"},
+{"hash":164219914,"name":"tfrmdbproperties.lblservername.caption","sourcebytes":[83,101,114,118,101,114,58],"value":"Server:"},
+{"hash":4730755,"name":"tfrmdbproperties.tabalias.caption","sourcebytes":[65,108,105,97,115],"value":"Alias"},
+{"hash":25783306,"name":"tfrmdbproperties.lblaliasname.caption","sourcebytes":[65,38,108,105,97,115,32,78,97,109,101,58],"value":"A&lias Name:"},
+{"hash":44892810,"name":"tfrmdbproperties.lblfilename.caption","sourcebytes":[38,70,105,108,101,58],"value":"&File:"},
+{"hash":169719797,"name":"tfrmdbproperties.btnselfilename.hint","sourcebytes":[83,101,108,101,99,116,32,100,97,116,97,98,97,115,101],"value":"Select database"},
+{"hash":12558,"name":"tfrmdbproperties.btnselfilename.caption","sourcebytes":[46,46,46],"value":"..."},
+{"hash":231000124,"name":"tfrmdbproperties.tabgeneral.caption","sourcebytes":[71,101,110,101,114,97,108],"value":"General"},
+{"hash":128980154,"name":"tfrmdbproperties.lbloptions.caption","sourcebytes":[79,38,112,116,105,111,110,115,58],"value":"O&ptions:"},
+{"hash":189636768,"name":"tfrmdbproperties.gbsummaryinfo.caption","sourcebytes":[32,83,117,109,109,97,114,121,32,73,110,102,111,114,109,97,116,105,111,110,32],"value":" Summary Information "},
+{"hash":91114586,"name":"tfrmdbproperties.lbldbowner.caption","sourcebytes":[79,119,110,101,114,58],"value":"Owner:"},
+{"hash":132304362,"name":"tfrmdbproperties.lbldbpages.caption","sourcebytes":[65,108,108,111,99,97,116,101,100,32,68,66,32,80,97,103,101,115,58],"value":"Allocated DB Pages:"},
+{"hash":123565914,"name":"tfrmdbproperties.lblpagesize.caption","sourcebytes":[80,97,103,101,32,83,105,122,101,58],"value":"Page Size:"},
+{"hash":19403747,"name":"tfrmdbproperties.lvsecondaryfiles.columns[0].caption","sourcebytes":[83,101,99,111,110,100,97,114,121,32,70,105,108,101,115],"value":"Secondary Files"},
+{"hash":157338965,"name":"tfrmdbproperties.lvsecondaryfiles.columns[1].caption","sourcebytes":[83,116,97,114,116,32,80,97,103,101],"value":"Start Page"},
+{"hash":44595001,"name":"tfrmdbproperties.btnapply.caption","sourcebytes":[38,65,112,112,108,121],"value":"&Apply"},
+{"hash":11067,"name":"tfrmdbproperties.btncancel.caption","sourcebytes":[38,79,75],"value":"&OK"},
+{"hash":177752476,"name":"tfrmdbproperties.button1.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"}
+]}

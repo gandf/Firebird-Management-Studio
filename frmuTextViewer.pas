@@ -1,18 +1,3 @@
-{****************************************************************
-*
-*  f r m u T e x t V i e w e r
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for viewing
-*                text files
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 unit frmuTextViewer;
 
 {$MODE Delphi}
@@ -58,7 +43,6 @@ type
     EditFont: TAction;
     FontDialog1: TFontDialog;
     FindDialog1: TFindDialog;
-    function FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure FormResize(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure mnuEdFindClick(Sender: TObject);
@@ -91,32 +75,6 @@ uses
 
 {$R *.lfm}
 
-{****************************************************************
-*
-*  O p e n T e x t V i e w e r ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  sInputStr    - a string containing the text source
-*                         or a filename
-*          sInputSrc    - a char specifying whether the input
-*                         source if from memory or from a file
-*          sFormCaption - string specifying the name of the form
-*
-*  Return: Integer - specifies whether task was successful
-*
-*  Description: Creates an instance of the text viewer and
-*               displays the contents of the input string
-*               if the source is from memory or opens the file
-*               specified by the input string if source
-*               is from file.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmTextViewer.OpenTextViewer(const Service: TIBControlAndQueryService;
         const sFormCaption: string; const readonly:boolean=true): integer;
 begin
@@ -136,14 +94,6 @@ begin
   reEditor.Modified := false;
   if ReadOnly then
     stbStatusBar.Panels[1].Text := 'Read-Only';
-end;
-
-function TfrmTextViewer.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  // call WinHelp and show internal text viewer topic
-  //Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,FEATURES_INTERNAL_TEXT_VIEWER);
 end;
 
 procedure TfrmTextViewer.FormResize(Sender: TObject);
@@ -167,26 +117,6 @@ begin
   Close;                               // close the form
 end;
 
-{****************************************************************
-*
-*  m n u F i S a v e A s C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - the object the initiated the event
-*
-*  Return: None
-*
-*  Description: Shows the Save Dialog box and allows the user
-*               to save the contents of the richedit compoent
-*               to a specified file.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmTextViewer.mnuFiSaveAsClick(Sender: TObject);
 var
   loSaveDialog: TSaveDialog;

@@ -1,31 +1,27 @@
-object frmDispMemo: TfrmDispMemo
+inherited frmDispMemo: TfrmDispMemo
   Left = 290
+  Height = 298
   Top = 244
   Width = 461
-  Height = 298
   BorderStyle = bsSizeToolWin
   Caption = 'frmDispMemo'
-  Color = clBtnFace
-  UseDockManager = True
+  ClientHeight = 298
+  ClientWidth = 461
   DragMode = dmAutomatic
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
   FormStyle = fsStayOnTop
-  Position = poOwnerFormCenter
-  Visible = True
   OnClose = FormClose
-  PixelsPerInch = 96
-  object Memo: TMemo
+  Position = poOwnerFormCenter
+  UseDockManager = True
+  Visible = True
+  object Memo: TMemo[0]
     Left = 0
+    Height = 298
     Top = 0
-    Width = 453
-    Height = 271
+    Width = 461
     Align = alClient
     Lines.Strings = (
-      'Memo')
+      'Memo'
+    )
     ReadOnly = True
     ScrollBars = ssBoth
     TabOrder = 0

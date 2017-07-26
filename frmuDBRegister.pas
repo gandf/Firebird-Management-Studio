@@ -17,22 +17,6 @@
  * Contributor(s): Gavrilev Sergey.
 }
 
-{****************************************************************
-*
-*  f r m u D B R e g i s t e r
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for registering
-*                a database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 unit frmuDBRegister;
 
 {$MODE Delphi}
@@ -67,13 +51,13 @@ type
     cbCaseSensitive: TCheckBox;
     cbCharacterSet: TComboBox;
     Label2: TLabel;
-    function FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure btnCancelClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
     procedure btnSelDBFileClick(Sender: TObject);
     procedure edtDBFileChange(Sender: TObject);
     procedure edtDBFileExit(Sender: TObject);
     procedure edtRoleChange(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     FCurrSelServer : TibcServerNode;
@@ -92,41 +76,9 @@ function RegisterDB(var DBAlias,Username,Password,Role, CharacterSet: string;
 implementation
 
 uses
-   IBServices, frmuMessage, zluGlobal, zluUtility, zluPersistent;
+   IBServices, frmuMessage, zluGlobal, zluUtility, zluPersistent, resstring;
 
 {$R *.lfm}
-
-{****************************************************************
-*
-*  R e g i s t e r D B ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  DBAlias   - The database alias
-*          DBFile    - The database file, including path
-*          Username  - The username to use when connecting to
-*                      the database
-*          Password  - The password to use when connecting to
-*                      the database
-*          Role      - The role to use when connecting to the
-*                      database
-*          SelServer - The specified server
-*          SaveAlias - Indicates whether or not to save the alias
-*                      information to the persistent storage
-*
-*  Return: boolean - Indicates the success/failure of the operation
-*
-*  Description:  Captures the information required in order to
-*                register the specified database.  The actual
-*                registration of the database is performed by
-*                the main form.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 function RegisterDB(var DBAlias, Username, Password, Role, CharacterSet: string;
   DatabaseFiles: TStringList; const SelServer: TibcServerNode; var SaveAlias, CaseSensitive: boolean): boolean;
@@ -174,14 +126,6 @@ begin
   end;
 end;
 
-function TfrmDBRegister.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  // call WinHelp and show Register Database topic
-//  Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_REGISTER);
-end;
-
 procedure TfrmDBRegister.btnCancelClick(Sender: TObject);
 begin
   ModalResult := mrCancel;
@@ -193,25 +137,6 @@ begin
     ModalResult := mrOK;
 end;
 
-{****************************************************************
-*
-*  b t n S e l D B F i l e C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description:  Displays a default windows file open dialog for capturing filenames
-*
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRegister.btnSelDBFileClick(Sender: TObject);
 var
   lOpenDialog: TOpenDialog;
@@ -221,9 +146,9 @@ begin
   begin
     lOpenDialog := TOpenDialog.Create(self);
     // setup Open Dialog title, extension, filters and options
-    lOpenDialog.Title := 'Select Database';
-    lOpenDialog.DefaultExt := 'gdb';
-    lOpenDialog.Filter := 'Database File (*.gdb)|*.GDB|All files (*.*)|*.*';
+    lOpenDialog.Title := LZTDBRegisterlOpenDialogTitle;
+    lOpenDialog.DefaultExt := 'fdb';
+    lOpenDialog.Filter := LZTDBRegisterDatabaseFile;
     lOpenDialog.Options := [ofHideReadOnly,ofNoNetworkButton, ofEnableSizing];
     if lOpenDialog.Execute then
     begin
@@ -259,28 +184,9 @@ begin
     edtDBAlias.Text := ExtractFileName(edtDbFile.Text);
   end;
   if not (IsValidDBName(edtDBFile.Text)) then
-     DisplayMsg(WAR_REMOTE_FILENAME, Format('File: %s', [edtDBFile.Text]));
+     DisplayMsg(WAR_REMOTE_FILENAME, Format(LZTDBRegisterFile, [edtDBFile.Text]));
 end;
 
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Performs some basic validation on data entered by
-*                the user
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmDBRegister.VerifyInputData(): boolean;
 begin
   result := true;
@@ -316,7 +222,7 @@ begin
 
   if PersistentInfo.DatabaseAliasExists(FCurrSelServer.NodeName, edtDBAlias.Text) then // kris changed from DBAliasExists to DatabaseAliasExists
   begin                                // show error message
-    DisplayMsg(ERR_DB_ALIAS,'This database alias already exists.');
+    DisplayMsg(ERR_DB_ALIAS,LZTDBRegisterDatabaseAlreadyExist);
     edtDBAlias.SetFocus;               // give focus to control
     result := false;
   end;
@@ -332,7 +238,6 @@ begin
   ClientPt := ScreenToClient( ScreenPt );
   if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
    begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_REGISTER);
     Message.Result := 0;
   end else
    inherited;
@@ -343,5 +248,22 @@ begin
   inherited;
   cbCaseSensitive.Enabled := (edtRole.GetTextLen > 0);
 end;
+
+Procedure TfrmDBRegister.TranslateVisual;
+Begin
+  lblServerName.Caption := LZTDBRegisterlblServerName;
+  gbDatabase.Caption := LZTDBRegistergbDatabase;
+  lblDBFile.Caption := LZTDBRegisterlblDBFile;
+  lblDBAlias.Caption := LZTDBRegisterlblDBAlias;
+  chkSaveAlias.Caption := LZTDBRegisterchkSaveAlias;
+  gbLoginInfo.Caption := LZTDBRegistergbLoginInfo;
+  lblUsername.Caption := LZTDBRegisterlblUsername;
+  lblPassword.Caption := LZTDBRegisterlblPassword;
+  lblRole.Caption := LZTDBRegisterlblRole;
+  cbCaseSensitive.Caption := LZTDBRegistercbCaseSensitive;
+  Label2.Caption := LZTDBRegisterLabel2;
+  btnSelDBFile.Hint := LZTDBRegisterbtnSelDBFileHint;
+  Self.Caption := LZTDBRegisterFormTitle;
+End;
 
 end.

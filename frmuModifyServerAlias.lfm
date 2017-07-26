@@ -2,11 +2,11 @@ inherited frmModifyServerAlias: TfrmModifyServerAlias
   Left = 220
   Height = 299
   Top = 172
-  Width = 379
+  Width = 352
   BorderIcons = [biSystemMenu]
   Caption = 'Error Reading Alias'
   ClientHeight = 299
-  ClientWidth = 379
+  ClientWidth = 352
   Position = poScreenCenter
   object Label1: TLabel[0]
     Left = 10

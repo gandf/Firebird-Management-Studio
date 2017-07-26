@@ -3,14 +3,12 @@ inherited frmServerProperties: TfrmServerProperties
   Height = 453
   Top = 148
   Width = 524
-  HelpContext = 1
   BorderStyle = bsSingle
   Caption = 'Server Properties'
   ClientHeight = 453
   ClientWidth = 524
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  OnHelp = FormHelp
   OnShow = FormShow
   Position = poScreenCenter
   object pgcMain: TPageControl[0]
@@ -203,7 +201,7 @@ inherited frmServerProperties: TfrmServerProperties
           item
             AutoSize = True
             Caption = 'Attached Databases'
-            Width = 461
+            Width = 119
           end>
         ColumnClick = False
         ReadOnly = True

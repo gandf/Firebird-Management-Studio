@@ -25,7 +25,6 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <BuildNr Value="1"/>
-      <Attributes pvaDebug="True" pvaPreRelease="True"/>
       <StringTable CompanyName="flyonsoft" InternalName="Firebird Management Studio" LegalCopyright="Copyright © 2017 gandf" OriginalFilename="Firebird_Management_Studio.exe" ProductName="Firebird Management Studio"/>
     </VersionInfo>
     <MacroValues Count="1">

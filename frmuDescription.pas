@@ -25,13 +25,14 @@ interface
 
 uses
   ComCtrls, Controls, StdCtrls, Classes,
-  frmuDlgClass;
+  frmuDlgClass, resstring;
 
 type
   TfrmDescription = class(TDialog)
     reDescription: TMemo;
     Button1: TButton;
     Button2: TButton;
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -44,5 +45,12 @@ var
 implementation
 
 {$R *.lfm}
+
+Procedure TfrmDescription.TranslateVisual;
+Begin
+  Button1.Caption := LZTDescriptionOk;
+  Button2.Caption := LZTDescriptionCancel;
+  Self.Caption := LZTDescriptionTitle;
+End;
 
 end.

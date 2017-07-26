@@ -30,7 +30,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, SysUtils, Classes, Registry, Forms,
-  IBServices, zluGlobal, IB;
+  IBServices, zluGlobal, IB, gettext, Translations, resstring;
 
 type
 { Most of the procedures might raise an exception, eg when there's no a key in the registry
@@ -118,7 +118,12 @@ var
 
   { TibcPersistentInfo }
 constructor TibcPersistentInfo.Create;
+var
+  lg, language : String;
 begin
+  GetLanguageIDs(lg,language);
+  Translations.TranslateUnitResourceStrings('resstring', '.\Lang\'+ChangeFileExt(ExtractFileName(Application.ExeName),
+    '')+'.%s.po', lg, language);
   FRegistry := TRegistry.Create;
   InitRegistry;
 end;
@@ -391,7 +396,7 @@ begin
         FRegistry.CloseKey;
       end;
     end else
-      raise EPersistent.Create('Persistent data read error. Server alias not found: ' + Alias);
+      raise EPersistent.Create(LZTPersistentDataReadErrorServerAlias + Alias);
   end;
 end;
 
@@ -420,7 +425,7 @@ begin
         FRegistry.CloseKey;
       end;
     end else
-      raise EPersistent.Create('Persistent data write error. Cannot access server alias: ' + Alias);
+      raise EPersistent.Create(LZTPersistentDataWriteErrorServerAlias + Alias);
   end;
 end;
 
@@ -465,7 +470,7 @@ begin
         FRegistry.CloseKey;
       end
     end else
-      raise EPersistent.Create('Persistent data read error. Database alias not found: ' + DatabaseAlias);
+      raise EPersistent.Create(LZTPersistentDataReadErrorDatabaseAlias + DatabaseAlias);
   end;
 end;
 
@@ -490,7 +495,7 @@ begin
           end;
     end
     else
-      raise EPersistent.Create('Persistent data write error. Cannot access database alias: ' + DatabaseAlias);
+      raise EPersistent.Create(LZTPersistentDataWriteErrorDatabaseAlias + DatabaseAlias);
   end;
 end;
 
@@ -509,7 +514,7 @@ begin
       begin
         iCount := ReadInteger ('Count');
         for i := 0 to iCount - 1 do
-          gExternalApps.Add(ReadString (Format('Title%d', [i])));
+          gExternalApps.Add(ReadString (Format(LZTPersistentTitle, [i])));
       end;
       CloseKey;
     end;
