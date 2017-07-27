@@ -236,7 +236,6 @@ object frmObjectView: TfrmObjectView
             ScrollBars = ssBoth
             TabOrder = 2
             TabStop = False
-            WordWrap = False
           end
         end
         object tabProcedures: TTabSheet
@@ -554,7 +553,6 @@ object frmObjectView: TfrmObjectView
         ReadOnly = True
         ScrollBars = ssBoth
         TabOrder = 0
-        WordWrap = False
       end
       object Panel6: TPanel
         Left = 0

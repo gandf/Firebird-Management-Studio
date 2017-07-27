@@ -138,7 +138,6 @@ object dlgWisql: TdlgWisql
       PopupMenu = pmRichEdit
       ScrollBars = ssBoth
       TabOrder = 0
-      WordWrap = False
       OnEnter = UpdateCursor
       OnKeyPress = reSqlInputKeyPress
     end

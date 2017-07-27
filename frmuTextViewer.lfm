@@ -92,7 +92,6 @@ object frmTextViewer: TfrmTextViewer
     ReadOnly = True
     ScrollBars = ssBoth
     TabOrder = 2
-    WordWrap = False
     OnEnter = reEditorEnter
     OnKeyPress = reEditorKeyPress
   end
