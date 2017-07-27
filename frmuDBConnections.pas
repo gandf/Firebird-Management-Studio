@@ -32,11 +32,9 @@ type
   TfrmDBConnections = class(TDialog)
     lvConnections: TListView;
     btnOK: TButton;
-    function FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure btnOKClick(Sender: TObject);
   private
     { Private declarations }
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
   end;
@@ -132,67 +130,9 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  F o r m H e l p
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Return: result of WinHelp call, True if successful
-*
-*  Description:  Captures the Help event and instead displays
-*                a particular topic in a new window.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-function TfrmDBConnections.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  //Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_ACTIVITY);
-end;
-
-{****************************************************************
-*
-*  b t n O K C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: ignored
-*
-*  Description:  Closes the form with a modal result of mrOK.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBConnections.btnOKClick(Sender: TObject);
 begin
   ModalResult := mrOK;
-end;
-
-procedure TfrmDBConnections.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_ACTIVITY);
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 end.

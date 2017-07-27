@@ -4,7 +4,7 @@ object frmMain: TfrmMain
   Top = 202
   Width = 641
   ActiveControl = tvMain
-  BorderIcons = [biSystemMenu, biMinimize, biMaximize, biHelp]
+  BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'Firebird Management Studio'
   ClientHeight = 420
   ClientWidth = 641

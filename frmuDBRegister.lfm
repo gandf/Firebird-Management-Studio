@@ -3,12 +3,10 @@ inherited frmDBRegister: TfrmDBRegister
   Height = 468
   Top = 96
   Width = 399
-  HelpContext = 1
   BorderStyle = bsSingle
   Caption = 'Register Database and Connect'
   ClientHeight = 468
   ClientWidth = 399
-  HelpFile = '1'
   Position = poScreenCenter
   object lblServerName: TLabel[0]
     Left = 15

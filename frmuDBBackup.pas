@@ -89,7 +89,6 @@ type
     FSourceDatabaseNode: TibcDatabaseNode;
     FBackupFiles: TStringList;
     function VerifyInputData(): boolean;
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
   end;
@@ -1004,22 +1003,6 @@ begin
     frmDBBackup.Free;
     Screen.Cursor := crDefault;
   end;
-end;
-
-procedure TfrmDBBackup.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_BACKUP);
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 procedure TfrmDBBackup.cbDatabaseAliasChange(Sender: TObject);

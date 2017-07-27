@@ -1,8 +1,7 @@
 object frmDBBackup: TfrmDBBackup
   Left = 119
   Top = 212
-  HelpContext = 1
-  BorderIcons = [biSystemMenu, biHelp]
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Database Backup'
   ClientHeight = 368
@@ -13,7 +12,6 @@ object frmDBBackup: TfrmDBBackup
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  HelpFile = '1'
   Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96

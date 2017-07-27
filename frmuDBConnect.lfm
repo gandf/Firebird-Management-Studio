@@ -1,8 +1,7 @@
 object frmDBConnect: TfrmDBConnect
   Left = 571
   Top = 317
-  HelpContext = 1
-  BorderIcons = [biSystemMenu, biHelp]
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Database Connect'
   ClientHeight = 305
@@ -15,7 +14,6 @@ object frmDBConnect: TfrmDBConnect
   Font.Style = []
   Position = poScreenCenter
   OnCreate = FormCreate
-  OnHelp = FormHelp
   PixelsPerInch = 96
   object lblDatabaseName: TLabel
     Left = 15

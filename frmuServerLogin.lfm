@@ -3,7 +3,6 @@ inherited frmServerLogin: TfrmServerLogin
   Height = 183
   Top = 205
   Width = 345
-  HelpContext = 1
   BorderStyle = bsSingle
   Caption = 'Server Login'
   ClientHeight = 183

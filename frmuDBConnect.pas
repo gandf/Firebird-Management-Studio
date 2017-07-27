@@ -60,7 +60,6 @@ type
     cbCaseSensitive: TCheckBox;
     cbCharacterSet: TComboBox;
     Label2: TLabel;
-    function FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure btnCancelClick(Sender: TObject);
     procedure btnConnectClick(Sender: TObject);
     procedure edtRoleChange(Sender: TObject);
@@ -194,14 +193,6 @@ begin
     gAppSettings[DEFAULT_DIALECT].Setting := CurrSelDatabase.Database.SQLDialect;
     gAppSettings[CHARACTER_SET].Setting := CurrSelDatabase.CharacterSet;
   end;
-end;
-
-function TfrmDBConnect.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  // call WinHelp and show Database Connect topic
-//  Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_CONNECT);
 end;
 
 procedure TfrmDBConnect.btnCancelClick(Sender: TObject);

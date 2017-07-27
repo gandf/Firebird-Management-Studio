@@ -3,13 +3,10 @@ inherited frmServerRegister: TfrmServerRegister
   Height = 384
   Top = 94
   Width = 319
-  HelpContext = 1
   BorderStyle = bsSingle
   Caption = 'Register Server and Login'
   ClientHeight = 384
   ClientWidth = 319
-  HelpFile = '1'
-  OnHelp = FormHelp
   Position = poScreenCenter
   object gbServerInfo: TGroupBox[0]
     Left = 11

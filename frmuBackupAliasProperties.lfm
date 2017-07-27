@@ -3,12 +3,10 @@ inherited frmBackupAliasProperties: TfrmBackupAliasProperties
   Height = 415
   Top = 207
   Width = 416
-  HelpContext = 1
   BorderStyle = bsSingle
   Caption = 'Backup Alias Properties'
   ClientHeight = 415
   ClientWidth = 416
-  HelpFile = '1'
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter

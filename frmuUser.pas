@@ -69,7 +69,6 @@ type
     NewUser: TAction;
     ModifyUser: TAction;
     DeleteUser: TAction;
-    function FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure btnApplyClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
@@ -96,7 +95,6 @@ type
     function GetUserList(): boolean;
     function VerifyInputData(): boolean;
     procedure GetUsers(const idx: integer = -1);
-//    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
     AddNew: boolean;
@@ -213,34 +211,6 @@ begin
   end;
 end;
 
-function TfrmUserInfo.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  // call WinHelp and show server security topic
-//  Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,SERVER_SECURITY);
-end;
-
-{****************************************************************
-*
-*  b t n A p p l y C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object initiating the event
-*
-*  Return: None
-*
-*  Description:  Adds/Modifies a user in the security database
-*                depending on the current mode (insert/edit)
-*                which is determined by the visibility of edtUsername
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmUserInfo.btnApplyClick(Sender: TObject);
 var
   lUserCount : Integer;
@@ -844,22 +814,6 @@ begin
   inherited;
 //  SetLength(FUserInfo, 10);
 end;
-
-{procedure TfrmUserInfo.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,SERVER_SECURITY);
-    Message.Result := 0;
-  end else
-   inherited;
-end;}
 
 procedure TfrmUserInfo.DeleteUserUpdate(Sender: TObject);
 begin

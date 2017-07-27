@@ -64,7 +64,6 @@ type
     edtPassword: TEdit;
     btnOK: TButton;
     btnCancel: TButton;
-    function FormHelp(Command: Word; Data: Integer;var CallHelp: Boolean): Boolean;
     procedure btnCancelClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
     procedure rbLocalServerClick(Sender: TObject);
@@ -73,7 +72,6 @@ type
     { Private declarations }
     FAction: word;
     function VerifyInputData(): boolean;
-//    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
   end;
@@ -199,14 +197,6 @@ begin
   end;
 end;
 
-function TfrmServerRegister.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  // call WinHelp and show Register Server topic
-//  Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,SERVER_REGISTER);
-end;
-
 procedure TfrmServerRegister.btnCancelClick(Sender: TObject);
 begin
   ModalResult := mrCancel;
@@ -218,25 +208,6 @@ begin
     ModalResult := mrOK;
 end;
 
-{****************************************************************
-*
-*  r b L o c a l S e r v e r C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object initiating the event
-*
-*  Return: None
-*
-*  Description:  Enables/disables controls based on the state
-*                of the radio button (Checked/Uncheked)
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerRegister.rbLocalServerClick(Sender: TObject);
 begin
   // enable/disable controls based on which server radio button is selected
@@ -380,21 +351,5 @@ begin
     end;
   end;  
 end;
-
-{procedure TfrmServerRegister.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,SERVER_REGISTER);
-    Message.Result := 0;
-  end else
-   inherited;
-end;}
 
 end.

@@ -1,8 +1,7 @@
 object frmDBShutdown: TfrmDBShutdown
   Left = 686
   Top = 339
-  HelpContext = 1
-  BorderIcons = [biSystemMenu, biHelp]
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Database Shutdown'
   ClientHeight = 188
@@ -13,10 +12,8 @@ object frmDBShutdown: TfrmDBShutdown
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  HelpFile = 'IBConsole.hlp'
   Position = poScreenCenter
   OnCreate = FormCreate
-  OnHelp = FormHelp
   PixelsPerInch = 96
   object bvlLine1: TBevel
     Left = 15

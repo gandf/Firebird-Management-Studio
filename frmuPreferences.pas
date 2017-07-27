@@ -70,7 +70,6 @@ type
     { Private declarations }
     function VerifyInputData(): boolean;
     procedure SetEditorEnabled(const enable: boolean);
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
   end;
@@ -287,22 +286,6 @@ end;
 procedure TfrmPreferences.edtDataChange(Sender: TObject);
 begin
   btnApply.Enabled := true;
-end;
-
-procedure TfrmPreferences.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XCursor;
-  ScreenPt.Y := Message.YCursor;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,GENERAL_PREFERENCES);
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 procedure TfrmPreferences.FormShow(Sender: TObject);

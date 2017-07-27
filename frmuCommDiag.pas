@@ -86,7 +86,6 @@ type
     procedure PingServer;
     procedure TestDBConnect;
     procedure TestPort(Port : String);
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
   end;
@@ -807,20 +806,6 @@ end;
 procedure TfrmCommDiag.edtDatabaseChange(Sender: TObject);
 begin
   edtDatabase.Hint := edtDatabase.Text;
-end;
-
-procedure TfrmCommDiag.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-    Message.Result := 0
-  else
-   inherited;
 end;
 
 Procedure TfrmCommDiag.TranslateVisual;

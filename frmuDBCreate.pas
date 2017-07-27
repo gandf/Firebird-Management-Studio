@@ -61,7 +61,6 @@ type
   private
     { Private declarations }
     function VerifyInputData(): boolean;
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
     FCurrSelServer: TIbcServerNode;
@@ -623,21 +622,6 @@ end;
 procedure TfrmDBCreate.edtDBAliasChange(Sender: TObject);
 begin
   edtDBAlias.Hint := edtDBAlias.Text;
-end;
-
-procedure TfrmDBCreate.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 procedure TfrmDBCreate.cbOptionsKeyDown(Sender: TObject; var Key: Word;

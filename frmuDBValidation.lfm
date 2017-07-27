@@ -1,7 +1,7 @@
 object frmDBValidation: TfrmDBValidation
   Left = 185
   Top = 181
-  BorderIcons = [biSystemMenu, biHelp]
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Database Validation'
   ClientHeight = 217
@@ -14,7 +14,6 @@ object frmDBValidation: TfrmDBValidation
   Font.Style = []
   Position = poScreenCenter
   OnCreate = FormCreate
-  OnHelp = FormHelp
   PixelsPerInch = 96
   object lblDatabaseName: TLabel
     Left = 15

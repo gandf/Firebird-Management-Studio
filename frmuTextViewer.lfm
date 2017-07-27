@@ -3,7 +3,6 @@ object frmTextViewer: TfrmTextViewer
   Top = 261
   Width = 640
   Height = 480
-  HelpContext = 1
   ActiveControl = reEditor
   Caption = 'Text Viewer'
   Color = clBtnFace
@@ -12,11 +11,9 @@ object frmTextViewer: TfrmTextViewer
   Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  HelpFile = '1'
   Menu = mnuMain
   Position = poScreenCenter
   OnClose = FormClose
-  OnHelp = FormHelp
   OnResize = FormResize
   OnShow = FormShow
   PixelsPerInch = 96

@@ -72,7 +72,6 @@ type
     FGlobalAction: TTransactionGlobalAction;
     FCurrentRecord : Integer;
     procedure GetLimboTransactions(const SourceServerNode : TibcServerNode; const CurrSelDatabase : TibcDatabaseNode);
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
   end;
@@ -412,22 +411,6 @@ begin
   if Fvalidation.Active then
     FValidation.Detach;
   MessageDlg ('Limbo transaction recovery completed.', mtInformation, [mbOK], 0);
-end;
-
-procedure TfrmDBTransactions.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,TRANSACTIONS_RECOVERY);
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 procedure TfrmDBTransactions.pgcMainChanging(Sender: TObject;

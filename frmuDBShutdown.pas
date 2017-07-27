@@ -54,7 +54,6 @@ type
     stxDatabaseName: TLabel;
     pnlOptionName: TPanel;
     cbOptions: TComboBox;
-    function FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure FormCreate(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
@@ -66,7 +65,6 @@ type
   private
     { Private declarations }
     function VerifyInputData(): boolean;
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
   end;
@@ -268,34 +266,6 @@ begin
     frmDBShutdown.Free;
   end;
 end;
-
-function TfrmDBShutdown.FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  //Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_SHUTDOWN);
-end;
-
-{****************************************************************
-*
-*  F o r m C r e a t e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*
-*  Return: None
-*
-*
-*  Description: This procedure is triggered when the form is
-*               created.  It is responsible for populating the
-*               string grids with default values.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 procedure TfrmDBShutdown.FormCreate(Sender: TObject);
 begin
@@ -577,22 +547,6 @@ begin
       Exit;
     end;
   end
-end;
-
-procedure TfrmDBShutdown.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_SHUTDOWN);
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 end.

@@ -54,7 +54,6 @@ type
     btnOK: TButton;
     btnCancel: TButton;
     stxDatabaseName: TLabel;
-    function  FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure FormCreate(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
@@ -66,7 +65,6 @@ type
   private
     { Private declarations }
     function VerifyInputData(): boolean;
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
   end;
@@ -517,29 +515,6 @@ procedure TfrmDBValidation.cbOptionsKeyDown(Sender: TObject; var Key: Word;
 begin
   if (Key = VK_DOWN) then
     cbOptions.DroppedDown := true;
-end;
-
-function TfrmDBValidation.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-  //Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_VALIDATION);
-end;
-
-procedure TfrmDBValidation.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_VALIDATION);
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 end.

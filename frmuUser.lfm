@@ -1,8 +1,7 @@
 object frmUserInfo: TfrmUserInfo
   Left = 101
   Top = 208
-  HelpContext = 1
-  BorderIcons = [biSystemMenu, biHelp]
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'User Information'
   ClientHeight = 297
@@ -13,10 +12,8 @@ object frmUserInfo: TfrmUserInfo
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  HelpFile = '1'
   Position = poScreenCenter
   OnCreate = FormCreate
-  OnHelp = FormHelp
   OnShow = FormShow
   PixelsPerInch = 96
   object btnNew: TButton

@@ -1,7 +1,7 @@
 object frmDBStatistics: TfrmDBStatistics
   Left = 230
   Top = 209
-  BorderIcons = [biSystemMenu, biHelp]
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Database Statistics'
   ClientHeight = 167

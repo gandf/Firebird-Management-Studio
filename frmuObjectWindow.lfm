@@ -3,7 +3,7 @@ object frmObjectView: TfrmObjectView
   Height = 479
   Top = 217
   Width = 639
-  BorderIcons = [biSystemMenu, biMinimize, biMaximize, biHelp]
+  BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'frmObjectView'
   ClientHeight = 479
   ClientWidth = 639

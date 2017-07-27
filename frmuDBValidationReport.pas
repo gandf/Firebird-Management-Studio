@@ -67,7 +67,6 @@ type
     procedure FormShow(Sender: TObject);
   private
     { Private declarations }
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
   end;
@@ -497,22 +496,6 @@ end;
 procedure TfrmDBValidationReport.btnCancelClick(Sender: TObject);
 begin
   ModalResult:=mrCancel;
-end;
-
-procedure TfrmDBValidationReport.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_VALIDATION);
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 procedure TfrmDBValidationReport.FormShow(Sender: TObject);

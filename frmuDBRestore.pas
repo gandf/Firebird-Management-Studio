@@ -82,7 +82,6 @@ type
     procedure cbDBServerChange(Sender: TObject);
     procedure cbDBAliasChange(Sender: TObject);
     procedure cbBackupAliasChange(Sender: TObject);
-    function FormHelp(Command: Word; Data: Integer; var CallHelp: Boolean): Boolean;
     procedure IncreaseRows(Sender: TObject; ACol, ARow: Integer;
       var CanSelect: Boolean);
   private
@@ -91,7 +90,6 @@ type
 
     FSourceServerNode: TibcServerNode;
     function VerifyInputData(): boolean;
-//    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
     FFileList: TStringList;
@@ -1114,29 +1112,6 @@ begin
     end;
   end;
 end;
-
-function TfrmDBRestore.FormHelp(Command: Word; Data: Integer;
-  var CallHelp: Boolean): Boolean;
-begin
-  CallHelp := False;
-//  Result := WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_RESTORE);
-end;
-
-{procedure TfrmDBRestore.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    //WinHelp(WindowHandle,CONTEXT_HELP_FILE,HELP_CONTEXT,DATABASE_RESTORE);
-    Message.Result := 0;
-  end else
-   inherited;
-end;}
 
 procedure TfrmDBRestore.IncreaseRows(Sender: TObject; ACol,
   ARow: Integer; var CanSelect: Boolean);

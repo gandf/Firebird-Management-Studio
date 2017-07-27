@@ -3,7 +3,7 @@ object Dialog: TDialog
   Height = 90
   Top = 198
   Width = 116
-  BorderIcons = [biSystemMenu, biHelp]
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Dialog'
   Color = clBtnFace

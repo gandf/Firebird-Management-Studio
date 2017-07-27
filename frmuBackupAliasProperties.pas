@@ -65,7 +65,6 @@ type
     FCurrSelServer : TibcServerNode;
     FPreviousKeyName : String;
     function VerifyInputData() : boolean;
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
     FBackupAliasNode: TibcBackupAliasNode;
@@ -292,21 +291,6 @@ begin
     Result := false;
     Exit;
   end;
-end;
-
-procedure TfrmBackupAliasProperties.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 procedure TfrmBackupAliasProperties.edtAliasNameChange(Sender: TObject);

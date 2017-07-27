@@ -1,7 +1,6 @@
 object frmDBConnections: TfrmDBConnections
   Left = 252
   Top = 127
-  HelpContext = 1
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Database Connections'
@@ -14,7 +13,6 @@ object frmDBConnections: TfrmDBConnections
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   Position = poScreenCenter
-  OnHelp = FormHelp
   PixelsPerInch = 96
   object lvConnections: TListView
     Left = 15

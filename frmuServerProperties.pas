@@ -74,7 +74,6 @@ type
     procedure NoteChanges();
     procedure Refresh();
     procedure ShowActivity();
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     { Public declarations }
     procedure AssignServerNode(const ServerNode: TibcServerNode);
@@ -457,21 +456,6 @@ end;
 procedure TfrmServerProperties.FormDestroy(Sender: TObject);
 begin
   FLicenseDesc.Free;
-end;
-
-procedure TfrmServerProperties.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 procedure TfrmServerProperties.FormShow(Sender: TObject);

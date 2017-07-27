@@ -82,7 +82,6 @@ type
     FOriginalSQLDialect: String;
     FAliaschanged: boolean;
     function  VerifyInputData(): boolean;
-    procedure LMLButtonDown( var Message: TLMLButtonDown ); message WM_NCLBUTTONDOWN ;
   public
     sOriginalForcedWrites: string;
     sOriginalReadOnly: string;
@@ -734,21 +733,6 @@ begin
   FApplyChanges := True;
   btnApply.Enabled := True;
   edtFilename.Hint := edtFilename.Text;
-end;
-
-procedure TfrmDBProperties.LMLButtonDown( var Message: TLMLButtonDown );
-var
-  ScreenPt: TPoint;
-  ClientPt: TPoint;
-begin
-  ScreenPt.X := Message.XPos;
-  ScreenPt.Y := Message.YPos;
-  ClientPt := ScreenToClient( ScreenPt );
-  if( ClientPt.X > Width-45 )and (ClientPt.X < Width-29) then
-   begin
-    Message.Result := 0;
-  end else
-   inherited;
 end;
 
 procedure TfrmDBProperties.SetDefaults(const readOnly, sweep, synch,

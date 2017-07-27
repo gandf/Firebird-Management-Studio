@@ -1,7 +1,7 @@
 object frmDBTransactions: TfrmDBTransactions
   Left = 179
   Top = 175
-  BorderIcons = [biSystemMenu, biHelp]
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Transaction Recovery'
   ClientHeight = 417

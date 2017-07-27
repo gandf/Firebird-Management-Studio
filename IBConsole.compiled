@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/usr/bin/fpc" Date="1363520124"/>
-  <Params Value=" -Mdelphi -Scghi -O1 -g -gl -vewnhi -Fl/opt/gnome/lib -Fu/tmp/ibconsole/lzRichEdit/lib/x86_64-linux -Fu/home/mariuz/Downloads/ibx/lib/x86_64-linux -Fu/usr/share/lazarus/1.2RC1/lcl/units/x86_64-linux/gtk2 -Fu/usr/share/lazarus/1.2RC1/lcl/units/x86_64-linux -Fu/usr/share/lazarus/1.2RC1/components/lazutils/lib/x86_64-linux -Fu/usr/share/lazarus/1.2RC1/packager/units/x86_64-linux -Fu/tmp/ibconsole/ -l -dLCL -dLCLgtk2 -dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL IBConsole.lpr"/>
-  <Complete Value="False"/>
-</CONFIG>

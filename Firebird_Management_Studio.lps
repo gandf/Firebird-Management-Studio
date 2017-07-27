@@ -4,13 +4,16 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="61">
+    <Units Count="58">
       <Unit0>
         <Filename Value="Firebird_Management_Studio.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="38" Y="4"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="61"/>
+        <CursorPos X="49" Y="68"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="frmuSplash.pas"/>
@@ -107,6 +110,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
+        <TopLine Value="112"/>
+        <CursorPos X="28" Y="133"/>
         <UsageCount Value="1315"/>
       </Unit9>
       <Unit10>
@@ -282,11 +287,10 @@
         <ComponentName Value="frmObjectView"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="617"/>
         <CursorPos X="43" Y="634"/>
         <UsageCount Value="1315"/>
-        <Loaded Value="True"/>
       </Unit26>
       <Unit27>
         <Filename Value="frmuServerLogin.pas"/>
@@ -336,10 +340,9 @@
         <ComponentName Value="frmTextViewer"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <CursorPos Y="120"/>
         <UsageCount Value="1315"/>
-        <Loaded Value="True"/>
       </Unit31>
       <Unit32>
         <Filename Value="frmuTools.pas"/>
@@ -382,12 +385,10 @@
         <ComponentName Value="dlgWisql"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="1525"/>
-        <CursorPos X="49" Y="1537"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="7"/>
+        <CursorPos X="68" Y="15"/>
         <UsageCount Value="1315"/>
-        <Loaded Value="True"/>
       </Unit36>
       <Unit37>
         <Filename Value="zluCommDiag.pas"/>
@@ -443,124 +444,108 @@
         <EditorIndex Value="1"/>
         <TopLine Value="496"/>
         <CursorPos X="25" Y="501"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="108"/>
         <Loaded Value="True"/>
       </Unit43>
       <Unit44>
-        <Filename Value="zluContextHelp.pas"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="1315"/>
+        <Filename Value=""/>
+        <UsageCount Value="10"/>
       </Unit44>
       <Unit45>
         <Filename Value="IBExtract.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="64" Y="29"/>
-        <UsageCount Value="1313"/>
+        <UsageCount Value="1309"/>
       </Unit45>
       <Unit46>
         <Filename Value="C:\lazarus\lcl\include\application.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1372"/>
         <CursorPos Y="1387"/>
-        <UsageCount Value="627"/>
+        <UsageCount Value="623"/>
       </Unit46>
       <Unit47>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1437"/>
         <CursorPos Y="1453"/>
-        <UsageCount Value="601"/>
+        <UsageCount Value="597"/>
       </Unit47>
       <Unit48>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4328"/>
         <CursorPos Y="4342"/>
-        <UsageCount Value="601"/>
+        <UsageCount Value="597"/>
       </Unit48>
       <Unit49>
         <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-registry\src\registry.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="75"/>
         <CursorPos X="25" Y="102"/>
-        <UsageCount Value="586"/>
+        <UsageCount Value="582"/>
       </Unit49>
       <Unit50>
-        <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2829"/>
-        <CursorPos Y="2848"/>
-        <UsageCount Value="3"/>
-      </Unit50>
-      <Unit51>
         <Filename Value="zlulang.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="51" Y="9"/>
-        <UsageCount Value="13"/>
-      </Unit51>
-      <Unit52>
-        <Filename Value="..\ibx\fbintf.pas"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="22" Y="11"/>
-        <UsageCount Value="4"/>
-      </Unit52>
-      <Unit53>
+        <UsageCount Value="9"/>
+      </Unit50>
+      <Unit51>
         <Filename Value="..\ibx\fbintf\client\FBClientAPI.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="534"/>
         <CursorPos X="24" Y="547"/>
-        <UsageCount Value="10"/>
-      </Unit53>
-      <Unit54>
-        <Filename Value="..\ibx\runtime\IBServices.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="302"/>
-        <CursorPos X="53" Y="314"/>
-        <UsageCount Value="4"/>
-      </Unit54>
-      <Unit55>
+        <UsageCount Value="6"/>
+      </Unit51>
+      <Unit52>
         <Filename Value="C:\lazarus2\fpc\3.0.2\source\packages\fcl-base\src\fileinfo.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="251"/>
         <CursorPos X="40" Y="260"/>
-        <UsageCount Value="5"/>
-      </Unit55>
-      <Unit56>
+        <UsageCount Value="1"/>
+      </Unit52>
+      <Unit53>
         <Filename Value="C:\lazarus2\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3485"/>
         <CursorPos Y="3498"/>
-        <UsageCount Value="8"/>
-      </Unit56>
-      <Unit57>
+        <UsageCount Value="4"/>
+      </Unit53>
+      <Unit54>
         <Filename Value="C:\lazarus2\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="8215"/>
         <CursorPos Y="8233"/>
-        <UsageCount Value="8"/>
-      </Unit57>
-      <Unit58>
+        <UsageCount Value="4"/>
+      </Unit54>
+      <Unit55>
         <Filename Value="..\ibx\ibexpress.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="11"/>
-        <UsageCount Value="10"/>
-      </Unit58>
-      <Unit59>
+        <UsageCount Value="6"/>
+      </Unit55>
+      <Unit56>
         <Filename Value="..\ibx\fbintf\client\2.5\IBHeader.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1858"/>
         <CursorPos X="15" Y="1872"/>
-        <UsageCount Value="10"/>
-      </Unit59>
-      <Unit60>
+        <UsageCount Value="6"/>
+      </Unit56>
+      <Unit57>
         <Filename Value="..\ibx\runtime\IBExtract.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="62"/>
         <CursorPos X="45" Y="67"/>
-        <UsageCount Value="10"/>
-      </Unit60>
+        <UsageCount Value="6"/>
+      </Unit57>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="1">
+      <Position1>
+        <Filename Value="resstring.pas"/>
+        <Caret Line="501" Column="25" TopLine="496"/>
+      </Position1>
+    </JumpHistory>
   </ProjectSession>
 </CONFIG>
