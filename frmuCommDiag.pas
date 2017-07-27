@@ -17,13 +17,6 @@
  * Contributor(s): Krzysztof Golko.
 }
 
-{
-  f r m u C o m m D i a g
-  Description:  This unit provides all the necessary functions
-                and interface to perform network communication
-                diagnostics.
-}
-
 unit frmuCommDiag;
 
 {$MODE Delphi}
@@ -110,12 +103,6 @@ uses
 
 {$R *.lfm}
 
-{
-  Input:  TibcServerNode - Specifies the currenly selected server
-  Return: Integer - Determines success or failure.
-  Description:  Responsible for creating the form.
-}
-
 function DoDiagnostics(const CurrSelServer: TibcServerNode): integer;
 var
   frmCommDiag: TfrmCommDiag;
@@ -157,12 +144,6 @@ begin
     frmCommDiag.Free;
   end;
 end;
-
-{
-  Input:  TibcServerNode - Specifies the currenly selected server
-  Return: Integer - Determines success or failure.
-  Description:  Responsible for creating the form.
-}
 
 function ServiceRunning(const CurrSelServer: TibcServerNode) : Boolean;
 var
@@ -214,11 +195,6 @@ procedure TfrmCommDiag.btnCancelClick(Sender: TObject);
 begin
   ModalResult := mrCancel;
 end;
-
-{
-Description:  Shows an open file dialog box that allows
-               a user to browse for a local database file.
-}
 
 procedure TfrmCommDiag.btnSelDBClick(Sender: TObject);
 var
@@ -381,11 +357,6 @@ begin
   end;
 end;
 
-{
-Description:  Determines which tab is active and performs
-               the appropriate network disgnostic.
-}
-
 procedure TfrmCommDiag.btnTestClick(Sender: TObject);
 begin
   // if all the necessary data has been supplied then proceed
@@ -412,12 +383,6 @@ begin
     end;
   end;
 end;
-
-{
-Description:  Creates a Ping object and performs a
-               TCP/IP ping returning round trip times and
-               packet loss statistics.
-}
 
 procedure TfrmCommDiag.PingServer;
 var
@@ -533,11 +498,6 @@ begin
   end;
 end;
 
-{
-Description:  Creates a Database object and performs a
-                database connect test using a specified protocol.
-}
-
 procedure TfrmCommDiag.TestDBConnect;
 var
   lDatabase : TIBDatabase;
@@ -641,10 +601,6 @@ begin
   end;
 end;
 
-{
-Description:  Creates a socket object and performs a
-               port/service test using TCP/IP.
-}
 procedure TfrmCommDiag.TestPort(Port : String);
 var
   Sock     : TibcSocket;               // socket

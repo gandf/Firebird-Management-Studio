@@ -17,21 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u D B V a l i d a t i o n
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for performing
-*                a database validation and repair
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 unit frmuDBValidation;
 
 {$MODE Delphi}
@@ -85,26 +70,6 @@ const
   READ_ONLY_VALIDATION_ROW = 1;
   IGNORE_CHECKSUM_ERRORS_ROW = 2;
 
-{****************************************************************
-*
-*  D o D B V a l i d a t i o n ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TibcServerNode  - currently selected server
-*          TibcDatabseNode - currently selected database (the
-*                            database to be validated)
-*
-*  Return: Integer - indicates success or failure
-*
-*  Description: Ths function performs the validatation task.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function DoDBValidation(const SourceServerNode: TibcServerNode;
   const CurrSelDatabase: TibcDatabaseNode): integer;
 var
@@ -261,26 +226,6 @@ begin
     ShowMessage ('You must specify a validation option');
 end;
 
-{****************************************************************
-*
-*  F r o m C r e a t e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - Object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure is responsible for populating
-*               the string grids when the form is created.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 procedure TfrmDBValidation.FormCreate(Sender: TObject);
 begin
   inherited;
@@ -340,30 +285,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s D r a w C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - Object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          TRect   - coordinates
-*          TGridDrawState - drawing state of grid
-*
-*  Return: None
-*
-*  Description: This procedure draws contents to a specified cell in
-*               the Options string grid.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 procedure TfrmDBValidation.sgOptionsDrawCell(Sender: TObject; ACol,
   ARow: Integer; Rect: TRect; State: TGridDrawState);
 const
@@ -385,30 +306,6 @@ begin
     end;
   end;
 end;
-
-{****************************************************************
-*
-*  s g O p t i o n s S e l e c t C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - Object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          Boolean - indicates whether call can be selected
-*
-*  Return: None
-*
-*  Description: This procedure shows the combo box and populates
-*               it when the user selects a row in the value
-*               column of the options grid.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 procedure TfrmDBValidation.sgOptionsSelectCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
 var
@@ -474,27 +371,6 @@ begin
   cbOptions.Visible := True;
   cbOptions.SetFocus;
 end;
-
-{****************************************************************
-*
-*  s g O p t i o n s D b l C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*
-*  Return: None
-*
-*
-*  Description: This procedure rotates through a list of values
-*               when the option name or value is double-clicked.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 procedure TfrmDBValidation.cbOptionsDblClick(Sender: TObject);
 begin

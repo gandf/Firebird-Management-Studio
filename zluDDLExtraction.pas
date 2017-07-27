@@ -17,23 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  z l u D D L E x t r a c t i o n
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides all the necessary functions
-*                to extract metadata from the various InterBase
-*                database objects.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 unit zluDDLExtraction;
 
 interface
@@ -90,26 +73,6 @@ const
   TRG_sql          = $01
   TRG_ignore_perm  = $02;
 
-{****************************************************************
-*
-*  G e t D D L B l o b F i l t e r s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for blob filters.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          Boolean (value)          - Specifies whether or not to include system data.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all blob filters in the database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLBlobFilters(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase;
                            const SystemData: boolean; const ObjName: String): boolean;
 var
@@ -184,26 +147,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L C h e c k C o n s t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for check constraints.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          String (value)           - Specifies a table name.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all check constraints in a specified table.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLCheckConst(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): boolean;
 var
   lSQLStr: string;
@@ -268,26 +211,7 @@ begin
     lqryGetObjList.Free;
   end;
 end;
-{****************************************************************
-*
-*  G e t D D L C o l u m n s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for columns.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          String (value)           - Specifies a table name.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all columns in a specified table.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
+
 function GetDDLColumns(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): boolean;
 var
   lSQLStr: string;
@@ -392,26 +316,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L D a t a b a s e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for tables.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          Boolean (value)          - Specifies whether or not to include system data.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all tables in the database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLDatabase(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase; const SystemData: boolean): boolean;
 var
   lStr: String;
@@ -552,26 +456,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L D o m a i n s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with domain metadata.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          Boolean (value)          - Specifies whether or not to include system data.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for domains.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 // Missing support for collation sequences
 function GetDDLDomains(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase;
                        const SystemData: boolean; const ObjName: String): boolean;
@@ -678,26 +562,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L E x c e p t i o n s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for exceptions.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          Boolean (value)          - Specifies whether or not to include system data.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all exceptions in the database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLExceptions(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase;
                           const SystemData: boolean; const ObjName: String): boolean;
 var
@@ -769,26 +633,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L F u n c t i o n s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for functions.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          Boolean (value)          - Specifies whether or not to include system data.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all functions in the database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLFunctions(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase;
                          const SystemData: boolean; const ObjName: String): boolean;
 var
@@ -955,26 +799,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L G e n e r a t o r s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for generators.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          Boolean (value)          - Specifies whether or not to include system data.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all generators in the database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLGenerators(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase;
                           const SystemData: boolean; const ObjName: String): boolean;
 var
@@ -1045,26 +869,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L I n d i c e s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for indexes.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          String (value)           - Specifies a table name.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all indexes in a specified table.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLIndexes(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): boolean;
 var
   lSQLStr: string;
@@ -1180,26 +984,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L P r o c e d u r e s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for procedures.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          Boolean (value)          - Specifies whether or not to include system data.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all procedures in the database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLProcedures(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase;
                           const SystemData: boolean; const ObjName: String): boolean;
 var
@@ -1375,26 +1159,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L R e f e r e n t i a l C o n s t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for referential constraints.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          String (value)           - Specifies a table name.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all referential constraints in a specified table.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLReferentialConst(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): boolean;
 var
   lSQLStr: string;
@@ -1563,26 +1327,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L D D L R o l e s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for roles.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          Boolean (value)          - Specifies whether or not to include system data.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all roles in the database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLRoles(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase;
                      const SystemData: boolean; const ObjName: String): boolean;
 var
@@ -1736,26 +1480,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L T a b l e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for one table.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          String (value)           - Specifies a table name.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for a specified table.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLTable(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): boolean;
 var
   lQry: TIBSql;
@@ -1809,26 +1533,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L T a b l e s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for tables.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          Boolean (value)          - Specifies whether or not to include system data.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all tables in the database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLTables(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase; const SystemData: boolean): boolean;
 var
   lSQLStr : string;
@@ -2367,26 +2071,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L T r i g g e r s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for triggers.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          String (value)           - Specifies a table name.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all triggers in a specified table.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLTriggers(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): boolean;
 var
   lSQLStr: string;
@@ -2496,26 +2180,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L U n i q u e C o n s t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for unique constraints.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          String (value)           - Specifies a table name.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all unique constraints in a specified table.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLUniqueConst(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): boolean;
 var
   lSQLStr: string;
@@ -2635,26 +2299,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D D L V i e w s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TStringList (variable)   - Gets populated with metadata for views.
-*          TibcDatabaseNode (value) - Specifies the target database/transaction.
-*          Boolean (value)          - Specifies whether or not to include system data.
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves metadata for all views in the database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDDLViews(var SQLScript: TStringList; const SelDatabaseNode: TIBDatabase;
                      const SystemData: boolean; const ObjName: String): boolean;
 var
@@ -2765,27 +2409,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D e p e n d e n c i e s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Dependencies - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          ObjectName - The object to be queried
-*          TypeId - The type of the object
-*
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of dependencies for the specified object
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function GetDependencies(var Dependencies: TStringList; const SelDatabaseNode: TIBDatabase;
   const ObjectName: string; const ObjectType: Integer): integer;
 var

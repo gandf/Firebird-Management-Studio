@@ -48,26 +48,6 @@ uses
 
 {$R *.lfm}
 
-{****************************************************************
-*
-*  V i e w D B C o n n e c t i o n s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   April 28, 1999
-*
-*  Input: TIBDatabase -  Database for which a list of connections
-*                        is requested
-*
-*  Return: FAILURE on database login failure, SUCCESS otherwise
-*
-*  Description:  Displays the DB Connections form and fills in the
-*                list of connected users.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function ViewDBConnections(const CurrSelServer: TibcServerNode; const CurrDatabase: TIBDatabase): boolean;
 var
   frmDBConnections: TfrmDBConnections;

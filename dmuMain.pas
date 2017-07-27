@@ -1,19 +1,3 @@
-{****************************************************************
-*
-*  d m u M a i n
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit contains non GUI, database related
-*                functions
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 unit dmuMain;
 
 {$mode objfpc}{$H+}
@@ -72,26 +56,6 @@ uses
 
 {$R *.lfm}
 
-{****************************************************************
-*
-*  G e t B l o b F i l t e r L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          SystemData - A flag indicating whether or not to
-*                       display system data
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of blob filters for the specified database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetBlobFilterList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const SystemData: boolean): integer;
 var
  lQry: TIBSql;
@@ -157,27 +121,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t C h e c k C o n s t L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          TableName - The table to be queried
-*
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of check constraints for
-*  the specified database/table
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetCheckConstList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): integer;
 var
   lLastConstraint,lSQLStr: string;
@@ -245,26 +188,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t C o l u m n L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          TableName - The table to be queried
-*
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of columns for the specified database/table
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetColumnList(var ObjectList: TStringList; const Database: TIBDatabase;
                                const TableName: string): integer;
 var
@@ -388,26 +311,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D o m a i n L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          SystemData - A flag indicating whether or not to
-*                       display system data
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of domains for the specified database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetDomainList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const SystemData: boolean): integer;
 var
   lSQLStr: string;
@@ -469,26 +372,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t E x c e p t i o n L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          SystemData - A flag indicating whether or not to
-*                       display system data
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of exceptions for the specified database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetExceptionList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const SystemData: boolean): integer;
 var
   lSQLStr: string;
@@ -551,26 +434,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t F u n c t i o n L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          SystemData - A flag indicating whether or not to
-*                       display system data
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of functions for the specified database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetFunctionList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const SystemData: boolean): integer;
 var
   lSQLStr: string;
@@ -627,26 +490,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t G e n e r a t o r L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          SystemData - A flag indicating whether or not to
-*                       display system data
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of generators for the specified database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetGeneratorList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const SystemData: boolean): integer;
 var
   lSQLStr: string;
@@ -730,26 +573,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t I n d e x L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          TableName - The table to be queried
-*
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of indexes for the specified database/table
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetIndexList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): integer;
 var
   lUnique,lDescending,lActive,lSQLStr: string;
@@ -823,26 +646,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t P r o c e d u r e L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          SystemData - A flag indicating whether or not to
-*                       display system data
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of procedures for the specified database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetProcedureList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const SystemData: boolean): integer;
 var
   lSQLStr: string;
@@ -903,27 +706,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t R e f e r e n t i a l C o n s t L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          TableName - The table to be queried
-*
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of referential integrity contraints
-*  for the specified database/table
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetReferentialConstList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): integer;
 var
   lSQLStr: string;
@@ -987,25 +769,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t R o l e L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of roles for the specified database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetRoleList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase): integer;
 var
   lSQLStr: string;
@@ -1061,26 +824,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t T a b l e D a t a ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  SelDatabaseNode - The database to be queried
-*          SelTableName - The table to be queried
-*
-*
-*  Return: boolean - Success/Failure indicator
-*
-*  Description:  Retrieves the data for the specified table
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetTableData(var SelDatabaseNode: TIBDatabase;
                               var DataSet: TIBDataSet;
                               const SelTableName: string): boolean;
@@ -1124,24 +867,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t O w n e r I n f o ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves detail info for a specified table
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetOwnerInfo(var OwnerName, Description: string; const SelDatabaseNode: TIBDatabase; const Node: TibcTreeNode): integer;
 var
   lSQLStr,
@@ -1227,26 +952,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t T a b l e L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          SystemData - A flag indicating whether or not to
-*                       display system data
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of tables for the specified database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetTableList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const SystemData: boolean): integer;
 var
   lSQLStr: string;
@@ -1308,26 +1013,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t T r i g g e r L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          TableName - The table to be queried
-*
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of triggers for the specified database/table
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetTriggerList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): integer;
 var
   lQry: TIBSql;
@@ -1409,27 +1094,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t U n i q u e C o n s t L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          TableName - The table to be queried
-*
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of unique constraints for
-*  the specified database/table
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetUniqueConstList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const TableName: string): integer;
 var
   lSQLStr: string;
@@ -1485,26 +1149,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t V i e w L i s t ()
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ObjectList - A list containing object details
-*          SelDatabaseNode - The database to be queried
-*          SystemData - A flag indicating whether or not to
-*                       display system data
-*  Return: integer - Success/Failure indicator
-*
-*  Description:  Retrieves a list of views for the specified database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetViewList(var ObjectList: TStringList; const SelDatabaseNode: TIBDatabase; const SystemData: boolean): integer;
 var
   lSQLStr   : String;
@@ -1562,24 +1206,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t D B F i l e s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return: integer - Success/Failure indicator
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TdmMain.GetDBFiles(var ObjectList: TStringList; const SelServerNode: TibcServerNode; const SelDatabaseNode: TibcDatabaseNode): integer;
 var
   lqryDBFiles: TIBSql;

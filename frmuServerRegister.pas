@@ -17,22 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u S e r v e r R e g i s t e r
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for selecting/
-*                registering a server
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 unit frmuServerRegister;
 
 {$MODE Delphi}
@@ -85,36 +69,6 @@ uses
 
 {$R *.lfm}
 
-
-{****************************************************************
-*
-*  R e g i s t e r S e r v e r ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  ServerName  - The server name
-*          ServerAlias - The server alias
-*          UserName    - The username to use when connecting to
-*                        the server
-*          Password    - The password to use when connecting to
-*                        the server
-*          Protocol    - The protocol to use when connecting to
-*                        the server
-*          SelAction   - The action to perform, Register/Select
-*          SaveAlias   - Indicates whether or not to save the
-*                        alias info to the registry
-*
-*  Return: integer - Indicates the success/failure of the operation
-*
-*  Description:  Registers/Selects a server based on the action specified
-*                by SelAction
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function RegisterServer(var ServerName,ServerAlias,UserName,Password, Description: string; var Protocol: TProtocol; const SelAction: word; var SaveAlias: boolean): integer;
 var
   frmServerRegister: TfrmServerRegister;
@@ -233,25 +187,6 @@ begin
   end
 end;
 
-{****************************************************************
-*
-*  r b R e m o t e S e r v e r C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object initiating the event
-*
-*  Return: None
-*
-*  Description:  Enables/disables controls based on the state
-*                of the radio button (Checked/Uncheked)
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmServerRegister.rbRemoteServerClick(Sender: TObject);
 begin
   // enable/disable controls based on which server radio button is selected
@@ -275,25 +210,6 @@ begin
   end
 end;
 
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Performs some basic validation on data entered by
-*                the user
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmServerRegister.VerifyInputData(): boolean;
 begin
   result := true;

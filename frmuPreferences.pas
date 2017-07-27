@@ -17,21 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u P r e f e r e n c e s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for changing
-*                application properties
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 unit frmuPreferences;
 
 interface
@@ -83,26 +68,6 @@ uses
 
 {$R *.DFM}
 
-
-{****************************************************************
-*
-*  F o r m C r e a t e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure initializes some of the form's
-*               components during the create event of the form
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmPreferences.FormCreate(Sender: TObject);
 begin
   inherited;
@@ -133,25 +98,6 @@ begin
 }
 end;
 
-{****************************************************************
-*
-*  b t n S e l E d i t o r F i l e n a m e C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure displays a default windows file open
-*               dialog box that prompts the user to select a file.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmPreferences.btnSelExternalEditorFilenameClick(Sender: TObject);
 var
   lOpenDialog: TOpenDialog;
@@ -174,27 +120,6 @@ begin
   end;
 end;
 
-
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: boolean - This procedure performs some basic validation
-*          on the values entered by the user
-*
-*  Description:  Performs some basic validation on data entered by
-*                the user
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmPreferences.VerifyInputData(): boolean;
 begin
   if not chkUseDefaultEditor.Checked and
@@ -205,26 +130,6 @@ begin
     result := true;
 end;
 
-{****************************************************************
-*
-*  E d i t P r e f e r e n c e s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: integer - Indicates the success/failure of the operation
-*
-*  Description: This procedure is responsible for creating and displaying
-*               and eventually destrouing the preferences form.
-*
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function EditPreferences(): integer;
 var
   frmPreferences: TfrmPreferences;

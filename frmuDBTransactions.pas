@@ -17,21 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u D B T r a n s a c t i o n s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface to view and
-*                recover (if possible) limbo transasctions.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 unit frmuDBTransactions;
 
 {$MODE Delphi}
@@ -85,29 +70,6 @@ uses
 
 {$R *.lfm}
 
-{****************************************************************
-*
-*  D o D B T r a n s a c t i o n s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  SourceServerNode - The currently selected server
-*          CurrSelDatabase  - The currently selected database
-*
-*  Return: Integer - Determines whether the operation was a
-*                    success or a failure
-*
-*  Description: This function checks for limbo transactions,
-*               if any exist the form is shown, otherwise
-*               a message is displayed and control is returned
-*               to the main
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function DoDBTransactions(const SourceServerNode: TibcServerNode; const CurrSelDatabase: TibcDatabaseNode): integer;
 var
   frmDBTransactions : TfrmDBTransactions;
@@ -148,26 +110,6 @@ begin
   ModalResult := mrCancel;
 end;
 
-{****************************************************************
-*
-*  G e t L i m b o T r a n s a c t i o n s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  SourceServerNode - The currently selected server
-*          CurrSelDatabase  - The currently selected database
-*
-*  Return: None
-*
-*  Description: This procedure populates the listview with
-*               a list of limbo transactions and they're IDs.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBTransactions.GetLimboTransactions(const SourceServerNode : TibcServerNode; const CurrSelDatabase : TibcDatabaseNode);
 var
   lListItem : TListItem;
@@ -237,26 +179,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  p g c M a i n C h a n g e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure shows details about the
-*               currently selected transaction if the Advice
-*               tab is selected
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBTransactions.pgcMainChange(Sender: TObject);
 var
   i         : Integer;
@@ -344,25 +266,6 @@ begin
     edtPath.Text := '';
 end;
 
-{****************************************************************
-*
-*  b t n O K C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure will try to fix any limbo
-*               transactions.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBTransactions.btnOKClick(Sender: TObject);
 var
   lCnt: integer;

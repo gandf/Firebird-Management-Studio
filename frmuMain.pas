@@ -576,14 +576,6 @@ begin
     gExternalApps.Free;
 end;
 
-{
-  l v O b j e c t L i s t C h a n g e ( )
-Input:  Sender - The object that initiated the event
-        Item - The list item that just changed
-        Change - The type of change that just occurred
-Description: This procedure enables/disables controls based on the
-             the selected treenode
-}
 procedure TfrmMain.lvObjectsChange(Sender: TObject; Item: TListItem; Change: TItemChange);
 var
   lTreeNode: TTreeNode;
@@ -624,12 +616,6 @@ begin
   end;
 end;
 
-{
-  l v O b j e c t L i s t D b l C l i c k ( )
-Description: This procedure determines what action takes place
-             during a double click depending on the type of the
-             selected treenode
-}
 procedure TfrmMain.lvObjectsDblClick(Sender: TObject);
 var
   Icon: TIcon;
@@ -687,11 +673,6 @@ begin
   end;
 end;
 
-{
-  t v M a i n C h a n g e ( )
-Description: This procedure controls what actions can take place when
-             the user selectes a treenode
-}
 procedure TfrmMain.tvMainChange(Sender: TObject; Node: TTreeNode);
 begin
   stbMain.Panels[0].Text := '';
@@ -841,11 +822,6 @@ end;
 
 end;
 
-{
-  t v M a i n D b l C l i c k ( )
-Description: This procedure performs an action depending on
-             which treenode received the double-click.
-}
 procedure TfrmMain.tvMainDblClick(Sender: TObject);
 begin
   if not Assigned (FCurrSelTreeNode) then
@@ -895,16 +871,6 @@ begin
   end
 end;
 
-{
-  D o D B C o n n e c t ( )
-Input: SelServerNode - The selected server
-       SelDatabaseNode - The selected database
-       SilentLogin - Indicates whether or not to perform
-                     a silent login
-Description: This procedure makes a call to the DBConnect function.
-             If a connection is established it also creates/initializes
-             the treenodes under the database node
-}
 function TfrmMain.DoDBConnect(const SelServerNode: TibcServerNode;
   SelDatabaseNode: TibcDatabaseNode;
   const SilentLogin: boolean; refresh:boolean): boolean;
@@ -953,11 +919,6 @@ begin
   end;
 end;
 
-{
-  D o D B D i s c o n n e c t ( )
-Input:  SelDatabaseNode - The selected database
-Description: This procedure disconnects the specified database
-}
 function TfrmMain.DoDBDisconnect(var SelDatabaseNode: TibcDatabaseNode): boolean;
 begin
   if not Assigned(SelDatabaseNode) then
@@ -987,13 +948,6 @@ begin
   end;
 end;
 
-{
-  G e t B a c k u p F i l e s ( )
-Input: SelServerNode - The selected server
-       SelTreeNode - The selected tree node
-Description: This precedure retrieves a list of Backup aliases for the
-             selected server from the treeview structure
-}
 function TfrmMain.GetBackupFiles(const SelServerNode: TibcServerNode): integer;
 var
   lObjectList: TStringList;
@@ -1018,12 +972,6 @@ begin
   end;
 end;
 
-{
-  G e t D D L S c r i p t ( )
-Description: This procedure determines the type of the selected
-             treenode and calls the appropriate function in order to
-             retrieve the DDL script for the object(s).
-}
 function TfrmMain.GetDDLScript: integer;
 var
   lSQLScript: TStringList;
@@ -1054,12 +1002,6 @@ begin
   end;
 end;
 
-{
-  G e t D a t a b a s e s ( )
-Input: SelServerNode - The selected server
-Description: This procedure retrieves a list of databases for the
-             specified server from the treeview structure
-}
 function TfrmMain.GetDatabases(const SelServerNode: TibcServerNode): integer;
 var
   lObjectList: TStringList;
@@ -1086,10 +1028,6 @@ begin
   end;
 end;
 
-{
-  G e t S e r v e r s ( )
-Description: Get's a list of registered servers
-}
 function TfrmMain.GetServers: integer;
 var
   lObjectList: TStringList;

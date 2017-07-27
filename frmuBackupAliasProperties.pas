@@ -17,12 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{
-  f r m u B a c k u p A l i a s P r o p e r t i e s
-Description:  This unit provides an interface for editing
-              backup alias properties
-}
-
 unit frmuBackupAliasProperties;
 
 {$MODE Delphi}
@@ -81,16 +75,6 @@ uses
 
 {$R *.lfm}
 
-{
-  E d i t B a c k u p A l i a s P r o p e r t i e s ( )
-Input:   SourceServerNode - currently selected server
-         BackupAliasNode  - currently selected backup alias
-Return:  Integer - specifies whether or not backup alias
-                   properties where modified
-Description: Displays backup alias properties as well as
-             capturing new properties.  This function will
-             apply the new changes, if any.
-}
 function EditBackupAliasProperties(const SourceServerNode: TibcServerNode;
   var BackupAliasNode: TibcBackupAliasNode): integer;
 var

@@ -17,22 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u C o m m D i a g
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides all the necessary functions
-*                to ping a remote server, test specific services
-*                via TCP/IP.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 unit zluCommDiag;
 
 {$MODE Delphi}
@@ -105,22 +89,6 @@ type
   TNWCCOpenConnByName = function(StartConnHandle : Cardinal; Name : PChar; NameFormat, OpenState, TranType : Cardinal; var pConnHandle : Cardinal) : Cardinal;  StdCall;
   TNWCCCloseConn      = function(ConnHandle : Cardinal) : Cardinal;  StdCall;
 
-  {****************************************************************
-  *
-  *  T i b c P i n g
-  *
-  ****************************************************************
-  *  Author: The Client Server Factory Inc.
-  *  Date:   March 1, 1999
-  *
-  *  Description:  This class implements the interface to
-  *                perform packet internet groping on a remote
-  *                server using TCP/IP using a 32 byte packet.
-  *
-  *****************************************************************
-  * Revisions:
-  *
-  *****************************************************************}
   TibcPing = class
   private
     { private declarations }
@@ -168,22 +136,6 @@ type
     property TTL       : Integer read GetTTL write SetTTL;
   end;
 
-  {****************************************************************
-  *
-  *  T i b c S o c k e t
-  *
-  ****************************************************************
-  *  Author: The Client Server Factory Inc.
-  *  Date:   March 1, 1999
-  *
-  *  Description:  This class implements the interface to test
-  *                a port/service on a specified remote
-  *                server using TCP/IP.
-  *
-  *****************************************************************
-  * Revisions:
-  *
-  *****************************************************************}
   TibcSocket = class(TLTCPComponent)
   private
     { private declarations }
@@ -196,23 +148,6 @@ type
     { published declarations }
   end;
 
-  {****************************************************************
-  *
-  *  T i b c S P X
-  *
-  ****************************************************************
-  *  Author: The Client Server Factory Inc.
-  *  Date:   March 1, 1999
-  *
-  *  Description:  This class implements the interface to
-  *                test an unlicensed connection to a Netware
-  *                server using IPX/SPX.  The client machine
-  *                must have the proper Netware client installed.
-  *
-  *****************************************************************
-  * Revisions:
-  *
-  *****************************************************************}
   TibcSPX = class
   private
     { private declarations }
@@ -228,22 +163,6 @@ type
 
   end;
 
-  {****************************************************************
-  *
-  *  T i b c P i p e s
-  *
-  ****************************************************************
-  *  Author: The Client Server Factory Inc.
-  *  Date:   March 1, 1999
-  *
-  *  Description:  This class implements the interface to
-  *                test a connection to an NT server using a named
-  *                pipe.
-  *
-  *****************************************************************
-  * Revisions:
-  *
-  *****************************************************************}
   TibcPipes = class
   private
     FDefault : String;  // CSDiagDefault
@@ -342,25 +261,6 @@ const
 
 implementation
 
-{****************************************************************
-*
-*  G e t R e s u l t
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: String - contains a verbose error message
-*
-*  Description:  converts a numeric error code to a
-*                verbose error message
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TibcPing.GetResult : String;
 var
   lErr : String;
@@ -491,25 +391,6 @@ begin
   Result:=FLastError;
 end;
 
-{****************************************************************
-*
-*  R e s o l v e H o s t
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - inidicates whether the name resolution of
-*                    the host was successful.
-*
-*  Description:  Converts a hostname to an IP address.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TibcPing.ResolveHost : Boolean;
 var
   WSAData : TWSAData;                  // Winsock data
@@ -540,25 +421,6 @@ begin
   FHostIP := StrPas(inet_ntoa(TInAddr(FIPAddress)));
 end;
 
-{****************************************************************
-*
-*  P i n g
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - inidicates whether the ping operation
-*                    was successful.
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TibcPing.Ping : Boolean;
 var
   WSAData         : TWSAData;          // winsock data
@@ -640,25 +502,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t P o r t N a  m e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: String - name of well-known port
-*
-*  Description: Returns the name of a well-known port
-*               based on the port service number
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TibcSocket.GetPortName : String;
 var
   Service : String;
@@ -725,25 +568,6 @@ begin
   FTotal := Tries;
 end;
 
-{****************************************************************
-*
-*  T e s t P i p e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  sResult - a string containing the result buffer
-*
-*  Return: Boolean - indicates whether test was successful
-*
-*  Description: Creates client end of a named pipe and attempts
-*               to connect to the specified pipe.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TibcPipes.TestPipe(var sResult : String; SilentTest : Boolean) : Boolean;
 var
   pPipe    : PChar;                    // pipe name
@@ -816,24 +640,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  T e s t S P X
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  sResult - a string containing the result buffer
-*
-*  Return: Boolean - indicates whether test was successful
-*
-*  Description: Tests a SPX connection to the specified server.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TibcSPX.TestSPX(var sResult : String);
 var
   ccode         : Cardinal;            // return code

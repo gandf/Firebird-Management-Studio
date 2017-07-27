@@ -1,19 +1,3 @@
-{****************************************************************
-*
-*  z l u G l o b a l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit contains the declarations of global
-*                variables/constants/objects
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 unit zluGlobal;
 
 {$MODE Delphi}

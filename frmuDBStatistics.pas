@@ -17,21 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u D B S t a t i s t i c s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for selecting
-*                options when displaying database statistics
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 unit frmuDBStatistics;
 
 {$MODE Delphi}
@@ -86,26 +71,6 @@ const
 
   STATISTICS_OPTION_ROW = 0;
 
-{****************************************************************
-*
-*  D o D B S t a t i s t i c s ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TibcServerNode  - currently selected server
-*          TibcDatabseNode - currently selected database (the
-*                            database to be validated)
-*
-*  Return: Integer - indicates success or failure
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function DoDBStatistics(const SourceServerNode: TibcServerNode;
   const CurrSelDatabase: TibcDatabaseNode): integer;
 var
@@ -215,26 +180,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  F o r  m C r e a t e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - Object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure is responsible for populating
-*               the string grid when the form is created.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 procedure TfrmDBStatistics.FormCreate(Sender: TObject);
 begin
   inherited;
@@ -277,27 +222,6 @@ begin
   sgOptions.SetFocus;
   }
 end;
-
-{****************************************************************
-*
-*  c b O p t i o n s D b l C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*
-*  Return: None
-*
-*
-*  Description: This procedure rotates through a list of values
-*               when the option name or value is double-clicked.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 procedure TfrmDBStatistics.cbOptionsDblClick(Sender: TObject);
 begin
@@ -358,30 +282,6 @@ begin
     cbOptions.DroppedDown := true;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s D r a w C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - Object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          TRect   - coordinates
-*          TGridDrawState - drawing state of grid
-*
-*  Return: None
-*
-*  Description: This procedure draws contents to a specified cell in
-*               the Option string grid.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 procedure TfrmDBStatistics.sgOptionsDrawCell(Sender: TObject; ACol,
   ARow: Integer; Rect: TRect; State: TGridDrawState);
 const
@@ -403,30 +303,6 @@ begin
     end;
   end;
 end;
-
-{****************************************************************
-*
-*  s g O p t i o n s S e l e c t C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - Object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          Boolean - indicates whether call can be selected
-*
-*  Return: None
-*
-*  Description: This procedure shows the combo box and populates
-*               it when the user selects a row in the value
-*               column of the options grid.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 procedure TfrmDBStatistics.sgOptionsSelectCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
 var

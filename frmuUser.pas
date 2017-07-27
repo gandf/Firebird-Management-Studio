@@ -17,22 +17,6 @@
  * Contributor(s): Jeff Overcash, Krzysztof Golko.
 }
 
-{****************************************************************
-*
-*  f r m u U s e r
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for managing
-*                user accounts
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 unit frmuUser;
 
 {$MODE Delphi}
@@ -115,31 +99,6 @@ uses
 const
   DUMMY_PASSWORD = 'TheyKilledKennyAgain';
 
-
-{****************************************************************
-*
-*  U s e r I n f o ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  CurrSelServer - The currently selected server
-*          CurrSelUser   - The currently selected username if any,
-*                          else ''
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Creates an instance of TIBSecurityService, and establishes
-*                a connection to the server. If it is successful it also
-*                creates an instance of the User Information form
-*                Once the form is closed it returns control to the
-*                calling function.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function UserInfo(var CurrSelServer: TibcServerNode;
   const CurrSelUser: string;
   const AddNew: boolean = false): boolean;
@@ -375,25 +334,6 @@ begin
   ModalResult := mrCancel;
 end;
 
-{****************************************************************
-*
-*  b t n D e l e t e C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object initiating the event
-*
-*  Return: None
-*
-*  Description:  Deletes a user from the security database
-*                after confirmation from the user
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmUserInfo.btnDeleteClick(Sender: TObject);
 var
   lConfirmed : Boolean;
@@ -465,25 +405,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  b t n N e w C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object initiating the event
-*
-*  Return: None
-*
-*  Description:  Initializes the forms controls in order to receive
-*                new user information
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmUserInfo.btnNewClick(Sender: TObject);
 begin
   // change form to the add user state
@@ -582,24 +503,6 @@ begin
     btnApply.Enabled := true;
 end;
 
-{****************************************************************
-*
-*  G e t U s e r I n f o ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves account information for a single user
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmUserInfo.GetUserInfo(): boolean;
 var
   lUserInfo: TUserInfo;
@@ -633,26 +536,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  G e t U s e r L i s t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Retrieves a list of existing users in the security
-*                database and enables/disables the appropriate
-*                controls based on the success/failure of the operation
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmUserInfo.GetUserList(): boolean;
 begin
   result := true;
@@ -694,25 +577,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Performs some basic validation on data entered by
-*                the user
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmUserInfo.VerifyInputData(): boolean;
 var
   i: integer;

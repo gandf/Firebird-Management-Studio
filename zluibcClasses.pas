@@ -17,22 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  z l u i b c C l a s s e s
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit contains custom class definitions/
-*                implementations
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 unit zluibcClasses;
 
 {$MODE Delphi}

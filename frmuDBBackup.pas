@@ -17,22 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u D B B a c k u p
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for performing
-*                a database backup
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 { TODO : 
 Check for bugs.  IBConsole has had problems in the past, but this could 
 have been an old IBX bug.  The current version of IBX, 4.2, does not 
@@ -116,25 +100,6 @@ const
   CONVERT_TO_TABLES_ROW = 5;
   VERBOSE_OUTPUT_ROW = 6;
 
-{****************************************************************
-*
-*  F o r m C r e a t e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: Ths procedure intializes the form's controls when
-*               the form is initially created.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBBackup.FormCreate(Sender: TObject);
 begin
   inherited;
@@ -309,24 +274,6 @@ begin
   end;
 end;
 
-{*******************************************************************
-*
-*  c b B a c k u p A l i a s C h a n g e ( )
-*
-********************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return:
-*
-*  Description:
-*
-********************************************************************
-* Revisions:
-*
-********************************************************************}
 procedure TfrmDBBackup.cbBackupAliasChange(Sender: TObject);
 var
   i: integer;
@@ -356,24 +303,6 @@ begin
   end;
 end;
 
-{*******************************************************************
-*
-*  c b B a c k u p S e r v e r C h a n g e ( )
-*
-********************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return:
-*
-*  Description:
-*
-********************************************************************
-* Revisions:
-*
-********************************************************************}
 procedure TfrmDBBackup.cbBackupServerChange(Sender: TObject);
 var
   i: integer;
@@ -401,26 +330,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s C h a n g e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure changes the value of the selected
-*               cell in the grid based on what was entered in the
-*               combobox.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBBackup.cbOptionsChange(Sender: TObject);
 var
   lSaveDialog: TSaveDialog;
@@ -461,26 +370,6 @@ begin
   }
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s D b l C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure rotates the values in the combobox
-*               and updates the selected cell in the grid each
-*               time is is double clicked
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBBackup.cbOptionsDblClick(Sender: TObject);
 begin
   if (sgOptions.Col = OPTION_VALUE_COL) or (sgOptions.Col = OPTION_NAME_COL) then
@@ -499,26 +388,6 @@ begin
   cbOptionsChange(self);
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s E x i t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure changes the value of the selected
-*               cell in the grid based on what was entered in the
-*               combobox.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBBackup.cbOptionsExit(Sender: TObject);
 var
   lR     : TRect;
@@ -554,25 +423,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s K e y D o w n ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure drops down the combobox for the selected
-*               grid cell
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBBackup.cbOptionsKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -580,25 +430,6 @@ begin
     cbOptions.DroppedDown := true;
 end;
 
-{****************************************************************
-*
-*  s g B a c k u p F i l e s D r a w C e l l ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure is responsible for painting blue
-*               the option value text in the string grid
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBBackup.sgBackupFilesDrawCell(Sender: TObject; ACol,
   ARow: Integer; Rect: TRect; State: TGridDrawState);
 const
@@ -621,27 +452,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g B a c k u p F i l e s K e y D o w n ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure performs an action depending what keys
-*               where pressed. When the <CTRL> + <TAB> keys are pressed
-*               it allows the user to scroll through the grid from left
-*               to rigth, top to bottom.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBBackup.sgBackupFilesKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 var
@@ -671,25 +481,6 @@ begin
 
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s D r a w C e l l ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure is responsible for painting blue
-*               the option value text in the string grid
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBBackup.sgOptionsDrawCell(Sender: TObject; ACol,
   ARow: Integer; Rect: TRect; State: TGridDrawState);
 const
@@ -713,25 +504,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s S e l e c t C e l l ( )
-*                                  
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date: March 1, 1999
-*
-*  Input: Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure initializes and positions the combobox
-*               depending on which cell in the grid is selected
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBBackup.sgOptionsSelectCell(Sender: TObject; ACol,
   ARow: Integer; var CanSelect: Boolean);
 var
@@ -819,25 +591,6 @@ begin
   cbOptions.SetFocus;
 end;
 
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: None
-*
-*  Description:  Performs some basic validation on data entered by
-*                the user
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmDBBackup.VerifyInputData(): boolean;
 var
   lCnt, iRow : Integer;
@@ -915,28 +668,6 @@ begin
 
 end;
 
-{*******************************************************************
-*
-*  D o B a c k u p ( )
-*
-********************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:
-*
-*  Return: integer - a status code indicating the success/failure
-*                    of the operation.
-*
-*  Description: This procedure creates and displays the backup form
-*               in order to capture Backup information. It then
-*               performs the Backup and destroys the instance of
-*               the form.
-*
-********************************************************************
-* Revisions:
-*
-********************************************************************}
 function DoDBBackup(var SourceDBAlias,BackupAlias: string;
   var BackupFiles: TStringList; const SourceServerNode: TibcServerNode;
   const SourceDatabaseNode: TibcDatabaseNode): integer;

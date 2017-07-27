@@ -17,22 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u D B S h u t D o w n
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface to shutdown
-*                a specified database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
-
 unit frmuDBShutdown;
 
 {$MODE Delphi}
@@ -85,29 +69,6 @@ const
   SHUTDOWN_OPTIONS_ROW = 0;            // shutdown option row position
   SHUTDOWN_TIMEOUT_ROW = 1;            // shutdown timeout row position
 
-{****************************************************************
-*
-*  D o D B S h u t d o w n ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TibcServerNode   - specifies the currently selected
-*                             server
-*          TibcDatabaseNode - specifies the database to be
-*                             shutdown
-*
-*  Return: Integer - indicates a success or failure during the
-*                    create database task
-*
-*  Description: This procedure performs the task of shutting
-*               down the specified database.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function DoDBShutdown(const CurrSelServer : TibcServerNode; const CurrSelDatabase: TibcDatabaseNode): integer;
 var
   frmDBShutdown : TfrmDBShutdown;
@@ -363,30 +324,6 @@ begin
     cbOptions.DroppedDown := true;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s D r a w C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          TRect   - coordinates
-*          TGridDrawState - drawing state of grid
-*
-*  Return: None
-*
-*
-*  Description: This procedure draws contents to a specified cell in
-*               the options string grid.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBShutdown.sgOptionsDrawCell(Sender: TObject; ACol,
   ARow: Integer; Rect: TRect; State: TGridDrawState);
 const
@@ -409,33 +346,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s S e l e c t C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          Boolean - inidicates whether or not the grid may
-8                    selected
-*
-*  Return: None
-*
-*
-*  Description: This procedure determines whether or not the
-*               currently selected cell may be selected in the
-*               Options string grid.  it then shows the combo
-*               box and populates it
-*               with the appropriate values.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBShutdown.sgOptionsSelectCell(Sender: TObject; ACol,
   ARow: Integer; var CanSelect: Boolean);
 var
@@ -503,26 +413,6 @@ begin
   cbOptions.SetFocus;
 end;
 
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - indicates whether or not all necessary
-*                    data was supplied and is correct.
-*
-*  Description: This procedure performs the task of validating
-*               the user entered data.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmDBShutdown.VerifyInputData(): boolean;
 var
   iWait : Integer;

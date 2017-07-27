@@ -17,22 +17,6 @@
  * Contributor(s): ______________________________________.
 }
 
-{****************************************************************
-*
-*  f r m u D B V a l i d a t i o n R e p o r t
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for displaying
-*                the validation report and allowing the user
-*                the option of repairing the reported errors
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 unit frmuDBValidationReport;
 
 {$MODE Delphi}
@@ -89,27 +73,6 @@ const
   ERR_MSG_1 = 'please retry';
   ERR_MSG_2 = 'plausible options';
 
-{****************************************************************
-*
-*  S h o w R e p o r t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TibcServerNode  - currently selected server
-*          TibcDatabseNode - currently selected database (the
-*                            database to be validated)
-*
-*  Return: Integer - indicates success or failure
-*
-*  Description: Ths displays any validation errors and
-*               allows the user the option to repair them
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function ShowReport(const str : String; const SourceServerNode: TibcServerNode;
   const CurrSelDatabase: TibcDatabaseNode; const Errors: Boolean): integer;
 var
@@ -309,29 +272,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s D r a w C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - Object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          TRect   - coordinates
-*          TGridDrawState - drawing state of grid
-*
-*  Return: None
-*
-*  Description: This procedure draws contents to a specified cell in
-*               the Options string grid.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBValidationReport.sgOptionsDrawCell(Sender: TObject; ACol,
   ARow: Integer; Rect: TRect; State: TGridDrawState);
 const
@@ -354,29 +294,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s S e l e c t C e l l
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - Object that initiated the event
-*          Integer - currently selected column
-*          Integer - currently selected row
-*          Boolean - indicates whether call can be selected
-*
-*  Return: None
-*
-*  Description: This procedure shows the combo box and populates
-*               it when the user selects a row in the value
-*               column of the options grid.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBValidationReport.sgOptionsSelectCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
 var
   lR, lName : TRect;
@@ -444,26 +361,6 @@ begin
   cbOptions.SetFocus;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s D b l C l i c k
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  TObject - object that initiated the event
-*
-*  Return: None
-*
-*
-*  Description: This procedure rotates through a list of values
-*               when the option name or value is double-clicked.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBValidationReport.cbOptionsDblClick(Sender: TObject);
 begin
   if (sgOptions.Col = OPTION_VALUE_COL) or (sgOptions.Col = OPTION_NAME_COL) then

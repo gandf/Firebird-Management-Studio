@@ -83,15 +83,6 @@ begin
   result := lFileName;
 end;
 
-{
-  G e t N e x t F i e l d ()
-  Input:  InputStr - The string to process
-          FieldDelimiter - The field delimiter to use
-  Return: string - The extracted string
-  Description:  Receives a delimited string and extracts the
-                first field in the string based on the given delimiter
-}
-
 function GetNextField(var InputStr: string; const FieldDelimiter: string): string;
 var
   lFieldDelPos: integer;
@@ -133,14 +124,6 @@ begin
   GetVersionEx(lVersion);
   result := lVersion.dwPlatformId
 end;
-
-{
-  R e m o v e C o n t r o l C h a r s ()
-  Input:  InputStr - The string to process
-  Return: string - The processed string
-  Description:  Receives a string and removes any control
-                characters from it
-}
 
 function RemoveControlChars(const InputStr: string): string;
 var

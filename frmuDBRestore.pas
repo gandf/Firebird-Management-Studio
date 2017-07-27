@@ -17,21 +17,6 @@
  * Contributor(s): Krzysztof Golko.
 }
 
-{****************************************************************
-*
-*  f r m u D B R e s t o r e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for performing
-*                a database restore
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 unit frmuDBRestore;
 
 {$MODE Delphi}
@@ -117,25 +102,6 @@ const
   USE_ALL_SPACE_ROW = 6;
   VERBOSE_OUTPUT_ROW = 7;
 
-{****************************************************************
-*
-*  F o r m C r e a t e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: Ths procedure intializes the form's controls when
-*               the form is initially created.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRestore.FormCreate(Sender: TObject);
 begin
   inherited;
@@ -338,26 +304,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s C h a n g e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure changes the value of the selected
-*               cell in the grid based on what was entered in the
-*               combobox.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRestore.cbOptionsChange(Sender: TObject);
 var
   lSaveDialog: TSaveDialog;
@@ -399,26 +345,6 @@ begin
   }
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s D b l C l i c k ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure rotates the values in the combobox
-*               and updates the selected cell in the grid each
-*               time is is double clicked
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRestore.cbOptionsDblClick(Sender: TObject);
 begin
   if (sgOptions.Col = OPTION_VALUE_COL) or (sgOptions.Col = OPTION_NAME_COL) then
@@ -436,24 +362,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s E x i t ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Description: This procedure changes the value of the selected
-*               cell in the grid based on what was entered in the
-*               combobox.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRestore.cbOptionsExit(Sender: TObject);
 var
   lR : TRect;
@@ -489,25 +397,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  c b O p t i o n s K e y D o w n ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure drops down the combobox for the selected
-*               grid cell when the <DOWN ARROW> key is pressed.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRestore.cbOptionsKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -525,24 +414,6 @@ begin
 //  edtSourceDB.Hint := edtSourceDB.Text;
 end;
 
-{****************************************************************
-*
-*  s g B a c k u p F i l e s K e y D o w n ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRestore.sgBackupFilesKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -562,25 +433,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g D a t a b a s e F i l e s D r a w C e l l ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure is responsible for painting blue
-*               the option value text in the string grid
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRestore.sgDatabaseFilesDrawCell(Sender: TObject; ACol,
   ARow: Integer; Rect: TRect; State: TGridDrawState);
 const
@@ -603,24 +455,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g D a t a b a s e F i l e s K e y D o w n ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description:
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRestore.sgDatabaseFilesKeyDown(Sender: TObject;
   var Key: Word; Shift: TShiftState);
 var
@@ -650,25 +484,6 @@ begin
 
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s D r a w C e l l ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Sender - The object that initiated the event
-*
-*  Return: None
-*
-*  Description: This procedure is responsible for painting blue
-*               the option value text in the string grid
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRestore.sgOptionsDrawCell(Sender: TObject; ACol, ARow: Integer;
   Rect: TRect; State: TGridDrawState);
 const
@@ -691,25 +506,6 @@ begin
   end;
 end;
 
-{****************************************************************
-*
-*  s g O p t i o n s S e l e c t C e l l ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  Refer to the Delphi documentation.
-*
-*  Return: None
-*
-*  Description: This procedure initializes and positions the combobox
-*               depending on which cell in the grid is selected
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 procedure TfrmDBRestore.sgOptionsSelectCell(Sender: TObject; ACol,
   ARow: Integer; var CanSelect: Boolean);
 var
@@ -804,25 +600,6 @@ begin
   cbOptions.SetFocus;
 end;
 
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: boolean - Indicates the success/failure of the operation
-*
-*  Description:  Performs some basic validation on data entered by
-*                the user
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmDBRestore.VerifyInputData(): boolean;
 var
   lCnt: integer;
@@ -874,28 +651,6 @@ begin
 
 end;
 
-{*******************************************************************
-*
-*  D o R e s t o r e ( )
-*
-********************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  SelServerNode - Identifies the selected server
-*          SelTreeNode - Identifies the selected backup file
-*
-*  Return: None
-*
-*  Description: This procedure creates and displays the restore form
-*               in order to capture restore information. It then
-*               performs the restore and destroys the instance of
-*               the form.
-*
-*********************************************************************
-* Revisions:
-*
-*********************************************************************}
 function DoDBRestore(const SourceServerNode: TibcServerNode;
                      const SourceBackupAliasNode: TibcTreeNode): integer;
 var

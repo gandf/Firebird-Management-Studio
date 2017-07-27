@@ -1,9 +1,3 @@
-{
-  f r m u M e s s a g e
-  Description:  This unit provides a default message display
-                window used throughout the application
-}
-
 unit frmuMessage;
 
 {$MODE Delphi}
@@ -127,14 +121,6 @@ implementation
 uses zluUtility, IBErrorCodes;
 
 {$R *.lfm}
-
-{
-  D i s p l a y M s g ()
-  Input:  MsgNo   - Message No
-          MsgText - The actual error message text
-  Description:  Prepare and show message dialog depending on
-                the MsgNo and MsgText
-}
 
 function DisplayMsg(const MsgNo: integer; MsgText: string): boolean;
 var

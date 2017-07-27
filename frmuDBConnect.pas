@@ -17,21 +17,6 @@
  * Contributor(s): Krzysztof Golko, Sergey Gavrilev.
 }
 
-{****************************************************************
-*
-*  f r m u D B C o n n e c t
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for attaching to
-*                a database
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 unit frmuDBConnect;
 
 {$MODE Delphi}
@@ -127,12 +112,6 @@ begin
   Result := CurrSelDatabase.Database.Connected;
 end;
 
-{  Input:  CurrSelDatabase - The specified database[  CurrSelServer   - The specified server
-   SilentConnect - Indicates whether or not to prompt the user for login information or
-                   to use the default login information.
-  Return: Boolean - Indicates the success/failure of the operation
-  Description:  Connects to the specified database of the specified server.
-                If SilentConnect is false the user is prompted for login information. }
 function DBConnect(CurrSelDatabase: TibcDatabaseNode;
   const CurrSelServer: TibcServerNode;
   const SilentConnect: boolean): boolean;
@@ -206,25 +185,6 @@ begin
     ModalResult := mrOK;
 end;
 
-{****************************************************************
-*
-*  V e r i f y I n p u t D a t a ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  None
-*
-*  Return: Boolean - Indicates the success/failure of the operation
-*
-*  Description:  Performs some basic validation on data entered by
-*                the user
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function TfrmDBConnect.VerifyInputData(): boolean;
 begin
   result := true;

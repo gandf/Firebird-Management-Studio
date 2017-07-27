@@ -16,21 +16,6 @@
  * 
  * Contributor(s): ______________________________________.
 }
-{****************************************************************
-*
-*  f r m u A d d C e r t i f i c a t e
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Description:  This unit provides an interface for adding
-*                certificates
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 
 unit frmuAddCertificate;
 
@@ -66,31 +51,6 @@ uses frmuMessage;
 
 {$R *.DFM}
 
-{****************************************************************
-*
-*  A d d C e r t i f i c a t e ( )
-*
-****************************************************************
-*  Author: The Client Server Factory Inc.
-*  Date:   March 1, 1999
-*
-*  Input:  CertificateID  - a string containing the certificate
-*                           ID
-*          CertificateKey - a string containing the certificate
-*                           key
-*
-*  Return: Boolean - inidicates whether or not a certificate ID
-*                    and certificate key are to be added
-*
-*  Description: This form is used to capture a valid
-*               certificate ID and certificate key.  The actual
-*               adding of the license is handled by the main
-*               form.
-*
-*****************************************************************
-* Revisions:
-*
-*****************************************************************}
 function AddCertificate(var CertificateID,CertificateKey: string): boolean;
 var
   frmAddCertificate: TfrmAddCertificate;
