@@ -24,9 +24,9 @@ unit frmuCommDiag;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, SysUtils,Forms, ExtCtrls, StdCtrls, Classes, Controls, ComCtrls, Dialogs,
-  Graphics, zluibcClasses, Winsock, IB,
-  IBDatabase, IBDatabaseInfo, Messages, frmuDlgClass, zluCommDiag, resstring;
+  LCLIntf, LCLType, SysUtils,Forms, ExtCtrls, StdCtrls, Classes, Controls, ComCtrls, Dialogs,
+  Graphics, zluibcClasses, IB,
+  IBDatabase, IBDatabaseInfo, frmuDlgClass, zluCommDiag, zluSockets, resstring;
 
 type
   TfrmCommDiag = class(TDialog)
@@ -84,7 +84,6 @@ type
   end;
 
   function DoDiagnostics(const CurrSelServer: TibcServerNode) : Integer;
-  function ServiceRunning(const CurrSelServer : TibcServerNode) : Boolean;
 
 const
   Port21     = 0;                      // constants to identify TCP/IP service tests
@@ -94,7 +93,7 @@ const
   Ping       = 4;
 
 var
-  frmCommDiag : TfrmCommDiag;
+  frmCommDiag: TfrmCommDiag;
 
 implementation
 
@@ -142,51 +141,6 @@ begin
   finally
     // deallocate memory
     frmCommDiag.Free;
-  end;
-end;
-
-function ServiceRunning(const CurrSelServer: TibcServerNode) : Boolean;
-var
-  lPipe   : TibcPipes;
-  lSocket : TibcSocket;
-  lStr    : String;
-begin
-  lPipe   := Nil;
-  lSocket := Nil;
-  Result  := True;
-  try
-    case CurrSelServer.Server.Protocol of
-      TCP :
-      begin
-        lSocket := TibcSocket.Create(Nil);
-        lSocket.Host := CurrSelServer.Servername;
-        lSocket.Port := 3050;         // gds_db
-        lSocket.Timeout := 5000;      // set timeout for 5 secs.
-        try
-          lSocket.Connect;
-        except
-          Result := False;
-        end;
-      end;
-      NamedPipe :
-      begin
-        lPipe := TibcPipes.Create;
-        lPipe.Server := CurrSelServer.Servername;
-        lPipe.Path := '\pipe\interbas\server\gds_db';
-        lPipe.Tries := 5;
-        lStr := '';
-
-        // test pipe
-        Result := lPipe.TestPipe(lStr, True);
-      end;
-      SPX :
-      begin
-
-      end;
-    end;
-  finally
-    lPipe.Free;
-    lSocket.Free
   end;
 end;
 

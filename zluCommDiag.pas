@@ -24,8 +24,8 @@ unit zluCommDiag;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Winsock, Math,  lNetComponents, Windows;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Winsock,  Windows;
 
 type
   TIPAddress = LongInt;                // IP address
@@ -134,18 +134,6 @@ type
     property Size      : Integer read GetSize write SetSize;
     property TimeOut   : Integer read GetTimeout write SetTimeout;
     property TTL       : Integer read GetTTL write SetTTL;
-  end;
-
-  TibcSocket = class(TLTCPComponent)
-  private
-    { private declarations }
-    FPortName               : String;
-    function GetPortName    : String;
-  public
-    { public declarations }
-    property PortName       : String read GetPortName;
-  published
-    { published declarations }
   end;
 
   TibcSPX = class
@@ -492,7 +480,7 @@ begin
     FLastError:=GetLastError;
 
     // get ICMP reply structure
-    FReply:=pIPE^;
+    FReply := pIPE^;
   finally
     // deallocate memory
     FreeMem(pIPE);
@@ -500,36 +488,6 @@ begin
     FreeMem(pReqData);
     FreeLibrary(hICMPdll);
   end;
-end;
-
-function TibcSocket.GetPortName : String;
-var
-  Service : String;
-begin
-  // list of well known ports
-
-  // determine service name based on port number
-  // these are well-known ports
-  case Port of
-    IP_PORT_ECHO       : Service:='ECHO';
-    IP_PORT_DISCARD    : Service:='DISCARD';
-    IP_PORT_SYSTAT     : Service:='SYSTAT';
-    IP_PORT_DAYTIME    : Service:='DAYTIME';
-    IP_PORT_NETSTAT    : Service:='NETSTAT';
-    IP_PORT_FTP        : Service:='FTP';
-    IP_PORT_TELNET     : Service:='TELNET';
-    IP_PORT_SMTP       : Service:='SMTP';
-    IP_PORT_TIMESERVER : Service:='TIMESERVER';
-    IP_PORT_NAMESERVER : Service:='NAMESERVER';
-    IP_PORT_WHOIS      : Service:='WHOIS';
-    IP_PORT_MTP        : Service:='MTP';
-    IP_PORT_GDS_DB     : Service:='GDS_DB';
-  else
-    Service:='';
-  end;
-
-  FPortName:=Service;
-  Result:=FPortName;                   // return service name
 end;
 
 // accessor to get server name

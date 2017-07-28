@@ -9,4 +9,3 @@ Win32 EXE file are provided to test without compile for all people. Source and s
 
 Components to install in Lazarus :
 - ibx : https://www.mwasoftware.co.uk/ibx
-- lnet : https://svn.freepascal.org/svn/fpcprojects/lnet/trunk/

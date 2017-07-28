@@ -24,7 +24,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <BuildNr Value="6"/>
+      <BuildNr Value="7"/>
       <StringTable CompanyName="flyonsoft" InternalName="Firebird Management Studio" LegalCopyright="Copyright © 2017 gandf" OriginalFilename="Firebird_Management_Studio.exe" ProductName="Firebird Management Studio" ProductVersion="0.0.0.1"/>
     </VersionInfo>
     <MacroValues Count="1">
@@ -44,7 +44,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="4">
+    <RequiredPackages Count="3">
       <Item1>
         <PackageName Value="SynEdit"/>
       </Item1>
@@ -54,11 +54,8 @@
       <Item3>
         <PackageName Value="ibexpress"/>
       </Item3>
-      <Item4>
-        <PackageName Value="lnetvisual"/>
-      </Item4>
     </RequiredPackages>
-    <Units Count="44">
+    <Units Count="45">
       <Unit0>
         <Filename Value="Firebird_Management_Studio.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -340,6 +337,11 @@
         <Filename Value="resstring.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit43>
+      <Unit44>
+        <Filename Value="zlusockets.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="zluSockets"/>
+      </Unit44>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
