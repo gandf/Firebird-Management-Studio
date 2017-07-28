@@ -102,8 +102,8 @@ begin
     { Get the version information for Firebird Management Studio }
     FPath := Application.ExeName;
     GetFileVersion(FPath, CompanyName, FileVersion, LegalCopyright, ProductName, ProductVersion);
-    Caption := LZTAboutFormTitle + ' ' + ProductName + ' ' + ProductVersion;
-    stxFbMStudioVer.Caption := LZTAboutFbMStudioVer + ' ' + ProductVersion;
+    Caption := LZTAboutFormTitle + ' ' + ProductName + ' ' + FileVersion;
+    stxFbMStudioVer.Caption := LZTAboutFbMStudioVer + ' ' + FileVersion;
     stxCopyright.Caption := LegalCopyright;
 
     //Get file version information for fbclient.dll or GDS32.DLL
