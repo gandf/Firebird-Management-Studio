@@ -1,67 +1,75 @@
 inherited frmSQLOptions: TfrmSQLOptions
   Left = 370
+  Height = 336
   Top = 364
+  Width = 316
   Caption = 'SQL Options'
-  ClientHeight = 328
-  ClientWidth = 309
-  Position = poOwnerFormCenter
+  ClientHeight = 336
+  ClientWidth = 316
   OnShow = FormShow
-  PixelsPerInch = 96
-  object btnApply: TButton
+  Position = poOwnerFormCenter
+  object btnApply: TButton[0]
     Left = 231
+    Height = 25
     Top = 295
     Width = 75
-    Height = 25
     Caption = '&Apply'
     Enabled = False
-    TabOrder = 0
     OnClick = btnApplyClick
+    TabOrder = 0
   end
-  object Button1: TButton
+  object Button1: TButton[1]
     Left = 69
+    Height = 25
     Top = 295
     Width = 75
-    Height = 25
     Caption = '&OK'
-    TabOrder = 1
     OnClick = Button1Click
+    TabOrder = 1
   end
-  object pgControl: TPageControl
+  object pgControl: TPageControl[2]
     Left = 0
-    Top = 0
-    Width = 309
     Height = 288
+    Top = 0
+    Width = 316
     ActivePage = TabSheet1
     Align = alTop
+    TabIndex = 0
     TabOrder = 2
     object TabSheet1: TTabSheet
       Caption = 'Options'
+      ClientHeight = 262
+      ClientWidth = 308
       object sgOptions: TStringGrid
         Left = 3
+        Height = 203
         Top = 6
         Width = 294
-        Height = 203
         Color = clSilver
         ColCount = 2
         DefaultColWidth = 90
         DefaultRowHeight = 21
         FixedCols = 0
-        RowCount = 9
         FixedRows = 0
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing]
+        RowCount = 9
         ScrollBars = ssNone
         TabOrder = 0
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
         OnDrawCell = sgOptionsDrawCell
         OnSelectCell = sgOptionsSelectCell
         ColWidths = (
           174
-          113)
+          113
+        )
       end
       object pnlOptionName: TPanel
         Left = 6
+        Height = 25
         Top = 5
         Width = 172
-        Height = 25
         Alignment = taLeftJustify
         BevelInner = bvLowered
         BevelOuter = bvLowered
@@ -69,107 +77,122 @@ inherited frmSQLOptions: TfrmSQLOptions
       end
       object cbOptions: TComboBox
         Left = 179
+        Height = 21
         Top = 7
         Width = 116
-        Height = 21
-        TabStop = False
         ItemHeight = 13
-        ParentShowHint = False
-        ShowHint = False
-        TabOrder = 2
         OnChange = cbOptionsChange
         OnDblClick = cbOptionsDblClick
         OnExit = cbOptionsExit
         OnKeyDown = cbOptionsKeyDown
+        ParentShowHint = False
+        TabOrder = 2
+        TabStop = False
       end
       object cbClearInput: TCheckBox
         Left = 9
+        Height = 19
         Top = 225
-        Width = 188
-        Height = 17
+        Width = 166
         Caption = '&Clear input window on success'
-        TabOrder = 3
         OnClick = cbOptionsChange
+        TabOrder = 3
       end
     end
     object TabSheet2: TTabSheet
       Caption = 'Advanced'
+      ClientHeight = 0
+      ClientWidth = 0
       ImageIndex = 1
       object GroupBox1: TGroupBox
         Left = 5
+        Height = 166
         Top = 4
         Width = 292
-        Height = 166
         Caption = 'SQL Events'
+        ClientHeight = 148
+        ClientWidth = 288
         TabOrder = 0
         object Label1: TLabel
           Left = 8
+          Height = 13
           Top = 65
           Width = 39
-          Height = 13
           Caption = 'NOTE:'
-          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -11
           Font.Name = 'MS Sans Serif'
           Font.Style = [fsBold]
+          ParentColor = False
           ParentFont = False
         end
         object cbUpdateConnect: TCheckBox
           Left = 5
+          Height = 17
           Top = 7
           Width = 179
-          Height = 17
           Caption = 'Update IBConsole on C&onnect'
-          TabOrder = 0
           OnClick = cbOptionsChange
+          TabOrder = 0
         end
         object cbUpdateCreate: TCheckBox
           Left = 5
+          Height = 17
           Top = 31
           Width = 171
-          Height = 17
           Caption = 'Update IBConsole on C&reate'
-          TabOrder = 1
           OnClick = cbOptionsChange
+          TabOrder = 1
         end
         object Memo1: TMemo
           Left = 18
+          Height = 46
           Top = 79
           Width = 259
-          Height = 46
           BorderStyle = bsNone
           Lines.Strings = (
             'Enabling either option may result in an additional '
-            'connection to the server.')
+            'connection to the server.'
+          )
           ParentColor = True
           TabOrder = 2
         end
       end
       object rgTransactions: TRadioGroup
         Left = 6
+        Height = 82
         Top = 172
         Width = 292
-        Height = 82
+        AutoFill = True
         Caption = 'Transactions'
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 1
+        ClientHeight = 64
+        ClientWidth = 288
         ItemIndex = 0
         Items.Strings = (
           '&Commit on exit'
-          'Ro&llback on exit')
-        TabOrder = 1
+          'Ro&llback on exit'
+        )
         OnClick = cbOptionsChange
+        TabOrder = 1
       end
     end
   end
-  object Button2: TButton
+  object Button2: TButton[3]
     Left = 150
+    Height = 25
     Top = 295
     Width = 75
-    Height = 25
     Cancel = True
     Caption = '&Cancel'
     ModalResult = 2
-    TabOrder = 3
     OnClick = Button2Click
+    TabOrder = 3
   end
 end

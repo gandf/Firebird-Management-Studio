@@ -24,8 +24,8 @@ interface
 
 uses
   Forms, ExtCtrls, StdCtrls, Classes, Controls, SysUtils, zluibcClasses,
-  ComCtrls, Graphics, IBServices, frmuMessage, IB, LCLIntf, LCLType, LMessages,
-  Messages, frmuDlgClass, resstring;
+  ComCtrls, Graphics, IBServices, frmuMessage, IB, LCLIntf, LCLType,
+  frmuDlgClass, resstring;
 
 type
   TfrmServerProperties = class(TDialog)
@@ -88,7 +88,7 @@ function EditServerProperties(const CurrSelServer: TibcServerNode): integer;
 implementation
 
 uses
-  zluGlobal, frmuMain, IBDatabase, frmuDBConnections, IBHeader, IBErrorCodes,
+  zluGlobal, frmuMain, IBDatabase, frmuDBConnections, IBErrorCodes,
   zluPersistent;
 
 {$R *.lfm}

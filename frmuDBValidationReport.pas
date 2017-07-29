@@ -24,7 +24,7 @@ unit frmuDBValidationReport;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   Grids, StdCtrls, ExtCtrls, IB, IBServices, IBDatabase, zluibcClasses, frmuDlgClass;
 
 type
@@ -60,7 +60,7 @@ function ShowReport(const str : String; const SourceServerNode: TibcServerNode;
 
 implementation
 
-uses zluGlobal, zluUtility, frmuMessage, frmuMain, IBErrorCodes;
+uses zluGlobal, frmuMessage, frmuMain, IBErrorCodes;
 
 {$R *.lfm}
 

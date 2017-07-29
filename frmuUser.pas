@@ -24,8 +24,8 @@ unit frmuUser;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls, Dialogs,
-  IBServices, zluibcClasses, Graphics, Messages, frmuDlgClass, ActnList;
+  LCLIntf, LCLType, SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls, Dialogs,
+  IBServices, zluibcClasses, Graphics, frmuDlgClass, ActnList;
 
 type
   TfrmUserInfo = class(TDialog)
@@ -91,8 +91,8 @@ type
 implementation
 
 uses
-  IB, frmuMessage, zluGlobal, zluUtility, frmuMain, IBErrorCodes,
-  FBMessages, FBParamBlock;
+  IB, frmuMessage, zluGlobal, frmuMain, IBErrorCodes,
+  FBMessages;
 
 {$R *.lfm}
 

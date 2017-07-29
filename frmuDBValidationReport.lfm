@@ -1,121 +1,120 @@
-object frmDBValidationReport: TfrmDBValidationReport
+inherited frmDBValidationReport: TfrmDBValidationReport
   Left = 179
+  Height = 442
   Top = 150
-  BorderIcons = [biSystemMenu]
+  Width = 529
   BorderStyle = bsSingle
   Caption = 'Validation Report'
-  ClientHeight = 443
-  ClientWidth = 535
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  Position = poScreenCenter
+  ClientHeight = 442
+  ClientWidth = 529
   OnCreate = FormCreate
   OnShow = FormShow
-  PixelsPerInch = 96
-  object lblDatabaseName: TLabel
+  Position = poScreenCenter
+  object lblDatabaseName: TLabel[0]
     Left = 15
+    Height = 16
     Top = 15
     Width = 67
-    Height = 16
     AutoSize = False
     Caption = 'Database:'
+    ParentColor = False
   end
-  object bvlLine1: TBevel
+  object bvlLine1: TBevel[1]
     Left = 14
+    Height = 8
     Top = 42
     Width = 504
-    Height = 8
     Shape = bsTopLine
   end
-  object lblOptions: TLabel
+  object lblOptions: TLabel[2]
     Left = 15
+    Height = 19
     Top = 306
     Width = 75
-    Height = 19
     AutoSize = False
     Caption = 'O&ptions:'
     FocusControl = sgOptions
+    ParentColor = False
   end
-  object stxDatabaseName: TStaticText
+  object stxDatabaseName: TStaticText[3]
     Left = 81
+    Height = 21
     Top = 15
     Width = 326
-    Height = 21
-    AutoSize = False
     TabOrder = 0
   end
-  object memReport: TMemo
+  object memReport: TMemo[4]
     Left = 14
+    Height = 240
     Top = 57
     Width = 504
-    Height = 240
     ReadOnly = True
     ScrollBars = ssBoth
     TabOrder = 1
   end
-  object pnlOptionName: TPanel
+  object pnlOptionName: TPanel[5]
     Left = 16
+    Height = 26
     Top = 330
     Width = 223
-    Height = 26
     Alignment = taLeftJustify
     BevelInner = bvLowered
     BevelOuter = bvLowered
     TabOrder = 2
   end
-  object sgOptions: TStringGrid
+  object sgOptions: TStringGrid[6]
     Left = 15
+    Height = 61
     Top = 327
     Width = 503
-    Height = 61
     Color = clSilver
     ColCount = 2
     DefaultColWidth = 90
     DefaultRowHeight = 21
     FixedCols = 0
-    RowCount = 2
     FixedRows = 0
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing]
+    RowCount = 2
     ScrollBars = ssNone
     TabOrder = 3
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
     OnDrawCell = sgOptionsDrawCell
     OnSelectCell = sgOptionsSelectCell
     ColWidths = (
       274
-      222)
+      222
+    )
   end
-  object cbOptions: TComboBox
+  object cbOptions: TComboBox[7]
     Left = 292
+    Height = 21
     Top = 329
     Width = 223
-    Height = 21
     ItemHeight = 13
-    TabOrder = 4
     OnChange = cbOptionsChange
     OnDblClick = cbOptionsDblClick
     OnExit = cbOptionsExit
     OnKeyDown = cbOptionsKeyDown
+    TabOrder = 4
   end
-  object btnRepair: TButton
+  object btnRepair: TButton[8]
     Left = 331
+    Height = 25
     Top = 400
     Width = 75
-    Height = 25
     Caption = '&Repair'
-    TabOrder = 5
     OnClick = btnRepairClick
+    TabOrder = 5
   end
-  object btnCancel: TButton
+  object btnCancel: TButton[9]
     Left = 431
+    Height = 25
     Top = 400
     Width = 75
-    Height = 25
     Caption = '&Cancel'
-    TabOrder = 6
     OnClick = btnCancelClick
+    TabOrder = 6
   end
 end

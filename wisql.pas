@@ -24,9 +24,9 @@ unit wisql;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Interfaces, Forms, Dialogs,
-  Menus, ComCtrls, ToolWin, ExtCtrls, StdCtrls, Grids, DBGrids,
-  Db, ImgList, StdActns, ActnList, zluibcClasses, IB, IBDatabase, IBCustomDataSet,
+  LCLIntf, LCLType, Messages, SysUtils, Classes, Graphics, Controls, Interfaces, Forms, Dialogs,
+  Menus, ComCtrls, ExtCtrls, StdCtrls, Grids, DBGrids,
+  Db, StdActns, ActnList, zluibcClasses, IB, IBDatabase, IBCustomDataSet,
   zluSQL, MemoLists, FileUtil, SynEdit;
 
 type
@@ -257,7 +257,7 @@ implementation
 
 uses frmuMessage, zluGlobal, frmuSQLOptions, frmuDisplayBlob,
      frmuDispMemo, Printers, fileCtrl, zluUtility,
-     frmuMain, IBSQL, Math;
+     frmuMain, Math;
 
 const
   OBJECTNAME = '\ISQL';

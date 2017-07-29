@@ -1,10 +1,12 @@
 inherited frmDBRestore: TfrmDBRestore
   Left = 340
+  Height = 390
   Top = 365
-  Width = 116
+  Width = 598
   BorderStyle = bsSingle
   Caption = 'Database Restore'
-  ClientWidth = 116
+  ClientHeight = 390
+  ClientWidth = 598
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   Position = poScreenCenter

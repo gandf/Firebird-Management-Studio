@@ -24,8 +24,8 @@ unit frmuDBConnect;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls,
-  zluibcClasses, IB, Messages, frmuDlgClass;
+  LCLIntf, LCLType, SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls,
+  zluibcClasses, IB, frmuDlgClass, resstring;
 
 type
   TfrmDBConnect = class(TDialog)
@@ -49,6 +49,7 @@ type
     procedure btnConnectClick(Sender: TObject);
     procedure edtRoleChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     function VerifyInputData(): boolean;
@@ -224,29 +225,67 @@ begin
     Items.Add('None');
     Items.Add('ASCII');
     Items.Add('BIG_5');
+    Items.Add('CP943C');
     Items.Add('CYRL');
     Items.Add('DOS437');
+    Items.Add('DOS737');
     Items.Add('DOS850');
     Items.Add('DOS852');
     Items.Add('DOS857');
+    Items.Add('DOS858');
     Items.Add('DOS860');
     Items.Add('DOS861');
+    Items.Add('DOS862');
     Items.Add('DOS863');
+    Items.Add('DOS864');
     Items.Add('DOS865');
+    Items.Add('DOS866');
+    Items.Add('DOS869');
     Items.Add('EUCJ_0208');
     Items.Add('GB_2312');
     Items.Add('ISO8859_1');
+    Items.Add('ISO8859_2');
+    Items.Add('ISO8859_3');
+    Items.Add('ISO8859_4');
+    Items.Add('ISO8859_5');
+    Items.Add('ISO8859_6');
+    Items.Add('ISO8859_7');
+    Items.Add('ISO8859_8');
+    Items.Add('ISO8859_9');
+    Items.Add('ISO8859_13');
+    Items.Add('KOI8R');
+    Items.Add('KOI8U');
     Items.Add('KSC_5601');
     Items.Add('NEXT');
     Items.Add('OCTETS');
     Items.Add('SJIS_0208');
+    Items.Add('TIS620');
     Items.Add('UNICODE_FSS');
+    Items.Add('UTF8');
     Items.Add('WIN1250');
     Items.Add('WIN1251');
     Items.Add('WIN1252');
     Items.Add('WIN1253');
     Items.Add('WIN1254');
+    Items.Add('WIN1255');
+    Items.Add('WIN1256');
+    Items.Add('WIN1257');
+    Items.Add('WIN1258');
   end;
 end;
+
+Procedure TfrmDBConnect.TranslateVisual;
+Begin
+  lblDatabaseName.Caption := LZTDBConnectlblDatabaseNameCaption;
+  lblUsername.Caption := LZTDBConnectlblUsernameCaption;
+  lblPassword.Caption := LZTDBConnectlblPasswordCaption;
+  lblRole.Caption := LZTDBConnectlblRoleCaption;
+  Label1.Caption := LZTDBConnectLabel1Caption;
+  Label2.Caption := LZTDBConnectLabel2Caption;
+  cbCaseSensitive.Caption := LZTDBConnectcbCaseSensitiveCaption;
+  btnConnect.Caption := LZTDBConnectbtnConnectCaption;
+  btnCancel.Caption := LZTDBConnectbtnCancelCaption;
+  Self.Caption := LZTDBConnectFormTitle;
+End;
 
 end.

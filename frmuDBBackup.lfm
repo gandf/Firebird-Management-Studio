@@ -1,25 +1,19 @@
-object frmDBBackup: TfrmDBBackup
+inherited frmDBBackup: TfrmDBBackup
   Left = 119
+  Height = 374
   Top = 212
-  BorderIcons = [biSystemMenu]
+  Width = 604
   BorderStyle = bsSingle
   Caption = 'Database Backup'
-  ClientHeight = 368
-  ClientWidth = 589
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  Position = poScreenCenter
+  ClientHeight = 374
+  ClientWidth = 604
   OnCreate = FormCreate
-  PixelsPerInch = 96
-  object imgDownArrow: TImage
+  Position = poScreenCenter
+  object imgDownArrow: TImage[0]
     Left = 12
+    Height = 25
     Top = 96
     Width = 295
-    Height = 25
     Center = True
     Picture.Data = {
       07544269746D617076050000424D760500000000000076000000280000008000
@@ -66,182 +60,199 @@ object frmDBBackup: TfrmDBBackup
       4444444444444444444444444444444444444444444444777777777777777777
       7777777777777777777777777744444444444444444444444444444444444444
       4444444444444444444444444444444444444444444444777777777777777777
-      7777}
+      7777
+    }
   end
-  object lblOptions: TLabel
+  object lblOptions: TLabel[1]
     Left = 318
+    Height = 13
     Top = 12
     Width = 61
-    Height = 13
     AutoSize = False
     Caption = 'O&ptions:'
+    ParentColor = False
   end
-  object gbDatabaseFile: TGroupBox
+  object gbDatabaseFile: TGroupBox[2]
     Left = 12
+    Height = 79
     Top = 12
     Width = 302
-    Height = 79
     Caption = ' Database '
+    ClientHeight = 61
+    ClientWidth = 298
     TabOrder = 0
     object lblDatabaseServer: TLabel
       Left = 10
+      Height = 13
       Top = 10
       Width = 34
-      Height = 13
       Caption = 'Server:'
+      ParentColor = False
     end
     object lblDatabaseAlias: TLabel
       Left = 10
+      Height = 13
       Top = 34
       Width = 37
-      Height = 13
       AutoSize = False
       Caption = '&Alias:'
       FocusControl = cbDatabaseAlias
+      ParentColor = False
     end
     object stxDatabaseServer: TStaticText
       Left = 56
+      Height = 17
       Top = 10
       Width = 229
-      Height = 17
-      AutoSize = False
       TabOrder = 0
     end
     object cbDatabaseAlias: TComboBox
       Left = 52
+      Height = 21
       Top = 34
       Width = 229
-      Height = 21
-      Style = csDropDownList
       ItemHeight = 13
+      OnChange = cbDatabaseAliasChange
       ParentShowHint = False
       ShowHint = True
+      Style = csDropDownList
       TabOrder = 1
-      OnChange = cbDatabaseAliasChange
     end
   end
-  object gbBackupFiles: TGroupBox
+  object gbBackupFiles: TGroupBox[3]
     Left = 12
+    Height = 211
     Top = 120
     Width = 302
-    Height = 211
     Caption = ' Backup File(s) '
+    ClientHeight = 193
+    ClientWidth = 298
     TabOrder = 1
     object lblBackupServer: TLabel
       Left = 10
+      Height = 13
       Top = 10
       Width = 43
-      Height = 13
       AutoSize = False
       Caption = '&Server:'
       FocusControl = cbBackupServer
+      ParentColor = False
     end
     object lblBackupAlias: TLabel
       Left = 10
+      Height = 19
       Top = 40
       Width = 37
-      Height = 19
       AutoSize = False
       Caption = 'A&lias:'
       FocusControl = cbBackupAlias
+      ParentColor = False
     end
     object sgBackupFiles: TStringGrid
       Left = 10
+      Height = 103
       Top = 75
       Width = 278
-      Height = 103
       ColCount = 2
       DefaultRowHeight = 18
       FixedCols = 0
-      RowCount = 6
       Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing, goEditing]
+      RowCount = 6
       TabOrder = 2
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'MS Sans Serif'
       OnDrawCell = sgBackupFilesDrawCell
       OnKeyDown = sgBackupFilesKeyDown
       ColWidths = (
         182
-        73)
+        73
+      )
     end
     object cbBackupServer: TComboBox
       Left = 58
+      Height = 21
       Top = 10
       Width = 229
-      Height = 21
-      Style = csDropDownList
       ItemHeight = 13
-      TabOrder = 0
       OnChange = cbBackupServerChange
+      Style = csDropDownList
+      TabOrder = 0
     end
     object cbBackupAlias: TComboBox
       Left = 58
+      Height = 21
       Top = 40
       Width = 229
-      Height = 21
       ItemHeight = 13
-      TabOrder = 1
       OnChange = cbBackupAliasChange
+      TabOrder = 1
     end
   end
-  object sgOptions: TStringGrid
+  object sgOptions: TStringGrid[4]
     Left = 318
+    Height = 301
     Top = 30
     Width = 259
-    Height = 301
     Color = clSilver
     ColCount = 2
     DefaultColWidth = 90
     DefaultRowHeight = 21
     FixedCols = 0
-    RowCount = 10
     FixedRows = 0
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing]
+    RowCount = 10
     TabOrder = 2
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
     OnDrawCell = sgOptionsDrawCell
     OnSelectCell = sgOptionsSelectCell
     ColWidths = (
       145
-      108)
+      108
+    )
   end
-  object pnlOptionName: TPanel
+  object pnlOptionName: TPanel[5]
     Left = 320
+    Height = 22
     Top = 32
     Width = 144
-    Height = 22
     Alignment = taLeftJustify
     BevelInner = bvLowered
     BevelOuter = bvLowered
     TabOrder = 3
   end
-  object cbOptions: TComboBox
+  object cbOptions: TComboBox[6]
     Left = 466
+    Height = 21
     Top = 31
     Width = 109
-    Height = 21
-    TabStop = False
     ItemHeight = 13
-    TabOrder = 4
     OnChange = cbOptionsChange
     OnDblClick = cbOptionsDblClick
     OnExit = cbOptionsExit
     OnKeyDown = cbOptionsKeyDown
+    TabOrder = 4
+    TabStop = False
   end
-  object btnOK: TButton
+  object btnOK: TButton[7]
     Left = 425
+    Height = 25
     Top = 336
     Width = 75
-    Height = 25
     Caption = '&OK'
-    TabOrder = 5
     OnClick = btnOKClick
+    TabOrder = 5
   end
-  object btnCancel: TButton
+  object btnCancel: TButton[8]
     Left = 503
+    Height = 25
     Top = 336
     Width = 75
-    Height = 25
     Caption = '&Cancel'
     Default = True
-    TabOrder = 6
     OnClick = btnCancelClick
+    TabOrder = 6
   end
 end

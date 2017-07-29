@@ -24,7 +24,7 @@ unit frmuDBValidation;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls, ComCtrls, zluibcClasses, IBServices, IB,
   Grids, frmuDlgClass;
 
@@ -58,7 +58,7 @@ function DoDBValidation(const SourceServerNode: TibcServerNode; const CurrSelDat
 
 implementation
 
-uses zluGlobal, zluUtility, frmuMessage, frmuDBValidationReport,
+uses zluGlobal, frmuMessage, frmuDBValidationReport,
      fileCtrl, frmuMain, IBErrorCodes;
 
 {$R *.lfm}

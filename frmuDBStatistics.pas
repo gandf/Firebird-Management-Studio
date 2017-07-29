@@ -24,7 +24,7 @@ unit frmuDBStatistics;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls, ComCtrls, zluibcClasses, IBServices, IB, Grids, frmuDlgClass;
 
 type
@@ -60,7 +60,7 @@ function DoDBStatistics(const SourceServerNode: TibcServerNode;
 implementation
 
 uses
-  zluGlobal, zluUtility, frmuMessage, fileCtrl, IBErrorCodes,
+  zluGlobal, frmuMessage, fileCtrl, IBErrorCodes,
   frmuMain;
 
 {$R *.lfm}

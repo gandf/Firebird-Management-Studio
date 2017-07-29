@@ -23,11 +23,11 @@ unit frmuMain;
 
 interface
 
-uses LCLIntf, LCLType, LMessages, Classes, Graphics, Interfaces, Forms, Controls, Menus, Dialogs, StdCtrls,
-  Buttons, ExtCtrls, ComCtrls, ImgList, ToolWin, Grids, DBGrids, DBCtrls,
-  Registry, zluibcClasses, IBServices, IB, Messages, SysUtils,
-  SynEdit, DB, IBHeader, sqldb,
-  IBDatabaseInfo, frmuDlgClass, ActnList, StdActns, wisql, frmuObjectWindow,
+uses LCLIntf, LCLType, Classes, Graphics, Interfaces, Forms, Controls, Menus, Dialogs, StdCtrls,
+  Buttons, ExtCtrls, ComCtrls, ImgList, DBGrids, DBCtrls,
+  Registry, zluibcClasses, IBServices, IB, SysUtils,
+  SynEdit, DB, sqldb,
+  ActnList, StdActns, wisql, frmuObjectWindow,
   IBExtract, zluPersistent,IBQuery,IBDatabase,IBCustomDataSet, IBSQL, Windows, gettext, Translations, resstring;
 
 type
@@ -422,7 +422,7 @@ uses frmuAbout,zluGlobal,frmuUser,frmuDBRegister,frmuServerRegister,dmuMain,
   frmuServerProperties,frmuDBProperties,frmuBackupAliasProperties,
   frmuDBCreate,frmuDBConnections,frmuDBValidation,frmuDBShutdown,
   frmuCommDiag, frmuDBTransactions,
-  frmuDBStatistics, frmuDispMemo, frmuModifyServerAlias, zluSQL, frmuDisplayBlob,
+  frmuDBStatistics, frmuModifyServerAlias,
   frmuTools, frmuDescription, frmuWindowList, CommCtrl, IBErrorCodes;
 
 const

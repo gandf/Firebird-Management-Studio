@@ -30,7 +30,7 @@ interface
 
 uses                       
   SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls, Dialogs, zluibcClasses,
-  Grids, Graphics, LCLIntf, LCLType, LMessages, Comctrls, IB, Messages, frmuDlgClass, FileUtil;
+  Grids, Graphics, LCLIntf, LCLType, Comctrls, IB, frmuDlgClass, FileUtil;
 
 type
   TfrmDBBackup = class(TDialog)
@@ -84,7 +84,7 @@ function DoDBBackup(var SourceDBAlias,BackupAlias: string;
 
 implementation
 
-uses zluGlobal, frmuServerRegister, IBServices, frmuMessage,
+uses zluGlobal, IBServices, frmuMessage,
   frmuMain, zluUtility, IBErrorCodes;
 
 {$R *.lfm}

@@ -29,7 +29,7 @@ unit zluPersistent;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, SysUtils, Classes, Registry, Forms,
+  LCLIntf, LCLType, SysUtils, Classes, Registry, Forms,
   IBServices, zluGlobal, IB, gettext, Translations, resstring;
 
 type

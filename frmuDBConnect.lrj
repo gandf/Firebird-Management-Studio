@@ -1,0 +1,13 @@
+{"version":1,"strings":[
+{"hash":266957892,"name":"tfrmdbconnect.caption","sourcebytes":[68,97,116,97,98,97,115,101,32,67,111,110,110,101,99,116],"value":"Database Connect"},
+{"hash":175686410,"name":"tfrmdbconnect.lbldatabasename.caption","sourcebytes":[68,97,116,97,98,97,115,101,58],"value":"Database:"},
+{"hash":75483722,"name":"tfrmdbconnect.lblusername.caption","sourcebytes":[38,85,115,101,114,32,78,97,109,101,58],"value":"&User Name:"},
+{"hash":179363578,"name":"tfrmdbconnect.lblpassword.caption","sourcebytes":[38,80,97,115,115,119,111,114,100,58],"value":"&Password:"},
+{"hash":45703818,"name":"tfrmdbconnect.lblrole.caption","sourcebytes":[38,82,111,108,101,58],"value":"&Role:"},
+{"hash":53490218,"name":"tfrmdbconnect.label1.caption","sourcebytes":[67,108,105,101,110,116,32,38,68,105,97,108,101,99,116,58],"value":"Client &Dialect:"},
+{"hash":212163300,"name":"tfrmdbconnect.label2.caption","sourcebytes":[67,104,97,114,97,99,116,101,114,32,32,38,83,101,116],"value":"Character  &Set"},
+{"hash":224743412,"name":"tfrmdbconnect.btnconnect.caption","sourcebytes":[67,38,111,110,110,101,99,116],"value":"C&onnect"},
+{"hash":177752476,"name":"tfrmdbconnect.btncancel.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"},
+{"hash":70425349,"name":"tfrmdbconnect.stxdatabasename.caption","sourcebytes":[115,116,120,68,97,116,97,98,97,115,101,78,97,109,101],"value":"stxDatabaseName"},
+{"hash":238892853,"name":"tfrmdbconnect.cbcasesensitive.caption","sourcebytes":[67,38,97,115,101,32,115,101,110,115,105,116,105,118,101,32,114,111,108,101,32,110,97,109,101],"value":"C&ase sensitive role name"}
+]}

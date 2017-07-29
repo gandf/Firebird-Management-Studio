@@ -24,8 +24,8 @@ unit frmuWindowList;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  frmuDlgClass, StdCtrls;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  frmuDlgClass, StdCtrls, resstring;
 
 type
   TdlgWindowList = class(TDialog)
@@ -35,6 +35,7 @@ type
     procedure btnSwitchClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure lbWindowsClick(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -80,5 +81,12 @@ begin
   btnSwitch.Enabled := true;
   btnClose.Enabled := true;
 end;
+
+Procedure TdlgWindowList.TranslateVisual;
+Begin
+  btnSwitch.Caption := LZTWindowsListbtnSwitch;
+  btnClose.Caption := LZTWindowsListbtnClose;
+  Self.Caption := LZTWindowsListFormTitle;
+End;
 
 end.

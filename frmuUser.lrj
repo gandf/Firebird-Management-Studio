@@ -1,0 +1,19 @@
+{"version":1,"strings":[
+{"hash":225651454,"name":"tfrmuserinfo.caption","sourcebytes":[85,115,101,114,32,73,110,102,111,114,109,97,116,105,111,110],"value":"User Information"},
+{"hash":177351,"name":"tfrmuserinfo.btnnew.caption","sourcebytes":[38,78,101,119],"value":"&New"},
+{"hash":44595001,"name":"tfrmuserinfo.btnapply.caption","sourcebytes":[38,65,112,112,108,121],"value":"&Apply"},
+{"hash":179055749,"name":"tfrmuserinfo.btndelete.caption","sourcebytes":[38,68,101,108,101,116,101],"value":"&Delete"},
+{"hash":44709525,"name":"tfrmuserinfo.btnclose.caption","sourcebytes":[38,67,108,111,115,101],"value":"&Close"},
+{"hash":177752476,"name":"tfrmuserinfo.btncancel.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"},
+{"hash":59122480,"name":"tfrmuserinfo.gboptionalinfo.caption","sourcebytes":[32,79,112,116,105,111,110,97,108,32,73,110,102,111,114,109,97,116,105,111,110,32],"value":" Optional Information "},
+{"hash":83462698,"name":"tfrmuserinfo.lblfname.caption","sourcebytes":[38,70,105,114,115,116,32,78,97,109,101,58],"value":"&First Name:"},
+{"hash":210495626,"name":"tfrmuserinfo.lblmname.caption","sourcebytes":[38,77,105,100,100,108,101,32,78,97,109,101,58],"value":"&Middle Name:"},
+{"hash":109013802,"name":"tfrmuserinfo.lbllname.caption","sourcebytes":[38,76,97,115,116,32,78,97,109,101,58],"value":"&Last Name:"},
+{"hash":265085232,"name":"tfrmuserinfo.gbrequiredinfo.caption","sourcebytes":[32,82,101,113,117,105,114,101,100,32,73,110,102,111,114,109,97,116,105,111,110,32],"value":" Required Information "},
+{"hash":179363578,"name":"tfrmuserinfo.lblpassword.caption","sourcebytes":[38,80,97,115,115,119,111,114,100,58],"value":"&Password:"},
+{"hash":243292714,"name":"tfrmuserinfo.lblconfirmpassword.caption","sourcebytes":[67,38,111,110,102,105,114,109,32,80,97,115,115,119,111,114,100,58],"value":"C&onfirm Password:"},
+{"hash":75483722,"name":"tfrmuserinfo.lblusername.caption","sourcebytes":[38,85,115,101,114,32,78,97,109,101,58],"value":"&User Name:"},
+{"hash":80529810,"name":"tfrmuserinfo.newuser.caption","sourcebytes":[78,101,119,85,115,101,114],"value":"NewUser"},
+{"hash":266046562,"name":"tfrmuserinfo.modifyuser.caption","sourcebytes":[77,111,100,105,102,121,85,115,101,114],"value":"ModifyUser"},
+{"hash":212755938,"name":"tfrmuserinfo.deleteuser.caption","sourcebytes":[68,101,108,101,116,101,85,115,101,114],"value":"DeleteUser"}
+]}

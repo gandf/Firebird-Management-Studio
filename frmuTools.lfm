@@ -1,66 +1,68 @@
 inherited frmTools: TfrmTools
-  Left = 118
-  Top = 200
+  Left = 247
+  Height = 257
+  Top = 157
+  Width = 314
   ActiveControl = lbTools
   Caption = 'Tools'
-  ClientHeight = 255
-  ClientWidth = 305
+  ClientHeight = 257
+  ClientWidth = 314
   OnShow = FormShow
-  PixelsPerInch = 96
-  object Label1: TLabel
+  object Label1: TLabel[0]
     Left = 7
+    Height = 13
     Top = 0
     Width = 83
-    Height = 13
     Caption = 'Configured &Tools:'
+    ParentColor = False
   end
-  object btnAdd: TButton
+  object btnAdd: TButton[1]
     Left = 211
+    Height = 25
     Top = 15
     Width = 75
-    Height = 25
     Action = ToolAdd
     Default = True
     TabOrder = 0
   end
-  object btnDelete: TButton
+  object btnDelete: TButton[2]
     Left = 211
+    Height = 25
     Top = 48
     Width = 75
-    Height = 25
     Action = ToolDelete
     TabOrder = 1
   end
-  object btnEdit: TButton
+  object btnEdit: TButton[3]
     Left = 211
+    Height = 25
     Top = 80
     Width = 75
-    Height = 25
     Action = ToolEdit
     TabOrder = 2
   end
-  object lbTools: TListBox
+  object lbTools: TListBox[4]
     Left = 7
+    Height = 226
     Top = 16
     Width = 193
-    Height = 226
     ItemHeight = 16
+    OnDrawItem = lbToolsDrawItem
     Style = lbOwnerDrawFixed
     TabOrder = 3
-    OnDrawItem = lbToolsDrawItem
   end
-  object Button1: TButton
+  object Button1: TButton[5]
     Left = 218
+    Height = 25
     Top = 216
     Width = 75
-    Height = 25
     Caption = '&Close'
     ModalResult = 1
     TabOrder = 4
   end
-  object btnActions: TActionList
-    Left = 236
-    Top = 169
+  object btnActions: TActionList[6]
+    left = 236
+    top = 169
     object ToolAdd: TAction
       Caption = '&Add'
       OnExecute = ToolAddExecute

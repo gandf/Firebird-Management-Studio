@@ -1,111 +1,112 @@
-object frmDBShutdown: TfrmDBShutdown
-  Left = 686
-  Top = 339
-  BorderIcons = [biSystemMenu]
+inherited frmDBShutdown: TfrmDBShutdown
+  Left = 171
+  Height = 190
+  Top = 443
+  Width = 411
   BorderStyle = bsSingle
   Caption = 'Database Shutdown'
-  ClientHeight = 188
-  ClientWidth = 414
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  Position = poScreenCenter
+  ClientHeight = 190
+  ClientWidth = 411
   OnCreate = FormCreate
-  PixelsPerInch = 96
-  object bvlLine1: TBevel
+  Position = poScreenCenter
+  object bvlLine1: TBevel[0]
     Left = 15
+    Height = 8
     Top = 41
     Width = 385
-    Height = 8
     Shape = bsTopLine
   end
-  object lblDatabaseName: TLabel
+  object lblDatabaseName: TLabel[1]
     Left = 15
+    Height = 16
     Top = 15
     Width = 67
-    Height = 16
     AutoSize = False
     Caption = 'Database:'
+    ParentColor = False
   end
-  object lblOptions: TLabel
+  object lblOptions: TLabel[2]
     Left = 15
+    Height = 16
     Top = 59
     Width = 75
-    Height = 16
     AutoSize = False
     Caption = 'O&ptions:'
     FocusControl = sgOptions
+    ParentColor = False
   end
-  object stxDatabaseName: TLabel
+  object stxDatabaseName: TLabel[3]
     Left = 88
+    Height = 13
     Top = 14
     Width = 87
-    Height = 13
     Caption = 'stxDatabaseName'
+    ParentColor = False
   end
-  object sgOptions: TStringGrid
+  object sgOptions: TStringGrid[4]
     Left = 15
+    Height = 61
     Top = 81
     Width = 385
-    Height = 61
-    TabStop = False
     Color = clSilver
     ColCount = 2
     DefaultColWidth = 90
     DefaultRowHeight = 21
     FixedCols = 0
-    RowCount = 2
     FixedRows = 0
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing]
+    RowCount = 2
     ScrollBars = ssNone
     TabOrder = 0
+    TabStop = False
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
     OnDrawCell = sgOptionsDrawCell
     OnSelectCell = sgOptionsSelectCell
     ColWidths = (
       195
-      184)
+      184
+    )
   end
-  object btnOK: TButton
+  object btnOK: TButton[5]
     Left = 245
+    Height = 25
     Top = 152
     Width = 75
-    Height = 25
     Caption = '&OK'
     Default = True
-    TabOrder = 1
     OnClick = btnOKClick
+    TabOrder = 1
   end
-  object btnCancel: TButton
+  object btnCancel: TButton[6]
     Left = 326
+    Height = 25
     Top = 152
     Width = 75
-    Height = 25
     Caption = '&Cancel'
-    TabOrder = 2
     OnClick = btnCancelClick
+    TabOrder = 2
   end
-  object pnlOptionName: TPanel
+  object pnlOptionName: TPanel[7]
     Left = 16
+    Height = 22
     Top = 82
     Width = 195
-    Height = 22
     Alignment = taLeftJustify
     BevelInner = bvLowered
     BevelOuter = bvLowered
     TabOrder = 3
   end
-  object cbOptions: TComboBox
+  object cbOptions: TComboBox[8]
     Left = 212
+    Height = 21
     Top = 81
     Width = 185
-    Height = 21
     ItemHeight = 13
-    TabOrder = 4
     OnDblClick = cbOptionsDblClick
     OnExit = cbOptionsExit
     OnKeyDown = cbOptionsKeyDown
+    TabOrder = 4
   end
 end

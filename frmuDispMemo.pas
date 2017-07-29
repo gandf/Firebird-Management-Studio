@@ -24,7 +24,7 @@ unit frmuDispMemo;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ComCtrls, DBCtrls, DB, IBCustomDataSet, frmuDlgClass, resstring;
 
 type

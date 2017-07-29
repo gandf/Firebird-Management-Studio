@@ -24,8 +24,8 @@ unit frmuDBRestore;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ComCtrls, ExtCtrls, zluibcClasses, Grids, IB, IBQuery, frmuDlgClass,
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ComCtrls, ExtCtrls, zluibcClasses, Grids, IB, frmuDlgClass,
   FileUtil;
 
 type
@@ -85,8 +85,8 @@ function DoDBRestore(const SourceServerNode: TibcServerNode;
 
 implementation
 
-uses zluGlobal, zluPersistent, frmuServerRegister,IBServices,frmuMessage,
-  frmuMain, zluUtility, dmuMain, IBErrorCodes;
+uses zluGlobal, zluPersistent, IBServices,frmuMessage,
+  frmuMain, zluUtility, IBErrorCodes;
 
 {$R *.lfm}
 

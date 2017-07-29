@@ -1,81 +1,81 @@
-object frmDBTransactions: TfrmDBTransactions
+inherited frmDBTransactions: TfrmDBTransactions
   Left = 179
+  Height = 426
   Top = 175
-  BorderIcons = [biSystemMenu]
-  BorderStyle = bsDialog
+  Width = 433
   Caption = 'Transaction Recovery'
-  ClientHeight = 417
-  ClientWidth = 421
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  Position = poScreenCenter
+  ClientHeight = 426
+  ClientWidth = 433
   OnCreate = FormCreate
-  PixelsPerInch = 96
-  object lblDatabase: TLabel
+  Position = poScreenCenter
+  object lblDatabase: TLabel[0]
     Left = 10
+    Height = 13
     Top = 14
     Width = 49
-    Height = 13
     Caption = 'Database:'
+    ParentColor = False
   end
-  object lblRepairStatus: TLabel
+  object lblRepairStatus: TLabel[1]
     Left = 14
+    Height = 13
     Top = 398
     Width = 104
-    Height = 13
     Caption = 'Repairing Transaction'
+    ParentColor = False
     Visible = False
   end
-  object pgcMain: TPageControl
+  object pgcMain: TPageControl[2]
     Left = 0
+    Height = 249
     Top = 43
     Width = 421
-    Height = 249
     ActivePage = tabTransactions
+    TabIndex = 0
     TabOrder = 0
     OnChange = pgcMainChange
     OnChanging = pgcMainChanging
     object tabTransactions: TTabSheet
       Caption = 'Transactions'
+      ClientHeight = 223
+      ClientWidth = 413
       object lblConnectPath: TLabel
         Left = 8
+        Height = 16
         Top = 190
         Width = 105
-        Height = 16
         AutoSize = False
         Caption = 'Connect &Path:'
         FocusControl = edtPath
+        ParentColor = False
       end
       object edtPath: TEdit
         Left = 112
+        Height = 21
         Top = 185
         Width = 296
-        Height = 21
         TabOrder = 0
       end
       object lvTransactions: TListView
         Left = 0
+        Height = 169
         Top = 0
         Width = 413
-        Height = 169
         Align = alTop
-        Columns = <
+        Columns = <        
           item
             AutoSize = True
             Caption = 'Transaction'
-          end
+            Width = 77
+          end        
           item
             Caption = 'ID'
             Width = 62
-          end
+          end        
           item
             Caption = 'Action'
             Width = 100
-          end
+          end        
           item
             Caption = 'Status'
             Width = 85
@@ -89,19 +89,22 @@ object frmDBTransactions: TfrmDBTransactions
     end
     object tabAdvice: TTabSheet
       Caption = 'Details'
+      ClientHeight = 0
+      ClientWidth = 0
       ImageIndex = 1
       object lblStatus: TLabel
         Left = 4
+        Height = 13
         Top = 11
         Width = 92
-        Height = 13
         Caption = 'Transaction Status:'
+        ParentColor = False
       end
       object memAdvice: TMemo
         Left = 0
+        Height = 189
         Top = 32
         Width = 413
-        Height = 189
         Align = alBottom
         ReadOnly = True
         ScrollBars = ssBoth
@@ -109,55 +112,65 @@ object frmDBTransactions: TfrmDBTransactions
       end
     end
   end
-  object stxDatabase: TStaticText
+  object stxDatabase: TStaticText[3]
     Left = 81
+    Height = 21
     Top = 15
     Width = 334
-    Height = 21
-    AutoSize = False
     TabOrder = 1
   end
-  object btnOK: TButton
+  object btnOK: TButton[4]
     Left = 257
+    Height = 25
     Top = 389
     Width = 75
-    Height = 25
     Caption = '&Repair'
     Default = True
-    TabOrder = 2
     OnClick = btnOKClick
+    TabOrder = 2
   end
-  object btnCancel: TButton
+  object btnCancel: TButton[5]
     Left = 340
+    Height = 25
     Top = 389
     Width = 75
-    Height = 25
     Caption = '&Cancel'
-    TabOrder = 3
     OnClick = btnCancelClick
+    TabOrder = 3
   end
-  object rgOptions: TRadioGroup
+  object rgOptions: TRadioGroup[6]
     Left = 5
+    Height = 85
     Top = 296
     Width = 408
-    Height = 85
+    AutoFill = True
     Caption = 'Repair &Options'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 67
+    ClientWidth = 404
     Columns = 2
     ItemIndex = 0
     Items.Strings = (
       '&Perform recommended action'
       'Co&mmit all transactions'
       'R&oll back all transactions'
-      'Use &Two-Phase Commit')
-    TabOrder = 4
+      'Use &Two-Phase Commit'
+    )
     OnClick = rgOptionsClick
+    TabOrder = 4
   end
-  object FValidation: TIBValidationService
+  object FValidation: TIBValidationService[7]
     Protocol = TCP
     LoginPrompt = False
     TraceFlags = []
     Options = []
     GlobalAction = CommitGlobal
-    Left = 268
+    left = 268
   end
 end

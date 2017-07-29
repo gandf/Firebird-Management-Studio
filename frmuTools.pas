@@ -24,8 +24,8 @@ unit frmuTools;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  frmuDlgClass, StdCtrls, Buttons, ActnList;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  frmuDlgClass, StdCtrls, Buttons, ActnList, resstring;
 
 type
   TTool = class (TObject)
@@ -63,6 +63,7 @@ type
     procedure ToolEditExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ToolDeleteExecute(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -249,5 +250,19 @@ begin
   end;
   Str.Free;
 end;
+
+Procedure TfrmTools.TranslateVisual;
+Begin
+  Label1.Caption := LZTToolsLabel1;
+  btnAdd.Caption := LZTToolsbtnAdd;
+  btnDelete.Caption := LZTToolsbtnDelete;
+  btnEdit.Caption := LZTToolsbtnEdit;
+  Button1.Caption := LZTToolsButton1;
+  ToolAdd.Caption := LZTToolsToolAdd;
+  ToolDelete.Caption := LZTToolsToolDelete;
+  ToolEdit.Caption := LZTToolsToolEdit;
+  ToolBtnClose.Caption := LZTToolsToolBtnClose;
+  Self.Caption := LZTToolsFormTitle;
+End;
 
 end.

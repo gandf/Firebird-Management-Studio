@@ -24,8 +24,8 @@ unit frmuServerLogin;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls,
-  Messages, zluibcClasses, IB, frmuDlgClass, resstring;
+  LCLIntf, LCLType, SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls,
+  zluibcClasses, IB, frmuDlgClass, resstring;
 
 type
   TfrmServerLogin = class(TDialog)

@@ -1,0 +1,8 @@
+{"version":1,"strings":[
+{"hash":183860707,"name":"tfrmdbstatistics.caption","sourcebytes":[68,97,116,97,98,97,115,101,32,83,116,97,116,105,115,116,105,99,115],"value":"Database Statistics"},
+{"hash":226165002,"name":"tfrmdbstatistics.lbloptions.caption","sourcebytes":[79,38,112,116,105,111,110,58],"value":"O&ption:"},
+{"hash":175686410,"name":"tfrmdbstatistics.lbldatabasename.caption","sourcebytes":[68,97,116,97,98,97,115,101,58],"value":"Database:"},
+{"hash":70425349,"name":"tfrmdbstatistics.stxdatabasename.caption","sourcebytes":[115,116,120,68,97,116,97,98,97,115,101,78,97,109,101],"value":"stxDatabaseName"},
+{"hash":11067,"name":"tfrmdbstatistics.btnok.caption","sourcebytes":[38,79,75],"value":"&OK"},
+{"hash":177752476,"name":"tfrmdbstatistics.btncancel.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"}
+]}

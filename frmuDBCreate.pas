@@ -25,7 +25,7 @@ interface
 
 uses
   SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls, Dialogs,
-  zluibcClasses, Grids, LCLIntf, LCLType, LMessages, Graphics, IB, IBDatabase, IBServices, Messages,
+  zluibcClasses, Grids, LCLIntf, LCLType, Graphics, IB, IBDatabase, IBServices,
   frmuDlgClass, resstring;
 
 type

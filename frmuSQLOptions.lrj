@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":102939651,"name":"tfrmsqloptions.caption","sourcebytes":[83,81,76,32,79,112,116,105,111,110,115],"value":"SQL Options"},
+{"hash":44595001,"name":"tfrmsqloptions.btnapply.caption","sourcebytes":[38,65,112,112,108,121],"value":"&Apply"},
+{"hash":11067,"name":"tfrmsqloptions.button1.caption","sourcebytes":[38,79,75],"value":"&OK"},
+{"hash":108725763,"name":"tfrmsqloptions.tabsheet1.caption","sourcebytes":[79,112,116,105,111,110,115],"value":"Options"},
+{"hash":211239971,"name":"tfrmsqloptions.cbclearinput.caption","sourcebytes":[38,67,108,101,97,114,32,105,110,112,117,116,32,119,105,110,100,111,119,32,111,110,32,115,117,99,99,101,115,115],"value":"&Clear input window on success"},
+{"hash":197676484,"name":"tfrmsqloptions.tabsheet2.caption","sourcebytes":[65,100,118,97,110,99,101,100],"value":"Advanced"},
+{"hash":80298067,"name":"tfrmsqloptions.groupbox1.caption","sourcebytes":[83,81,76,32,69,118,101,110,116,115],"value":"SQL Events"},
+{"hash":5458058,"name":"tfrmsqloptions.label1.caption","sourcebytes":[78,79,84,69,58],"value":"NOTE:"},
+{"hash":154689556,"name":"tfrmsqloptions.cbupdateconnect.caption","sourcebytes":[85,112,100,97,116,101,32,73,66,67,111,110,115,111,108,101,32,111,110,32,67,38,111,110,110,101,99,116],"value":"Update IBConsole on C&onnect"},
+{"hash":195004949,"name":"tfrmsqloptions.cbupdatecreate.caption","sourcebytes":[85,112,100,97,116,101,32,73,66,67,111,110,115,111,108,101,32,111,110,32,67,38,114,101,97,116,101],"value":"Update IBConsole on C&reate"},
+{"hash":34767299,"name":"tfrmsqloptions.rgtransactions.caption","sourcebytes":[84,114,97,110,115,97,99,116,105,111,110,115],"value":"Transactions"},
+{"hash":177752476,"name":"tfrmsqloptions.button2.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"}
+]}

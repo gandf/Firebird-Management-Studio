@@ -25,14 +25,15 @@ interface
 
 uses
   Forms, ExtCtrls, StdCtrls, Classes, Controls, zluibcClasses, ComCtrls,
-  IBDatabase, SysUtils, IBDatabaseInfo, LCLIntf, LCLType, LMessages,
-  IBServices, IB, frmuMessage, Messages, frmuDlgClass;
+  IBDatabase, SysUtils, IBDatabaseInfo, LCLIntf, LCLType,
+  IBServices, IB, frmuMessage, frmuDlgClass, resstring;
 
 type
   TfrmDBConnections = class(TDialog)
     lvConnections: TListView;
     btnOK: TButton;
     procedure btnOKClick(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -44,7 +45,7 @@ function ViewDBConnections(const CurrSelServer: TibcServerNode; const CurrDataba
 implementation
 
 uses
-  zluGlobal, zluUtility;
+  zluGlobal;
 
 {$R *.lfm}
 
@@ -114,5 +115,12 @@ procedure TfrmDBConnections.btnOKClick(Sender: TObject);
 begin
   ModalResult := mrOK;
 end;
+
+Procedure TfrmDBConnections.TranslateVisual;
+Begin
+  btnOK.Caption := LZTDBConnectionsbtnOK;
+  lvConnections.Column[0].Caption := LZTDBConnectionsColUserName;
+  Self.Caption := LZTDBConnectionsFormTitle;
+End;
 
 end.

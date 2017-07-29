@@ -1,0 +1,16 @@
+{"version":1,"strings":[
+{"hash":153574153,"name":"tfrmdbtransactions.caption","sourcebytes":[84,114,97,110,115,97,99,116,105,111,110,32,82,101,99,111,118,101,114,121],"value":"Transaction Recovery"},
+{"hash":175686410,"name":"tfrmdbtransactions.lbldatabase.caption","sourcebytes":[68,97,116,97,98,97,115,101,58],"value":"Database:"},
+{"hash":111267982,"name":"tfrmdbtransactions.lblrepairstatus.caption","sourcebytes":[82,101,112,97,105,114,105,110,103,32,84,114,97,110,115,97,99,116,105,111,110],"value":"Repairing Transaction"},
+{"hash":34767299,"name":"tfrmdbtransactions.tabtransactions.caption","sourcebytes":[84,114,97,110,115,97,99,116,105,111,110,115],"value":"Transactions"},
+{"hash":81933434,"name":"tfrmdbtransactions.lblconnectpath.caption","sourcebytes":[67,111,110,110,101,99,116,32,38,80,97,116,104,58],"value":"Connect &Path:"},
+{"hash":153167886,"name":"tfrmdbtransactions.lvtransactions.columns[0].caption","sourcebytes":[84,114,97,110,115,97,99,116,105,111,110],"value":"Transaction"},
+{"hash":1236,"name":"tfrmdbtransactions.lvtransactions.columns[1].caption","sourcebytes":[73,68],"value":"ID"},
+{"hash":75149406,"name":"tfrmdbtransactions.lvtransactions.columns[2].caption","sourcebytes":[65,99,116,105,111,110],"value":"Action"},
+{"hash":95062979,"name":"tfrmdbtransactions.lvtransactions.columns[3].caption","sourcebytes":[83,116,97,116,117,115],"value":"Status"},
+{"hash":181043315,"name":"tfrmdbtransactions.tabadvice.caption","sourcebytes":[68,101,116,97,105,108,115],"value":"Details"},
+{"hash":192980250,"name":"tfrmdbtransactions.lblstatus.caption","sourcebytes":[84,114,97,110,115,97,99,116,105,111,110,32,83,116,97,116,117,115,58],"value":"Transaction Status:"},
+{"hash":193751074,"name":"tfrmdbtransactions.btnok.caption","sourcebytes":[38,82,101,112,97,105,114],"value":"&Repair"},
+{"hash":177752476,"name":"tfrmdbtransactions.btncancel.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"},
+{"hash":16449571,"name":"tfrmdbtransactions.rgoptions.caption","sourcebytes":[82,101,112,97,105,114,32,38,79,112,116,105,111,110,115],"value":"Repair &Options"}
+]}

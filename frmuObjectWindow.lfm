@@ -114,7 +114,6 @@ object frmObjectView: TfrmObjectView
             Height = 244
             Top = 127
             Width = 623
-            DefaultExtension = '.rtf'
             Align = alBottom
             Anchors = [akTop, akLeft, akRight, akBottom]
             Color = clBtnFace
@@ -224,7 +223,6 @@ object frmObjectView: TfrmObjectView
             Height = 102
             Top = 246
             Width = 615
-            DefaultExtension = '.rtf'
             Align = alClient
             Color = clBtnFace
             Font.Color = clWindowText
@@ -257,7 +255,6 @@ object frmObjectView: TfrmObjectView
             Height = 201
             Top = 147
             Width = 615
-            DefaultExtension = '.rtf'
             Align = alClient
             Color = clBtnFace
             Font.Color = clWindowText
@@ -541,7 +538,6 @@ object frmObjectView: TfrmObjectView
         Height = 352
         Top = 0
         Width = 623
-        DefaultExtension = '.rtf'
         Align = alClient
         Color = clWindow
         Font.CharSet = ANSI_CHARSET

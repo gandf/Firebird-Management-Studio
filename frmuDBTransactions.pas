@@ -24,9 +24,9 @@ unit frmuDBTransactions;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms,
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, zluibcClasses, StdCtrls, ComCtrls, ExtCtrls, IBServices,
-  IB, ImgList, frmuDlgClass;
+  IB, frmuDlgClass;
 
 type
   TfrmDBTransactions = class(TDialog)
@@ -66,7 +66,7 @@ function DoDBTransactions(const SourceServerNode: TibcServerNode; const CurrSelD
 implementation
 
 uses
-  zluGlobal, zluUtility, frmuMessage, frmuMain, IBErrorCodes;
+  zluGlobal, frmuMessage, frmuMain, IBErrorCodes;
 
 {$R *.lfm}
 

@@ -24,7 +24,7 @@ unit zluCommDiag;
 interface
 
 uses
-  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, resstring,
   Winsock,  Windows;
 
 type
@@ -180,9 +180,9 @@ const
   ICMPdll       = 'icmp.dll';          // name of ICMP dll
   CALWIN32      = 'calwin32.dll';
   CLXWIN32      = 'clxwin32.dll';
-	NSPROTO_IPX   = 1000;
-	NSPROTO_SPX   = 1256;
-	NSPROTO_SPXII = 1257;
+  NSPROTO_IPX   = 1000;
+  NSPROTO_SPX   = 1256;
+  NSPROTO_SPXII = 1257;
   SOCK_DIAG_SPX = $0456;
   NWCC_NAME_FORMAT_BIND = $0002;
   NWCC_OPEN_LICENSED    = $0001;
@@ -255,33 +255,33 @@ var
 begin
   // determine which error code
   case FLastError of
-    IP_SUCCESS               : lErr:='Success';
-    IP_BUFFER_TOO_SMALL      : lErr:='Buffer too small';
-    IP_DEST_NET_UNREACHABLE  : lErr:='Destination network unreachable';
-    IP_DEST_HOST_UNREACHABLE : lErr:='Destination host unreachable';
-    IP_DEST_PROT_UNREACHABLE : lErr:='Destination protocol unreachable';
-    IP_DEST_PORT_UNREACHABLE : lErr:='Destination port unreachable';
-    IP_NO_RESOURCES          : lErr:='No resources';
-    IP_BAD_OPTION            : lErr:='Bad Option';
-    IP_ERR_HARDWARE          : lErr:='Hardware error';
-    IP_PACKET_TOO_LARGE      : lErr:='Packet too large';
-    IP_REQ_TIMEOUT           : lErr:='Request timed out';
-    IP_BAD_REQ               : lErr:='Bad request';
-    IP_BAD_ROUTE             : lErr:='Bad route';
-    IP_TTL_EXPIRED_TRANSIT   : lErr:='TTL expired in transit';
-    IP_TTL_EXPIRED_REASSEM   : lErr:='TTL expired in reassembly';
-    IP_PARAM_PROBLEM         : lErr:='Parameter problems';
-    IP_SOURCE_QUENCH         : lErr:='Source quench';
-    IP_OPTION_TOO_LARGE      : lErr:='Option too large';
-    IP_BAD_DESTINATION       : lErr:='Bad destination';
+    IP_SUCCESS               : lErr := LZTCommDiagIP_SUCCESS;
+    IP_BUFFER_TOO_SMALL      : lErr := LZTCommDiagIP_BUFFER_TOO_SMALL;
+    IP_DEST_NET_UNREACHABLE  : lErr := LZTCommDiagIP_DEST_NET_UNREACHABLE;
+    IP_DEST_HOST_UNREACHABLE : lErr := LZTCommDiagIP_DEST_HOST_UNREACHABLE;
+    IP_DEST_PROT_UNREACHABLE : lErr := LZTCommDiagIP_DEST_PROT_UNREACHABLE;
+    IP_DEST_PORT_UNREACHABLE : lErr := LZTCommDiagIP_DEST_PORT_UNREACHABLE;
+    IP_NO_RESOURCES          : lErr := LZTCommDiagIP_NO_RESOURCES;
+    IP_BAD_OPTION            : lErr := LZTCommDiagIP_BAD_OPTION;
+    IP_ERR_HARDWARE          : lErr := LZTCommDiagIP_ERR_HARDWARE;
+    IP_PACKET_TOO_LARGE      : lErr := LZTCommDiagIP_PACKET_TOO_LARGE;
+    IP_REQ_TIMEOUT           : lErr := LZTCommDiagIP_REQ_TIMEOUT;
+    IP_BAD_REQ               : lErr := LZTCommDiagIP_BAD_REQ;
+    IP_BAD_ROUTE             : lErr := LZTCommDiagIP_BAD_ROUTE;
+    IP_TTL_EXPIRED_TRANSIT   : lErr := LZTCommDiagIP_TTL_EXPIRED_TRANSIT;
+    IP_TTL_EXPIRED_REASSEM   : lErr := LZTCommDiagIP_TTL_EXPIRED_REASSEM;
+    IP_PARAM_PROBLEM         : lErr := LZTCommDiagIP_PARAM_PROBLEM;
+    IP_SOURCE_QUENCH         : lErr := LZTCommDiagIP_SOURCE_QUENCH;
+    IP_OPTION_TOO_LARGE      : lErr := LZTCommDiagIP_OPTION_TOO_LARGE;
+    IP_BAD_DESTINATION       : lErr := LZTCommDiagIP_BAD_DESTINATION;
 
-    IP_ADDR_DELETED          : lErr:='Address deleted';
-    IP_SPEC_MTU_CHANGE       : lErr:='Spec MTU change';
-    IP_MTU_CHANGE            : lErr:='MTU change';
-    GENERAL_FAILURE          : lErr:='General failure';
-    IP_PENDING               : lErr:='Pending...';
+    IP_ADDR_DELETED          : lErr := LZTCommDiagIP_ADDR_DELETED;
+    IP_SPEC_MTU_CHANGE       : lErr := LZTCommDiagIP_SPEC_MTU_CHANGE;
+    IP_MTU_CHANGE            : lErr := LZTCommDiagIP_MTU_CHANGE;
+    GENERAL_FAILURE          : lErr := LZTCommDiagGENERAL_FAILURE;
+    IP_PENDING               : lErr := LZTCommDiagIP_PENDING;
   else
-    lErr:='ICMP Error #' + IntToStr(FLastError);  // just in case
+    lErr := LZTCommDiagICMPError + IntToStr(FLastError);  // just in case
   end;
 
   // return error message
@@ -387,7 +387,7 @@ var
 begin
   // initialize winsock
   if WSAStartup($101, WSAData) <> 0 then
-    raise TSVCException.Create('Can not initialize winsock.');
+    raise TSVCException.Create(LZTCommDiagCanNotInitWinsock);
 
   // set hostname
   FIPAddress:=inet_addr(PChar(FAddress));
@@ -429,7 +429,7 @@ begin
 
   // initialize winsock
   if WSAStartup($101, WSAData) <> 0 then
-    raise TSVCException.Create('Can not initialize winsock.');
+    raise TSVCException.Create(LZTCommDiagCanNotInitWinsock);
 
   // load ICMO dll
   hICMPdll:=LoadLibrary(ICMPdll);
@@ -445,12 +445,12 @@ begin
   if (@ICMPCreateFile = Nil) or
      (@ICMPCloseHandle = Nil) or
      (@ICMPSendEcho = Nil) then
-       raise TSVCException.Create('Error loading dll functions.');
+       raise TSVCException.Create(LZTCommDiagErrorLoadDllFunc);
 
   // create ICMP file
   hICMP:=IcmpCreateFile;
   if hICMP = INVALID_HANDLE_VALUE then
-    raise TSVCException.Create('Unable to get ping handle.');
+    raise TSVCException.Create(LZTCommDiagUnableGetPingHandle);
 
   // get buffer size
   BufferSize:=SizeOf(TICMPEchoReply) + FSize;
@@ -553,12 +553,12 @@ begin
     pPipe:=PChar(FPipe);
 
     if not SilentTest then
-      sResult:=Format('Attempting to attach to %s using NetBEUI.%s%s', [Server, CRLF, CRLF]);
+      sResult:=Format(LZTCommDiagAttempAttachNetBEUI, [Server, CRLF, CRLF]);
 
     // poll until a connection is established or the max number of tries have exceeded
     while (not iSuccess) and (iNum < FTotal) do
     begin
-      hPipe := FileCreate(pPipe); { *Converted from CreateFile* }
+      hPipe := FileCreate(pPipe);
 
       if hPipe <> INVALID_HANDLE_VALUE then
       begin
@@ -584,15 +584,15 @@ begin
       end
       else
       begin
-        sResult:=Format('%sAn error occurred attempting to connect to %s%s', [sResult, Server, CRLF]);
-        sResult:=Format('%s   using the following named pipe:%s', [sResult, CRLF]);
+        sResult:=Format(LZTCommDiagErrorOccuredAttempConnect, [sResult, Server, CRLF]);
+        sResult:=Format(LZTCommDiagUsingFollowNamedPipe, [sResult, CRLF]);
         sResult:=Format('%s   %s%s%s', [SResult, FPipe, CRLF, CRLF]);
-        sResult:=Format('%sNetBEUI Communication Test Failed!', [sResult]);
+        sResult:=Format(LZTCommDiagNetBEUIComTestFailed, [sResult]);
       end;
     end;
   finally
     if iSuccess then
-      FileClose(hPipe); { *Converted from CloseHandle* }
+      FileClose(hPipe);
 
     Result := iSuccess;
   end;
@@ -649,8 +649,8 @@ begin
       // if either of the calls failed
       if (ccode <> 0) or (lError) then
       begin                              // show error message
-        sResult:=Format('Could not initialize Netware client library.%s%s', [CRLF, CRLF]);
-        sResult:=Format('%sSPX Communication Test Failed!', [sResult]);
+        sResult:=Format(LZTCommDiagCouldNotInitNetwareClientLib, [CRLF, CRLF]);
+        sResult:=Format(LZTCommDiagSPXCommTestFailed, [sResult]);
       end
       else
       begin
@@ -659,7 +659,7 @@ begin
 
         StrCopy(lServer, PChar(FServer));
 
-        sResult:=Format('Attempting to attach to %s using SPX.%s%s', [FServer, CRLF, CRLF]);
+        sResult:=Format(LZTCommDiagAttempAttachSPX, [FServer, CRLF, CRLF]);
 
         // if a valid function pointer is returned then call function
         if @NWCCOpenConnByName <> Nil then
@@ -674,25 +674,25 @@ begin
         // check return code
         if (ccode <> 0) or (lError) then
         begin                            // show error message if return code not 0
-          sResult:=Format('%sAn error occurred attempting to connect to %s%s', [sResult, FServer, CRLF]);
-          sResult:=Format('%s   using the SPX protocol.%s%s', [sResult, CRLF, CRLF]);
-          sResult:=Format('%sSPX Communication Test Failed!', [sResult]);
+          sResult:=Format(LZTCommDiagErrorOccuredAttempConnect, [sResult, FServer, CRLF]);
+          sResult:=Format(LZTCommDiagUsingSPX, [sResult, CRLF, CRLF]);
+          sResult:=Format(LZTCommDiagSPXCommTestFailed, [sResult]);
         end
         else
         begin                            // show success message if return node is 0
-          sResult:=Format('%sAttached successfully to %s%s', [sResult, FServer, CRLF]);
-          sResult:=Format('%s   using the SPX protocol.%s%s', [sResult, CRLF, CRLF]);
-          sResult:=Format('%sSPX Communication Test Passed!', [sResult]);
+          sResult:=Format(LZTCommDiagAttachSucces, [sResult, FServer, CRLF]);
+          sResult:=Format(LZTCommDiagUsingSPX, [sResult, CRLF, CRLF]);
+          sResult:=Format(LZTCommDiagSPXCommTestPassed, [sResult]);
         end;
       end;
     end
     else
     begin
       // show error message is one of the dlls failed to load
-      sResult:=Format('%sAn error occurred attempting to connect to %s%s', [sResult, FServer, CRLF]);
-      sResult:=Format('%s   using the SPX protocol.%s%s', [sResult, CRLF, CRLF]);
-      sResult:=Format('%sYou do not seem to have the proper NetWare client installed.%s%s', [sResult, CRLF, CRLF]);
-      sResult:=Format('%sSPX Communication Test Failed!', [sResult]);
+      sResult:=Format(LZTCommDiagErrorOccuredAttempConnect, [sResult, FServer, CRLF]);
+      sResult:=Format(LZTCommDiagUsingSPX, [sResult, CRLF, CRLF]);
+      sResult:=Format(LZTCommDiagNoProperNetWareClientInstall, [sResult, CRLF, CRLF]);
+      sResult:=Format(LZTCommDiagSPXCommTestFailed, [sResult]);
     end;
   finally
     // close connection if active

@@ -25,7 +25,7 @@ interface
 
 uses
   SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls, Dialogs,
-  LCLIntf, LCLType, LMessages, zluibcClasses, Messages, frmuDlgClass, IB;
+  LCLIntf, LCLType, zluibcClasses, frmuDlgClass, IB;
 
 type
   TfrmDBRegister = class(TDialog)

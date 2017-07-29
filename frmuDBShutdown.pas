@@ -24,7 +24,7 @@ unit frmuDBShutdown;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   zluibcClasses, StdCtrls, ComCtrls, ExtCtrls, IBServices, IB, Grids, frmuDlgClass;
 
 type
@@ -58,7 +58,7 @@ function DoDBShutdown(const CurrSelServer : TibcServerNode; const CurrSelDatabas
 implementation
 
 uses
-  zluGlobal, zluUtility, frmuMessage, fileCtrl, IBErrorCodes,
+  zluGlobal, frmuMessage, fileCtrl, IBErrorCodes,
   frmuMain;
 
 {$R *.lfm}

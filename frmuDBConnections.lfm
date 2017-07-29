@@ -1,25 +1,19 @@
-object frmDBConnections: TfrmDBConnections
+inherited frmDBConnections: TfrmDBConnections
   Left = 252
+  Height = 383
   Top = 127
-  BorderIcons = [biSystemMenu]
+  Width = 362
   BorderStyle = bsSingle
   Caption = 'Database Connections'
-  ClientHeight = 378
-  ClientWidth = 363
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
+  ClientHeight = 383
+  ClientWidth = 362
   Position = poScreenCenter
-  PixelsPerInch = 96
-  object lvConnections: TListView
+  object lvConnections: TListView[0]
     Left = 15
+    Height = 312
     Top = 22
     Width = 333
-    Height = 312
-    Columns = <
+    Columns = <    
       item
         Caption = 'User Name'
         Width = 326
@@ -29,14 +23,14 @@ object frmDBConnections: TfrmDBConnections
     TabOrder = 0
     ViewStyle = vsReport
   end
-  object btnOK: TButton
+  object btnOK: TButton[1]
     Left = 270
+    Height = 25
     Top = 345
     Width = 75
-    Height = 25
     Caption = '&OK'
     Default = True
-    TabOrder = 1
     OnClick = btnOKClick
+    TabOrder = 1
   end
 end

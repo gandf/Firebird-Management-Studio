@@ -1,0 +1,12 @@
+{"version":1,"strings":[
+{"hash":251617584,"name":"tfrmdbbackup.caption","sourcebytes":[68,97,116,97,98,97,115,101,32,66,97,99,107,117,112],"value":"Database Backup"},
+{"hash":128980154,"name":"tfrmdbbackup.lbloptions.caption","sourcebytes":[79,38,112,116,105,111,110,115,58],"value":"O&ptions:"},
+{"hash":175817712,"name":"tfrmdbbackup.gbdatabasefile.caption","sourcebytes":[32,68,97,116,97,98,97,115,101,32],"value":" Database "},
+{"hash":164219914,"name":"tfrmdbbackup.lbldatabaseserver.caption","sourcebytes":[83,101,114,118,101,114,58],"value":"Server:"},
+{"hash":176355402,"name":"tfrmdbbackup.lbldatabasealias.caption","sourcebytes":[38,65,108,105,97,115,58],"value":"&Alias:"},
+{"hash":101292288,"name":"tfrmdbbackup.gbbackupfiles.caption","sourcebytes":[32,66,97,99,107,117,112,32,70,105,108,101,40,115,41,32],"value":" Backup File(s) "},
+{"hash":164220650,"name":"tfrmdbbackup.lblbackupserver.caption","sourcebytes":[38,83,101,114,118,101,114,58],"value":"&Server:"},
+{"hash":64157738,"name":"tfrmdbbackup.lblbackupalias.caption","sourcebytes":[65,38,108,105,97,115,58],"value":"A&lias:"},
+{"hash":11067,"name":"tfrmdbbackup.btnok.caption","sourcebytes":[38,79,75],"value":"&OK"},
+{"hash":177752476,"name":"tfrmdbbackup.btncancel.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"}
+]}

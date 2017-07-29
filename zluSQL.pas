@@ -24,8 +24,8 @@ unit zluSQL;
 interface
 
 uses
-  Classes, LCLIntf, LCLType, LMessages, SysUtils, Dialogs, Forms, Messages, Controls,
-  IBDatabase, IBCustomDataSet, IBDatabaseInfo, IB, gettext, Translations, resstring;
+  Classes, LCLIntf, LCLType, SysUtils, Dialogs, Forms, Controls,
+  IBDatabase, IBCustomDataSet, IBDatabaseInfo, IB, gettext, resstring;
 
 type
   TISQLExceptionCode = (eeInitialization, eeInvDialect, eeFOpen, eeParse,
@@ -134,7 +134,7 @@ type
 implementation
 
 uses
-  IBSQL, stdctrls, zluGlobal, dmuMain, IBHeader, frmuMessage;
+  IBSQL, stdctrls, zluGlobal, frmuMessage;
 
 procedure TIBSQLObj.GetEvent (const Query: String; out event: TSQLEvent; out sEvent: TSQLSubEvent);
 var
