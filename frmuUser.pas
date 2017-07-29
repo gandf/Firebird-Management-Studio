@@ -25,7 +25,7 @@ interface
 
 uses
   LCLIntf, LCLType, SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls, Dialogs,
-  IBServices, zluibcClasses, Graphics, frmuDlgClass, ActnList;
+  IBServices, zluibcClasses, Graphics, frmuDlgClass, ActnList, resstring;
 
 type
   TfrmUserInfo = class(TDialog)
@@ -69,6 +69,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure DeleteUserUpdate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     FConfirmPassword: string;
@@ -345,13 +346,13 @@ begin
   // show confirmation dialog
   if cbUsername.Text = UpperCase(FCurrSelServer.UserName) then
   begin
-    if MessageDlg(Format('The user you wish to delete is the same user you are logged into the server as.%sAre you sure that you want to delete user: %s?',
+    if MessageDlg(Format(LZTUserYouWantDeleteUser2,
         [#13#10,cbUsername.Text]),mtConfirmation, mbOkCancel, 0) = mrOK then
       lConfirmed := True;
   end
   else
   begin
-    if MessageDlg(Format('Are you sure that you want to delete user: %s?',
+    if MessageDlg(Format(LZTUserYouWantDeleteUser,
         [cbUsername.Text]),mtConfirmation, mbOkCancel, 0) = mrOK then
       lConfirmed := True;
   end;
@@ -692,5 +693,26 @@ begin
     btnNew.Click;
   cbUserNameChange(Sender);
 end;
+
+Procedure TfrmUserInfo.TranslateVisual;
+Begin
+  btnNew.Caption := LZTUserbtnNew;
+  btnApply.Caption := LZTUserbtnApply;
+  btnDelete.Caption := LZTUserbtnDelete;
+  btnClose.Caption := LZTUserbtnClose;
+  btnCancel.Caption := LZTUserbtnCancel;
+  gbOptionalInfo.Caption := LZTUsergbOptionalInfo;
+  lblFName.Caption := LZTUserlblFName;
+  lblMName.Caption := LZTUserlblMName;
+  lblLName.Caption := LZTUserlblLName;
+  gbRequiredInfo.Caption := LZTUsergbRequiredInfo;
+  lblPassword.Caption := LZTUserlblPassword;
+  lblConfirmPassword.Caption := LZTUserlblConfirmPassword;
+  lblUserName.Caption := LZTUserlblUserName;
+  NewUser.Caption := LZTUserNewUser;
+  ModifyUser.Caption := LZTUserModifyUser;
+  DeleteUser.Caption := LZTUserDeleteUser;
+  Self.Caption := LZTUserFormTitle;
+End;
 
 end.

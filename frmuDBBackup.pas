@@ -30,7 +30,7 @@ interface
 
 uses                       
   SysUtils, Forms, ExtCtrls, StdCtrls, Classes, Controls, Dialogs, zluibcClasses,
-  Grids, Graphics, LCLIntf, LCLType, Comctrls, IB, frmuDlgClass, FileUtil;
+  Grids, Graphics, LCLIntf, LCLType, Comctrls, IB, frmuDlgClass, FileUtil, resstring;
 
 type
   TfrmDBBackup = class(TDialog)
@@ -66,6 +66,7 @@ type
     procedure sgOptionsDrawCell(Sender: TObject; ACol, ARow: Integer; Rect: TRect; State: TGridDrawState);
     procedure sgOptionsSelectCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
     procedure cbDatabaseAliasChange(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     FVerboseFile: string;
@@ -107,36 +108,35 @@ begin
   cbOptions.Visible := True;
   pnlOptionName.Visible := True;
 
-  sgBackupFiles.Cells[0,0] := 'Filename(s)';
-  sgBackupFiles.Cells[1,0] := 'Size(Bytes)';
+  sgBackupFiles.Cells[0,0] := LZTDBBackupsgBackupFilesCells0;
+  sgBackupFiles.Cells[1,0] := LZTDBBackupsgBackupFilesCells1;
   sgOptions.RowCount := 7;
 
-  sgOptions.Cells[OPTION_NAME_COL,FORMAT_ROW] := 'Format';
-  sgOptions.Cells[OPTION_VALUE_COL,FORMAT_ROW] := 'Transportable';
+  sgOptions.Cells[OPTION_NAME_COL,FORMAT_ROW] := LZTDBBackupsgOptionsCellsOPTNAMCOLFORM;
+  sgOptions.Cells[OPTION_VALUE_COL,FORMAT_ROW] := LZTDBBackupcbOptionsItems1;
 
-  sgOptions.Cells[OPTION_NAME_COL,METADATA_ONLY_ROW] := 'Metadata Only';
-  sgOptions.Cells[OPTION_VALUE_COL,METADATA_ONLY_ROW] := 'False';
+  sgOptions.Cells[OPTION_NAME_COL,METADATA_ONLY_ROW] := LZTDBBackupsgOptionsCellsOPTNAMCOLMETADATA;
+  sgOptions.Cells[OPTION_VALUE_COL,METADATA_ONLY_ROW] := LZTDBBackupsgOptionsCellsOPTVALCOLMETADATA;
 
-  sgOptions.Cells[OPTION_NAME_COL,GARBAGE_COLLECTION_ROW] := 'Garbage Collection';
-  sgOptions.Cells[OPTION_VALUE_COL,GARBAGE_COLLECTION_ROW] := 'True';
+  sgOptions.Cells[OPTION_NAME_COL,GARBAGE_COLLECTION_ROW] := LZTDBBackupsgOptionsCellsOPTNAMCOLGARBCOL;
+  sgOptions.Cells[OPTION_VALUE_COL,GARBAGE_COLLECTION_ROW] := LZTDBBackupTrue;
 
-  sgOptions.Cells[OPTION_NAME_COL,TRANSACTIONS_IN_LIMBO_ROW] := 'Transactions in Limbo';
-  sgOptions.Cells[OPTION_VALUE_COL,TRANSACTIONS_IN_LIMBO_ROW] := 'Process';
+  sgOptions.Cells[OPTION_NAME_COL,TRANSACTIONS_IN_LIMBO_ROW] := LZTDBBackupsgOptionsCellsOPTNAMCOLTRANSLIMBO;
+  sgOptions.Cells[OPTION_VALUE_COL,TRANSACTIONS_IN_LIMBO_ROW] := LZTDBBackupsgOptionsCellsOPTVALCOLTRANSLIMBO;
 
-  sgOptions.Cells[OPTION_NAME_COL,CHECKSUMS_ROW] := 'Checksums';
-  sgOptions.Cells[OPTION_VALUE_COL,CHECKSUMS_ROW] := 'Process';
+  sgOptions.Cells[OPTION_NAME_COL,CHECKSUMS_ROW] := LZTDBBackupsFalse;
+  sgOptions.Cells[OPTION_VALUE_COL,CHECKSUMS_ROW] := LZTDBBackupProcess;
 
-  sgOptions.Cells[OPTION_NAME_COL,CONVERT_TO_TABLES_ROW] := 'Convert to Tables';
-  sgOptions.Cells[OPTION_VALUE_COL,CONVERT_TO_TABLES_ROW] := 'False';
+  sgOptions.Cells[OPTION_NAME_COL,CONVERT_TO_TABLES_ROW] := LZTDBBackupsgOptionsCellsOPTNAMCOLCONVTOTAB;
+  sgOptions.Cells[OPTION_VALUE_COL,CONVERT_TO_TABLES_ROW] := LZTDBBackupFormat;
 
-  sgOptions.Cells[OPTION_NAME_COL,VERBOSE_OUTPUT_ROW] := 'Verbose Output';
-  sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] := 'To Screen';
+  sgOptions.Cells[OPTION_NAME_COL,VERBOSE_OUTPUT_ROW] := LZTDBBackupsgOptionsCellsOPTNAMCOLVERBOUT;
+  sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] := LZTDBBackupToScreen;
 
-  pnlOptionName.Caption := 'Format';
-  cbOptions.Items.Add('Transportable');
-  cbOptions.Items.Add('Non-Transportable');
+  pnlOptionName.Caption := LZTDBBackupFormat;
+  cbOptions.Items.Add(LZTDBBackupcbOptionsItems1);
+  cbOptions.Items.Add(LZTDBBackupcbOptionsItems2);
   cbOptions.ItemIndex := 0;
-
 end;
 
 procedure TfrmDBBackup.btnCancelClick(Sender: TObject);
@@ -181,35 +181,35 @@ begin
       lOptions := [];
       if lBackupService.Active = true then
       begin
-        if sgOptions.Cells[OPTION_VALUE_COL,FORMAT_ROW] = 'Non-Transportable' then
+        if sgOptions.Cells[OPTION_VALUE_COL,FORMAT_ROW] = LZTDBBackupNonTransportable then
         begin
           Include(lOptions, NonTransportable);
         end;
-        if sgOptions.Cells[OPTION_VALUE_COL,METADATA_ONLY_ROW] = 'True' then
+        if sgOptions.Cells[OPTION_VALUE_COL,METADATA_ONLY_ROW] = LZTDBBackupTrue then
         begin
           Include(lOptions, MetadataOnly);
         end;
-        if sgOptions.Cells[OPTION_VALUE_COL,GARBAGE_COLLECTION_ROW] = 'False' then
+        if sgOptions.Cells[OPTION_VALUE_COL,GARBAGE_COLLECTION_ROW] = LZTDBBackupsFalse then
         begin
           Include(lOptions, NoGarbageCollection);
         end;
-        if sgOptions.Cells[OPTION_VALUE_COL,TRANSACTIONS_IN_LIMBO_ROW] = 'Ignore' then
+        if sgOptions.Cells[OPTION_VALUE_COL,TRANSACTIONS_IN_LIMBO_ROW] = LZTDBBackupIgnore then
         begin
           Include(lOptions, IgnoreLimbo);
         end;
-        if sgOptions.Cells[OPTION_VALUE_COL,CHECKSUMS_ROW] = 'True' then
+        if sgOptions.Cells[OPTION_VALUE_COL,CHECKSUMS_ROW] = LZTDBBackupTrue then
         begin
           Include(lOptions, IgnoreChecksums);
         end;
-        if sgOptions.Cells[OPTION_VALUE_COL,CONVERT_TO_TABLES_ROW] = 'True' then
+        if sgOptions.Cells[OPTION_VALUE_COL,CONVERT_TO_TABLES_ROW] = LZTDBBackupTrue then
         begin
           Include(lOptions, ConvertExtTables);
         end;
 
         lBackupService.Options := lOptions;
 
-        if (sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] = 'To Screen') or
-          (sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] = 'To File') then
+        if (sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] = LZTDBBackupToScreen) or
+          (sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] = LZTDBBackupToFile) then
         begin
           lBackupService.Verbose := true;
         end;
@@ -222,7 +222,7 @@ begin
           for j := 1 to sgBackupFiles.RowCount - 1 do
           begin
             if not (IsValidDBName(sgBackupFiles.Cells[0,j])) then
-              DisplayMsg(WAR_REMOTE_FILENAME, Format('File: %s', [sgBackupFiles.Cells[0,j]]));
+              DisplayMsg(WAR_REMOTE_FILENAME, Format(LZTDBBackupFile, [sgBackupFiles.Cells[0,j]]));
 
             if (sgBackupFiles.Cells[0,j] <> '') and (sgBackupFiles.Cells[1,j] <> '') then
             begin
@@ -241,7 +241,7 @@ begin
         Screen.Cursor := crHourGlass;
         try
           lBackupService.ServiceStart;
-          FSourceServerNode.OpenTextViewer (lBackupService, 'Database Backup');
+          FSourceServerNode.OpenTextViewer (lBackupService, LZTDBBackupDatabaseBackup);
           while (lBackupService.IsServiceRunning) and (not gApplShutdown) do
           begin
             Application.ProcessMessages;
@@ -334,29 +334,29 @@ procedure TfrmDBBackup.cbOptionsChange(Sender: TObject);
 var
   lSaveDialog: TSaveDialog;
 begin
-  if (cbOptions.Text = 'To File') and (sgOptions.Row = VERBOSE_OUTPUT_ROW) then
+  if (cbOptions.Text = LZTDBBackupToFile) and (sgOptions.Row = VERBOSE_OUTPUT_ROW) then
   begin
     lSaveDialog := TSaveDialog.Create(Self);
     try
-      lSaveDialog.Title := 'Select Verbose File';
+      lSaveDialog.Title := LZTDBBackupSelectVerboseFile;
       lSaveDialog.DefaultExt := 'txt';
-      lSaveDialog.Filter := 'Text File (*.txt)|*.TXT|All files (*.*)|*.*';
+      lSaveDialog.Filter := LZTDBBackupFileExtFilter;
       lSaveDialog.Options := [ofHideReadOnly,ofEnableSizing];
       if lSaveDialog.Execute then
       begin
-        if FileExists(lSaveDialog.FileName) { *Converted from FileExists* } then
+        if FileExists(lSaveDialog.FileName) then
         begin
-          if MessageDlg(Format('OK to overwrite %s', [lSaveDialog.FileName]),
+          if MessageDlg(Format(LZTDBBackupOverwrite, [lSaveDialog.FileName]),
               mtConfirmation, mbYesNoCancel, 0) <> idYes then
           begin
-            cbOptions.ItemIndex := cbOptions.Items.IndexOf('To Screen');
+            cbOptions.ItemIndex := cbOptions.Items.IndexOf(LZTDBBackupToScreen);
             Exit;
           end;
         end;
         FVerboseFile := lSaveDialog.FileName;
       end
       else
-        cbOptions.ItemIndex := cbOptions.Items.IndexOf('To Screen');
+        cbOptions.ItemIndex := cbOptions.Items.IndexOf(LZTDBBackupToScreen);
     finally
       lSaveDialog.free;
     end;
@@ -397,7 +397,7 @@ begin
 
   if (iIndex = -1) then
   begin
-    MessageDlg('Invalid option value', mtError, [mbOK], 0);
+    MessageDlg(LZTDBBackupInvalidOptionValue, mtError, [mbOK], 0);
 
     cbOptions.ItemIndex := 0;          // reset to first item in list
     //Size and position the combo box to fit the cell
@@ -513,39 +513,39 @@ begin
   case ARow of
     FORMAT_ROW:
     begin
-      cbOptions.Items.Add('Transportable');
-      cbOptions.Items.Add('Non-Transportable');
+      cbOptions.Items.Add(LZTDBBackupcbOptionsItems1);
+      cbOptions.Items.Add(LZTDBBackupcbOptionsItems2);
     end;
     METADATA_ONLY_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBBackupTrue);
+      cbOptions.Items.Add(LZTDBBackupsFalse);
     end;
     GARBAGE_COLLECTION_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBBackupTrue);
+      cbOptions.Items.Add(LZTDBBackupsFalse);
     end;
     TRANSACTIONS_IN_LIMBO_ROW:
     begin
-      cbOptions.Items.Add('Process');
-      cbOptions.Items.Add('Ignore');
+      cbOptions.Items.Add(LZTDBBackupProcess);
+      cbOptions.Items.Add(LZTDBBackupIgnore);
     end;
     CHECKSUMS_ROW:
     begin
-      cbOptions.Items.Add('Process');
-      cbOptions.Items.Add('Ignore');
+      cbOptions.Items.Add(LZTDBBackupProcess);
+      cbOptions.Items.Add(LZTDBBackupIgnore);
     end;
     CONVERT_TO_TABLES_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBBackupTrue);
+      cbOptions.Items.Add(LZTDBBackupsFalse);
     end;
     VERBOSE_OUTPUT_ROW:
     begin
-      cbOptions.Items.Add('None');
-      cbOptions.Items.Add('To Screen');
-      cbOptions.Items.Add('To File');
+      cbOptions.Items.Add(LZTDBBackupNone);
+      cbOptions.Items.Add(LZTDBBackupToScreen);
+      cbOptions.Items.Add(LZTDBBackupToFile);
     end;
   end;
 
@@ -740,5 +740,20 @@ procedure TfrmDBBackup.cbDatabaseAliasChange(Sender: TObject);
 begin
   cbDatabaseAlias.Hint := cbDatabaseAlias.Text;
 end;
+
+Procedure TfrmDBBackup.TranslateVisual;
+Begin
+  lblOptions.Caption := LZTDBBackuplblOptions;
+  gbDatabaseFile.Caption := LZTDBBackupgbDatabaseFile;
+  lblDatabaseServer.Caption := LZTDBBackuplblDatabaseServer;
+  lblDatabaseAlias.Caption := LZTDBBackuplblDatabaseAlias;
+  gbBackupFiles.Caption := LZTDBBackupgbBackupFiles;
+  lblBackupServer.Caption := LZTDBBackuplblBackupServer;
+  lblBackupAlias.Caption := LZTDBBackuplblBackupAlias;
+  sgBackupFiles.Caption := LZTDBBackupsgBackupFiles;
+  btnOK.Caption := LZTDBBackupbtnOK;
+  btnCancel.Caption := LZTDBBackupbtnCancel;
+  Self.Caption := LZTDBBackupFormTitle;
+End;
 
 end.

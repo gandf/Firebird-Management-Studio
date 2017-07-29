@@ -30,8 +30,8 @@ inherited frmDBTransactions: TfrmDBTransactions
     Height = 249
     Top = 43
     Width = 421
-    ActivePage = tabTransactions
-    TabIndex = 0
+    ActivePage = tabAdvice
+    TabIndex = 1
     TabOrder = 0
     OnChange = pgcMainChange
     OnChanging = pgcMainChanging
@@ -89,8 +89,8 @@ inherited frmDBTransactions: TfrmDBTransactions
     end
     object tabAdvice: TTabSheet
       Caption = 'Details'
-      ClientHeight = 0
-      ClientWidth = 0
+      ClientHeight = 223
+      ClientWidth = 413
       ImageIndex = 1
       object lblStatus: TLabel
         Left = 4
@@ -103,7 +103,7 @@ inherited frmDBTransactions: TfrmDBTransactions
       object memAdvice: TMemo
         Left = 0
         Height = 189
-        Top = 32
+        Top = 34
         Width = 413
         Align = alBottom
         ReadOnly = True

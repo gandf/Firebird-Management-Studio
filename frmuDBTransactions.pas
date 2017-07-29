@@ -26,7 +26,7 @@ interface
 uses
   LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, zluibcClasses, StdCtrls, ComCtrls, ExtCtrls, IBServices,
-  IB, frmuDlgClass;
+  IB, frmuDlgClass, resstring;
 
 type
   TfrmDBTransactions = class(TDialog)
@@ -52,6 +52,7 @@ type
     procedure pgcMainChanging(Sender: TObject; var AllowChange: Boolean);
     procedure rgOptionsClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     FGlobalAction: TTransactionGlobalAction;
@@ -344,5 +345,23 @@ begin
   inherited;
   FGlobalAction := NoGlobalAction;
 end;
+
+Procedure TfrmDBTransactions.TranslateVisual;
+Begin
+  lblDatabase.Caption := LZTDBTransactionslblDatabase;
+  lblRepairStatus.Caption := LZTDBTransactionslblRepairStatus;
+  tabTransactions.Caption := LZTDBTransactionstabTransactions;
+  lblConnectPath.Caption := LZTDBTransactionslblConnectPath;
+  lvTransactions.Column[0].Caption := LZTDBTransactionslvTransactionsCol0;
+  lvTransactions.Column[1].Caption := LZTDBTransactionslvTransactionsCol1;
+  lvTransactions.Column[2].Caption := LZTDBTransactionslvTransactionsCol2;
+  lvTransactions.Column[3].Caption := LZTDBTransactionslvTransactionsCol3;
+  tabAdvice.Caption := LZTDBTransactionstabAdvice;
+  lblStatus.Caption := LZTDBTransactionslblStatus;
+  btnOK.Caption := LZTDBTransactionsbtnOK;
+  btnCancel.Caption := LZTDBTransactionsbtnCancel;
+  rgOptions.Caption := LZTDBTransactionsrgOptions;
+  Self.Caption := LZTDBTransactionsFormTitle;
+End;
 
 end.

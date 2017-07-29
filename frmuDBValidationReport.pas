@@ -25,7 +25,7 @@ interface
 
 uses
   LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Grids, StdCtrls, ExtCtrls, IB, IBServices, IBDatabase, zluibcClasses, frmuDlgClass;
+  Grids, StdCtrls, ExtCtrls, IB, IBServices, IBDatabase, zluibcClasses, frmuDlgClass, resstring;
 
 type
   TfrmDBValidationReport = class(TDialog)
@@ -49,6 +49,7 @@ type
     procedure sgOptionsDrawCell(Sender: TObject; ACol, ARow: Integer; Rect: TRect; State: TGridDrawState);
     procedure sgOptionsSelectCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
     procedure FormShow(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -70,8 +71,6 @@ const
   VALIDATE_RECORD_FRAGMENTS_ROW = 0;
   // READ_ONLY_VALIDATION_ROW = 1;
   IGNORE_CHECKSUM_ERRORS_ROW = 1;
-  ERR_MSG_1 = 'please retry';
-  ERR_MSG_2 = 'plausible options';
 
 function ShowReport(const str : String; const SourceServerNode: TibcServerNode;
   const CurrSelDatabase: TibcDatabaseNode; const Errors: Boolean): integer;
@@ -90,19 +89,19 @@ begin
     if Errors then
     begin
       frmReport.memReport.SetTextBuf(PChar(str));
-      if (StrPos(PChar(str), PChar(ERR_MSG_1)) <> Nil) or
-        (StrPos(PChar(str), PChar(ERR_MSG_2)) <> Nil) then
+      if (StrPos(PChar(str), PChar(LZTDBValidReportPleaseRetry)) <> Nil) or
+        (StrPos(PChar(str), PChar(LZTDBValidReportPlausibleOptions)) <> Nil) then
         frmReport.btnRepair.Enabled := False;
       frmReport.memReport.Lines.Append('');
-      frmReport.memReport.Lines.Append('Check the InterBase.Log file for additional information');
+      frmReport.memReport.Lines.Append(LZTDBValidReportCheckFirebirdLogFileAddInfo);
     end
     else
     begin
       frmReport.sgOptions.Enabled := false;
       frmReport.cbOptions.Enabled := false;
-      frmReport.memReport.Lines.Add('No database validation errors were found.');
+      frmReport.memReport.Lines.Add(LZTDBValidReportNoDatabaseValidError);
       frmReport.btnRepair.Enabled := False;
-      frmReport.btnCancel.Caption := '&OK';
+      frmReport.btnCancel.Caption := LZTDBValidReportOK;
       frmReport.btnCancel.Default := true;
     end;
 
@@ -150,12 +149,12 @@ begin
           end;
 
           // determine which options have been selected
-          if frmReport.sgOptions.Cells[1,VALIDATE_RECORD_FRAGMENTS_ROW] = 'True' then
+          if frmReport.sgOptions.Cells[1,VALIDATE_RECORD_FRAGMENTS_ROW] = LZTDBValidReportTrue then
             Include(lValidateOptions, ValidateFull)
           else
             Exclude(lValidateOptions, ValidateFull);
 
-          if frmReport.sgOptions.Cells[1,IGNORE_CHECKSUM_ERRORS_ROW] = 'True' then
+          if frmReport.sgOptions.Cells[1,IGNORE_CHECKSUM_ERRORS_ROW] = LZTDBValidReportTrue then
             Include(lValidateOptions, IgnoreChecksum)
           else
             Exclude(lValidateOptions, IgnoreChecksum);
@@ -172,7 +171,7 @@ begin
             if lValidation.Active then
               lValidation.Detach();
 
-            ShowMessage ('Database validation complete');
+            ShowMessage (LZTDBValidReportDatabaseValidComplete);
           except
             on E: EIBError do
             begin
@@ -212,18 +211,18 @@ begin
 
   sgOptions.RowCount := 2;
 
-  sgOptions.Cells[OPTION_NAME_COL,VALIDATE_RECORD_FRAGMENTS_ROW] := 'Validate Record Fragments';
-  sgOptions.Cells[OPTION_VALUE_COL,VALIDATE_RECORD_FRAGMENTS_ROW] := 'False';
+  sgOptions.Cells[OPTION_NAME_COL,VALIDATE_RECORD_FRAGMENTS_ROW] := LZTDBValidReportValidateRecordFrag;
+  sgOptions.Cells[OPTION_VALUE_COL,VALIDATE_RECORD_FRAGMENTS_ROW] := LZTDBValidReportFalse;
 
-  // sgOptions.Cells[OPTION_NAME_COL,READ_ONLY_VALIDATION_ROW] := 'Read Only Validation';
-  // sgOptions.Cells[OPTION_VALUE_COL,READ_ONLY_VALIDATION_ROW] := 'False';
+  // sgOptions.Cells[OPTION_NAME_COL,READ_ONLY_VALIDATION_ROW] := LZTDBValidReportReadOnlyValid;
+  // sgOptions.Cells[OPTION_VALUE_COL,READ_ONLY_VALIDATION_ROW] := LZTDBValidReportFalse;
 
-  sgOptions.Cells[OPTION_NAME_COL,IGNORE_CHECKSUM_ERRORS_ROW] := 'Ignore Checksum Errors';
-  sgOptions.Cells[OPTION_VALUE_COL,IGNORE_CHECKSUM_ERRORS_ROW] := 'False';
+  sgOptions.Cells[OPTION_NAME_COL,IGNORE_CHECKSUM_ERRORS_ROW] := LZTDBValidReportIgnoreChecksumError;
+  sgOptions.Cells[OPTION_VALUE_COL,IGNORE_CHECKSUM_ERRORS_ROW] := LZTDBValidReportFalse;
 
-  pnlOptionName.Caption := 'Validate Record Fragments';
-  cbOptions.Items.Add('True');
-  cbOptions.Items.Add('False');
+  pnlOptionName.Caption := LZTDBValidReportValidateRecordFrag;
+  cbOptions.Items.Add(LZTDBValidReportTrue);
+  cbOptions.Items.Add(LZTDBValidReportFalse);
   cbOptions.ItemIndex := 1;
 end;
 
@@ -246,7 +245,7 @@ begin
 
   if (iIndex = -1) then
   begin
-    MessageDlg('Invalid option value', mtError, [mbOK],0);
+    MessageDlg(LZTDBValidReportInvalidOptionValue, mtError, [mbOK],0);
 
     cbOptions.ItemIndex := 0;
     //Size and position the combo box to fit the cell
@@ -302,20 +301,20 @@ begin
   case ARow of
     VALIDATE_RECORD_FRAGMENTS_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBValidReportTrue);
+      cbOptions.Items.Add(LZTDBValidReportFalse);
     end;
     {
     READ_ONLY_VALIDATION_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBValidReportTrue);
+      cbOptions.Items.Add(LZTDBValidReportFalse);
     end;
     }
     IGNORE_CHECKSUM_ERRORS_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBValidReportTrue);
+      cbOptions.Items.Add(LZTDBValidReportFalse);
     end;
   end;
 
@@ -401,5 +400,14 @@ begin
   if btnCancel.Default then
     btnCancel.SetFocus;
 end;
+
+Procedure TfrmDBValidationReport.TranslateVisual;
+Begin
+  lblDatabaseName.Caption := LZTDBValidReportlblDatabaseName;
+  lblOptions.Caption := LZTDBValidReportlblOptions;
+  btnRepair.Caption := LZTDBValidReportbtnRepair;
+  btnCancel.Caption := LZTDBValidReportbtnCancel;
+  Self.Caption := LZTDBValidReportFormTitle;
+End;
 
 end.

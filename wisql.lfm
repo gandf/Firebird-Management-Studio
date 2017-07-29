@@ -1,65 +1,69 @@
 object dlgWisql: TdlgWisql
   Left = 333
+  Height = 434
   Top = 199
+  Width = 634
   ActiveControl = reSqlInput
-  AutoScroll = False
   Caption = 'Interactive SQL'
-  ClientHeight = 434
+  ClientHeight = 414
   ClientWidth = 634
   Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
-  Font.Style = []
   Menu = MainMenu1
-  Position = poScreenCenter
   OnClose = FormClose
   OnResize = FormResize
   OnShow = FormShow
-  PixelsPerInch = 96
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.3'
   object splISQLHorizontal: TSplitter
+    Cursor = crVSplit
     Left = 0
+    Height = 6
     Top = 183
     Width = 634
-    Height = 6
-    Cursor = crVSplit
     Align = alTop
     Beveled = True
+    ResizeAnchor = akTop
   end
   object lblFileName: TLabel
     Left = 378
+    Height = 13
     Top = 423
     Width = 54
-    Height = 13
     Caption = 'lblFileName'
+    ParentColor = False
     Visible = False
   end
   object pgcOutput: TPageControl
     Left = 0
+    Height = 202
     Top = 189
     Width = 634
-    Height = 226
     ActivePage = TabData
     Align = alClient
     DockSite = True
+    TabIndex = 0
     TabOrder = 0
     object TabData: TTabSheet
       Caption = 'Data'
+      ClientHeight = 176
+      ClientWidth = 626
       object dbgSQLResults: TDBGrid
         Left = 0
+        Height = 176
         Top = 0
         Width = 626
-        Height = 198
         Align = alClient
+        Color = clWindow
+        Columns = <>
         DataSource = GridSource
         ReadOnly = True
         TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
         TitleFont.Name = 'MS Sans Serif'
-        TitleFont.Style = []
         OnCellClick = dbgSQLResultsCellClick
         OnDrawColumnCell = dbgSQLResultsDrawColumnCell
         OnEditButtonClick = dbgSQLResultsEditButtonClick
@@ -67,43 +71,112 @@ object dlgWisql: TdlgWisql
     end
     object TabResults: TTabSheet
       Caption = 'Plan'
+      ClientHeight = 176
+      ClientWidth = 626
       ImageIndex = 1
-      object reSqlOutput: TSynEdit
+      inline reSqlOutput: TSynEdit
         Left = 0
+        Height = 176
         Top = 0
         Width = 626
-        Height = 198
         Align = alClient
-        Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
         Font.Name = 'Courier New'
-        Font.Style = []
-        Lines.Strings = (
-          'reSqlOutput')
+        Font.Pitch = fpFixed
+        Font.Quality = fqNonAntialiased
+        ParentColor = False
         ParentFont = False
-        ReadOnly = True
-        ScrollBars = ssBoth
         TabOrder = 0
+        Gutter.Width = 57
+        Gutter.MouseActions = <>
+        RightGutter.Width = 0
+        RightGutter.MouseActions = <>
+        Keystrokes = <>
+        MouseActions = <>
+        MouseTextActions = <>
+        MouseSelActions = <>
+        Lines.Strings = (
+          'reSqlOutput'
+        )
+        VisibleSpecialChars = [vscSpace, vscTabAtLast]
+        ReadOnly = True
+        SelectedColor.BackPriority = 50
+        SelectedColor.ForePriority = 50
+        SelectedColor.FramePriority = 50
+        SelectedColor.BoldPriority = 50
+        SelectedColor.ItalicPriority = 50
+        SelectedColor.UnderlinePriority = 50
+        SelectedColor.StrikeOutPriority = 50
+        BracketHighlightStyle = sbhsBoth
+        BracketMatchColor.Background = clNone
+        BracketMatchColor.Foreground = clNone
+        BracketMatchColor.Style = [fsBold]
+        FoldedCodeColor.Background = clNone
+        FoldedCodeColor.Foreground = clGray
+        FoldedCodeColor.FrameColor = clGray
+        MouseLinkColor.Background = clNone
+        MouseLinkColor.Foreground = clBlue
+        LineHighlightColor.Background = clNone
+        LineHighlightColor.Foreground = clNone
+        inline SynLeftGutterPartList1: TSynGutterPartList
+          object SynGutterMarks1: TSynGutterMarks
+            Width = 24
+            MouseActions = <>
+          end
+          object SynGutterLineNumber1: TSynGutterLineNumber
+            Width = 17
+            MouseActions = <>
+            MarkupInfo.Background = clBtnFace
+            MarkupInfo.Foreground = clNone
+            DigitCount = 2
+            ShowOnlyLineNumbersMultiplesOf = 1
+            ZeroStart = False
+            LeadingZeros = False
+          end
+          object SynGutterChanges1: TSynGutterChanges
+            Width = 4
+            MouseActions = <>
+            ModifiedColor = 59900
+            SavedColor = clGreen
+          end
+          object SynGutterSeparator1: TSynGutterSeparator
+            Width = 2
+            MouseActions = <>
+            MarkupInfo.Background = clWhite
+            MarkupInfo.Foreground = clGray
+          end
+          object SynGutterCodeFolding1: TSynGutterCodeFolding
+            MouseActions = <>
+            MarkupInfo.Background = clNone
+            MarkupInfo.Foreground = clGray
+            MouseActionsExpanded = <>
+            MouseActionsCollapsed = <>
+          end
+        end
       end
     end
     object TabStats: TTabSheet
       Caption = 'Statistics'
+      ClientHeight = 176
+      ClientWidth = 626
       ImageIndex = 2
       object lvStats: TListView
         Left = 0
+        Height = 176
         Top = 0
         Width = 626
-        Height = 198
         Align = alClient
-        Columns = <
+        Columns = <        
           item
             AutoSize = True
             Caption = 'Statistic'
-          end
+            Width = 56
+          end        
           item
             AutoSize = True
             Caption = 'Value'
+            Width = 44
           end>
         ColumnClick = False
         ReadOnly = True
@@ -114,73 +187,137 @@ object dlgWisql: TdlgWisql
   end
   object pnlEnterSQL: TPanel
     Left = 0
+    Height = 153
     Top = 30
     Width = 634
-    Height = 153
     Align = alTop
     BevelOuter = bvNone
+    ClientHeight = 153
+    ClientWidth = 634
     TabOrder = 1
-    object reSqlInput: TSynEdit
+    inline reSqlInput: TSynEdit
       Left = 0
+      Height = 130
       Top = 0
       Width = 634
-      Height = 133
       Align = alClient
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
       Font.Name = 'Courier New'
-      Font.Style = []
-      HideSelection = False
-      Lines.Strings = (
-        'reSqlInput')
+      Font.Pitch = fpFixed
+      Font.Quality = fqNonAntialiased
+      ParentColor = False
       ParentFont = False
       PopupMenu = pmRichEdit
-      ScrollBars = ssBoth
       TabOrder = 0
       OnEnter = UpdateCursor
       OnKeyPress = reSqlInputKeyPress
+      Gutter.Width = 57
+      Gutter.MouseActions = <>
+      RightGutter.Width = 0
+      RightGutter.MouseActions = <>
+      Keystrokes = <>
+      MouseActions = <>
+      MouseTextActions = <>
+      MouseSelActions = <>
+      Lines.Strings = (
+        'reSqlInput'
+      )
+      VisibleSpecialChars = [vscSpace, vscTabAtLast]
+      SelectedColor.BackPriority = 50
+      SelectedColor.ForePriority = 50
+      SelectedColor.FramePriority = 50
+      SelectedColor.BoldPriority = 50
+      SelectedColor.ItalicPriority = 50
+      SelectedColor.UnderlinePriority = 50
+      SelectedColor.StrikeOutPriority = 50
+      BracketHighlightStyle = sbhsBoth
+      BracketMatchColor.Background = clNone
+      BracketMatchColor.Foreground = clNone
+      BracketMatchColor.Style = [fsBold]
+      FoldedCodeColor.Background = clNone
+      FoldedCodeColor.Foreground = clGray
+      FoldedCodeColor.FrameColor = clGray
+      MouseLinkColor.Background = clNone
+      MouseLinkColor.Foreground = clBlue
+      LineHighlightColor.Background = clNone
+      LineHighlightColor.Foreground = clNone
+      inline SynLeftGutterPartList1: TSynGutterPartList
+        object SynGutterMarks1: TSynGutterMarks
+          Width = 24
+          MouseActions = <>
+        end
+        object SynGutterLineNumber1: TSynGutterLineNumber
+          Width = 17
+          MouseActions = <>
+          MarkupInfo.Background = clBtnFace
+          MarkupInfo.Foreground = clNone
+          DigitCount = 2
+          ShowOnlyLineNumbersMultiplesOf = 1
+          ZeroStart = False
+          LeadingZeros = False
+        end
+        object SynGutterChanges1: TSynGutterChanges
+          Width = 4
+          MouseActions = <>
+          ModifiedColor = 59900
+          SavedColor = clGreen
+        end
+        object SynGutterSeparator1: TSynGutterSeparator
+          Width = 2
+          MouseActions = <>
+          MarkupInfo.Background = clWhite
+          MarkupInfo.Foreground = clGray
+        end
+        object SynGutterCodeFolding1: TSynGutterCodeFolding
+          MouseActions = <>
+          MarkupInfo.Background = clNone
+          MarkupInfo.Foreground = clGray
+          MouseActionsExpanded = <>
+          MouseActionsCollapsed = <>
+        end
+      end
     end
     object stbISQL: TStatusBar
       Left = 0
-      Top = 131
-      Width = 634
-      Height = 20
+      Height = 23
       Hint = 'Right-Click to change client dialect'
-      Panels = <
+      Top = 130
+      Width = 634
+      Panels = <      
         item
           Alignment = taCenter
           Width = 100
-        end
+        end      
         item
           Alignment = taCenter
           Width = 80
-        end
+        end      
         item
           Width = 100
-        end
+        end      
         item
           Width = 150
-        end
+        end      
         item
           Width = 50
         end>
       ParentShowHint = False
       PopupMenu = pmClientDialect
-      ShowHint = True
       SimplePanel = False
       SizeGrip = False
+      ShowHint = True
     end
   end
   object sbData: TStatusBar
     Left = 0
-    Top = 415
+    Height = 23
+    Top = 391
     Width = 634
-    Height = 19
-    Panels = <
+    Panels = <    
       item
         Width = 300
-      end
+      end    
       item
         Width = 50
       end>
@@ -188,109 +325,108 @@ object dlgWisql: TdlgWisql
   end
   object ToolBar3: TToolBar
     Left = 0
+    Height = 30
     Top = 0
     Width = 634
-    Height = 30
     AutoSize = True
     ButtonHeight = 26
     ButtonWidth = 26
     Caption = 'Query'
     EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
-    Flat = True
     Images = frmMain.imgToolBarsEnabled
     ParentShowHint = False
     ShowHint = True
     TabOrder = 3
     object ToolButton7: TToolButton
-      Left = 0
-      Top = 0
+      Left = 3
+      Top = 2
       Action = QueryPrevious
       AutoSize = True
       DropdownMenu = mnuPrev
       Style = tbsDropDown
     end
     object ToolButton8: TToolButton
-      Left = 39
-      Top = 0
+      Left = 41
+      Top = 2
       Action = QueryNext
       AutoSize = True
       DropdownMenu = mnuNext
       Style = tbsDropDown
     end
     object ToolButton9: TToolButton
-      Left = 78
-      Top = 0
+      Left = 79
+      Top = 2
       Action = QueryExecute
       AutoSize = True
     end
     object ToolButton5: TToolButton
-      Left = 104
-      Top = 0
+      Left = 105
+      Top = 2
       Action = QueryPrepare
       AutoSize = True
     end
     object ToolButton10: TToolButton
-      Left = 130
-      Top = 0
-      Width = 8
+      Left = 131
+      Height = 26
+      Top = 2
       Caption = 'ToolButton10'
       ImageIndex = 12
       Style = tbsSeparator
     end
     object ToolButton2: TToolButton
-      Left = 138
-      Top = 0
+      Left = 139
+      Top = 2
       Action = TransactionCommit
       AutoSize = True
     end
     object ToolButton3: TToolButton
-      Left = 164
-      Top = 0
+      Left = 165
+      Top = 2
       Action = TransactionRollback
       AutoSize = True
     end
     object ToolButton4: TToolButton
-      Left = 190
-      Top = 0
-      Width = 8
+      Left = 191
+      Height = 26
+      Top = 2
       Caption = 'ToolButton4'
       ImageIndex = 15
       Style = tbsSeparator
     end
     object ToolButton11: TToolButton
-      Left = 198
-      Top = 0
+      Left = 199
+      Top = 2
       Action = QueryLoadScript
       AutoSize = True
     end
     object ToolButton12: TToolButton
-      Left = 224
-      Top = 0
+      Left = 225
+      Top = 2
       Action = QuerySaveScript
       AutoSize = True
     end
     object ToolButton13: TToolButton
-      Left = 250
-      Top = 0
-      Width = 8
+      Left = 251
+      Height = 26
+      Top = 2
       Caption = 'ToolButton13'
       ImageIndex = 11
       Style = tbsSeparator
     end
     object ToolButton20: TToolButton
-      Left = 258
-      Top = 0
+      Left = 259
+      Top = 2
       Action = EditFind
       AutoSize = True
     end
   end
   object GridSource: TDataSource
-    Left = 35
-    Top = 55
+    left = 35
+    top = 55
   end
   object pmClientDialect: TPopupMenu
-    Left = 399
-    Top = 129
+    left = 399
+    top = 129
     object Dialect1: TMenuItem
       Action = DialectAction1
       RadioItem = True
@@ -306,8 +442,8 @@ object dlgWisql: TdlgWisql
   end
   object MainMenu1: TMainMenu
     Images = frmMain.imgToolBarsEnabled
-    Left = 289
-    Top = 7
+    left = 289
+    top = 7
     object File1: TMenuItem
       Caption = '&File'
       Hint = 'Close the ISQL window'
@@ -441,12 +577,12 @@ object dlgWisql: TdlgWisql
     end
   end
   object pmLastFiles: TPopupMenu
-    Left = 548
-    Top = 81
+    left = 548
+    top = 81
   end
   object pmRichEdit: TPopupMenu
-    Left = 160
-    Top = 66
+    left = 160
+    top = 66
     object Cut1: TMenuItem
       Action = EditCut1
     end
@@ -467,25 +603,23 @@ object dlgWisql: TdlgWisql
     end
   end
   object FontDialog1: TFontDialog
-    Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
-    Font.Style = []
     MinFontSize = 0
     MaxFontSize = 0
-    Left = 8
-    Top = 80
+    left = 8
+    top = 80
   end
   object FindDialog1: TFindDialog
     OnFind = FindDialog1Find
-    Left = 8
-    Top = 106
+    left = 8
+    top = 106
   end
   object actWisql: TActionList
     Images = frmMain.imgToolBarsEnabled
-    Left = 8
-    Top = 54
+    left = 8
+    top = 54
     object TransactionCommit: TAction
       Tag = 1
       Category = 'Transaction'
@@ -527,26 +661,26 @@ object dlgWisql: TdlgWisql
       Caption = '&Previous'
       Hint = 'Previous Query'
       ImageIndex = 20
-      ShortCut = 16464
       OnExecute = QueryPreviousExecute
       OnUpdate = QueryPreviousUpdate
+      ShortCut = 16464
     end
     object QueryNext: TAction
       Category = 'QueryActions'
       Caption = '&Next'
       Hint = 'Next Query'
       ImageIndex = 19
-      ShortCut = 16462
       OnExecute = QueryNextExecute
+      ShortCut = 16462
     end
     object QueryExecute: TAction
       Category = 'QueryActions'
       Caption = '&Execute'
       Hint = 'Execute Query'
       ImageIndex = 18
-      ShortCut = 16453
       OnExecute = QueryExecuteExecute
       OnUpdate = QueryUpdate
+      ShortCut = 16453
     end
     object QueryLoadScript: TAction
       Category = 'QueryActions'
@@ -594,8 +728,8 @@ object dlgWisql: TdlgWisql
       Category = 'File'
       Caption = '&Close'
       Hint = 'Close the ISQL window'
-      ShortCut = 16499
       OnExecute = FileCloseExecute
+      ShortCut = 16499
     end
     object EditFind: TAction
       Category = 'File'
@@ -671,11 +805,11 @@ object dlgWisql: TdlgWisql
   end
   object mnuPrev: TPopupMenu
     OnPopup = mnuPrevPopup
-    Top = 2
+    top = 2
   end
   object mnuNext: TPopupMenu
     OnPopup = mnuNextPopup
-    Left = 44
-    Top = 2
+    left = 44
+    top = 2
   end
 end

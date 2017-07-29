@@ -26,7 +26,7 @@ interface
 uses
   LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls, ComCtrls, zluibcClasses, IBServices, IB,
-  Grids, frmuDlgClass;
+  Grids, frmuDlgClass, resstring;
 
 type
   TfrmDBValidation = class(TDialog)
@@ -47,6 +47,7 @@ type
     procedure cbOptionsKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure sgOptionsDrawCell(Sender: TObject; ACol, ARow: Integer; Rect: TRect; State: TGridDrawState);
     procedure sgOptionsSelectCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     function VerifyInputData(): boolean;
@@ -132,13 +133,13 @@ begin
 
           // determine which options have been selected
           Include (lValidateOptions, ValidateDB);
-          if frmDBValidation.sgOptions.Cells[1,VALIDATE_RECORD_FRAGMENTS_ROW] = 'True' then
+          if frmDBValidation.sgOptions.Cells[1,VALIDATE_RECORD_FRAGMENTS_ROW] = LZTDBValidationTrue then
             Include(lValidateOptions, ValidateFull);
 
-          if frmDBValidation.sgOptions.Cells[1,READ_ONLY_VALIDATION_ROW] = 'True' then
+          if frmDBValidation.sgOptions.Cells[1,READ_ONLY_VALIDATION_ROW] = LZTDBValidationTrue then
             Include(lValidateOptions, CheckDB);
 
-          if (frmDBValidation.sgOptions.Cells[1,IGNORE_CHECKSUM_ERRORS_ROW] = 'True') then
+          if (frmDBValidation.sgOptions.Cells[1,IGNORE_CHECKSUM_ERRORS_ROW] = LZTDBValidationTrue) then
             Include(lValidateOptions, IgnoreChecksum);
 
           // assign validation options
@@ -206,13 +207,13 @@ var
 begin
   lValidateOptions := [ValidateDB];
   // determine which options have been selected
-  if sgOptions.Cells[1,VALIDATE_RECORD_FRAGMENTS_ROW] = 'True' then
+  if sgOptions.Cells[1,VALIDATE_RECORD_FRAGMENTS_ROW] = LZTDBValidationTrue then
     Include(lValidateOptions, ValidateFull);
 
-  if sgOptions.Cells[1,READ_ONLY_VALIDATION_ROW] = 'True' then
+  if sgOptions.Cells[1,READ_ONLY_VALIDATION_ROW] = LZTDBValidationTrue then
     Include(lValidateOptions, CheckDB);
 
-  if sgOptions.Cells[1,IGNORE_CHECKSUM_ERRORS_ROW] = 'True' then
+  if sgOptions.Cells[1,IGNORE_CHECKSUM_ERRORS_ROW] = LZTDBValidationTrue then
     Include(lValidateOptions, IgnoreChecksum);
 
   result := not (lValidateOptions = []);
@@ -223,7 +224,7 @@ begin
   if VerifyInputData() then
     ModalResult := mrOK
   else
-    ShowMessage ('You must specify a validation option');
+    ShowMessage (LZTDBValidationSpecifyValidationOption);
 end;
 
 procedure TfrmDBValidation.FormCreate(Sender: TObject);
@@ -235,18 +236,18 @@ begin
 
   sgOptions.RowCount := 3;
 
-  sgOptions.Cells[OPTION_NAME_COL,VALIDATE_RECORD_FRAGMENTS_ROW] := 'Validate Record Fragments';
-  sgOptions.Cells[OPTION_VALUE_COL,VALIDATE_RECORD_FRAGMENTS_ROW] := 'False';
+  sgOptions.Cells[OPTION_NAME_COL,VALIDATE_RECORD_FRAGMENTS_ROW] := LZTDBValidationValidRecordFrag;
+  sgOptions.Cells[OPTION_VALUE_COL,VALIDATE_RECORD_FRAGMENTS_ROW] := LZTDBValidationFalse;
 
-  sgOptions.Cells[OPTION_NAME_COL,READ_ONLY_VALIDATION_ROW] := 'Read Only Validation';
-  sgOptions.Cells[OPTION_VALUE_COL,READ_ONLY_VALIDATION_ROW] := 'False';
+  sgOptions.Cells[OPTION_NAME_COL,READ_ONLY_VALIDATION_ROW] := LZTDBValidationReadOnlyValid;
+  sgOptions.Cells[OPTION_VALUE_COL,READ_ONLY_VALIDATION_ROW] := LZTDBValidationFalse;
 
-  sgOptions.Cells[OPTION_NAME_COL,IGNORE_CHECKSUM_ERRORS_ROW] := 'Ignore Checksum Errors';
-  sgOptions.Cells[OPTION_VALUE_COL,IGNORE_CHECKSUM_ERRORS_ROW] := 'False';
+  sgOptions.Cells[OPTION_NAME_COL,IGNORE_CHECKSUM_ERRORS_ROW] := LZTDBValidationIgnoreChecksumErrors;
+  sgOptions.Cells[OPTION_VALUE_COL,IGNORE_CHECKSUM_ERRORS_ROW] := LZTDBValidationFalse;
 
-  pnlOptionName.Caption := 'Validate Record Fragments';
-  cbOptions.Items.Add('True');
-  cbOptions.Items.Add('False');
+  pnlOptionName.Caption := LZTDBValidationValidRecordFrag;
+  cbOptions.Items.Add(LZTDBValidationTrue);
+  cbOptions.Items.Add(LZTDBValidationFalse);
   cbOptions.ItemIndex := 1;  
 end;
 
@@ -259,7 +260,7 @@ begin
 
   if (iIndex = -1) then
   begin
-    MessageDlg('Invalid option value', mtError, [mbOK], 0);
+    MessageDlg(LZTDBValidationInvalidOptionValue, mtError, [mbOK], 0);
 
     cbOptions.ItemIndex := 0;
     // Size and position the combo box to fit the cell
@@ -315,18 +316,18 @@ begin
   case ARow of
     VALIDATE_RECORD_FRAGMENTS_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBValidationTrue);
+      cbOptions.Items.Add(LZTDBValidationFalse);
     end;
     READ_ONLY_VALIDATION_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBValidationTrue);
+      cbOptions.Items.Add(LZTDBValidationFalse);
     end;
     IGNORE_CHECKSUM_ERRORS_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBValidationTrue);
+      cbOptions.Items.Add(LZTDBValidationFalse);
     end;
   end;
 
@@ -392,5 +393,14 @@ begin
   if (Key = VK_DOWN) then
     cbOptions.DroppedDown := true;
 end;
+
+Procedure TfrmDBValidation.TranslateVisual;
+Begin
+  lblDatabaseName.Caption := LZTDBValidationlblDatabaseName;
+  lblOptions.Caption := LZTDBValidationlblOptions;
+  btnOK.Caption := LZTDBValidationbtnOK;
+  btnCancel.Caption := LZTDBValidationbtnCancel;
+  Self.Caption := LZTDBValidationFormTitle;
+End;
 
 end.

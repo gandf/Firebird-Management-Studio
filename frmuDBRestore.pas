@@ -26,7 +26,7 @@ interface
 uses
   LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ComCtrls, ExtCtrls, zluibcClasses, Grids, IB, frmuDlgClass,
-  FileUtil;
+  FileUtil, resstring;
 
 type
   TfrmDBRestore = class(TDialog)
@@ -69,6 +69,7 @@ type
     procedure cbBackupAliasChange(Sender: TObject);
     procedure IncreaseRows(Sender: TObject; ACol, ARow: Integer;
       var CanSelect: Boolean);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     FVerboseFile: string;
@@ -110,10 +111,10 @@ begin
   cbOptions.Visible := True;
   pnlOptionName.Visible := True;
 
-  sgBackupFiles.Cells[0,0] := 'Filename(s)';
+  sgBackupFiles.Cells[0,0] := LZTDBRestoreFilename;
 
-  sgDatabaseFiles.Cells[0,0] := 'Filename(s)';
-  sgDatabaseFiles.Cells[1,0] := 'Pages';
+  sgDatabaseFiles.Cells[0,0] := LZTDBRestoreFilename;
+  sgDatabaseFiles.Cells[1,0] := LZTDBRestorePages;
 
   sgOptions.RowCount := 8;
 
@@ -121,27 +122,27 @@ begin
   sgOptions.Cells[OPTION_VALUE_COL,PAGE_SIZE_ROW] := '1024';
 
   sgOptions.Cells[OPTION_NAME_COL,OVERWRITE_ROW] := 'Overwrite';
-  sgOptions.Cells[OPTION_VALUE_COL,OVERWRITE_ROW] := 'False';
+  sgOptions.Cells[OPTION_VALUE_COL,OVERWRITE_ROW] := LZTDBRestoreFalse;
 
   sgOptions.Cells[OPTION_NAME_COL,COMMIT_EACH_TABLE_ROW] := 'Commit After Each Table';
-  sgOptions.Cells[OPTION_VALUE_COL,COMMIT_EACH_TABLE_ROW] := 'False';
+  sgOptions.Cells[OPTION_VALUE_COL,COMMIT_EACH_TABLE_ROW] := LZTDBRestoreFalse;
 
   sgOptions.Cells[OPTION_NAME_COL,CREATE_SHADOW_FILES_ROW] := 'Create Shadow Files';
-  sgOptions.Cells[OPTION_VALUE_COL,CREATE_SHADOW_FILES_ROW] := 'True';
+  sgOptions.Cells[OPTION_VALUE_COL,CREATE_SHADOW_FILES_ROW] := LZTDBRestoreTrue;
 
   sgOptions.Cells[OPTION_NAME_COL,DEACTIVATE_INDICES_ROW] := 'Deactivate Indices';
-  sgOptions.Cells[OPTION_VALUE_COL,DEACTIVATE_INDICES_ROW] := 'False';
+  sgOptions.Cells[OPTION_VALUE_COL,DEACTIVATE_INDICES_ROW] := LZTDBRestoreFalse;
 
   sgOptions.Cells[OPTION_NAME_COL,VALIDITY_CONDITIONS_ROW] := 'Validity Conditions';
-  sgOptions.Cells[OPTION_VALUE_COL,VALIDITY_CONDITIONS_ROW] := 'Restore';
+  sgOptions.Cells[OPTION_VALUE_COL,VALIDITY_CONDITIONS_ROW] := LZTDBRestoreRestore;
 
   sgOptions.Cells[OPTION_NAME_COL,USE_ALL_SPACE_ROW] := 'Use All Space';
-  sgOptions.Cells[OPTION_VALUE_COL,USE_ALL_SPACE_ROW] := 'False';
+  sgOptions.Cells[OPTION_VALUE_COL,USE_ALL_SPACE_ROW] := LZTDBRestoreFalse;
 
   sgOptions.Cells[OPTION_NAME_COL,VERBOSE_OUTPUT_ROW] := 'Verbose Output';
-  sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] := 'To Screen';
+  sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] := LZTDBRestoreToScreen;
 
-  pnlOptionName.Caption := 'Page Size (Bytes)';
+  pnlOptionName.Caption := LZTDBRestorePageSize;
   cbOptions.Items.Add('1024');
   cbOptions.Items.Add('2048');
   cbOptions.Items.Add('4096');
@@ -197,7 +198,7 @@ begin
       lOptions := [];
       if lRestoreService.Active = true then
       begin
-        if sgOptions.Cells[OPTION_VALUE_COL,OVERWRITE_ROW] = 'True' then
+        if sgOptions.Cells[OPTION_VALUE_COL,OVERWRITE_ROW] = LZTDBRestoreTrue then
         begin
           Include(lOptions, Replace);
         end
@@ -206,22 +207,22 @@ begin
           Include(lOptions, CreateNewDB);
         end;
 
-        if sgOptions.Cells[OPTION_VALUE_COL,COMMIT_EACH_TABLE_ROW] = 'True' then
+        if sgOptions.Cells[OPTION_VALUE_COL,COMMIT_EACH_TABLE_ROW] = LZTDBRestoreTrue then
         begin
           Include(lOptions, OneRelationAtATime);
         end;
 
-        if sgOptions.Cells[OPTION_VALUE_COL,CREATE_SHADOW_FILES_ROW] = 'False' then
+        if sgOptions.Cells[OPTION_VALUE_COL,CREATE_SHADOW_FILES_ROW] = LZTDBRestoreFalse then
         begin
           Include(lOptions, NoShadow);
         end;
 
-        if sgOptions.Cells[OPTION_VALUE_COL,DEACTIVATE_INDICES_ROW] = 'True' then
+        if sgOptions.Cells[OPTION_VALUE_COL,DEACTIVATE_INDICES_ROW] = LZTDBRestoreTrue then
         begin
           Include(lOptions, DeactivateIndexes);
         end;
 
-        if sgOptions.Cells[OPTION_VALUE_COL,VALIDITY_CONDITIONS_ROW] = 'False' then
+        if sgOptions.Cells[OPTION_VALUE_COL,VALIDITY_CONDITIONS_ROW] = LZTDBRestoreFalse then
         begin
           Include(lOptions, NoValidityCheck);
         end;
@@ -229,8 +230,8 @@ begin
         lRestoreService.Options := lOptions;
         lRestoreService.PageSize := StrToInt(sgOptions.Cells[OPTION_VALUE_COL,PAGE_SIZE_ROW]);
 
-        if (sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] = 'To Screen') or
-          (sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] = 'To File') then
+        if (sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] = LZTDBRestoreToScreen) or
+          (sgOptions.Cells[OPTION_VALUE_COL,VERBOSE_OUTPUT_ROW] = LZTDBRestoreToFile) then
         begin
           lRestoreService.Verbose := true;
         end;
@@ -246,7 +247,7 @@ begin
           for j := 1 to sgDatabaseFiles.RowCount - 1 do
           begin
             if not (IsValidDBName(sgDatabaseFiles.Cells[0,j])) then
-              DisplayMsg(WAR_REMOTE_FILENAME, Format('File: %s', [sgDatabaseFiles.Cells[0,j]]));
+              DisplayMsg(WAR_REMOTE_FILENAME, Format(LZTDBRestoreFile, [sgDatabaseFiles.Cells[0,j]]));
 
             if (sgDatabaseFiles.Cells[0,j] <> '') and (sgDatabaseFiles.Cells[1,j] <> '')then
             begin
@@ -261,7 +262,7 @@ begin
         Screen.Cursor := crHourGlass;
         try
           lRestoreService.ServiceStart;
-          FSourceServerNode.OpenTextViewer (lRestoreService, 'Database Restore');
+          FSourceServerNode.OpenTextViewer (lRestoreService, LZTDBRestoreDatabaseRestore);
           while (lRestoreService.IsServiceRunning) and (not gApplShutdown) do
           begin
             Application.ProcessMessages;
@@ -309,29 +310,29 @@ var
   lSaveDialog: TSaveDialog;
 begin
   lSaveDialog := nil;
-  if (cbOptions.Text = 'To File') and (sgOptions.Row = VERBOSE_OUTPUT_ROW) then
+  if (cbOptions.Text = LZTDBRestoreToFile) and (sgOptions.Row = VERBOSE_OUTPUT_ROW) then
   begin
     try
       lSaveDialog := TSaveDialog.Create(Self);
-      lSaveDialog.Title := 'Select Verbose File';
+      lSaveDialog.Title := LZTDBRestoreSelectVerboseFile;
       lSaveDialog.DefaultExt := 'txt';
-      lSaveDialog.Filter := 'Text File (*.txt)|*.TXT|All files (*.*)|*.*';
+      lSaveDialog.Filter := LZTDBRestoreFileFilter;
       lSaveDialog.Options := [ofHideReadOnly,ofEnableSizing];
       if lSaveDialog.Execute then
       begin
-        if FileExists(lSaveDialog.FileName) { *Converted from FileExists* } then
+        if FileExists(lSaveDialog.FileName) then
         begin
-          if MessageDlg(Format('OK to overwrite %s', [lSaveDialog.FileName]),
+          if MessageDlg(Format(LZTDBRestoreOverWrite, [lSaveDialog.FileName]),
               mtConfirmation, mbYesNoCancel, 0) <> idYes then
           begin
-            cbOptions.ItemIndex := cbOptions.Items.IndexOf('To Screen');
+            cbOptions.ItemIndex := cbOptions.Items.IndexOf(LZTDBRestoreToScreen);
             Exit;
           end;
         end;
         FVerboseFile := lSaveDialog.FileName;
       end
       else
-        cbOptions.ItemIndex := cbOptions.Items.IndexOf('To Screen');
+        cbOptions.ItemIndex := cbOptions.Items.IndexOf(LZTDBRestoreToScreen);
     finally
       lSaveDialog.free;
     end;
@@ -371,7 +372,7 @@ begin
 
   if (iIndex = -1) then
   begin
-    MessageDlg('Invalid option value', mtError, [mbOK], 0);
+    MessageDlg(LZTDBRestoreInvalidOptionValue, mtError, [mbOK], 0);
 
     cbOptions.ItemIndex := 0;
     //Size and position the combo box to fit the cell
@@ -522,39 +523,39 @@ begin
     end;
     OVERWRITE_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBRestoreTrue);
+      cbOptions.Items.Add(LZTDBRestoreFalse);
     end;
     COMMIT_EACH_TABLE_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBRestoreTrue);
+      cbOptions.Items.Add(LZTDBRestoreFalse);
     end;
     CREATE_SHADOW_FILES_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBRestoreTrue);
+      cbOptions.Items.Add(LZTDBRestoreFalse);
     end;
     DEACTIVATE_INDICES_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBRestoreTrue);
+      cbOptions.Items.Add(LZTDBRestoreFalse);
     end;
     VALIDITY_CONDITIONS_ROW:
     begin
-      cbOptions.Items.Add('Restore');
-      cbOptions.Items.Add('Ignore');
+      cbOptions.Items.Add(LZTDBRestoreRestore);
+      cbOptions.Items.Add(LZTDBRestoreIgnore);
     end;
     USE_ALL_SPACE_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTDBRestoreTrue);
+      cbOptions.Items.Add(LZTDBRestoreFalse);
     end;
     VERBOSE_OUTPUT_ROW:
     begin
-      cbOptions.Items.Add('None');
-      cbOptions.Items.Add('To Screen');
-      cbOptions.Items.Add('To File');
+      cbOptions.Items.Add(LZTDBRestoreNone);
+      cbOptions.Items.Add(LZTDBRestoreToScreen);
+      cbOptions.Items.Add(LZTDBRestoreToFile);
     end;
   end;
 
@@ -823,7 +824,7 @@ begin
           with OpenDlg do
           begin
             Options := [ofAllowMultiSelect, ofFileMustExist];
-            Filter := 'Backup files (*.gbk)|*.gbk|All files (*.*)|*.*';
+            Filter := LZTDBRestoreBackupFileFilter;
             FilterIndex := 1;
             if Execute then
             begin
@@ -876,5 +877,19 @@ begin
       RowCount := RowCount + 1;
   end;
 end;
+
+Procedure TfrmDBRestore.TranslateVisual;
+Begin
+  lblOptions.Caption := LZTDBRestorelblOptions;
+  gbDatabaseFiles.Caption := LZTDBRestoregbDatabaseFiles;
+  lblDestinationServer.Caption := LZTDBRestorelblDestinationServer;
+  lblDBAlias.Caption := LZTDBRestorelblDBAlias;
+  gbBackupFiles.Caption := LZTDBRestoregbBackupFiles;
+  lblBackupServer.Caption := LZTDBRestorelblBackupServer;
+  lblBackupAlias.Caption := LZTDBRestorelblBackupAlias;
+  btnOK.Caption := LZTDBRestorebtnOK;
+  btnCancel.Caption := LZTDBRestorebtnCancel;
+  Self.Caption := LZTDBRestoreFormTitle;
+End;
 
 end.

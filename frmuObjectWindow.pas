@@ -27,7 +27,7 @@ uses
   LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Interfaces, Forms, Dialogs,
   StdCtrls, ComCtrls, Buttons, Grids, DBGrids,
   ActnList, Db, ExtCtrls, Messages, IBDatabase, IBCustomDataSet, dbctrls,
-  IBTable, SynEdit, CommCtrl;
+  IBTable, SynEdit, CommCtrl, gettext, Translations, resstring;
 
 type
   TTblData = class
@@ -176,6 +176,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure sbCommitRefreshClick(Sender: TObject);
     procedure cbExtractDataClick(Sender: TObject);
+    Procedure TranslateVisual;
 
   private
     { Private declarations }
@@ -339,7 +340,7 @@ begin
   FShowSystem := ShowSystem;
   FDatabase := Database;
   FObjName := Trim(ObjName);
-  Caption := Format('Properties for: %s',[Trim(ObjName)]);
+  Caption := Format(LZTObjectWindowProperties,[Trim(ObjName)]);
   Icon := ObjIcon;
   if not Assigned(FObjNameList) then
     FObjNameList := TStringList.Create
@@ -448,7 +449,7 @@ begin
   frmMain.UpdateWindowList(Caption, Self, true);
   with Sender as TComboBox do
   begin
-    Caption := Format('Properties for: %s',[Items[ItemIndex]]);;
+    Caption := Format(LZTObjectWindowProperties,[Items[ItemIndex]]);;
     FObjName := Items[ItemIndex];
     FIdx := ItemIndex;
     FObjectArray.Append (IntToStr(FIndex));
@@ -459,7 +460,14 @@ begin
 end;
 
 constructor TfrmObjectView.Create(AOwner: TComponent);
+var
+  lg, language : String;
 begin
+  GetLanguageIDs(lg,language);
+  Translations.TranslateUnitResourceStrings('resstring', '.\Lang\'+ChangeFileExt(ExtractFileName(Application.ExeName),
+  '')+'.%s.po', lg, language);
+  TranslateVisual;
+
   inherited;
   Visible := false;
 
@@ -640,7 +648,7 @@ begin
       ftMemo:
         DisplayMemo (frmObjectView, FieldObj, TIBDataSet(IBTable));
       else
-          ShowMessage (FieldObj.DisplayName+' is unknown');
+          ShowMessage (FieldObj.DisplayName + LZTObjectWindowIsUnknown);
     end;
   end;
 end;
@@ -1516,5 +1524,72 @@ begin
 end;
 
 end;
+
+Procedure TfrmObjectView.TranslateVisual;
+Begin
+  ToolBar1.Caption := LZTObjectWindowToolBar1;
+  tabProperties.Caption := LZTObjectWindowtabProperties;
+  btnApply.Caption := LZTObjectWindowbtnApply;
+  tabDomains.Caption := LZTObjectWindowtabDomains;
+  Label5.Caption := LZTObjectWindowLabel5;
+  lblFileName.Caption := LZTObjectWindowlblFileName;
+  tabTables.Caption := LZTObjectWindowtabTables;
+  ToolBar2.Caption := LZTObjectWindowToolBar2;
+  tabProcedures.Caption := LZTObjectWindowtabProcedures;
+  tabFunctions.Caption := LZTObjectWindowtabFunctions;
+  Label8.Caption := LZTObjectWindowLabel8;
+  Label9.Caption := LZTObjectWindowLabel9;
+  Label10.Caption := LZTObjectWindowLabel10;
+  tabExceptions.Caption := LZTObjectWindowtabExceptions;
+  Label18.Caption := LZTObjectWindowLabel18;
+  Label19.Caption := LZTObjectWindowLabel19;
+  tabGenerators.Caption := LZTObjectWindowtabGenerators;
+  Label3.Caption := LZTObjectWindowLabel3;
+  Label21.Caption := LZTObjectWindowLabel21;
+  tabFilters.Caption := LZTObjectWindowtabFilters;
+  Label11.Caption := LZTObjectWindowLabel11;
+  Label12.Caption := LZTObjectWindowLabel12;
+  Label13.Caption := LZTObjectWindowLabel13;
+  Label14.Caption := LZTObjectWindowLabel14;
+  tabMetadata.Caption := LZTObjectWindowtabMetadata;
+  cbExtractData.Caption := LZTObjectWindowcbExtractData;
+  tabPermissions.Caption := LZTObjectWindowtabPermissions;
+  lvPermissions.Column[0].Caption := LZTObjectWindowlvPermissionsCol0;
+  lvPermissions.Column[1].Caption := LZTObjectWindowlvPermissionsCol1;
+  lvPermissions.Column[2].Caption := LZTObjectWindowlvPermissionsCol2;
+  lvPermissions.Column[3].Caption := LZTObjectWindowlvPermissionsCol3;
+  lvPermissions.Column[4].Caption := LZTObjectWindowlvPermissionsCol4;
+  lvPermissions.Column[5].Caption := LZTObjectWindowlvPermissionsCol5;
+  lvPermissions.Column[6].Caption := LZTObjectWindowlvPermissionsCol6;
+  lvPermissions.Column[7].Caption := LZTObjectWindowlvPermissionsCol7;
+  Label1.Caption := LZTObjectWindowLabel1;
+  tabData.Caption := LZTObjectWindowtabData;
+  sbCommitRefresh.Caption := LZTObjectWindowsbCommitRefresh;
+  tabDependencies.Caption := LZTObjectWindowtabDependencies;
+  rbDependent.Caption := LZTObjectWindowrbDependent;
+  rbDependedOn.Caption := LZTObjectWindowrbDependedOn;
+  pnlDependents.Caption := LZTObjectWindowpnlDependents;
+  ShowColumns.Caption := LZTObjectWindowShowColumns;
+  ShowTriggers.Caption := LZTObjectWindowShowTriggers;
+  ShowCheckConstraints.Caption := LZTObjectWindowShowCheckConstraints;
+  ShowIndexes.Caption := LZTObjectWindowShowIndexes;
+  ShowUniqueConstraints.Caption := LZTObjectWindowShowUniqueConstraints;
+  ShowReferentialConstraints.Caption := LZTObjectWindowShowReferentialConstraints;
+  tbCols.Caption := LZTObjectWindowtbCols;
+  tbTriggers.Caption := LZTObjectWindowtbTriggers;
+  tbChkConst.Caption := LZTObjectWindowtbChkConst;
+  tbIndexes.Caption := LZTObjectWindowtbIndexes;
+  tbUnique.Caption := LZTObjectWindowtbUnique;
+  tbRef.Caption := LZTObjectWindowtbRef;
+  rbDependent.Hint := LZTObjectWindowrbDependentHint;
+  rbDependedOn.Hint := LZTObjectWindowrbDependedOnHint;
+  ShowColumns.Hint := LZTObjectWindowShowColumnsHint;
+  ShowTriggers.Hint := LZTObjectWindowShowTriggersHint;
+  ShowCheckConstraints.Hint := LZTObjectWindowShowCheckConstraintsHint;
+  ShowIndexes.Hint := LZTObjectWindowShowIndexesHint;
+  ShowUniqueConstraints.Hint := LZTObjectWindowShowUniqueConstraintsHint;
+  ShowReferentialConstraints.Hint := LZTObjectWindowShowReferentialConstraintsHint;
+  Self.Caption := LZTObjectWindowFormTitle;
+End;
 
 end.

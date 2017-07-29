@@ -1,0 +1,16 @@
+{"version":1,"strings":[
+{"hash":244232158,"name":"tfrmserverregister.caption","sourcebytes":[82,101,103,105,115,116,101,114,32,83,101,114,118,101,114,32,97,110,100,32,76,111,103,105,110],"value":"Register Server and Login"},
+{"hash":247987872,"name":"tfrmserverregister.gbserverinfo.caption","sourcebytes":[32,83,101,114,118,101,114,32,73,110,102,111,114,109,97,116,105,111,110,32],"value":" Server Information "},
+{"hash":26803994,"name":"tfrmserverregister.lblservername.caption","sourcebytes":[83,38,101,114,118,101,114,32,78,97,109,101,58],"value":"S&erver Name:"},
+{"hash":44833162,"name":"tfrmserverregister.lblprotocol.caption","sourcebytes":[38,78,101,116,119,111,114,107,32,80,114,111,116,111,99,111,108,58],"value":"&Network Protocol:"},
+{"hash":133983242,"name":"tfrmserverregister.lblserveralias.caption","sourcebytes":[38,65,108,105,97,115,32,78,97,109,101,58],"value":"&Alias Name:"},
+{"hash":181829802,"name":"tfrmserverregister.label1.caption","sourcebytes":[38,68,101,115,99,114,105,112,116,105,111,110,58],"value":"&Description:"},
+{"hash":245959426,"name":"tfrmserverregister.rblocalserver.caption","sourcebytes":[38,76,111,99,97,108,32,83,101,114,118,101,114],"value":"&Local Server"},
+{"hash":223933442,"name":"tfrmserverregister.rbremoteserver.caption","sourcebytes":[38,82,101,109,111,116,101,32,83,101,114,118,101,114],"value":"&Remote Server"},
+{"hash":186340478,"name":"tfrmserverregister.chksavealias.caption","sourcebytes":[38,83,97,118,101,32,65,108,105,97,115,32,73,110,102,111,114,109,97,116,105,111,110],"value":"&Save Alias Information"},
+{"hash":39572656,"name":"tfrmserverregister.gblogininfo.caption","sourcebytes":[32,76,111,103,105,110,32,73,110,102,111,114,109,97,116,105,111,110,32],"value":" Login Information "},
+{"hash":75483722,"name":"tfrmserverregister.lblusername.caption","sourcebytes":[38,85,115,101,114,32,78,97,109,101,58],"value":"&User Name:"},
+{"hash":179363578,"name":"tfrmserverregister.lblpassword.caption","sourcebytes":[38,80,97,115,115,119,111,114,100,58],"value":"&Password:"},
+{"hash":11067,"name":"tfrmserverregister.btnok.caption","sourcebytes":[38,79,75],"value":"&OK"},
+{"hash":177752476,"name":"tfrmserverregister.btncancel.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"}
+]}

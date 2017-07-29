@@ -79,6 +79,18 @@ msgstr ""
 msgid "Attaching    ... Passed!"
 msgstr ""
 
+#: resstring.lztcommdiagattachsucces
+msgid "%sAttached successfully to %s%s"
+msgstr ""
+
+#: resstring.lztcommdiagattempattachnetbeui
+msgid "Attempting to attach to %s using NetBEUI.%s%s"
+msgstr ""
+
+#: resstring.lztcommdiagattempattachspx
+msgid "Attempting to attach to %s using SPX.%s%s"
+msgstr ""
+
 #: resstring.lztcommdiagattempingconnection
 msgid "Attempting connection to"
 msgstr ""
@@ -112,6 +124,10 @@ msgstr ""
 
 #: resstring.lztcommdiagbytesofdata
 msgid "bytes of data:"
+msgstr ""
+
+#: resstring.lztcommdiagcannotinitwinsock
+msgid "Can not initialize winsock."
 msgstr ""
 
 #: resstring.lztcommdiagcbprotocolitem1
@@ -162,6 +178,10 @@ msgstr ""
 msgid "Connection established to host"
 msgstr ""
 
+#: resstring.lztcommdiagcouldnotinitnetwareclientlib
+msgid "Could not initialize Netware client library.%s%s"
+msgstr ""
+
 #: resstring.lztcommdiagcouldnotresolveservice
 msgid "Could not resolve service"
 msgstr ""
@@ -178,12 +198,20 @@ msgstr ""
 msgid "Error - "
 msgstr ""
 
+#: resstring.lztcommdiagerrorloaddllfunc
+msgid "Error loading dll functions."
+msgstr ""
+
 #: resstring.lztcommdiagerrormessage
 msgid "Error Message:"
 msgstr ""
 
 #: resstring.lztcommdiagerroroccured
 msgid "An Firebird error has occurred while"
+msgstr ""
+
+#: resstring.lztcommdiagerroroccuredattempconnect
+msgid "%sAn error occurred attempting to connect to %s%s"
 msgstr ""
 
 #: resstring.lztcommdiagfailed
@@ -210,6 +238,106 @@ msgstr ""
 
 #: resstring.lztcommdiaggbtcpipserverinfocaption
 msgid "Server Information"
+msgstr ""
+
+#: resstring.lztcommdiaggeneral_failure
+msgid "General failure"
+msgstr ""
+
+#: resstring.lztcommdiagicmperror
+msgid "ICMP Error #"
+msgstr ""
+
+#: resstring.lztcommdiagip_addr_deleted
+msgid "Address deleted"
+msgstr ""
+
+#: resstring.lztcommdiagip_bad_destination
+msgid "Bad destination"
+msgstr ""
+
+#: resstring.lztcommdiagip_bad_option
+msgid "Bad Option"
+msgstr ""
+
+#: resstring.lztcommdiagip_bad_req
+msgid "Bad request"
+msgstr ""
+
+#: resstring.lztcommdiagip_bad_route
+msgid "Bad route"
+msgstr ""
+
+#: resstring.lztcommdiagip_buffer_too_small
+msgid "Buffer too small"
+msgstr ""
+
+#: resstring.lztcommdiagip_dest_host_unreachable
+msgid "Destination host unreachable"
+msgstr ""
+
+#: resstring.lztcommdiagip_dest_net_unreachable
+msgid "Destination network unreachable"
+msgstr ""
+
+#: resstring.lztcommdiagip_dest_port_unreachable
+msgid "Destination port unreachable"
+msgstr ""
+
+#: resstring.lztcommdiagip_dest_prot_unreachable
+msgid "Destination protocol unreachable"
+msgstr ""
+
+#: resstring.lztcommdiagip_err_hardware
+msgid "Hardware error"
+msgstr ""
+
+#: resstring.lztcommdiagip_mtu_change
+msgid "MTU change"
+msgstr ""
+
+#: resstring.lztcommdiagip_no_resources
+msgid "No resources"
+msgstr ""
+
+#: resstring.lztcommdiagip_option_too_large
+msgid "Option too large"
+msgstr ""
+
+#: resstring.lztcommdiagip_packet_too_large
+msgid "Packet too large"
+msgstr ""
+
+#: resstring.lztcommdiagip_param_problem
+msgid "Parameter problems"
+msgstr ""
+
+#: resstring.lztcommdiagip_pending
+msgid "Pending..."
+msgstr ""
+
+#: resstring.lztcommdiagip_req_timeout
+msgid "Request timed out"
+msgstr ""
+
+#: resstring.lztcommdiagip_source_quench
+msgid "Source quench"
+msgstr ""
+
+#: resstring.lztcommdiagip_spec_mtu_change
+msgid "Spec MTU change"
+msgstr ""
+
+#: resstring.lztcommdiagip_success
+msgid "Success"
+msgstr ""
+
+#: resstring.lztcommdiagip_ttl_expired_reassem
+msgid "TTL expired in reassembly"
+msgstr ""
+
+#: resstring.lztcommdiagip_ttl_expired_transit
+msgid "TTL expired in transit"
 msgstr ""
 
 #: resstring.lztcommdiaglbldatabasecaption
@@ -262,6 +390,14 @@ msgstr ""
 
 #: resstring.lztcommdiagmin
 msgid "Minimum"
+msgstr ""
+
+#: resstring.lztcommdiagnetbeuicomtestfailed
+msgid "%sNetBEUI Communication Test Failed!"
+msgstr ""
+
+#: resstring.lztcommdiagnopropernetwareclientinstall
+msgid "%sYou do not seem to have the proper NetWare client installed.%s%s"
 msgstr ""
 
 #: resstring.lztcommdiagonport
@@ -320,6 +456,14 @@ msgctxt "resstring.lztcommdiagspropsservernamelocalserver"
 msgid "Local Server"
 msgstr ""
 
+#: resstring.lztcommdiagspxcommtestfailed
+msgid "%sSPX Communication Test Failed!"
+msgstr ""
+
+#: resstring.lztcommdiagspxcommtestpassed
+msgid "%sSPX Communication Test Passed!"
+msgstr ""
+
 #: resstring.lztcommdiagtabdbconnectioncaption
 msgctxt "resstring.lztcommdiagtabdbconnectioncaption"
 msgid "DB Connection"
@@ -338,8 +482,20 @@ msgstr ""
 msgid "time"
 msgstr ""
 
+#: resstring.lztcommdiagunablegetpinghandle
+msgid "Unable to get ping handle."
+msgstr ""
+
 #: resstring.lztcommdiagunknow
 msgid "Unknown host"
+msgstr ""
+
+#: resstring.lztcommdiagusingfollownamedpipe
+msgid "%s   using the following named pipe:%s"
+msgstr ""
+
+#: resstring.lztcommdiagusingspx
+msgid "%s   using the SPX protocol.%s%s"
 msgstr ""
 
 #: resstring.lztcommdiagversion
@@ -348,6 +504,258 @@ msgstr ""
 
 #: resstring.lztcommdiagwith
 msgid "with"
+msgstr ""
+
+#: resstring.lztdbbackupbtncancel
+msgctxt "resstring.lztdbbackupbtncancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdbbackupbtnok
+msgctxt "resstring.lztdbbackupbtnok"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztdbbackupcboptionsitems1
+msgid "Transportable"
+msgstr ""
+
+#: resstring.lztdbbackupcboptionsitems2
+msgctxt "resstring.lztdbbackupcboptionsitems2"
+msgid "Non-Transportable"
+msgstr ""
+
+#: resstring.lztdbbackupdatabasebackup
+msgctxt "resstring.lztdbbackupdatabasebackup"
+msgid "Database Backup"
+msgstr ""
+
+#: resstring.lztdbbackupfile
+msgctxt "resstring.lztdbbackupfile"
+msgid "File: %s"
+msgstr ""
+
+#: resstring.lztdbbackupfileextfilter
+msgctxt "resstring.lztdbbackupfileextfilter"
+msgid "Text File (*.txt)|*.TXT|All files (*.*)|*.*"
+msgstr ""
+
+#: resstring.lztdbbackupformat
+msgctxt "resstring.lztdbbackupformat"
+msgid "Format"
+msgstr ""
+
+#: resstring.lztdbbackupformtitle
+msgctxt "resstring.lztdbbackupformtitle"
+msgid "Database Backup"
+msgstr ""
+
+#: resstring.lztdbbackupgbbackupfiles
+msgctxt "resstring.lztdbbackupgbbackupfiles"
+msgid " Backup File(s) "
+msgstr ""
+
+#: resstring.lztdbbackupgbdatabasefile
+msgctxt "resstring.lztdbbackupgbdatabasefile"
+msgid " Database "
+msgstr ""
+
+#: resstring.lztdbbackupignore
+msgctxt "resstring.lztdbbackupignore"
+msgid "Ignore"
+msgstr ""
+
+#: resstring.lztdbbackupinvalidoptionvalue
+msgctxt "resstring.lztdbbackupinvalidoptionvalue"
+msgid "Invalid option value"
+msgstr ""
+
+#: resstring.lztdbbackuplblbackupalias
+msgctxt "resstring.lztdbbackuplblbackupalias"
+msgid "A&lias:"
+msgstr ""
+
+#: resstring.lztdbbackuplblbackupserver
+msgctxt "resstring.lztdbbackuplblbackupserver"
+msgid "&Server:"
+msgstr ""
+
+#: resstring.lztdbbackuplbldatabasealias
+msgctxt "resstring.lztdbbackuplbldatabasealias"
+msgid "&Alias:"
+msgstr ""
+
+#: resstring.lztdbbackuplbldatabaseserver
+msgctxt "resstring.lztdbbackuplbldatabaseserver"
+msgid "Server:"
+msgstr ""
+
+#: resstring.lztdbbackuplbloptions
+msgctxt "resstring.lztdbbackuplbloptions"
+msgid "O&ptions:"
+msgstr ""
+
+#: resstring.lztdbbackupnone
+msgctxt "resstring.lztdbbackupnone"
+msgid "None"
+msgstr ""
+
+#: resstring.lztdbbackupnontransportable
+msgctxt "resstring.lztdbbackupnontransportable"
+msgid "Non-Transportable"
+msgstr ""
+
+#: resstring.lztdbbackupoverwrite
+msgctxt "resstring.lztdbbackupoverwrite"
+msgid "OK to overwrite %s"
+msgstr ""
+
+#: resstring.lztdbbackupprocess
+msgctxt "resstring.lztdbbackupprocess"
+msgid "Process"
+msgstr ""
+
+#: resstring.lztdbbackupselectverbosefile
+msgctxt "resstring.lztdbbackupselectverbosefile"
+msgid "Select Verbose File"
+msgstr ""
+
+#: resstring.lztdbbackupsfalse
+msgctxt "resstring.lztdbbackupsfalse"
+msgid "False"
+msgstr ""
+
+#: resstring.lztdbbackupsgbackupfiles
+msgctxt "resstring.lztdbbackupsgbackupfiles"
+msgid " Backup File(s) "
+msgstr ""
+
+#: resstring.lztdbbackupsgbackupfilescells0
+msgctxt "resstring.lztdbbackupsgbackupfilescells0"
+msgid "Filename(s)"
+msgstr ""
+
+#: resstring.lztdbbackupsgbackupfilescells1
+msgid "Size(Bytes)"
+msgstr ""
+
+#: resstring.lztdbbackupsgoptionscellsoptnamcolchecksums
+msgid "Checksums"
+msgstr ""
+
+#: resstring.lztdbbackupsgoptionscellsoptnamcolconvtotab
+msgid "Convert to Tables"
+msgstr ""
+
+#: resstring.lztdbbackupsgoptionscellsoptnamcolform
+msgctxt "resstring.lztdbbackupsgoptionscellsoptnamcolform"
+msgid "Format"
+msgstr ""
+
+#: resstring.lztdbbackupsgoptionscellsoptnamcolgarbcol
+msgid "Garbage Collection"
+msgstr ""
+
+#: resstring.lztdbbackupsgoptionscellsoptnamcolmetadata
+msgid "Metadata Only"
+msgstr ""
+
+#: resstring.lztdbbackupsgoptionscellsoptnamcoltranslimbo
+msgid "Transactions in Limbo"
+msgstr ""
+
+#: resstring.lztdbbackupsgoptionscellsoptnamcolverbout
+msgid "Verbose Output"
+msgstr ""
+
+#: resstring.lztdbbackupsgoptionscellsoptvalcolmetadata
+msgctxt "resstring.lztdbbackupsgoptionscellsoptvalcolmetadata"
+msgid "False"
+msgstr ""
+
+#: resstring.lztdbbackupsgoptionscellsoptvalcoltranslimbo
+msgctxt "resstring.lztdbbackupsgoptionscellsoptvalcoltranslimbo"
+msgid "Process"
+msgstr ""
+
+#: resstring.lztdbbackuptofile
+msgctxt "resstring.lztdbbackuptofile"
+msgid "To File"
+msgstr ""
+
+#: resstring.lztdbbackuptoscreen
+msgctxt "resstring.lztdbbackuptoscreen"
+msgid "To Screen"
+msgstr ""
+
+#: resstring.lztdbbackuptrue
+msgctxt "resstring.lztdbbackuptrue"
+msgid "True"
+msgstr ""
+
+#: resstring.lztdbconnectbtncancelcaption
+msgctxt "resstring.lztdbconnectbtncancelcaption"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdbconnectbtnconnectcaption
+msgctxt "resstring.lztdbconnectbtnconnectcaption"
+msgid "C&onnect"
+msgstr ""
+
+#: resstring.lztdbconnectcbcasesensitivecaption
+msgctxt "resstring.lztdbconnectcbcasesensitivecaption"
+msgid "C&ase sensitive role name"
+msgstr ""
+
+#: resstring.lztdbconnectformtitle
+msgctxt "resstring.lztdbconnectformtitle"
+msgid "Database Connect"
+msgstr ""
+
+#: resstring.lztdbconnectionsbtnok
+msgctxt "resstring.lztdbconnectionsbtnok"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztdbconnectionscolusername
+msgctxt "resstring.lztdbconnectionscolusername"
+msgid "User Name"
+msgstr ""
+
+#: resstring.lztdbconnectionsformtitle
+msgctxt "resstring.lztdbconnectionsformtitle"
+msgid "Database Connections"
+msgstr ""
+
+#: resstring.lztdbconnectlabel1caption
+msgctxt "resstring.lztdbconnectlabel1caption"
+msgid "Client &Dialect:"
+msgstr ""
+
+#: resstring.lztdbconnectlabel2caption
+msgctxt "resstring.lztdbconnectlabel2caption"
+msgid "Character  &Set"
+msgstr ""
+
+#: resstring.lztdbconnectlbldatabasenamecaption
+msgctxt "resstring.lztdbconnectlbldatabasenamecaption"
+msgid "Database:"
+msgstr ""
+
+#: resstring.lztdbconnectlblpasswordcaption
+msgctxt "resstring.lztdbconnectlblpasswordcaption"
+msgid "&Password:"
+msgstr ""
+
+#: resstring.lztdbconnectlblrolecaption
+msgctxt "resstring.lztdbconnectlblrolecaption"
+msgid "&Role:"
+msgstr ""
+
+#: resstring.lztdbconnectlblusernamecaption
+msgctxt "resstring.lztdbconnectlblusernamecaption"
+msgid "&User Name:"
 msgstr ""
 
 #: resstring.lztdbcreatealiascaption
@@ -388,6 +796,7 @@ msgid "&File(s):"
 msgstr ""
 
 #: resstring.lztdbcreatefilename
+msgctxt "resstring.lztdbcreatefilename"
 msgid "Filename(s)"
 msgstr ""
 
@@ -414,6 +823,7 @@ msgid "Minimum page size for secondary files is 2 pages."
 msgstr ""
 
 #: resstring.lztdbcreatenone
+msgctxt "resstring.lztdbcreatenone"
 msgid "None"
 msgstr ""
 
@@ -508,10 +918,12 @@ msgid "Forced Writes"
 msgstr ""
 
 #: resstring.lztdbpropforced_writes_false
+msgctxt "resstring.lztdbpropforced_writes_false"
 msgid "Disabled"
 msgstr ""
 
 #: resstring.lztdbpropforced_writes_true
+msgctxt "resstring.lztdbpropforced_writes_true"
 msgid "Enabled"
 msgstr ""
 
@@ -594,10 +1006,12 @@ msgid "Read Only"
 msgstr ""
 
 #: resstring.lztdbpropread_only_false
+msgctxt "resstring.lztdbpropread_only_false"
 msgid "False"
 msgstr ""
 
 #: resstring.lztdbpropread_only_true
+msgctxt "resstring.lztdbpropread_only_true"
 msgid "True"
 msgstr ""
 
@@ -715,6 +1129,477 @@ msgstr ""
 #: resstring.lztdbregisterlopendialogtitle
 msgctxt "resstring.lztdbregisterlopendialogtitle"
 msgid "Select Database"
+msgstr ""
+
+#: resstring.lztdbrestorebackupfilefilter
+msgid "Backup files (*.fbk)|*.fbk|All files (*.*)|*.*"
+msgstr ""
+
+#: resstring.lztdbrestorebtncancel
+msgctxt "resstring.lztdbrestorebtncancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdbrestorebtnok
+msgctxt "resstring.lztdbrestorebtnok"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztdbrestoredatabaserestore
+msgctxt "resstring.lztdbrestoredatabaserestore"
+msgid "Database Restore"
+msgstr ""
+
+#: resstring.lztdbrestorefalse
+msgctxt "resstring.lztdbrestorefalse"
+msgid "False"
+msgstr ""
+
+#: resstring.lztdbrestorefile
+msgctxt "resstring.lztdbrestorefile"
+msgid "File: %s"
+msgstr ""
+
+#: resstring.lztdbrestorefilefilter
+msgctxt "resstring.lztdbrestorefilefilter"
+msgid "Text File (*.txt)|*.TXT|All files (*.*)|*.*"
+msgstr ""
+
+#: resstring.lztdbrestorefilename
+msgctxt "resstring.lztdbrestorefilename"
+msgid "Filename(s)"
+msgstr ""
+
+#: resstring.lztdbrestoreformtitle
+msgctxt "resstring.lztdbrestoreformtitle"
+msgid "Database Restore"
+msgstr ""
+
+#: resstring.lztdbrestoregbbackupfiles
+msgctxt "resstring.lztdbrestoregbbackupfiles"
+msgid " Backup File(s)"
+msgstr ""
+
+#: resstring.lztdbrestoregbdatabasefiles
+msgctxt "resstring.lztdbrestoregbdatabasefiles"
+msgid " Database"
+msgstr ""
+
+#: resstring.lztdbrestoreignore
+msgctxt "resstring.lztdbrestoreignore"
+msgid "Ignore"
+msgstr ""
+
+#: resstring.lztdbrestoreinvalidoptionvalue
+msgctxt "resstring.lztdbrestoreinvalidoptionvalue"
+msgid "Invalid option value"
+msgstr ""
+
+#: resstring.lztdbrestorelblbackupalias
+msgctxt "resstring.lztdbrestorelblbackupalias"
+msgid "&Alias:"
+msgstr ""
+
+#: resstring.lztdbrestorelblbackupserver
+msgctxt "resstring.lztdbrestorelblbackupserver"
+msgid "Server:"
+msgstr ""
+
+#: resstring.lztdbrestorelbldbalias
+msgctxt "resstring.lztdbrestorelbldbalias"
+msgid "A&lias:"
+msgstr ""
+
+#: resstring.lztdbrestorelbldestinationserver
+msgctxt "resstring.lztdbrestorelbldestinationserver"
+msgid "&Server:"
+msgstr ""
+
+#: resstring.lztdbrestorelbloptions
+msgctxt "resstring.lztdbrestorelbloptions"
+msgid "O&ptions:"
+msgstr ""
+
+#: resstring.lztdbrestorenone
+msgctxt "resstring.lztdbrestorenone"
+msgid "None"
+msgstr ""
+
+#: resstring.lztdbrestoreoverwrite
+msgctxt "resstring.lztdbrestoreoverwrite"
+msgid "OK to overwrite %s"
+msgstr ""
+
+#: resstring.lztdbrestorepages
+msgid "Pages"
+msgstr ""
+
+#: resstring.lztdbrestorepagesize
+msgid "Page Size (Bytes)"
+msgstr ""
+
+#: resstring.lztdbrestorerestore
+msgid "Restore"
+msgstr ""
+
+#: resstring.lztdbrestoreselectverbosefile
+msgctxt "resstring.lztdbrestoreselectverbosefile"
+msgid "Select Verbose File"
+msgstr ""
+
+#: resstring.lztdbrestoretofile
+msgctxt "resstring.lztdbrestoretofile"
+msgid "To File"
+msgstr ""
+
+#: resstring.lztdbrestoretoscreen
+msgctxt "resstring.lztdbrestoretoscreen"
+msgid "To Screen"
+msgstr ""
+
+#: resstring.lztdbrestoretrue
+msgctxt "resstring.lztdbrestoretrue"
+msgid "True"
+msgstr ""
+
+#: resstring.lztdbshutdownbtncancel
+msgctxt "resstring.lztdbshutdownbtncancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdbshutdownbtnok
+msgctxt "resstring.lztdbshutdownbtnok"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztdbshutdowndatabaseisshutdowniscurrentlysingleusermode
+msgid "The database has been shut down and is currently in single-user mode."
+msgstr ""
+
+#: resstring.lztdbshutdowndenynewconnectwaiting
+msgctxt "resstring.lztdbshutdowndenynewconnectwaiting"
+msgid "Deny new connections while waiting"
+msgstr ""
+
+#: resstring.lztdbshutdowndenynewtranswaiting
+msgid "Deny new transactions while waiting"
+msgstr ""
+
+#: resstring.lztdbshutdowndenynewtranswhilewait
+msgctxt "resstring.lztdbshutdowndenynewtranswhilewait"
+msgid "Deny new connections while waiting"
+msgstr ""
+
+#: resstring.lztdbshutdownforceshutdowntimeout
+msgid "Force shutdown after timeout"
+msgstr ""
+
+#: resstring.lztdbshutdownformtitle
+msgctxt "resstring.lztdbshutdownformtitle"
+msgid "Database Shutdown"
+msgstr ""
+
+#: resstring.lztdbshutdowninvalidoptionvalue
+msgctxt "resstring.lztdbshutdowninvalidoptionvalue"
+msgid "Invalid option value"
+msgstr ""
+
+#: resstring.lztdbshutdownlbldatabasename
+msgctxt "resstring.lztdbshutdownlbldatabasename"
+msgid "Database:"
+msgstr ""
+
+#: resstring.lztdbshutdownlbloptions
+msgctxt "resstring.lztdbshutdownlbloptions"
+msgid "O&ptions:"
+msgstr ""
+
+#: resstring.lztdbshutdownshutdown
+msgid "Shutdown"
+msgstr ""
+
+#: resstring.lztdbshutdownshutdowntimeout
+msgid "Shutdown Timeout"
+msgstr ""
+
+#: resstring.lztdbshutdownvalueoutofrange
+msgid "Value out of range!"
+msgstr ""
+
+#: resstring.lztdbstatsalloptions
+msgid "All Options"
+msgstr ""
+
+#: resstring.lztdbstatscancel
+msgctxt "resstring.lztdbstatscancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdbstatsdatabase
+msgctxt "resstring.lztdbstatsdatabase"
+msgid "Database:"
+msgstr ""
+
+#: resstring.lztdbstatsdatabaselog
+msgid "Database Log"
+msgstr ""
+
+#: resstring.lztdbstatsdatabasestats
+msgctxt "resstring.lztdbstatsdatabasestats"
+msgid "Database Statistics"
+msgstr ""
+
+#: resstring.lztdbstatsdatabasestatsconnotdisplayed
+msgid "Database statistics cannot be displayed."
+msgstr ""
+
+#: resstring.lztdbstatsdatapages
+msgid "Data Pages"
+msgstr ""
+
+#: resstring.lztdbstatsformtitle
+msgctxt "resstring.lztdbstatsformtitle"
+msgid "Database Statistics"
+msgstr ""
+
+#: resstring.lztdbstatsheaderpage
+msgid "Header Page"
+msgstr ""
+
+#: resstring.lztdbstatsindexpages
+msgid "Index Pages"
+msgstr ""
+
+#: resstring.lztdbstatsinvalidoptionvalue
+msgctxt "resstring.lztdbstatsinvalidoptionvalue"
+msgid "Invalid option value"
+msgstr ""
+
+#: resstring.lztdbstatsok
+msgctxt "resstring.lztdbstatsok"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztdbstatsoption
+msgctxt "resstring.lztdbstatsoption"
+msgid "O&ption:"
+msgstr ""
+
+#: resstring.lztdbstatsshowdata
+msgid "Show data for:"
+msgstr ""
+
+#: resstring.lztdbstatssystemrelations
+msgid "System Relations"
+msgstr ""
+
+#: resstring.lztdbtransactionsbtncancel
+msgctxt "resstring.lztdbtransactionsbtncancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdbtransactionsbtnok
+msgctxt "resstring.lztdbtransactionsbtnok"
+msgid "&Repair"
+msgstr ""
+
+#: resstring.lztdbtransactionsformtitle
+msgctxt "resstring.lztdbtransactionsformtitle"
+msgid "Transaction Recovery"
+msgstr ""
+
+#: resstring.lztdbtransactionslblconnectpath
+msgctxt "resstring.lztdbtransactionslblconnectpath"
+msgid "Connect &Path:"
+msgstr ""
+
+#: resstring.lztdbtransactionslbldatabase
+msgctxt "resstring.lztdbtransactionslbldatabase"
+msgid "Database:"
+msgstr ""
+
+#: resstring.lztdbtransactionslblrepairstatus
+msgctxt "resstring.lztdbtransactionslblrepairstatus"
+msgid "Repairing Transaction"
+msgstr ""
+
+#: resstring.lztdbtransactionslblstatus
+msgctxt "resstring.lztdbtransactionslblstatus"
+msgid "Transaction Status:"
+msgstr ""
+
+#: resstring.lztdbtransactionslvtransactionscol0
+msgctxt "resstring.lztdbtransactionslvtransactionscol0"
+msgid "Transaction"
+msgstr ""
+
+#: resstring.lztdbtransactionslvtransactionscol1
+msgctxt "resstring.lztdbtransactionslvtransactionscol1"
+msgid "ID"
+msgstr ""
+
+#: resstring.lztdbtransactionslvtransactionscol2
+msgctxt "resstring.lztdbtransactionslvtransactionscol2"
+msgid "Action"
+msgstr ""
+
+#: resstring.lztdbtransactionslvtransactionscol3
+msgctxt "resstring.lztdbtransactionslvtransactionscol3"
+msgid "Status"
+msgstr ""
+
+#: resstring.lztdbtransactionsrgoptions
+msgctxt "resstring.lztdbtransactionsrgoptions"
+msgid "Repair &Options"
+msgstr ""
+
+#: resstring.lztdbtransactionstabadvice
+msgctxt "resstring.lztdbtransactionstabadvice"
+msgid "Details"
+msgstr ""
+
+#: resstring.lztdbtransactionstabtransactions
+msgctxt "resstring.lztdbtransactionstabtransactions"
+msgid "Transactions"
+msgstr ""
+
+#: resstring.lztdbvalidationbtncancel
+msgctxt "resstring.lztdbvalidationbtncancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdbvalidationbtnok
+msgctxt "resstring.lztdbvalidationbtnok"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztdbvalidationfalse
+msgctxt "resstring.lztdbvalidationfalse"
+msgid "False"
+msgstr ""
+
+#: resstring.lztdbvalidationformtitle
+msgctxt "resstring.lztdbvalidationformtitle"
+msgid "Database Validation"
+msgstr ""
+
+#: resstring.lztdbvalidationignorechecksumerrors
+msgctxt "resstring.lztdbvalidationignorechecksumerrors"
+msgid "Ignore Checksum Errors"
+msgstr ""
+
+#: resstring.lztdbvalidationinvalidoptionvalue
+msgctxt "resstring.lztdbvalidationinvalidoptionvalue"
+msgid "Invalid option value"
+msgstr ""
+
+#: resstring.lztdbvalidationlbldatabasename
+msgctxt "resstring.lztdbvalidationlbldatabasename"
+msgid "Database:"
+msgstr ""
+
+#: resstring.lztdbvalidationlbloptions
+msgctxt "resstring.lztdbvalidationlbloptions"
+msgid "O&ptions:"
+msgstr ""
+
+#: resstring.lztdbvalidationreadonlyvalid
+msgctxt "resstring.lztdbvalidationreadonlyvalid"
+msgid "Read Only Validation"
+msgstr ""
+
+#: resstring.lztdbvalidationspecifyvalidationoption
+msgid "You must specify a validation option"
+msgstr ""
+
+#: resstring.lztdbvalidationtrue
+msgctxt "resstring.lztdbvalidationtrue"
+msgid "True"
+msgstr ""
+
+#: resstring.lztdbvalidationvalidrecordfrag
+msgctxt "resstring.lztdbvalidationvalidrecordfrag"
+msgid "Validate Record Fragments"
+msgstr ""
+
+#: resstring.lztdbvalidreportbtncancel
+msgctxt "resstring.lztdbvalidreportbtncancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztdbvalidreportbtnrepair
+msgctxt "resstring.lztdbvalidreportbtnrepair"
+msgid "&Repair"
+msgstr ""
+
+#: resstring.lztdbvalidreportcheckfirebirdlogfileaddinfo
+msgid "Check the Firebird.Log file for additional information"
+msgstr ""
+
+#: resstring.lztdbvalidreportdatabasevalidcomplete
+msgid "Database validation complete"
+msgstr ""
+
+#: resstring.lztdbvalidreportfalse
+msgctxt "resstring.lztdbvalidreportfalse"
+msgid "False"
+msgstr ""
+
+#: resstring.lztdbvalidreportformtitle
+msgctxt "resstring.lztdbvalidreportformtitle"
+msgid "Validation Report"
+msgstr ""
+
+#: resstring.lztdbvalidreportignorechecksumerror
+msgctxt "resstring.lztdbvalidreportignorechecksumerror"
+msgid "Ignore Checksum Errors"
+msgstr ""
+
+#: resstring.lztdbvalidreportinvalidoptionvalue
+msgctxt "resstring.lztdbvalidreportinvalidoptionvalue"
+msgid "Invalid option value"
+msgstr ""
+
+#: resstring.lztdbvalidreportlbldatabasename
+msgctxt "resstring.lztdbvalidreportlbldatabasename"
+msgid "Database:"
+msgstr ""
+
+#: resstring.lztdbvalidreportlbloptions
+msgctxt "resstring.lztdbvalidreportlbloptions"
+msgid "O&ptions:"
+msgstr ""
+
+#: resstring.lztdbvalidreportnodatabasevaliderror
+msgid "No database validation errors were found."
+msgstr ""
+
+#: resstring.lztdbvalidreportok
+msgctxt "resstring.lztdbvalidreportok"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztdbvalidreportplausibleoptions
+msgid "plausible options"
+msgstr ""
+
+#: resstring.lztdbvalidreportpleaseretry
+msgid "please retry"
+msgstr ""
+
+#: resstring.lztdbvalidreportreadonlyvalid
+msgctxt "resstring.lztdbvalidreportreadonlyvalid"
+msgid "Read Only Validation"
+msgstr ""
+
+#: resstring.lztdbvalidreporttrue
+msgctxt "resstring.lztdbvalidreporttrue"
+msgid "True"
+msgstr ""
+
+#: resstring.lztdbvalidreportvalidaterecordfrag
+msgctxt "resstring.lztdbvalidreportvalidaterecordfrag"
+msgid "Validate Record Fragments"
 msgstr ""
 
 #: resstring.lztdescriptioncancel
@@ -882,6 +1767,7 @@ msgid "&Delete User"
 msgstr ""
 
 #: resstring.lztmaindeleteuser2
+msgctxt "resstring.lztmaindeleteuser2"
 msgid "Are you sure that you want to delete user: %s?"
 msgstr ""
 
@@ -1213,6 +2099,7 @@ msgid "Interactive S&QL ..."
 msgstr ""
 
 #: resstring.lztmaininteractivesql2
+msgctxt "resstring.lztmaininteractivesql2"
 msgid "Interactive SQL - "
 msgstr ""
 
@@ -1222,6 +2109,7 @@ msgid "Lar&ge"
 msgstr ""
 
 #: resstring.lztmainlcolumncaptionaction
+msgctxt "resstring.lztmainlcolumncaptionaction"
 msgid "Action"
 msgstr ""
 
@@ -1916,6 +2804,330 @@ msgctxt "resstring.lztmodifyserveraliaslabel4"
 msgid "&Protocol:"
 msgstr ""
 
+#: resstring.lztobjectwindowbtnapply
+msgctxt "resstring.lztobjectwindowbtnapply"
+msgid "&Apply"
+msgstr ""
+
+#: resstring.lztobjectwindowcbextractdata
+msgctxt "resstring.lztobjectwindowcbextractdata"
+msgid "Extract table data"
+msgstr ""
+
+#: resstring.lztobjectwindowformtitle
+msgctxt "resstring.lztobjectwindowformtitle"
+msgid "frmObjectView"
+msgstr ""
+
+#: resstring.lztobjectwindowisunknown
+msgctxt "resstring.lztobjectwindowisunknown"
+msgid " is unknown"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel1
+msgctxt "resstring.lztobjectwindowlabel1"
+msgid "This permission includes GRANT OPTION"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel10
+msgctxt "resstring.lztobjectwindowlabel10"
+msgid "&Returns:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel11
+msgctxt "resstring.lztobjectwindowlabel11"
+msgid "&Module Name:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel12
+msgctxt "resstring.lztobjectwindowlabel12"
+msgid "&Entrypoint:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel13
+msgctxt "resstring.lztobjectwindowlabel13"
+msgid "&Input SubType:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel14
+msgctxt "resstring.lztobjectwindowlabel14"
+msgid "&Output SubType:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel18
+msgctxt "resstring.lztobjectwindowlabel18"
+msgid "Exception &Number:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel19
+msgctxt "resstring.lztobjectwindowlabel19"
+msgid "Exception &Message:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel21
+msgctxt "resstring.lztobjectwindowlabel21"
+msgid "Current &Value:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel3
+msgctxt "resstring.lztobjectwindowlabel3"
+msgid "Generator &ID:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel5
+msgctxt "resstring.lztobjectwindowlabel5"
+msgid "&Check Constraint:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel8
+msgctxt "resstring.lztobjectwindowlabel8"
+msgid "&Module Name:"
+msgstr ""
+
+#: resstring.lztobjectwindowlabel9
+msgctxt "resstring.lztobjectwindowlabel9"
+msgid "&Entrypoint:"
+msgstr ""
+
+#: resstring.lztobjectwindowlblfilename
+msgctxt "resstring.lztobjectwindowlblfilename"
+msgid "lblFileName"
+msgstr ""
+
+#: resstring.lztobjectwindowlvpermissionscol0
+msgctxt "resstring.lztobjectwindowlvpermissionscol0"
+msgid "Object"
+msgstr ""
+
+#: resstring.lztobjectwindowlvpermissionscol1
+msgctxt "resstring.lztobjectwindowlvpermissionscol1"
+msgid "Select"
+msgstr ""
+
+#: resstring.lztobjectwindowlvpermissionscol2
+msgctxt "resstring.lztobjectwindowlvpermissionscol2"
+msgid "Delete"
+msgstr ""
+
+#: resstring.lztobjectwindowlvpermissionscol3
+msgctxt "resstring.lztobjectwindowlvpermissionscol3"
+msgid "Insert"
+msgstr ""
+
+#: resstring.lztobjectwindowlvpermissionscol4
+msgctxt "resstring.lztobjectwindowlvpermissionscol4"
+msgid "Update"
+msgstr ""
+
+#: resstring.lztobjectwindowlvpermissionscol5
+msgctxt "resstring.lztobjectwindowlvpermissionscol5"
+msgid "Reference"
+msgstr ""
+
+#: resstring.lztobjectwindowlvpermissionscol6
+msgctxt "resstring.lztobjectwindowlvpermissionscol6"
+msgid "Execute"
+msgstr ""
+
+#: resstring.lztobjectwindowlvpermissionscol7
+msgctxt "resstring.lztobjectwindowlvpermissionscol7"
+msgid "Member Of"
+msgstr ""
+
+#: resstring.lztobjectwindowpnldependents
+msgctxt "resstring.lztobjectwindowpnldependents"
+msgid "pnlDependents"
+msgstr ""
+
+#: resstring.lztobjectwindowproperties
+msgid "Properties for: %s"
+msgstr ""
+
+#: resstring.lztobjectwindowrbdependedon
+msgctxt "resstring.lztobjectwindowrbdependedon"
+msgid "Show Depended &On Objects"
+msgstr ""
+
+#: resstring.lztobjectwindowrbdependedonhint
+msgctxt "resstring.lztobjectwindowrbdependedonhint"
+msgid "Shows the objects the current object depends on"
+msgstr ""
+
+#: resstring.lztobjectwindowrbdependent
+msgctxt "resstring.lztobjectwindowrbdependent"
+msgid "Show &Dependent Objects"
+msgstr ""
+
+#: resstring.lztobjectwindowrbdependenthint
+msgctxt "resstring.lztobjectwindowrbdependenthint"
+msgid "Displays objects which depend on the currently selected object"
+msgstr ""
+
+#: resstring.lztobjectwindowsbcommitrefresh
+msgctxt "resstring.lztobjectwindowsbcommitrefresh"
+msgid "Commit && Refresh"
+msgstr ""
+
+#: resstring.lztobjectwindowshowcheckconstraints
+msgctxt "resstring.lztobjectwindowshowcheckconstraints"
+msgid "Check Constraints"
+msgstr ""
+
+#: resstring.lztobjectwindowshowcheckconstraintshint
+msgctxt "resstring.lztobjectwindowshowcheckconstraintshint"
+msgid "Show Check Constraints"
+msgstr ""
+
+#: resstring.lztobjectwindowshowcolumns
+msgctxt "resstring.lztobjectwindowshowcolumns"
+msgid "Columns"
+msgstr ""
+
+#: resstring.lztobjectwindowshowcolumnshint
+msgctxt "resstring.lztobjectwindowshowcolumnshint"
+msgid "Show Columns for the table"
+msgstr ""
+
+#: resstring.lztobjectwindowshowindexes
+msgctxt "resstring.lztobjectwindowshowindexes"
+msgid "Indexes"
+msgstr ""
+
+#: resstring.lztobjectwindowshowindexeshint
+msgctxt "resstring.lztobjectwindowshowindexeshint"
+msgid "Show indexes"
+msgstr ""
+
+#: resstring.lztobjectwindowshowreferentialconstraints
+msgctxt "resstring.lztobjectwindowshowreferentialconstraints"
+msgid "Referential Constraints"
+msgstr ""
+
+#: resstring.lztobjectwindowshowreferentialconstraintshint
+msgctxt "resstring.lztobjectwindowshowreferentialconstraintshint"
+msgid "Show referential constraints"
+msgstr ""
+
+#: resstring.lztobjectwindowshowtriggers
+msgctxt "resstring.lztobjectwindowshowtriggers"
+msgid "Triggers"
+msgstr ""
+
+#: resstring.lztobjectwindowshowtriggershint
+msgctxt "resstring.lztobjectwindowshowtriggershint"
+msgid "Show triggers for the table"
+msgstr ""
+
+#: resstring.lztobjectwindowshowuniqueconstraints
+msgctxt "resstring.lztobjectwindowshowuniqueconstraints"
+msgid "Unique Constraints"
+msgstr ""
+
+#: resstring.lztobjectwindowshowuniqueconstraintshint
+msgctxt "resstring.lztobjectwindowshowuniqueconstraintshint"
+msgid "Show unique constraints for the table"
+msgstr ""
+
+#: resstring.lztobjectwindowtabdata
+msgctxt "resstring.lztobjectwindowtabdata"
+msgid "Data"
+msgstr ""
+
+#: resstring.lztobjectwindowtabdependencies
+msgctxt "resstring.lztobjectwindowtabdependencies"
+msgid "Dependencies"
+msgstr ""
+
+#: resstring.lztobjectwindowtabdomains
+msgctxt "resstring.lztobjectwindowtabdomains"
+msgid "tabDomains"
+msgstr ""
+
+#: resstring.lztobjectwindowtabexceptions
+msgctxt "resstring.lztobjectwindowtabexceptions"
+msgid "tabExceptions"
+msgstr ""
+
+#: resstring.lztobjectwindowtabfilters
+msgctxt "resstring.lztobjectwindowtabfilters"
+msgid "tabFilters"
+msgstr ""
+
+#: resstring.lztobjectwindowtabfunctions
+msgctxt "resstring.lztobjectwindowtabfunctions"
+msgid "tabFunctions"
+msgstr ""
+
+#: resstring.lztobjectwindowtabgenerators
+msgctxt "resstring.lztobjectwindowtabgenerators"
+msgid "tabGenerators"
+msgstr ""
+
+#: resstring.lztobjectwindowtabmetadata
+msgctxt "resstring.lztobjectwindowtabmetadata"
+msgid "Metadata"
+msgstr ""
+
+#: resstring.lztobjectwindowtabpermissions
+msgctxt "resstring.lztobjectwindowtabpermissions"
+msgid "Permissions"
+msgstr ""
+
+#: resstring.lztobjectwindowtabprocedures
+msgctxt "resstring.lztobjectwindowtabprocedures"
+msgid "tabProcedures"
+msgstr ""
+
+#: resstring.lztobjectwindowtabproperties
+msgctxt "resstring.lztobjectwindowtabproperties"
+msgid "Properties"
+msgstr ""
+
+#: resstring.lztobjectwindowtabtables
+msgctxt "resstring.lztobjectwindowtabtables"
+msgid "tabTables"
+msgstr ""
+
+#: resstring.lztobjectwindowtbchkconst
+msgctxt "resstring.lztobjectwindowtbchkconst"
+msgid "Check Constraints"
+msgstr ""
+
+#: resstring.lztobjectwindowtbcols
+msgctxt "resstring.lztobjectwindowtbcols"
+msgid "Columns"
+msgstr ""
+
+#: resstring.lztobjectwindowtbindexes
+msgctxt "resstring.lztobjectwindowtbindexes"
+msgid "Indexes"
+msgstr ""
+
+#: resstring.lztobjectwindowtbref
+msgctxt "resstring.lztobjectwindowtbref"
+msgid "Referential Constraints"
+msgstr ""
+
+#: resstring.lztobjectwindowtbtriggers
+msgctxt "resstring.lztobjectwindowtbtriggers"
+msgid "Triggers"
+msgstr ""
+
+#: resstring.lztobjectwindowtbunique
+msgctxt "resstring.lztobjectwindowtbunique"
+msgid "Unique Constraints"
+msgstr ""
+
+#: resstring.lztobjectwindowtoolbar1
+msgctxt "resstring.lztobjectwindowtoolbar1"
+msgid "ToolBar1"
+msgstr ""
+
+#: resstring.lztobjectwindowtoolbar2
+msgctxt "resstring.lztobjectwindowtoolbar2"
+msgid "ToolBar2"
+msgstr ""
+
 #: resstring.lztpersistentdatareaderrordatabasealias
 msgid "Persistent data read error. Database alias not found: "
 msgstr ""
@@ -2155,6 +3367,89 @@ msgstr ""
 msgid " users"
 msgstr ""
 
+#: resstring.lztserverregisterbtncancel
+msgctxt "resstring.lztserverregisterbtncancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztserverregisterbtnok
+msgctxt "resstring.lztserverregisterbtnok"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztserverregisterchksavealias
+msgctxt "resstring.lztserverregisterchksavealias"
+msgid "&Save Alias Information"
+msgstr ""
+
+#: resstring.lztserverregisterformtitle
+msgctxt "resstring.lztserverregisterformtitle"
+msgid "Register Server and Login"
+msgstr ""
+
+#: resstring.lztserverregistergblogininfo
+msgctxt "resstring.lztserverregistergblogininfo"
+msgid " Login Information "
+msgstr ""
+
+#: resstring.lztserverregistergbserverinfo
+msgctxt "resstring.lztserverregistergbserverinfo"
+msgid " Server Information "
+msgstr ""
+
+#: resstring.lztserverregisterlabel1
+msgctxt "resstring.lztserverregisterlabel1"
+msgid "&Description:"
+msgstr ""
+
+#: resstring.lztserverregisterlblpassword
+msgctxt "resstring.lztserverregisterlblpassword"
+msgid "&Password:"
+msgstr ""
+
+#: resstring.lztserverregisterlblprotocol
+msgctxt "resstring.lztserverregisterlblprotocol"
+msgid "&Network Protocol:"
+msgstr ""
+
+#: resstring.lztserverregisterlblserveralias
+msgctxt "resstring.lztserverregisterlblserveralias"
+msgid "&Alias Name:"
+msgstr ""
+
+#: resstring.lztserverregisterlblservername
+msgctxt "resstring.lztserverregisterlblservername"
+msgid "S&erver Name:"
+msgstr ""
+
+#: resstring.lztserverregisterlblusername
+msgctxt "resstring.lztserverregisterlblusername"
+msgid "&User Name:"
+msgstr ""
+
+#: resstring.lztserverregisterlocalserver
+msgctxt "resstring.lztserverregisterlocalserver"
+msgid "Local Server"
+msgstr ""
+
+#: resstring.lztserverregisterrblocalserver
+msgctxt "resstring.lztserverregisterrblocalserver"
+msgid "&Local Server"
+msgstr ""
+
+#: resstring.lztserverregisterrbremoteserver
+msgctxt "resstring.lztserverregisterrbremoteserver"
+msgid "&Remote Server"
+msgstr ""
+
+#: resstring.lztserverregisterregserverconnect
+msgid "Register Server and Connect"
+msgstr ""
+
+#: resstring.lztserverregisterselectserverconnect
+msgid "Select Server and Connect"
+msgstr ""
+
 #: resstring.lztsqlcommitorrollback
 msgid "Commit or Rollback the current transaction"
 msgstr ""
@@ -2192,6 +3487,104 @@ msgstr ""
 msgid "Number of Buffers%s%d"
 msgstr ""
 
+#: resstring.lztsqloptionsbtnapply
+msgctxt "resstring.lztsqloptionsbtnapply"
+msgid "&Apply"
+msgstr ""
+
+#: resstring.lztsqloptionsbutton1
+msgctxt "resstring.lztsqloptionsbutton1"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztsqloptionsbutton2
+msgctxt "resstring.lztsqloptionsbutton2"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztsqloptionscbclearinput
+msgctxt "resstring.lztsqloptionscbclearinput"
+msgid "&Clear input window on success"
+msgstr ""
+
+#: resstring.lztsqloptionscbupdateconnect
+msgctxt "resstring.lztsqloptionscbupdateconnect"
+msgid "Update IBConsole on C&onnect"
+msgstr ""
+
+#: resstring.lztsqloptionscbupdatecreate
+msgctxt "resstring.lztsqloptionscbupdatecreate"
+msgid "Update IBConsole on C&reate"
+msgstr ""
+
+#: resstring.lztsqloptionsdisabled
+msgctxt "resstring.lztsqloptionsdisabled"
+msgid "Disabled"
+msgstr ""
+
+#: resstring.lztsqloptionsenabled
+msgctxt "resstring.lztsqloptionsenabled"
+msgid "Enabled"
+msgstr ""
+
+#: resstring.lztsqloptionsfalse
+msgctxt "resstring.lztsqloptionsfalse"
+msgid "False"
+msgstr ""
+
+#: resstring.lztsqloptionsformtitle
+msgctxt "resstring.lztsqloptionsformtitle"
+msgid "SQL Options"
+msgstr ""
+
+#: resstring.lztsqloptionsgroupbox1
+msgctxt "resstring.lztsqloptionsgroupbox1"
+msgid "SQL Events"
+msgstr ""
+
+#: resstring.lztsqloptionsinvalidoptionvalue
+msgctxt "resstring.lztsqloptionsinvalidoptionvalue"
+msgid "Invalid option value"
+msgstr ""
+
+#: resstring.lztsqloptionslabel1
+msgctxt "resstring.lztsqloptionslabel1"
+msgid "NOTE:"
+msgstr ""
+
+#: resstring.lztsqloptionsrestrict
+msgid "Restrict"
+msgstr ""
+
+#: resstring.lztsqloptionsrgtransactions
+msgctxt "resstring.lztsqloptionsrgtransactions"
+msgid "Transactions"
+msgstr ""
+
+#: resstring.lztsqloptionstabsheet1
+msgctxt "resstring.lztsqloptionstabsheet1"
+msgid "Options"
+msgstr ""
+
+#: resstring.lztsqloptionstabsheet2
+msgctxt "resstring.lztsqloptionstabsheet2"
+msgid "Advanced"
+msgstr ""
+
+#: resstring.lztsqloptionstext
+msgid "Text"
+msgstr ""
+
+#: resstring.lztsqloptionstrue
+msgctxt "resstring.lztsqloptionstrue"
+msgid "True"
+msgstr ""
+
+#: resstring.lztsqloptionsunknown
+msgctxt "resstring.lztsqloptionsunknown"
+msgid "Unknown"
+msgstr ""
+
 #: resstring.lztsqlplan
 msgid "Plan%s%s"
 msgstr ""
@@ -2226,6 +3619,145 @@ msgstr ""
 
 #: resstring.lztsqlwrite
 msgid "Writes%s%d"
+msgstr ""
+
+#: resstring.lzttextviewereditcopy1
+msgctxt "resstring.lzttextviewereditcopy1"
+msgid "&Copy"
+msgstr ""
+
+#: resstring.lzttextviewereditcopy1hint
+msgctxt "resstring.lzttextviewereditcopy1hint"
+msgid "Copy"
+msgstr ""
+
+#: resstring.lzttextviewereditcut1
+msgctxt "resstring.lzttextviewereditcut1"
+msgid "Cu&t"
+msgstr ""
+
+#: resstring.lzttextviewereditcut1hint
+msgctxt "resstring.lzttextviewereditcut1hint"
+msgid "Cut"
+msgstr ""
+
+#: resstring.lzttextviewereditfont
+msgctxt "resstring.lzttextviewereditfont"
+msgid "&Font ..."
+msgstr ""
+
+#: resstring.lzttextviewereditfonthint
+msgctxt "resstring.lzttextviewereditfonthint"
+msgid "Change the font"
+msgstr ""
+
+#: resstring.lzttextviewereditpaste1
+msgctxt "resstring.lzttextviewereditpaste1"
+msgid "&Paste"
+msgstr ""
+
+#: resstring.lzttextviewereditpaste1hint
+msgctxt "resstring.lzttextviewereditpaste1hint"
+msgid "Paste"
+msgstr ""
+
+#: resstring.lzttextviewereditselectall1
+msgctxt "resstring.lzttextviewereditselectall1"
+msgid "Select &All"
+msgstr ""
+
+#: resstring.lzttextviewereditundo1
+msgctxt "resstring.lzttextviewereditundo1"
+msgid "&Undo"
+msgstr ""
+
+#: resstring.lzttextviewerfilterfiles
+msgid "Text files (*.txt)|*.TXT|SQL files (*.sql)|*.SQL|All files (*.*)|*.*"
+msgstr ""
+
+#: resstring.lzttextviewerformtitle
+msgctxt "resstring.lzttextviewerformtitle"
+msgid "Text Viewer"
+msgstr ""
+
+#: resstring.lzttextviewermnuedfind
+msgctxt "resstring.lzttextviewermnuedfind"
+msgid "&Find"
+msgstr ""
+
+#: resstring.lzttextviewermnuedfindhint
+msgctxt "resstring.lzttextviewermnuedfindhint"
+msgid "Search for a string"
+msgstr ""
+
+#: resstring.lzttextviewermnuedit
+msgctxt "resstring.lzttextviewermnuedit"
+msgid "&Edit"
+msgstr ""
+
+#: resstring.lzttextviewermnufiexit
+msgctxt "resstring.lzttextviewermnufiexit"
+msgid "E&xit"
+msgstr ""
+
+#: resstring.lzttextviewermnufiexithint
+msgctxt "resstring.lzttextviewermnufiexithint"
+msgid "Exit this application"
+msgstr ""
+
+#: resstring.lzttextviewermnufile
+msgctxt "resstring.lzttextviewermnufile"
+msgid "&File"
+msgstr ""
+
+#: resstring.lzttextviewermnufiprint
+msgctxt "resstring.lzttextviewermnufiprint"
+msgid "&Print"
+msgstr ""
+
+#: resstring.lzttextviewermnufisaveas
+msgctxt "resstring.lzttextviewermnufisaveas"
+msgid "&Save ..."
+msgstr ""
+
+#: resstring.lzttextviewermnufisaveashint
+msgctxt "resstring.lzttextviewermnufisaveashint"
+msgid "Save current file under a new name"
+msgstr ""
+
+#: resstring.lzttextviewermodified
+msgctxt "resstring.lzttextviewermodified"
+msgid "Modified"
+msgstr ""
+
+#: resstring.lzttextvieweroverwrite
+msgctxt "resstring.lzttextvieweroverwrite"
+msgid "OK to overwrite %s"
+msgstr ""
+
+#: resstring.lzttextviewerreadonly
+msgctxt "resstring.lzttextviewerreadonly"
+msgid "Read-Only"
+msgstr ""
+
+#: resstring.lzttextviewersbsaveas
+msgctxt "resstring.lzttextviewersbsaveas"
+msgid "&Save As"
+msgstr ""
+
+#: resstring.lzttextviewersbsaveashint
+msgctxt "resstring.lzttextviewersbsaveashint"
+msgid "Save contents of window to a file"
+msgstr ""
+
+#: resstring.lzttextviewertlbstandard
+msgctxt "resstring.lzttextviewertlbstandard"
+msgid "tlbStandard"
+msgstr ""
+
+#: resstring.lzttextviewertoolbutton5
+msgctxt "resstring.lzttextviewertoolbutton5"
+msgid "ToolButton5"
 msgstr ""
 
 #: resstring.lzttoolpropertiesbuttonbrowsefiles
@@ -2266,6 +3798,150 @@ msgstr ""
 #: resstring.lzttoolpropertiesworkingdirlbl
 msgctxt "resstring.lzttoolpropertiesworkingdirlbl"
 msgid "&Working Dir:"
+msgstr ""
+
+#: resstring.lzttoolsbtnadd
+msgctxt "resstring.lzttoolsbtnadd"
+msgid "&Add"
+msgstr ""
+
+#: resstring.lzttoolsbtndelete
+msgctxt "resstring.lzttoolsbtndelete"
+msgid "&Delete"
+msgstr ""
+
+#: resstring.lzttoolsbtnedit
+msgctxt "resstring.lzttoolsbtnedit"
+msgid "&Edit"
+msgstr ""
+
+#: resstring.lzttoolsbutton1
+msgctxt "resstring.lzttoolsbutton1"
+msgid "&Close"
+msgstr ""
+
+#: resstring.lzttoolsformtitle
+msgctxt "resstring.lzttoolsformtitle"
+msgid "Tools"
+msgstr ""
+
+#: resstring.lzttoolslabel1
+msgctxt "resstring.lzttoolslabel1"
+msgid "Configured &Tools:"
+msgstr ""
+
+#: resstring.lzttoolstooladd
+msgctxt "resstring.lzttoolstooladd"
+msgid "&Add"
+msgstr ""
+
+#: resstring.lzttoolstoolbtnclose
+msgctxt "resstring.lzttoolstoolbtnclose"
+msgid "&Close"
+msgstr ""
+
+#: resstring.lzttoolstooldelete
+msgctxt "resstring.lzttoolstooldelete"
+msgid "&Delete"
+msgstr ""
+
+#: resstring.lzttoolstooledit
+msgctxt "resstring.lzttoolstooledit"
+msgid "&Edit"
+msgstr ""
+
+#: resstring.lztuserbtnapply
+msgctxt "resstring.lztuserbtnapply"
+msgid "&Apply"
+msgstr ""
+
+#: resstring.lztuserbtncancel
+msgctxt "resstring.lztuserbtncancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztuserbtnclose
+msgctxt "resstring.lztuserbtnclose"
+msgid "&Close"
+msgstr ""
+
+#: resstring.lztuserbtndelete
+msgctxt "resstring.lztuserbtndelete"
+msgid "&Delete"
+msgstr ""
+
+#: resstring.lztuserbtnnew
+msgctxt "resstring.lztuserbtnnew"
+msgid "&New"
+msgstr ""
+
+#: resstring.lztuserdeleteuser
+msgctxt "resstring.lztuserdeleteuser"
+msgid "DeleteUser"
+msgstr ""
+
+#: resstring.lztuserformtitle
+msgctxt "resstring.lztuserformtitle"
+msgid "User Information"
+msgstr ""
+
+#: resstring.lztusergboptionalinfo
+msgctxt "resstring.lztusergboptionalinfo"
+msgid " Optional Information "
+msgstr ""
+
+#: resstring.lztusergbrequiredinfo
+msgctxt "resstring.lztusergbrequiredinfo"
+msgid " Required Information "
+msgstr ""
+
+#: resstring.lztuserlblconfirmpassword
+msgctxt "resstring.lztuserlblconfirmpassword"
+msgid "C&onfirm Password:"
+msgstr ""
+
+#: resstring.lztuserlblfname
+msgctxt "resstring.lztuserlblfname"
+msgid "&First Name:"
+msgstr ""
+
+#: resstring.lztuserlbllname
+msgctxt "resstring.lztuserlbllname"
+msgid "&Last Name:"
+msgstr ""
+
+#: resstring.lztuserlblmname
+msgctxt "resstring.lztuserlblmname"
+msgid "&Middle Name:"
+msgstr ""
+
+#: resstring.lztuserlblpassword
+msgctxt "resstring.lztuserlblpassword"
+msgid "&Password:"
+msgstr ""
+
+#: resstring.lztuserlblusername
+msgctxt "resstring.lztuserlblusername"
+msgid "&User Name:"
+msgstr ""
+
+#: resstring.lztusermodifyuser
+msgctxt "resstring.lztusermodifyuser"
+msgid "ModifyUser"
+msgstr ""
+
+#: resstring.lztusernewuser
+msgctxt "resstring.lztusernewuser"
+msgid "NewUser"
+msgstr ""
+
+#: resstring.lztuseryouwantdeleteuser
+msgctxt "resstring.lztuseryouwantdeleteuser"
+msgid "Are you sure that you want to delete user: %s?"
+msgstr ""
+
+#: resstring.lztuseryouwantdeleteuser2
+msgid "The user you wish to delete is the same user you are logged into the server as.%sAre you sure that you want to delete user: %s?"
 msgstr ""
 
 #: resstring.lztutilitycomputedfield
@@ -2333,8 +4009,993 @@ msgstr ""
 msgid "View"
 msgstr ""
 
+#: resstring.lztwindowslistbtnclose
+msgctxt "resstring.lztwindowslistbtnclose"
+msgid "&Close Window"
+msgstr ""
+
+#: resstring.lztwindowslistbtnswitch
+msgctxt "resstring.lztwindowslistbtnswitch"
+msgid "&Switch To..."
+msgstr ""
+
+#: resstring.lztwindowslistformtitle
+msgctxt "resstring.lztwindowslistformtitle"
+msgid "Active Windows"
+msgstr ""
+
+#: resstring.lztwisqlabout1
+msgctxt "resstring.lztwisqlabout1"
+msgid "&About ..."
+msgstr ""
+
+#: resstring.lztwisqlautoddloff
+msgid "AutoDDL: OFF"
+msgstr ""
+
+#: resstring.lztwisqlautoddlon
+msgid "AutoDDL: ON"
+msgstr ""
+
+#: resstring.lztwisqlclientdialect
+msgid "Client dialect %d"
+msgstr ""
+
+#: resstring.lztwisqlclose1
+msgctxt "resstring.lztwisqlclose1"
+msgid "&Close"
+msgstr ""
+
+#: resstring.lztwisqlcommit1
+msgctxt "resstring.lztwisqlcommit1"
+msgid "&Commit"
+msgstr ""
+
+#: resstring.lztwisqlcommittrans
+msgid "Would you like to commit the transactions?"
+msgstr ""
+
+#: resstring.lztwisqlconnect1
+msgctxt "resstring.lztwisqlconnect1"
+msgid "Connect &As ..."
+msgstr ""
+
+#: resstring.lztwisqlcopy1
+msgctxt "resstring.lztwisqlcopy1"
+msgid "&Copy"
+msgstr ""
+
+#: resstring.lztwisqlcreate1
+msgctxt "resstring.lztwisqlcreate1"
+msgid "&Create Database ..."
+msgstr ""
+
+#: resstring.lztwisqlcut1
+msgctxt "resstring.lztwisqlcut1"
+msgid "Cu&t"
+msgstr ""
+
+#: resstring.lztwisqlcut2
+msgctxt "resstring.lztwisqlcut2"
+msgid "Cu&t"
+msgstr ""
+
+#: resstring.lztwisqldatabase
+msgid ""
+"%s\n"
+"Database: %s\n"
+msgstr ""
+
+#: resstring.lztwisqldatabase1
+msgctxt "resstring.lztwisqldatabase1"
+msgid "&Database"
+msgstr ""
+
+#: resstring.lztwisqldatabaseconnectas
+msgctxt "resstring.lztwisqldatabaseconnectas"
+msgid "Connect &As ..."
+msgstr ""
+
+#: resstring.lztwisqldatabasecreate
+msgctxt "resstring.lztwisqldatabasecreate"
+msgid "&Create Database ..."
+msgstr ""
+
+#: resstring.lztwisqldatabasedialectnotmatch
+msgid "Database dialect (%d) does not match client dialect (%d)."
+msgstr ""
+
+#: resstring.lztwisqldatabasedisconnect
+msgctxt "resstring.lztwisqldatabasedisconnect"
+msgid "&Disconnect"
+msgstr ""
+
+#: resstring.lztwisqldatabasedrop
+msgctxt "resstring.lztwisqldatabasedrop"
+msgid "D&rop Database"
+msgstr ""
+
+#: resstring.lztwisqldatasavedtofile
+msgid "Data saved to file: "
+msgstr ""
+
+#: resstring.lztwisqldialect1
+msgctxt "resstring.lztwisqldialect1"
+msgid "Dialect &1"
+msgstr ""
+
+#: resstring.lztwisqldialect2
+msgctxt "resstring.lztwisqldialect2"
+msgid "Dialect &2"
+msgstr ""
+
+#: resstring.lztwisqldialect3
+msgctxt "resstring.lztwisqldialect3"
+msgid "Dialect &3"
+msgstr ""
+
+#: resstring.lztwisqldialectaction1
+msgctxt "resstring.lztwisqldialectaction1"
+msgid "Dialect &1"
+msgstr ""
+
+#: resstring.lztwisqldialectaction2
+msgctxt "resstring.lztwisqldialectaction2"
+msgid "Dialect &2"
+msgstr ""
+
+#: resstring.lztwisqldialectaction3
+msgctxt "resstring.lztwisqldialectaction3"
+msgid "Dialect &3"
+msgstr ""
+
+#: resstring.lztwisqldisconnect1
+msgctxt "resstring.lztwisqldisconnect1"
+msgid "&Disconnect"
+msgstr ""
+
+#: resstring.lztwisqldrop1
+msgctxt "resstring.lztwisqldrop1"
+msgid "D&rop Database"
+msgstr ""
+
+#: resstring.lztwisqledit1
+msgctxt "resstring.lztwisqledit1"
+msgid "&Query"
+msgstr ""
+
+#: resstring.lztwisqleditcopy1
+msgctxt "resstring.lztwisqleditcopy1"
+msgid "&Copy"
+msgstr ""
+
+#: resstring.lztwisqleditcopy1hint
+msgctxt "resstring.lztwisqleditcopy1hint"
+msgid "Copy"
+msgstr ""
+
+#: resstring.lztwisqleditcut1
+msgctxt "resstring.lztwisqleditcut1"
+msgid "Cu&t"
+msgstr ""
+
+#: resstring.lztwisqleditcut1hint
+msgctxt "resstring.lztwisqleditcut1hint"
+msgid "Cut"
+msgstr ""
+
+#: resstring.lztwisqleditfind
+msgctxt "resstring.lztwisqleditfind"
+msgid "&Find ..."
+msgstr ""
+
+#: resstring.lztwisqleditfont
+msgctxt "resstring.lztwisqleditfont"
+msgid "&Font ..."
+msgstr ""
+
+#: resstring.lztwisqleditpaste1
+msgctxt "resstring.lztwisqleditpaste1"
+msgid "&Paste"
+msgstr ""
+
+#: resstring.lztwisqleditpaste1hint
+msgctxt "resstring.lztwisqleditpaste1hint"
+msgid "Paste"
+msgstr ""
+
+#: resstring.lztwisqleditselectall1
+msgctxt "resstring.lztwisqleditselectall1"
+msgid "Select &All"
+msgstr ""
+
+#: resstring.lztwisqleditundo1
+msgctxt "resstring.lztwisqleditundo1"
+msgid "&Undo"
+msgstr ""
+
+#: resstring.lztwisqlfile1
+msgctxt "resstring.lztwisqlfile1"
+msgid "&File"
+msgstr ""
+
+#: resstring.lztwisqlfile1hint
+msgctxt "resstring.lztwisqlfile1hint"
+msgid "Close the ISQL window"
+msgstr ""
+
+#: resstring.lztwisqlfileclose
+msgctxt "resstring.lztwisqlfileclose"
+msgid "&Close"
+msgstr ""
+
+#: resstring.lztwisqlfileclosehint
+msgctxt "resstring.lztwisqlfileclosehint"
+msgid "Close the ISQL window"
+msgstr ""
+
+#: resstring.lztwisqlfileoptions
+msgctxt "resstring.lztwisqlfileoptions"
+msgid "&Options ..."
+msgstr ""
+
+#: resstring.lztwisqlfileoptionshint
+msgctxt "resstring.lztwisqlfileoptionshint"
+msgid "Show ISQL Options"
+msgstr ""
+
+#: resstring.lztwisqlfiletxtfilter
+msgid "Text files (*.txt)|*.TXT"
+msgstr ""
+
+#: resstring.lztwisqlfont2
+msgctxt "resstring.lztwisqlfont2"
+msgid "&Font ..."
+msgstr ""
+
+#: resstring.lztwisqlformtitle
+msgctxt "resstring.lztwisqlformtitle"
+msgid "Interactive SQL"
+msgstr ""
+
+#: resstring.lztwisqlhelp1
+msgctxt "resstring.lztwisqlhelp1"
+msgid "&Help"
+msgstr ""
+
+#: resstring.lztwisqlinteractivesql
+msgctxt "resstring.lztwisqlinteractivesql"
+msgid "Interactive SQL"
+msgstr ""
+
+#: resstring.lztwisqlinteractivesql2
+msgctxt "resstring.lztwisqlinteractivesql2"
+msgid "Interactive SQL - "
+msgstr ""
+
+#: resstring.lztwisqlinvalidclientdialect
+msgid ""
+"%s\n"
+"Invalid client dialect %s\n"
+msgstr ""
+
+#: resstring.lztwisqlisunknown
+msgctxt "resstring.lztwisqlisunknown"
+msgid " is unknown"
+msgstr ""
+
+#: resstring.lztwisqllblfilename
+msgctxt "resstring.lztwisqllblfilename"
+msgid "lblFileName"
+msgstr ""
+
+#: resstring.lztwisqlmnuedcopy1
+msgctxt "resstring.lztwisqlmnuedcopy1"
+msgid "&Copy"
+msgstr ""
+
+#: resstring.lztwisqlmnuedfind1
+msgctxt "resstring.lztwisqlmnuedfind1"
+msgid "&Find ..."
+msgstr ""
+
+#: resstring.lztwisqlmnuedit1
+msgctxt "resstring.lztwisqlmnuedit1"
+msgid "&Edit"
+msgstr ""
+
+#: resstring.lztwisqlmodified
+msgctxt "resstring.lztwisqlmodified"
+msgid "Modified"
+msgstr ""
+
+#: resstring.lztwisqlnewconnection1
+msgctxt "resstring.lztwisqlnewconnection1"
+msgid "New connection..."
+msgstr ""
+
+#: resstring.lztwisqlnoactivetrans
+msgid "No active transaction."
+msgstr ""
+
+#: resstring.lztwisqlnotconnected
+msgid "Not Connected"
+msgstr ""
+
+#: resstring.lztwisqlnotopenfile
+msgid "Could not open file \"%s\"."
+msgstr ""
+
+#: resstring.lztwisqlnowillrollbackactivetrans
+msgid "Choosing NO will rollback the active transactions."
+msgstr ""
+
+#: resstring.lztwisqloptions1
+msgctxt "resstring.lztwisqloptions1"
+msgid "&Options ..."
+msgstr ""
+
+#: resstring.lztwisqloverwrite
+msgctxt "resstring.lztwisqloverwrite"
+msgid "OK to overwrite %s"
+msgstr ""
+
+#: resstring.lztwisqlpaste1
+msgctxt "resstring.lztwisqlpaste1"
+msgid "&Paste"
+msgstr ""
+
+#: resstring.lztwisqlpaste2
+msgctxt "resstring.lztwisqlpaste2"
+msgid "&Paste"
+msgstr ""
+
+#: resstring.lztwisqlprepare1
+msgctxt "resstring.lztwisqlprepare1"
+msgid "&Prepare"
+msgstr ""
+
+#: resstring.lztwisqlprint1
+msgctxt "resstring.lztwisqlprint1"
+msgid "&Print"
+msgstr ""
+
+#: resstring.lztwisqlqueryexecute
+msgctxt "resstring.lztwisqlqueryexecute"
+msgid "&Execute"
+msgstr ""
+
+#: resstring.lztwisqlqueryexecutehint
+msgctxt "resstring.lztwisqlqueryexecutehint"
+msgid "Execute Query"
+msgstr ""
+
+#: resstring.lztwisqlqueryloadscript
+msgctxt "resstring.lztwisqlqueryloadscript"
+msgid "&Load Script"
+msgstr ""
+
+#: resstring.lztwisqlqueryloadscript1
+msgctxt "resstring.lztwisqlqueryloadscript1"
+msgid "&Load Script"
+msgstr ""
+
+#: resstring.lztwisqlqueryloadscripthint
+msgctxt "resstring.lztwisqlqueryloadscripthint"
+msgid "Load SQL Script"
+msgstr ""
+
+#: resstring.lztwisqlquerynext
+msgctxt "resstring.lztwisqlquerynext"
+msgid "&Next"
+msgstr ""
+
+#: resstring.lztwisqlquerynext1
+msgctxt "resstring.lztwisqlquerynext1"
+msgid "&Next"
+msgstr ""
+
+#: resstring.lztwisqlquerynexthint
+msgctxt "resstring.lztwisqlquerynexthint"
+msgid "Next Query"
+msgstr ""
+
+#: resstring.lztwisqlqueryoptions
+msgctxt "resstring.lztwisqlqueryoptions"
+msgid "O&ptions ..."
+msgstr ""
+
+#: resstring.lztwisqlqueryoptionshint
+msgctxt "resstring.lztwisqlqueryoptionshint"
+msgid "Query Options"
+msgstr ""
+
+#: resstring.lztwisqlqueryprepare
+msgctxt "resstring.lztwisqlqueryprepare"
+msgid "&Prepare"
+msgstr ""
+
+#: resstring.lztwisqlquerypreparehint
+msgctxt "resstring.lztwisqlquerypreparehint"
+msgid "Prepare the current query before execution"
+msgstr ""
+
+#: resstring.lztwisqlqueryprevious
+msgctxt "resstring.lztwisqlqueryprevious"
+msgid "&Previous"
+msgstr ""
+
+#: resstring.lztwisqlqueryprevious1
+msgctxt "resstring.lztwisqlqueryprevious1"
+msgid "&Previous"
+msgstr ""
+
+#: resstring.lztwisqlqueryprevious2
+msgctxt "resstring.lztwisqlqueryprevious2"
+msgid "&Execute"
+msgstr ""
+
+#: resstring.lztwisqlqueryprevioushint
+msgctxt "resstring.lztwisqlqueryprevioushint"
+msgid "Previous Query"
+msgstr ""
+
+#: resstring.lztwisqlquerysaveoutput
+msgctxt "resstring.lztwisqlquerysaveoutput"
+msgid "Save &Output"
+msgstr ""
+
+#: resstring.lztwisqlquerysaveoutputhint
+msgctxt "resstring.lztwisqlquerysaveoutputhint"
+msgid "Save the query ouput"
+msgstr ""
+
+#: resstring.lztwisqlquerysavescript
+msgctxt "resstring.lztwisqlquerysavescript"
+msgid "&Save Script"
+msgstr ""
+
+#: resstring.lztwisqlquerysavescript1
+msgctxt "resstring.lztwisqlquerysavescript1"
+msgid "&Save Script"
+msgstr ""
+
+#: resstring.lztwisqlquerysavescripthint
+msgctxt "resstring.lztwisqlquerysavescripthint"
+msgid "Save Script"
+msgstr ""
+
+#: resstring.lztwisqlrollback1
+msgctxt "resstring.lztwisqlrollback1"
+msgid "&Rollback"
+msgstr ""
+
+#: resstring.lztwisqlrollbackpreviouscommit
+msgid "Are you sure that you want to rollback work to previous commit point?"
+msgstr ""
+
+#: resstring.lztwisqlsaveoutput1
+msgctxt "resstring.lztwisqlsaveoutput1"
+msgid "Save &Output"
+msgstr ""
+
+#: resstring.lztwisqlsavequeryoutput
+msgid "Save Query Output"
+msgstr ""
+
+#: resstring.lztwisqlselectall1
+msgctxt "resstring.lztwisqlselectall1"
+msgid "Select &All"
+msgstr ""
+
+#: resstring.lztwisqlselectall2
+msgctxt "resstring.lztwisqlselectall2"
+msgid "Select &All"
+msgstr ""
+
+#: resstring.lztwisqlsqlfilefilter
+msgid "SQL Files (*.sql)|*.SQL|Text files (*.txt)|*.TXT|All files (*.*)|*.*"
+msgstr ""
+
+#: resstring.lztwisqlsqlreference1
+msgctxt "resstring.lztwisqlsqlreference1"
+msgid "&SQL Reference"
+msgstr ""
+
+#: resstring.lztwisqlstatement
+msgid ""
+"%s\n"
+"Statement: %s\n"
+msgstr ""
+
+#: resstring.lztwisqlstbisqlhint
+msgctxt "resstring.lztwisqlstbisqlhint"
+msgid "Right-Click to change client dialect"
+msgstr ""
+
+#: resstring.lztwisqltabdata
+msgctxt "resstring.lztwisqltabdata"
+msgid "Data"
+msgstr ""
+
+#: resstring.lztwisqltabresults
+msgctxt "resstring.lztwisqltabresults"
+msgid "Plan"
+msgstr ""
+
+#: resstring.lztwisqltabstats
+msgctxt "resstring.lztwisqltabstats"
+msgid "Statistics"
+msgstr ""
+
+#: resstring.lztwisqltoolbar3
+msgctxt "resstring.lztwisqltoolbar3"
+msgid "Query"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton10
+msgctxt "resstring.lztwisqltoolbutton10"
+msgid "ToolButton10"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton11
+msgctxt "resstring.lztwisqltoolbutton11"
+msgid "&Load Script"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton12
+msgctxt "resstring.lztwisqltoolbutton12"
+msgid "&Save Script"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton13
+msgctxt "resstring.lztwisqltoolbutton13"
+msgid "ToolButton13"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton2
+msgctxt "resstring.lztwisqltoolbutton2"
+msgid "&Commit"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton20
+msgctxt "resstring.lztwisqltoolbutton20"
+msgid "&Find ..."
+msgstr ""
+
+#: resstring.lztwisqltoolbutton3
+msgctxt "resstring.lztwisqltoolbutton3"
+msgid "&Rollback"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton4
+msgctxt "resstring.lztwisqltoolbutton4"
+msgid "ToolButton4"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton5
+msgctxt "resstring.lztwisqltoolbutton5"
+msgid "&Prepare"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton7
+msgctxt "resstring.lztwisqltoolbutton7"
+msgid "&Previous"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton8
+msgctxt "resstring.lztwisqltoolbutton8"
+msgid "&Next"
+msgstr ""
+
+#: resstring.lztwisqltoolbutton9
+msgctxt "resstring.lztwisqltoolbutton9"
+msgid "&Execute"
+msgstr ""
+
+#: resstring.lztwisqltransactioncommit
+msgctxt "resstring.lztwisqltransactioncommit"
+msgid "&Commit"
+msgstr ""
+
+#: resstring.lztwisqltransactioncommithint
+msgctxt "resstring.lztwisqltransactioncommithint"
+msgid "Commit Work"
+msgstr ""
+
+#: resstring.lztwisqltransactionrollback
+msgctxt "resstring.lztwisqltransactionrollback"
+msgid "&Rollback"
+msgstr ""
+
+#: resstring.lztwisqltransactionrollbackhint
+msgctxt "resstring.lztwisqltransactionrollbackhint"
+msgid "Rollback Work"
+msgstr ""
+
+#: resstring.lztwisqltransactions1
+msgctxt "resstring.lztwisqltransactions1"
+msgid "&Transactions"
+msgstr ""
+
+#: resstring.lztwisqltransactive
+msgid "Transaction is ACTIVE."
+msgstr ""
+
+#: resstring.lztwisqltransareactive
+msgid "Transactions are active."
+msgstr ""
+
+#: resstring.lztwisqlunabledisplayarrayinfo
+msgid "Unable to display Array Information"
+msgstr ""
+
+#: resstring.lztwisqlunabletoopenfile
+msgid ""
+"%s\n"
+"Unable to open file %s\n"
+msgstr ""
+
+#: resstring.lztwisqlunabletosetdialect
+msgid ""
+"%s\n"
+"Unable to set the client dialect to %d\n"
+msgstr ""
+
+#: resstring.lztwisqlundo1
+msgctxt "resstring.lztwisqlundo1"
+msgid "&Undo"
+msgstr ""
+
+#: resstring.lztwisqlundo2
+msgctxt "resstring.lztwisqlundo2"
+msgid "&Undo"
+msgstr ""
+
+#: resstring.lztwisqlwantdropselecteddatabase
+msgid "Are you sure that you want to drop the selected database?"
+msgstr ""
+
+#: resstring.lztwisqlwindows1
+msgctxt "resstring.lztwisqlwindows1"
+msgid "&Windows"
+msgstr ""
+
 #: tdialog.caption
 msgid "Dialog"
+msgstr ""
+
+#: tdlgwindowlist.btnclose.caption
+msgctxt "tdlgwindowlist.btnclose.caption"
+msgid "&Close Window"
+msgstr ""
+
+#: tdlgwindowlist.btnswitch.caption
+msgctxt "tdlgwindowlist.btnswitch.caption"
+msgid "&Switch To..."
+msgstr ""
+
+#: tdlgwindowlist.caption
+msgctxt "tdlgwindowlist.caption"
+msgid "Active Windows"
+msgstr ""
+
+#: tdlgwisql.caption
+msgctxt "tdlgwisql.caption"
+msgid "Interactive SQL"
+msgstr ""
+
+#: tdlgwisql.database1.caption
+msgctxt "tdlgwisql.database1.caption"
+msgid "&Database"
+msgstr ""
+
+#: tdlgwisql.databaseconnectas.caption
+msgctxt "tdlgwisql.databaseconnectas.caption"
+msgid "Connect &As ..."
+msgstr ""
+
+#: tdlgwisql.databasecreate.caption
+msgctxt "tdlgwisql.databasecreate.caption"
+msgid "&Create Database ..."
+msgstr ""
+
+#: tdlgwisql.databasedisconnect.caption
+msgctxt "tdlgwisql.databasedisconnect.caption"
+msgid "&Disconnect"
+msgstr ""
+
+#: tdlgwisql.databasedrop.caption
+msgctxt "tdlgwisql.databasedrop.caption"
+msgid "D&rop Database"
+msgstr ""
+
+#: tdlgwisql.dialectaction1.caption
+msgctxt "tdlgwisql.dialectaction1.caption"
+msgid "Dialect &1"
+msgstr ""
+
+#: tdlgwisql.dialectaction2.caption
+msgctxt "tdlgwisql.dialectaction2.caption"
+msgid "Dialect &2"
+msgstr ""
+
+#: tdlgwisql.dialectaction3.caption
+msgctxt "tdlgwisql.dialectaction3.caption"
+msgid "Dialect &3"
+msgstr ""
+
+#: tdlgwisql.edit1.caption
+msgctxt "tdlgwisql.edit1.caption"
+msgid "&Query"
+msgstr ""
+
+#: tdlgwisql.editcopy1.caption
+msgctxt "tdlgwisql.editcopy1.caption"
+msgid "&Copy"
+msgstr ""
+
+#: tdlgwisql.editcopy1.hint
+msgctxt "tdlgwisql.editcopy1.hint"
+msgid "Copy"
+msgstr ""
+
+#: tdlgwisql.editcut1.caption
+msgctxt "tdlgwisql.editcut1.caption"
+msgid "Cu&t"
+msgstr ""
+
+#: tdlgwisql.editcut1.hint
+msgctxt "tdlgwisql.editcut1.hint"
+msgid "Cut"
+msgstr ""
+
+#: tdlgwisql.editfind.caption
+msgctxt "tdlgwisql.editfind.caption"
+msgid "&Find ..."
+msgstr ""
+
+#: tdlgwisql.editfont.caption
+msgctxt "tdlgwisql.editfont.caption"
+msgid "&Font ..."
+msgstr ""
+
+#: tdlgwisql.editpaste1.caption
+msgctxt "tdlgwisql.editpaste1.caption"
+msgid "&Paste"
+msgstr ""
+
+#: tdlgwisql.editpaste1.hint
+msgctxt "tdlgwisql.editpaste1.hint"
+msgid "Paste"
+msgstr ""
+
+#: tdlgwisql.editselectall1.caption
+msgctxt "tdlgwisql.editselectall1.caption"
+msgid "Select &All"
+msgstr ""
+
+#: tdlgwisql.editundo1.caption
+msgctxt "tdlgwisql.editundo1.caption"
+msgid "&Undo"
+msgstr ""
+
+#: tdlgwisql.file1.caption
+msgctxt "tdlgwisql.file1.caption"
+msgid "&File"
+msgstr ""
+
+#: tdlgwisql.file1.hint
+msgctxt "tdlgwisql.file1.hint"
+msgid "Close the ISQL window"
+msgstr ""
+
+#: tdlgwisql.fileclose.caption
+msgctxt "tdlgwisql.fileclose.caption"
+msgid "&Close"
+msgstr ""
+
+#: tdlgwisql.fileclose.hint
+msgctxt "tdlgwisql.fileclose.hint"
+msgid "Close the ISQL window"
+msgstr ""
+
+#: tdlgwisql.fileoptions.caption
+msgctxt "tdlgwisql.fileoptions.caption"
+msgid "&Options ..."
+msgstr ""
+
+#: tdlgwisql.fileoptions.hint
+msgctxt "tdlgwisql.fileoptions.hint"
+msgid "Show ISQL Options"
+msgstr ""
+
+#: tdlgwisql.help1.caption
+msgctxt "tdlgwisql.help1.caption"
+msgid "&Help"
+msgstr ""
+
+#: tdlgwisql.lblfilename.caption
+msgctxt "tdlgwisql.lblfilename.caption"
+msgid "lblFileName"
+msgstr ""
+
+#: tdlgwisql.lvstats.columns[0].caption
+msgid "Statistic"
+msgstr ""
+
+#: tdlgwisql.lvstats.columns[1].caption
+msgid "Value"
+msgstr ""
+
+#: tdlgwisql.mnuedit1.caption
+msgctxt "tdlgwisql.mnuedit1.caption"
+msgid "&Edit"
+msgstr ""
+
+#: tdlgwisql.newconnection1.caption
+msgctxt "tdlgwisql.newconnection1.caption"
+msgid "New connection..."
+msgstr ""
+
+#: tdlgwisql.print1.caption
+msgctxt "tdlgwisql.print1.caption"
+msgid "&Print"
+msgstr ""
+
+#: tdlgwisql.queryexecute.caption
+msgctxt "tdlgwisql.queryexecute.caption"
+msgid "&Execute"
+msgstr ""
+
+#: tdlgwisql.queryexecute.hint
+msgctxt "tdlgwisql.queryexecute.hint"
+msgid "Execute Query"
+msgstr ""
+
+#: tdlgwisql.queryloadscript.caption
+msgctxt "tdlgwisql.queryloadscript.caption"
+msgid "&Load Script"
+msgstr ""
+
+#: tdlgwisql.queryloadscript.hint
+msgctxt "tdlgwisql.queryloadscript.hint"
+msgid "Load SQL Script"
+msgstr ""
+
+#: tdlgwisql.querynext.caption
+msgctxt "tdlgwisql.querynext.caption"
+msgid "&Next"
+msgstr ""
+
+#: tdlgwisql.querynext.hint
+msgctxt "tdlgwisql.querynext.hint"
+msgid "Next Query"
+msgstr ""
+
+#: tdlgwisql.queryoptions.caption
+msgctxt "tdlgwisql.queryoptions.caption"
+msgid "O&ptions ..."
+msgstr ""
+
+#: tdlgwisql.queryoptions.hint
+msgctxt "tdlgwisql.queryoptions.hint"
+msgid "Query Options"
+msgstr ""
+
+#: tdlgwisql.queryprepare.caption
+msgctxt "tdlgwisql.queryprepare.caption"
+msgid "&Prepare"
+msgstr ""
+
+#: tdlgwisql.queryprepare.hint
+msgctxt "tdlgwisql.queryprepare.hint"
+msgid "Prepare the current query before execution"
+msgstr ""
+
+#: tdlgwisql.queryprevious.caption
+msgctxt "tdlgwisql.queryprevious.caption"
+msgid "&Previous"
+msgstr ""
+
+#: tdlgwisql.queryprevious.hint
+msgctxt "tdlgwisql.queryprevious.hint"
+msgid "Previous Query"
+msgstr ""
+
+#: tdlgwisql.querysaveoutput.caption
+msgctxt "tdlgwisql.querysaveoutput.caption"
+msgid "Save &Output"
+msgstr ""
+
+#: tdlgwisql.querysaveoutput.hint
+msgctxt "tdlgwisql.querysaveoutput.hint"
+msgid "Save the query ouput"
+msgstr ""
+
+#: tdlgwisql.querysavescript.caption
+msgctxt "tdlgwisql.querysavescript.caption"
+msgid "&Save Script"
+msgstr ""
+
+#: tdlgwisql.querysavescript.hint
+msgctxt "tdlgwisql.querysavescript.hint"
+msgid "Save Script"
+msgstr ""
+
+#: tdlgwisql.sqlreference1.caption
+msgctxt "tdlgwisql.sqlreference1.caption"
+msgid "&SQL Reference"
+msgstr ""
+
+#: tdlgwisql.stbisql.hint
+msgctxt "tdlgwisql.stbisql.hint"
+msgid "Right-Click to change client dialect"
+msgstr ""
+
+#: tdlgwisql.tabdata.caption
+msgctxt "tdlgwisql.tabdata.caption"
+msgid "Data"
+msgstr ""
+
+#: tdlgwisql.tabresults.caption
+msgctxt "tdlgwisql.tabresults.caption"
+msgid "Plan"
+msgstr ""
+
+#: tdlgwisql.tabstats.caption
+msgctxt "tdlgwisql.tabstats.caption"
+msgid "Statistics"
+msgstr ""
+
+#: tdlgwisql.toolbar3.caption
+msgctxt "tdlgwisql.toolbar3.caption"
+msgid "Query"
+msgstr ""
+
+#: tdlgwisql.toolbutton10.caption
+msgctxt "tdlgwisql.toolbutton10.caption"
+msgid "ToolButton10"
+msgstr ""
+
+#: tdlgwisql.toolbutton13.caption
+msgctxt "tdlgwisql.toolbutton13.caption"
+msgid "ToolButton13"
+msgstr ""
+
+#: tdlgwisql.toolbutton4.caption
+msgctxt "tdlgwisql.toolbutton4.caption"
+msgid "ToolButton4"
+msgstr ""
+
+#: tdlgwisql.transactioncommit.caption
+msgctxt "tdlgwisql.transactioncommit.caption"
+msgid "&Commit"
+msgstr ""
+
+#: tdlgwisql.transactioncommit.hint
+msgctxt "tdlgwisql.transactioncommit.hint"
+msgid "Commit Work"
+msgstr ""
+
+#: tdlgwisql.transactionrollback.caption
+msgctxt "tdlgwisql.transactionrollback.caption"
+msgid "&Rollback"
+msgstr ""
+
+#: tdlgwisql.transactionrollback.hint
+msgctxt "tdlgwisql.transactionrollback.hint"
+msgid "Rollback Work"
+msgstr ""
+
+#: tdlgwisql.transactions1.caption
+msgctxt "tdlgwisql.transactions1.caption"
+msgid "&Transactions"
+msgstr ""
+
+#: tdlgwisql.windows1.caption
+msgctxt "tdlgwisql.windows1.caption"
+msgid "&Windows"
 msgstr ""
 
 #: tfrmabout.button1.caption
@@ -2560,6 +5221,126 @@ msgctxt "tfrmcommdiag.tabtcpip.caption"
 msgid "TCP/IP"
 msgstr ""
 
+#: tfrmdbbackup.btncancel.caption
+msgctxt "tfrmdbbackup.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbbackup.btnok.caption
+msgctxt "tfrmdbbackup.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdbbackup.caption
+msgctxt "tfrmdbbackup.caption"
+msgid "Database Backup"
+msgstr ""
+
+#: tfrmdbbackup.gbbackupfiles.caption
+msgctxt "tfrmdbbackup.gbbackupfiles.caption"
+msgid " Backup File(s) "
+msgstr ""
+
+#: tfrmdbbackup.gbdatabasefile.caption
+msgctxt "tfrmdbbackup.gbdatabasefile.caption"
+msgid " Database "
+msgstr ""
+
+#: tfrmdbbackup.lblbackupalias.caption
+msgctxt "tfrmdbbackup.lblbackupalias.caption"
+msgid "A&lias:"
+msgstr ""
+
+#: tfrmdbbackup.lblbackupserver.caption
+msgctxt "tfrmdbbackup.lblbackupserver.caption"
+msgid "&Server:"
+msgstr ""
+
+#: tfrmdbbackup.lbldatabasealias.caption
+msgctxt "tfrmdbbackup.lbldatabasealias.caption"
+msgid "&Alias:"
+msgstr ""
+
+#: tfrmdbbackup.lbldatabaseserver.caption
+msgctxt "tfrmdbbackup.lbldatabaseserver.caption"
+msgid "Server:"
+msgstr ""
+
+#: tfrmdbbackup.lbloptions.caption
+msgctxt "tfrmdbbackup.lbloptions.caption"
+msgid "O&ptions:"
+msgstr ""
+
+#: tfrmdbconnect.btncancel.caption
+msgctxt "tfrmdbconnect.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbconnect.btnconnect.caption
+msgctxt "tfrmdbconnect.btnconnect.caption"
+msgid "C&onnect"
+msgstr ""
+
+#: tfrmdbconnect.caption
+msgctxt "tfrmdbconnect.caption"
+msgid "Database Connect"
+msgstr ""
+
+#: tfrmdbconnect.cbcasesensitive.caption
+msgctxt "tfrmdbconnect.cbcasesensitive.caption"
+msgid "C&ase sensitive role name"
+msgstr ""
+
+#: tfrmdbconnect.label1.caption
+msgctxt "tfrmdbconnect.label1.caption"
+msgid "Client &Dialect:"
+msgstr ""
+
+#: tfrmdbconnect.label2.caption
+msgctxt "tfrmdbconnect.label2.caption"
+msgid "Character  &Set"
+msgstr ""
+
+#: tfrmdbconnect.lbldatabasename.caption
+msgctxt "tfrmdbconnect.lbldatabasename.caption"
+msgid "Database:"
+msgstr ""
+
+#: tfrmdbconnect.lblpassword.caption
+msgctxt "tfrmdbconnect.lblpassword.caption"
+msgid "&Password:"
+msgstr ""
+
+#: tfrmdbconnect.lblrole.caption
+msgctxt "tfrmdbconnect.lblrole.caption"
+msgid "&Role:"
+msgstr ""
+
+#: tfrmdbconnect.lblusername.caption
+msgctxt "tfrmdbconnect.lblusername.caption"
+msgid "&User Name:"
+msgstr ""
+
+#: tfrmdbconnect.stxdatabasename.caption
+msgctxt "tfrmdbconnect.stxdatabasename.caption"
+msgid "stxDatabaseName"
+msgstr ""
+
+#: tfrmdbconnections.btnok.caption
+msgctxt "tfrmdbconnections.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdbconnections.caption
+msgctxt "tfrmdbconnections.caption"
+msgid "Database Connections"
+msgstr ""
+
+#: tfrmdbconnections.lvconnections.columns[0].caption
+msgctxt "tfrmdbconnections.lvconnections.columns[0].caption"
+msgid "User Name"
+msgstr ""
+
 #: tfrmdbcreate.btncancel.caption
 msgctxt "tfrmdbcreate.btncancel.caption"
 msgid "&Cancel"
@@ -2763,6 +5544,241 @@ msgstr ""
 #: tfrmdbregister.lblusername.caption
 msgctxt "tfrmdbregister.lblusername.caption"
 msgid "&User Name:"
+msgstr ""
+
+#: tfrmdbrestore.btncancel.caption
+msgctxt "tfrmdbrestore.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbrestore.btnok.caption
+msgctxt "tfrmdbrestore.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdbrestore.caption
+msgctxt "tfrmdbrestore.caption"
+msgid "Database Restore"
+msgstr ""
+
+#: tfrmdbrestore.gbbackupfiles.caption
+msgctxt "tfrmdbrestore.gbbackupfiles.caption"
+msgid " Backup File(s)"
+msgstr ""
+
+#: tfrmdbrestore.gbdatabasefiles.caption
+msgctxt "tfrmdbrestore.gbdatabasefiles.caption"
+msgid " Database"
+msgstr ""
+
+#: tfrmdbrestore.lblbackupalias.caption
+msgctxt "tfrmdbrestore.lblbackupalias.caption"
+msgid "&Alias:"
+msgstr ""
+
+#: tfrmdbrestore.lblbackupserver.caption
+msgctxt "tfrmdbrestore.lblbackupserver.caption"
+msgid "Server:"
+msgstr ""
+
+#: tfrmdbrestore.lbldbalias.caption
+msgctxt "tfrmdbrestore.lbldbalias.caption"
+msgid "A&lias:"
+msgstr ""
+
+#: tfrmdbrestore.lbldestinationserver.caption
+msgctxt "tfrmdbrestore.lbldestinationserver.caption"
+msgid "&Server:"
+msgstr ""
+
+#: tfrmdbrestore.lbloptions.caption
+msgctxt "tfrmdbrestore.lbloptions.caption"
+msgid "O&ptions:"
+msgstr ""
+
+#: tfrmdbshutdown.btncancel.caption
+msgctxt "tfrmdbshutdown.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbshutdown.btnok.caption
+msgctxt "tfrmdbshutdown.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdbshutdown.caption
+msgctxt "tfrmdbshutdown.caption"
+msgid "Database Shutdown"
+msgstr ""
+
+#: tfrmdbshutdown.lbldatabasename.caption
+msgctxt "tfrmdbshutdown.lbldatabasename.caption"
+msgid "Database:"
+msgstr ""
+
+#: tfrmdbshutdown.lbloptions.caption
+msgctxt "tfrmdbshutdown.lbloptions.caption"
+msgid "O&ptions:"
+msgstr ""
+
+#: tfrmdbshutdown.stxdatabasename.caption
+msgctxt "tfrmdbshutdown.stxdatabasename.caption"
+msgid "stxDatabaseName"
+msgstr ""
+
+#: tfrmdbstatistics.btncancel.caption
+msgctxt "tfrmdbstatistics.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbstatistics.btnok.caption
+msgctxt "tfrmdbstatistics.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdbstatistics.caption
+msgctxt "tfrmdbstatistics.caption"
+msgid "Database Statistics"
+msgstr ""
+
+#: tfrmdbstatistics.lbldatabasename.caption
+msgctxt "tfrmdbstatistics.lbldatabasename.caption"
+msgid "Database:"
+msgstr ""
+
+#: tfrmdbstatistics.lbloptions.caption
+msgctxt "tfrmdbstatistics.lbloptions.caption"
+msgid "O&ption:"
+msgstr ""
+
+#: tfrmdbstatistics.stxdatabasename.caption
+msgctxt "tfrmdbstatistics.stxdatabasename.caption"
+msgid "stxDatabaseName"
+msgstr ""
+
+#: tfrmdbtransactions.btncancel.caption
+msgctxt "tfrmdbtransactions.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbtransactions.btnok.caption
+msgctxt "tfrmdbtransactions.btnok.caption"
+msgid "&Repair"
+msgstr ""
+
+#: tfrmdbtransactions.caption
+msgctxt "tfrmdbtransactions.caption"
+msgid "Transaction Recovery"
+msgstr ""
+
+#: tfrmdbtransactions.lblconnectpath.caption
+msgctxt "tfrmdbtransactions.lblconnectpath.caption"
+msgid "Connect &Path:"
+msgstr ""
+
+#: tfrmdbtransactions.lbldatabase.caption
+msgctxt "tfrmdbtransactions.lbldatabase.caption"
+msgid "Database:"
+msgstr ""
+
+#: tfrmdbtransactions.lblrepairstatus.caption
+msgctxt "tfrmdbtransactions.lblrepairstatus.caption"
+msgid "Repairing Transaction"
+msgstr ""
+
+#: tfrmdbtransactions.lblstatus.caption
+msgctxt "tfrmdbtransactions.lblstatus.caption"
+msgid "Transaction Status:"
+msgstr ""
+
+#: tfrmdbtransactions.lvtransactions.columns[0].caption
+msgctxt "tfrmdbtransactions.lvtransactions.columns[0].caption"
+msgid "Transaction"
+msgstr ""
+
+#: tfrmdbtransactions.lvtransactions.columns[1].caption
+msgctxt "tfrmdbtransactions.lvtransactions.columns[1].caption"
+msgid "ID"
+msgstr ""
+
+#: tfrmdbtransactions.lvtransactions.columns[2].caption
+msgctxt "tfrmdbtransactions.lvtransactions.columns[2].caption"
+msgid "Action"
+msgstr ""
+
+#: tfrmdbtransactions.lvtransactions.columns[3].caption
+msgctxt "tfrmdbtransactions.lvtransactions.columns[3].caption"
+msgid "Status"
+msgstr ""
+
+#: tfrmdbtransactions.rgoptions.caption
+msgctxt "tfrmdbtransactions.rgoptions.caption"
+msgid "Repair &Options"
+msgstr ""
+
+#: tfrmdbtransactions.tabadvice.caption
+msgctxt "tfrmdbtransactions.tabadvice.caption"
+msgid "Details"
+msgstr ""
+
+#: tfrmdbtransactions.tabtransactions.caption
+msgctxt "tfrmdbtransactions.tabtransactions.caption"
+msgid "Transactions"
+msgstr ""
+
+#: tfrmdbvalidation.btncancel.caption
+msgctxt "tfrmdbvalidation.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbvalidation.btnok.caption
+msgctxt "tfrmdbvalidation.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdbvalidation.caption
+msgctxt "tfrmdbvalidation.caption"
+msgid "Database Validation"
+msgstr ""
+
+#: tfrmdbvalidation.lbldatabasename.caption
+msgctxt "tfrmdbvalidation.lbldatabasename.caption"
+msgid "Database:"
+msgstr ""
+
+#: tfrmdbvalidation.lbloptions.caption
+msgctxt "tfrmdbvalidation.lbloptions.caption"
+msgid "O&ptions:"
+msgstr ""
+
+#: tfrmdbvalidation.stxdatabasename.caption
+msgctxt "tfrmdbvalidation.stxdatabasename.caption"
+msgid "stxDatabaseName"
+msgstr ""
+
+#: tfrmdbvalidationreport.btncancel.caption
+msgctxt "tfrmdbvalidationreport.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmdbvalidationreport.btnrepair.caption
+msgctxt "tfrmdbvalidationreport.btnrepair.caption"
+msgid "&Repair"
+msgstr ""
+
+#: tfrmdbvalidationreport.caption
+msgctxt "tfrmdbvalidationreport.caption"
+msgid "Validation Report"
+msgstr ""
+
+#: tfrmdbvalidationreport.lbldatabasename.caption
+msgctxt "tfrmdbvalidationreport.lbldatabasename.caption"
+msgid "Database:"
+msgstr ""
+
+#: tfrmdbvalidationreport.lbloptions.caption
+msgctxt "tfrmdbvalidationreport.lbloptions.caption"
+msgid "O&ptions:"
 msgstr ""
 
 #: tfrmdescription.button1.caption
@@ -3470,6 +6486,307 @@ msgstr ""
 msgid "stMessage"
 msgstr ""
 
+#: tfrmobjectview.btnapply.caption
+msgctxt "tfrmobjectview.btnapply.caption"
+msgid "&Apply"
+msgstr ""
+
+#: tfrmobjectview.caption
+msgctxt "tfrmobjectview.caption"
+msgid "frmObjectView"
+msgstr ""
+
+#: tfrmobjectview.cbextractdata.caption
+msgctxt "tfrmobjectview.cbextractdata.caption"
+msgid "Extract table data"
+msgstr ""
+
+#: tfrmobjectview.edfilterentry.text
+msgid "edFilterEntry"
+msgstr ""
+
+#: tfrmobjectview.edfilterinput.text
+msgid "edFilterInput"
+msgstr ""
+
+#: tfrmobjectview.edfiltermodule.text
+msgid "edFilterModule"
+msgstr ""
+
+#: tfrmobjectview.edfilteroutput.text
+msgid "edFilterOutput"
+msgstr ""
+
+#: tfrmobjectview.label1.caption
+msgctxt "tfrmobjectview.label1.caption"
+msgid "This permission includes GRANT OPTION"
+msgstr ""
+
+#: tfrmobjectview.label10.caption
+msgctxt "tfrmobjectview.label10.caption"
+msgid "&Returns:"
+msgstr ""
+
+#: tfrmobjectview.label11.caption
+msgctxt "tfrmobjectview.label11.caption"
+msgid "&Module Name:"
+msgstr ""
+
+#: tfrmobjectview.label12.caption
+msgctxt "tfrmobjectview.label12.caption"
+msgid "&Entrypoint:"
+msgstr ""
+
+#: tfrmobjectview.label13.caption
+msgctxt "tfrmobjectview.label13.caption"
+msgid "&Input SubType:"
+msgstr ""
+
+#: tfrmobjectview.label14.caption
+msgctxt "tfrmobjectview.label14.caption"
+msgid "&Output SubType:"
+msgstr ""
+
+#: tfrmobjectview.label18.caption
+msgctxt "tfrmobjectview.label18.caption"
+msgid "Exception &Number:"
+msgstr ""
+
+#: tfrmobjectview.label19.caption
+msgctxt "tfrmobjectview.label19.caption"
+msgid "Exception &Message:"
+msgstr ""
+
+#: tfrmobjectview.label21.caption
+msgctxt "tfrmobjectview.label21.caption"
+msgid "Current &Value:"
+msgstr ""
+
+#: tfrmobjectview.label3.caption
+msgctxt "tfrmobjectview.label3.caption"
+msgid "Generator &ID:"
+msgstr ""
+
+#: tfrmobjectview.label5.caption
+msgctxt "tfrmobjectview.label5.caption"
+msgid "&Check Constraint:"
+msgstr ""
+
+#: tfrmobjectview.label8.caption
+msgctxt "tfrmobjectview.label8.caption"
+msgid "&Module Name:"
+msgstr ""
+
+#: tfrmobjectview.label9.caption
+msgctxt "tfrmobjectview.label9.caption"
+msgid "&Entrypoint:"
+msgstr ""
+
+#: tfrmobjectview.lblfilename.caption
+msgctxt "tfrmobjectview.lblfilename.caption"
+msgid "lblFileName"
+msgstr ""
+
+#: tfrmobjectview.lvpermissions.columns[0].caption
+msgctxt "tfrmobjectview.lvpermissions.columns[0].caption"
+msgid "Object"
+msgstr ""
+
+#: tfrmobjectview.lvpermissions.columns[1].caption
+msgctxt "tfrmobjectview.lvpermissions.columns[1].caption"
+msgid "Select"
+msgstr ""
+
+#: tfrmobjectview.lvpermissions.columns[2].caption
+msgctxt "tfrmobjectview.lvpermissions.columns[2].caption"
+msgid "Delete"
+msgstr ""
+
+#: tfrmobjectview.lvpermissions.columns[3].caption
+msgctxt "tfrmobjectview.lvpermissions.columns[3].caption"
+msgid "Insert"
+msgstr ""
+
+#: tfrmobjectview.lvpermissions.columns[4].caption
+msgctxt "tfrmobjectview.lvpermissions.columns[4].caption"
+msgid "Update"
+msgstr ""
+
+#: tfrmobjectview.lvpermissions.columns[5].caption
+msgctxt "tfrmobjectview.lvpermissions.columns[5].caption"
+msgid "Reference"
+msgstr ""
+
+#: tfrmobjectview.lvpermissions.columns[6].caption
+msgctxt "tfrmobjectview.lvpermissions.columns[6].caption"
+msgid "Execute"
+msgstr ""
+
+#: tfrmobjectview.lvpermissions.columns[7].caption
+msgctxt "tfrmobjectview.lvpermissions.columns[7].caption"
+msgid "Member Of"
+msgstr ""
+
+#: tfrmobjectview.pnldependents.caption
+msgctxt "tfrmobjectview.pnldependents.caption"
+msgid "pnlDependents"
+msgstr ""
+
+#: tfrmobjectview.rbdependedon.caption
+msgctxt "tfrmobjectview.rbdependedon.caption"
+msgid "Show Depended &On Objects"
+msgstr ""
+
+#: tfrmobjectview.rbdependedon.hint
+msgctxt "tfrmobjectview.rbdependedon.hint"
+msgid "Shows the objects the current object depends on"
+msgstr ""
+
+#: tfrmobjectview.rbdependent.caption
+msgctxt "tfrmobjectview.rbdependent.caption"
+msgid "Show &Dependent Objects"
+msgstr ""
+
+#: tfrmobjectview.rbdependent.hint
+msgctxt "tfrmobjectview.rbdependent.hint"
+msgid "Displays objects which depend on the currently selected object"
+msgstr ""
+
+#: tfrmobjectview.sbcommitrefresh.caption
+msgctxt "tfrmobjectview.sbcommitrefresh.caption"
+msgid "Commit && Refresh"
+msgstr ""
+
+#: tfrmobjectview.showcheckconstraints.caption
+msgctxt "tfrmobjectview.showcheckconstraints.caption"
+msgid "Check Constraints"
+msgstr ""
+
+#: tfrmobjectview.showcheckconstraints.hint
+msgctxt "tfrmobjectview.showcheckconstraints.hint"
+msgid "Show Check Constraints"
+msgstr ""
+
+#: tfrmobjectview.showcolumns.caption
+msgctxt "tfrmobjectview.showcolumns.caption"
+msgid "Columns"
+msgstr ""
+
+#: tfrmobjectview.showcolumns.hint
+msgctxt "tfrmobjectview.showcolumns.hint"
+msgid "Show Columns for the table"
+msgstr ""
+
+#: tfrmobjectview.showindexes.caption
+msgctxt "tfrmobjectview.showindexes.caption"
+msgid "Indexes"
+msgstr ""
+
+#: tfrmobjectview.showindexes.hint
+msgctxt "tfrmobjectview.showindexes.hint"
+msgid "Show indexes"
+msgstr ""
+
+#: tfrmobjectview.showreferentialconstraints.caption
+msgctxt "tfrmobjectview.showreferentialconstraints.caption"
+msgid "Referential Constraints"
+msgstr ""
+
+#: tfrmobjectview.showreferentialconstraints.hint
+msgctxt "tfrmobjectview.showreferentialconstraints.hint"
+msgid "Show referential constraints"
+msgstr ""
+
+#: tfrmobjectview.showtriggers.caption
+msgctxt "tfrmobjectview.showtriggers.caption"
+msgid "Triggers"
+msgstr ""
+
+#: tfrmobjectview.showtriggers.hint
+msgctxt "tfrmobjectview.showtriggers.hint"
+msgid "Show triggers for the table"
+msgstr ""
+
+#: tfrmobjectview.showuniqueconstraints.caption
+msgctxt "tfrmobjectview.showuniqueconstraints.caption"
+msgid "Unique Constraints"
+msgstr ""
+
+#: tfrmobjectview.showuniqueconstraints.hint
+msgctxt "tfrmobjectview.showuniqueconstraints.hint"
+msgid "Show unique constraints for the table"
+msgstr ""
+
+#: tfrmobjectview.tabdata.caption
+msgctxt "tfrmobjectview.tabdata.caption"
+msgid "Data"
+msgstr ""
+
+#: tfrmobjectview.tabdependencies.caption
+msgctxt "tfrmobjectview.tabdependencies.caption"
+msgid "Dependencies"
+msgstr ""
+
+#: tfrmobjectview.tabdomains.caption
+msgctxt "tfrmobjectview.tabdomains.caption"
+msgid "tabDomains"
+msgstr ""
+
+#: tfrmobjectview.tabexceptions.caption
+msgctxt "tfrmobjectview.tabexceptions.caption"
+msgid "tabExceptions"
+msgstr ""
+
+#: tfrmobjectview.tabfilters.caption
+msgctxt "tfrmobjectview.tabfilters.caption"
+msgid "tabFilters"
+msgstr ""
+
+#: tfrmobjectview.tabfunctions.caption
+msgctxt "tfrmobjectview.tabfunctions.caption"
+msgid "tabFunctions"
+msgstr ""
+
+#: tfrmobjectview.tabgenerators.caption
+msgctxt "tfrmobjectview.tabgenerators.caption"
+msgid "tabGenerators"
+msgstr ""
+
+#: tfrmobjectview.tabmetadata.caption
+msgctxt "tfrmobjectview.tabmetadata.caption"
+msgid "Metadata"
+msgstr ""
+
+#: tfrmobjectview.tabpermissions.caption
+msgctxt "tfrmobjectview.tabpermissions.caption"
+msgid "Permissions"
+msgstr ""
+
+#: tfrmobjectview.tabprocedures.caption
+msgctxt "tfrmobjectview.tabprocedures.caption"
+msgid "tabProcedures"
+msgstr ""
+
+#: tfrmobjectview.tabproperties.caption
+msgctxt "tfrmobjectview.tabproperties.caption"
+msgid "Properties"
+msgstr ""
+
+#: tfrmobjectview.tabtables.caption
+msgctxt "tfrmobjectview.tabtables.caption"
+msgid "tabTables"
+msgstr ""
+
+#: tfrmobjectview.toolbar1.caption
+msgctxt "tfrmobjectview.toolbar1.caption"
+msgid "ToolBar1"
+msgstr ""
+
+#: tfrmobjectview.toolbar2.caption
+msgctxt "tfrmobjectview.toolbar2.caption"
+msgid "ToolBar2"
+msgstr ""
+
 #: tfrmserverlogin.btncancel.caption
 msgctxt "tfrmserverlogin.btncancel.caption"
 msgid "&Cancel"
@@ -3593,5 +6910,380 @@ msgstr ""
 #: tfrmserverproperties.tabgeneral.caption
 msgctxt "tfrmserverproperties.tabgeneral.caption"
 msgid "General"
+msgstr ""
+
+#: tfrmserverregister.btncancel.caption
+msgctxt "tfrmserverregister.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmserverregister.btnok.caption
+msgctxt "tfrmserverregister.btnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmserverregister.caption
+msgctxt "tfrmserverregister.caption"
+msgid "Register Server and Login"
+msgstr ""
+
+#: tfrmserverregister.chksavealias.caption
+msgctxt "tfrmserverregister.chksavealias.caption"
+msgid "&Save Alias Information"
+msgstr ""
+
+#: tfrmserverregister.gblogininfo.caption
+msgctxt "tfrmserverregister.gblogininfo.caption"
+msgid " Login Information "
+msgstr ""
+
+#: tfrmserverregister.gbserverinfo.caption
+msgctxt "tfrmserverregister.gbserverinfo.caption"
+msgid " Server Information "
+msgstr ""
+
+#: tfrmserverregister.label1.caption
+msgctxt "tfrmserverregister.label1.caption"
+msgid "&Description:"
+msgstr ""
+
+#: tfrmserverregister.lblpassword.caption
+msgctxt "tfrmserverregister.lblpassword.caption"
+msgid "&Password:"
+msgstr ""
+
+#: tfrmserverregister.lblprotocol.caption
+msgctxt "tfrmserverregister.lblprotocol.caption"
+msgid "&Network Protocol:"
+msgstr ""
+
+#: tfrmserverregister.lblserveralias.caption
+msgctxt "tfrmserverregister.lblserveralias.caption"
+msgid "&Alias Name:"
+msgstr ""
+
+#: tfrmserverregister.lblservername.caption
+msgctxt "tfrmserverregister.lblservername.caption"
+msgid "S&erver Name:"
+msgstr ""
+
+#: tfrmserverregister.lblusername.caption
+msgctxt "tfrmserverregister.lblusername.caption"
+msgid "&User Name:"
+msgstr ""
+
+#: tfrmserverregister.rblocalserver.caption
+msgctxt "tfrmserverregister.rblocalserver.caption"
+msgid "&Local Server"
+msgstr ""
+
+#: tfrmserverregister.rbremoteserver.caption
+msgctxt "tfrmserverregister.rbremoteserver.caption"
+msgid "&Remote Server"
+msgstr ""
+
+#: tfrmsqloptions.btnapply.caption
+msgctxt "tfrmsqloptions.btnapply.caption"
+msgid "&Apply"
+msgstr ""
+
+#: tfrmsqloptions.button1.caption
+msgctxt "tfrmsqloptions.button1.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmsqloptions.button2.caption
+msgctxt "tfrmsqloptions.button2.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmsqloptions.caption
+msgctxt "tfrmsqloptions.caption"
+msgid "SQL Options"
+msgstr ""
+
+#: tfrmsqloptions.cbclearinput.caption
+msgctxt "tfrmsqloptions.cbclearinput.caption"
+msgid "&Clear input window on success"
+msgstr ""
+
+#: tfrmsqloptions.cbupdateconnect.caption
+msgctxt "tfrmsqloptions.cbupdateconnect.caption"
+msgid "Update IBConsole on C&onnect"
+msgstr ""
+
+#: tfrmsqloptions.cbupdatecreate.caption
+msgctxt "tfrmsqloptions.cbupdatecreate.caption"
+msgid "Update IBConsole on C&reate"
+msgstr ""
+
+#: tfrmsqloptions.groupbox1.caption
+msgctxt "tfrmsqloptions.groupbox1.caption"
+msgid "SQL Events"
+msgstr ""
+
+#: tfrmsqloptions.label1.caption
+msgctxt "tfrmsqloptions.label1.caption"
+msgid "NOTE:"
+msgstr ""
+
+#: tfrmsqloptions.rgtransactions.caption
+msgctxt "tfrmsqloptions.rgtransactions.caption"
+msgid "Transactions"
+msgstr ""
+
+#: tfrmsqloptions.tabsheet1.caption
+msgctxt "tfrmsqloptions.tabsheet1.caption"
+msgid "Options"
+msgstr ""
+
+#: tfrmsqloptions.tabsheet2.caption
+msgctxt "tfrmsqloptions.tabsheet2.caption"
+msgid "Advanced"
+msgstr ""
+
+#: tfrmtextviewer.caption
+msgctxt "tfrmtextviewer.caption"
+msgid "Text Viewer"
+msgstr ""
+
+#: tfrmtextviewer.editcopy1.caption
+msgctxt "tfrmtextviewer.editcopy1.caption"
+msgid "&Copy"
+msgstr ""
+
+#: tfrmtextviewer.editcopy1.hint
+msgctxt "tfrmtextviewer.editcopy1.hint"
+msgid "Copy"
+msgstr ""
+
+#: tfrmtextviewer.editcut1.caption
+msgctxt "tfrmtextviewer.editcut1.caption"
+msgid "Cu&t"
+msgstr ""
+
+#: tfrmtextviewer.editcut1.hint
+msgctxt "tfrmtextviewer.editcut1.hint"
+msgid "Cut"
+msgstr ""
+
+#: tfrmtextviewer.editfont.caption
+msgctxt "tfrmtextviewer.editfont.caption"
+msgid "&Font ..."
+msgstr ""
+
+#: tfrmtextviewer.editfont.hint
+msgctxt "tfrmtextviewer.editfont.hint"
+msgid "Change the font"
+msgstr ""
+
+#: tfrmtextviewer.editpaste1.caption
+msgctxt "tfrmtextviewer.editpaste1.caption"
+msgid "&Paste"
+msgstr ""
+
+#: tfrmtextviewer.editpaste1.hint
+msgctxt "tfrmtextviewer.editpaste1.hint"
+msgid "Paste"
+msgstr ""
+
+#: tfrmtextviewer.editselectall1.caption
+msgctxt "tfrmtextviewer.editselectall1.caption"
+msgid "Select &All"
+msgstr ""
+
+#: tfrmtextviewer.editundo1.caption
+msgctxt "tfrmtextviewer.editundo1.caption"
+msgid "&Undo"
+msgstr ""
+
+#: tfrmtextviewer.mnuedfind.caption
+msgctxt "tfrmtextviewer.mnuedfind.caption"
+msgid "&Find"
+msgstr ""
+
+#: tfrmtextviewer.mnuedfind.hint
+msgctxt "tfrmtextviewer.mnuedfind.hint"
+msgid "Search for a string"
+msgstr ""
+
+#: tfrmtextviewer.mnuedit.caption
+msgctxt "tfrmtextviewer.mnuedit.caption"
+msgid "&Edit"
+msgstr ""
+
+#: tfrmtextviewer.mnufiexit.caption
+msgctxt "tfrmtextviewer.mnufiexit.caption"
+msgid "E&xit"
+msgstr ""
+
+#: tfrmtextviewer.mnufiexit.hint
+msgctxt "tfrmtextviewer.mnufiexit.hint"
+msgid "Exit this application"
+msgstr ""
+
+#: tfrmtextviewer.mnufile.caption
+msgctxt "tfrmtextviewer.mnufile.caption"
+msgid "&File"
+msgstr ""
+
+#: tfrmtextviewer.mnufiprint.caption
+msgctxt "tfrmtextviewer.mnufiprint.caption"
+msgid "&Print"
+msgstr ""
+
+#: tfrmtextviewer.mnufisaveas.caption
+msgctxt "tfrmtextviewer.mnufisaveas.caption"
+msgid "&Save ..."
+msgstr ""
+
+#: tfrmtextviewer.mnufisaveas.hint
+msgctxt "tfrmtextviewer.mnufisaveas.hint"
+msgid "Save current file under a new name"
+msgstr ""
+
+#: tfrmtextviewer.sbsaveas.caption
+msgctxt "tfrmtextviewer.sbsaveas.caption"
+msgid "&Save As"
+msgstr ""
+
+#: tfrmtextviewer.sbsaveas.hint
+msgctxt "tfrmtextviewer.sbsaveas.hint"
+msgid "Save contents of window to a file"
+msgstr ""
+
+#: tfrmtextviewer.stbstatusbar.panels[1].text
+msgctxt "tfrmtextviewer.stbstatusbar.panels[1].text"
+msgid "Read-Only"
+msgstr ""
+
+#: tfrmtextviewer.tlbstandard.caption
+msgctxt "tfrmtextviewer.tlbstandard.caption"
+msgid "tlbStandard"
+msgstr ""
+
+#: tfrmtextviewer.toolbutton5.caption
+msgctxt "tfrmtextviewer.toolbutton5.caption"
+msgid "ToolButton5"
+msgstr ""
+
+#: tfrmtools.button1.caption
+msgctxt "tfrmtools.button1.caption"
+msgid "&Close"
+msgstr ""
+
+#: tfrmtools.caption
+msgctxt "tfrmtools.caption"
+msgid "Tools"
+msgstr ""
+
+#: tfrmtools.label1.caption
+msgctxt "tfrmtools.label1.caption"
+msgid "Configured &Tools:"
+msgstr ""
+
+#: tfrmtools.tooladd.caption
+msgctxt "tfrmtools.tooladd.caption"
+msgid "&Add"
+msgstr ""
+
+#: tfrmtools.toolbtnclose.caption
+msgctxt "tfrmtools.toolbtnclose.caption"
+msgid "&Close"
+msgstr ""
+
+#: tfrmtools.tooldelete.caption
+msgctxt "tfrmtools.tooldelete.caption"
+msgid "&Delete"
+msgstr ""
+
+#: tfrmtools.tooledit.caption
+msgctxt "tfrmtools.tooledit.caption"
+msgid "&Edit"
+msgstr ""
+
+#: tfrmuserinfo.btnapply.caption
+msgctxt "tfrmuserinfo.btnapply.caption"
+msgid "&Apply"
+msgstr ""
+
+#: tfrmuserinfo.btncancel.caption
+msgctxt "tfrmuserinfo.btncancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmuserinfo.btnclose.caption
+msgctxt "tfrmuserinfo.btnclose.caption"
+msgid "&Close"
+msgstr ""
+
+#: tfrmuserinfo.btndelete.caption
+msgctxt "tfrmuserinfo.btndelete.caption"
+msgid "&Delete"
+msgstr ""
+
+#: tfrmuserinfo.btnnew.caption
+msgctxt "tfrmuserinfo.btnnew.caption"
+msgid "&New"
+msgstr ""
+
+#: tfrmuserinfo.caption
+msgctxt "tfrmuserinfo.caption"
+msgid "User Information"
+msgstr ""
+
+#: tfrmuserinfo.deleteuser.caption
+msgctxt "tfrmuserinfo.deleteuser.caption"
+msgid "DeleteUser"
+msgstr ""
+
+#: tfrmuserinfo.gboptionalinfo.caption
+msgctxt "tfrmuserinfo.gboptionalinfo.caption"
+msgid " Optional Information "
+msgstr ""
+
+#: tfrmuserinfo.gbrequiredinfo.caption
+msgctxt "tfrmuserinfo.gbrequiredinfo.caption"
+msgid " Required Information "
+msgstr ""
+
+#: tfrmuserinfo.lblconfirmpassword.caption
+msgctxt "tfrmuserinfo.lblconfirmpassword.caption"
+msgid "C&onfirm Password:"
+msgstr ""
+
+#: tfrmuserinfo.lblfname.caption
+msgctxt "tfrmuserinfo.lblfname.caption"
+msgid "&First Name:"
+msgstr ""
+
+#: tfrmuserinfo.lbllname.caption
+msgctxt "tfrmuserinfo.lbllname.caption"
+msgid "&Last Name:"
+msgstr ""
+
+#: tfrmuserinfo.lblmname.caption
+msgctxt "tfrmuserinfo.lblmname.caption"
+msgid "&Middle Name:"
+msgstr ""
+
+#: tfrmuserinfo.lblpassword.caption
+msgctxt "tfrmuserinfo.lblpassword.caption"
+msgid "&Password:"
+msgstr ""
+
+#: tfrmuserinfo.lblusername.caption
+msgctxt "tfrmuserinfo.lblusername.caption"
+msgid "&User Name:"
+msgstr ""
+
+#: tfrmuserinfo.modifyuser.caption
+msgctxt "tfrmuserinfo.modifyuser.caption"
+msgid "ModifyUser"
+msgstr ""
+
+#: tfrmuserinfo.newuser.caption
+msgctxt "tfrmuserinfo.newuser.caption"
+msgid "NewUser"
 msgstr ""
 

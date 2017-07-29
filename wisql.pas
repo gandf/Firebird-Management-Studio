@@ -27,7 +27,7 @@ uses
   LCLIntf, LCLType, Messages, SysUtils, Classes, Graphics, Controls, Interfaces, Forms, Dialogs,
   Menus, ComCtrls, ExtCtrls, StdCtrls, Grids, DBGrids,
   Db, StdActns, ActnList, zluibcClasses, IB, IBDatabase, IBCustomDataSet,
-  zluSQL, MemoLists, FileUtil, SynEdit;
+  zluSQL, MemoLists, FileUtil, SynEdit, gettext, Translations, resstring;
 
 type
 
@@ -38,6 +38,8 @@ type
   TUpdateObjectEvent = procedure (const Database: TIBDatabase;
                                   const ObjectType: integer) of Object;
   TDropDBEvent = procedure of Object;
+
+  { TdlgWisql }
 
   TdlgWisql = class(TForm)
     pgcOutput: TPageControl;
@@ -196,6 +198,7 @@ type
     procedure NavMenuClick(Sender: TObject);
     procedure mnuNextPopup(Sender: TObject);
     procedure Newconnection1Click(Sender: TObject);
+    Procedure TranslateVisual;
   private
     { Private declarations }
     FDatabase: TIBDatabase;
@@ -267,12 +270,12 @@ procedure TdlgWisql.UpdateTransactionStatus(const active: boolean);
 begin
   if active then
   begin
-    stbISQL.Panels[3].Text := 'Transaction is ACTIVE.';
+    stbISQL.Panels[3].Text := LZTwisqlTransActive;
     TransactionCommit.Enabled := true;
     TransactionRollback.Enabled := true;
   end
   else begin
-    stbISQL.Panels[3].Text := 'No active transaction.';
+    stbISQL.Panels[3].Text := LZTwisqlNoActiveTrans;
     TransactionCommit.Enabled := false;
     TransactionRollback.Enabled := false;
   end
@@ -317,11 +320,11 @@ begin
   begin
     lSaveDialog := TSaveDialog.Create(Self);
     lSaveDialog.DefaultExt := 'sql';
-    lSaveDialog.Filter := 'SQL Files (*.sql)|*.SQL|Text files (*.txt)|*.TXT|All files (*.*)|*.*';
+    lSaveDialog.Filter := LZTwisqlSqlFileFilter;
     if lSaveDialog.Execute then
     begin
-      if FileExists(lSaveDialog.FileName) { *Converted from FileExists* } then
-        if MessageDlg(Format('OK to overwrite %s', [lSaveDialog.FileName]),
+      if FileExists(lSaveDialog.FileName) then
+        if MessageDlg(Format(LZTwisqlOverwrite, [lSaveDialog.FileName]),
           mtConfirmation, mbYesNoCancel, 0) <> idYes then Exit;
       //reSQLInput.PlainText := true;
       reSQLInput.Lines.SaveToFile(lSaveDialog.FileName);
@@ -343,7 +346,7 @@ begin
   begin
     lOpenDialog := TOpenDialog.Create(self);
     lOpenDialog.DefaultExt := 'sql';
-    lOpenDialog.Filter := 'SQL Files (*.sql)|*.SQL|Text files (*.txt)|*.TXT|All files (*.*)|*.*';
+    lOpenDialog.Filter := LZTwisqlSqlFileFilter;
     if lOpenDialog.Execute then
     begin
       try
@@ -354,7 +357,7 @@ begin
           on E:Exception do
           begin
             MessageDlg(E.Message + #10#13+
-            Format('Could not open file "%s".',[lOpenDialog.FileName]), mtError, [mbOK], 0);
+            Format(LZTwisqlNotOpenFile,[lOpenDialog.FileName]), mtError, [mbOK], 0);
             Exit;
           end;
         end;
@@ -441,25 +444,25 @@ begin
         Cursor := crDefault;
         case E.ExceptionCode of
           eeInvDialect:
-            DisplayMsg (E.ErrorCode, Format('%s'#13#10'Invalid client dialect %s',
+            DisplayMsg (E.ErrorCode, Format(LZTwisqlInvalidClientDialect,
               [E.Message, E.ExceptionData]));
           eeInitialization:
             DisplayMsg (E.ErrorCode, E.Message);
           eeFOpen:
-            DisplayMsg (E.ErrorCode, Format('%s'#13#10'Unable to open file %s',
+            DisplayMsg (E.ErrorCode, Format(LZTwisqlUnableToOpenFile,
               [E.Message, E.ExceptionData]));
           eeParse:
             DisplayMsg (E.ErrorCode, E.Message);
           eeCreate,
           eeConnect:
-            DisplayMsg (E.ErrorCode, Format('%s'#13#10'Database: %s', [E.Message, E.ExceptionData]));
+            DisplayMsg (E.ErrorCode, Format(LZTwisqlDatabase, [E.Message, E.ExceptionData]));
           eeStatement,
           eeCommit,
           eeRollback,
           eeDDL,
           eeDML,
           eeQuery:
-            DisplayMsg (E.ErrorCode, Format('%s'#13#10'Statement: %s', [E.Message, E.ExceptionData]));
+            DisplayMsg (E.ErrorCode, Format(LZTwisqlStatement, [E.Message, E.ExceptionData]));
           eeFree:
             DisplayMsg (E.ErrorCode, E.Message);
         end;
@@ -493,11 +496,11 @@ begin
       try
         if tmpdialect <> DBSQLDialect then
           DisplayMsg (WAR_DIALECT_MISMATCH, Format(
-              'Database dialect (%d) does not match client dialect (%d).',
+              LZTwisqlDatabaseDialectNotMatch,
               [DBSQLDialect, tmpdialect]));
         SQLDialect := TAction(Sender).tag;
       except on E: Exception do
-         DisplayMsg (ERR_INV_DIALECT, Format('%s'#13#10'Unable to set the client dialect to %d',
+         DisplayMsg (ERR_INV_DIALECT, Format(LZTwisqlUnableToSetDialect,
                                             [E.Message, tmpdialect]));
       end;
     end;
@@ -697,7 +700,7 @@ begin
   begin
     if Tag = 0 then
     begin
-      if MessageDlg('Are you sure that you want to rollback work to previous commit point?',
+      if MessageDlg(LZTwisqlRollbackPreviousCommit,
           mtConfirmation, [mbYes, mbNo], 0) = mrYes then
       begin
         if FDefaultTransaction.InTransaction then
@@ -723,7 +726,14 @@ begin
 end;
 
 constructor TdlgWisql.Create(AOwner: TComponent);
+var
+  lg, language : String;
 begin
+  GetLanguageIDs(lg,language);
+  Translations.TranslateUnitResourceStrings('resstring', '.\Lang\'+ChangeFileExt(ExtractFileName(Application.ExeName),
+  '')+'.%s.po', lg, language);
+  TranslateVisual;
+
   inherited;
   FServerList := TStringList.Create;
   FConnected := false;
@@ -786,7 +796,7 @@ procedure TdlgWisql.QueryUpdate(Sender: TObject);
 begin
   (Sender as TAction).Enabled := (reSQlInput.Lines.Count > 0);
   if reSQlInput.Modified then
-    stbISQL.Panels[1].Text := 'Modified'
+    stbISQL.Panels[1].Text := LZTwisqlModified
   else
     stbISQL.Panels[1].text := '';
 end;
@@ -818,7 +828,7 @@ begin
       Cursor := crDefault;
       case E.ExceptionCode of
         eeStatement:
-          DisplayMsg (E.ErrorCode, Format('%s'#13#10'Statement: %s', [E.Message, E.ExceptionData]));
+          DisplayMsg (E.ErrorCode, Format(LZTwisqlStatement, [E.Message, E.ExceptionData]));
         else
           DisplayMsg (ERR_ISQL_ERROR, E.Message);
       end;
@@ -882,7 +892,7 @@ begin
   with Sender as TDBGrid do begin
     FieldObj := SelectedField;
     if FieldObj = nil then
-      ShowMessage ('Unable to display Array Information')
+      ShowMessage (LZTwisqlUnableDisplayArrayInfo)
     else begin
       case FieldObj.DataType of
         ftBlob:
@@ -890,7 +900,7 @@ begin
         ftMemo:
           DisplayMemo (self, FieldObj, FQryDataSet);
         else
-          ShowMessage (FieldObj.DisplayName+' is unknown');
+          ShowMessage (FieldObj.DisplayName + LZTwisqlIsUnknown);
       end;
     end;
   end;
@@ -913,9 +923,9 @@ procedure TdlgWisql.SetAutoDDL(const Value: boolean);
 begin
   FAutoDDL := Value;
   if FAutoDDL then
-    stbISQL.Panels[4].Text := 'AutoDDL: ON'
+    stbISQL.Panels[4].Text := LZTwisqlAutoDDLON
   else
-    stbISQL.Panels[4].Text := 'AutoDDL: OFF';
+    stbISQL.Panels[4].Text := LZTwisqlAutoDDLOFF;
 end;
 
 procedure TdlgWisql.SQLReference1Click(Sender: TObject);
@@ -999,7 +1009,7 @@ begin
    if not FConnected then
       frmMain.DatabaseDrop.OnExecute (sender)
     else begin
-      if MessageDlg('Are you sure that you want to drop the selected database?',
+      if MessageDlg(LZTwisqlWantDropSelectedDatabase,
           mtConfirmation, mbOkCancel, 0) = mrOK then
         FDatabase.DropDatabase;
     end;
@@ -1020,7 +1030,7 @@ begin
   if not new_connection then
     frmMain.DatabaseDisconnectExecute(Self);
   Newconnection1.Enabled:=True;
-  Caption := 'Interactive SQL';
+  Caption := LZTwisqlInteractiveSQL;
 end;
 
 procedure TdlgWisql.Connect1Click(Sender: TObject);
@@ -1081,10 +1091,10 @@ begin
       if FDefaultTransaction.InTransaction or
          FDDLTransaction.InTransaction then
       begin
-        retval := MessageDlg ('Transactions are active.'#13#10+
-                              'Would you like to commit the transactions?'#13#10+
+        retval := MessageDlg (LZTwisqlTransAreActive + #13#10+
+                              LZTwisqlCommitTrans + #13#10 +
                               #13#10+
-                              'Choosing NO will rollback the active transactions.', mtInformation,
+                              LZTwisqlNoWillRollbackActiveTrans, mtInformation,
                               mbYesNoCancel, 0);
         case retval of
           mrYes:
@@ -1162,7 +1172,7 @@ begin
     end
     else
     begin
-      sbData.Panels[0].Text := 'Not Connected';
+      sbData.Panels[0].Text := LZTwisqlNotConnected;
       reSqlInput.Clear;
       reSQLOutput.Clear;
       FQueryBuffer.Clear;
@@ -1179,7 +1189,7 @@ end;
 procedure TdlgWisql.SetClientDialect(const Value: integer);
 begin
   FCurrSQLDialect := value;
-  stbISQL.Panels[2].Text := Format ('Client dialect %d',[FCurrSQLDialect]);
+  stbISQL.Panels[2].Text := Format (LZTwisqlClientDialect,[FCurrSQLDialect]);
 end;
 
 procedure TdlgWisql.QueryPreviousUpdate(Sender: TObject);
@@ -1251,9 +1261,9 @@ begin
   begin
     Options := [ofPathMustExist, ofHideReadOnly, ofOverwritePrompt];
     DefaultExt := 'TXT';
-    Filter := 'Text files (*.txt)|*.TXT';
+    Filter := LZTwisqlFileTxtFilter;
     FilterIndex := 1;
-    Title := 'Save Query Output';
+    Title := LZTwisqlSaveQueryOutput;
     if Execute then
       SaveFileName :=  FileName
     else
@@ -1358,7 +1368,7 @@ begin
     FQryDataset.FreeBookmark(lBookMark);
     EnableControls;
     dbgSQLResults.Enabled := true;
-    MessageDlg ('Data saved to file: ' + SaveFileName, mtInformation, [mbOk], 0);
+    MessageDlg (LZTwisqlDataSavedToFile + SaveFileName, mtInformation, [mbOk], 0);
   end;
 end;
 
@@ -1543,9 +1553,116 @@ begin
     resqlInput.Clear;
     reSQLOutput.Clear;
     Newconnection1.Enabled:=False;
-    Caption := 'Interactive SQL - ' + ExtractFileName(Database.DatabaseName);
+    Caption := LZTwisqlInteractiveSQL2 + ExtractFileName(Database.DatabaseName);
   end;
 end;
+
+Procedure TdlgWisql.TranslateVisual;
+Begin
+  lblFileName.Caption := LZTwisqllblFileName;
+  TabData.Caption := LZTwisqlTabData;
+  TabResults.Caption := LZTwisqlTabResults;
+  TabStats.Caption := LZTwisqlTabStats;
+  ToolBar3.Caption := LZTwisqlToolBar3;
+  ToolButton7.Caption := LZTwisqlToolButton7;
+  ToolButton8.Caption := LZTwisqlToolButton8;
+  ToolButton9.Caption := LZTwisqlToolButton9;
+  ToolButton5.Caption := LZTwisqlToolButton5;
+  ToolButton10.Caption := LZTwisqlToolButton10;
+  ToolButton2.Caption := LZTwisqlToolButton2;
+  ToolButton3.Caption := LZTwisqlToolButton3;
+  ToolButton4.Caption := LZTwisqlToolButton4;
+  ToolButton11.Caption := LZTwisqlToolButton11;
+  ToolButton12.Caption := LZTwisqlToolButton12;
+  ToolButton13.Caption := LZTwisqlToolButton13;
+  ToolButton20.Caption := LZTwisqlToolButton20;
+  Dialect1.Caption := LZTwisqlDialect1;
+  Dialect2.Caption := LZTwisqlDialect2;
+  Dialect3.Caption := LZTwisqlDialect3;
+  File1.Caption := LZTwisqlFile1;
+  Print1.Caption := LZTwisqlPrint1;
+  Close1.Caption := LZTwisqlClose1;
+  mnuEdit1.Caption := LZTwisqlmnuEdit1;
+  Undo2.Caption := LZTwisqlUndo2;
+  mnuEdCopy1.Caption := LZTwisqlmnuEdCopy1;
+  Cut2.Caption := LZTwisqlCut2;
+  Paste2.Caption := LZTwisqlPaste2;
+  SelectAll2.Caption := LZTwisqlSelectAll2;
+  mnuEdFind1.Caption := LZTwisqlmnuEdFind1;
+  Font2.Caption := LZTwisqlFont2;
+  Options1.Caption := LZTwisqlOptions1;
+  Edit1.Caption := LZTwisqlEdit1;
+  QueryLoadScript1.Caption := LZTwisqlQueryLoadScript1;
+  QuerySaveScript1.Caption := LZTwisqlQuerySaveScript1;
+  QueryNext1.Caption := LZTwisqlQueryNext1;
+  QueryPrevious1.Caption := LZTwisqlQueryPrevious1;
+  QueryPrevious2.Caption := LZTwisqlQueryPrevious2;
+  Prepare1.Caption := LZTwisqlPrepare1;
+  SaveOutput1.Caption := LZTwisqlSaveOutput1;
+  Database1.Caption := LZTwisqlDatabase1;
+  Connect1.Caption := LZTwisqlConnect1;
+  Newconnection1.Caption := LZTwisqlNewconnection1;
+  Disconnect1.Caption := LZTwisqlDisconnect1;
+  Create1.Caption := LZTwisqlCreate1;
+  Drop1.Caption := LZTwisqlDrop1;
+  Transactions1.Caption := LZTwisqlTransactions1;
+  Commit1.Caption := LZTwisqlCommit1;
+  Rollback1.Caption := LZTwisqlRollback1;
+  Windows1.Caption := LZTwisqlWindows1;
+  Help1.Caption := LZTwisqlHelp1;
+  SQLReference1.Caption := LZTwisqlSQLReference1;
+  About1.Caption := LZTwisqlAbout1;
+  Cut1.Caption := LZTwisqlCut1;
+  Copy1.Caption := LZTwisqlCopy1;
+  Paste1.Caption := LZTwisqlPaste1;
+  Selectall1.Caption := LZTwisqlSelectall1;
+  Undo1.Caption := LZTwisqlUndo1;
+  TransactionCommit.Caption := LZTwisqlTransactionCommit;
+  TransactionRollback.Caption := LZTwisqlTransactionRollback;
+  DialectAction1.Caption := LZTwisqlDialectAction1;
+  DialectAction2.Caption := LZTwisqlDialectAction2;
+  DialectAction3.Caption := LZTwisqlDialectAction3;
+  QueryPrevious.Caption := LZTwisqlQueryPrevious;
+  QueryNext.Caption := LZTwisqlQueryNext;
+  QueryExecute.Caption := LZTwisqlQueryExecute;
+  QueryLoadScript.Caption := LZTwisqlQueryLoadScript;
+  QuerySaveScript.Caption := LZTwisqlQuerySaveScript;
+  QueryOptions.Caption := LZTwisqlQueryOptions;
+  QuerySaveOutput.Caption := LZTwisqlQuerySaveOutput;
+  QueryPrepare.Caption := LZTwisqlQueryPrepare;
+  FileOptions.Caption := LZTwisqlFileOptions;
+  FileClose.Caption := LZTwisqlFileClose;
+  EditFind.Caption := LZTwisqlEditFind;
+  EditFont.Caption := LZTwisqlEditFont;
+  EditCopy1.Caption := LZTwisqlEditCopy1;
+  EditCut1.Caption := LZTwisqlEditCut1;
+  EditPaste1.Caption := LZTwisqlEditPaste1;
+  EditSelectAll1.Caption := LZTwisqlEditSelectAll1;
+  EditUndo1.Caption := LZTwisqlEditUndo1;
+  DatabaseConnectAs.Caption := LZTwisqlDatabaseConnectAs;
+  DatabaseDisconnect.Caption := LZTwisqlDatabaseDisconnect;
+  DatabaseCreate.Caption := LZTwisqlDatabaseCreate;
+  DatabaseDrop.Caption := LZTwisqlDatabaseDrop;
+  TabData.Caption := LZTwisqlTabData;
+  stbISQL.Hint := LZTwisqlstbISQLHint;
+  File1.Hint := LZTwisqlFile1Hint;
+  TransactionCommit.Hint := LZTwisqlTransactionCommitHint;
+  TransactionRollback.Hint := LZTwisqlTransactionRollbackHint;
+  QueryPrevious.Hint := LZTwisqlQueryPreviousHint;
+  QueryNext.Hint := LZTwisqlQueryNextHint;
+  QueryExecute.Hint := LZTwisqlQueryExecuteHint;
+  QueryLoadScript.Hint := LZTwisqlQueryLoadScriptHint;
+  QuerySaveScript.Hint := LZTwisqlQuerySaveScriptHint;
+  QueryOptions.Hint := LZTwisqlQueryOptionsHint;
+  QuerySaveOutput.Hint := LZTwisqlQuerySaveOutputHint;
+  QueryPrepare.Hint := LZTwisqlQueryPrepareHint;
+  FileOptions.Hint := LZTwisqlFileOptionsHint;
+  FileClose.Hint := LZTwisqlFileCloseHint;
+  EditCopy1.Hint := LZTwisqlEditCopy1Hint;
+  EditCut1.Hint := LZTwisqlEditCut1Hint;
+  EditPaste1.Hint := LZTwisqlEditPaste1Hint;
+  Self.Caption := LZTwisqlFormTitle;
+End;
 
 end.
 

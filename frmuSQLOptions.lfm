@@ -1,7 +1,7 @@
 inherited frmSQLOptions: TfrmSQLOptions
-  Left = 370
+  Left = 241
   Height = 336
-  Top = 364
+  Top = 130
   Width = 316
   Caption = 'SQL Options'
   ClientHeight = 336
@@ -32,9 +32,9 @@ inherited frmSQLOptions: TfrmSQLOptions
     Height = 288
     Top = 0
     Width = 316
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alTop
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 2
     object TabSheet1: TTabSheet
       Caption = 'Options'
@@ -101,8 +101,8 @@ inherited frmSQLOptions: TfrmSQLOptions
     end
     object TabSheet2: TTabSheet
       Caption = 'Advanced'
-      ClientHeight = 0
-      ClientWidth = 0
+      ClientHeight = 262
+      ClientWidth = 308
       ImageIndex = 1
       object GroupBox1: TGroupBox
         Left = 5
@@ -128,18 +128,18 @@ inherited frmSQLOptions: TfrmSQLOptions
         end
         object cbUpdateConnect: TCheckBox
           Left = 5
-          Height = 17
+          Height = 19
           Top = 7
-          Width = 179
+          Width = 164
           Caption = 'Update IBConsole on C&onnect'
           OnClick = cbOptionsChange
           TabOrder = 0
         end
         object cbUpdateCreate: TCheckBox
           Left = 5
-          Height = 17
+          Height = 19
           Top = 31
-          Width = 171
+          Width = 155
           Caption = 'Update IBConsole on C&reate'
           OnClick = cbOptionsChange
           TabOrder = 1

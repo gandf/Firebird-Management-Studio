@@ -24,8 +24,8 @@ unit frmuServerRegister;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, IBServices, frmuDlgClass, IB;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ExtCtrls, IBServices, frmuDlgClass, IB, resstring;
 
 type
   TfrmServerRegister = class(TDialog)
@@ -52,6 +52,7 @@ type
     procedure btnOKClick(Sender: TObject);
     procedure rbLocalServerClick(Sender: TObject);
     procedure rbRemoteServerClick(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     FAction: word;
@@ -80,11 +81,11 @@ begin
       // determine which form caption to use based on the SelAction
       if SelAction = SELECT_SERVER then
       begin
-        Caption := 'Select Server and Connect';
+        Caption := LZTServerRegisterSelectServerConnect;
       end
       else
       begin
-        Caption := 'Register Server and Connect';
+        Caption := LZTServerRegisterRegServerConnect;
       end;
       FAction := SelAction;
 
@@ -98,7 +99,7 @@ begin
       begin
         { if the local server is running, then check the box to register it
           if the local server is not registered }
-        if IsIBRunning and not IsServerRegistered('Local Server') then
+        if IsIBRunning and not IsServerRegistered(LZTServerRegisterLocalServer) then
         begin
           rbLocalServer.Checked := true;
           rbLocalServer.OnClick (nil);
@@ -109,7 +110,7 @@ begin
           rbRemoteServer.OnClick (nil);          
         end;
 
-        if IsServerRegistered('Local Server') then
+        if IsServerRegistered(LZTServerRegisterLocalServer) then
           rbLocalServer.Enabled := false;
       end;
 
@@ -122,8 +123,8 @@ begin
         if rbLocalServer.Checked then
         begin
           Protocol := Local;           // set local server properties
-          ServerName := 'Local Server';
-          ServerAlias := 'Local Server';
+          ServerName := LZTServerRegisterLocalServer;
+          ServerAlias := LZTServerRegisterLocalServer;
           Description := edtDescription.Text;          
         end
         else                           // otherwise
@@ -267,5 +268,23 @@ begin
     end;
   end;  
 end;
+
+Procedure TfrmServerRegister.TranslateVisual;
+Begin
+  gbServerInfo.Caption := LZTServerRegistergbServerInfo;
+  lblServerName.Caption := LZTServerRegisterlblServerName;
+  lblProtocol.Caption := LZTServerRegisterlblProtocol;
+  lblServerAlias.Caption := LZTServerRegisterlblServerAlias;
+  Label1.Caption := LZTServerRegisterLabel1;
+  rbLocalServer.Caption := LZTServerRegisterrbLocalServer;
+  rbRemoteServer.Caption := LZTServerRegisterrbRemoteServer;
+  chkSaveAlias.Caption := LZTServerRegisterchkSaveAlias;
+  gbLoginInfo.Caption := LZTServerRegistergbLoginInfo;
+  lblUsername.Caption := LZTServerRegisterlblUsername;
+  lblPassword.Caption := LZTServerRegisterlblPassword;
+  btnOK.Caption := LZTServerRegisterbtnOK;
+  btnCancel.Caption := LZTServerRegisterbtnCancel;
+  Self.Caption := LZTServerRegisterFormTitle;
+End;
 
 end.

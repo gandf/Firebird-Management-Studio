@@ -25,7 +25,7 @@ interface
 
 uses
   LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, ComCtrls, zluibcClasses, IBServices, IB, Grids, frmuDlgClass;
+  StdCtrls, ExtCtrls, ComCtrls, zluibcClasses, IBServices, IB, Grids, frmuDlgClass, resstring;
 
 type
   TfrmDBStatistics = class(TDialog)
@@ -47,6 +47,7 @@ type
     procedure cbOptionsKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure sgOptionsDrawCell(Sender: TObject; ACol, ARow: Integer; Rect: TRect; State: TGridDrawState);
     procedure sgOptionsSelectCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     function VerifyInputData(): boolean;
@@ -129,16 +130,16 @@ begin
 
           lDBStatisticsOptions := [];
           // determine which options have been selected
-          if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'Data Pages' then
+          if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = LZTDBStatsDataPages then
             Include(lDBStatisticsOptions, DataPages)
           else
-            if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'Header Page' then
+            if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = LZTDBStatsHeaderPage then
               Include(lDBStatisticsOptions, HeaderPages)
             else
-              if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'Index Pages' then
+              if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = LZTDBStatsIndexPages then
                 Include(lDBStatisticsOptions, IndexPages)
               else
-                if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = 'System Relations' then
+                if frmDBStatistics.sgOptions.Cells[1,STATISTICS_OPTION_ROW] = LZTDBStatsSystemRelations then
                   Include(lDBStatisticsOptions, SystemRelations);
 
           // assign validation options
@@ -147,7 +148,7 @@ begin
           // start service
           try
             lDBStatistics.ServiceStart;
-            SourceServerNode.OpenTextViewer (lDBStatistics, 'Database Statistics');
+            SourceServerNode.OpenTextViewer (lDBStatistics, LZTDBStatsDatabaseStats);
             lDBStatistics.Detach;
           except
             on E: EIBError do
@@ -163,7 +164,7 @@ begin
       except
         on E: Exception do
         begin
-          DisplayMsg(ERR_SERVER_SERVICE,E.Message + #13#10 + 'Database statistics cannot be displayed.');
+          DisplayMsg(ERR_SERVER_SERVICE,E.Message + #13#10 + LZTDBStatsDatabaseStatsConnotDisplayed);
           result := FAILURE;
         end;
       end;
@@ -189,16 +190,16 @@ begin
 
   sgOptions.RowCount := 1;
 
-  sgOptions.Cells[OPTION_NAME_COL,STATISTICS_OPTION_ROW] := 'Show data for:';
-  sgOptions.Cells[OPTION_VALUE_COL,STATISTICS_OPTION_ROW] := 'All Options';
+  sgOptions.Cells[OPTION_NAME_COL,STATISTICS_OPTION_ROW] := LZTDBStatsShowData;
+  sgOptions.Cells[OPTION_VALUE_COL,STATISTICS_OPTION_ROW] := LZTDBStatsAllOptions;
 
-  pnlOptionName.Caption := 'Show data for:';
-  cbOptions.Items.Add('All Options');
-  cbOptions.Items.Add('Data Pages');
-  cbOptions.Items.Add('Database Log');
-  cbOptions.Items.Add('Header Page');
-  cbOptions.Items.Add('Index Pages');
-  cbOptions.Items.Add('System Relations');
+  pnlOptionName.Caption := LZTDBStatsShowData;
+  cbOptions.Items.Add(LZTDBStatsAllOptions);
+  cbOptions.Items.Add(LZTDBStatsDataPages);
+  cbOptions.Items.Add(LZTDBStatsDatabaseLog);
+  cbOptions.Items.Add(LZTDBStatsHeaderPage);
+  cbOptions.Items.Add(LZTDBStatsIndexPages);
+  cbOptions.Items.Add(LZTDBStatsSystemRelations);
   cbOptions.ItemIndex := 0;
 end;
 
@@ -249,7 +250,7 @@ begin
 
   if (iIndex = -1) then
   begin
-    MessageDlg('Invalid option value', mtError, [mbOK], 0);
+    MessageDlg(LZTDBStatsInvalidOptionValue, mtError, [mbOK], 0);
 
     cbOptions.ItemIndex := 0;
     // Size and position the combo box to fit the cell
@@ -309,12 +310,12 @@ var
   lR, lName : TRect;
 begin
   cbOptions.Items.Clear;
-  cbOptions.Items.Add('All Options');
-  cbOptions.Items.Add('Data Pages');
-  cbOptions.Items.Add('Database Log');
-  cbOptions.Items.Add('Header Page');
-  cbOptions.Items.Add('Index Pages');
-  cbOptions.Items.Add('System Relations');
+  cbOptions.Items.Add(LZTDBStatsAllOptions);
+  cbOptions.Items.Add(LZTDBStatsDataPages);
+  cbOptions.Items.Add(LZTDBStatsDatabaseLog);
+  cbOptions.Items.Add(LZTDBStatsHeaderPage);
+  cbOptions.Items.Add(LZTDBStatsIndexPages);
+  cbOptions.Items.Add(LZTDBStatsSystemRelations);
 
   pnlOptionName.Caption := sgOptions.Cells[OPTION_NAME_COL, ARow];
 
@@ -362,5 +363,14 @@ function TfrmDBStatistics.VerifyInputData(): boolean;
 begin
   result := true;
 end;
+
+Procedure TfrmDBStatistics.TranslateVisual;
+Begin
+  lblDatabaseName.Caption := LZTDBStatsDatabase;
+  lblOptions.Caption := LZTDBStatsOption;
+  btnOK.Caption := LZTDBStatsOK;
+  btnCancel.Caption := LZTDBStatsCancel;
+  Self.Caption := LZTDBStatsFormTitle;
+End;
 
 end.

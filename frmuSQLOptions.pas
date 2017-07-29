@@ -24,8 +24,8 @@ unit frmuSQLOptions;
 interface
 
 uses
-  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  frmuDlgClass, StdCtrls, ExtCtrls, Grids, ComCtrls;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  frmuDlgClass, StdCtrls, ExtCtrls, Grids, ComCtrls, resstring;
 
 type
   TfrmSQLOptions = class(TDialog)
@@ -59,6 +59,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
   public
@@ -96,15 +97,15 @@ begin
 
   sgOptions.Cells[OPTION_NAME_COL,SHOW_QUERY_PLAN_ROW] := 'Show Query Plan';
   if gAppSettings[SHOW_QUERY_PLAN].Setting = false then
-    sgOptions.Cells[OPTION_VALUE_COL,SHOW_QUERY_PLAN_ROW] := 'False'
+    sgOptions.Cells[OPTION_VALUE_COL,SHOW_QUERY_PLAN_ROW] := LZTSQLOptionsFalse
   else
-    sgOptions.Cells[OPTION_VALUE_COL,SHOW_QUERY_PLAN_ROW] := 'True';
+    sgOptions.Cells[OPTION_VALUE_COL,SHOW_QUERY_PLAN_ROW] := LZTSQLOptionsTrue;
 
   sgOptions.Cells[OPTION_NAME_COL,AUTO_COMMIT_DDL_ROW] := 'Auto Commit DDL';
   if gAppSettings[AUTO_COMMIT_DDL].Setting = false then
-    sgOptions.Cells[OPTION_VALUE_COL,AUTO_COMMIT_DDL_ROW] := 'False'
+    sgOptions.Cells[OPTION_VALUE_COL,AUTO_COMMIT_DDL_ROW] := LZTSQLOptionsFalse
   else
-    sgOptions.Cells[OPTION_VALUE_COL,AUTO_COMMIT_DDL_ROW] := 'True';
+    sgOptions.Cells[OPTION_VALUE_COL,AUTO_COMMIT_DDL_ROW] := LZTSQLOptionsTrue;
 
   sgOptions.Cells[OPTION_NAME_COL,CHARACTER_SET_ROW] := 'Character Set';
   sgOptions.Cells[OPTION_VALUE_COL,CHARACTER_SET_ROW] := gAppSettings[CHARACTER_SET].Setting;
@@ -130,8 +131,8 @@ end;
 procedure TfrmSQLOptions.btnApplyClick(Sender: TObject);
 begin
   inherited;
-    gAppSettings[SHOW_QUERY_PLAN].Setting := sgOptions.Cells[OPTION_VALUE_COL,SHOW_QUERY_PLAN_ROW] = 'True';
-    gAppSettings[AUTO_COMMIT_DDL].Setting := sgOptions.Cells[OPTION_VALUE_COL,AUTO_COMMIT_DDL_ROW] = 'True';
+    gAppSettings[SHOW_QUERY_PLAN].Setting := sgOptions.Cells[OPTION_VALUE_COL,SHOW_QUERY_PLAN_ROW] = LZTSQLOptionsTrue;
+    gAppSettings[AUTO_COMMIT_DDL].Setting := sgOptions.Cells[OPTION_VALUE_COL,AUTO_COMMIT_DDL_ROW] = LZTSQLOptionsTrue;
     gAppSettings[CHARACTER_SET].Setting := sgOptions.Cells[OPTION_VALUE_COL,CHARACTER_SET_ROW];
     gAppSettings[BLOB_DISPLAY].Setting := sgOptions.Cells[OPTION_VALUE_COL,BLOB_DISPLAY_ROW];
     gAppSettings[BLOB_SUBTYPE].Setting := sgOptions.Cells[OPTION_VALUE_COL,BLOB_SUBTYPE_ROW];
@@ -176,7 +177,7 @@ begin
 
   if (iIndex = -1) and (sgOptions.Row <> ISQL_TERMINATOR_ROW) then
   begin
-    MessageDlg('Invalid option value', mtError, [mbOK], 0);
+    MessageDlg(LZTSQLOptionsInvalidOptionValue, mtError, [mbOK], 0);
 
     cbOptions.ItemIndex := 0;          // reset to first item in list
     //Size and position the combo box to fit the cell
@@ -249,13 +250,13 @@ begin
 
     SHOW_QUERY_PLAN_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTSQLOptionsTrue);
+      cbOptions.Items.Add(LZTSQLOptionsFalse);
     end;
     AUTO_COMMIT_DDL_ROW:
     begin
-      cbOptions.Items.Add('True');
-      cbOptions.Items.Add('False');
+      cbOptions.Items.Add(LZTSQLOptionsTrue);
+      cbOptions.Items.Add(LZTSQLOptionsFalse);
     end;
     CHARACTER_SET_ROW:
     begin
@@ -263,41 +264,65 @@ begin
       begin
         Add('ASCII');
         Add('BIG_5');
+        Add('CP943C');
         Add('CYRL');
         Add('DOS437');
+        Add('DOS737');
         Add('DOS850');
         Add('DOS852');
         Add('DOS857');
+        Add('DOS858');
         Add('DOS860');
         Add('DOS861');
+        Add('DOS862');
         Add('DOS863');
+        Add('DOS864');
         Add('DOS865');
+        Add('DOS866');
+        Add('DOS869');
         Add('EUCJ_0208');
         Add('GB_2312');
         Add('ISO8859_1');
+        Add('ISO8859_2');
+        Add('ISO8859_3');
+        Add('ISO8859_4');
+        Add('ISO8859_5');
+        Add('ISO8859_6');
+        Add('ISO8859_7');
+        Add('ISO8859_8');
+        Add('ISO8859_9');
+        Add('ISO8859_13');
+        Add('KOI8R');
+        Add('KOI8U');
         Add('KSC_5601');
         Add('NEXT');
         Add('None');
         Add('OCTETS');
         Add('SJIS_0208');
+        Add('TIS620');
         Add('UNICODE_FSS');
+        Add('UTF8');
         Add('WIN1250');
         Add('WIN1251');
         Add('WIN1252');
         Add('WIN1253');
         Add('WIN1254');
+        Add('WIN1255');
+        Add('WIN1256');
+        Add('WIN1257');
+        Add('WIN1258');
       end;
     end;
     BLOB_DISPLAY_ROW:
     begin
-      cbOptions.Items.Add('Enabled');
-      cbOptions.Items.Add('Disabled');
-      cbOptions.Items.Add('Restrict');
+      cbOptions.Items.Add(LZTSQLOptionsEnabled);
+      cbOptions.Items.Add(LZTSQLOptionsDisabled);
+      cbOptions.Items.Add(LZTSQLOptionsRestrict);
     end;
     BLOB_SUBTYPE_ROW:
     begin
-      cbOptions.Items.Add('Text');
-      cbOptions.Items.Add('Unknown');
+      cbOptions.Items.Add(LZTSQLOptionsText);
+      cbOptions.Items.Add(LZTSQLOptionsUnknown);
     end;
     ISQL_TERMINATOR_ROW:
     begin
@@ -370,5 +395,21 @@ begin
   inherited;
   ModalResult := mrCancel;
 end;
+
+Procedure TfrmSQLOptions.TranslateVisual;
+Begin
+  btnApply.Caption := LZTSQLOptionsbtnApply;
+  TabSheet1.Caption := LZTSQLOptionsTabSheet1;
+  Button1.Caption := LZTSQLOptionsButton1;
+  cbClearInput.Caption := LZTSQLOptionscbClearInput;
+  TabSheet2.Caption := LZTSQLOptionsTabSheet2;
+  GroupBox1.Caption := LZTSQLOptionsGroupBox1;
+  Label1.Caption := LZTSQLOptionsLabel1;
+  cbUpdateConnect.Caption := LZTSQLOptionscbUpdateConnect;
+  cbUpdateCreate.Caption := LZTSQLOptionscbUpdateCreate;
+  rgTransactions.Caption := LZTSQLOptionsrgTransactions;
+  Button2.Caption := LZTSQLOptionsButton2;
+  Self.Caption := LZTSQLOptionsFormTitle;
+End;
 
 end.

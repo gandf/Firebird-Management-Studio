@@ -7,7 +7,7 @@ interface
 uses
   LCLIntf, LCLType, SysUtils, Messages, Classes, Graphics, Controls, Forms, Interfaces, Dialogs,
   ComCtrls, StdCtrls, Menus, Printers, IBServices,
-  SynEdit, StdActns, ActnList, FileUtil;
+  SynEdit, StdActns, ActnList, FileUtil, gettext, Translations, resstring;
 
 type
   TfrmTextViewer = class(TForm)
@@ -43,6 +43,7 @@ type
     EditFont: TAction;
     FontDialog1: TFontDialog;
     FindDialog1: TFindDialog;
+    procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure mnuEdFindClick(Sender: TObject);
@@ -56,6 +57,7 @@ type
     procedure reEditorKeyPress(Sender: TObject; var Key: Char);
     procedure EditUndo1Update(Sender: TObject);
     procedure FindDialog1Find(Sender: TObject);
+    Procedure TranslateVisual;
   private
     { Private declarations }
     FFileName: string;
@@ -75,6 +77,16 @@ uses
 
 {$R *.lfm}
 
+procedure TfrmTextViewer.FormCreate(Sender: TObject);
+var
+  lg, language : String;
+begin
+  GetLanguageIDs(lg,language);
+  Translations.TranslateUnitResourceStrings('resstring', '.\Lang\'+ChangeFileExt(ExtractFileName(Application.ExeName),
+  '')+'.%s.po', lg, language);
+  TranslateVisual;
+end;
+
 function TfrmTextViewer.OpenTextViewer(const Service: TIBControlAndQueryService;
         const sFormCaption: string; const readonly:boolean=true): integer;
 begin
@@ -93,7 +105,7 @@ begin
   frmMain.UpdateWindowList(sFormCaption, TObject(Self));
   reEditor.Modified := false;
   if ReadOnly then
-    stbStatusBar.Panels[1].Text := 'Read-Only';
+    stbStatusBar.Panels[1].Text := LZTTextViewerReadOnly;
 end;
 
 procedure TfrmTextViewer.FormResize(Sender: TObject);
@@ -126,14 +138,14 @@ begin
   begin
      // create and show save dialog box
     loSaveDialog := TSaveDialog.Create(Self);
-    loSaveDialog.Filter := 'Text files (*.txt)|*.TXT|SQL files (*.sql)|*.SQL|All files (*.*)|*.*';
+    loSaveDialog.Filter := LZTTextViewerFilterFiles;
 
     if loSaveDialog.Execute then
     begin
       // if the specified file already exists the show overwrite message
       // if the user does not wish to overwrite the file then exit
       if FileExists(loSaveDialog.FileName) { *Converted from FileExists* } then
-        if MessageDlg(Format('OK to overwrite %s', [loSaveDialog.FileName]),
+        if MessageDlg(Format(LZTTextViewerOverwrite, [loSaveDialog.FileName]),
           mtConfirmation, mbYesNoCancel, 0) <> idYes then Exit;
 
       // if the file doesn't exist of the user wishes to overwrite it then
@@ -256,7 +268,7 @@ procedure TfrmTextViewer.EditUndo1Update(Sender: TObject);
 begin
   (Sender as TAction).Enabled := reEditor.Modified;
   if reEditor.Modified then
-    stbStatusBar.Panels[1].Text := 'Modified';
+    stbStatusBar.Panels[1].Text := LZTTextViewerModified;
 end;
 
 procedure TfrmTextViewer.FindDialog1Find(Sender: TObject);
@@ -286,5 +298,33 @@ begin
   end;
   }
 end;
+
+Procedure TfrmTextViewer.TranslateVisual;
+Begin
+  tlbStandard.Caption := LZTTextViewertlbStandard;
+  sbSaveAs.Caption := LZTTextViewersbSaveAs;
+  ToolButton5.Caption := LZTTextViewerToolButton5;
+  mnuFile.Caption := LZTTextViewermnuFile;
+  mnuFiSaveAs.Caption := LZTTextViewermnuFiSaveAs;
+  mnuFiPrint.Caption := LZTTextViewermnuFiPrint;
+  mnuFiExit.Caption := LZTTextViewermnuFiExit;
+  mnuEdit.Caption := LZTTextViewermnuEdit;
+  mnuEdFind.Caption := LZTTextViewermnuEdFind;
+  EditCopy1.Caption := LZTTextViewerEditCopy1;
+  EditCut1.Caption := LZTTextViewerEditCut1;
+  EditPaste1.Caption := LZTTextViewerEditPaste1;
+  EditSelectAll1.Caption := LZTTextViewerEditSelectAll1;
+  EditUndo1.Caption := LZTTextViewerEditUndo1;
+  EditFont.Caption := LZTTextViewerEditFont;
+  sbSaveAs.Hint := LZTTextViewersbSaveAsHint;
+  mnuFiSaveAs.Hint := LZTTextViewermnuFiSaveAsHint;
+  mnuFiExit.Hint := LZTTextViewermnuFiExitHint;
+  mnuEdFind.Hint := LZTTextViewermnuEdFindHint;
+  EditCopy1.Hint := LZTTextViewerEditCopy1Hint;
+  EditCut1.Hint := LZTTextViewerEditCut1Hint;
+  EditPaste1.Hint := LZTTextViewerEditPaste1Hint;
+  EditFont.Hint := LZTTextViewerEditFontHint;
+  Self.Caption := LZTTextViewerFormTitle;
+End;
 
 end.

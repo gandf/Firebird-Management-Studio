@@ -25,7 +25,7 @@ interface
 
 uses
   LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  zluibcClasses, StdCtrls, ComCtrls, ExtCtrls, IBServices, IB, Grids, frmuDlgClass;
+  zluibcClasses, StdCtrls, ComCtrls, ExtCtrls, IBServices, IB, Grids, frmuDlgClass, resstring;
 
 type
   TfrmDBShutdown = class(TDialog)
@@ -46,6 +46,7 @@ type
     procedure cbOptionsKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure sgOptionsDrawCell(Sender: TObject; ACol, ARow: Integer; Rect: TRect; State: TGridDrawState);
     procedure sgOptionsSelectCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
+    Procedure TranslateVisual;override;
   private
     { Private declarations }
     function VerifyInputData(): boolean;
@@ -132,11 +133,11 @@ begin
       if lConfig.Active then
       begin
         // assign shutdown mode options
-        if frmDBShutdown.sgOptions.Cells[1,0] = 'Deny new connections while waiting' then
+        if frmDBShutdown.sgOptions.Cells[1,0] = LZTDBShutdownDenyNewTransWhileWait then
         begin
           lShutdownMode := DenyAttachment;
         end
-        else if frmDBShutdown.sgOptions.Cells[1,0] = 'Deny new transactions while waiting' then
+        else if frmDBShutdown.sgOptions.Cells[1,0] = LZTDBShutdownDenyNewTransWhileWait then
         begin
           lShutdownMode := DenyTransaction;
         end
@@ -181,7 +182,7 @@ begin
               CurrSelDatabase.Database.Connected := True;
             end;
 
-            DisplayMsg(INF_DATABASE_SHUTDOWN, 'The database has been shut down and is currently in single-user mode.');
+            DisplayMsg(INF_DATABASE_SHUTDOWN, LZTDBShutdownDatabaseIsShutdownIsCurrentlySingleUserMode);
 
           // check for an exception
           except                         // if an exception occurs when reattaching then
@@ -237,16 +238,16 @@ begin
 
   sgOptions.RowCount := 2;
 
-  sgOptions.Cells[OPTION_NAME_COL,SHUTDOWN_OPTIONS_ROW] := 'Shutdown';
-  sgOptions.Cells[OPTION_VALUE_COL,SHUTDOWN_OPTIONS_ROW] := 'Force shutdown after timeout';
+  sgOptions.Cells[OPTION_NAME_COL,SHUTDOWN_OPTIONS_ROW] := LZTDBShutdownShutdown;
+  sgOptions.Cells[OPTION_VALUE_COL,SHUTDOWN_OPTIONS_ROW] := LZTDBShutdownForceShutdownTimeout;
 
-  sgOptions.Cells[OPTION_NAME_COL,SHUTDOWN_TIMEOUT_ROW] := 'Shutdown Timeout';
+  sgOptions.Cells[OPTION_NAME_COL,SHUTDOWN_TIMEOUT_ROW] := LZTDBShutdownShutdownTimeout;
   sgOptions.Cells[OPTION_VALUE_COL,SHUTDOWN_TIMEOUT_ROW] := '5';
 
-  pnlOptionName.Caption := 'Shutdown';
-  cbOptions.Items.Add('Deny new connections while waiting');
-  cbOptions.Items.Add('Deny new transactions while waiting');
-  cbOptions.Items.Add('Force shutdown after timeout');
+  pnlOptionName.Caption := LZTDBShutdownShutdown;
+  cbOptions.Items.Add(LZTDBShutdownDenyNewConnectWaiting);
+  cbOptions.Items.Add(LZTDBShutdownDenyNewTransWaiting);
+  cbOptions.Items.Add(LZTDBShutdownForceShutdownTimeout);
   cbOptions.ItemIndex := 2;
 end;
 
@@ -287,7 +288,7 @@ begin
 
   if (iIndex = -1) and (sgOptions.Row <> SHUTDOWN_TIMEOUT_ROW) then
   begin
-    MessageDlg('Invalid option value', mtError, [mbOK],0);
+    MessageDlg(LZTDBShutdownInvalidOptionValue, mtError, [mbOK],0);
 
     cbOptions.ItemIndex := 0;
     //Size and position the combo box to fit the cell
@@ -356,9 +357,9 @@ begin
     SHUTDOWN_OPTIONS_ROW:              // if shutdown mode row then
     begin                              // show combo box and populate it
       cbOptions.Style:=csDropDown;
-      cbOptions.Items.Add('Deny new connections while waiting');
-      cbOptions.Items.Add('Deny new transactions while waiting');
-      cbOptions.Items.Add('Force shutdown after timeout');
+      cbOptions.Items.Add(LZTDBShutdownDenyNewConnectWaiting);
+      cbOptions.Items.Add(LZTDBShutdownDenyNewTransWaiting);
+      cbOptions.Items.Add(LZTDBShutdownForceShutdownTimeout);
     end;
     SHUTDOWN_TIMEOUT_ROW:              // if timeout row then
     begin                              // show combo as edit box
@@ -425,7 +426,7 @@ begin
     // check value and make sure it's within range
     if (iWait < 0) or (iWait > 32767) then
     begin                              // show error message
-      DisplayMsg(ERR_NUMERIC_VALUE,'Value out of range!');
+      DisplayMsg(ERR_NUMERIC_VALUE, LZTDBShutdownValueOutOfRange);
       result := false;                 // set result as false
       Exit;
     end;
@@ -438,5 +439,14 @@ begin
     end;
   end
 end;
+
+Procedure TfrmDBShutdown.TranslateVisual;
+Begin
+  lblDatabaseName.Caption := LZTDBShutdownlblDatabaseName;
+  lblOptions.Caption := LZTDBShutdownlblOptions;
+  btnOK.Caption := LZTDBShutdownbtnOK;
+  btnCancel.Caption := LZTDBShutdownbtnCancel;
+  Self.Caption := LZTDBShutdownFormTitle;
+End;
 
 end.

@@ -3,7 +3,6 @@ object frmObjectView: TfrmObjectView
   Height = 479
   Top = 217
   Width = 639
-  BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'frmObjectView'
   ClientHeight = 479
   ClientWidth = 639
@@ -12,7 +11,7 @@ object frmObjectView: TfrmObjectView
   OnShow = FormShow
   ParentFont = True
   Position = poScreenCenter
-  LCLVersion = '1.4.0.2'
+  LCLVersion = '1.8.0.3'
   object StatusBar: TStatusBar
     Left = 0
     Height = 23
@@ -81,10 +80,10 @@ object frmObjectView: TfrmObjectView
         Height = 399
         Top = 0
         Width = 631
-        ActivePage = tabDomains
+        ActivePage = tabTables
         Align = alClient
         MultiLine = True
-        TabIndex = 0
+        TabIndex = 1
         TabOrder = 1
         Options = [nboMultiLine]
         object tabDomains: TTabSheet
@@ -109,7 +108,7 @@ object frmObjectView: TfrmObjectView
             ParentColor = False
             Visible = False
           end
-          object reConstraint: TSynEdit
+          inline reConstraint: TSynEdit
             Left = 0
             Height = 244
             Top = 127
@@ -117,10 +116,77 @@ object frmObjectView: TfrmObjectView
             Align = alBottom
             Anchors = [akTop, akLeft, akRight, akBottom]
             Color = clBtnFace
-            OnChange = ObjectChange
-            ReadOnly = True
-            ScrollBars = ssBoth
+            Font.Height = -13
+            Font.Name = 'Courier New'
+            Font.Pitch = fpFixed
+            Font.Quality = fqNonAntialiased
+            ParentColor = False
+            ParentFont = False
             TabOrder = 0
+            Gutter.Width = 57
+            Gutter.MouseActions = <>
+            RightGutter.Width = 0
+            RightGutter.MouseActions = <>
+            Keystrokes = <>
+            MouseActions = <>
+            MouseTextActions = <>
+            MouseSelActions = <>
+            VisibleSpecialChars = [vscSpace, vscTabAtLast]
+            ReadOnly = True
+            SelectedColor.BackPriority = 50
+            SelectedColor.ForePriority = 50
+            SelectedColor.FramePriority = 50
+            SelectedColor.BoldPriority = 50
+            SelectedColor.ItalicPriority = 50
+            SelectedColor.UnderlinePriority = 50
+            SelectedColor.StrikeOutPriority = 50
+            BracketHighlightStyle = sbhsBoth
+            BracketMatchColor.Background = clNone
+            BracketMatchColor.Foreground = clNone
+            BracketMatchColor.Style = [fsBold]
+            FoldedCodeColor.Background = clNone
+            FoldedCodeColor.Foreground = clGray
+            FoldedCodeColor.FrameColor = clGray
+            MouseLinkColor.Background = clNone
+            MouseLinkColor.Foreground = clBlue
+            LineHighlightColor.Background = clNone
+            LineHighlightColor.Foreground = clNone
+            OnChange = ObjectChange
+            inline SynLeftGutterPartList1: TSynGutterPartList
+              object SynGutterMarks1: TSynGutterMarks
+                Width = 24
+                MouseActions = <>
+              end
+              object SynGutterLineNumber1: TSynGutterLineNumber
+                Width = 17
+                MouseActions = <>
+                MarkupInfo.Background = clBtnFace
+                MarkupInfo.Foreground = clNone
+                DigitCount = 2
+                ShowOnlyLineNumbersMultiplesOf = 1
+                ZeroStart = False
+                LeadingZeros = False
+              end
+              object SynGutterChanges1: TSynGutterChanges
+                Width = 4
+                MouseActions = <>
+                ModifiedColor = 59900
+                SavedColor = clGreen
+              end
+              object SynGutterSeparator1: TSynGutterSeparator
+                Width = 2
+                MouseActions = <>
+                MarkupInfo.Background = clWhite
+                MarkupInfo.Foreground = clGray
+              end
+              object SynGutterCodeFolding1: TSynGutterCodeFolding
+                MouseActions = <>
+                MarkupInfo.Background = clNone
+                MarkupInfo.Foreground = clGray
+                MouseActionsExpanded = <>
+                MouseActionsCollapsed = <>
+              end
+            end
           end
           object lvDomains: TListView
             Left = 0
@@ -136,15 +202,15 @@ object frmObjectView: TfrmObjectView
         end
         object tabTables: TTabSheet
           Caption = 'tabTables'
-          ClientHeight = 0
-          ClientWidth = 0
+          ClientHeight = 371
+          ClientWidth = 623
           ImageIndex = 1
           object SplitterWnd: TSplitter
             Cursor = crVSplit
             Left = 0
             Height = 3
             Top = 243
-            Width = 615
+            Width = 623
             Align = alTop
             ResizeAnchor = akTop
           end
@@ -152,7 +218,7 @@ object frmObjectView: TfrmObjectView
             Left = 0
             Height = 29
             Top = 0
-            Width = 615
+            Width = 623
             ButtonHeight = 24
             ButtonWidth = 27
             Caption = 'ToolBar2'
@@ -162,44 +228,44 @@ object frmObjectView: TfrmObjectView
             ShowHint = True
             TabOrder = 0
             object tbCols: TToolButton
-              Left = 0
-              Top = 0
+              Left = 1
+              Top = 2
               Action = ShowColumns
               Down = True
               Grouped = True
               Style = tbsCheck
             end
             object tbTriggers: TToolButton
-              Left = 27
-              Top = 0
+              Left = 28
+              Top = 2
               Action = ShowTriggers
               Grouped = True
               Style = tbsCheck
             end
             object tbChkConst: TToolButton
-              Left = 54
-              Top = 0
+              Left = 55
+              Top = 2
               Action = ShowCheckConstraints
               Grouped = True
               Style = tbsCheck
             end
             object tbIndexes: TToolButton
-              Left = 81
-              Top = 0
+              Left = 82
+              Top = 2
               Action = ShowIndexes
               Grouped = True
               Style = tbsCheck
             end
             object tbUnique: TToolButton
-              Left = 108
-              Top = 0
+              Left = 109
+              Top = 2
               Action = ShowUniqueConstraints
               Grouped = True
               Style = tbsCheck
             end
             object tbRef: TToolButton
-              Left = 135
-              Top = 0
+              Left = 136
+              Top = 2
               Action = ShowReferentialConstraints
               Grouped = True
               Style = tbsCheck
@@ -209,7 +275,7 @@ object frmObjectView: TfrmObjectView
             Left = 0
             Height = 214
             Top = 29
-            Width = 615
+            Width = 623
             Align = alTop
             Anchors = [akTop, akLeft, akRight, akBottom]
             Columns = <>
@@ -218,59 +284,187 @@ object frmObjectView: TfrmObjectView
             TabOrder = 1
             ViewStyle = vsReport
           end
-          object reTriggerSource: TSynEdit
+          inline reTriggerSource: TSynEdit
             Left = 0
-            Height = 102
+            Height = 125
             Top = 246
-            Width = 615
+            Width = 623
             Align = alClient
             Color = clBtnFace
             Font.Color = clWindowText
             Font.Height = -13
             Font.Name = 'Courier New'
+            Font.Pitch = fpFixed
+            Font.Quality = fqNonAntialiased
+            ParentColor = False
             ParentFont = False
             PopupMenu = frmMain.EditPopup
-            ReadOnly = True
-            ScrollBars = ssBoth
             TabOrder = 2
             TabStop = False
+            Gutter.Width = 57
+            Gutter.MouseActions = <>
+            RightGutter.Width = 0
+            RightGutter.MouseActions = <>
+            Keystrokes = <>
+            MouseActions = <>
+            MouseTextActions = <>
+            MouseSelActions = <>
+            VisibleSpecialChars = [vscSpace, vscTabAtLast]
+            ReadOnly = True
+            SelectedColor.BackPriority = 50
+            SelectedColor.ForePriority = 50
+            SelectedColor.FramePriority = 50
+            SelectedColor.BoldPriority = 50
+            SelectedColor.ItalicPriority = 50
+            SelectedColor.UnderlinePriority = 50
+            SelectedColor.StrikeOutPriority = 50
+            BracketHighlightStyle = sbhsBoth
+            BracketMatchColor.Background = clNone
+            BracketMatchColor.Foreground = clNone
+            BracketMatchColor.Style = [fsBold]
+            FoldedCodeColor.Background = clNone
+            FoldedCodeColor.Foreground = clGray
+            FoldedCodeColor.FrameColor = clGray
+            MouseLinkColor.Background = clNone
+            MouseLinkColor.Foreground = clBlue
+            LineHighlightColor.Background = clNone
+            LineHighlightColor.Foreground = clNone
+            inline SynLeftGutterPartList1: TSynGutterPartList
+              object SynGutterMarks1: TSynGutterMarks
+                Width = 24
+                MouseActions = <>
+              end
+              object SynGutterLineNumber1: TSynGutterLineNumber
+                Width = 17
+                MouseActions = <>
+                MarkupInfo.Background = clBtnFace
+                MarkupInfo.Foreground = clNone
+                DigitCount = 2
+                ShowOnlyLineNumbersMultiplesOf = 1
+                ZeroStart = False
+                LeadingZeros = False
+              end
+              object SynGutterChanges1: TSynGutterChanges
+                Width = 4
+                MouseActions = <>
+                ModifiedColor = 59900
+                SavedColor = clGreen
+              end
+              object SynGutterSeparator1: TSynGutterSeparator
+                Width = 2
+                MouseActions = <>
+                MarkupInfo.Background = clWhite
+                MarkupInfo.Foreground = clGray
+              end
+              object SynGutterCodeFolding1: TSynGutterCodeFolding
+                MouseActions = <>
+                MarkupInfo.Background = clNone
+                MarkupInfo.Foreground = clGray
+                MouseActionsExpanded = <>
+                MouseActionsCollapsed = <>
+              end
+            end
           end
         end
         object tabProcedures: TTabSheet
           Caption = 'tabProcedures'
-          ClientHeight = 0
-          ClientWidth = 0
+          ClientHeight = 371
+          ClientWidth = 623
           ImageIndex = 2
           object Splitter2: TSplitter
             Cursor = crVSplit
             Left = 0
             Height = 3
             Top = 144
-            Width = 615
+            Width = 623
             Align = alTop
             ResizeAnchor = akTop
           end
-          object reProcSource: TSynEdit
+          inline reProcSource: TSynEdit
             Left = 0
-            Height = 201
+            Height = 224
             Top = 147
-            Width = 615
+            Width = 623
             Align = alClient
             Color = clBtnFace
             Font.Color = clWindowText
             Font.Height = -13
             Font.Name = 'Courier New'
+            Font.Pitch = fpFixed
+            Font.Quality = fqNonAntialiased
+            ParentColor = False
             ParentFont = False
-            ReadOnly = True
-            ScrollBars = ssBoth
             TabOrder = 0
             TabStop = False
+            Gutter.Width = 57
+            Gutter.MouseActions = <>
+            RightGutter.Width = 0
+            RightGutter.MouseActions = <>
+            Keystrokes = <>
+            MouseActions = <>
+            MouseTextActions = <>
+            MouseSelActions = <>
+            VisibleSpecialChars = [vscSpace, vscTabAtLast]
+            ReadOnly = True
+            SelectedColor.BackPriority = 50
+            SelectedColor.ForePriority = 50
+            SelectedColor.FramePriority = 50
+            SelectedColor.BoldPriority = 50
+            SelectedColor.ItalicPriority = 50
+            SelectedColor.UnderlinePriority = 50
+            SelectedColor.StrikeOutPriority = 50
+            BracketHighlightStyle = sbhsBoth
+            BracketMatchColor.Background = clNone
+            BracketMatchColor.Foreground = clNone
+            BracketMatchColor.Style = [fsBold]
+            FoldedCodeColor.Background = clNone
+            FoldedCodeColor.Foreground = clGray
+            FoldedCodeColor.FrameColor = clGray
+            MouseLinkColor.Background = clNone
+            MouseLinkColor.Foreground = clBlue
+            LineHighlightColor.Background = clNone
+            LineHighlightColor.Foreground = clNone
+            inline SynLeftGutterPartList1: TSynGutterPartList
+              object SynGutterMarks1: TSynGutterMarks
+                Width = 24
+                MouseActions = <>
+              end
+              object SynGutterLineNumber1: TSynGutterLineNumber
+                Width = 17
+                MouseActions = <>
+                MarkupInfo.Background = clBtnFace
+                MarkupInfo.Foreground = clNone
+                DigitCount = 2
+                ShowOnlyLineNumbersMultiplesOf = 1
+                ZeroStart = False
+                LeadingZeros = False
+              end
+              object SynGutterChanges1: TSynGutterChanges
+                Width = 4
+                MouseActions = <>
+                ModifiedColor = 59900
+                SavedColor = clGreen
+              end
+              object SynGutterSeparator1: TSynGutterSeparator
+                Width = 2
+                MouseActions = <>
+                MarkupInfo.Background = clWhite
+                MarkupInfo.Foreground = clGray
+              end
+              object SynGutterCodeFolding1: TSynGutterCodeFolding
+                MouseActions = <>
+                MarkupInfo.Background = clNone
+                MarkupInfo.Foreground = clGray
+                MouseActionsExpanded = <>
+                MouseActionsCollapsed = <>
+              end
+            end
           end
           object lvParams: TListView
             Left = 0
             Height = 144
             Top = 0
-            Width = 615
+            Width = 623
             Align = alTop
             Columns = <>
             ColumnClick = False
@@ -282,14 +476,14 @@ object frmObjectView: TfrmObjectView
         end
         object tabFunctions: TTabSheet
           Caption = 'tabFunctions'
-          ClientHeight = 0
-          ClientWidth = 0
+          ClientHeight = 371
+          ClientWidth = 623
           ImageIndex = 3
           object lvFuncView: TListView
             Left = 0
-            Height = 177
+            Height = 200
             Top = 171
-            Width = 615
+            Width = 623
             Align = alClient
             Columns = <>
             ColumnClick = False
@@ -301,42 +495,42 @@ object frmObjectView: TfrmObjectView
             Left = 0
             Height = 171
             Top = 0
-            Width = 615
+            Width = 623
             Align = alTop
             BevelOuter = bvNone
             ClientHeight = 171
-            ClientWidth = 615
+            ClientWidth = 623
             TabOrder = 1
             object Label8: TLabel
               Left = 8
-              Height = 13
+              Height = 15
               Top = 4
-              Width = 69
+              Width = 79
               Caption = '&Module Name:'
               FocusControl = edModName
               ParentColor = False
             end
             object Label9: TLabel
               Left = 8
-              Height = 13
+              Height = 15
               Top = 60
-              Width = 50
+              Width = 58
               Caption = '&Entrypoint:'
               FocusControl = edEntrypoint
               ParentColor = False
             end
             object Label10: TLabel
               Left = 8
-              Height = 13
+              Height = 15
               Top = 114
-              Width = 40
+              Width = 43
               Caption = '&Returns:'
               FocusControl = edReturnVal
               ParentColor = False
             end
             object edReturnVal: TEdit
               Left = 18
-              Height = 21
+              Height = 23
               Top = 133
               Width = 268
               Color = clBtnFace
@@ -345,7 +539,7 @@ object frmObjectView: TfrmObjectView
             end
             object edEntrypoint: TEdit
               Left = 18
-              Height = 21
+              Height = 23
               Top = 82
               Width = 268
               Color = clBtnFace
@@ -354,7 +548,7 @@ object frmObjectView: TfrmObjectView
             end
             object edModName: TEdit
               Left = 18
-              Height = 21
+              Height = 23
               Top = 24
               Width = 268
               Color = clBtnFace
@@ -365,28 +559,28 @@ object frmObjectView: TfrmObjectView
         end
         object tabExceptions: TTabSheet
           Caption = 'tabExceptions'
-          ClientHeight = 0
-          ClientWidth = 0
+          ClientHeight = 371
+          ClientWidth = 623
           ImageIndex = 5
           object Label18: TLabel
             Left = 10
-            Height = 13
+            Height = 15
             Top = 5
-            Width = 90
+            Width = 101
             Caption = 'Exception &Number:'
             ParentColor = False
           end
           object Label19: TLabel
             Left = 10
-            Height = 13
+            Height = 15
             Top = 77
-            Width = 96
+            Width = 103
             Caption = 'Exception &Message:'
             ParentColor = False
           end
           object edExceptionNumber: TEdit
             Left = 20
-            Height = 21
+            Height = 23
             Top = 32
             Width = 149
             Color = clBtnFace
@@ -395,7 +589,7 @@ object frmObjectView: TfrmObjectView
           end
           object edMessage: TEdit
             Left = 20
-            Height = 21
+            Height = 23
             Top = 101
             Width = 515
             Anchors = [akTop, akLeft, akRight]
@@ -406,28 +600,28 @@ object frmObjectView: TfrmObjectView
         end
         object tabGenerators: TTabSheet
           Caption = 'tabGenerators'
-          ClientHeight = 0
-          ClientWidth = 0
+          ClientHeight = 371
+          ClientWidth = 623
           ImageIndex = 8
           object Label3: TLabel
             Left = 10
-            Height = 13
+            Height = 15
             Top = 6
-            Width = 64
+            Width = 69
             Caption = 'Generator &ID:'
             ParentColor = False
           end
           object Label21: TLabel
             Left = 10
-            Height = 13
+            Height = 15
             Top = 69
-            Width = 67
+            Width = 75
             Caption = 'Current &Value:'
             ParentColor = False
           end
           object edGenID: TEdit
             Left = 20
-            Height = 21
+            Height = 23
             Top = 27
             Width = 149
             Color = clBtnFace
@@ -436,7 +630,7 @@ object frmObjectView: TfrmObjectView
           end
           object edNextValue: TEdit
             Left = 20
-            Height = 21
+            Height = 23
             Top = 92
             Width = 149
             Color = clBtnFace
@@ -446,48 +640,48 @@ object frmObjectView: TfrmObjectView
         end
         object tabFilters: TTabSheet
           Caption = 'tabFilters'
-          ClientHeight = 0
-          ClientWidth = 0
+          ClientHeight = 371
+          ClientWidth = 623
           ImageIndex = 8
           object Label11: TLabel
             Left = 6
-            Height = 13
+            Height = 15
             Top = 6
-            Width = 69
+            Width = 79
             Caption = '&Module Name:'
             FocusControl = edFilterModule
             ParentColor = False
           end
           object Label12: TLabel
             Left = 6
-            Height = 13
+            Height = 15
             Top = 70
-            Width = 50
+            Width = 58
             Caption = '&Entrypoint:'
             FocusControl = edFilterEntry
             ParentColor = False
           end
           object Label13: TLabel
             Left = 6
-            Height = 13
+            Height = 15
             Top = 124
-            Width = 73
+            Width = 80
             Caption = '&Input SubType:'
             FocusControl = edFilterInput
             ParentColor = False
           end
           object Label14: TLabel
             Left = 6
-            Height = 13
+            Height = 15
             Top = 175
-            Width = 81
+            Width = 90
             Caption = '&Output SubType:'
             FocusControl = edFilterOutput
             ParentColor = False
           end
           object edFilterModule: TEdit
             Left = 16
-            Height = 21
+            Height = 23
             Top = 30
             Width = 149
             Color = clBtnFace
@@ -497,7 +691,7 @@ object frmObjectView: TfrmObjectView
           end
           object edFilterEntry: TEdit
             Left = 16
-            Height = 21
+            Height = 23
             Top = 90
             Width = 149
             Color = clBtnFace
@@ -507,7 +701,7 @@ object frmObjectView: TfrmObjectView
           end
           object edFilterInput: TEdit
             Left = 16
-            Height = 21
+            Height = 23
             Top = 143
             Width = 149
             Color = clBtnFace
@@ -517,7 +711,7 @@ object frmObjectView: TfrmObjectView
           end
           object edFilterOutput: TEdit
             Left = 16
-            Height = 21
+            Height = 23
             Top = 196
             Width = 149
             Color = clBtnFace
@@ -530,41 +724,105 @@ object frmObjectView: TfrmObjectView
     end
     object tabMetadata: TTabSheet
       Caption = 'Metadata'
-      ClientHeight = 0
-      ClientWidth = 0
+      ClientHeight = 399
+      ClientWidth = 631
       ImageIndex = 1
-      object reMetadata: TSynEdit
+      inline reMetadata: TSynEdit
         Left = 0
-        Height = 352
+        Height = 375
         Top = 0
-        Width = 623
+        Width = 631
         Align = alClient
         Color = clWindow
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
         Font.Name = 'Courier New'
+        Font.Pitch = fpFixed
+        Font.Quality = fqNonAntialiased
+        ParentColor = False
         ParentFont = False
         PopupMenu = frmMain.EditPopup
-        ReadOnly = True
-        ScrollBars = ssBoth
         TabOrder = 0
+        Gutter.Width = 57
+        Gutter.MouseActions = <>
+        RightGutter.Width = 0
+        RightGutter.MouseActions = <>
+        Keystrokes = <>
+        MouseActions = <>
+        MouseTextActions = <>
+        MouseSelActions = <>
+        VisibleSpecialChars = [vscSpace, vscTabAtLast]
+        ReadOnly = True
+        SelectedColor.BackPriority = 50
+        SelectedColor.ForePriority = 50
+        SelectedColor.FramePriority = 50
+        SelectedColor.BoldPriority = 50
+        SelectedColor.ItalicPriority = 50
+        SelectedColor.UnderlinePriority = 50
+        SelectedColor.StrikeOutPriority = 50
+        BracketHighlightStyle = sbhsBoth
+        BracketMatchColor.Background = clNone
+        BracketMatchColor.Foreground = clNone
+        BracketMatchColor.Style = [fsBold]
+        FoldedCodeColor.Background = clNone
+        FoldedCodeColor.Foreground = clGray
+        FoldedCodeColor.FrameColor = clGray
+        MouseLinkColor.Background = clNone
+        MouseLinkColor.Foreground = clBlue
+        LineHighlightColor.Background = clNone
+        LineHighlightColor.Foreground = clNone
+        inline SynLeftGutterPartList1: TSynGutterPartList
+          object SynGutterMarks1: TSynGutterMarks
+            Width = 24
+            MouseActions = <>
+          end
+          object SynGutterLineNumber1: TSynGutterLineNumber
+            Width = 17
+            MouseActions = <>
+            MarkupInfo.Background = clBtnFace
+            MarkupInfo.Foreground = clNone
+            DigitCount = 2
+            ShowOnlyLineNumbersMultiplesOf = 1
+            ZeroStart = False
+            LeadingZeros = False
+          end
+          object SynGutterChanges1: TSynGutterChanges
+            Width = 4
+            MouseActions = <>
+            ModifiedColor = 59900
+            SavedColor = clGreen
+          end
+          object SynGutterSeparator1: TSynGutterSeparator
+            Width = 2
+            MouseActions = <>
+            MarkupInfo.Background = clWhite
+            MarkupInfo.Foreground = clGray
+          end
+          object SynGutterCodeFolding1: TSynGutterCodeFolding
+            MouseActions = <>
+            MarkupInfo.Background = clNone
+            MarkupInfo.Foreground = clGray
+            MouseActionsExpanded = <>
+            MouseActionsCollapsed = <>
+          end
+        end
       end
       object Panel6: TPanel
         Left = 0
         Height = 24
-        Top = 352
-        Width = 623
+        Top = 375
+        Width = 631
         Align = alBottom
         BevelOuter = bvNone
         ClientHeight = 24
-        ClientWidth = 623
+        ClientWidth = 631
         TabOrder = 1
         object cbExtractData: TCheckBox
           Left = 2
-          Height = 17
+          Height = 19
           Top = 1
-          Width = 105
+          Width = 110
           Caption = 'Extract table data'
           OnClick = cbExtractDataClick
           TabOrder = 0
@@ -573,14 +831,14 @@ object frmObjectView: TfrmObjectView
     end
     object tabPermissions: TTabSheet
       Caption = 'Permissions'
-      ClientHeight = 0
-      ClientWidth = 0
+      ClientHeight = 399
+      ClientWidth = 631
       ImageIndex = 2
       object lvPermissions: TListView
         Left = 0
-        Height = 335
+        Height = 358
         Top = 0
-        Width = 623
+        Width = 631
         Align = alClient
         Columns = <        
           item
@@ -591,36 +849,43 @@ object frmObjectView: TfrmObjectView
             Alignment = taCenter
             AutoSize = True
             Caption = 'Select'
+            Width = 46
           end        
           item
             Alignment = taCenter
             AutoSize = True
             Caption = 'Delete'
+            Width = 48
           end        
           item
             Alignment = taCenter
             AutoSize = True
             Caption = 'Insert'
+            Width = 44
           end        
           item
             Alignment = taCenter
             AutoSize = True
             Caption = 'Update'
+            Width = 53
           end        
           item
             Alignment = taCenter
             AutoSize = True
             Caption = 'Reference'
+            Width = 67
           end        
           item
             Alignment = taCenter
             AutoSize = True
             Caption = 'Execute'
+            Width = 55
           end        
           item
             Alignment = taCenter
             AutoSize = True
             Caption = 'Member Of'
+            Width = 76
           end>
         ColumnClick = False
         GridLines = True
@@ -632,12 +897,12 @@ object frmObjectView: TfrmObjectView
       object Panel1: TPanel
         Left = 0
         Height = 41
-        Top = 335
-        Width = 623
+        Top = 358
+        Width = 631
         Align = alBottom
         BevelOuter = bvNone
         ClientHeight = 41
-        ClientWidth = 623
+        ClientWidth = 631
         TabOrder = 1
         object Image1: TImage
           Left = 16
@@ -661,9 +926,9 @@ object frmObjectView: TfrmObjectView
         end
         object Label1: TLabel
           Left = 57
-          Height = 13
+          Height = 15
           Top = 18
-          Width = 199
+          Width = 219
           Caption = 'This permission includes GRANT OPTION'
           ParentColor = False
         end
@@ -671,14 +936,14 @@ object frmObjectView: TfrmObjectView
     end
     object tabData: TTabSheet
       Caption = 'Data'
-      ClientHeight = 0
-      ClientWidth = 0
+      ClientHeight = 399
+      ClientWidth = 631
       ImageIndex = 3
       object dbgData: TDBGrid
         Left = 0
-        Height = 349
+        Height = 372
         Top = 0
-        Width = 623
+        Width = 631
         Align = alClient
         Color = clWindow
         Columns = <>
@@ -694,18 +959,18 @@ object frmObjectView: TfrmObjectView
       object Panel3: TPanel
         Left = 0
         Height = 27
-        Top = 349
-        Width = 623
+        Top = 372
+        Width = 631
         Align = alBottom
         BevelOuter = bvNone
         ClientHeight = 27
-        ClientWidth = 623
+        ClientWidth = 631
         TabOrder = 1
         object DBNavigator1: TDBNavigator
           Left = 0
           Height = 27
           Top = 0
-          Width = 502
+          Width = 510
           Align = alClient
           BevelOuter = bvNone
           ChildSizing.EnlargeHorizontal = crsScaleChilds
@@ -715,7 +980,7 @@ object frmObjectView: TfrmObjectView
           ChildSizing.Layout = cclLeftToRightThenTopToBottom
           ChildSizing.ControlsPerLine = 100
           ClientHeight = 27
-          ClientWidth = 502
+          ClientWidth = 510
           DataSource = dbgDataSource
           Flat = True
           Options = []
@@ -724,7 +989,7 @@ object frmObjectView: TfrmObjectView
           TabOrder = 0
         end
         object Panel4: TPanel
-          Left = 500
+          Left = 510
           Height = 27
           Top = 0
           Width = 121
@@ -747,37 +1012,37 @@ object frmObjectView: TfrmObjectView
     end
     object tabDependencies: TTabSheet
       Caption = 'Dependencies'
-      ClientHeight = 0
-      ClientWidth = 0
+      ClientHeight = 399
+      ClientWidth = 631
       ImageIndex = 4
       object Panel2: TPanel
         Left = 0
         Height = 41
         Top = 0
-        Width = 623
+        Width = 631
         Align = alTop
         BevelOuter = bvNone
         ClientHeight = 41
-        ClientWidth = 623
+        ClientWidth = 631
         ParentShowHint = False
         ShowHint = True
         TabOrder = 0
         object rbDependent: TRadioButton
           Left = 30
-          Height = 17
+          Height = 19
           Hint = 'Displays objects which depend on the currently selected object'
           Top = 10
-          Width = 175
+          Width = 153
           Caption = 'Show &Dependent Objects'
           OnClick = rbDependentClick
           TabOrder = 0
         end
         object rbDependedOn: TRadioButton
           Left = 373
-          Height = 17
+          Height = 19
           Hint = 'Shows the objects the current object depends on'
           Top = 10
-          Width = 216
+          Width = 168
           Caption = 'Show Depended &On Objects'
           OnClick = rbDependedOnClick
           TabOrder = 1
@@ -785,20 +1050,20 @@ object frmObjectView: TfrmObjectView
       end
       object pnlDependents: TPanel
         Left = 0
-        Height = 335
+        Height = 358
         Top = 41
-        Width = 623
+        Width = 631
         Align = alClient
         BevelOuter = bvNone
         Caption = 'pnlDependents'
-        ClientHeight = 335
-        ClientWidth = 623
+        ClientHeight = 358
+        ClientWidth = 631
         TabOrder = 1
         object tvDependents: TTreeView
           Left = 0
-          Height = 335
+          Height = 358
           Top = 0
-          Width = 623
+          Width = 631
           Align = alClient
           Images = frmMain.imgTreeview
           Indent = 23
@@ -808,19 +1073,19 @@ object frmObjectView: TfrmObjectView
       end
       object pnlDependencies: TPanel
         Left = 0
-        Height = 335
+        Height = 358
         Top = 41
-        Width = 623
+        Width = 631
         Align = alClient
         BevelOuter = bvNone
-        ClientHeight = 335
-        ClientWidth = 623
+        ClientHeight = 358
+        ClientWidth = 631
         TabOrder = 2
         object tvDependencies: TTreeView
           Left = 0
-          Height = 335
+          Height = 358
           Top = 0
-          Width = 623
+          Width = 631
           Align = alClient
           Images = frmMain.imgTreeview
           Indent = 23
@@ -883,8 +1148,10 @@ object frmObjectView: TfrmObjectView
     end
   end
   object IBTable: TIBTable
+    AllowAutoActivateTransaction = False
     BufferChunks = 1000
     CachedUpdates = False
+    DataSetCloseAction = dcDiscardChanges
     left = 326
     top = 200
   end
