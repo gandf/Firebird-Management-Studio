@@ -9,3 +9,11 @@ Win32 EXE file are provided to test without compile for all people. Source and s
 
 Components to install in Lazarus :
 - ibx : https://www.mwasoftware.co.uk/ibx
+
+Work in progressor or to target :
+- Translation
+- Clean
+- Fix issue from convertion from Delphi to Lazarus
+- Fix issue occured by delete lzRichEdit and replace by SynEdit
+- Fix issue occured by delete lnet
+- Change ibx to official firebird component already present in Lazarus
