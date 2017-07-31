@@ -4,7 +4,6 @@ object frmMain: TfrmMain
   Top = 202
   Width = 641
   ActiveControl = tvMain
-  BorderIcons = [biSystemMenu, biMinimize, biMaximize]
   Caption = 'Firebird Management Studio'
   ClientHeight = 420
   ClientWidth = 641
@@ -174,6 +173,7 @@ object frmMain: TfrmMain
     OnDblClick = lvObjectsDblClick
     OnEnter = listViewEnter
     OnKeyDown = lvObjectsKeyDown
+    OnResize = lvObjectsResize
   end
   object MainMenu1: TMainMenu
     left = 400

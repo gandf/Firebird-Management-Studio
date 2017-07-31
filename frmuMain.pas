@@ -31,6 +31,9 @@ uses LCLIntf, LCLType, Classes, Graphics, Interfaces, Forms, Controls, Menus, Di
   IBExtract, zluPersistent,IBQuery,IBDatabase,IBCustomDataSet, IBSQL, Windows, gettext, Translations, resstring;
 
 type
+
+  { TfrmMain }
+
   TfrmMain = class(TForm)
     stbMain: TStatusBar;
     clbMain: TCoolBar;
@@ -240,6 +243,7 @@ type
     ObjectRefresh: TAction;
     Refresh1: TMenuItem;
     ConnectAs3: TMenuItem;
+    procedure lvObjectsResize(Sender: TObject);
     Procedure TranslateVisual;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -1421,7 +1425,7 @@ var
   loListItem: TListItem;
   loListColumn: TListColumn;
   lsCurrLine: string;
-  i: integer;
+  i, lTotSize: integer;
 
 begin
   if not Assigned(CurrSelNode.ObjectList) or
@@ -1532,9 +1536,19 @@ begin
         loListItem.SubItems.Add(GetNextField(lsCurrLine, DEL));
       end;
     end;
+    lTotSize := 0;
     for i := 0 to lvObjects.Columns.Count -1 do
     begin
       lvObjects.Columns[i].AutoSize := true;
+      if i < (lvObjects.Columns.Count - 1) then
+        lTotSize := lTotSize + lvObjects.Columns[i].Width;
+    end;
+    if (lvObjects.Width > lTotSize) then
+    begin
+      if (lvObjects.Width - lTotSize - 10) > 20 then begin
+        lvObjects.Columns[lvObjects.Columns.Count - 1].AutoSize := false;
+        lvObjects.Columns[lvObjects.Columns.Count - 1].Width := lvObjects.Width - lTotSize - 10;
+      end;
     end;
     lvObjects.Columns.EndUpdate;
     lvObjects.Items.EndUpdate;
@@ -2662,6 +2676,7 @@ var
   lCnt: Integer;
   ListItem: TListItem;
   LColumn: TListColumn;
+  lTotSize: Integer;
 begin
   lvObjects.Tag := ACTIONS;
 
@@ -2711,13 +2726,22 @@ begin
     end;
     lvObjects.Items.EndUpdate;
 
+    lTotSize := 0;
     lvObjects.Columns.BeginUpdate;
     for lCnt := 0 to lvObjects.Columns.Count - 1 do
     begin
       lvObjects.Columns[lCnt].AutoSize := true;
+      if lCnt < (lvObjects.Columns.Count - 1) then
+         lTotSize := lTotSize + lvObjects.Columns[lCnt].Width;
+    end;
+    if (lvObjects.Width > lTotSize) then
+    begin
+      if (lvObjects.Width - lTotSize - 10) > 20 then begin
+        lvObjects.Columns[lvObjects.Columns.Count - 1].AutoSize := false;
+        lvObjects.Columns[lvObjects.Columns.Count - 1].Width := lvObjects.Width - lTotSize - 10;
+      end;
     end;
     lvObjects.Columns.EndUpdate;
-
   end;
 end;
 
@@ -3750,5 +3774,27 @@ Begin
   ObjectExtract.Hint := LZTMainHintObjectExtract;
 
 End;
+
+procedure TfrmMain.lvObjectsResize(Sender: TObject);
+var
+   lCnt, lTotSize: Integer;
+begin
+  lTotSize := 0;
+  lvObjects.Columns.BeginUpdate;
+  for lCnt := 0 to lvObjects.Columns.Count - 1 do
+  begin
+    if lCnt < (lvObjects.Columns.Count - 1) then
+      lTotSize := lTotSize + lvObjects.Columns[lCnt].Width;
+  end;
+  if (lvObjects.Width > lTotSize) then
+  begin
+    if (lvObjects.Width - lTotSize - 10) > 20 then begin
+      lvObjects.Columns[lvObjects.Columns.Count - 1].AutoSize := false;
+      lvObjects.Columns[lvObjects.Columns.Count - 1].Width := lvObjects.Width - lTotSize - 10;
+    end;
+  end;
+  lvObjects.Columns.EndUpdate;
+
+end;
 
 end.

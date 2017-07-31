@@ -5,7 +5,7 @@ unit zluGlobal;
 interface
 
 Uses
-  LCLIntf, LCLType, LMessages, Graphics, classes;
+  LCLIntf, LCLType, Graphics, classes;
 type
   TAppSetting = record
     Name: String;

@@ -10,7 +10,7 @@ uses
   Forms,
   { you can add units after this }
 
-  LCLIntf, LCLType, LMessages, interfacebase,
+  LCLIntf, LCLType, interfacebase,
 
   frmuSplash, dmuMain, frmuMain,
 

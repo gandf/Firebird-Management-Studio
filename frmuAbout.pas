@@ -24,9 +24,17 @@ unit frmuAbout;
 interface
 
 uses LCLIntf, LCLType, Classes, Forms, Controls, StdCtrls, Buttons,
-  Windows,
-  ExtCtrls, Graphics, frmuDlgClass, FileUtil, SynEdit,
-  SYSUtils, fileinfo, winpeimagereader, elfreader, machoreader, resstring;
+  ExtCtrls, Graphics, frmuDlgClass, FileUtil, SynEdit, SYSUtils, fileinfo,
+  {$ifdef windows}
+  Windows, winpeimagereader,
+  {$endif}
+  {$ifdef linux}
+  elfreader,
+  {$endif}
+  {$ifdef darwin}
+  machoreader
+  {$endif}
+  resstring;
 
 type
 
