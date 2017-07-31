@@ -17,3 +17,7 @@ Work in progressor or to target :
 - Fix issue occured by delete lzRichEdit and replace by SynEdit
 - Fix issue occured by delete lnet
 - Change ibx to official firebird component already present in Lazarus
+- Change setup from registry to XML file
+- Add multi-platform
+- Improve ergonomics
+- Change graphical design
