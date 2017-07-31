@@ -35,6 +35,7 @@ type
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    MainOptions: TMenuItem;
     stbMain: TStatusBar;
     clbMain: TCoolBar;
     ToolBar2: TToolBar;
@@ -244,6 +245,7 @@ type
     Refresh1: TMenuItem;
     ConnectAs3: TMenuItem;
     procedure lvObjectsResize(Sender: TObject);
+    procedure MainOptionsClick(Sender: TObject);
     Procedure TranslateVisual;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -405,7 +407,7 @@ type
     function ConnectAsDatabase(Sender: TObject): boolean;
     procedure UpdateWindowList(const Caption: String; const Window: TObject;
       const Remove: boolean = false);
-    procedure ShowWindows;      
+    procedure ShowWindows;
     procedure SetErrorState;
     property CurrSelServer: TibcServerNode read FCurrSelServer write FCurrSelServer;
     property CurrSelDatabase: TibcDatabaseNode read FCurrSelDatabase write FCurrSelDatabase;
@@ -425,7 +427,7 @@ uses frmuAbout,zluGlobal,frmuUser,frmuDBRegister,frmuServerRegister,dmuMain,
   frmuDBRestore,frmuDBBackup,
   frmuServerProperties,frmuDBProperties,frmuBackupAliasProperties,
   frmuDBCreate,frmuDBConnections,frmuDBValidation,frmuDBShutdown,
-  frmuCommDiag, frmuDBTransactions,
+  frmuCommDiag, frmuDBTransactions, frmuMainOptions,
   frmuDBStatistics, frmuModifyServerAlias,
   frmuTools, frmuDescription, frmuWindowList, CommCtrl, IBErrorCodes;
 
@@ -3772,6 +3774,8 @@ Begin
   ObjectModify.Hint := LZTMainHintObjectModify;
   ObjectDelete.Hint := LZTMainHintObjectDelete;
   ObjectExtract.Hint := LZTMainHintObjectExtract;
+  MainOptions.Caption := LZTMainMainOptionsCaption;
+  MainOptions.Hint := LZTMainMainOptionsHint;
 
 End;
 
@@ -3795,6 +3799,15 @@ begin
   end;
   lvObjects.Columns.EndUpdate;
 
+end;
+
+procedure TfrmMain.MainOptionsClick(Sender: TObject);
+var
+  dlgWindows: TfrmMainOptions;
+begin
+  dlgWindows := TfrmMainOptions.Create(self);
+  dlgWindows.ShowModal;
+  dlgWindows.Free;
 end;
 
 end.

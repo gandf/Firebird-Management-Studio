@@ -356,7 +356,7 @@ begin
         except
           on E:Exception do
           begin
-            MessageDlg(E.Message + #10#13+
+            MessageDlg(E.Message + #13#10+
             Format(LZTwisqlNotOpenFile,[lOpenDialog.FileName]), mtError, [mbOK], 0);
             Exit;
           end;

@@ -54,7 +54,8 @@ uses
   frmuDescription in 'frmuDescription.pas' {frmDescription},
   frmuWindowList in 'frmuWindowList.pas' {dlgWindowList},
   MemoLists in 'MemoLists.pas',
-  zluPersistent in 'zluPersistent.pas';
+  zluPersistent in 'zluPersistent.pas',
+  frmuMainOptions in 'frmuMainOptions.pas';
 {$R *.res}
 
 begin

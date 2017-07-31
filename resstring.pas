@@ -1011,6 +1011,22 @@ Resourcestring
   LZTwisqlEditCopy1Hint = 'Copy';
   LZTwisqlEditCut1Hint = 'Cut';
   LZTwisqlEditPaste1Hint = 'Paste';
+  LZTMainMainOptionsCaption = 'Options...';
+  LZTMainMainOptionsHint = 'General Options';
+  LZTMainOptionFormTitle = '&Options';
+  LZTMainOptionlblLang = 'Langage';
+  LZTMainOptiontabsheetGeneral = 'General';
+  LZTMainOptionradgrpDDLTransCaption = 'DDL Transactions';
+  LZTMainOptionradgrpDDLTransItems1 = '&Auto commit';
+  LZTMainOptionradgrpDDLTransItems2 = '&Manual commit';
+  LZTMainOptionchkForceUpper = 'Force Uppercase Identifier';
+  LZTMainOptionbtChangeFont = 'Change &Font';
+  LZTMainOptionlblFont = 'MS Sans Serif';
+  LZTMainOptionlblTestFont = 'Current Font Example.';
+  LZTMainOptionbtOk = '&OK';
+  LZTMainOptionbtCancel = '&Cancel';
+  LZTMainOptionbtApply = '&Apply';
+
 
 implementation
 

@@ -55,7 +55,7 @@
         <PackageName Value="ibexpress"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="45">
+    <Units Count="46">
       <Unit0>
         <Filename Value="Firebird_Management_Studio.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -342,6 +342,13 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="zluSockets"/>
       </Unit44>
+      <Unit45>
+        <Filename Value="frmuMainOptions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMainOptions"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit45>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

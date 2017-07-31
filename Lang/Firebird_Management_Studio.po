@@ -2136,6 +2136,16 @@ msgctxt "resstring.lztmainlogout"
 msgid "Log&out"
 msgstr ""
 
+#: resstring.lztmainmainoptionscaption
+msgctxt "resstring.lztmainmainoptionscaption"
+msgid "Options..."
+msgstr ""
+
+#: resstring.lztmainmainoptionshint
+msgctxt "resstring.lztmainmainoptionshint"
+msgid "General Options"
+msgstr ""
+
 #: resstring.lztmainmaintenance
 msgctxt "resstring.lztmainmaintenance"
 msgid "&Maintenance"
@@ -2171,6 +2181,69 @@ msgstr ""
 
 #: resstring.lztmainobjectlisted
 msgid "%d objects listed"
+msgstr ""
+
+#: resstring.lztmainoptionbtapply
+msgctxt "resstring.lztmainoptionbtapply"
+msgid "&Apply"
+msgstr ""
+
+#: resstring.lztmainoptionbtcancel
+msgctxt "resstring.lztmainoptionbtcancel"
+msgid "&Cancel"
+msgstr ""
+
+#: resstring.lztmainoptionbtchangefont
+msgctxt "resstring.lztmainoptionbtchangefont"
+msgid "Change &Font"
+msgstr ""
+
+#: resstring.lztmainoptionbtok
+msgctxt "resstring.lztmainoptionbtok"
+msgid "&OK"
+msgstr ""
+
+#: resstring.lztmainoptionchkforceupper
+msgctxt "resstring.lztmainoptionchkforceupper"
+msgid "Force Uppercase Identifier"
+msgstr ""
+
+#: resstring.lztmainoptionformtitle
+msgctxt "resstring.lztmainoptionformtitle"
+msgid "&Options"
+msgstr ""
+
+#: resstring.lztmainoptionlblfont
+msgctxt "resstring.lztmainoptionlblfont"
+msgid "MS Sans Serif"
+msgstr ""
+
+#: resstring.lztmainoptionlbllang
+msgctxt "resstring.lztmainoptionlbllang"
+msgid "Langage"
+msgstr ""
+
+#: resstring.lztmainoptionlbltestfont
+msgctxt "resstring.lztmainoptionlbltestfont"
+msgid "Current Font Example."
+msgstr ""
+
+#: resstring.lztmainoptionradgrpddltranscaption
+msgctxt "resstring.lztmainoptionradgrpddltranscaption"
+msgid "DDL Transactions"
+msgstr ""
+
+#: resstring.lztmainoptionradgrpddltransitems1
+msgid "&Auto commit"
+msgstr ""
+
+#: resstring.lztmainoptionradgrpddltransitems2
+msgid "&Manual commit"
+msgstr ""
+
+#: resstring.lztmainoptiontabsheetgeneral
+msgctxt "resstring.lztmainoptiontabsheetgeneral"
+msgid "General"
 msgstr ""
 
 #: resstring.lztmainpaste
@@ -6152,6 +6225,16 @@ msgctxt "tfrmmain.helpabout.caption"
 msgid "&About ..."
 msgstr ""
 
+#: tfrmmain.mainoptions.caption
+msgctxt "tfrmmain.mainoptions.caption"
+msgid "&Options..."
+msgstr ""
+
+#: tfrmmain.mainoptions.hint
+msgctxt "tfrmmain.mainoptions.hint"
+msgid "General Options"
+msgstr ""
+
 #: tfrmmain.maintenance1.caption
 msgctxt "TFRMMAIN.MAINTENANCE1.CAPTION"
 msgid "&Maintenance"
@@ -6430,6 +6513,65 @@ msgstr ""
 #: tfrmmain.windowlist.caption
 msgctxt "tfrmmain.windowlist.caption"
 msgid "Windows"
+msgstr ""
+
+#: tfrmmainoptions.btapply.caption
+msgctxt "tfrmmainoptions.btapply.caption"
+msgid "&Apply"
+msgstr ""
+
+#: tfrmmainoptions.btcancel.caption
+msgctxt "tfrmmainoptions.btcancel.caption"
+msgid "&Cancel"
+msgstr ""
+
+#: tfrmmainoptions.btchangefont.caption
+msgctxt "tfrmmainoptions.btchangefont.caption"
+msgid "Change &Font"
+msgstr ""
+
+#: tfrmmainoptions.btok.caption
+msgctxt "tfrmmainoptions.btok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmmainoptions.caption
+msgctxt "tfrmmainoptions.caption"
+msgid "Options"
+msgstr ""
+
+#: tfrmmainoptions.chkforceupper.caption
+msgctxt "tfrmmainoptions.chkforceupper.caption"
+msgid "Force Uppercase Identifier"
+msgstr ""
+
+#: tfrmmainoptions.combobox1.text
+msgid "English"
+msgstr ""
+
+#: tfrmmainoptions.lblfont.caption
+msgctxt "tfrmmainoptions.lblfont.caption"
+msgid "MS Sans Serif"
+msgstr ""
+
+#: tfrmmainoptions.lbllang.caption
+msgctxt "tfrmmainoptions.lbllang.caption"
+msgid "Langage"
+msgstr ""
+
+#: tfrmmainoptions.lbltestfont.caption
+msgctxt "tfrmmainoptions.lbltestfont.caption"
+msgid "Current Font Example."
+msgstr ""
+
+#: tfrmmainoptions.radgrpddltrans.caption
+msgctxt "tfrmmainoptions.radgrpddltrans.caption"
+msgid "DDL Transactions"
+msgstr ""
+
+#: tfrmmainoptions.tabsheetgeneral.caption
+msgctxt "tfrmmainoptions.tabsheetgeneral.caption"
+msgid "General"
 msgstr ""
 
 #: tfrmmessage.btnok.caption

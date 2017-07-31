@@ -181,8 +181,15 @@ object frmMain: TfrmMain
     object Console1: TMenuItem
       Caption = '&Console'
       SubMenuImages = imgToolBarsEnabled
+      object MainOptions: TMenuItem
+        Caption = '&Options...'
+        Hint = 'General Options'
+        ShortCut = 123
+        OnClick = MainOptionsClick
+      end
       object Exit2: TMenuItem
         Action = ConsoleExit
+        ShortCut = 16465
       end
     end
     object View1: TMenuItem
@@ -230,18 +237,21 @@ object frmMain: TfrmMain
       end
       object DiagnoseConnection2: TMenuItem
         Action = ServerConnection
+        ShortCut = 16496
       end
       object UserSecurity2: TMenuItem
         Action = ServerSecurity
       end
       object ViewLogfile2: TMenuItem
         Action = ViewServerLog
+        ShortCut = 16460
       end
       object N24: TMenuItem
         Caption = '-'
       end
       object ServerProperties3: TMenuItem
         Action = ServerProperties
+        ShortCut = 117
       end
     end
     object Database1: TMenuItem
@@ -335,6 +345,7 @@ object frmMain: TfrmMain
       end
       object Properties4: TMenuItem
         Action = DatabaseProperties
+        ShortCut = 118
       end
     end
     object ToolMenu: TMenuItem
@@ -342,6 +353,7 @@ object frmMain: TfrmMain
       SubMenuImages = imgToolBarsEnabled
       object InteractiveSQL2: TMenuItem
         Action = ExtToolsLaunchISQL
+        ShortCut = 16457
       end
       object ConnectAs3: TMenuItem
         Caption = 'New connection...'
@@ -396,6 +408,7 @@ object frmMain: TfrmMain
         }
         Hint = 'Interactive SQL'
         ImageIndex = 36
+        ShortCut = 16459
         OnClick = ToolsSQLExecute1
       end
       object Configure1: TMenuItem
@@ -408,6 +421,7 @@ object frmMain: TfrmMain
     end
     object Help1: TMenuItem
       Action = HelpAbout
+      ShortCut = 112
       SubMenuImages = imgToolBarsEnabled
     end
   end

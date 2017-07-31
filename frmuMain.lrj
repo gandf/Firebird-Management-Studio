@@ -8,6 +8,8 @@
 {"hash":160486424,"name":"tfrmmain.toolbutton8.caption","sourcebytes":[84,111,111,108,66,117,116,116,111,110,56],"value":"ToolButton8"},
 {"hash":160486422,"name":"tfrmmain.toolbutton6.caption","sourcebytes":[84,111,111,108,66,117,116,116,111,110,54],"value":"ToolButton6"},
 {"hash":174434437,"name":"tfrmmain.console1.caption","sourcebytes":[38,67,111,110,115,111,108,101],"value":"&Console"},
+{"hash":9324734,"name":"tfrmmain.mainoptions.caption","sourcebytes":[38,79,112,116,105,111,110,115,46,46,46],"value":"&Options..."},
+{"hash":45275075,"name":"tfrmmain.mainoptions.hint","sourcebytes":[71,101,110,101,114,97,108,32,79,112,116,105,111,110,115],"value":"General Options"},
 {"hash":2871239,"name":"tfrmmain.view1.caption","sourcebytes":[38,86,105,101,119],"value":"&View"},
 {"hash":194813154,"name":"tfrmmain.server1.caption","sourcebytes":[38,83,101,114,118,101,114],"value":"&Server"},
 {"hash":145203765,"name":"tfrmmain.database1.caption","sourcebytes":[38,68,97,116,97,98,97,115,101],"value":"&Database"},

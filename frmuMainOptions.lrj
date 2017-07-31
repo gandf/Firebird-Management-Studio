@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":108725763,"name":"tfrmmainoptions.caption","sourcebytes":[79,112,116,105,111,110,115],"value":"Options"},
+{"hash":231000124,"name":"tfrmmainoptions.tabsheetgeneral.caption","sourcebytes":[71,101,110,101,114,97,108],"value":"General"},
+{"hash":42260357,"name":"tfrmmainoptions.lbllang.caption","sourcebytes":[76,97,110,103,97,103,101],"value":"Langage"},
+{"hash":206450904,"name":"tfrmmainoptions.combobox1.text","sourcebytes":[69,110,103,108,105,115,104],"value":"English"},
+{"hash":222219762,"name":"tfrmmainoptions.chkforceupper.caption","sourcebytes":[70,111,114,99,101,32,85,112,112,101,114,99,97,115,101,32,73,100,101,110,116,105,102,105,101,114],"value":"Force Uppercase Identifier"},
+{"hash":62149252,"name":"tfrmmainoptions.btchangefont.caption","sourcebytes":[67,104,97,110,103,101,32,38,70,111,110,116],"value":"Change &Font"},
+{"hash":118247670,"name":"tfrmmainoptions.lblfont.caption","sourcebytes":[77,83,32,83,97,110,115,32,83,101,114,105,102],"value":"MS Sans Serif"},
+{"hash":145566270,"name":"tfrmmainoptions.lbltestfont.caption","sourcebytes":[67,117,114,114,101,110,116,32,70,111,110,116,32,69,120,97,109,112,108,101,46],"value":"Current Font Example."},
+{"hash":35129635,"name":"tfrmmainoptions.radgrpddltrans.caption","sourcebytes":[68,68,76,32,84,114,97,110,115,97,99,116,105,111,110,115],"value":"DDL Transactions"},
+{"hash":11067,"name":"tfrmmainoptions.btok.caption","sourcebytes":[38,79,75],"value":"&OK"},
+{"hash":177752476,"name":"tfrmmainoptions.btcancel.caption","sourcebytes":[38,67,97,110,99,101,108],"value":"&Cancel"},
+{"hash":44595001,"name":"tfrmmainoptions.btapply.caption","sourcebytes":[38,65,112,112,108,121],"value":"&Apply"}
+]}
