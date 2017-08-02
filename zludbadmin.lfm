@@ -1,0 +1,19 @@
+object DMDBAdmin: TDMDBAdmin
+  OldCreateOrder = False
+  Height = 96
+  HorizontalOffset = 265
+  VerticalOffset = 415
+  Width = 234
+  object FBAdmin: TFBAdmin
+    Protocol = IBSPLOCAL
+    UseExceptions = False
+    left = 16
+    top = 16
+  end
+  object FBEventMonitor: TFBEventMonitor
+    Connection = DMDBConnection.IBConnection
+    Registered = False
+    left = 88
+    top = 16
+  end
+end

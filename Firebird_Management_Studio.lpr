@@ -14,7 +14,9 @@ uses
 
   frmuSplash, dmuMain, frmuMain,
 
+  {$ifdef windows}
   Windows, win32int,
+  {$ENDIF}
 
   frmuAbout in 'frmuAbout.pas' {frmAbout},
   zluGlobal in 'zluGlobal.pas',
@@ -55,6 +57,8 @@ uses
   frmuWindowList in 'frmuWindowList.pas' {dlgWindowList},
   MemoLists in 'MemoLists.pas',
   zluPersistent in 'zluPersistent.pas',
+  zluDB in 'zluDB.pas',
+  zluParameters in 'zluParameters.pas',
   frmuMainOptions in 'frmuMainOptions.pas';
 {$R *.res}
 

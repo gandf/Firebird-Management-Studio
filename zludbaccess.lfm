@@ -1,0 +1,46 @@
+object DMDBAccess: TDMDBAccess
+  OldCreateOrder = False
+  Height = 95
+  HorizontalOffset = 258
+  VerticalOffset = 272
+  Width = 257
+  object SQLQuery: TSQLQuery
+    FieldDefs = <>
+    Database = DMDBConnection.IBConnection
+    Transaction = DMDBConnection.SQLTransaction
+    Options = []
+    Params = <>
+    left = 88
+    top = 16
+  end
+  object SQLScript: TSQLScript
+    DataBase = DMDBConnection.IBConnection
+    Transaction = DMDBConnection.SQLTransaction
+    UseDollarString = False
+    Directives.Strings = (
+      'SET TERM'
+      'COMMIT WORK'
+      'COMMIT RETAIN'
+      'COMMIT'
+      '#IFDEF'
+      '#IFNDEF'
+      '#ELSE'
+      '#ENDIF'
+      '#DEFINE'
+      '#UNDEF'
+      '#UNDEFINE'
+    )
+    Terminator = ';'
+    CommentsinSQL = True
+    UseSetTerm = True
+    UseCommit = True
+    UseDefines = True
+    left = 24
+    top = 16
+  end
+  object DataSource: TDataSource
+    DataSet = SQLQuery
+    left = 152
+    top = 16
+  end
+end

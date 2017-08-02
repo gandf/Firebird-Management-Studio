@@ -4,14 +4,15 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="65">
+    <Units Count="73">
       <Unit0>
         <Filename Value="Firebird_Management_Studio.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="46"/>
-        <CursorPos X="28" Y="13"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="43"/>
+        <CursorPos X="40" Y="61"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="frmuSplash.pas"/>
@@ -41,8 +42,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="54"/>
-        <CursorPos Y="70"/>
+        <TopLine Value="12"/>
+        <CursorPos Y="29"/>
         <UsageCount Value="1315"/>
       </Unit3>
       <Unit4>
@@ -73,7 +74,7 @@
         <ComponentName Value="frmCommDiag"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="10"/>
         <CursorPos X="36" Y="26"/>
         <UsageCount Value="1315"/>
@@ -85,7 +86,7 @@
         <ComponentName Value="frmDBBackup"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="88"/>
         <CursorPos X="40" Y="92"/>
         <UsageCount Value="1315"/>
@@ -97,7 +98,7 @@
         <ComponentName Value="frmDBConnect"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="49"/>
         <CursorPos X="3" Y="65"/>
         <UsageCount Value="1315"/>
@@ -109,7 +110,7 @@
         <ComponentName Value="frmDBConnections"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="10"/>
         <CursorPos X="3" Y="29"/>
         <UsageCount Value="1315"/>
@@ -121,7 +122,7 @@
         <ComponentName Value="frmDBCreate"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="10"/>
         <CursorPos X="68" Y="28"/>
         <UsageCount Value="1315"/>
@@ -133,7 +134,7 @@
         <ComponentName Value="frmDBProperties"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="29"/>
         <CursorPos X="26" Y="30"/>
         <UsageCount Value="1315"/>
@@ -145,7 +146,7 @@
         <ComponentName Value="frmDBRegister"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="62"/>
         <CursorPos X="4" Y="78"/>
         <UsageCount Value="1315"/>
@@ -157,7 +158,7 @@
         <ComponentName Value="frmDBRestore"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="9"/>
         <TopLine Value="73"/>
         <CursorPos X="35" Y="93"/>
         <UsageCount Value="1315"/>
@@ -169,7 +170,7 @@
         <ComponentName Value="frmDBShutdown"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="10"/>
         <TopLine Value="28"/>
         <CursorPos X="42" Y="30"/>
         <UsageCount Value="1315"/>
@@ -181,7 +182,7 @@
         <ComponentName Value="frmDBStatistics"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="11"/>
         <TopLine Value="28"/>
         <CursorPos X="57" Y="29"/>
         <UsageCount Value="1315"/>
@@ -193,7 +194,7 @@
         <ComponentName Value="frmDBTransactions"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="12"/>
         <TopLine Value="28"/>
         <CursorPos X="39" Y="29"/>
         <UsageCount Value="1315"/>
@@ -205,7 +206,7 @@
         <ComponentName Value="frmDBValidation"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="13"/>
         <TopLine Value="28"/>
         <CursorPos X="52" Y="31"/>
         <UsageCount Value="1315"/>
@@ -217,7 +218,7 @@
         <ComponentName Value="frmDBValidationReport"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="14"/>
         <TopLine Value="28"/>
         <CursorPos X="33" Y="33"/>
         <UsageCount Value="1315"/>
@@ -240,7 +241,7 @@
         <ComponentName Value="frmDisplayBlob"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="15"/>
         <TopLine Value="10"/>
         <CursorPos Y="26"/>
         <UsageCount Value="1315"/>
@@ -252,7 +253,7 @@
         <ComponentName Value="frmDispMemo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="16"/>
         <TopLine Value="5"/>
         <CursorPos Y="26"/>
         <UsageCount Value="1315"/>
@@ -275,8 +276,7 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="16"/>
-        <TopLine Value="28"/>
+        <EditorIndex Value="17"/>
         <CursorPos X="38" Y="28"/>
         <UsageCount Value="1315"/>
         <Loaded Value="True"/>
@@ -308,7 +308,7 @@
         <ComponentName Value="frmObjectView"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="18"/>
         <TopLine Value="7"/>
         <CursorPos Y="26"/>
         <UsageCount Value="1315"/>
@@ -320,7 +320,7 @@
         <ComponentName Value="frmServerLogin"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="19"/>
         <TopLine Value="10"/>
         <CursorPos X="50" Y="18"/>
         <UsageCount Value="1315"/>
@@ -332,7 +332,7 @@
         <ComponentName Value="frmServerProperties"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="20"/>
         <TopLine Value="9"/>
         <CursorPos X="23" Y="27"/>
         <UsageCount Value="1315"/>
@@ -344,7 +344,7 @@
         <ComponentName Value="frmServerRegister"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="21"/>
         <TopLine Value="10"/>
         <CursorPos X="23" Y="28"/>
         <UsageCount Value="1315"/>
@@ -367,7 +367,7 @@
         <ComponentName Value="frmTextViewer"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="21"/>
+        <EditorIndex Value="22"/>
         <TopLine Value="9"/>
         <CursorPos X="40" Y="18"/>
         <UsageCount Value="1315"/>
@@ -390,7 +390,7 @@
         <ComponentName Value="frmUserInfo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="22"/>
+        <EditorIndex Value="23"/>
         <TopLine Value="28"/>
         <CursorPos X="40" Y="42"/>
         <UsageCount Value="1315"/>
@@ -421,10 +421,9 @@
         <ComponentName Value="dlgWisql"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="23"/>
-        <TopLine Value="14"/>
-        <CursorPos X="39" Y="23"/>
+        <EditorIndex Value="24"/>
+        <TopLine Value="224"/>
+        <CursorPos Y="243"/>
         <UsageCount Value="1315"/>
         <Loaded Value="True"/>
       </Unit36>
@@ -438,23 +437,24 @@
       <Unit38>
         <Filename Value="zluGlobal.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="25"/>
         <CursorPos Y="7"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit38>
       <Unit39>
         <Filename Value="zluibcClasses.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="24"/>
-        <TopLine Value="19"/>
-        <CursorPos X="26" Y="34"/>
+        <EditorIndex Value="26"/>
+        <TopLine Value="172"/>
+        <CursorPos X="63" Y="35"/>
         <UsageCount Value="1315"/>
         <Loaded Value="True"/>
       </Unit39>
       <Unit40>
         <Filename Value="zluPersistent.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="25"/>
+        <EditorIndex Value="32"/>
         <TopLine Value="30"/>
         <CursorPos X="13" Y="46"/>
         <UsageCount Value="1315"/>
@@ -463,9 +463,9 @@
       <Unit41>
         <Filename Value="zluSQL.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="26"/>
-        <TopLine Value="19"/>
-        <CursorPos Y="26"/>
+        <EditorIndex Value="33"/>
+        <TopLine Value="25"/>
+        <CursorPos X="91" Y="1457"/>
         <UsageCount Value="1315"/>
         <Loaded Value="True"/>
       </Unit41>
@@ -490,7 +490,7 @@
         <UnitName Value="zluSockets"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="7"/>
-        <UsageCount Value="179"/>
+        <UsageCount Value="186"/>
       </Unit44>
       <Unit45>
         <Filename Value="frmuMainOptions.pas"/>
@@ -500,255 +500,334 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="7"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="33"/>
       </Unit45>
       <Unit46>
+        <Filename Value="zludbconnection.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMDBConnection"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="zluDBConnection"/>
+        <EditorIndex Value="29"/>
+        <TopLine Value="8"/>
+        <CursorPos Y="37"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit46>
+      <Unit47>
         <Filename Value="IBExtract.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="64" Y="29"/>
         <UsageCount Value="1293"/>
-      </Unit46>
-      <Unit47>
+      </Unit47>
+      <Unit48>
         <Filename Value="C:\lazarus\lcl\include\application.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1372"/>
         <CursorPos Y="1387"/>
         <UsageCount Value="607"/>
-      </Unit47>
-      <Unit48>
+      </Unit48>
+      <Unit49>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3464"/>
         <CursorPos X="22" Y="3475"/>
         <UsageCount Value="581"/>
-      </Unit48>
-      <Unit49>
+      </Unit49>
+      <Unit50>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4328"/>
         <CursorPos Y="4342"/>
         <UsageCount Value="581"/>
-      </Unit49>
-      <Unit50>
+      </Unit50>
+      <Unit51>
         <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-registry\src\registry.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="75"/>
         <CursorPos X="25" Y="102"/>
         <UsageCount Value="566"/>
-      </Unit50>
-      <Unit51>
+      </Unit51>
+      <Unit52>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\packages\rtl-extra\src\inc\socketsh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="181"/>
         <CursorPos X="50" Y="194"/>
         <UsageCount Value="22"/>
-      </Unit51>
-      <Unit52>
+      </Unit52>
+      <Unit53>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\packages\rtl-extra\src\win\winsock.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="23"/>
         <CursorPos X="15" Y="45"/>
         <UsageCount Value="22"/>
-      </Unit52>
-      <Unit53>
+      </Unit53>
+      <Unit54>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\packages\rtl-extra\src\win\sockets.pp"/>
         <UnitName Value="Sockets"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="48" Y="214"/>
         <UsageCount Value="21"/>
-      </Unit53>
-      <Unit54>
+      </Unit54>
+      <Unit55>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\packages\rtl-extra\src\win\winsock2.pp"/>
         <UnitName Value="WinSock2"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
         <CursorPos X="3" Y="87"/>
         <UsageCount Value="3"/>
-      </Unit54>
-      <Unit55>
+      </Unit55>
+      <Unit56>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\packages\fcl-registry\src\registry.pp"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="14" Y="104"/>
         <UsageCount Value="4"/>
-      </Unit55>
-      <Unit56>
+      </Unit56>
+      <Unit57>
         <Filename Value="Z:\Firebird-Management-Studio\wisql.pas"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="4"/>
-      </Unit56>
-      <Unit57>
+      </Unit57>
+      <Unit58>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\packages\fcl-res\src\winpeimagereader.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="94"/>
         <UsageCount Value="10"/>
-      </Unit57>
-      <Unit58>
+      </Unit58>
+      <Unit59>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\packages\fcl-res\src\elfreader.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="25"/>
         <UsageCount Value="10"/>
-      </Unit58>
-      <Unit59>
+      </Unit59>
+      <Unit60>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\packages\fcl-base\src\fileinfo.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="112"/>
         <UsageCount Value="10"/>
-      </Unit59>
-      <Unit60>
+      </Unit60>
+      <Unit61>
         <Filename Value="C:\lazarus\fpc\3.0.2\source\rtl\win\messages.pp"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="10"/>
-      </Unit60>
-      <Unit61>
+      </Unit61>
+      <Unit62>
         <Filename Value="C:\lazarus\lcl\lmessages.pp"/>
         <UnitName Value="LMessages"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4"/>
         <UsageCount Value="10"/>
-      </Unit61>
-      <Unit62>
+      </Unit62>
+      <Unit63>
         <Filename Value="C:\lazarus\lcl\comctrls.pp"/>
         <UnitName Value="ComCtrls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1167"/>
         <CursorPos X="3" Y="1183"/>
         <UsageCount Value="10"/>
-      </Unit62>
-      <Unit63>
+      </Unit63>
+      <Unit64>
         <Filename Value="C:\lazarus\lcl\interfacebase.pp"/>
         <UnitName Value="InterfaceBase"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="10"/>
-      </Unit63>
-      <Unit64>
+      </Unit64>
+      <Unit65>
         <Filename Value="..\ibx\fbintf\IB.pas"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="10"/>
-      </Unit64>
+      </Unit65>
+      <Unit66>
+        <Filename Value="zludbaccess.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMDBAccess"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="zluDBAccess"/>
+        <EditorIndex Value="30"/>
+        <TopLine Value="10"/>
+        <CursorPos Y="40"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="zludbadmin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMDBAdmin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="zluDBAdmin"/>
+        <EditorIndex Value="31"/>
+        <TopLine Value="6"/>
+        <CursorPos Y="35"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="zludb.pas"/>
+        <ComponentName Value="TMDB"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="zluDB"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="43" Y="8"/>
+        <UsageCount Value="20"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="zludb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="zluDB"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="27"/>
+        <TopLine Value="8"/>
+        <CursorPos X="5" Y="19"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="zluparameters.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="zluParameters"/>
+        <EditorIndex Value="28"/>
+        <CursorPos X="41" Y="9"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="C:\lazarus\components\lazutils\laz2_xmlcfg.pas"/>
+        <UnitName Value="Laz2_XMLCfg"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="49"/>
+        <UsageCount Value="10"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="C:\lazarus\components\lazutils\laz2_xmlutils.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="25"/>
+        <UsageCount Value="10"/>
+      </Unit72>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="379" Column="25" TopLine="352"/>
+        <Filename Value="zluSQL.pas"/>
+        <Caret Line="1135" Column="42" TopLine="1109"/>
       </Position1>
       <Position2>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="384" Column="45" TopLine="357"/>
+        <Filename Value="zluSQL.pas"/>
+        <Caret Line="1158" Column="42" TopLine="1132"/>
       </Position2>
       <Position3>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="385" Column="34" TopLine="358"/>
+        <Filename Value="zluSQL.pas"/>
+        <Caret Line="1178" Column="42" TopLine="1152"/>
       </Position3>
       <Position4>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="386" Column="34" TopLine="359"/>
+        <Filename Value="zluSQL.pas"/>
+        <Caret Line="1207" Column="44" TopLine="1181"/>
       </Position4>
       <Position5>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="387" Column="34" TopLine="360"/>
+        <Filename Value="zluSQL.pas"/>
+        <Caret Line="1269" Column="42" TopLine="1243"/>
       </Position5>
       <Position6>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="388" Column="34" TopLine="361"/>
+        <Filename Value="zluSQL.pas"/>
+        <Caret Line="1338" Column="46" TopLine="1312"/>
       </Position6>
       <Position7>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="415" Column="34" TopLine="388"/>
+        <Filename Value="zluSQL.pas"/>
+        <Caret Line="1369" Column="36" TopLine="1343"/>
       </Position7>
       <Position8>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="416" Column="48" TopLine="389"/>
+        <Filename Value="zluSQL.pas"/>
+        <Caret Line="1380" Column="14" TopLine="1354"/>
       </Position8>
       <Position9>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="417" Column="54" TopLine="390"/>
+        <Filename Value="zludb.pas"/>
+        <Caret Line="40" Column="17" TopLine="27"/>
       </Position9>
       <Position10>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="418" Column="48" TopLine="391"/>
+        <Filename Value="zludb.pas"/>
+        <Caret Line="10" Column="3"/>
       </Position10>
       <Position11>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="419" Column="50" TopLine="392"/>
+        <Filename Value="zludb.pas"/>
+        <Caret Line="40" Column="13" TopLine="27"/>
       </Position11>
       <Position12>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="46" Column="24" TopLine="30"/>
+        <Filename Value="zludb.pas"/>
+        <Caret Line="10" Column="3"/>
       </Position12>
       <Position13>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="379" Column="25" TopLine="352"/>
+        <Filename Value="zludb.pas"/>
+        <Caret Line="51" TopLine="27"/>
       </Position13>
       <Position14>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="384" Column="45" TopLine="357"/>
+        <Filename Value="zludbconnection.pas"/>
+        <Caret Line="8" Column="35"/>
       </Position14>
       <Position15>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="385" Column="34" TopLine="358"/>
+        <Filename Value="zludbconnection.pas"/>
+        <Caret Line="17" Column="25"/>
       </Position15>
       <Position16>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="386" Column="34" TopLine="359"/>
+        <Filename Value="zludbconnection.pas"/>
+        <Caret Line="10" Column="24"/>
       </Position16>
       <Position17>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="387" Column="34" TopLine="360"/>
+        <Filename Value="zludb.pas"/>
+        <Caret Line="11" Column="3"/>
       </Position17>
       <Position18>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="388" Column="34" TopLine="361"/>
+        <Filename Value="zludb.pas"/>
+        <Caret Line="34" TopLine="18"/>
       </Position18>
       <Position19>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="415" Column="34" TopLine="388"/>
+        <Filename Value="zludb.pas"/>
+        <Caret Line="39" TopLine="21"/>
       </Position19>
       <Position20>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="416" Column="48" TopLine="389"/>
+        <Filename Value="zludbaccess.pas"/>
+        <Caret Line="21" Column="24"/>
       </Position20>
       <Position21>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="417" Column="54" TopLine="390"/>
+        <Filename Value="zludbconnection.pas"/>
+        <Caret Line="17" Column="44"/>
       </Position21>
       <Position22>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="418" Column="48" TopLine="391"/>
+        <Filename Value="zludbconnection.pas"/>
+        <Caret Line="8" Column="42"/>
       </Position22>
       <Position23>
-        <Filename Value="zluPersistent.pas"/>
-        <Caret Line="419" Column="50" TopLine="392"/>
+        <Filename Value="zludbconnection.pas"/>
+        <Caret Line="3" Column="23"/>
       </Position23>
       <Position24>
-        <Filename Value="frmuCommDiag.pas"/>
-        <Caret Line="28" Column="44" TopLine="13"/>
+        <Filename Value="zludbadmin.pas"/>
+        <Caret Line="20" Column="78" TopLine="11"/>
       </Position24>
       <Position25>
-        <Filename Value="wisql.pas"/>
-        <Caret Line="29" Column="46" TopLine="29"/>
+        <Filename Value="zludbaccess.pas"/>
+        <Caret Line="34" Column="23" TopLine="10"/>
       </Position25>
       <Position26>
-        <Filename Value="wisql.pas"/>
-        <Caret Line="30" Column="90" TopLine="18"/>
+        <Filename Value="zludbaccess.pas"/>
+        <Caret Line="21" Column="78" TopLine="10"/>
       </Position26>
       <Position27>
-        <Filename Value="wisql.pas"/>
-        <Caret Line="31" Column="29" TopLine="18"/>
+        <Filename Value="zludbadmin.pas"/>
+        <Caret Line="29" TopLine="7"/>
       </Position27>
       <Position28>
-        <Filename Value="wisql.pas"/>
-        <Caret Line="30" Column="20" TopLine="14"/>
+        <Filename Value="zludbadmin.pas"/>
+        <Caret Line="33" Column="30" TopLine="8"/>
       </Position28>
       <Position29>
-        <Filename Value="wisql.pas"/>
-        <Caret Line="29" Column="78" TopLine="14"/>
+        <Filename Value="zluparameters.pas"/>
+        <Caret Line="10" Column="14"/>
       </Position29>
-      <Position30>
-        <Filename Value="wisql.pas"/>
-        <Caret Line="31" Column="31" TopLine="14"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

@@ -1,0 +1,24 @@
+object DMDBConnection: TDMDBConnection
+  OldCreateOrder = False
+  Height = 97
+  HorizontalOffset = 256
+  VerticalOffset = 136
+  Width = 258
+  object IBConnection: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = SQLTransaction
+    Options = []
+    CheckTransactionParams = False
+    left = 24
+    top = 16
+  end
+  object SQLTransaction: TSQLTransaction
+    Active = False
+    Database = IBConnection
+    Options = []
+    left = 80
+    top = 16
+  end
+end

@@ -24,8 +24,8 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <BuildNr Value="8"/>
-      <StringTable CompanyName="flyonsoft" InternalName="Firebird Management Studio" LegalCopyright="Copyright © 2017 gandf" OriginalFilename="Firebird_Management_Studio.exe" ProductName="Firebird Management Studio"/>
+      <BuildNr Value="10"/>
+      <StringTable CompanyName="flyonsoft" InternalName="Firebird Management Studio" LegalCopyright="Copyright © 2017 gandf" OriginalFilename="Firebird_Management_Studio.exe" ProductName="Firebird Management Studio" ProductVersion="0.0.0.8"/>
     </VersionInfo>
     <MacroValues Count="1">
       <Macro1 Name="LCLWidgetType" Value="win32"/>
@@ -58,7 +58,7 @@
         <PackageName Value="ibexpress"/>
       </Item4>
     </RequiredPackages>
-    <Units Count="46">
+    <Units Count="51">
       <Unit0>
         <Filename Value="Firebird_Management_Studio.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -352,6 +352,39 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit45>
+      <Unit46>
+        <Filename Value="zludbconnection.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMDBConnection"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="zluDBConnection"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="zludbaccess.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMDBAccess"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="zluDBAccess"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="zludbadmin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DMDBAdmin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="zluDBAdmin"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="zludb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="zluDB"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="zluparameters.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="zluParameters"/>
+      </Unit50>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
