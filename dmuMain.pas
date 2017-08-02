@@ -7,7 +7,7 @@ interface
 uses
   LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, IBCustomDataSet, IBDatabase, Db, IB, zluibcClasses,
-  sqldb, StdCtrls, IBServices, DBGrids, IBSQL,
+  sqldb, StdCtrls, DBGrids, IBSQL,
   IBDatabaseInfo, SynEdit;
 
 type

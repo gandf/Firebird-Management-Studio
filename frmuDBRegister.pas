@@ -75,7 +75,7 @@ function RegisterDB(var DBAlias,Username,Password,Role, CharacterSet: string;
 implementation
 
 uses
-   IBServices, frmuMessage, zluGlobal, zluUtility, zluPersistent, resstring;
+   frmuMessage, zluGlobal, zluUtility, zluPersistent, resstring;
 
 {$R *.lfm}
 

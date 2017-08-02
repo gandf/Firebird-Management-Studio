@@ -4,11 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="63">
+    <Units Count="65">
       <Unit0>
         <Filename Value="Firebird_Management_Studio.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
+        <TopLine Value="46"/>
+        <CursorPos X="28" Y="13"/>
         <UsageCount Value="1315"/>
       </Unit0>
       <Unit1>
@@ -28,9 +30,9 @@
         <ComponentName Value="dmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="7"/>
+        <CursorPos X="20" Y="10"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="frmuAbout.pas"/>
@@ -39,8 +41,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="13"/>
-        <CursorPos X="70" Y="27"/>
+        <TopLine Value="54"/>
+        <CursorPos Y="70"/>
         <UsageCount Value="1315"/>
       </Unit3>
       <Unit4>
@@ -61,8 +63,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="10"/>
-        <CursorPos Y="26"/>
+        <TopLine Value="57"/>
+        <CursorPos Y="73"/>
         <UsageCount Value="1315"/>
       </Unit5>
       <Unit6>
@@ -71,10 +73,11 @@
         <ComponentName Value="frmCommDiag"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="84"/>
-        <CursorPos Y="100"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="36" Y="26"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="frmuDBBackup.pas"/>
@@ -82,10 +85,11 @@
         <ComponentName Value="frmDBBackup"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="72"/>
-        <CursorPos Y="88"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="88"/>
+        <CursorPos X="40" Y="92"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="frmuDBConnect.pas"/>
@@ -93,10 +97,11 @@
         <ComponentName Value="frmDBConnect"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="48"/>
-        <CursorPos Y="64"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="49"/>
+        <CursorPos X="3" Y="65"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="frmuDBConnections.pas"/>
@@ -104,10 +109,11 @@
         <ComponentName Value="frmDBConnections"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="31"/>
-        <CursorPos Y="47"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="10"/>
+        <CursorPos X="3" Y="29"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="frmuDBCreate.pas"/>
@@ -115,10 +121,11 @@
         <ComponentName Value="frmDBCreate"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="57"/>
-        <CursorPos Y="73"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="10"/>
+        <CursorPos X="68" Y="28"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="frmuDBProperties.pas"/>
@@ -126,10 +133,11 @@
         <ComponentName Value="frmDBProperties"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="83"/>
-        <CursorPos Y="99"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="29"/>
+        <CursorPos X="26" Y="30"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="frmuDBRegister.pas"/>
@@ -137,10 +145,11 @@
         <ComponentName Value="frmDBRegister"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="133"/>
-        <CursorPos X="35" Y="143"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="62"/>
+        <CursorPos X="4" Y="78"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit12>
       <Unit13>
         <Filename Value="frmuDBRestore.pas"/>
@@ -148,10 +157,11 @@
         <ComponentName Value="frmDBRestore"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="73"/>
-        <CursorPos Y="89"/>
+        <CursorPos X="35" Y="93"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit13>
       <Unit14>
         <Filename Value="frmuDBShutdown.pas"/>
@@ -159,10 +169,11 @@
         <ComponentName Value="frmDBShutdown"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="45"/>
-        <CursorPos Y="61"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="28"/>
+        <CursorPos X="42" Y="30"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit14>
       <Unit15>
         <Filename Value="frmuDBStatistics.pas"/>
@@ -170,10 +181,11 @@
         <ComponentName Value="frmDBStatistics"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="47"/>
-        <CursorPos Y="63"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="28"/>
+        <CursorPos X="57" Y="29"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit15>
       <Unit16>
         <Filename Value="frmuDBTransactions.pas"/>
@@ -181,10 +193,11 @@
         <ComponentName Value="frmDBTransactions"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="53"/>
-        <CursorPos Y="69"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="28"/>
+        <CursorPos X="39" Y="29"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit16>
       <Unit17>
         <Filename Value="frmuDBValidation.pas"/>
@@ -192,10 +205,11 @@
         <ComponentName Value="frmDBValidation"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="46"/>
-        <CursorPos Y="62"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="28"/>
+        <CursorPos X="52" Y="31"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit17>
       <Unit18>
         <Filename Value="frmuDBValidationReport.pas"/>
@@ -203,10 +217,11 @@
         <ComponentName Value="frmDBValidationReport"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="48"/>
-        <CursorPos Y="64"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="28"/>
+        <CursorPos X="33" Y="33"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit18>
       <Unit19>
         <Filename Value="frmuDescription.pas"/>
@@ -225,10 +240,11 @@
         <ComponentName Value="frmDisplayBlob"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="32"/>
-        <CursorPos Y="48"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="10"/>
+        <CursorPos Y="26"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit20>
       <Unit21>
         <Filename Value="frmuDispMemo.pas"/>
@@ -236,10 +252,11 @@
         <ComponentName Value="frmDispMemo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="15"/>
         <TopLine Value="5"/>
         <CursorPos Y="26"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit21>
       <Unit22>
         <Filename Value="frmuDlgClass.pas"/>
@@ -258,12 +275,11 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="2352"/>
-        <CursorPos X="60" Y="2362"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="28"/>
+        <CursorPos X="38" Y="28"/>
         <UsageCount Value="1315"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit23>
       <Unit24>
         <Filename Value="frmuMessage.pas"/>
@@ -272,8 +288,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="105"/>
-        <CursorPos Y="121"/>
+        <CursorPos Y="7"/>
         <UsageCount Value="1315"/>
       </Unit24>
       <Unit25>
@@ -293,10 +308,11 @@
         <ComponentName Value="frmObjectView"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="17"/>
         <TopLine Value="7"/>
-        <CursorPos X="10" Y="24"/>
+        <CursorPos Y="26"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit26>
       <Unit27>
         <Filename Value="frmuServerLogin.pas"/>
@@ -304,10 +320,11 @@
         <ComponentName Value="frmServerLogin"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="42"/>
-        <CursorPos Y="58"/>
+        <EditorIndex Value="18"/>
+        <TopLine Value="10"/>
+        <CursorPos X="50" Y="18"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit27>
       <Unit28>
         <Filename Value="frmuServerProperties.pas"/>
@@ -315,10 +332,11 @@
         <ComponentName Value="frmServerProperties"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="74"/>
-        <CursorPos Y="90"/>
+        <EditorIndex Value="19"/>
+        <TopLine Value="9"/>
+        <CursorPos X="23" Y="27"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit28>
       <Unit29>
         <Filename Value="frmuServerRegister.pas"/>
@@ -326,10 +344,11 @@
         <ComponentName Value="frmServerRegister"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="52"/>
-        <CursorPos Y="68"/>
+        <EditorIndex Value="20"/>
+        <TopLine Value="10"/>
+        <CursorPos X="23" Y="28"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit29>
       <Unit30>
         <Filename Value="frmuSQLOptions.pas"/>
@@ -338,8 +357,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="58"/>
-        <CursorPos Y="74"/>
+        <TopLine Value="10"/>
+        <CursorPos Y="26"/>
         <UsageCount Value="1315"/>
       </Unit30>
       <Unit31>
@@ -348,9 +367,11 @@
         <ComponentName Value="frmTextViewer"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="10" Y="5"/>
+        <EditorIndex Value="21"/>
+        <TopLine Value="9"/>
+        <CursorPos X="40" Y="18"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit31>
       <Unit32>
         <Filename Value="frmuTools.pas"/>
@@ -360,7 +381,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="19"/>
-        <CursorPos Y="29"/>
+        <CursorPos Y="26"/>
         <UsageCount Value="1315"/>
       </Unit32>
       <Unit33>
@@ -369,10 +390,11 @@
         <ComponentName Value="frmUserInfo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="78"/>
-        <CursorPos Y="94"/>
+        <EditorIndex Value="22"/>
+        <TopLine Value="28"/>
+        <CursorPos X="40" Y="42"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit33>
       <Unit34>
         <Filename Value="frmuWindowList.pas"/>
@@ -399,16 +421,17 @@
         <ComponentName Value="dlgWisql"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="344"/>
-        <CursorPos X="39" Y="359"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="23"/>
+        <TopLine Value="14"/>
+        <CursorPos X="39" Y="23"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit36>
       <Unit37>
         <Filename Value="zluCommDiag.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="9"/>
         <CursorPos Y="26"/>
         <UsageCount Value="1315"/>
       </Unit37>
@@ -416,45 +439,49 @@
         <Filename Value="zluGlobal.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="5" Y="7"/>
+        <CursorPos Y="7"/>
         <UsageCount Value="1315"/>
       </Unit38>
       <Unit39>
         <Filename Value="zluibcClasses.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="10"/>
-        <CursorPos X="50" Y="27"/>
+        <EditorIndex Value="24"/>
+        <TopLine Value="19"/>
+        <CursorPos X="26" Y="34"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit39>
       <Unit40>
         <Filename Value="zluPersistent.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="234"/>
-        <CursorPos X="3" Y="64"/>
+        <EditorIndex Value="25"/>
+        <TopLine Value="30"/>
+        <CursorPos X="13" Y="46"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit40>
       <Unit41>
         <Filename Value="zluSQL.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="26"/>
+        <TopLine Value="19"/>
+        <CursorPos Y="26"/>
         <UsageCount Value="1315"/>
+        <Loaded Value="True"/>
       </Unit41>
       <Unit42>
         <Filename Value="zluUtility.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="33"/>
-        <CursorPos Y="49"/>
+        <TopLine Value="20"/>
+        <CursorPos X="79" Y="25"/>
         <UsageCount Value="1315"/>
       </Unit42>
       <Unit43>
         <Filename Value="resstring.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="1000"/>
-        <CursorPos X="44" Y="1018"/>
+        <CursorPos Y="7"/>
         <UsageCount Value="200"/>
       </Unit43>
       <Unit44>
@@ -462,8 +489,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="zluSockets"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="5" Y="7"/>
-        <UsageCount Value="177"/>
+        <CursorPos Y="7"/>
+        <UsageCount Value="179"/>
       </Unit44>
       <Unit45>
         <Filename Value="frmuMainOptions.pas"/>
@@ -472,9 +499,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="40"/>
-        <CursorPos X="43" Y="58"/>
-        <UsageCount Value="24"/>
+        <CursorPos Y="7"/>
+        <UsageCount Value="26"/>
       </Unit45>
       <Unit46>
         <Filename Value="IBExtract.pas"/>
@@ -590,100 +616,139 @@
         <CursorPos X="3" Y="1183"/>
         <UsageCount Value="10"/>
       </Unit62>
+      <Unit63>
+        <Filename Value="C:\lazarus\lcl\interfacebase.pp"/>
+        <UnitName Value="InterfaceBase"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="..\ibx\fbintf\IB.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit64>
     </Units>
-    <JumpHistory Count="23" HistoryIndex="22">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3804" Column="3" TopLine="3775"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="379" Column="25" TopLine="352"/>
       </Position1>
       <Position2>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="2482" Column="3" TopLine="2480"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="384" Column="45" TopLine="357"/>
       </Position2>
       <Position3>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3786" Column="53" TopLine="3775"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="385" Column="34" TopLine="358"/>
       </Position3>
       <Position4>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3778" Column="51" TopLine="3750"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="386" Column="34" TopLine="359"/>
       </Position4>
       <Position5>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="31" Column="112" TopLine="16"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="387" Column="34" TopLine="360"/>
       </Position5>
       <Position6>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="1953" Column="3" TopLine="1944"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="388" Column="34" TopLine="361"/>
       </Position6>
       <Position7>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="2354" Column="3" TopLine="2352"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="415" Column="34" TopLine="388"/>
       </Position7>
       <Position8>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="31" Column="69" TopLine="15"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="416" Column="48" TopLine="389"/>
       </Position8>
       <Position9>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3459" Column="3" TopLine="3457"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="417" Column="54" TopLine="390"/>
       </Position9>
       <Position10>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="411" Column="29" TopLine="395"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="418" Column="48" TopLine="391"/>
       </Position10>
       <Position11>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3424" Column="22" TopLine="3413"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="419" Column="50" TopLine="392"/>
       </Position11>
       <Position12>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3806" Column="3" TopLine="3777"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="46" Column="24" TopLine="30"/>
       </Position12>
       <Position13>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="33" Column="21" TopLine="15"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="379" Column="25" TopLine="352"/>
       </Position13>
       <Position14>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3809" Column="32" TopLine="3789"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="384" Column="45" TopLine="357"/>
       </Position14>
       <Position15>
-        <Filename Value="frmuMain.pas"/>
-        <Caret TopLine="13"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="385" Column="34" TopLine="358"/>
       </Position15>
       <Position16>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3810" Column="13" TopLine="3788"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="386" Column="34" TopLine="359"/>
       </Position16>
       <Position17>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3807" Column="15" TopLine="3788"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="387" Column="34" TopLine="360"/>
       </Position17>
       <Position18>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="15" TopLine="11"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="388" Column="34" TopLine="361"/>
       </Position18>
       <Position19>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="26" Column="5" TopLine="11"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="415" Column="34" TopLine="388"/>
       </Position19>
       <Position20>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="430" Column="53" TopLine="410"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="416" Column="48" TopLine="389"/>
       </Position20>
       <Position21>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3806" TopLine="3783"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="417" Column="54" TopLine="390"/>
       </Position21>
       <Position22>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="3810" Column="19" TopLine="3781"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="418" Column="48" TopLine="391"/>
       </Position22>
       <Position23>
-        <Filename Value="frmuMain.pas"/>
-        <Caret Line="2362" Column="44" TopLine="2352"/>
+        <Filename Value="zluPersistent.pas"/>
+        <Caret Line="419" Column="50" TopLine="392"/>
       </Position23>
+      <Position24>
+        <Filename Value="frmuCommDiag.pas"/>
+        <Caret Line="28" Column="44" TopLine="13"/>
+      </Position24>
+      <Position25>
+        <Filename Value="wisql.pas"/>
+        <Caret Line="29" Column="46" TopLine="29"/>
+      </Position25>
+      <Position26>
+        <Filename Value="wisql.pas"/>
+        <Caret Line="30" Column="90" TopLine="18"/>
+      </Position26>
+      <Position27>
+        <Filename Value="wisql.pas"/>
+        <Caret Line="31" Column="29" TopLine="18"/>
+      </Position27>
+      <Position28>
+        <Filename Value="wisql.pas"/>
+        <Caret Line="30" Column="20" TopLine="14"/>
+      </Position28>
+      <Position29>
+        <Filename Value="wisql.pas"/>
+        <Caret Line="29" Column="78" TopLine="14"/>
+      </Position29>
+      <Position30>
+        <Filename Value="wisql.pas"/>
+        <Caret Line="31" Column="31" TopLine="14"/>
+      </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

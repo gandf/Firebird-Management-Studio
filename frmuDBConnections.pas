@@ -26,7 +26,7 @@ interface
 uses
   Forms, ExtCtrls, StdCtrls, Classes, Controls, zluibcClasses, ComCtrls,
   IBDatabase, SysUtils, IBDatabaseInfo, LCLIntf, LCLType,
-  IBServices, IB, frmuMessage, frmuDlgClass, resstring;
+  IB, frmuMessage, frmuDlgClass, resstring;
 
 type
   TfrmDBConnections = class(TDialog)

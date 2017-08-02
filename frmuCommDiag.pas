@@ -25,8 +25,7 @@ interface
 
 uses
   LCLIntf, LCLType, SysUtils,Forms, ExtCtrls, StdCtrls, Classes, Controls, ComCtrls, Dialogs,
-  Graphics, zluibcClasses, IB,
-  IBDatabase, IBDatabaseInfo, frmuDlgClass, zluCommDiag, zluSockets, resstring;
+  Graphics, zluibcClasses, IB, IBDatabase, IBDatabaseInfo, frmuDlgClass, zluCommDiag, zluSockets, resstring;
 
 type
   TfrmCommDiag = class(TDialog)
@@ -98,7 +97,7 @@ var
 implementation
 
 uses
-   zluGlobal, zluPersistent, IBServices, frmuMessage;
+   zluGlobal, zluPersistent, frmuMessage;
 
 {$R *.lfm}
 

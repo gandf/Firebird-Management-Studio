@@ -30,7 +30,7 @@ interface
 
 uses
   LCLIntf, LCLType, SysUtils, Classes, Registry, Forms,
-  IBServices, zluGlobal, IB, gettext, Translations, resstring;
+  zluGlobal, IB, gettext, Translations, resstring;
 
 type
 { Most of the procedures might raise an exception, eg when there's no a key in the registry

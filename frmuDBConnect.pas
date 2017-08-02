@@ -62,7 +62,7 @@ function DBConnect(CurrSelDatabase: TibcDatabaseNode; const CurrSelServer: TibcS
 implementation
 
 uses
-  IBServices, IBDatabase, frmuMessage, zluGlobal;
+  IBDatabase, frmuMessage, zluGlobal;
 
 {$R *.lfm}
 

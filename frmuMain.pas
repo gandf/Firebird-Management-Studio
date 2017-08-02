@@ -2360,7 +2360,6 @@ end;
 procedure TfrmMain.DatabaseRestoreExecute(Sender: TObject);
 var
   bckupAlias: TibcBackupAliasNode;
-
 begin
   if Assigned(FCurrSelServer) and Assigned(FCurrSelTreeNode) then
     if frmuDBRestore.DoDBRestore(FCurrSelServer, FCurrSelTreeNode) = SUCCESS then

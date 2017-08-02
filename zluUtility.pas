@@ -25,7 +25,7 @@ interface
 
 uses
   LCLIntf, LCLType, SysUtils, Classes, Controls, Forms, Dialogs, StdCtrls,
-  FileUtil, Registry, IBDatabase, resstring, windows, Process;
+  FileUtil, Registry, resstring, windows, Process;
 
 function CheckDirectory(Directory: string): boolean;
 function GetNewFileName(Directory: string; FileExtension: string): string;

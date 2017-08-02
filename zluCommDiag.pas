@@ -24,8 +24,11 @@ unit zluCommDiag;
 interface
 
 uses
-  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, resstring,
-  Winsock,  Windows;
+  LCLIntf, LCLType, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, resstring
+  {$ifdef windows}
+  , Winsock,  Windows
+  {$endif}
+  ;
 
 type
   TIPAddress = LongInt;                // IP address

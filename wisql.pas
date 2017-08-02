@@ -24,10 +24,11 @@ unit wisql;
 interface
 
 uses
-  LCLIntf, LCLType, Messages, SysUtils, Classes, Graphics, Controls, Interfaces, Forms, Dialogs,
-  Menus, ComCtrls, ExtCtrls, StdCtrls, Grids, DBGrids,
-  Db, StdActns, ActnList, zluibcClasses, IB, IBDatabase, IBCustomDataSet,
-  zluSQL, MemoLists, FileUtil, SynEdit, gettext, Translations, resstring;
+  LCLIntf, LCLType, Messages, SysUtils, Classes, Graphics, Controls, Interfaces,
+  Forms, Dialogs, Menus, ComCtrls, ExtCtrls, StdCtrls, Grids, DBGrids, Db,
+  StdActns, ActnList, zluibcClasses, IB,
+  IBDatabase, IBCustomDataSet, zluSQL, MemoLists, FileUtil, SynEdit, gettext,
+  Translations, resstring;
 
 type
 
